@@ -1,0 +1,543 @@
+{
+  "canonical_modeling_dataset": {
+    "path": "data/deep_chal_math_train_filtered_final_v1.csv",
+    "rows": 16359,
+    "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a"
+  },
+  "counts": {
+    "accepted": 0,
+    "canonical_filtered_train": 16359,
+    "eligible": 12209,
+    "generated": 0,
+    "grades": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unprocessed": 0,
+      "unsuitable": 0
+    },
+    "non_integer_labels": 0,
+    "selected": 0,
+    "suspected_label_or_problem_quality_excluded": 9,
+    "unprocessed": 12209
+  },
+  "dataset_version": "phase2_verified_cot_luna_3k_final_v1_v3",
+  "generated_at_utc": "2026-08-04T16:24:13.866151+00:00",
+  "immutable_original_use": "provenance_and_filter_reproduction_only",
+  "input_manifest_sha256": "52a243e77a0eb0c0eda9a8bee116b010af54034e88ad361e25ddd2a890f03d4c",
+  "legacy_v1_reanalysis": null,
+  "model": {
+    "api": "OpenAI Responses API",
+    "batch_endpoint": "/v1/responses",
+    "candidates_per_row": 2,
+    "endpoint": "/v1/responses",
+    "id": "gpt-5.6-luna",
+    "max_output_tokens": 6144,
+    "reasoning_efforts": [
+      "low",
+      "medium"
+    ],
+    "store": false,
+    "structured_outputs": true,
+    "tools": [],
+    "visible_solution_target_tokens": [
+      150,
+      300
+    ]
+  },
+  "new_noncanonical_integer_outputs": 0,
+  "outputs": {
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\candidate_validation_audit.csv": {
+      "bytes": 156,
+      "sha256": "eef039ea884aa60c0dfb4c7e62e0b462c376f8ab2afc6a74bcb8bbbc801bfaf6"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\final_sft_ids.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\generation_status_audit.csv": {
+      "bytes": 708162,
+      "sha256": "67926308627d16d72f57fba2023f304f8bff0e72bba4248f660b5bcc4c4ecc5b"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\leaderboard_decontamination_audit.csv": {
+      "bytes": 21912,
+      "sha256": "3dc2fd075b79ae766cbbb974463f4c9e37627d928a95b4bdd28460afc99cbde7"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\legacy_raw_reuse_audit.csv": {
+      "bytes": 271,
+      "sha256": "256b9ec6affc583b1e178fdf80327aa616511e89d832a2a5b9d82b42bbca4ba4"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\phase2_quality_exclusion_audit.csv": {
+      "bytes": 2556,
+      "sha256": "16c2b679b235781cff5728cc744e7128ec72a4803c79bd65578bd07327a84257"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\phase2_verified_cot_luna_3k_final_v1_v3.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\preflight_manifest.json": {
+      "bytes": 1095,
+      "sha256": "ef00953c0d98a90d2b6c0cede16527151e0b919a96db0fae6031b2179a811fc1"
+    },
+    "report\\phase2_v3_final_v1\\phase2_v3_final_v1_cost_report.md": {
+      "bytes": 591,
+      "sha256": "8b570976acfdbd67c522e07566a5beee77480502f372f69d4b858a791e752223"
+    },
+    "report\\phase2_v3_final_v1\\phase2_v3_final_v1_distribution_report.md": {
+      "bytes": 870,
+      "sha256": "a4e932343389d6f3f320324749f2dd504bdb719b22c88996ddb9d6334b8e93f4"
+    },
+    "report\\phase2_v3_final_v1\\phase2_v3_final_v1_quality_report.md": {
+      "bytes": 834,
+      "sha256": "ee71eb5fe923233ee95dadd24de27e6a2bdf948cae56a0a284c439c4a37ce676"
+    },
+    "report\\phase2_v3_final_v1\\phase2_v3_final_v1_summary.md": {
+      "bytes": 799,
+      "sha256": "fac01e3227e4ce997491f401441188e98c5ffce18e96cae315ccd75391d04d3b"
+    },
+    "report\\phase2_v3_final_v1\\phase2_v3_final_v1_test_and_resume.md": {
+      "bytes": 1897,
+      "sha256": "b2d85ed9cbf935255da960ea669c6238c461bc4159c178e832c0df54278c417d"
+    }
+  },
+  "phase2_complete": false,
+  "quality_metrics": {
+    "comparison:low": {
+      "canonical_integer_extraction_rate": 1.0,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "first_candidate_exact_accuracy": 0.525,
+      "gate_checks": {
+        "canonical_integer_extraction": true,
+        "completed_json_parse": true,
+        "completed_schema": true,
+        "first_candidate_accuracy": false,
+        "non_integer_final_answers": true,
+        "pass_at_2": false,
+        "response_completion": true,
+        "verifier_fatal_error_rate": true
+      },
+      "gate_passed": false,
+      "generated_at_utc": "2026-08-04T16:15:54.208084+00:00",
+      "label_mismatch_rate": 0.3225806451612903,
+      "model": "gpt-5.6-luna",
+      "non_integer_final_answer_count": 0,
+      "noncanonical_integer_output_count": 0,
+      "noncanonical_integer_output_rate": 0.0,
+      "pair_outcomes": {
+        "both_match": 21,
+        "neither_match": 19
+      },
+      "pass_at_2": 0.525,
+      "reasoning_effort": "low",
+      "requests_expected": 80,
+      "response_completion_rate": 1.0,
+      "response_ids": [
+        "resp_055259f2307b7c80016a720f9fd7a88199899f8e6c5ec0856e",
+        "resp_0b4f04fd87f1f471016a720f9fe05081999a0d45e23f4406dd",
+        "resp_0ae99d11ba45ceed016a720f9fdb1c8198a6fbb48ca86861c6",
+        "resp_056da6ce639b57c7016a720f9fd4088198b4a1838e84a5be74",
+        "resp_0e8f2dee9948d261016a720fa2db40819bb6af04c62c46c7d7",
+        "resp_05fcd08118459c72016a720fa30bf4819985daed5deba8dc66",
+        "resp_084dde7df9f8a106016a720fa467c08198a35bcddb6bd3a935",
+        "resp_0512bceb4e1f053d016a720fa48d50819a953d4ca4eba6d650",
+        "resp_0e5aca859ba94620016a720fa5dfe0819b91df0d2533d8db2c",
+        "resp_078df1653b976d2e016a720fa6def48199ab502b081cdf2270",
+        "resp_0aa3d5e96f749352016a720fa72fa0819a9067fe7e6d5eceff",
+        "resp_066db5799a5fc7da016a720faac14881989b765b7cc971deeb",
+        "resp_0af82e7335634442016a720fab29d481999f7f870bf90d9336",
+        "resp_02997fa725f2ed0c016a720fae5be88199b3920bbfd4703711",
+        "resp_027d34c0472d75c1016a720fafcfd8819b864c26dfed70d5f4",
+        "resp_08c2cd5a69d03d59016a720fb2ada081999e7717d5023db6ca",
+        "resp_03937748eb2ffefd016a720fb49d68819aa4b03553decb2711",
+        "resp_034fb349e1a4955d016a720fb5c7a8819bb19f2e24d9630979",
+        "resp_07dfd455298466b3016a720fb8c844819bb7c8734f65e41124",
+        "resp_0f1b29134c11039b016a720fbad3b0819aa6fbd82744e6479a",
+        "resp_0ffed906f6721bea016a720fbb00f4819bbf418f2edf7c396c",
+        "resp_0438731f5f4a23a8016a720fbc48348199a54bd7d17d8029ab",
+        "resp_0dbf926b5755958c016a720fbdb6dc819997e0ffb82d5e8291",
+        "resp_0f5910d407640da4016a720fbf10b48198b4fecb11033f147a",
+        "resp_0631d64d4ae625e2016a720fbf81cc819b96dff4e4abbb17c7",
+        "resp_09ea318f23315136016a720fc00d6c8198a16f31f98315691c",
+        "resp_00640cbcf98a48bc016a720fc4ac948199a737c98f77b65531",
+        "resp_096b017ee6b1e993016a720fc5d4f0819b82f0d14a9da48b73",
+        "resp_0da89b085ad3678f016a720fc70ed48198b0c86b97fe3d33e1",
+        "resp_0f36f1209a25ca6e016a720fcaed98819b87ff7d85319c1303",
+        "resp_07f210ed4b5ca6f6016a720fd1692c819a90a5617ec70dd92c",
+        "resp_08d9d1304e2ca171016a720fd665b8819b873a8c070f25cd1d",
+        "resp_0a262a347e4e5be0016a720fd909bc819ab21cea67b7d95036",
+        "resp_0a16fb7662f22931016a720fdd02f4819aba9738fafec56b11",
+        "resp_01a2ba2aec390996016a720fde6288819abb5401eb61b482e3",
+        "resp_054d549e93be3d02016a720fdfabe08199bfaf92e59517baf0",
+        "resp_0f89d81ef639b8d8016a720fe0092081988c477e089ed5b761",
+        "resp_03edb0e278f466a4016a720fe39b6c819a94b28cacab346adf",
+        "resp_0a67b67ee4930d23016a720fe52e7c819b9982a5321ac7553c",
+        "resp_0afa23e5053808e6016a720fe5fad4819991088c74e955a492",
+        "resp_065068a6bd9f7568016a720fe60890819a9930782f3f7cb9a4",
+        "resp_0cf64cfe1f3483b6016a720fe7f088819b90182a673b0750a1",
+        "resp_0abd7f88d3d9b3ab016a720fec2b688198bd1528a53bfc7d19",
+        "resp_034861365addbba0016a720fec7788819a96debc3033049ebf",
+        "resp_043ace4862671bf2016a720fed33dc819b8cbf41b5ef4de10a",
+        "resp_06dc24138091f8ce016a720fedb8088199b35b3b3005c0e845",
+        "resp_0d7ecff4e3ac87f6016a720fef712481989042c52f9394fe35",
+        "resp_099ae2cc77303a02016a720ff1ecf88199a633c5fb4eeb98eb",
+        "resp_06a2d0e26b20b0c4016a720ff2646c8199bd7599cab7025f53",
+        "resp_0367e41a70971edc016a720ff58da4819aac24d7a2f6e039e6",
+        "resp_0ab98e3b94a86e0f016a720ff772e8819a94eb1c2854eb1544",
+        "resp_0626a2a5f2166c19016a720ff7e840819ba66ea2cdeed2820c",
+        "resp_09fbf32c378b10a6016a720ffb1fc8819b81245c9e001c0223",
+        "resp_042eafd964b92f28016a720ffb7304819ba59fa79ff9a8d24d",
+        "resp_053fa330a9a4df80016a720ffea9c88199ab9e1cae8b4e5783",
+        "resp_0aa184927bf78851016a720fff64e08199a9f7a0a1ce8ec387",
+        "resp_085f95877eca1658016a7210019fe48198a75e07754c42262a",
+        "resp_01ca1ed92a431c00016a721002708c819a94a3f79d747da0f9",
+        "resp_0d4ceb633289cec7016a7210048754819b80c1867d991547e2",
+        "resp_0bd46871e84fad19016a7210066dd4819ab01c2438d80723b6",
+        "resp_0b9c3e8d5831905e016a721007bdbc81998e50a61dcd70cb48",
+        "resp_034eeac861e6b818016a72100ab47c819a843d9dd47c05723e",
+        "resp_0f578f340046afcc016a72100dd22c819aa771bd66965d12e5",
+        "resp_009c581ebb5cab91016a7210103f788198a258c15395fcc4a2",
+        "resp_0f53ed1fc8d24b4d016a72101132b0819b8e712accc1484b99",
+        "resp_0eea7ad2260f8b83016a7210130024819a89c9d22c71369b44",
+        "resp_0133d6bac8dbfa51016a721013deec819880158d6ac329c5e5",
+        "resp_041465fe2adc9c57016a7210164304819bb5040e0e5b6c492c",
+        "resp_0b2e5e983ccb9973016a721016f28481998efadfde1f2477c5",
+        "resp_01fe2e3ef1bf2fda016a7210184b74819aa4d55c0893f6107e",
+        "resp_0cc66952245bf875016a7210189dec819aba9f13da9ddb361c",
+        "resp_0959696f1cf5effe016a7210196fc081998133b922bba82c38",
+        "resp_0d0a45cb7e225560016a721019e74c819b9d2e082e81f49106",
+        "resp_0d40d3443864e635016a72101ca2a0819abedbb7e6a655379d",
+        "resp_072b67680e279952016a72101f38788198b8ac645496bf1d61",
+        "resp_024e7ccc85400032016a72101f8560819bab8fe411c14aeeff",
+        "resp_0605c428a52e7a86016a72101fb3348198bbe84c1c7caaa3f9",
+        "resp_0c9a3361c99157b9016a721022aa98819886e36dc465e4eb39",
+        "resp_0b236c144be228ee016a721023013081988addcb5a8eb9db57",
+        "resp_05b18a1e3dfa1e31016a721023ae14819b9a5a13347e52abdd"
+      ],
+      "responses_received": 80,
+      "rows_expected": 40,
+      "rows_with_both_candidates": 40,
+      "schema_version": 3,
+      "stage": "comparison",
+      "truncation_rate": 0.0,
+      "unsuitable_rate": 0.225,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 42636,
+        "output_tokens": 51134,
+        "p95_input_tokens": 667.3,
+        "p95_output_tokens": 1840.4499999999994,
+        "reasoning_tokens": 33964
+      },
+      "verifier_fatal_error_rate": 0.0
+    },
+    "comparison:medium": {
+      "canonical_integer_extraction_rate": 1.0,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "first_candidate_exact_accuracy": 0.525,
+      "gate_checks": {
+        "canonical_integer_extraction": true,
+        "completed_json_parse": true,
+        "completed_schema": true,
+        "first_candidate_accuracy": false,
+        "non_integer_final_answers": true,
+        "pass_at_2": false,
+        "response_completion": false,
+        "verifier_fatal_error_rate": true
+      },
+      "gate_passed": false,
+      "generated_at_utc": "2026-08-04T16:19:54.727276+00:00",
+      "label_mismatch_rate": 0.31666666666666665,
+      "model": "gpt-5.6-luna",
+      "non_integer_final_answer_count": 0,
+      "noncanonical_integer_output_count": 0,
+      "noncanonical_integer_output_rate": 0.0,
+      "pair_outcomes": {
+        "both_match": 19,
+        "neither_match": 18,
+        "one_match": 3
+      },
+      "pass_at_2": 0.55,
+      "reasoning_effort": "medium",
+      "requests_expected": 80,
+      "response_completion_rate": 0.975,
+      "response_ids": [
+        "resp_07c807a251fc2dac016a721048c92c819a998819d4e7ea4cac",
+        "resp_0cf6487f365d655e016a721048afa4819b8574db3fd1b052be",
+        "resp_0dff29e8b52baf1d016a721048c5b081999a368be2ee015175",
+        "resp_0f4d738a23e01421016a721048c838819a910cb0a6c62e76bc",
+        "resp_0005135fb9f37a24016a72104ca2748199a2d9aa5d620c9c65",
+        "resp_0fc3905d98c3a565016a72104d5d30819a96474229339cebb6",
+        "resp_07b6242e6442b781016a72104e2d58819bb59359f8eed88289",
+        "resp_0de6c167100d7b88016a72104f59d8819ab3699713023d6a5e",
+        "resp_04a6e8c22b1b8c91016a72105081fc8198ae9f20fe79cbbd2d",
+        "resp_0afded197c7c697a016a721050c0c8819a9c8deaf2faa07616",
+        "resp_02a67fea0402ca9a016a721051446c8198bd1a6cf584e84f1b",
+        "resp_0812c67bccd08fc3016a721052105c81989195d6a330f356b9",
+        "resp_06d7fdb05b21e008016a72105577d8819ba2c8d3bc9343bcc3",
+        "resp_04c232ee68d8e6a5016a7210564b80819b8e24460aee09afa5",
+        "resp_06935cdd83be329e016a72105c0020819a92806d847c08b79b",
+        "resp_06f9c006dff10ac2016a72105c12e88198b445a2ea2b12ab0c",
+        "resp_068ba8e2325184fa016a72105f5e9c8199b96b4894d99d5586",
+        "resp_064cdd1fe1368ca4016a72105f28b8819aa6de7b4b9271fa9c",
+        "resp_0d8b8f40515896ab016a7210672224819aa1587f28a5b78445",
+        "resp_00ab5943871e8d95016a721068b7a88198b14460ad12882f4a",
+        "resp_0125dd76c1fff56a016a72106ee150819ab5ca885ac8e9e42c",
+        "resp_0f74639f07e7193d016a72106f2e3c819ba3bf343ee653c125",
+        "resp_0d696841829ca1e9016a721071e5fc819a933b551978417ad6",
+        "resp_09ef0d55bedf98b7016a7210723fb0819aa7807f77664bae3b",
+        "resp_0f3418395da8b264016a7210762958819a946bea507a16ef79",
+        "resp_09cb6f68e206787c016a721076ba64819a9966bcd442bc1fa4",
+        "resp_080589316d69b33f016a72107a63b4819997794b5b4ca9ca94",
+        "resp_07ee0548cdd6f5a1016a72107c48fc819883d6d0b579492dc1",
+        "resp_05ad143d11b48828016a72107e32d0819ba8191cb3ba788d30",
+        "resp_08091006fdaf9013016a72107f18b8819b85d9d9d727ab7a6d",
+        "resp_072d56f64e05d1ea016a7210885d288199ae42649cf48a64a0",
+        "resp_08f12b807561bb0c016a72108b2174819bb7d456cd1f2cc482",
+        "resp_01cea97e38950a25016a72109050f0819b9419aca8fa1509fa",
+        "resp_0fc6de9ad4cbc525016a7210935bf4819bb8c88ef31d96c255",
+        "resp_06cd6fc6c4ce14be016a721095e234819a8345af34106cdb7d",
+        "resp_0cabd99d779ab359016a72109638748198852697ff074fb289",
+        "resp_0109be7d4c8d221a016a72109f137c819b9d2d5608d0657645",
+        "resp_0312c413dc608656016a72109fec7c8198b088d3095c6babf3",
+        "resp_0c36025b1067a463016a7210a463308198b02f4058a1dbf768",
+        "resp_04229303799f5254016a7210a53498819b928b57f744c0a91b",
+        "resp_0386fbb03b9773e8016a7210b00f08819a8fcaeec0370c7843",
+        "resp_01d5a9e4d75ca295016a7210b12254819aa80a15ef6c20299e",
+        "resp_018253a0b1b31e9f016a7210b1c14881999960e5b01edeb710",
+        "resp_0ae9f6202791c257016a7210b2e44c819ba6c7bdb56024a2f3",
+        "resp_0cb755008536f92d016a7210b58108819a9721fa94538cbee8",
+        "resp_0efed67a50a13e75016a7210b6bc2c819a9696af7480954d9e",
+        "resp_08d86ab6d29d6103016a7210b92da8819891dbe7a3c6d756b6",
+        "resp_073b2de3a84a07df016a7210bbb498819b8dbb46682b8e55a1",
+        "resp_0649a844d54af07e016a7210bcaea8819b93afb8fa6c299daa",
+        "resp_02dba0394787728e016a7210bd78e08199a7af2f62e49979c7",
+        "resp_0af28474b320728a016a7210c670d8819a8a3db4e77c53acaf",
+        "resp_032d007e3aa0aa60016a7210c8e78081988918cac58c9ee1dd",
+        "resp_05ae0f9d217a98dd016a7210ca97c0819bad4bea4785fe507a",
+        "resp_08928a4fed1fe473016a7210ccc0708199922ad7d899decae1",
+        "resp_066d474fab6cca60016a7210d00ce481998e2fa2743fd8beec",
+        "resp_03f91a7a082e2195016a7210d083c88199804054fa11905da2",
+        "resp_023c4a8037dad48f016a7210d33a8c8198979021c049d5fb03",
+        "resp_02c06aec87f76bae016a7210d3fc9c819b95d4fc7ca1684b92",
+        "resp_00f99e6f13806004016a7210d80eec819a9e82b61b63db1f50",
+        "resp_013ab05172a9a0de016a7210d85cd48198b87d5b4fdf83ddda",
+        "resp_05ba0f8f3f34080f016a7210dda0c4819bba500c40fecf58b7",
+        "resp_01c8c5be7c7a5538016a7210e08c748199aac4daa77ea18c48",
+        "resp_07fa9c69da319acc016a7210e251488199b25d6f6934656639",
+        "resp_0266f5654f091710016a7210e40668819bac62007a4a19403b",
+        "resp_06d149e0cd32c871016a7210e5f86c819bb1ccce7419716c4c",
+        "resp_0f25c2179514a53f016a7210e7b6b8819ab05b66dd7208ec35",
+        "resp_0369cc631c6d4a55016a7210ed3f7c819b9a254d8b5f2c79a0",
+        "resp_0ed5a70564ec6941016a7210ed53f48198ad0b2bcc6df8c5e7",
+        "resp_0655f0f71841d297016a7210f05a948199894c9f09a0d25860",
+        "resp_04d338dfb243a059016a7210f0a7b881988418104abff8ab38",
+        "resp_0aeb0572bc9c9ca7016a7210f47eb0819ba1959a366e05b685",
+        "resp_0e239b90cd13e327016a7210f51530819a95c86d9a3b67deb6",
+        "resp_0df4149b17a78b7e016a7210f5c310819abe9ea699c01eadcf",
+        "resp_0d575092ba1d806f016a7210f8d8f8819bb8c90f5b300badc3",
+        "resp_03dba1d1cdffd4dc016a7210f9f3d4819bbfcb937e7b46db91",
+        "resp_0b26442a8ee7457c016a7210fad8b88199a0850acf42fa1995",
+        "resp_08ee57e73bbb1276016a7210fb6f7c819b870e59e07f331319",
+        "resp_0a16dadb1a9e6aa0016a7210fba7688198a35affe8a62a5cb9",
+        "resp_0225b3927889a316016a7210fdc3e08199a11abe6d94058b9c",
+        "resp_0f75a07e00660023016a7210fe4250819aa6942bf5a8c80f73"
+      ],
+      "responses_received": 80,
+      "rows_expected": 40,
+      "rows_with_both_candidates": 40,
+      "schema_version": 3,
+      "stage": "comparison",
+      "truncation_rate": 0.025,
+      "unsuitable_rate": 0.225,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 42636,
+        "output_tokens": 72753,
+        "p95_input_tokens": 667.3,
+        "p95_output_tokens": 3359.0,
+        "reasoning_tokens": 56344
+      },
+      "verifier_fatal_error_rate": 0.0
+    },
+    "smoke:low": {
+      "canonical_integer_extraction_rate": 1.0,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "first_candidate_exact_accuracy": 0.5,
+      "gate_checks": {
+        "canonical_integer_extraction": true,
+        "completed_json_parse": true,
+        "completed_schema": true,
+        "non_integer_final_answers": true,
+        "response_completion": true,
+        "verifier_fatal_error_rate": true
+      },
+      "gate_passed": true,
+      "generated_at_utc": "2026-08-04T16:12:58.755253+00:00",
+      "label_mismatch_rate": 0.21428571428571427,
+      "model": "gpt-5.6-luna",
+      "non_integer_final_answer_count": 0,
+      "noncanonical_integer_output_count": 0,
+      "noncanonical_integer_output_rate": 0.0,
+      "pair_outcomes": {
+        "both_match": 4,
+        "neither_match": 3,
+        "one_match": 3
+      },
+      "pass_at_2": 0.7,
+      "reasoning_effort": "low",
+      "requests_expected": 20,
+      "response_completion_rate": 1.0,
+      "response_ids": [
+        "resp_085e51c8dd79081c016a720f6c8b8c8198ae0edc504a7ff567",
+        "resp_0af9111c09461e3b016a720f6c66e88199bf5b703d2ab10d1c",
+        "resp_0306f3a220f4a2d0016a720f6c5924819b9f2f96348c0cfdcb",
+        "resp_0f49301e5af9ac9b016a720f6c8c0c819b9c47b8358d03f8d3",
+        "resp_08fc7b7db4ed347a016a720f6fad5081998c7d315a4f2e3807",
+        "resp_092757d61e826aee016a720f6fc980819aa4963f6e6ab98dea",
+        "resp_0a5b92bf8666496e016a720f71c10c819a849af9fa93121f1c",
+        "resp_02913d1f88ca67ab016a720f71e5fc819ab0bf0eecd108622c",
+        "resp_0b1a3a332bc40030016a720f72db70819a92320d891fe3f399",
+        "resp_07a8e9f14b04dbf5016a720f72fb588199aec9a12c6e1ab282",
+        "resp_01848cb2f5c5ab34016a720f78625c819b8bce7f9d2c50334c",
+        "resp_06c2a77d176d5e31016a720f78e86c819998698e023e34e0e9",
+        "resp_012f5e82f6f62e71016a720f7916c881999dc8677f878d1887",
+        "resp_0b5dddb79d7dda21016a720f7996208199b4e684a8fbae1de6",
+        "resp_04b0f09b95e9ca44016a720f7c46648198994ec73cf7cdafcf",
+        "resp_02fde85024c7da37016a720f7cf39c8198823c752847f7ee03",
+        "resp_06223613727a88db016a720f7d5554819b8c123dad8952a550",
+        "resp_0a50f85e0b2c34fc016a720f7f80e08198abc103944f1b7eac",
+        "resp_0b053ef97d5902ef016a720f8031488199815801e1b6b61d9b",
+        "resp_06c9a3ba2b5cbd44016a720f8293708199a9657a6feb0e9337"
+      ],
+      "responses_received": 20,
+      "rows_expected": 10,
+      "rows_with_both_candidates": 10,
+      "schema_version": 3,
+      "stage": "smoke",
+      "truncation_rate": 0.0,
+      "unsuitable_rate": 0.3,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 10358,
+        "output_tokens": 8677,
+        "p95_input_tokens": 596.25,
+        "p95_output_tokens": 710.8500000000003,
+        "reasoning_tokens": 4661
+      },
+      "verifier_fatal_error_rate": 0.0
+    }
+  },
+  "raw_responses": {
+    "shards": 180,
+    "tree_sha256": "b99cb5932adc62ff5e5f647c1d3127a27ea8146ef535605261840209b5b5892c"
+  },
+  "runtime_artifacts": {
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\comparison_low_metrics.json": {
+      "bytes": 6468,
+      "sha256": "7c6a4d4854249b0c1d34a291dc0e6099287f86ca225bcada98870a05927f59d2"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\comparison_medium_metrics.json": {
+      "bytes": 6484,
+      "sha256": "b8880e796d8a2c86f38b4a8395ca9ad98f8134d7af055b4302b084e190773a14"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\cost_ledger.jsonl": {
+      "bytes": 163976,
+      "sha256": "a57c994b4c751900a638f49922c99137fc76ca38e5667ad77ce892966beaa695"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\request_manifest.jsonl": {
+      "bytes": 66665,
+      "sha256": "41e64eba73d26fd0f008a95883d31c607fc486a74709b5d0d682d5fd7e9f26c0"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\selected_effort.json": {
+      "bytes": 557,
+      "sha256": "89aac20b117c169f68a9f72fa99f8311fed90533ec8bbfab626ab5d62ac15380"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\smoke_low_metrics.json": {
+      "bytes": 2630,
+      "sha256": "75a8f38c891e51132d68b4bd41c5697bab296b4bcb081add40848e1e75cafaa5"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\teacher_request_ids.txt": {
+      "bytes": 650,
+      "sha256": "17284a065efc362a21482f43df3330f9085ae918d01a86e51d4dbdc9a83656b6"
+    }
+  },
+  "safe_resume_command": "python scripts/run_phase2_v2_luna.py --config configs/phase2_v3_final_v1.json metrics --stage comparison --effort low",
+  "schema_version": 3,
+  "selected_effort": {
+    "actual_comparison_cost_usd": {
+      "low": 0.069888,
+      "medium": 0.0958308
+    },
+    "comparison_gate_passed": false,
+    "metrics_paths": {
+      "low": "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\comparison_low_metrics.json",
+      "medium": "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\comparison_medium_metrics.json"
+    },
+    "schema_version": 3,
+    "selected_at_utc": "2026-08-04T16:20:03.515669+00:00",
+    "selected_effort": null,
+    "selection_rule": "lowest actual paid comparison cost among quality-gate passing efforts"
+  },
+  "sources": {
+    "data\\deep_chal_math_leaderboard.csv": {
+      "external_transmission": false,
+      "role": "local_protection_and_decontamination_only",
+      "rows": 1000,
+      "sha256": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7"
+    },
+    "data\\deep_chal_math_train.csv": {
+      "role": "provenance_and_filter_reproduction_only",
+      "rows": 17000,
+      "sha256": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+      "used_to_construct_phase2_eligible": false
+    },
+    "data\\deep_chal_math_train_filtered_final_v1.csv": {
+      "role": "canonical_modeling_dataset",
+      "rows": 16359,
+      "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a"
+    }
+  },
+  "status": "blocked_comparison_gate",
+  "stop_reason": "No low/medium comparison setting passed the required gate.",
+  "teacher_contract": {
+    "answer_hidden": true,
+    "candidates_per_row": 2,
+    "canonical_integer_regex": "^-?(?:0|[1-9][0-9]*)$",
+    "final_grades": [
+      "A",
+      "B"
+    ],
+    "grade_c_used": false,
+    "incorrect_or_noncanonical_answers_repaired": false,
+    "store": false,
+    "tools": []
+  },
+  "usage_and_cost": {
+    "active_reservations": {},
+    "committed_cost_usd": 0.7211212,
+    "hard_limit_usd": 4.5,
+    "historical_paid_responses": 612,
+    "historical_source_ledger_path": "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\cost_ledger.jsonl",
+    "historical_source_ledger_sha256": "815d19d4dde864d4d7540e588c051f7643ea468d71a625bd92128fedc368a278",
+    "ledger_events": 581,
+    "paid_cost_usd": 0.7211212,
+    "remaining_paid_budget_usd": 3.7788788,
+    "tokens": {
+      "cache_write_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 354998,
+      "output_tokens": 541768,
+      "reasoning_tokens": 372194
+    },
+    "total_paid_responses": 792,
+    "v2_paid_responses": 180
+  },
+  "verifier_before_after": null
+}

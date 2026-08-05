@@ -1,0 +1,55 @@
+{
+  "splits": {
+    "random": {
+      "train_rows": 14723,
+      "validation_rows": 1636,
+      "validation_fraction_actual": 0.10000611284308332,
+      "stratified_by": [
+        "question_length",
+        "answer_sign",
+        "answer_magnitude",
+        "problem_type"
+      ]
+    },
+    "template": {
+      "train_rows": 14723,
+      "validation_rows": 1636,
+      "validation_fraction_actual": 0.10000611284308332,
+      "groups_total": 16201,
+      "validation_groups": 1616
+    },
+    "hard_diagnostic": {
+      "rows": 554,
+      "selection_rule": "up to 96 deterministic hash-ranked rows per documented hard category",
+      "category_counts": {
+        "combinatorics_probability": 96,
+        "condition_omission_risk": 96,
+        "geometry": 96,
+        "large_integer_answer": 96,
+        "long_word_problem": 96,
+        "number_theory": 96
+      }
+    },
+    "format_diagnostic": {
+      "rows": 256,
+      "selection_rule": "up to 64 deterministic hash-ranked rows per documented format category",
+      "category_counts": {
+        "large_integer_answer": 64,
+        "multiple_numbers_in_question": 64,
+        "negative_answer": 64,
+        "zero_answer": 64
+      },
+      "synthetic_parser_cases_are_separate": true
+    }
+  },
+  "checks": {
+    "source_ids_unique": true,
+    "random_train_validation_id_overlap": 0,
+    "template_train_validation_id_overlap": 0,
+    "template_group_leakage": 0,
+    "random_partition_complete": true,
+    "template_partition_complete": true,
+    "leaderboard_audit_complete": true,
+    "leaderboard_ids_match_legacy_in_order": true
+  }
+}

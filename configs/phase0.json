@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "phase": 0,
+  "objective": "Freeze competition-compliant rules, runtime environment, and deterministic smoke inference.",
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "cache_dir": "/workspace/.cache/huggingface",
+    "trust_remote_code": false
+  },
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "experiment_id": {
+    "format": "p{phase}_{utc_timestamp}_{objective_slug}_{revision8}_s{seed}",
+    "example": "p0_20260803T102000Z_env-smoke_aa8e7253_s42",
+    "artifact_directory": "artifacts/experiments/{experiment_id}",
+    "rules": [
+      "Use lowercase ASCII for objective_slug.",
+      "Use a full UTC timestamp in YYYYMMDDTHHMMSSZ form.",
+      "Use the first eight characters of the pinned model commit.",
+      "Create a new directory for every rerun; never overwrite a prior experiment."
+    ]
+  },
+  "smoke_inference": {
+    "experiment_id": "p0_20260803T102000Z_env-smoke_aa8e7253_s42",
+    "seed": 42,
+    "do_sample": false,
+    "temperature": null,
+    "max_new_tokens": 192,
+    "prompt_kind": "short synthetic arithmetic, not a competition question",
+    "required_final_answer_prefix": "FINAL_ANSWER:"
+  },
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "torch_deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true
+  },
+  "manifest_templates": {
+    "experiment": "configs/experiment-manifest.template.json",
+    "external_data": "configs/external-data-manifest.template.json"
+  },
+  "compliance": {
+    "allowed_answer_source": "model_outputs_only",
+    "forbidden_test_time_capabilities": {
+      "external_api_or_web_search": false,
+      "external_model": false,
+      "generated_code_execution": false,
+      "python_or_sympy_math_feedback": false,
+      "sat_smt_or_numeric_solver": false,
+      "deterministic_math_verifier_for_selection_or_correction": false,
+      "external_calculation_feedback": false,
+      "per_question_dynamic_retrieval": false
+    }
+  }
+}

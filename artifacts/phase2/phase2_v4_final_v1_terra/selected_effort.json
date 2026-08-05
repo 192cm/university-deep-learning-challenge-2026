@@ -1,0 +1,15 @@
+{
+  "actual_comparison_cost_usd": {
+    "low": 1.092885,
+    "medium": 1.30707
+  },
+  "comparison_gate_passed": false,
+  "metrics_paths": {
+    "low": "artifacts\\phase2\\phase2_v4_final_v1_terra\\comparison_low_metrics.json",
+    "medium": "artifacts\\phase2\\phase2_v4_final_v1_terra\\comparison_medium_metrics.json"
+  },
+  "schema_version": 4,
+  "selected_at_utc": "2026-08-04T17:07:18.332005+00:00",
+  "selected_effort": null,
+  "selection_rule": "lowest actual paid comparison cost among quality-gate passing efforts"
+}

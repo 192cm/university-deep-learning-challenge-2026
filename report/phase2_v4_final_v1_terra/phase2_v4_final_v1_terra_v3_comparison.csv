@@ -1,0 +1,5 @@
+experiment,model,effort,completion,completed_json,completed_schema,canonical_integer,first_exact,pass_at_2,fatal_verifier,non_integer_count,unsuitable_requests,truncated_requests,both_match,one_match,neither_match,answer_agreement,gate_passed
+v3_luna,gpt-5.6-luna,low,1.0,1.0,1.0,1.0,0.525,0.525,0.0,0,18,0,21,0,19,0.675,False
+v3_luna,gpt-5.6-luna,medium,0.975,1.0,1.0,1.0,0.525,0.55,0.0,0,18,2,19,3,18,0.65,False
+v4_terra,gpt-5.6-terra,low,1.0,1.0,1.0,0.9830508474576272,0.5,0.55,0.0,1,21,0,19,3,18,0.6,False
+v4_terra,gpt-5.6-terra,medium,0.9625,1.0,1.0,1.0,0.55,0.575,0.0,0,21,3,22,1,17,0.65,False

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "phase": 1,
+  "objective": "Build fixed leakage-controlled evaluation splits and reproducible base baselines.",
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "cache_dir": "/workspace/.cache/huggingface",
+    "local_files_only": true,
+    "trust_remote_code": false,
+    "dtype": "bfloat16"
+  },
+  "data": {
+    "train": {
+      "path": "data/deep_chal_math_train.csv",
+      "rows": 17000,
+      "sha256": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+    },
+    "train_filtered": {
+      "path": "data/deep_chal_math_train_filtered.csv",
+      "rows": 16528,
+      "sha256": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98"
+    },
+    "train_filter_audit": {
+      "path": "data/deep_chal_math_train_filter_audit.csv",
+      "rows": 17000,
+      "sha256": "3275fc5ad3dfc7ef6f3e699714c1e38302642040c88ab2c414c930b669b949dd"
+    },
+    "leaderboard": {
+      "path": "data/deep_chal_math_leaderboard.csv",
+      "rows": 1000,
+      "sha256": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7"
+    },
+    "leaderboard_filtered": {
+      "path": "data/deep_chal_math_leaderboard_filtered.csv",
+      "rows": 831,
+      "sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1"
+    }
+  },
+  "split": {
+    "version": "phase1_v1",
+    "output_dir": "data/splits/phase1_v1",
+    "seed": 42,
+    "validation_fraction": 0.1
+  },
+  "common_seeds": [42, 2026, 3407],
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "pytorch_cuda_alloc_conf": "expandable_segments:True",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "sampling_reproduction_tolerance_accuracy": 0.0
+  },
+  "baselines": {
+    "B0": {
+      "description": "Base model, minimal answer-format instruction, greedy decoding.",
+      "do_sample": false,
+      "seeds": [42],
+      "batch_size": 256,
+      "max_batch_tokens": 294912,
+      "max_input_tokens": 2048,
+      "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+      "generation": {
+        "max_new_tokens": 1024,
+        "temperature": null,
+        "top_p": null
+      }
+    },
+    "B1": {
+      "description": "Base model, step-by-step reasoning and internal verification instruction, greedy decoding.",
+      "do_sample": false,
+      "seeds": [42],
+      "batch_size": 256,
+      "max_batch_tokens": 294912,
+      "max_input_tokens": 2048,
+      "prompt_template": "Solve the problem carefully.\n\n1. Identify the quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the calculation and units.\n4. Write the final answer on the last line as:\nFINAL_ANSWER: <answer>\n\nDo not write anything after the final-answer line.\n\nProblem:\n{question}",
+      "generation": {
+        "max_new_tokens": 1024,
+        "temperature": null,
+        "top_p": null
+      }
+    },
+    "B2": {
+      "description": "B1 prompt with three model samples and string-only self-consistency metrics.",
+      "do_sample": true,
+      "seeds": [42, 2026, 3407],
+      "batch_size": 256,
+      "max_batch_tokens": 294912,
+      "max_input_tokens": 2048,
+      "prompt_template": "Solve the problem carefully.\n\n1. Identify the quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the calculation and units.\n4. Write the final answer on the last line as:\nFINAL_ANSWER: <answer>\n\nDo not write anything after the final-answer line.\n\nProblem:\n{question}",
+      "generation": {
+        "max_new_tokens": 1024,
+        "temperature": 0.7,
+        "top_p": 0.9
+      }
+    }
+  },
+  "compliance": {
+    "generation_labels_loaded": false,
+    "ground_truth_use": "metrics_only_after_generation",
+    "candidate_selection": "extracted_model_string_vote_counts_only",
+    "math_equivalence_solver": false,
+    "generated_code_execution": false,
+    "python_or_sympy_math_feedback": false,
+    "external_api_or_web_search": false,
+    "external_model": false,
+    "dynamic_retrieval": false
+  }
+}

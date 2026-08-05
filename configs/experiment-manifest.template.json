@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "experiment_id": null,
+  "created_at_kst": null,
+  "created_at_utc": null,
+  "objective": null,
+  "code_commit_or_diff": {
+    "git_head": null,
+    "git_status_short": null,
+    "diff_sha256": null
+  },
+  "base_model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "tokenizer": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "dataset_paths": [],
+  "dataset_sha256": {},
+  "split_version": null,
+  "training_config": {},
+  "inference_config": {},
+  "seeds": [],
+  "hardware": {
+    "gpu_model": null,
+    "gpu_uuid": null,
+    "gpu_count": null,
+    "vram_bytes_per_gpu": null,
+    "cpu": null,
+    "ram_bytes": null
+  },
+  "software": {
+    "python": null,
+    "pytorch": null,
+    "pytorch_cuda": null,
+    "transformers": null,
+    "accelerate": null,
+    "peft": null,
+    "trl": null,
+    "bitsandbytes": null,
+    "nvidia_driver": null
+  },
+  "runtime": {
+    "started_at_utc": null,
+    "finished_at_utc": null,
+    "wall_clock_seconds": null
+  },
+  "metrics": {
+    "greedy_accuracy": null,
+    "sample_accuracy": null,
+    "pass_at_k": {},
+    "majority_at_k": {},
+    "answer_agreement": null,
+    "invalid_output_rate": null,
+    "median_output_tokens": null,
+    "p95_latency_seconds": null,
+    "estimated_total_final_test_runtime_seconds": null,
+    "random_holdout": {},
+    "template_group_holdout": {}
+  },
+  "artifact_paths": [],
+  "raw_generation_paths": [],
+  "decision": "rerun",
+  "decision_reason": null
+}

@@ -1,0 +1,4 @@
+stage,effort,id,variant,incomplete_reason,output_tokens,reasoning_tokens
+comparison,medium,train-009669,b,max_output_tokens,6144,6144
+comparison,medium,train-014215,a,max_output_tokens,6144,6144
+comparison,medium,train-014215,b,max_output_tokens,6144,6144

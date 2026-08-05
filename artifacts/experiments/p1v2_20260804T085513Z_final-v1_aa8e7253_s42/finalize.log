@@ -1,0 +1,91 @@
+Waiting for B2 generation to finish
+B2 complete; evaluating all baselines
+{
+  "random_template_gaps": {
+    "B0": {
+      "metric": "greedy_accuracy",
+      "random": 0.6246943765281173,
+      "template": 0.6363080684596577,
+      "random_minus_template": -0.011613691931540382
+    },
+    "B1": {
+      "metric": "greedy_accuracy",
+      "random": 0.6124694376528117,
+      "template": 0.6338630806845966,
+      "random_minus_template": -0.021393643031784926
+    },
+    "B2": {
+      "metric": "sample_accuracy",
+      "random": 0.5925020374898126,
+      "template": 0.615118174409128,
+      "random_minus_template": -0.02261613691931541
+    }
+  }
+}
+Running independent reproduction checks
+{"event": "start", "baseline": "B0", "evaluation_ids": 8, "expected_generations": 8, "cached_generations": 0, "pending_generations": 8, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "offline": true}
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 11601.98it/s]
+{"event": "progress", "baseline": "B0", "complete": 8, "total": 8, "rate_generations_per_second": 0.23045476103711401, "eta_seconds": 0.0, "parse_errors": 0, "gpu_peak_memory_mib": 6320.93359375}
+{"event": "complete", "schema_version": 1, "baseline_id": "B0", "started_at_utc": "2026-08-04T12:32:30.130242+00:00", "ended_at_utc": "2026-08-04T12:33:04.844768+00:00", "wall_seconds_this_process": 34.71452545899956, "evaluation_ids": 8, "expected_generations": 8, "cached_at_start": 0, "generated_this_process": 8, "generation_rows": 8, "generation_file": "/root/workspace/university-deep-learning-challenge-2026-phase1-v2-final-v1-20260804T085513Z/artifacts/experiments/p1v2_20260804T085513Z_final-v1_aa8e7253_s42/reproduction/greedy-a/generations.jsonl", "generation_sha256": "1270f9bf9904a3b7f6d8d6a497a2e7a90fd7c14847eda2ed4dea4f7bccc359ce", "model": {"id": "Qwen/Qwen2.5-3B-Instruct", "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "local_files_only": true, "hf_hub_offline": "1", "transformers_offline": "1", "pytorch_cuda_alloc_conf": "expandable_segments:True", "dtype": "bfloat16"}, "baseline_config": {"description": "Base model, minimal answer-format instruction, greedy decoding.", "do_sample": false, "seeds": [42], "batch_size": 256, "max_batch_tokens": 294912, "max_input_tokens": 2048, "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}", "generation": {"max_new_tokens": 1024, "temperature": null, "top_p": null}}, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "seeds": [42], "parse_errors": 0, "gpu": "NVIDIA GeForce RTX 4090", "gpu_peak_memory_mib": 6320.93359375, "torch_version": "2.12.0+cu130", "python_version": "3.12.13", "source_data": {"path": "data/deep_chal_math_train_filtered_final_v1.csv", "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a", "labels_loaded_by_generation": false}, "split_dir": "data/splits/phase1_v2_final_v1", "split_manifest_sha256": "6749fc66d027180e93f81bcee00ad5adb9864fcdf1d346cd6ed3aca66d0d50c6"}
+{"event": "start", "baseline": "B0", "evaluation_ids": 8, "expected_generations": 8, "cached_generations": 0, "pending_generations": 8, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "offline": true}
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 11814.56it/s]
+{"event": "progress", "baseline": "B0", "complete": 8, "total": 8, "rate_generations_per_second": 0.3222227359065905, "eta_seconds": 0.0, "parse_errors": 0, "gpu_peak_memory_mib": 6320.93359375}
+{"event": "complete", "schema_version": 1, "baseline_id": "B0", "started_at_utc": "2026-08-04T12:33:07.824228+00:00", "ended_at_utc": "2026-08-04T12:33:32.652130+00:00", "wall_seconds_this_process": 24.827900106000016, "evaluation_ids": 8, "expected_generations": 8, "cached_at_start": 0, "generated_this_process": 8, "generation_rows": 8, "generation_file": "/root/workspace/university-deep-learning-challenge-2026-phase1-v2-final-v1-20260804T085513Z/artifacts/experiments/p1v2_20260804T085513Z_final-v1_aa8e7253_s42/reproduction/greedy-b/generations.jsonl", "generation_sha256": "9fcb553335256478b5a092d7724f83bc6a04df5acab4589ddbd589140327afc2", "model": {"id": "Qwen/Qwen2.5-3B-Instruct", "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "local_files_only": true, "hf_hub_offline": "1", "transformers_offline": "1", "pytorch_cuda_alloc_conf": "expandable_segments:True", "dtype": "bfloat16"}, "baseline_config": {"description": "Base model, minimal answer-format instruction, greedy decoding.", "do_sample": false, "seeds": [42], "batch_size": 256, "max_batch_tokens": 294912, "max_input_tokens": 2048, "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}", "generation": {"max_new_tokens": 1024, "temperature": null, "top_p": null}}, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "seeds": [42], "parse_errors": 0, "gpu": "NVIDIA GeForce RTX 4090", "gpu_peak_memory_mib": 6320.93359375, "torch_version": "2.12.0+cu130", "python_version": "3.12.13", "source_data": {"path": "data/deep_chal_math_train_filtered_final_v1.csv", "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a", "labels_loaded_by_generation": false}, "split_dir": "data/splits/phase1_v2_final_v1", "split_manifest_sha256": "6749fc66d027180e93f81bcee00ad5adb9864fcdf1d346cd6ed3aca66d0d50c6"}
+{"event": "start", "baseline": "B2", "evaluation_ids": 8, "expected_generations": 24, "cached_generations": 0, "pending_generations": 24, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "offline": true}
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 12267.77it/s]
+{"event": "progress", "baseline": "B2", "complete": 8, "total": 24, "rate_generations_per_second": 0.3314728134183173, "eta_seconds": 48.26941864402034, "parse_errors": 1, "gpu_peak_memory_mib": 6325.92138671875}
+{"event": "progress", "baseline": "B2", "complete": 16, "total": 24, "rate_generations_per_second": 0.2926452114727605, "eta_seconds": 27.33685598250304, "parse_errors": 2, "gpu_peak_memory_mib": 6385.83935546875}
+{"event": "progress", "baseline": "B2", "complete": 24, "total": 24, "rate_generations_per_second": 0.2952104800456432, "eta_seconds": 0.0, "parse_errors": 4, "gpu_peak_memory_mib": 6385.849609375}
+{"event": "complete", "schema_version": 1, "baseline_id": "B2", "started_at_utc": "2026-08-04T12:33:35.719434+00:00", "ended_at_utc": "2026-08-04T12:34:57.018150+00:00", "wall_seconds_this_process": 81.29871431899664, "evaluation_ids": 8, "expected_generations": 24, "cached_at_start": 0, "generated_this_process": 24, "generation_rows": 24, "generation_file": "/root/workspace/university-deep-learning-challenge-2026-phase1-v2-final-v1-20260804T085513Z/artifacts/experiments/p1v2_20260804T085513Z_final-v1_aa8e7253_s42/reproduction/sampling-a/generations.jsonl", "generation_sha256": "fdaedcddd3095e1cebd04270826abf7ef0f6fd802e760c2386b13a89a3e6d54b", "model": {"id": "Qwen/Qwen2.5-3B-Instruct", "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "local_files_only": true, "hf_hub_offline": "1", "transformers_offline": "1", "pytorch_cuda_alloc_conf": "expandable_segments:True", "dtype": "bfloat16"}, "baseline_config": {"description": "B1 prompt with three model samples and string-only self-consistency metrics.", "do_sample": true, "seeds": [42, 2026, 3407], "batch_size": 256, "max_batch_tokens": 294912, "max_input_tokens": 2048, "prompt_template": "Solve the problem carefully.\n\n1. Identify the quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the calculation and units.\n4. Write the final answer on the last line as:\nFINAL_ANSWER: <answer>\n\nDo not write anything after the final-answer line.\n\nProblem:\n{question}", "generation": {"max_new_tokens": 1024, "temperature": 0.7, "top_p": 0.9}}, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "seeds": [42, 2026, 3407], "parse_errors": 4, "gpu": "NVIDIA GeForce RTX 4090", "gpu_peak_memory_mib": 6385.849609375, "torch_version": "2.12.0+cu130", "python_version": "3.12.13", "source_data": {"path": "data/deep_chal_math_train_filtered_final_v1.csv", "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a", "labels_loaded_by_generation": false}, "split_dir": "data/splits/phase1_v2_final_v1", "split_manifest_sha256": "6749fc66d027180e93f81bcee00ad5adb9864fcdf1d346cd6ed3aca66d0d50c6"}
+{"event": "start", "baseline": "B2", "evaluation_ids": 8, "expected_generations": 24, "cached_generations": 0, "pending_generations": 24, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "offline": true}
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 11261.55it/s]
+{"event": "progress", "baseline": "B2", "complete": 8, "total": 24, "rate_generations_per_second": 0.32928704925619096, "eta_seconds": 48.58982470200863, "parse_errors": 1, "gpu_peak_memory_mib": 6325.92138671875}
+{"event": "progress", "baseline": "B2", "complete": 16, "total": 24, "rate_generations_per_second": 0.3135083139075838, "eta_seconds": 25.517664588500338, "parse_errors": 2, "gpu_peak_memory_mib": 6385.83935546875}
+{"event": "progress", "baseline": "B2", "complete": 24, "total": 24, "rate_generations_per_second": 0.30945127455950716, "eta_seconds": 0.0, "parse_errors": 4, "gpu_peak_memory_mib": 6385.849609375}
+{"event": "complete", "schema_version": 1, "baseline_id": "B2", "started_at_utc": "2026-08-04T12:34:59.983563+00:00", "ended_at_utc": "2026-08-04T12:36:17.540829+00:00", "wall_seconds_this_process": 77.55726399699051, "evaluation_ids": 8, "expected_generations": 24, "cached_at_start": 0, "generated_this_process": 24, "generation_rows": 24, "generation_file": "/root/workspace/university-deep-learning-challenge-2026-phase1-v2-final-v1-20260804T085513Z/artifacts/experiments/p1v2_20260804T085513Z_final-v1_aa8e7253_s42/reproduction/sampling-b/generations.jsonl", "generation_sha256": "bf01595d6ee1c658d7fa18bb149f27d8694f57fe4d833d8244d6074ee0cce656", "model": {"id": "Qwen/Qwen2.5-3B-Instruct", "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "local_files_only": true, "hf_hub_offline": "1", "transformers_offline": "1", "pytorch_cuda_alloc_conf": "expandable_segments:True", "dtype": "bfloat16"}, "baseline_config": {"description": "B1 prompt with three model samples and string-only self-consistency metrics.", "do_sample": true, "seeds": [42, 2026, 3407], "batch_size": 256, "max_batch_tokens": 294912, "max_input_tokens": 2048, "prompt_template": "Solve the problem carefully.\n\n1. Identify the quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the calculation and units.\n4. Write the final answer on the last line as:\nFINAL_ANSWER: <answer>\n\nDo not write anything after the final-answer line.\n\nProblem:\n{question}", "generation": {"max_new_tokens": 1024, "temperature": 0.7, "top_p": 0.9}}, "max_batch_size": 8, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "seeds": [42, 2026, 3407], "parse_errors": 4, "gpu": "NVIDIA GeForce RTX 4090", "gpu_peak_memory_mib": 6385.849609375, "torch_version": "2.12.0+cu130", "python_version": "3.12.13", "source_data": {"path": "data/deep_chal_math_train_filtered_final_v1.csv", "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a", "labels_loaded_by_generation": false}, "split_dir": "data/splits/phase1_v2_final_v1", "split_manifest_sha256": "6749fc66d027180e93f81bcee00ad5adb9864fcdf1d346cd6ed3aca66d0d50c6"}
+Running final Phase 1 verification
+PASS split_deterministic_hashes_identical
+PASS random_split_has_no_id_overlap
+PASS template_split_has_no_id_or_group_leakage
+PASS leaderboard_audit_has_exactly_1000_unique_ids
+PASS data_provenance_passed
+PASS source_and_derived_data_match_fixed_hashes
+PASS split_manifest_matches_configured_version_and_canonical_hash
+PASS all_split_ids_are_canonical_and_exclusions_are_absent
+PASS all_baseline_generations_complete_unique_pinned_and_offline
+PASS metrics_cover_all_baselines_and_scopes
+PASS inference_code_has_no_forbidden_imports_or_execution_calls
+PASS independent_greedy_reproduction_exact
+PASS seeded_sampling_reproduction_within_tolerance
+PASS phase0_verification_remains_passed
+Collecting final environment and running tests
+/root/workspace/university-deep-learning-challenge-2026-phase1-v2-final-v1-20260804T085513Z/artifacts/experiments/p1v2_20260804T085513Z_final-v1_aa8e7253_s42/environment.final.json
+/venv/main/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+..F.....................................................
+======================================================================
+FAIL: test_exact_core_package_versions (test_phase0_environment.Phase0EnvironmentTests.test_exact_core_package_versions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/workspace/university-deep-learning-challenge-2026-phase1-v2-final-v1-20260804T085513Z/tests/test_phase0_environment.py", line 27, in test_exact_core_package_versions
+    self.assertEqual(actual, EXPECTED_VERSIONS)
+AssertionError: {'torch': '2.12.0+cu130', 'transformers': '5.14.1', 'ac[152 chars]2.2'} != {'torch': '2.11.0+cu128', 'transformers': '5.14.1', 'ac[152 chars]2.2'}
+  {'accelerate': '1.14.0',
+   'bitsandbytes': '0.50.0',
+   'huggingface-hub': '1.18.0',
+   'peft': '0.20.0',
+   'safetensors': '0.8.0',
+   'tokenizers': '0.22.2',
+-  'torch': '2.12.0+cu130',
+?               ^      ^^
+
++  'torch': '2.11.0+cu128',
+?               ^      ^^
+
+   'transformers': '5.14.1',
+   'trl': '1.9.2'}
+
+----------------------------------------------------------------------
+Ran 56 tests in 4.754s
+
+FAILED (failures=1)

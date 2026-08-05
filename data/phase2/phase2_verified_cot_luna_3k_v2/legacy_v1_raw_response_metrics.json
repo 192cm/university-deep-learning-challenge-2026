@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-08-04T05:57:47.763872+00:00",
+  "metrics": {
+    "low": {
+      "canonical_integer_extraction_rate": 0.601010101010101,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "corrected_verifier_error_rate": 0.0,
+      "effort": "low",
+      "first_candidate_exact_accuracy": 0.42,
+      "label_mismatch_rate": 0.2689075630252101,
+      "legacy_json_parse_rate_including_incomplete": 0.99,
+      "noncanonical_integer_output_count": 79,
+      "noncanonical_integer_output_rate": 0.398989898989899,
+      "old_verifier_error_rate": 0.28,
+      "pair_outcomes": {
+        "both_match": 39,
+        "neither_match": 52,
+        "one_match": 9
+      },
+      "pass_at_2": 0.48,
+      "requests_expected": 200,
+      "response_completion_rate": 0.99,
+      "responses_received": 200,
+      "rows_expected": 100,
+      "rows_with_both_candidates": 100,
+      "truncation_rate": 0.01,
+      "unsuitable_rate": 0.0
+    },
+    "medium": {
+      "canonical_integer_extraction_rate": 0.5906735751295337,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "corrected_verifier_error_rate": 0.0,
+      "effort": "medium",
+      "first_candidate_exact_accuracy": 0.49,
+      "label_mismatch_rate": 0.14035087719298245,
+      "legacy_json_parse_rate_including_incomplete": 0.965,
+      "noncanonical_integer_output_count": 79,
+      "noncanonical_integer_output_rate": 0.40932642487046633,
+      "old_verifier_error_rate": 0.31,
+      "pair_outcomes": {
+        "both_match": 45,
+        "neither_match": 47,
+        "one_match": 8
+      },
+      "pass_at_2": 0.53,
+      "requests_expected": 200,
+      "response_completion_rate": 0.965,
+      "responses_received": 200,
+      "rows_expected": 100,
+      "rows_with_both_candidates": 100,
+      "truncation_rate": 0.035,
+      "unsuitable_rate": 0.0
+    }
+  },
+  "records_reanalyzed": 400,
+  "reuse_audit_failed": 0,
+  "reuse_audit_passed": 400,
+  "reuse_audit_path": "data\\phase2\\phase2_verified_cot_luna_3k_v2\\legacy_v1_reuse_audit.csv",
+  "schema_version": 2,
+  "source_raw_responses_immutable": true,
+  "source_request_manifest": "artifacts\\phase2\\phase2_verified_cot_luna_budget5_v1\\request_manifest.jsonl"
+}

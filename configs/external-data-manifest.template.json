@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "dataset_name": null,
+  "source_url": null,
+  "publisher": null,
+  "license": null,
+  "license_url": null,
+  "public_free_equal_access_confirmed": false,
+  "exact_revision_or_version": null,
+  "retrieved_at_utc": null,
+  "retrieval_command": null,
+  "raw_paths": [],
+  "raw_sha256": {},
+  "input_row_count": null,
+  "filtering_script": null,
+  "filtering_config": {},
+  "removed_rows_by_reason": {},
+  "output_paths": [],
+  "output_row_count": null,
+  "output_sha256": {},
+  "decontamination": {
+    "competition_train_exact": null,
+    "competition_train_normalized_template": null,
+    "leaderboard_all_1000_exact": null,
+    "leaderboard_all_1000_normalized_template": null,
+    "leaderboard_all_1000_near_duplicate": null,
+    "audit_artifact": null
+  },
+  "teacher_api": {
+    "used": false,
+    "provider": null,
+    "model": null,
+    "model_revision": null,
+    "generation_config": {},
+    "prompt_sha256": null,
+    "response_archive": null,
+    "cost": null
+  },
+  "approved_for_training": false,
+  "approval_reason": null
+}

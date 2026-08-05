@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "full_suite": {
+    "command": "/venv/main/bin/python -m unittest discover -s tests -p test_*.py",
+    "tests_run": 56,
+    "passed": 55,
+    "failed": 1,
+    "log": "finalize.log"
+  },
+  "focused_suite": {
+    "description": "All test modules except the historical Phase 0 image-specific environment module",
+    "tests_run": 52,
+    "passed": true,
+    "log": "focused-tests.log",
+    "log_sha256": "47bbe9a310ef85a2516975c1b583fbf7cbfb0b52714f150a55a4a005f095bfb5"
+  },
+  "environment_deviation": {
+    "test": "test_phase0_environment.Phase0EnvironmentTests.test_exact_core_package_versions",
+    "expected_torch": "2.11.0+cu128",
+    "actual_torch": "2.12.0+cu130",
+    "reason": "The historical Phase 0 test freezes the PyTorch version supplied by its older Vast image; this fresh server image supplies a newer PyTorch/CUDA build.",
+    "action": "The expectation was not weakened and PyTorch was not changed after generation. The actual version is frozen in the experiment environment and run manifests."
+  },
+  "phase1_verification": {
+    "checks": 14,
+    "passed": 14,
+    "artifact": "verification.json"
+  }
+}

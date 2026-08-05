@@ -48,7 +48,8 @@
 - 지정된 베이스 모델만 사용할 수 있으며, 다른 모델의 가중치를 불러오거나 병합할 수 없습니다.
 - Full Fine-Tuning, LoRA·QLoRA, SFT, RL 기반 학습, 데이터 증강, 커리큘럼 학습과 양자화를 사용할 수 있습니다.
 - 추론 중 인터넷, 외부 API, 웹 검색 및 다른 외부 모델 호출은 금지됩니다.
-- Majority Voting, Self-Consistency, Best-of-N 등의 테스트 타임 기법은 사용할 수 있습니다.
+- 추론 중 모델이 생성한 코드를 실행하거나 Python·SymPy·사전 작성 계산 함수 등 외부 코드·도구를 호출해서는 안 됩니다.
+- Majority Voting, Self-Consistency와 외부 계산 도구 없이 모델 출력만 사용하는 Best-of-N 등의 테스트 타임 기법은 사용할 수 있습니다.
 - 수상 후보자는 코드, 모델 가중치, 데이터셋 목록, 실행 환경과 방법론 문서를 제출해야 하며 재현 검증을 통과해야 합니다.
 
 ## 공식 링크
@@ -56,3 +57,18 @@
 - [Kaggle 대회 개요](https://www.kaggle.com/competitions/deep-learning-challenge-2026/overview)
 - [Kaggle 데이터](https://www.kaggle.com/competitions/deep-learning-challenge-2026/data)
 - [Kaggle 규칙](https://www.kaggle.com/competitions/deep-learning-challenge-2026/rules)
+
+## 로컬 데이터 자산
+
+| 데이터 | 원본 | 필터링 파생본 |
+|---|---:|---:|
+| 훈련 | 17,000행 | 16,359행 (`final_v1`; 기존 16,528행 파일 보존) |
+| 리더보드 | 1,000행 | 831행 |
+
+리더보드 필터링 파일은 분석용 파생본이며, 보호·오염 검사와 제출용 전체 추론은 1,000행 원본을 기준으로 수행합니다. 파일별 스키마, 해시와 현재 provenance 한계는 [데이터 문서](docs/information/data.md#로컬-데이터-자산)에 정리되어 있습니다.
+
+## 개발 문서
+
+- [상세 개발 로드맵](docs/strategy/roadmap.md)
+- [수상을 위한 모델 개발 전략](docs/strategy/winning-strategy.md)
+- [향후 에이전트 작업 규칙](AGENTS.md)

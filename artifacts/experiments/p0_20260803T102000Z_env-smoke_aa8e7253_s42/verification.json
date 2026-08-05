@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "details": {
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      },
+      "name": "model_and_tokenizer_revision_pinned",
+      "passed": true
+    },
+    {
+      "details": {
+        "run_1": "Initially, there are 12 books on the shelf. When 5 books are removed, we subtract 5 from 12 to find out how many books remain. This calculation is 12 - 5 = 7. Therefore, 7 books remain on the shelf. FINAL_ANSWER: 7",
+        "run_2": "Initially, there are 12 books on the shelf. When 5 books are removed, we subtract 5 from 12 to find out how many books remain. This calculation is 12 - 5 = 7. Therefore, 7 books remain on the shelf. FINAL_ANSWER: 7"
+      },
+      "name": "two_online_generated_texts_identical",
+      "passed": true
+    },
+    {
+      "details": {
+        "run_1": "7",
+        "run_2": "7"
+      },
+      "name": "two_online_extracted_answers_identical",
+      "passed": true
+    },
+    {
+      "details": {
+        "generated_text_matches": true,
+        "offline_environment": {
+          "HF_HUB_OFFLINE": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "offline_requested": true
+      },
+      "name": "offline_reload_and_generation_identical",
+      "passed": true
+    },
+    {
+      "details": {
+        "after": {
+          "data/deep_chal_math_leaderboard.csv": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+          "data/deep_chal_math_train.csv": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+        },
+        "before": {
+          "data/deep_chal_math_leaderboard.csv": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+          "data/deep_chal_math_train.csv": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+        }
+      },
+      "name": "source_data_sha256_unchanged",
+      "passed": true
+    },
+    {
+      "details": {
+        "forbidden_builtin_calls_found": [],
+        "forbidden_imports_found": [],
+        "imports": [
+          "__future__",
+          "argparse",
+          "datetime",
+          "json",
+          "numpy",
+          "os",
+          "pathlib",
+          "random",
+          "re",
+          "time",
+          "torch",
+          "transformers",
+          "typing",
+          "zoneinfo"
+        ]
+      },
+      "name": "smoke_inference_has_no_external_or_execution_tool_imports",
+      "passed": true
+    },
+    {
+      "details": {
+        "allowed_answer_source": "model_outputs_only",
+        "forbidden_test_time_capabilities": {
+          "deterministic_math_verifier_for_selection_or_correction": false,
+          "external_api_or_web_search": false,
+          "external_calculation_feedback": false,
+          "external_model": false,
+          "generated_code_execution": false,
+          "per_question_dynamic_retrieval": false,
+          "python_or_sympy_math_feedback": false,
+          "sat_smt_or_numeric_solver": false
+        }
+      },
+      "name": "forbidden_test_time_capabilities_explicitly_disabled",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "schema_version": 1,
+  "verified_at_kst": "2026-08-03T19:28:51.451150+09:00",
+  "verified_at_utc": "2026-08-03T10:28:51.451150+00:00"
+}

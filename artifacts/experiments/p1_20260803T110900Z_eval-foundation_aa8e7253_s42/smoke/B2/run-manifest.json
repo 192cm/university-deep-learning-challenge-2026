@@ -1,0 +1,59 @@
+{
+  "baseline_config": {
+    "batch_size": 32,
+    "description": "B1 prompt with three model samples and string-only self-consistency metrics.",
+    "do_sample": true,
+    "generation": {
+      "max_new_tokens": 1024,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "max_input_tokens": 2048,
+    "prompt_template": "Solve the problem carefully.\n\n1. Identify the quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the calculation and units.\n4. Write the final answer on the last line as:\nFINAL_ANSWER: <answer>\n\nDo not write anything after the final-answer line.\n\nProblem:\n{question}",
+    "seeds": [
+      42,
+      2026,
+      3407
+    ]
+  },
+  "baseline_id": "B2",
+  "batch_size": 32,
+  "cached_at_start": 0,
+  "ended_at_utc": "2026-08-03T11:22:15.692316+00:00",
+  "evaluation_ids": 32,
+  "expected_generations": 96,
+  "generated_this_process": 96,
+  "generation_file": "artifacts/experiments/p1_20260803T110900Z_eval-foundation_aa8e7253_s42/smoke/B2/generations.jsonl",
+  "generation_rows": 96,
+  "generation_sha256": "51877be48be7e37873140b7685e23b8da15fcdefd4a538863a583bde901ddb4c",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_peak_memory_mib": 7894.931640625,
+  "model": {
+    "dtype": "bfloat16",
+    "hf_hub_offline": "1",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "local_files_only": true,
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "transformers_offline": "1"
+  },
+  "parse_errors": 15,
+  "python_version": "3.12.13",
+  "schema_version": 1,
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "source_data": {
+    "labels_loaded_by_generation": false,
+    "path": "data/deep_chal_math_train_filtered.csv",
+    "sha256": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98"
+  },
+  "split_dir": "data/splits/phase1_v1",
+  "split_manifest_sha256": "81c482a8088b89048172ff68d55c451a09b852ea4c54c43f4da92b961a05e978",
+  "started_at_utc": "2026-08-03T11:19:57.430440+00:00",
+  "torch_version": "2.11.0+cu128",
+  "wall_seconds_this_process": 138.26187357772142
+}

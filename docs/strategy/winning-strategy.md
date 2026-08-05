@@ -8,10 +8,9 @@
 Qwen2.5-3B-Instruct
   → 정답이 검증된 풀이 데이터 구축
   → QLoRA 기반 SFT
-  → 선택적인 GRPO 또는 DPO
-  → 유사 학습 문제 검색
+  → 선택적인 DPO 또는 GRPO
   → 문제별 adaptive self-consistency
-  → 답 정규화·검산·제출
+  → 답 추출·투표·제출 형식 검증
 ```
 
 자원과 시간이 제한된다면 다음 순서로 진행하는 것이 좋다.
@@ -20,14 +19,14 @@ Qwen2.5-3B-Instruct
 2. 정답 검증 풀이 데이터 생성
 3. QLoRA SFT
 4. Adaptive self-consistency와 후처리
-5. 유사 문제 retrieval
-6. GRPO 또는 DPO
+5. 짧고 정확한 풀이를 선호하는 DPO
+6. 선택적인 GRPO
 
 핵심 아이디어는 **정답 검증 기반 데이터 증류**와 **문제 난이도에 따른 test-time compute 배분**이다. 프롬프트는 독립적인 핵심 기법이라기보다 모델의 추론 및 출력 형식을 안정시키는 기반으로 사용한다.
 
 ## 2. 대회 특성에서 도출되는 전략
 
-대회는 범용 모델인 `Qwen/Qwen2.5-3B-Instruct`만을 출발점으로 허용하지만 SFT, LoRA·QLoRA, GRPO·DPO 등의 학습 기법과 Majority Voting, Self-Consistency, Best-of-N 등의 test-time 기법을 허용한다. 상세한 허용·금지 사항은 [모델·데이터·추론 규칙](../information/rules.md)을 따른다.
+대회는 범용 모델인 `Qwen/Qwen2.5-3B-Instruct`만을 출발점으로 허용하지만 SFT, LoRA·QLoRA, GRPO·DPO 등의 학습 기법과 Majority Voting, Self-Consistency, Best-of-N 등의 test-time 기법을 허용한다. 반면 2026-08-01 운영진 답변에 따라 추론 중 코드 실행과 도구 호출은 금지된다. 따라서 AIMO 상위권 전략 중 verified-CoT, 데이터 정제, SFT·DPO, self-consistency와 답 일치도 기반 early stopping은 적용할 수 있지만, TIR·Program-of-Thought·계산 verifier는 적용할 수 없다. 상세한 허용·금지 사항은 [모델·데이터·추론 규칙](../information/rules.md)을 따른다.
 
 평가는 정답 exact match를 기반으로 하므로 그럴듯한 풀이보다 최종 답을 정확하게 생성하는 것이 중요하다. 또한 최종 수상은 모델 성능 50%와 발표 평가 50%를 합산하므로, 높은 점수뿐 아니라 재현성, ablation, 방법론의 설득력도 함께 준비해야 한다. 자세한 내용은 [평가와 제출](../information/evaluation-and-submission.md) 및 [일정과 수상](../information/schedule-and-awards.md)을 참고한다.
 
@@ -37,6 +36,8 @@ Qwen2.5-3B-Instruct
 |---|---:|
 | 학습 문항 | 17,000개 |
 | 리더보드 문항 | 1,000개 |
+| 필터링 리더보드 문항 | 831개 |
+| 필터링에서 제외된 리더보드 문항 | 169개 |
 | 학습 질문 길이 중앙값 | 약 203자 |
 | 리더보드 질문 길이 중앙값 | 약 206자 |
 | 학습 데이터의 음수 정답 | 502개 |
@@ -44,6 +45,12 @@ Qwen2.5-3B-Instruct
 | 학습 데이터의 이미지·URL 포함 문항 | 152개 |
 | 리더보드의 이미지·URL 포함 문항 | 6개 |
 | 숫자만 다른 동일 템플릿 | 리더보드에서 최소 18개 |
+
+### Canonical train 원칙
+
+2026-08-04 이후 새로 시작하는 모든 train 기반 평가·teacher 생성·SFT·DPO·GRPO·학습 sampling은 `data/deep_chal_math_train_filtered_final_v1.csv`를 canonical modeling dataset으로 사용한다. 이 파일은 대회 측 제외 ID 627개와 추가 검토 ID 14개를 합친 641개를 원본 17,000행에서 제외한 16,359행 파생본이다. 원본 `data/deep_chal_math_train.csv`와 기존 16,528행 `data/deep_chal_math_train_filtered.csv`는 provenance와 과거 실험 재현 용도로 보존한다. 기존 파일과 해시를 기록한 완료 산출물을 새 final v1 결과로 재해석하지 않으며, 향후 split과 모델 실험은 final v1에서 새 버전으로 생성한다.
+
+필터링 리더보드 파일은 83.1%를 보존한 분석용 파생본이다. 현재 생성 스크립트와 행별 제외 사유 감사표가 없으므로 필터 정책은 아직 재현 가능한 상태가 아니다. 외부 데이터 오염 검사, 리더보드 추론과 제출 범위는 필터링 여부와 관계없이 원본 1,000문항 전체를 기준으로 한다. 필터링 파생본에는 라벨이 없으며 학습 데이터로 사용하지 않는다. 자세한 파일 해시와 무결성 점검 결과는 [데이터 문서](../information/data.md#로컬-데이터-자산)를 따른다.
 
 학습 세트와 리더보드 세트의 질문 길이와 형식은 비교적 유사하지만, 데이터에는 다음과 같은 노이즈가 존재한다.
 
@@ -68,7 +75,7 @@ Qwen2.5-3B-Instruct
 2. **Template-group holdout**
    - 숫자, 이름, 단위 등을 정규화해 유사한 템플릿을 같은 그룹에 넣는다.
    - 같은 그룹이 train과 validation에 동시에 포함되지 않게 한다.
-   - 진짜 일반화 성능과 retrieval 의존성을 확인한다.
+   - 진짜 일반화 성능과 템플릿 암기 의존성을 확인한다.
 
 추가로 이미지 누락, 긴 문항, 증명형 문항, 복잡한 기하·정수론 문제를 모은 hard holdout을 두면 오류 분석에 유용하다.
 
@@ -116,7 +123,7 @@ Do not write anything after the final-answer line.
 2. 풀이 후 독립적인 재계산 또는 검산
 3. 문제를 방정식, 경우의 수 열거 또는 알고리즘으로 변환한 풀이
 
-긴 few-shot을 모든 문항에 고정적으로 넣기보다, 유사도가 충분히 높은 학습 문제가 검색된 경우에만 풀이 예시를 넣는 것이 효율적이다.
+few-shot을 사용한다면 테스트 문항에 따라 검색하지 말고, 검증셋에서 미리 선정한 짧은 예시를 모든 문항에 고정적으로 적용한다. 테스트 타임 동적 retrieval은 운영진의 추가 허용 답변이 없는 한 사용하지 않는다.
 
 ## 5. 정답 검증 풀이 데이터 구축
 
@@ -124,15 +131,17 @@ Do not write anything after the final-answer line.
 
 학습 데이터는 정답만 제공하므로 그대로 `question → answer`를 학습하면 모델이 추론 과정보다 단답 패턴을 학습할 수 있다. 다음 방법으로 풀이 데이터를 구축한다.
 
-1. 각 학습 문제에 대해 teacher 모델로 풀이 후보를 2~3개 생성한다.
-2. 첫 번째 생성에서는 정답 라벨을 teacher에게 공개하지 않는다.
-3. 생성한 최종 답이 제공 정답과 같은 풀이만 높은 신뢰도로 채택한다.
-4. 모두 실패한 문제에만 정답을 힌트로 제공해 풀이를 다시 생성한다.
-5. 정답을 보고 생성한 풀이는 낮은 신뢰도로 표시하고 추가 검증한다.
-6. 계산식, 단위, 최종 답을 자동 검사한다.
-7. 불필요하게 장황하거나 논리적 비약이 있는 풀이는 제거한다.
+현재 Phase 2 v2에서는 다음 계약을 사용한다.
 
-정답을 teacher에게 처음부터 제공하면 잘못된 라벨에도 억지로 도달하는 풀이가 만들어질 수 있다. `정답 비공개 생성 → 일치 여부 검사 → 제한적인 정답 조건부 재생성` 순서가 더 안전하다.
+1. 각 filtered 학습 문제에 대해 정답 라벨을 숨긴 독립 풀이 후보를 정확히 2개 생성한다.
+2. teacher의 `final_answer`는 `^-?(?:0|[1-9][0-9]*)$`와 일치하는 canonical 정수 문자열만 허용한다.
+3. 후보가 직접 출력한 정수가 filtered 라벨과 exact match하고 비수정 verifier를 통과할 때만 채택한다.
+4. 두 후보가 통과하면 A, 하나 이상이 통과하면 B로 분류한다.
+5. 모두 실패해도 정답 조건부 생성으로 채우지 않으며 C 등급은 core dataset에 사용하지 않는다.
+6. 계산식 검사는 안전한 독립 단순 등식에 한정하고, 복합식은 오류가 아닌 `not_checked_complex_expression`으로 기록한다.
+7. 최종 target의 마지막 줄은 정확히 `FINAL_ANSWER: <integer>`이며 뒤에 단위·설명·문장부호를 붙이지 않는다.
+
+정답을 teacher에게 제공하면 잘못된 라벨에도 억지로 도달하는 풀이가 만들어질 수 있다. 따라서 Phase 2 v2는 처음부터 끝까지 `정답 비공개 생성 → canonical 정수 일치 검사 → A/B만 채택` 순서를 유지한다.
 
 학습 데이터 구축을 위한 상용 API 사용은 현재 규칙상 허용되지만, 다음 정보를 모두 기록해야 한다.
 
@@ -146,15 +155,17 @@ Do not write anything after the final-answer line.
 
 리더보드 및 최종 테스트 문제를 API, 검색 엔진 또는 외부 서비스에 입력해서는 안 된다.
 
+이 단계의 코드 실행과 계산 검증은 **학습 데이터 구축에만** 사용한다. 검증된 풀이를 모델에 학습할 때는 실행 도구 호출을 제거하고, 테스트 시 모델 출력만으로 완결될 수 있는 자연어 풀이 형식으로 변환한다.
+
 ### 5.2 데이터 신뢰도 등급
 
 문항마다 다음과 같은 신뢰도 등급을 두고 loss weight 또는 sampling weight에 반영할 수 있다.
 
 | 등급 | 조건 | 활용 방식 |
 |---|---|---|
-| A | 독립 생성한 여러 풀이가 정답과 일치하고 계산 검증 통과 | 적극 학습 |
-| B | 한 개 풀이만 정답과 일치하거나 일부 검증만 가능 | 일반 학습 |
-| C | 정답을 힌트로 제공한 뒤 풀이 생성 | 낮은 가중치 |
+| A | answer-hidden 후보 2개가 정답과 exact match하고 검증 통과 | core dataset |
+| B | answer-hidden 후보 중 1개 이상이 정답과 exact match하고 검증 통과 | core dataset |
+| C | Phase 2 v2에서는 생성하지 않음 | core dataset 제외 |
 | D | 이미지 누락, 불완전 질문, 풀이·정답 불일치 | 제외 또는 분석 전용 |
 
 ### 5.3 외부 데이터
@@ -229,17 +240,18 @@ Base model → verified-CoT SFT → GRPO
 
 GRPO 구현과 안정화에 시간이 많이 걸린다면 DPO를 비용이 낮은 대안으로 비교한다.
 
-## 8. Retrieval 기반 풀이 보조
+## 8. Retrieval의 사용 범위
 
-학습 세트와 리더보드에는 숫자나 이름만 바뀐 유사 문제가 일부 존재한다. 따라서 다음과 같은 retrieval pipeline을 만들 수 있다.
+학습 세트와 리더보드에는 숫자나 이름만 바뀐 유사 문제가 일부 존재하지만, 테스트 문항에 따라 BM25·embedding 검색 결과를 프롬프트에 동적으로 넣는 방식은 운영진이 명시적으로 허용하지 않았다. "추론 시 모델의 추론 출력만으로 답을 도출"해야 한다는 원칙을 보수적으로 적용해 테스트 타임 retrieval은 사용하지 않는다.
 
-1. 질문의 숫자, 이름, 통화, 단위 등을 정규화한다.
-2. BM25 또는 embedding으로 학습 문제를 검색한다.
-3. 유사도가 임계값보다 높은 경우에만 상위 1~3개 예시를 사용한다.
-4. 검색 결과에서는 정답 자체보다 검증된 풀이 구조를 제공한다.
-5. 낮은 유사도에서는 retrieval 없이 모델 자체 추론을 사용한다.
+Retrieval과 템플릿 정규화는 다음과 같은 **학습·평가 준비 단계**에서만 사용한다.
 
-수학 기호가 유사하다는 이유만으로 무관한 문제가 높은 점수를 받을 수 있으므로 retrieval threshold를 validation에서 보수적으로 결정한다. Retrieval 적용 문항과 미적용 문항의 성능을 별도로 보고해야 한다.
+- 중복 및 근접 중복 학습 데이터 제거
+- template-group validation split 구성
+- 외부 학습 데이터 중 대회 분포와 가까운 문제 선별
+- 테스트 공개 전에 고정할 공통 few-shot 예시 후보 분석
+
+문제별 동적 retrieval을 사용하려면 구현 전에 운영진에게 별도로 질문하고 답변을 보관해야 한다.
 
 ## 9. Adaptive test-time inference
 
@@ -252,7 +264,9 @@ GRPO 구현과 안정화에 시간이 많이 걸린다면 DPO를 비용이 낮�
 3. 불일치하면 총 8개까지 확장
 4. 계속 불일치하면 16개까지 확장
 5. 정규화된 최종 답에 majority voting 적용
-6. 동률이거나 모든 답이 다르면 검산 프롬프트 또는 deterministic verifier 적용
+6. 동률이거나 모든 답이 다르면 추가 모델 샘플 또는 모델 내부 검산 프롬프트를 사용
+
+Adaptive sampling controller는 모델이 출력한 답의 일치도와 남은 시간만 사용한다. 외부 계산 결과를 만들거나 모델 입력으로 되먹임해서는 안 된다.
 
 초기 후보 설정은 다음과 같다.
 
@@ -267,16 +281,20 @@ GRPO 구현과 안정화에 시간이 많이 걸린다면 DPO를 비용이 낮�
 
 Self-consistency의 이론과 실험적 근거는 [Self-Consistency 논문](https://arxiv.org/abs/2203.11171)을 참고한다.
 
-### 9.2 Verifier
+### 9.2 허용 범위 안의 검산
 
-규칙상 다른 외부 모델을 이용한 앙상블은 금지되므로 다음 범위에서 검산을 구성한다.
+검산도 모델 출력만으로 수행한다.
 
-- 같은 Qwen 체크포인트에 검산 전용 프롬프트 적용
-- 같은 베이스에서 학습한 verifier adapter 사용 가능 여부를 운영진에 확인
-- 로컬 Python 또는 SymPy를 통한 산술·방정식 검산
-- 단위, 부호, 범위, 정수성 검사
+- 하나의 응답 안에서 풀이 후 독립적으로 다시 계산하도록 프롬프트한다.
+- 같은 Qwen 체크포인트가 후보 풀이를 읽고 모델 출력으로 최종 후보를 고르게 할 수 있으나, Best-of-N의 구체적인 구현 범위는 운영진 답변과 일치하는지 확인한다.
+- 출력 형식, 답 추출 성공 여부와 후보 답 일치도만 코드로 확인한다.
 
-로컬 계산 도구가 명시적으로 허용된 것은 아니므로 사용 전에 운영진에게 확인하고 답변을 보관한다.
+다음은 사용하지 않는다.
+
+- 로컬 Python·SymPy·수치 해석기·SAT solver를 통한 계산 검산
+- 미리 작성한 방정식, 소인수분해, 최대공약수 등의 계산 함수
+- 계산 결과로 후보 답을 수정하거나 재순위화하는 deterministic verifier
+- 계산 결과를 다시 모델 입력에 넣는 반복 추론
 
 ## 10. 답 추출과 제출 안정성
 
@@ -290,7 +308,7 @@ Self-consistency의 이론과 실험적 근거는 [Self-Consistency 논문](http
 - `FINAL_ANSWER: ...`
 - 소수와 분수
 
-문서상 모든 답은 정수지만 리더보드의 `val-000007`은 주어진 식을 풀면 `2.5`가 된다. 따라서 다음 사항을 운영진에 확인해야 한다.
+문서상 모든 답은 정수지만 리더보드 원본의 `val-000007`은 주어진 식을 풀면 `2.5`가 된다. 이 행은 현재 필터링 파생본에서는 제외됐지만 전체 리더보드 제출 범위에는 남아 있으므로, 다음 사항을 운영진에 확인해야 한다.
 
 1. 실제 제출 답이 정수로 제한되는가
 2. 소수와 분수의 canonical format은 무엇인가
@@ -300,19 +318,21 @@ Self-consistency의 이론과 실험적 근거는 [Self-Consistency 논문](http
 
 확인 전에는 내부 답 표현을 정수로 강제 변환하지 말고 소수와 분수를 보존한다. 최종 제출 생성 단계에서만 공식 sample submission과 metric에 맞게 변환한다.
 
+답 추출기는 모델이 이미 출력한 표현을 읽고 형식만 정규화해야 한다. 새로운 산술 계산, 방정식 풀이 또는 후보 답 교정은 수행하지 않는다.
+
 ## 11. 권장 실험 순서
 
 | 단계 | 실험 | 진입 조건 |
 |---|---|---|
 | B0 | Base greedy prompt | 최초 기준점 |
-| B1 | 검산 프롬프트 | B0 대비 개선 확인 |
+| B1 | 모델 내부 검산 프롬프트 | B0 대비 개선 확인 |
 | B2 | Base self-consistency 3/8/16 | pass@k 잠재력 확인 |
 | F0 | Answer-only QLoRA | 단순 SFT 기준점 |
 | F1 | Verified-CoT QLoRA | 핵심 모델 |
 | F2 | 외부 데이터 curriculum + F1 | domain shift 확인 |
+| D1 | F1 + 길이 제어 DPO | 정확도·출력 길이 비교 |
 | T1 | F1 + adaptive self-consistency | 핵심 추론 방식 |
-| T2 | T1 + retrieval | 유사 문항 이득 확인 |
-| R1 | F1 + GRPO 또는 DPO | 안정적인 F1 이후 |
+| R1 | F1 + GRPO | 안정적인 F1·D1 이후 |
 | Final | 최선 checkpoint/추론 조합 | latency 포함 최종 검증 |
 
 각 실험은 한 번에 하나의 요소만 변경하고, validation prediction과 원시 generation을 모두 저장한다. 그래야 어떤 오류가 교정되거나 새로 생겼는지 확인할 수 있다.
@@ -345,9 +365,9 @@ Adaptive sampling은 성능뿐 아니라 제한된 제출 시간 내에 추론�
 Base
  Prompt and output normalization
  Verified-CoT SFT
- Retrieval
+ DPO length control
  Self-consistency
- GRPO or DPO
+ Optional GRPO
  Adaptive inference
 ```
 
@@ -370,9 +390,9 @@ Base
 Qwen2.5-3B-Instruct
   + 고신뢰 teacher 풀이 17,000개
   + QLoRA SFT
-  + high-threshold BM25 retrieval
+  + 선택적인 길이 제어 DPO
   + adaptive self-consistency 3 → 8 → 16
-  + robust answer extraction
+  + robust answer extraction와 majority voting
 ```
 
-이 구성이 안정된 후 validation의 pass@k가 높고 majority@k가 충분히 따라오지 못하는 문항이 많다면 GRPO, DPO 또는 verifier를 추가한다. 반대로 pass@k 자체가 낮다면 test-time 기법보다 풀이 데이터의 품질과 SFT를 먼저 개선해야 한다.
+이 구성이 안정된 후 validation의 pass@k가 높고 majority@k가 충분히 따라오지 못하는 문항이 많다면 모델 출력만 사용하는 Best-of-N 또는 내부 검산 프롬프트를 비교한다. pass@k 자체가 낮다면 test-time 기법보다 풀이 데이터의 품질과 SFT를 먼저 개선한다. TIR, Program-of-Thought, 동적 retrieval과 계산 verifier는 최종 파이프라인에서 제외한다.

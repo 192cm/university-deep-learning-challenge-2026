@@ -1,0 +1,276 @@
+{
+  "collected_at_kst": "2026-08-03T19:17:08.333468+09:00",
+  "collected_at_utc": "2026-08-03T10:17:08.333468+00:00",
+  "cpu": {
+    "logical_count": 128,
+    "lscpu": {
+      "command": [
+        "lscpu"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Architecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        48 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               128\nOn-line CPU(s) list:                  0-127\nVendor ID:                            AuthenticAMD\nModel name:                           AMD EPYC 7B13 64-Core Processor\nCPU family:                           25\nModel:                                1\nThread(s) per core:                   2\nCore(s) per socket:                   64\nSocket(s):                            1\nStepping:                             1\nFrequency boost:                      enabled\nCPU(s) scaling MHz:                   64%\nCPU max MHz:                          3539.7939\nCPU min MHz:                          1500.0000\nBogoMIPS:                             4499.69\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin brs arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm debug_swap\nL1d cache:                            2 MiB (64 instances)\nL1i cache:                            2 MiB (64 instances)\nL2 cache:                             32 MiB (64 instances)\nL3 cache:                             256 MiB (8 instances)\nNUMA node(s):                         1\nNUMA node0 CPU(s):                    0-127\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Not affected\nVulnerability Retbleed:               Not affected\nVulnerability Spec rstack overflow:   Mitigation; Safe RET\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected"
+    }
+  },
+  "disk": {
+    "free_bytes": 321926893568,
+    "path": "/workspace",
+    "total_bytes": 322122547200,
+    "used_bytes": 195653632
+  },
+  "git": {
+    "diff_stat": {
+      "command": [
+        "git",
+        "-C",
+        "/workspace/university-deep-learning-challenge-2026",
+        "diff",
+        "--stat"
+      ],
+      "returncode": 0,
+      "stderr": "warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/information/README.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/information/data.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/information/rules.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/strategy/winning-strategy.md', LF will be replaced by CRLF the next time Git touches it",
+      "stdout": "README.md                         | 18 ++++++++-\n docs/information/README.md        |  2 +-\n docs/information/data.md          | 19 ++++++++++\n docs/information/rules.md         | 20 ++++++++++\n docs/strategy/winning-strategy.md | 80 +++++++++++++++++++++++----------------\n 5 files changed, 104 insertions(+), 35 deletions(-)"
+    },
+    "head": {
+      "command": [
+        "git",
+        "-C",
+        "/workspace/university-deep-learning-challenge-2026",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "f7ba0809bf18697ee9d3f8f563c7796fab26fc75"
+    },
+    "status_short": {
+      "command": [
+        "git",
+        "-C",
+        "/workspace/university-deep-learning-challenge-2026",
+        "status",
+        "--short"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M README.md\n M docs/information/README.md\n M docs/information/data.md\n M docs/information/rules.md\n M docs/strategy/winning-strategy.md\n?? AGENTS.md\n?? data/deep_chal_math_leaderboard_filtered.csv\n?? docs/strategy/roadmap.md"
+    }
+  },
+  "gpu": {
+    "nvcc": {
+      "command": [
+        "nvcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Feb_21_20:23:50_PST_2025\nCuda compilation tools, release 12.8, V12.8.93\nBuild cuda_12.8.r12.8/compiler.35583870_0"
+    },
+    "nvidia_smi": {
+      "command": [
+        "nvidia-smi"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Mon Aug  3 10:17:10 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 570.133.07             Driver Version: 570.133.07     CUDA Version: 12.8     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4090        On  |   00000000:C1:00.0 Off |                  Off |\n|  0%   27C    P8             10W /  440W |       4MiB /  24564MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+"
+    },
+    "nvidia_smi_query": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=index,name,uuid,memory.total,driver_version",
+        "--format=csv,noheader,nounits"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "0, NVIDIA GeForce RTX 4090, GPU-a9b76bc8-5409-fc15-8eba-2e8a0192cf30, 24564, 570.133.07"
+    }
+  },
+  "memory": {
+    "free_bytes": {
+      "command": [
+        "free",
+        "-b"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "total        used        free      shared  buff/cache   available\nMem:     270055575552 11185754112 174604468224    54374400 86667296768 258869821440\nSwap:              0           0           0"
+    }
+  },
+  "os": {
+    "kernel": {
+      "command": [
+        "uname",
+        "-a"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Linux 92e3078082c2 6.8.0-60-generic #63~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 22 19:00:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
+    },
+    "machine": "x86_64",
+    "os_release": {
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "LOGO": "ubuntu-logo",
+      "NAME": "Ubuntu",
+      "PRETTY_NAME": "Ubuntu 24.04.4 LTS",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "UBUNTU_CODENAME": "noble",
+      "VERSION": "24.04.4 LTS (Noble Numbat)",
+      "VERSION_CODENAME": "noble",
+      "VERSION_ID": "24.04"
+    },
+    "platform": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+    "release": "6.8.0-60-generic",
+    "system": "Linux",
+    "version": "#63~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 22 19:00:15 UTC 2"
+  },
+  "packages": {
+    "accelerate": null,
+    "bitsandbytes": null,
+    "huggingface-hub": "1.18.0",
+    "peft": null,
+    "safetensors": null,
+    "tokenizers": null,
+    "torch": "2.11.0+cu128",
+    "transformers": null,
+    "trl": null
+  },
+  "python": {
+    "executable": "/venv/main/bin/python",
+    "prefix": "/venv/main",
+    "version": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:50:00) [GCC 14.3.0]"
+  },
+  "repo_root": "/workspace/university-deep-learning-challenge-2026",
+  "schema_version": 1,
+  "source_data_sha256": {
+    "data/deep_chal_math_leaderboard.csv": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+    "data/deep_chal_math_train.csv": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+  },
+  "timezone": {
+    "local": "Asia/Seoul",
+    "utc": "UTC"
+  },
+  "torch": {
+    "bf16_supported": true,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_runtime": "12.8",
+    "devices": [
+      {
+        "capability": [
+          8,
+          9
+        ],
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 4090",
+        "total_memory_bytes": 25262096384
+      }
+    ],
+    "version": "2.11.0+cu128"
+  },
+  "vast": {
+    "hardware": {
+      "cpu": {
+        "count": 61,
+        "percent": 0.0
+      },
+      "disk": {
+        "percent": 0.1,
+        "total": 322122547200,
+        "used": 195653632
+      },
+      "gpu": {
+        "avg_load_percent": 0.0,
+        "count": 1,
+        "cuda": {
+          "components": {
+            "cublas": true,
+            "cudart": true,
+            "cudnn": true,
+            "cufft": true,
+            "curand": true,
+            "cusolver": true,
+            "cusparse": true,
+            "dev_headers": true,
+            "nccl": true,
+            "npp": true,
+            "nvcc": true,
+            "nvjpeg": true,
+            "nvrtc": true
+          },
+          "compute_capability": "8.9",
+          "cuda_home": "/usr/local/cuda",
+          "driver_max_cuda": "12.8",
+          "driver_version": "570.133.07",
+          "installed_version": "12.8",
+          "note": "CUDA compute works via the host-injected driver. A PARTIAL CUDA 12.8 install is present (components: nvcc, dev_headers, cudart, nvrtc, cublas, cudnn, cufft, cusparse, cusolver, curand, nccl, npp, nvjpeg); this is NOT a full toolkit, so check the `components` map before assuming a library exists \u2014 missing ones (e.g. cuBLAS/cuDNN) must be added from the configured nvidia apt repo (cuda-<lib>-X-Y / libcudnn*) or come bundled with framework wheels. COMPATIBILITY (agents get this wrong): the toolkit/wheel does NOT need to match the driver's exact CUDA version. CUDA minor-version compatibility means any CUDA 12.x build runs on any driver that supports CUDA 12.0+ (and 13.x on a 13.0+ driver) \u2014 so a 12.x wheel is fine here as long as driver_max_cuda is >= 12.0; do NOT 'upgrade the driver to match CUDA'. CAVEAT: this excludes PTX JIT \u2014 code shipped as PTX from a toolkit NEWER than the host driver fails with CUDA_ERROR_UNSUPPORTED_PTX_VERSION (222) since the driver owns the JIT (only bites when the host driver is older than the build; use native-cubin builds or forward compat). Forward compatibility (running a newer CUDA MAJOR on an older driver) is the separate cuda-compat mechanism, auto-managed at boot (see forward_compat). What DOES bind is the GPU architecture: compute_capability >= 10.0 (Blackwell) needs CUDA >= 12.8 wheels \u2014 an older build (e.g. torch cu124) installs cleanly but fails at runtime with 'no kernel image is available'. When installing CUDA libs: NEVER install the NVIDIA driver from apt (it must match the host \u2014 avoid the 'cuda' metapackage and nvidia-driver-*/libcuda* packages); install only components <= driver_max_cuda, and prefer framework wheels that bundle their own CUDA runtime. See AGENTS.md."
+        },
+        "memory_percent": 0.016283992835043153,
+        "memory_total": 24564.0,
+        "memory_unit": "MB",
+        "memory_used": 4.0,
+        "nvidia_count": 1,
+        "render": {
+          "gl": true,
+          "optix": true,
+          "vulkan": true
+        },
+        "summary": "NVIDIA GeForce RTX 4090"
+      },
+      "ram": {
+        "percent": 1.4434825180041362,
+        "total": 128275447808,
+        "used": 1851633664
+      }
+    },
+    "image": {
+      "name": "PyTorch",
+      "note": "Open-source Vast image. Read this image's README at the source above, and every /etc/vast_agents/*.md, to see exactly what it adds and preinstalls.",
+      "preinstalled": "PyTorch + CUDA in /venv/main",
+      "readme": "https://github.com/vast-ai/base-image/tree/main/derivatives/pytorch",
+      "repo": "https://github.com/vast-ai/base-image"
+    },
+    "instance": {
+      "container_id": "46690943",
+      "workspace": "/workspace",
+      "workspace_is_volume": false
+    },
+    "python_environments": [
+      {
+        "activate": "source /venv/main/bin/activate",
+        "description": "Default application environment",
+        "kind": "conda",
+        "name": "main",
+        "package_versions": {
+          "huggingface-hub": "1.18.0",
+          "jupyterlab": null,
+          "tensorboard": null,
+          "torch": "2.11.0+cu128",
+          "torchaudio": "2.11.0+cu128",
+          "torchcodec": "0.11.0+cu128",
+          "torchvision": "0.26.0+cu128"
+        },
+        "packages_of_interest": [
+          "jupyterlab",
+          "tensorboard",
+          "huggingface-hub",
+          "torch",
+          "torchvision",
+          "torchaudio",
+          "torchcodec"
+        ],
+        "path": "/venv/main"
+      },
+      {
+        "description": "Fast pip-compatible package manager (uv)",
+        "kind": "uv",
+        "name": "uv",
+        "path": "/.uv"
+      }
+    ]
+  },
+  "workspace": "/workspace"
+}

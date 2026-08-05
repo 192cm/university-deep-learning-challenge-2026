@@ -1,0 +1,15 @@
+{
+  "actual_comparison_cost_usd": {
+    "low": 0.069888,
+    "medium": 0.0958308
+  },
+  "comparison_gate_passed": false,
+  "metrics_paths": {
+    "low": "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\comparison_low_metrics.json",
+    "medium": "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\comparison_medium_metrics.json"
+  },
+  "schema_version": 3,
+  "selected_at_utc": "2026-08-04T16:20:03.515669+00:00",
+  "selected_effort": null,
+  "selection_rule": "lowest actual paid comparison cost among quality-gate passing efforts"
+}

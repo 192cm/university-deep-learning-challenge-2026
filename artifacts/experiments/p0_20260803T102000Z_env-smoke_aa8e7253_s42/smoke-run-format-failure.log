@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 100/434 [00:00<00:00, 994.25it/s]Loading weights:  46%|████▌     | 200/434 [00:00<00:00, 954.04it/s]Loading weights:  68%|██████▊   | 296/434 [00:00<00:00, 936.27it/s]Loading weights:  90%|████████▉ | 390/434 [00:00<00:00, 916.00it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 937.78it/s]
+Initially, there are 12 books on the shelf. When 5 books are removed, we subtract 5 from 12 to find out how many books remain. This calculation is 12 - 5 = 7. Therefore, 7 books remain on the shelf. FINAL_ANSWER: 7
+RESULT_JSON=/workspace/university-deep-learning-challenge-2026/artifacts/experiments/p0_20260803T102000Z_env-smoke_aa8e7253_s42/smoke-run-1.json
+Traceback (most recent call last):
+  File "/workspace/university-deep-learning-challenge-2026/scripts/phase0_smoke_inference.py", line 176, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/university-deep-learning-challenge-2026/scripts/phase0_smoke_inference.py", line 171, in main
+    raise RuntimeError("The model output did not contain a FINAL_ANSWER line")
+RuntimeError: The model output did not contain a FINAL_ANSWER line

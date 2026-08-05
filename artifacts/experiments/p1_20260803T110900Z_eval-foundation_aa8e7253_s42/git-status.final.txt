@@ -1,0 +1,26 @@
+ M README.md
+ M docs/information/README.md
+ M docs/information/data.md
+ M docs/information/rules.md
+ M docs/strategy/winning-strategy.md
+?? AGENTS.md
+?? artifacts/
+?? configs/
+?? data/deep_chal_math_leaderboard_filtered.csv
+?? data/splits/
+?? docs/strategy/phase0-rules-checklist.md
+?? docs/strategy/roadmap.md
+?? report/phase0/
+?? report/phase1/
+?? scripts/build_phase1_report.py
+?? scripts/collect_environment.py
+?? scripts/create_evaluation_splits.py
+?? scripts/evaluate_generations.py
+?? scripts/extract_answers.py
+?? scripts/phase0_smoke_inference.py
+?? scripts/phase1_common.py
+?? scripts/run_baseline.py
+?? scripts/verify_data_provenance.py
+?? scripts/verify_phase0.py
+?? scripts/verify_phase1.py
+?? tests/

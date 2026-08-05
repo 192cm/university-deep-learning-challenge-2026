@@ -1,0 +1,403 @@
+{
+  "checks": [
+    {
+      "details": {
+        "format_diagnostic.csv": {
+          "primary": "f505fef5354f08e1d192bf3186bb80a5fa01b2853b8bcacf3eae03e16552395c",
+          "rerun": "f505fef5354f08e1d192bf3186bb80a5fa01b2853b8bcacf3eae03e16552395c"
+        },
+        "format_diagnostic_ids.txt": {
+          "primary": "75c31840b9e72ab69c671e1f2e7af57bfe4d110e08577fa50646f73ace296f7f",
+          "rerun": "75c31840b9e72ab69c671e1f2e7af57bfe4d110e08577fa50646f73ace296f7f"
+        },
+        "hard_diagnostic.csv": {
+          "primary": "438a9f04a96a0b24ddb73b18cbbcbc5617a62fed1ac99332ebf52678c11b82f5",
+          "rerun": "438a9f04a96a0b24ddb73b18cbbcbc5617a62fed1ac99332ebf52678c11b82f5"
+        },
+        "hard_diagnostic_ids.txt": {
+          "primary": "5df818aeef6c4f172de07d2c555320044358f1e3bc65fc73a1825e88c8d91331",
+          "rerun": "5df818aeef6c4f172de07d2c555320044358f1e3bc65fc73a1825e88c8d91331"
+        },
+        "leaderboard_filter_audit.csv": {
+          "primary": "b8cc89c8627916259fae78c05479022a331ab7550b57a3692e6d78fdce4dfe95",
+          "rerun": "b8cc89c8627916259fae78c05479022a331ab7550b57a3692e6d78fdce4dfe95"
+        },
+        "leaderboard_filtered_reproduced.csv": {
+          "primary": "e7a8ebbd7ab617fdc2f1ee18ea42399d8ae3058f5e0655e1cd4963663d3685a2",
+          "rerun": "e7a8ebbd7ab617fdc2f1ee18ea42399d8ae3058f5e0655e1cd4963663d3685a2"
+        },
+        "random_split_audit.csv": {
+          "primary": "57d3a3a7cb5fe1b67786f2a871ac1a38554b775d096870a9fc77d7314d19884f",
+          "rerun": "57d3a3a7cb5fe1b67786f2a871ac1a38554b775d096870a9fc77d7314d19884f"
+        },
+        "random_train_ids.txt": {
+          "primary": "d6d3268b6c93041c12a77bd3967a6e6abc3de3fcbe81cfb57b996cfe3d85d401",
+          "rerun": "d6d3268b6c93041c12a77bd3967a6e6abc3de3fcbe81cfb57b996cfe3d85d401"
+        },
+        "random_validation_ids.txt": {
+          "primary": "735c7ae7dd410cad0e91648a2b75cbf420a657df0d936152c385db9d041a1277",
+          "rerun": "735c7ae7dd410cad0e91648a2b75cbf420a657df0d936152c385db9d041a1277"
+        },
+        "template_split_audit.csv": {
+          "primary": "4f3073e026fcb3a16d6c8e01cdf90b57e3e75e8b4aaff15f5f0cb8389c2e5471",
+          "rerun": "4f3073e026fcb3a16d6c8e01cdf90b57e3e75e8b4aaff15f5f0cb8389c2e5471"
+        },
+        "template_train_ids.txt": {
+          "primary": "89d2956c82c1b08f380c8a58943b86f9c6fbd4fdcd6af78ab4cb3f2ad42c7bde",
+          "rerun": "89d2956c82c1b08f380c8a58943b86f9c6fbd4fdcd6af78ab4cb3f2ad42c7bde"
+        },
+        "template_validation_ids.txt": {
+          "primary": "78538085cdb13b5732bf9985155e7c948775837bc6d5b1be10fe60c12a5053cd",
+          "rerun": "78538085cdb13b5732bf9985155e7c948775837bc6d5b1be10fe60c12a5053cd"
+        }
+      },
+      "name": "split_deterministic_hashes_identical",
+      "passed": true
+    },
+    {
+      "details": {
+        "leaderboard_audit_complete": true,
+        "leaderboard_ids_match_legacy_in_order": true,
+        "random_partition_complete": true,
+        "random_train_validation_id_overlap": 0,
+        "source_ids_unique": true,
+        "template_group_leakage": 0,
+        "template_partition_complete": true,
+        "template_train_validation_id_overlap": 0
+      },
+      "name": "random_split_has_no_id_overlap",
+      "passed": true
+    },
+    {
+      "details": {
+        "leaderboard_audit_complete": true,
+        "leaderboard_ids_match_legacy_in_order": true,
+        "random_partition_complete": true,
+        "random_train_validation_id_overlap": 0,
+        "source_ids_unique": true,
+        "template_group_leakage": 0,
+        "template_partition_complete": true,
+        "template_train_validation_id_overlap": 0
+      },
+      "name": "template_split_has_no_id_or_group_leakage",
+      "passed": true
+    },
+    {
+      "details": {
+        "question_content_mismatch_count": 62,
+        "rows": 1000,
+        "unique_ids": 1000
+      },
+      "name": "leaderboard_audit_has_exactly_1000_unique_ids",
+      "passed": true
+    },
+    {
+      "details": {
+        "all_ids_unique": true,
+        "filtered_train_rows_16528": true,
+        "leaderboard_filtered_rows_831": true,
+        "leaderboard_rows_1000": true,
+        "reproduced_audit_policy_fields_equal": true,
+        "reproduced_audit_questions_equal_after_newline_normalization": true,
+        "reproduced_filtered_byte_equal": true,
+        "reproduced_filtered_content_equal": true,
+        "source_leaderboard_unchanged": true,
+        "source_train_unchanged": true,
+        "train_audit_rows_17000": true,
+        "train_rows_17000": true
+      },
+      "name": "data_provenance_passed",
+      "passed": true
+    },
+    {
+      "details": {
+        "actual": {
+          "leaderboard": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+          "leaderboard_filtered": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+          "train": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+          "train_filter_audit": "3275fc5ad3dfc7ef6f3e699714c1e38302642040c88ab2c414c930b669b949dd",
+          "train_filtered": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98"
+        },
+        "expected": {
+          "leaderboard": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+          "leaderboard_filtered": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+          "train": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+          "train_filter_audit": "3275fc5ad3dfc7ef6f3e699714c1e38302642040c88ab2c414c930b669b949dd",
+          "train_filtered": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98"
+        }
+      },
+      "name": "source_and_derived_data_match_fixed_hashes",
+      "passed": true
+    },
+    {
+      "details": {
+        "B0": {
+          "expected_rows": 3744,
+          "generation_sha256": "5d3e88e7e4e2499ae92cfaf8a3c3c7689350c256423c64343f7934742545a2ad",
+          "ids": 3744,
+          "manifest_sha256": "243a314ba20af81ad568af44b3c3e44db665ed70a68212a47820f85dba0f8ae4",
+          "parse_failures": {
+            "conflicting_explicit_answers": 15,
+            "no_supported_answer_marker": 593
+          },
+          "rows": 3744,
+          "unique_keys": 3744,
+          "valid": true
+        },
+        "B1": {
+          "expected_rows": 3744,
+          "generation_sha256": "7b8410f05d42c819f6f55be0ea1af0f9550290420838e035b5e098f178a3bb06",
+          "ids": 3744,
+          "manifest_sha256": "3aecf126aab74f9125334ba321d5b36da175a46267a268db72cf49d0907e87f8",
+          "parse_failures": {
+            "conflicting_explicit_answers": 16,
+            "no_supported_answer_marker": 687
+          },
+          "rows": 3744,
+          "unique_keys": 3744,
+          "valid": true
+        },
+        "B2": {
+          "expected_rows": 11232,
+          "generation_sha256": "62cfd3d61b7263096e88b6ae9e84b21618a737f9a404705d121535012c62c411",
+          "ids": 3744,
+          "manifest_sha256": "aa4e31001fc46502e43f3b505d074f82b568e44a89e54679ab7c091f64bb54d3",
+          "parse_failures": {
+            "conflicting_explicit_answers": 43,
+            "no_supported_answer_marker": 2124
+          },
+          "rows": 11232,
+          "unique_keys": 11232,
+          "valid": true
+        }
+      },
+      "name": "all_baseline_generations_complete_unique_pinned_and_offline",
+      "passed": true
+    },
+    {
+      "details": {
+        "pairs": [
+          [
+            "B0",
+            "format"
+          ],
+          [
+            "B0",
+            "hard"
+          ],
+          [
+            "B0",
+            "random"
+          ],
+          [
+            "B0",
+            "template"
+          ],
+          [
+            "B1",
+            "format"
+          ],
+          [
+            "B1",
+            "hard"
+          ],
+          [
+            "B1",
+            "random"
+          ],
+          [
+            "B1",
+            "template"
+          ],
+          [
+            "B2",
+            "format"
+          ],
+          [
+            "B2",
+            "hard"
+          ],
+          [
+            "B2",
+            "random"
+          ],
+          [
+            "B2",
+            "template"
+          ]
+        ]
+      },
+      "name": "metrics_cover_all_baselines_and_scopes",
+      "passed": true
+    },
+    {
+      "details": [
+        {
+          "forbidden_calls": [],
+          "forbidden_imports": [],
+          "path": "scripts/extract_answers.py",
+          "sha256": "0cf68fd604a5c72933769cd70b85deb2236943f4de70d437580b3627a40aca9b"
+        },
+        {
+          "forbidden_calls": [],
+          "forbidden_imports": [],
+          "path": "scripts/run_baseline.py",
+          "sha256": "968eabdbfc594fc8cdb4410fafafd4f3a0c34afafbaa81829046df7ed885d89c"
+        },
+        {
+          "forbidden_calls": [],
+          "forbidden_imports": [],
+          "path": "scripts/evaluate_generations.py",
+          "sha256": "9367bca2767efa4a82c9235cb0376cb8a698854e156d2e18fb13bcb8daa2b4e5"
+        }
+      ],
+      "name": "inference_code_has_no_forbidden_imports_or_execution_calls",
+      "passed": true
+    },
+    {
+      "details": {
+        "absolute_accuracy_difference": 0.0,
+        "all_extracted_answers_equal": true,
+        "all_raw_text_equal": true,
+        "extracted_answer_matches": 16,
+        "key_sets_equal": true,
+        "keys": 16,
+        "left_path": "artifacts/experiments/p1_20260803T110900Z_eval-foundation_aa8e7253_s42/reproduction/greedy-a/generations.jsonl",
+        "left_sample_accuracy": 0.4375,
+        "left_sha256": "52fb7f9f927b634cd677724c48b76986844de14289c39aa991b028c3f7bb7a87",
+        "raw_text_matches": 16,
+        "right_path": "artifacts/experiments/p1_20260803T110900Z_eval-foundation_aa8e7253_s42/reproduction/greedy-b/generations.jsonl",
+        "right_sample_accuracy": 0.4375,
+        "right_sha256": "2cf9b1fde6ba6b17b55219c347d0825ee3495176e2b51499a2ac2c98e179300f"
+      },
+      "name": "independent_greedy_reproduction_exact",
+      "passed": true
+    },
+    {
+      "details": {
+        "absolute_accuracy_difference": 0.0,
+        "all_extracted_answers_equal": true,
+        "all_raw_text_equal": true,
+        "allowed_accuracy_difference": 0.0,
+        "extracted_answer_matches": 48,
+        "key_sets_equal": true,
+        "keys": 48,
+        "left_path": "artifacts/experiments/p1_20260803T110900Z_eval-foundation_aa8e7253_s42/reproduction/sampling-a/generations.jsonl",
+        "left_sample_accuracy": 0.5208333333333334,
+        "left_sha256": "a658b8842d100c2591bc6bb2df02e153b83cd4175a247faa94b27a12dca9f04a",
+        "raw_text_matches": 48,
+        "right_path": "artifacts/experiments/p1_20260803T110900Z_eval-foundation_aa8e7253_s42/reproduction/sampling-b/generations.jsonl",
+        "right_sample_accuracy": 0.5208333333333334,
+        "right_sha256": "338aea9e4af13965421046e3ff7f8ac95d5b5385acac44ea38d32162317fa331"
+      },
+      "name": "seeded_sampling_reproduction_within_tolerance",
+      "passed": true
+    },
+    {
+      "details": {
+        "checks": [
+          {
+            "details": {
+              "model_id": "Qwen/Qwen2.5-3B-Instruct",
+              "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+            },
+            "name": "model_and_tokenizer_revision_pinned",
+            "passed": true
+          },
+          {
+            "details": {
+              "run_1": "Initially, there are 12 books on the shelf. When 5 books are removed, we subtract 5 from 12 to find out how many books remain. This calculation is 12 - 5 = 7. Therefore, 7 books remain on the shelf. FINAL_ANSWER: 7",
+              "run_2": "Initially, there are 12 books on the shelf. When 5 books are removed, we subtract 5 from 12 to find out how many books remain. This calculation is 12 - 5 = 7. Therefore, 7 books remain on the shelf. FINAL_ANSWER: 7"
+            },
+            "name": "two_online_generated_texts_identical",
+            "passed": true
+          },
+          {
+            "details": {
+              "run_1": "7",
+              "run_2": "7"
+            },
+            "name": "two_online_extracted_answers_identical",
+            "passed": true
+          },
+          {
+            "details": {
+              "generated_text_matches": true,
+              "offline_environment": {
+                "HF_HUB_OFFLINE": "1",
+                "TRANSFORMERS_OFFLINE": "1"
+              },
+              "offline_requested": true
+            },
+            "name": "offline_reload_and_generation_identical",
+            "passed": true
+          },
+          {
+            "details": {
+              "after": {
+                "data/deep_chal_math_leaderboard.csv": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+                "data/deep_chal_math_train.csv": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+              },
+              "before": {
+                "data/deep_chal_math_leaderboard.csv": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+                "data/deep_chal_math_train.csv": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+              }
+            },
+            "name": "source_data_sha256_unchanged",
+            "passed": true
+          },
+          {
+            "details": {
+              "forbidden_builtin_calls_found": [],
+              "forbidden_imports_found": [],
+              "imports": [
+                "__future__",
+                "argparse",
+                "datetime",
+                "json",
+                "numpy",
+                "os",
+                "pathlib",
+                "random",
+                "re",
+                "time",
+                "torch",
+                "transformers",
+                "typing",
+                "zoneinfo"
+              ]
+            },
+            "name": "smoke_inference_has_no_external_or_execution_tool_imports",
+            "passed": true
+          },
+          {
+            "details": {
+              "allowed_answer_source": "model_outputs_only",
+              "forbidden_test_time_capabilities": {
+                "deterministic_math_verifier_for_selection_or_correction": false,
+                "external_api_or_web_search": false,
+                "external_calculation_feedback": false,
+                "external_model": false,
+                "generated_code_execution": false,
+                "per_question_dynamic_retrieval": false,
+                "python_or_sympy_math_feedback": false,
+                "sat_smt_or_numeric_solver": false
+              }
+            },
+            "name": "forbidden_test_time_capabilities_explicitly_disabled",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "schema_version": 1,
+        "verified_at_kst": "2026-08-03T19:34:21.739629+09:00",
+        "verified_at_utc": "2026-08-03T10:34:21.739629+00:00"
+      },
+      "name": "phase0_verification_remains_passed",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "schema_version": 1,
+  "verified_at_utc": "2026-08-03T15:22:46.429904+00:00"
+}

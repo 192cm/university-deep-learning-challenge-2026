@@ -1,0 +1,243 @@
+{
+  "created_at_utc": "2026-08-04T16:44:27.861792+00:00",
+  "dataset_version": "phase2_v4_final_v1_terra",
+  "experiment_scope": {
+    "allowed_commands": [
+      "run-sync",
+      "metrics",
+      "select-effort"
+    ],
+    "allowed_sync_stages": [
+      "smoke",
+      "comparison"
+    ],
+    "main_batch_prohibited": true,
+    "quality_audit_prohibited": true
+  },
+  "fixed_sets": {
+    "comparison_ids_sha256": "f274b0de8242fd50f4ade519a33975af9fc4bfbd5153162fba7f23103cd34961",
+    "comparison_matches_v3": true,
+    "comparison_rows": 40,
+    "smoke_ids_sha256": "fd1e0a51b0807d72588c994792c24e5dc3caf9e73a20b24e9b2755c90c4b82bf",
+    "smoke_matches_v3": true,
+    "smoke_rows": 10
+  },
+  "historical_cost_carry_forward": {
+    "cost_usd": 0.7211212,
+    "created_at_utc": "2026-08-04T16:44:27.821179+00:00",
+    "event": "carry_forward",
+    "paid_responses": 792,
+    "source_ledger_path": "artifacts\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\cost_ledger.jsonl",
+    "source_ledger_sha256": "a57c994b4c751900a638f49922c99137fc76ca38e5667ad77ce892966beaa695",
+    "usage": {
+      "cache_write_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 354998,
+      "output_tokens": 541768,
+      "reasoning_tokens": 372194
+    }
+  },
+  "objective": "Controlled teacher-model swap from gpt-5.6-luna to gpt-5.6-terra",
+  "outputs": {
+    "data\\phase2\\phase2_v4_final_v1_terra\\comparison_gate_manifest.json": {
+      "bytes": 1793,
+      "sha256": "e6c615586d2e36452f89e84cbd93b8aee147d2f01257df414f55d499a942bca0"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\filtered_input_audit.csv": {
+      "bytes": 2496695,
+      "sha256": "1eaaa11c72b8346b381934b94f7220e9e63351d01c07bd27648b6885d0cb354a"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\historical_luna_audit_ids.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\leaderboard_decontamination_audit.csv": {
+      "bytes": 21912,
+      "sha256": "3dc2fd075b79ae766cbbb974463f4c9e37627d928a95b4bdd28460afc99cbde7"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\legacy_raw_reuse_audit.csv": {
+      "bytes": 512,
+      "sha256": "cc49a79f45b3b5e89b42c41046a05de8c12719fc78fa5f04f8f86a65cdd5eaa0"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase1_protected_ids.txt": {
+      "bytes": 48347,
+      "sha256": "fbb7476ca96a31e7a577844125defdbd543391f6fd93c15dc50107aad2e2f7b8"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_audit_ids.txt": {
+      "bytes": 1950,
+      "sha256": "c2c562c9e1b3d44aa8fcd62160d329df3eb2e43700c78a3d9e3d8ae9fd9495d0"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_comparison.jsonl": {
+      "bytes": 25136,
+      "sha256": "5437134dc40117a04e35b6d4843acee85f8e37c6cdd3a155078e0636178fdc02"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_comparison_ids.txt": {
+      "bytes": 520,
+      "sha256": "f274b0de8242fd50f4ade519a33975af9fc4bfbd5153162fba7f23103cd34961"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_eligible.jsonl": {
+      "bytes": 6539992,
+      "sha256": "66cd18d07b016aaaf0436380d9cfab27b89a6ccbcdbcddaa4078286b003119a6"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_eligible_ids.txt": {
+      "bytes": 158717,
+      "sha256": "fba5c3a2b1137774c2abbfd3349443bdb5f811baae5cf1c2309a22b22e42a8e2"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_holdout.jsonl": {
+      "bytes": 64458,
+      "sha256": "f1ee75f44ab5d507f8a448d4b89374b6554b4fbb4918fb26161b3f2616245178"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_holdout_ids.txt": {
+      "bytes": 1300,
+      "sha256": "55d3b1abcc5b723c32258abec74daaccf34f36ae43a676f4508bab1e575477c9"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_quality_audit.jsonl": {
+      "bytes": 60872,
+      "sha256": "cb12eec20e4eb9de861c6c4135dbb01b9c51b34080d02bfff24049e04773d337"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_quality_audit_ids.txt": {
+      "bytes": 1300,
+      "sha256": "dd20e53dc668796a71f10e86c715e179651e80f3377448fe75e1a0d6b43c056c"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_quality_exclusion_audit.csv": {
+      "bytes": 2556,
+      "sha256": "16c2b679b235781cff5728cc744e7128ec72a4803c79bd65578bd07327a84257"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_schema_smoke.jsonl": {
+      "bytes": 5904,
+      "sha256": "ea6d1d9860d39c321f493383a59707306bad43590ff17480eb214050ed30d1e5"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_schema_smoke_ids.txt": {
+      "bytes": 130,
+      "sha256": "fd1e0a51b0807d72588c994792c24e5dc3caf9e73a20b24e9b2755c90c4b82bf"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\preflight_manifest.json": {
+      "bytes": 2736,
+      "sha256": "c9478122a659c54f56fb45d60e14511745e8e86080dd76e8b97f66a8b58dffa1"
+    },
+    "data\\phase2\\phase2_v4_final_v1_terra\\suspected_label_and_problem_quality_audit.csv": {
+      "bytes": 49,
+      "sha256": "307dda827edae11c2a0f9ce4cd644ec2421b0a8f729dd3019f0185d5179942ac"
+    }
+  },
+  "preflight": {
+    "absolute_max_fit": false,
+    "absolute_max_output_ceiling_cost_usd": {
+      "comparison_low": 7.90909,
+      "comparison_medium": 7.90969,
+      "smoke_low": 1.975335,
+      "smoke_medium": 1.975485
+    },
+    "absolute_max_scope_cost_usd": 19.7696,
+    "api_calls_started": false,
+    "created_at_utc": "2026-08-04T16:44:27.858945+00:00",
+    "dataset_version": "phase2_v4_final_v1_terra",
+    "forecast_cost_usd_before_margin": {
+      "comparison_low": 0.8736,
+      "comparison_medium": 1.197885,
+      "smoke_low": 0.15605,
+      "smoke_medium": 0.211085
+    },
+    "forecast_method": "Reprice v3 actual token usage for identical requests at official Terra rates; estimate medium-smoke output/reasoning tokens with the v3 comparison medium/low ratio; then apply the configured 20% planning margin. Runtime reservations use the full 6144-token ceiling per in-flight request and enforce the $0.50 reserve.",
+    "forecast_scope_cost_usd": 2.926344,
+    "forecast_usage": {
+      "comparison_low": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 42636,
+        "output_tokens": 51134,
+        "reasoning_tokens": 33964
+      },
+      "comparison_medium": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 42636,
+        "output_tokens": 72753,
+        "reasoning_tokens": 56344
+      },
+      "smoke_low": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 10358,
+        "output_tokens": 8677,
+        "reasoning_tokens": 4661
+      },
+      "smoke_medium": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 10358,
+        "output_tokens": 12346,
+        "reasoning_tokens": 6632
+      }
+    },
+    "hard_paid_limit_usd": 4.5,
+    "historical_paid_cost_usd": 0.7211212,
+    "operational_paid_limit_usd": 4.0,
+    "planning_margin": 1.2,
+    "preflight_gate_passed": true,
+    "pricing": {
+      "source": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "standard_per_million_tokens": {
+        "cache_write": 3.125,
+        "cached_input": 0.25,
+        "input": 2.5,
+        "output": 15.0
+      },
+      "verified_at_utc": "2026-08-05T00:00:00Z"
+    },
+    "projected_cumulative_cost_usd": 3.6474652,
+    "projected_remaining_usd": 0.8525348,
+    "remaining_before_api_usd": 3.7788788,
+    "runtime_safety_guard": "At most sync_max_workers requests are reserved at once at their full token ceiling; no request starts if cumulative paid plus active reservations would exceed $4.00.",
+    "safety_reserve_usd": 0.5,
+    "schema_version": 2,
+    "scope": "Terra low/medium smoke plus low/medium fixed comparison only",
+    "stage_request_counts": {
+      "comparison_low": 80,
+      "comparison_medium": 80,
+      "smoke_low": 20,
+      "smoke_medium": 20
+    },
+    "status": "ready"
+  },
+  "primary_variable": {
+    "baseline": "gpt-5.6-luna",
+    "treatment": "gpt-5.6-terra"
+  },
+  "protection_contract": {
+    "copied_from_verified_v3_inputs": true,
+    "leaderboard_decontamination_audit_sha256": "3dc2fd075b79ae766cbbb974463f4c9e37627d928a95b4bdd28460afc99cbde7",
+    "leaderboard_external_transmission": false,
+    "phase1_protected_ids_sha256": "fbb7476ca96a31e7a577844125defdbd543391f6fd93c15dc50107aad2e2f7b8",
+    "quality_exclusion_audit_sha256": "16c2b679b235781cff5728cc744e7128ec72a4803c79bd65578bd07327a84257",
+    "v2_v3_raw_reused": false
+  },
+  "request_contract": {
+    "max_output_tokens": 6144,
+    "model": "gpt-5.6-terra",
+    "reasoning_efforts": [
+      "low",
+      "medium"
+    ],
+    "store": false,
+    "teacher_prompt_path": "configs\\phase2_v4_final_v1_terra_teacher_prompt.txt",
+    "teacher_prompt_sha256": "840f3789c73479ebabdd3a7144016d8becb162e1b42448e8ca4eb90f2f639072",
+    "teacher_schema_path": "configs\\phase2_v4_final_v1_terra_teacher_schema.json",
+    "teacher_schema_sha256": "ff96634b249f9af72cbb23121df79b09a3826286a5c8c16284e9417e691369b8",
+    "tools": [],
+    "v3_teacher_prompt_sha256": "840f3789c73479ebabdd3a7144016d8becb162e1b42448e8ca4eb90f2f639072",
+    "v3_teacher_schema_sha256": "ff96634b249f9af72cbb23121df79b09a3826286a5c8c16284e9417e691369b8"
+  },
+  "schema_version": 4,
+  "source": {
+    "canonical_train_path": "data\\deep_chal_math_train_filtered_final_v1.csv",
+    "canonical_train_rows": 16359,
+    "canonical_train_sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a",
+    "v3_config_path": "configs\\phase2_v3_final_v1.json",
+    "v3_config_sha256": "db8f63ed5d3da145e61d2e5e5126fd43e1810d75d1ba6463e00525c02ab9c789",
+    "v3_cost_ledger_path": "artifacts/phase2/phase2_verified_cot_luna_3k_final_v1_v3/cost_ledger.jsonl",
+    "v3_cost_ledger_sha256": "a57c994b4c751900a638f49922c99137fc76ca38e5667ad77ce892966beaa695",
+    "v3_input_manifest_path": "data\\phase2\\phase2_verified_cot_luna_3k_final_v1_v3\\input_manifest.json",
+    "v3_input_manifest_sha256": "52a243e77a0eb0c0eda9a8bee116b010af54034e88ad361e25ddd2a890f03d4c"
+  }
+}

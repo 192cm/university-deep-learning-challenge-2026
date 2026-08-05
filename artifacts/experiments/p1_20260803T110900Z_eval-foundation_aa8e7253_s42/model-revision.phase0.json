@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "queried_at_utc": "2026-08-03T10:18:00+00:00",
+  "source_api": "https://huggingface.co/api/models/Qwen/Qwen2.5-3B-Instruct",
+  "model_id": "Qwen/Qwen2.5-3B-Instruct",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct",
+  "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "download_command": "hf download Qwen/Qwen2.5-3B-Instruct --revision aa8e72537993ba99e69dfaafa59ed015b17504d1 --cache-dir /workspace/.cache/huggingface",
+  "cache_snapshot": "/workspace/.cache/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "other_models_downloaded": false
+}

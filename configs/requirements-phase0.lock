@@ -1,0 +1,10 @@
+# Direct Phase 0 dependencies installed into /venv/main on 2026-08-03 UTC.
+# PyTorch is supplied by the Vast PyTorch image and is frozen in the environment manifest.
+accelerate==1.14.0
+bitsandbytes==0.50.0
+huggingface-hub==1.18.0
+peft==0.20.0
+safetensors==0.8.0
+tokenizers==0.22.2
+transformers==5.14.1
+trl==1.9.2

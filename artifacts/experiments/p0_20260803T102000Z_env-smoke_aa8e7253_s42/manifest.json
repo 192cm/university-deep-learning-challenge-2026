@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "experiment_id": "p0_20260803T102000Z_env-smoke_aa8e7253_s42",
+  "created_at_kst": "2026-08-03T19:20:00+09:00",
+  "created_at_utc": "2026-08-03T10:20:00+00:00",
+  "objective": "Freeze Phase 0 rules and environment, then reproduce deterministic pinned-revision smoke inference online and offline.",
+  "code_commit_or_diff": {
+    "git_head": "f7ba0809bf18697ee9d3f8f563c7796fab26fc75",
+    "input_snapshot_sha256": "7a353d48c33a49676e2c52aa5651e065c09fd7720fb479a45f24887a7481cd8a",
+    "git_status_path": "git-status.final.txt",
+    "diff_path": "working-tree.patch",
+    "diff_sha256": "e50b17923872cf50d99ba9db3a4e9596b56e455df04b80102f5f72f4b5b61ac3"
+  },
+  "base_model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "tokenizer": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "dataset_paths": [
+    "data/deep_chal_math_train.csv",
+    "data/deep_chal_math_leaderboard.csv"
+  ],
+  "dataset_sha256": {
+    "data/deep_chal_math_train.csv": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+    "data/deep_chal_math_leaderboard.csv": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7"
+  },
+  "split_version": null,
+  "training_config": {},
+  "inference_config": {
+    "config_path": "configs/phase0.json",
+    "seed": 42,
+    "do_sample": false,
+    "max_new_tokens": 192,
+    "offline_reload_tested": true,
+    "answer_source": "model_outputs_only"
+  },
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "hardware": {
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "gpu_uuid": "GPU-a9b76bc8-5409-fc15-8eba-2e8a0192cf30",
+    "gpu_count": 1,
+    "vram_mib_per_gpu": 24564,
+    "cpu": "AMD EPYC 7B13 64-Core Processor; 128 logical CPUs visible",
+    "ram_bytes_visible": 270055575552
+  },
+  "software": {
+    "python": "3.12.13",
+    "pytorch": "2.11.0+cu128",
+    "pytorch_cuda": "12.8",
+    "transformers": "5.14.1",
+    "accelerate": "1.14.0",
+    "peft": "0.20.0",
+    "trl": "1.9.2",
+    "bitsandbytes": "0.50.0",
+    "nvidia_driver": "570.133.07"
+  },
+  "runtime": {
+    "first_successful_run_at_utc": "2026-08-03T10:27:42.674132+00:00",
+    "second_successful_run_at_utc": "2026-08-03T10:28:04.883186+00:00",
+    "offline_run_at_utc": "2026-08-03T10:28:30.560354+00:00",
+    "verification_at_utc": "2026-08-03T10:28:51.451150+00:00"
+  },
+  "metrics": {
+    "greedy_accuracy": null,
+    "sample_accuracy": null,
+    "pass_at_k": {},
+    "majority_at_k": {},
+    "answer_agreement": 1.0,
+    "invalid_output_rate": 0.0,
+    "median_output_tokens": 65,
+    "p95_latency_seconds": null,
+    "estimated_total_final_test_runtime_seconds": null,
+    "random_holdout": {},
+    "template_group_holdout": {},
+    "smoke_run_latency_seconds": [
+      3.061529885046184,
+      3.029779457487166,
+      3.0265420796349645
+    ],
+    "online_texts_identical": true,
+    "offline_text_identical": true
+  },
+  "artifact_paths": [
+    "environment.preinstall.json",
+    "environment.json",
+    "model-revision.json",
+    "python-freeze.txt",
+    "package-install.log",
+    "package-check.log",
+    "focused-tests.log",
+    "smoke-run-1.json",
+    "smoke-run-2.json",
+    "smoke-run-offline.json",
+    "verification.json",
+    "artifact-sha256.txt"
+  ],
+  "raw_generation_paths": [
+    "smoke-run-format-failure.json",
+    "smoke-run-1.json",
+    "smoke-run-2.json",
+    "smoke-run-offline.json"
+  ],
+  "decision": "keep",
+  "decision_reason": "Pinned-revision online runs were identical, cache-only offline reload matched, focused tests passed, source data hashes were unchanged, and no prohibited test-time tool path was present."
+}

@@ -1,0 +1,35 @@
+test_core_package_imports (tests.test_phase0_environment.Phase0EnvironmentTests.test_core_package_imports) ... /venv/main/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ok
+test_cuda_is_available (tests.test_phase0_environment.Phase0EnvironmentTests.test_cuda_is_available) ... ok
+test_exact_core_package_versions (tests.test_phase0_environment.Phase0EnvironmentTests.test_exact_core_package_versions) ... ok
+test_phase0_config_is_pinned_and_cache_is_external (tests.test_phase0_environment.Phase0EnvironmentTests.test_phase0_config_is_pinned_and_cache_is_external) ... ok
+test_does_not_calculate_or_guess_missing_answer (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_does_not_calculate_or_guess_missing_answer) ... ok
+test_extracts_explicit_final_answer (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_extracts_explicit_final_answer) ... ok
+test_rejects_any_other_base_model (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_rejects_any_other_base_model) ... ok
+test_uses_last_explicit_final_answer (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_uses_last_explicit_final_answer) ... ok
+test_boxed_decimal_and_fraction_forms (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_boxed_decimal_and_fraction_forms) ... ok
+test_conflicting_explicit_answers_fail (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_conflicting_explicit_answers_fail) ... ok
+test_empty_output_fails (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_empty_output_fails) ... ok
+test_explicit_final_sentence (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_explicit_final_sentence) ... ok
+test_final_answer_marker_has_priority (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_final_answer_marker_has_priority) ... ok
+test_last_repeated_identical_marker_is_allowed (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_last_repeated_identical_marker_is_allowed) ... ok
+test_limited_standalone_last_line_fallback (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_limited_standalone_last_line_fallback) ... ok
+test_markerless_prose_and_expression_fail (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_markerless_prose_and_expression_fail) ... ok
+test_normalization_never_reduces_fraction_or_calculates (tests.test_phase1_answer_extraction.AnswerExtractionTests.test_normalization_never_reduces_fraction_or_calculates) ... ok
+test_diagnostics_are_deterministic (tests.test_phase1_splits.SplitTests.test_diagnostics_are_deterministic) ... ok
+test_random_split_is_deterministic_and_disjoint (tests.test_phase1_splits.SplitTests.test_random_split_is_deterministic_and_disjoint) ... ok
+test_template_allocation_never_splits_a_group (tests.test_phase1_splits.SplitTests.test_template_allocation_never_splits_a_group) ... ok
+test_template_normalization_covers_numbers_names_currency_units (tests.test_phase1_splits.SplitTests.test_template_normalization_covers_numbers_names_currency_units) ... ok
+test_majority_vote_uses_order_not_ground_truth_for_tie (tests.test_phase1_metrics.MetricTests.test_majority_vote_uses_order_not_ground_truth_for_tie) ... ok
+test_metrics_compute_exact_match_pass_and_majority (tests.test_phase1_metrics.MetricTests.test_metrics_compute_exact_match_pass_and_majority) ... ok
+test_completed_generation_is_not_scheduled_again (tests.test_phase1_resume.ResumeTests.test_completed_generation_is_not_scheduled_again) ... ok
+test_duplicate_cache_key_fails (tests.test_phase1_resume.ResumeTests.test_duplicate_cache_key_fails) ... ok
+test_inference_modules_have_no_forbidden_imports_or_execution_calls (tests.test_phase1_compliance.ComplianceTests.test_inference_modules_have_no_forbidden_imports_or_execution_calls) ... ok
+test_model_and_tokenizer_calls_are_pinned_offline (tests.test_phase1_compliance.ComplianceTests.test_model_and_tokenizer_calls_are_pinned_offline) ... ok
+test_phase1_config_disables_forbidden_capabilities (tests.test_phase1_compliance.ComplianceTests.test_phase1_config_disables_forbidden_capabilities) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 4.357s
+
+OK

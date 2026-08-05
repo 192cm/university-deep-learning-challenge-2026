@@ -1,0 +1,1575 @@
+{
+  "acceptance": {
+    "audit_ids_excluded": true,
+    "final_grades": [
+      "A",
+      "B",
+      "C"
+    ],
+    "grade_c_recommended_sampling_weight": 0.35,
+    "grade_d_excluded": true,
+    "incorrect_outputs_are_never_repaired": true
+  },
+  "api": {
+    "main_batch_submitted": false,
+    "prompt": "You are creating supervised fine-tuning data for mathematical problem solving.\n\nProduce an explicit, concise, self-contained natural-language solution that a student can read. This is a visible explanation, not private chain-of-thought. Use no tools, calculators, code execution, web search, external services, or unverifiable citations. Do not mention using any such tool.\n\nRespect every condition in the problem. Aim for roughly 150 to 300 visible tokens, but keep all logic needed to justify the result. Independently check the calculation and any units. The final_answer field must contain only the answer value, without prose. Do not put a FINAL_ANSWER marker inside the solution field.\n\nReturn exactly the required JSON object.",
+    "provider": "OpenAI",
+    "structured_output_schema": {
+      "name": "phase2_verified_cot",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "final_answer": {
+            "description": "Only the final answer value, with no label or prose.",
+            "type": "string"
+          },
+          "self_check": {
+            "description": "A short independent verification of the result.",
+            "type": "string"
+          },
+          "solution": {
+            "description": "A concise, explicit, tool-free solution suitable for supervised fine-tuning.",
+            "type": "string"
+          },
+          "unit_check": {
+            "description": "A short check of units or a statement that the result is dimensionless.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "solution",
+          "final_answer",
+          "unit_check",
+          "self_check"
+        ],
+        "type": "object"
+      },
+      "strict": true,
+      "type": "json_schema"
+    },
+    "surface": "Responses API and Batch API implementation",
+    "tools": []
+  },
+  "contamination": {
+    "eligible_vs_leaderboard": {
+      "leaderboard_questions_persisted_in_outputs": false,
+      "leaderboard_rows_compared_locally": 1000,
+      "method": "Jaccard similarity over normalized token trigrams",
+      "threshold": 0.86
+    },
+    "external_curriculum": {
+      "accepted_exact_or_template_matches": 0,
+      "accepted_near_matches": 0,
+      "comparison_is_local_only": true,
+      "competition_train_rows": 17000,
+      "leaderboard_original_rows": 1000,
+      "method": "exact, normalized-template, normalized token-trigram Jaccard",
+      "near_threshold": 0.86,
+      "protected_phase1_ids": 3744,
+      "removed_examples_without_question_text": [
+        {
+          "external_row_idx": 51540,
+          "match_type": "template",
+          "protected_id": "train-004216",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 29713,
+          "match_type": "near",
+          "protected_id": "train-002881",
+          "score": 0.916667
+        },
+        {
+          "external_row_idx": 33676,
+          "match_type": "exact",
+          "protected_id": "train-006781",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 57339,
+          "match_type": "exact",
+          "protected_id": "train-005826",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 45215,
+          "match_type": "exact",
+          "protected_id": "train-013053",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46844,
+          "match_type": "exact",
+          "protected_id": "train-013180",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 31937,
+          "match_type": "template",
+          "protected_id": "train-015617",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 49867,
+          "match_type": "exact",
+          "protected_id": "train-014827",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 48812,
+          "match_type": "near",
+          "protected_id": "val-000115",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 38174,
+          "match_type": "exact",
+          "protected_id": "train-002648",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 59945,
+          "match_type": "exact",
+          "protected_id": "train-014431",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 54811,
+          "match_type": "exact",
+          "protected_id": "train-000674",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 27995,
+          "match_type": "exact",
+          "protected_id": "train-013216",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 2763,
+          "match_type": "exact",
+          "protected_id": "train-003074",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 48460,
+          "match_type": "exact",
+          "protected_id": "train-012065",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 25715,
+          "match_type": "template",
+          "protected_id": "train-014279",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 23975,
+          "match_type": "template",
+          "protected_id": "train-013875",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 61352,
+          "match_type": "near",
+          "protected_id": "train-002631",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 158,
+          "match_type": "exact",
+          "protected_id": "train-002733",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13675,
+          "match_type": "exact",
+          "protected_id": "train-004659",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 56073,
+          "match_type": "exact",
+          "protected_id": "train-016434",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 14904,
+          "match_type": "template",
+          "protected_id": "train-016970",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 6219,
+          "match_type": "exact",
+          "protected_id": "train-016869",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 30042,
+          "match_type": "exact",
+          "protected_id": "train-001383",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 41350,
+          "match_type": "near",
+          "protected_id": "train-003321",
+          "score": 0.875
+        },
+        {
+          "external_row_idx": 18323,
+          "match_type": "template",
+          "protected_id": "train-014471",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 45214,
+          "match_type": "exact",
+          "protected_id": "train-002217",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 62437,
+          "match_type": "exact",
+          "protected_id": "train-006764",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 30832,
+          "match_type": "exact",
+          "protected_id": "train-013903",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 54129,
+          "match_type": "template",
+          "protected_id": "train-014170",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 45130,
+          "match_type": "near",
+          "protected_id": "train-009614",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 19217,
+          "match_type": "exact",
+          "protected_id": "train-012500",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 40063,
+          "match_type": "exact",
+          "protected_id": "train-013212",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 52067,
+          "match_type": "near",
+          "protected_id": "val-000159",
+          "score": 0.885246
+        },
+        {
+          "external_row_idx": 7544,
+          "match_type": "exact",
+          "protected_id": "train-015764",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 57629,
+          "match_type": "exact",
+          "protected_id": "train-016467",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 49423,
+          "match_type": "exact",
+          "protected_id": "train-000646",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 15142,
+          "match_type": "exact",
+          "protected_id": "train-003822",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46205,
+          "match_type": "exact",
+          "protected_id": "train-010540",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 55907,
+          "match_type": "near",
+          "protected_id": "train-009274",
+          "score": 0.912281
+        },
+        {
+          "external_row_idx": 57617,
+          "match_type": "template",
+          "protected_id": "train-008636",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 23548,
+          "match_type": "exact",
+          "protected_id": "val-000391",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 17406,
+          "match_type": "exact",
+          "protected_id": "train-011509",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 44913,
+          "match_type": "near",
+          "protected_id": "train-014958",
+          "score": 0.9
+        },
+        {
+          "external_row_idx": 60762,
+          "match_type": "template",
+          "protected_id": "train-013596",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 15726,
+          "match_type": "exact",
+          "protected_id": "train-016477",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 60729,
+          "match_type": "exact",
+          "protected_id": "train-016801",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 62418,
+          "match_type": "near",
+          "protected_id": "train-014377",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 52454,
+          "match_type": "exact",
+          "protected_id": "train-003810",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 56324,
+          "match_type": "template",
+          "protected_id": "train-015340",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 43481,
+          "match_type": "exact",
+          "protected_id": "train-013719",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 286,
+          "match_type": "exact",
+          "protected_id": "train-008232",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 17363,
+          "match_type": "exact",
+          "protected_id": "train-009458",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 11122,
+          "match_type": "template",
+          "protected_id": "train-016449",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 48766,
+          "match_type": "near",
+          "protected_id": "train-009614",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 47394,
+          "match_type": "template",
+          "protected_id": "train-001319",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 18031,
+          "match_type": "exact",
+          "protected_id": "train-002090",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 34264,
+          "match_type": "exact",
+          "protected_id": "train-009995",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 40483,
+          "match_type": "exact",
+          "protected_id": "val-000997",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46596,
+          "match_type": "near",
+          "protected_id": "train-013099",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 17676,
+          "match_type": "near",
+          "protected_id": "train-009025",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 59933,
+          "match_type": "exact",
+          "protected_id": "train-011034",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 3195,
+          "match_type": "exact",
+          "protected_id": "train-011904",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 50467,
+          "match_type": "exact",
+          "protected_id": "train-003681",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 25356,
+          "match_type": "near",
+          "protected_id": "train-011925",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 21744,
+          "match_type": "near",
+          "protected_id": "train-009025",
+          "score": 0.909091
+        },
+        {
+          "external_row_idx": 61519,
+          "match_type": "template",
+          "protected_id": "train-006479",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 54118,
+          "match_type": "exact",
+          "protected_id": "train-002528",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 3930,
+          "match_type": "template",
+          "protected_id": "train-013104",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 18164,
+          "match_type": "near",
+          "protected_id": "train-003328",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 18977,
+          "match_type": "exact",
+          "protected_id": "train-006163",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46261,
+          "match_type": "near",
+          "protected_id": "train-001235",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 59,
+          "match_type": "exact",
+          "protected_id": "train-007902",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 15681,
+          "match_type": "near",
+          "protected_id": "train-007628",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 64925,
+          "match_type": "near",
+          "protected_id": "train-003050",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 925,
+          "match_type": "exact",
+          "protected_id": "train-003098",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 57463,
+          "match_type": "exact",
+          "protected_id": "train-014431",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 47242,
+          "match_type": "template",
+          "protected_id": "train-015340",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 34334,
+          "match_type": "exact",
+          "protected_id": "val-000807",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 47702,
+          "match_type": "exact",
+          "protected_id": "train-016039",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 35757,
+          "match_type": "exact",
+          "protected_id": "train-011052",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 29894,
+          "match_type": "template",
+          "protected_id": "train-016970",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 19228,
+          "match_type": "exact",
+          "protected_id": "train-016470",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 36238,
+          "match_type": "exact",
+          "protected_id": "val-000502",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 3118,
+          "match_type": "exact",
+          "protected_id": "train-008877",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 22250,
+          "match_type": "template",
+          "protected_id": "train-005864",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 26446,
+          "match_type": "exact",
+          "protected_id": "train-002225",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 28937,
+          "match_type": "exact",
+          "protected_id": "train-005008",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13189,
+          "match_type": "exact",
+          "protected_id": "train-001341",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13945,
+          "match_type": "template",
+          "protected_id": "train-009055",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 1179,
+          "match_type": "near",
+          "protected_id": "train-010543",
+          "score": 0.898305
+        },
+        {
+          "external_row_idx": 56521,
+          "match_type": "exact",
+          "protected_id": "train-003169",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13200,
+          "match_type": "exact",
+          "protected_id": "train-012685",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 55889,
+          "match_type": "exact",
+          "protected_id": "train-010322",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 50919,
+          "match_type": "exact",
+          "protected_id": "train-004547",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 33126,
+          "match_type": "near",
+          "protected_id": "train-004233",
+          "score": 0.90625
+        },
+        {
+          "external_row_idx": 44204,
+          "match_type": "template",
+          "protected_id": "train-016970",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 41313,
+          "match_type": "exact",
+          "protected_id": "train-000457",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 39519,
+          "match_type": "template",
+          "protected_id": "train-004557",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 11143,
+          "match_type": "template",
+          "protected_id": "train-008522",
+          "score": 1.0
+        }
+      ]
+    }
+  },
+  "counts": {
+    "accepted_sft_rows": 0,
+    "audit_diagnostic_grades_excluded_from_sft": {
+      "low": {
+        "A": 25,
+        "B": 14,
+        "D": 61
+      },
+      "medium": {
+        "A": 32,
+        "B": 13,
+        "D": 55
+      }
+    },
+    "eligible": 12428,
+    "external_curriculum_rows": 50000,
+    "generated_rows": 0,
+    "grades": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0
+    },
+    "luna_audit_candidate_rows": 400,
+    "luna_audit_rows": 100,
+    "selected": 0,
+    "unprocessed_quality_gate": 12428
+  },
+  "dataset_version": "phase2_verified_cot_luna_budget5_v1",
+  "external_curriculum": {
+    "config": "default",
+    "contamination": {
+      "accepted_exact_or_template_matches": 0,
+      "accepted_near_matches": 0,
+      "comparison_is_local_only": true,
+      "competition_train_rows": 17000,
+      "leaderboard_original_rows": 1000,
+      "method": "exact, normalized-template, normalized token-trigram Jaccard",
+      "near_threshold": 0.86,
+      "protected_phase1_ids": 3744,
+      "removed_examples_without_question_text": [
+        {
+          "external_row_idx": 51540,
+          "match_type": "template",
+          "protected_id": "train-004216",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 29713,
+          "match_type": "near",
+          "protected_id": "train-002881",
+          "score": 0.916667
+        },
+        {
+          "external_row_idx": 33676,
+          "match_type": "exact",
+          "protected_id": "train-006781",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 57339,
+          "match_type": "exact",
+          "protected_id": "train-005826",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 45215,
+          "match_type": "exact",
+          "protected_id": "train-013053",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46844,
+          "match_type": "exact",
+          "protected_id": "train-013180",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 31937,
+          "match_type": "template",
+          "protected_id": "train-015617",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 49867,
+          "match_type": "exact",
+          "protected_id": "train-014827",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 48812,
+          "match_type": "near",
+          "protected_id": "val-000115",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 38174,
+          "match_type": "exact",
+          "protected_id": "train-002648",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 59945,
+          "match_type": "exact",
+          "protected_id": "train-014431",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 54811,
+          "match_type": "exact",
+          "protected_id": "train-000674",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 27995,
+          "match_type": "exact",
+          "protected_id": "train-013216",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 2763,
+          "match_type": "exact",
+          "protected_id": "train-003074",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 48460,
+          "match_type": "exact",
+          "protected_id": "train-012065",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 25715,
+          "match_type": "template",
+          "protected_id": "train-014279",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 23975,
+          "match_type": "template",
+          "protected_id": "train-013875",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 61352,
+          "match_type": "near",
+          "protected_id": "train-002631",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 158,
+          "match_type": "exact",
+          "protected_id": "train-002733",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13675,
+          "match_type": "exact",
+          "protected_id": "train-004659",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 56073,
+          "match_type": "exact",
+          "protected_id": "train-016434",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 14904,
+          "match_type": "template",
+          "protected_id": "train-016970",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 6219,
+          "match_type": "exact",
+          "protected_id": "train-016869",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 30042,
+          "match_type": "exact",
+          "protected_id": "train-001383",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 41350,
+          "match_type": "near",
+          "protected_id": "train-003321",
+          "score": 0.875
+        },
+        {
+          "external_row_idx": 18323,
+          "match_type": "template",
+          "protected_id": "train-014471",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 45214,
+          "match_type": "exact",
+          "protected_id": "train-002217",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 62437,
+          "match_type": "exact",
+          "protected_id": "train-006764",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 30832,
+          "match_type": "exact",
+          "protected_id": "train-013903",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 54129,
+          "match_type": "template",
+          "protected_id": "train-014170",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 45130,
+          "match_type": "near",
+          "protected_id": "train-009614",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 19217,
+          "match_type": "exact",
+          "protected_id": "train-012500",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 40063,
+          "match_type": "exact",
+          "protected_id": "train-013212",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 52067,
+          "match_type": "near",
+          "protected_id": "val-000159",
+          "score": 0.885246
+        },
+        {
+          "external_row_idx": 7544,
+          "match_type": "exact",
+          "protected_id": "train-015764",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 57629,
+          "match_type": "exact",
+          "protected_id": "train-016467",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 49423,
+          "match_type": "exact",
+          "protected_id": "train-000646",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 15142,
+          "match_type": "exact",
+          "protected_id": "train-003822",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46205,
+          "match_type": "exact",
+          "protected_id": "train-010540",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 55907,
+          "match_type": "near",
+          "protected_id": "train-009274",
+          "score": 0.912281
+        },
+        {
+          "external_row_idx": 57617,
+          "match_type": "template",
+          "protected_id": "train-008636",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 23548,
+          "match_type": "exact",
+          "protected_id": "val-000391",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 17406,
+          "match_type": "exact",
+          "protected_id": "train-011509",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 44913,
+          "match_type": "near",
+          "protected_id": "train-014958",
+          "score": 0.9
+        },
+        {
+          "external_row_idx": 60762,
+          "match_type": "template",
+          "protected_id": "train-013596",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 15726,
+          "match_type": "exact",
+          "protected_id": "train-016477",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 60729,
+          "match_type": "exact",
+          "protected_id": "train-016801",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 62418,
+          "match_type": "near",
+          "protected_id": "train-014377",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 52454,
+          "match_type": "exact",
+          "protected_id": "train-003810",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 56324,
+          "match_type": "template",
+          "protected_id": "train-015340",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 43481,
+          "match_type": "exact",
+          "protected_id": "train-013719",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 286,
+          "match_type": "exact",
+          "protected_id": "train-008232",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 17363,
+          "match_type": "exact",
+          "protected_id": "train-009458",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 11122,
+          "match_type": "template",
+          "protected_id": "train-016449",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 48766,
+          "match_type": "near",
+          "protected_id": "train-009614",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 47394,
+          "match_type": "template",
+          "protected_id": "train-001319",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 18031,
+          "match_type": "exact",
+          "protected_id": "train-002090",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 34264,
+          "match_type": "exact",
+          "protected_id": "train-009995",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 40483,
+          "match_type": "exact",
+          "protected_id": "val-000997",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46596,
+          "match_type": "near",
+          "protected_id": "train-013099",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 17676,
+          "match_type": "near",
+          "protected_id": "train-009025",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 59933,
+          "match_type": "exact",
+          "protected_id": "train-011034",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 3195,
+          "match_type": "exact",
+          "protected_id": "train-011904",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 50467,
+          "match_type": "exact",
+          "protected_id": "train-003681",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 25356,
+          "match_type": "near",
+          "protected_id": "train-011925",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 21744,
+          "match_type": "near",
+          "protected_id": "train-009025",
+          "score": 0.909091
+        },
+        {
+          "external_row_idx": 61519,
+          "match_type": "template",
+          "protected_id": "train-006479",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 54118,
+          "match_type": "exact",
+          "protected_id": "train-002528",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 3930,
+          "match_type": "template",
+          "protected_id": "train-013104",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 18164,
+          "match_type": "near",
+          "protected_id": "train-003328",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 18977,
+          "match_type": "exact",
+          "protected_id": "train-006163",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 46261,
+          "match_type": "near",
+          "protected_id": "train-001235",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 59,
+          "match_type": "exact",
+          "protected_id": "train-007902",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 15681,
+          "match_type": "near",
+          "protected_id": "train-007628",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 64925,
+          "match_type": "near",
+          "protected_id": "train-003050",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 925,
+          "match_type": "exact",
+          "protected_id": "train-003098",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 57463,
+          "match_type": "exact",
+          "protected_id": "train-014431",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 47242,
+          "match_type": "template",
+          "protected_id": "train-015340",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 34334,
+          "match_type": "exact",
+          "protected_id": "val-000807",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 47702,
+          "match_type": "exact",
+          "protected_id": "train-016039",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 35757,
+          "match_type": "exact",
+          "protected_id": "train-011052",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 29894,
+          "match_type": "template",
+          "protected_id": "train-016970",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 19228,
+          "match_type": "exact",
+          "protected_id": "train-016470",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 36238,
+          "match_type": "exact",
+          "protected_id": "val-000502",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 3118,
+          "match_type": "exact",
+          "protected_id": "train-008877",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 22250,
+          "match_type": "template",
+          "protected_id": "train-005864",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 26446,
+          "match_type": "exact",
+          "protected_id": "train-002225",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 28937,
+          "match_type": "exact",
+          "protected_id": "train-005008",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13189,
+          "match_type": "exact",
+          "protected_id": "train-001341",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13945,
+          "match_type": "template",
+          "protected_id": "train-009055",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 1179,
+          "match_type": "near",
+          "protected_id": "train-010543",
+          "score": 0.898305
+        },
+        {
+          "external_row_idx": 56521,
+          "match_type": "exact",
+          "protected_id": "train-003169",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 13200,
+          "match_type": "exact",
+          "protected_id": "train-012685",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 55889,
+          "match_type": "exact",
+          "protected_id": "train-010322",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 50919,
+          "match_type": "exact",
+          "protected_id": "train-004547",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 33126,
+          "match_type": "near",
+          "protected_id": "train-004233",
+          "score": 0.90625
+        },
+        {
+          "external_row_idx": 44204,
+          "match_type": "template",
+          "protected_id": "train-016970",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 41313,
+          "match_type": "exact",
+          "protected_id": "train-000457",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 39519,
+          "match_type": "template",
+          "protected_id": "train-004557",
+          "score": 1.0
+        },
+        {
+          "external_row_idx": 11143,
+          "match_type": "template",
+          "protected_id": "train-008522",
+          "score": 1.0
+        }
+      ]
+    },
+    "counts": {
+      "accepted_rows": 50000,
+      "problem_sources": {
+        "augmented_gsm8k": 8680,
+        "augmented_math": 40372,
+        "gsm8k": 312,
+        "math": 636
+      },
+      "removal_reasons": {
+        "competition_exact_duplicate": 685,
+        "competition_near_duplicate": 182,
+        "competition_template_duplicate": 237,
+        "external_internal_exact_duplicate": 1372,
+        "external_internal_template_duplicate": 486,
+        "non_english_or_abnormal_unicode": 30,
+        "non_single_numeric_answer": 12551,
+        "question_length": 440,
+        "solution_length": 317,
+        "tool_or_code_dependent": 231
+      },
+      "removed_rows": 16531,
+      "source_rows_seen": 66531
+    },
+    "dataset": "nvidia/OpenMathInstruct-2",
+    "dataset_url": "https://huggingface.co/datasets/nvidia/OpenMathInstruct-2",
+    "filters": {
+      "english_text": true,
+      "internal_exact_and_template_deduplication": true,
+      "length_limits": true,
+      "single_numeric_answer": true,
+      "tool_and_code_mentions_removed": true
+    },
+    "license": "CC-BY-4.0",
+    "license_verified_from_hugging_face_tags": true,
+    "output": {
+      "bytes": 155502795,
+      "path": "data\\phase2\\phase2_verified_cot_luna_budget5_v1\\openmathinstruct2_curriculum_v1.jsonl",
+      "rows": 50000,
+      "sha256": "0e61b2abef33fa303f98474830ad28f8e3ed32e3c4ab94412ac71934de9ae8c8"
+    },
+    "public_free_ungated": true,
+    "retrieved_at_utc": "2026-08-03T18:40:06.975164+00:00",
+    "revision": "469216e3f46f4dacf476b382e192485ea51a143e",
+    "sampling": {
+      "batch_size": 65536,
+      "fetched_batches": 2,
+      "method": "deterministic hash-ranked rows within pinned Parquet batches",
+      "seed": 20260804,
+      "source_row_stream_sha256": "ca2502a8aa4b4dcb5f204ef9e77674c457ac2d43db4ff335efdd05cd4d7984eb",
+      "source_rows_seen": 66531,
+      "source_shard_rows": 333334
+    },
+    "schema_version": 1,
+    "source_download": {
+      "bytes": 212931526,
+      "path": "data\\phase2\\phase2_verified_cot_luna_budget5_v1\\external_download_cache\\train_1M-00000-of-00003.parquet",
+      "reused_local_cache": true,
+      "sha256": "93700f39cdc87994f2c9a6ad62e1d62e09467793f57d376cfab722757ff26e1c",
+      "url": "https://huggingface.co/datasets/nvidia/OpenMathInstruct-2/resolve/469216e3f46f4dacf476b382e192485ea51a143e/data/train_1M-00000-of-00003.parquet"
+    },
+    "split": "train_1M",
+    "viewer_url": "https://datasets-server.huggingface.co"
+  },
+  "generated_at_utc": "2026-08-03T18:42:55.089388+00:00",
+  "hypothetical_full_generation_estimate": {
+    "eligible_rows": 12428,
+    "full_eligible_mean_batch_cost_usd": 12.994716799999997,
+    "full_eligible_p95_margin_batch_cost_usd": 60.401571359999856,
+    "mean_batch_request_cost_usd": 0.0005227999999999999,
+    "p95_batch_request_cost_usd": 0.0020250499999999953,
+    "planning_margin": 1.2,
+    "two_candidate_requests": 24856
+  },
+  "input_counts": {
+    "after_all_content_and_contamination_exclusions_before_audits": 12628,
+    "eligible_for_teacher_generation": 12428,
+    "excluded_before_audits": 4372,
+    "local_quality_holdout_never_external": 100,
+    "luna_model_audit": 100,
+    "train": 17000
+  },
+  "model": {
+    "api": "OpenAI Responses API",
+    "batch_endpoint": "/v1/responses",
+    "endpoint": "/v1/responses",
+    "fallback_reasoning_effort": "medium",
+    "id": "gpt-5.6-luna",
+    "max_output_tokens": 4096,
+    "reasoning_effort": "low",
+    "retry_reasoning_effort": "high",
+    "store": false,
+    "structured_outputs": true,
+    "tools": [],
+    "visible_solution_target_tokens": [
+      150,
+      300
+    ]
+  },
+  "outputs": {
+    "data\\phase2\\phase2_verified_cot_luna_budget5_v1\\generation_status_audit.csv": {
+      "bytes": 671136,
+      "sha256": "f100f6a2c83e37d177218e72efee97a973ee7a4dc12eafb70f25444397402b46"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_budget5_v1\\phase2_verified_cot_luna_budget5_v1.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "report\\phase2\\luna_audit_candidate_validation.csv": {
+      "bytes": 132168,
+      "sha256": "de4891ee24e81f4decad730c6c8571eb52967c1f009d7965690db7e471b5afe4"
+    },
+    "report\\phase2\\luna_audit_quality_100.csv": {
+      "bytes": 20856,
+      "sha256": "1b75921ca97d9778cb442a641c36a792efdffe4398731e590baf9e09fc81700e"
+    },
+    "report\\phase2\\phase2_cost_report.md": {
+      "bytes": 893,
+      "sha256": "6ffa5f2436bdf99b9dafee51a6a64878d52e5ee195d3072434a96609447ee0c9"
+    },
+    "report\\phase2\\phase2_distribution_report.md": {
+      "bytes": 1336,
+      "sha256": "1a992a2d4179c94b0cef77fd6a8e4463f9274ebcae25408fe05bba16c92b9383"
+    },
+    "report\\phase2\\phase2_quality_report.md": {
+      "bytes": 863,
+      "sha256": "613fbdf057e2e16cbefe78779b62fbbe235645acf9e3664082e733624c493298"
+    },
+    "report\\phase2\\phase2_remote_sync.md": {
+      "bytes": 610,
+      "sha256": "cec5e831a4f200c3e6151590d9df771347af7ac8659515776bc0d9b25d719904"
+    },
+    "report\\phase2\\phase2_summary.md": {
+      "bytes": 552,
+      "sha256": "4c8b14c9a247b77054ff882f48b922ee2210fe4bb1ddfc544abea763e0ed3e7a"
+    },
+    "report\\phase2\\phase2_test_report.md": {
+      "bytes": 879,
+      "sha256": "bc3a85adff11e5c9efb442b809d2f714e514f8aacd6fa3115f7fb459b13eead4"
+    }
+  },
+  "phase2_complete": false,
+  "quality_gates": {
+    "low": {
+      "answer_extraction_failure_rate": 0.235,
+      "automated_review_error_rate": 0.28,
+      "first_candidate_exact_accuracy": 0.54,
+      "gate_checks": {
+        "answer_extraction_failure_rate": false,
+        "complete": true,
+        "first_candidate_accuracy": false,
+        "json_parse_rate": true,
+        "pass_at_2": false,
+        "review_error_rate": false
+      },
+      "gate_passed": false,
+      "generated_at_utc": "2026-08-03T17:42:12.019508+00:00",
+      "json_parse_rate": 0.99,
+      "model": "gpt-5.6-luna",
+      "pass_at_2": 0.58,
+      "reasoning_effort": "low",
+      "requests_complete": 200,
+      "requests_expected": 200,
+      "rows_complete": 100,
+      "rows_expected": 100,
+      "schema_version": 1,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 72320,
+        "output_tokens": 123707,
+        "p95_input_tokens": 481.3999999999995,
+        "p95_output_tokens": 1971.0999999999985,
+        "p95_reasoning_tokens": 1552.0,
+        "reasoning_tokens": 71991
+      }
+    },
+    "medium": {
+      "answer_extraction_failure_rate": 0.255,
+      "automated_review_error_rate": 0.31,
+      "first_candidate_exact_accuracy": 0.61,
+      "gate_checks": {
+        "answer_extraction_failure_rate": false,
+        "complete": true,
+        "first_candidate_accuracy": false,
+        "json_parse_rate": false,
+        "pass_at_2": false,
+        "review_error_rate": false
+      },
+      "gate_passed": false,
+      "generated_at_utc": "2026-08-03T18:11:16.253719+00:00",
+      "json_parse_rate": 0.965,
+      "model": "gpt-5.6-luna",
+      "pass_at_2": 0.65,
+      "reasoning_effort": "medium",
+      "requests_complete": 200,
+      "requests_expected": 200,
+      "rows_complete": 100,
+      "rows_expected": 100,
+      "schema_version": 1,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 72320,
+        "output_tokens": 162207,
+        "p95_input_tokens": 481.3999999999995,
+        "p95_output_tokens": 3294.849999999992,
+        "p95_reasoning_tokens": 2982.049999999993,
+        "reasoning_tokens": 120182
+      }
+    }
+  },
+  "raw_responses": {
+    "shards": 432,
+    "tree_sha256": "9a79fbd6adb4ee30b25af481d5547fa4bc1f72dc1711f4f701ea3045c29abb9d"
+  },
+  "schema_version": 1,
+  "sources": {
+    "data\\deep_chal_math_leaderboard.csv": {
+      "external_transmission": false,
+      "rows": 1000,
+      "sha256": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+      "use": "local_decontamination_only"
+    },
+    "data\\deep_chal_math_train.csv": {
+      "rows": 17000,
+      "sha256": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df"
+    },
+    "data\\deep_chal_math_train_filter_audit.csv": {
+      "rows": 17000,
+      "sha256": "3275fc5ad3dfc7ef6f3e699714c1e38302642040c88ab2c414c930b669b949dd"
+    }
+  },
+  "status": "blocked_quality_gate",
+  "usage_and_cost": {
+    "active_reservations": {},
+    "committed_cost_usd": 0.3957592,
+    "events": 1300,
+    "hard_limit_usd": 4.5,
+    "paid_cost_usd": 0.3957592,
+    "paid_responses": 432,
+    "remaining_paid_budget_usd": 4.1042408,
+    "safety_reserve_usd": 0.5,
+    "tokens": {
+      "cache_write_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 155816,
+      "output_tokens": 303830,
+      "reasoning_tokens": 203692
+    }
+  },
+  "validation_code": {
+    "scripts\\build_phase2_inputs.py": "1d2b98507c9003cba0248357934f41d9842934927576407611f74fbc9b2df755",
+    "scripts\\finalize_phase2.py": "5255d45b7cf541ebdc43023559b6c3ae8ed38418a3944925b9a8c141aa418887",
+    "scripts\\phase2_common.py": "54eaec7781a9101c4db9a0522ce696b16a9d15fe740e98d9047d8092d3f9897e",
+    "scripts\\phase2_openai.py": "2cefa44952fc9c23d66fbc84bb064da5e9504105088f355c6be47844d68ef572",
+    "scripts\\prepare_external_curriculum.py": "c284a83300b0f664512f304c5832526867fe54edb0300821d800197b4db68870",
+    "scripts\\run_phase2_luna.py": "649796648ceeb2e362c0a4c2fb4e5b8f73736b3809d46602f6d3e9737db7c530",
+    "scripts\\verify_phase2.py": "0d1eebcea1d18d24da350fa101f5249c4aa728e543f594fa783bad01a56fa4fc"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 3,
+  "phase": 2,
+  "dataset_version": "phase2_verified_cot_luna_3k_final_v1_v3",
+  "request_revision": "v3_r1",
+  "final_jsonl_name": "phase2_verified_cot_luna_3k_final_v1_v3.jsonl",
+  "report_prefix": "phase2_v3_final_v1",
+  "batch_phase": "2-v3-final-v1",
+  "final_selection_namespace": "phase2_v3_final_v1_core",
+  "seed": 20260805,
+  "teacher_prompt_path": "configs/phase2_v3_final_v1_teacher_prompt.txt",
+  "teacher_schema_path": "configs/phase2_v3_final_v1_teacher_schema.json",
+  "model": {
+    "id": "gpt-5.6-luna",
+    "api": "OpenAI Responses API",
+    "endpoint": "/v1/responses",
+    "batch_endpoint": "/v1/responses",
+    "reasoning_efforts": ["low", "medium"],
+    "tools": [],
+    "store": false,
+    "max_output_tokens": 6144,
+    "visible_solution_target_tokens": [150, 300],
+    "candidates_per_row": 2,
+    "structured_outputs": true
+  },
+  "budget": {
+    "hard_paid_limit_usd": 4.5,
+    "safety_reserve_usd": 0.5,
+    "historical_paid_cost_usd": 0.5429184,
+    "historical_ledger_path": "artifacts/phase2/phase2_verified_cot_luna_3k_v2/cost_ledger.jsonl",
+    "historical_paid_responses": 612,
+    "historical_usage": {
+      "input_tokens": 259368,
+      "cached_input_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 409204,
+      "reasoning_tokens": 277225
+    },
+    "pricing_verified_at_utc": "2026-08-04T00:00:00Z",
+    "pricing_source": "https://developers.openai.com/api/docs/pricing",
+    "standard_per_million_tokens": {
+      "input": 0.2,
+      "cached_input": 0.02,
+      "cache_write": 0.25,
+      "output": 1.2
+    },
+    "batch_per_million_tokens": {
+      "input": 0.1,
+      "cached_input": 0.01,
+      "cache_write": 0.125,
+      "output": 0.6
+    },
+    "long_context_threshold_tokens": 272000,
+    "planning_p95_margin": 1.2,
+    "sync_max_workers": 4,
+    "batch_shard_rows": 150,
+    "retry_budget_fraction": 0.1
+  },
+  "quality_gate": {
+    "schema_smoke_rows": 10,
+    "comparison_rows": 40,
+    "quality_audit_rows": 100,
+    "local_quality_holdout_rows": 100,
+    "response_completion_rate_min": 0.98,
+    "completed_json_parse_rate_min": 1.0,
+    "completed_schema_rate_min": 1.0,
+    "canonical_integer_extraction_rate_min": 0.99,
+    "first_candidate_accuracy_min": 0.75,
+    "pass_at_2_min": 0.85,
+    "verifier_fatal_error_rate_max_exclusive": 0.05,
+    "non_integer_final_answers_max": 0
+  },
+  "data": {
+    "canonical_train_path": "data/deep_chal_math_train_filtered_final_v1.csv",
+    "canonical_train_rows": 16359,
+    "canonical_train_sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a",
+    "immutable_train_path": "data/deep_chal_math_train.csv",
+    "immutable_train_rows": 17000,
+    "immutable_train_sha256": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+    "leaderboard_path": "data/deep_chal_math_leaderboard.csv",
+    "leaderboard_rows": 1000,
+    "leaderboard_sha256": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+    "phase1_split_dir": "data/splits/phase1_v2_final_v1",
+    "quality_exclusion_audit_path": "report/phase2_v2/phase2_v2_comparison_failure_audit.csv",
+    "quality_exclusion_categories": [
+      "strict_contract_multiple_possible",
+      "strict_contract_underdetermined",
+      "strict_contract_non_numeric_answer",
+      "inconsistent_problem_statement",
+      "corrupted_multi_output",
+      "likely_noisy_label_noninteger_answer",
+      "likely_noisy_label"
+    ],
+    "previous_phase2_artifact_dir": "artifacts/phase2/phase2_verified_cot_luna_3k_v2",
+    "output_dir": "data/phase2/phase2_verified_cot_luna_3k_final_v1_v3",
+    "artifact_dir": "artifacts/phase2/phase2_verified_cot_luna_3k_final_v1_v3",
+    "report_dir": "report/phase2_v3_final_v1",
+    "near_duplicate_jaccard_threshold": 0.86,
+    "target_core_rows_max": 3000,
+    "manual_exclusions": {}
+  }
+}

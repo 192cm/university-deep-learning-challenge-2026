@@ -1,0 +1,15 @@
+test_core_package_imports (tests.test_phase0_environment.Phase0EnvironmentTests.test_core_package_imports) ... /venv/main/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ok
+test_cuda_is_available (tests.test_phase0_environment.Phase0EnvironmentTests.test_cuda_is_available) ... ok
+test_exact_core_package_versions (tests.test_phase0_environment.Phase0EnvironmentTests.test_exact_core_package_versions) ... ok
+test_phase0_config_is_pinned_and_cache_is_external (tests.test_phase0_environment.Phase0EnvironmentTests.test_phase0_config_is_pinned_and_cache_is_external) ... ok
+test_does_not_calculate_or_guess_missing_answer (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_does_not_calculate_or_guess_missing_answer) ... ok
+test_extracts_explicit_final_answer (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_extracts_explicit_final_answer) ... ok
+test_rejects_any_other_base_model (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_rejects_any_other_base_model) ... ok
+test_uses_last_explicit_final_answer (tests.test_phase0_smoke_inference.Phase0SmokeInferenceTests.test_uses_last_explicit_final_answer) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.212s
+
+OK

@@ -1,0 +1,28 @@
+{
+  "type": "json_schema",
+  "name": "phase2_verified_cot",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "solution": {
+        "type": "string",
+        "description": "A concise, explicit, tool-free solution suitable for supervised fine-tuning."
+      },
+      "final_answer": {
+        "type": "string",
+        "description": "Only the final answer value, with no label or prose."
+      },
+      "unit_check": {
+        "type": "string",
+        "description": "A short check of units or a statement that the result is dimensionless."
+      },
+      "self_check": {
+        "type": "string",
+        "description": "A short independent verification of the result."
+      }
+    },
+    "required": ["solution", "final_answer", "unit_check", "self_check"],
+    "additionalProperties": false
+  }
+}

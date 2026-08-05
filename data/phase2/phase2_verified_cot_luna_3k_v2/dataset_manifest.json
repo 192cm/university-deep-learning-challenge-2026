@@ -1,0 +1,657 @@
+{
+  "canonical_modeling_dataset": {
+    "path": "data/deep_chal_math_train_filtered.csv",
+    "rows": 16528,
+    "sha256": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98"
+  },
+  "counts": {
+    "accepted": 0,
+    "canonical_filtered_train": 16528,
+    "eligible": 12255,
+    "generated": 0,
+    "grades": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "unprocessed": 0,
+      "unsuitable": 0
+    },
+    "non_integer_labels": 0,
+    "selected": 0,
+    "suspected_label_or_problem_quality_excluded": 2,
+    "unprocessed": 12255
+  },
+  "dataset_version": "phase2_verified_cot_luna_3k_v2",
+  "generated_at_utc": "2026-08-04T06:15:33.016078+00:00",
+  "immutable_original_use": "provenance_and_filter_reproduction_only",
+  "input_manifest_sha256": "f6389ac8c0d21232c249f05f3e9078143271e3f3d2e6a9d47dd064e6b48c4d88",
+  "legacy_v1_reanalysis": {
+    "generated_at_utc": "2026-08-04T05:57:47.763872+00:00",
+    "metrics": {
+      "low": {
+        "canonical_integer_extraction_rate": 0.601010101010101,
+        "completed_response_json_parse_rate": 1.0,
+        "completed_response_schema_rate": 1.0,
+        "corrected_verifier_error_rate": 0.0,
+        "effort": "low",
+        "first_candidate_exact_accuracy": 0.42,
+        "label_mismatch_rate": 0.2689075630252101,
+        "legacy_json_parse_rate_including_incomplete": 0.99,
+        "noncanonical_integer_output_count": 79,
+        "noncanonical_integer_output_rate": 0.398989898989899,
+        "old_verifier_error_rate": 0.28,
+        "pair_outcomes": {
+          "both_match": 39,
+          "neither_match": 52,
+          "one_match": 9
+        },
+        "pass_at_2": 0.48,
+        "requests_expected": 200,
+        "response_completion_rate": 0.99,
+        "responses_received": 200,
+        "rows_expected": 100,
+        "rows_with_both_candidates": 100,
+        "truncation_rate": 0.01,
+        "unsuitable_rate": 0.0
+      },
+      "medium": {
+        "canonical_integer_extraction_rate": 0.5906735751295337,
+        "completed_response_json_parse_rate": 1.0,
+        "completed_response_schema_rate": 1.0,
+        "corrected_verifier_error_rate": 0.0,
+        "effort": "medium",
+        "first_candidate_exact_accuracy": 0.49,
+        "label_mismatch_rate": 0.14035087719298245,
+        "legacy_json_parse_rate_including_incomplete": 0.965,
+        "noncanonical_integer_output_count": 79,
+        "noncanonical_integer_output_rate": 0.40932642487046633,
+        "old_verifier_error_rate": 0.31,
+        "pair_outcomes": {
+          "both_match": 45,
+          "neither_match": 47,
+          "one_match": 8
+        },
+        "pass_at_2": 0.53,
+        "requests_expected": 200,
+        "response_completion_rate": 0.965,
+        "responses_received": 200,
+        "rows_expected": 100,
+        "rows_with_both_candidates": 100,
+        "truncation_rate": 0.035,
+        "unsuitable_rate": 0.0
+      }
+    },
+    "records_reanalyzed": 400,
+    "reuse_audit_failed": 0,
+    "reuse_audit_passed": 400,
+    "reuse_audit_path": "data\\phase2\\phase2_verified_cot_luna_3k_v2\\legacy_v1_reuse_audit.csv",
+    "schema_version": 2,
+    "source_raw_responses_immutable": true,
+    "source_request_manifest": "artifacts\\phase2\\phase2_verified_cot_luna_budget5_v1\\request_manifest.jsonl"
+  },
+  "model": {
+    "api": "OpenAI Responses API",
+    "batch_endpoint": "/v1/responses",
+    "endpoint": "/v1/responses",
+    "id": "gpt-5.6-luna",
+    "max_output_tokens": 4096,
+    "reasoning_efforts": [
+      "low",
+      "medium"
+    ],
+    "store": false,
+    "structured_outputs": true,
+    "tools": [],
+    "visible_solution_target_tokens": [
+      150,
+      300
+    ]
+  },
+  "new_noncanonical_integer_outputs": 0,
+  "outputs": {
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\candidate_validation_audit.csv": {
+      "bytes": 156,
+      "sha256": "eef039ea884aa60c0dfb4c7e62e0b462c376f8ab2afc6a74bcb8bbbc801bfaf6"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\final_sft_ids.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\generation_status_audit.csv": {
+      "bytes": 710830,
+      "sha256": "8cb02164391c91d77f17f6b4072dd6d29baab2fad284c7b1dc6c9db4e25da442"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\legacy_v1_raw_response_metrics.json": {
+      "bytes": 2279,
+      "sha256": "0972f71f7496bd45835bd3c21b64f3debe6c625c78b16f4f877855624df80795"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\legacy_v1_raw_response_reanalysis.csv": {
+      "bytes": 258924,
+      "sha256": "a8b94b1c4a89b8817379ec0e642653655b144d6bfc14c9155a0ee3bc5efc79e3"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\legacy_v1_reuse_audit.csv": {
+      "bytes": 35347,
+      "sha256": "49bb63ae2481fee8e15d4dbc7101ff6ff6008651faf8a2c5ac86186a29a772bd"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\phase2_verified_cot_luna_3k_v2.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\verifier_before_after.json": {
+      "bytes": 1177,
+      "sha256": "d0bc0463f59086e90166cb19a4c561c6e2fd6345b86c42d8a87b177d8b065f9e"
+    },
+    "report\\phase2_v2\\legacy_v1_reanalysis.md": {
+      "bytes": 954,
+      "sha256": "d51a2a5e6c9023904d8ed8bc72fe8f5de2198d0865b531baca989c4cb6e9aca6"
+    },
+    "report\\phase2_v2\\phase2_v2_cost_report.md": {
+      "bytes": 571,
+      "sha256": "bf6e0030474cb35fadf8c73ad26ea104756e349ee0ed482ee183038ae415b2cc"
+    },
+    "report\\phase2_v2\\phase2_v2_distribution_report.md": {
+      "bytes": 861,
+      "sha256": "21c96759501281b44b6abb07904ddf91c6dd96a09cde40a1bdedad7ce9317ce5"
+    },
+    "report\\phase2_v2\\phase2_v2_quality_report.md": {
+      "bytes": 826,
+      "sha256": "66fd805494a655c7ff196ba5ab9acb19a93e11d8d9d76b21843b86b435fb73db"
+    },
+    "report\\phase2_v2\\phase2_v2_summary.md": {
+      "bytes": 764,
+      "sha256": "9a600092be5c01d1186b4b4f7b505e01fd3c2bc8295557f54a5d258dbfcc795c"
+    },
+    "report\\phase2_v2\\phase2_v2_test_and_resume.md": {
+      "bytes": 2011,
+      "sha256": "11f75e2ac79f6645daae45980cbc81a6ddd24bc6047dd94c2bbc08ccd052eb0c"
+    }
+  },
+  "phase2_complete": false,
+  "quality_metrics": {
+    "comparison:low": {
+      "canonical_integer_extraction_rate": 1.0,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "first_candidate_exact_accuracy": 0.6,
+      "gate_checks": {
+        "canonical_integer_extraction": true,
+        "completed_json_parse": true,
+        "completed_schema": true,
+        "first_candidate_accuracy": false,
+        "non_integer_final_answers": true,
+        "pass_at_2": false,
+        "response_completion": true,
+        "verifier_fatal_error_rate": true
+      },
+      "gate_passed": false,
+      "generated_at_utc": "2026-08-04T06:05:47.542936+00:00",
+      "label_mismatch_rate": 0.26865671641791045,
+      "model": "gpt-5.6-luna",
+      "non_integer_final_answer_count": 0,
+      "noncanonical_integer_output_count": 0,
+      "noncanonical_integer_output_rate": 0.0,
+      "pair_outcomes": {
+        "both_match": 23,
+        "neither_match": 14,
+        "one_match": 3
+      },
+      "pass_at_2": 0.65,
+      "reasoning_effort": "low",
+      "requests_expected": 80,
+      "response_completion_rate": 1.0,
+      "response_ids": [
+        "resp_043f4a0752f954fa016a7180b5a560819a8985e4d34e8231f3",
+        "resp_0d9964682263bcc6016a7180b59edc819b8b7dd3b54122ec34",
+        "resp_0dcaff98ab1b1180016a7180b5a00c819a88e766c2c607fdc5",
+        "resp_0738bb3228fc0bc1016a7180b5b858819ab0290c6c83d5f056",
+        "resp_0933a2d9c0b2a109016a7180b79f70819b803056050ae291d1",
+        "resp_02fcec7ecd08d2a3016a7180b7d5d88199a529a1e96d031ec3",
+        "resp_05a5193360ad3126016a7180b85120819ab3a4ed607b48070e",
+        "resp_0d15c8f94460a94c016a7180b916f0819ba6a6e5b480e82a1e",
+        "resp_0738360d4e78311c016a7180bc10948198aeae6edbcacb0b9f",
+        "resp_0bf2fc803fcd64cb016a7180bcd7cc819b98f79760ba532928",
+        "resp_0f900bea38c1e2bc016a7180be10808199a7f7294adcc99439",
+        "resp_0281f4d28d32a432016a7180bec2a4819891a1970321728af6",
+        "resp_06a414f80b62742b016a7180c757ec819b919e7651dbc83261",
+        "resp_05edf445018a9b62016a7180c81664819b99f2057163373388",
+        "resp_07c55c35fad406c7016a7180cb3534819b90a2deb26a71926c",
+        "resp_033729d5c5ab87bd016a7180cb5838819a9305402455ab28d9",
+        "resp_06e0da2e73aaffc5016a7180cc46ac819ab6958d8665410ba7",
+        "resp_01e40d3098a7d1c7016a7180ce9a208198a8d422d5fba18aaa",
+        "resp_09ee0b9900183ada016a7180cf92308198b87c55ba940b5082",
+        "resp_0a4a2114a66ecd67016a7180d019988198a7178225bfc137e3",
+        "resp_0dbabd383da3be72016a7180d1da288198bc49ccb1db8d7ca7",
+        "resp_0d62ea4dbc364658016a7180d359e8819bbc7b372e60ad012f",
+        "resp_067c9394288c86b1016a7180d41e08819ab2f79d57cf5012db",
+        "resp_097ae9c75e109ab2016a7180d4d0088198b43f9b63c859b2ad",
+        "resp_044c23567a0497e5016a7180d5cbfc8199bc6d665fa21e8e7c",
+        "resp_06099d447bde32cf016a7180d7cce4819894ba98b064a6b1a5",
+        "resp_0832a48935f58cbc016a7180d8a1748198bc5b37571656f041",
+        "resp_0845d474227ef12b016a7180d9046c8199af6e832dd89fede0",
+        "resp_03c48d7d2845660b016a7180dae7a4819b921fd14871f50193",
+        "resp_0ab6e13dbbda857a016a7180db661c81999584d8a8fd144c46",
+        "resp_06a15f6b56ea3c92016a7180de2bb8819bab1e86abe840f9e1",
+        "resp_063b22a11ef247d5016a7180dee03c819abf2fa923d36da87d",
+        "resp_05bb1a8607392652016a7180e01968819a94102fc37411e0c8",
+        "resp_0feed1e737326c5d016a7180e01d50819b9bf62a5dbe8bf4bf",
+        "resp_0cd49cad5c9d7f14016a7180ec36a8819aa7c0e54d4d16765c",
+        "resp_0c938c6663fbed40016a7180f2a1bc81988848a74ab0ef121c",
+        "resp_04124c798a4e31b6016a7180f3bd54819b9b3b610c06947f93",
+        "resp_030c9adcb82815cf016a7180f61f48819ba967609c06863651",
+        "resp_084275f68b345efc016a7180f77294819a91443176ac6b76d4",
+        "resp_062cab628c46854f016a7180f8c884819b8e57a0e2b5ef247f",
+        "resp_0ce3624931f8790b016a7180f9ed30819ba2a32ca6524f227c",
+        "resp_0205c698a5cc0ea4016a7180fae54c81999433a85857675378",
+        "resp_076f53c727c7e6de016a7180fb10e08198a776dce76b82bee7",
+        "resp_0f4f51c02256133a016a7180fbcfb88198808da72d7508f8ac",
+        "resp_08a46d0e3d47588b016a7180fd830c8198815cc2b840e8bbd2",
+        "resp_0b289f5d7bf8e474016a7180fe8f348199af797409623300ea",
+        "resp_0cc334d08afdac95016a71810114348199bebe2dad9f82156a",
+        "resp_0fdb7c5106fabe42016a7181019b10819b824dc5c59fef84e5",
+        "resp_07661854d30d4521016a7181033824819bb3cdd716b15a8886",
+        "resp_0d5d163f87fb4b12016a718103bfec8198b1b191eb8514ff8c",
+        "resp_0bf3d40f3a72930a016a718103e1908199b362542252cd07f9",
+        "resp_08cdc072a54cf351016a71810782ec819b934de94eb09d2344",
+        "resp_08182d10df354675016a71810af5b4819b94fc05ed8b98de3b",
+        "resp_05a4833d7c33163b016a71810b93f4819982cb241d1dabe0ff",
+        "resp_010a43e50a3cf27b016a71810d414c819aba1307ea828dd47d",
+        "resp_09adf7a614eab567016a71810da340819bbf33f2a32c8fe42a",
+        "resp_0de7cae62f099fc9016a71810e85f4819982a1f2eac1480100",
+        "resp_0b6891c309613c5e016a718110bc6c819a87f36afc214efdfe",
+        "resp_06728e69e5d63f17016a718111b130819aa8fb1b3d70827f47",
+        "resp_07dc11e5474415da016a718111b3448199b3b0654d2a5adec3",
+        "resp_09e57f65f7290efe016a71811256b4819a81fc103e6eae3f79",
+        "resp_002a7499da8b47ba016a7181134ca48199a795fa57f94347af",
+        "resp_0a09394471b671b0016a7181149070819aa655d12725a95809",
+        "resp_097bfe1af137b867016a718115dda0819a961b7c1ea7db0ff0",
+        "resp_06e4caa81226065d016a718117d28881988757d310eddfb632",
+        "resp_0ca52435fe7294f9016a7181194af0819898b3a005a6f4c0e8",
+        "resp_060016afd77af96c016a71811af0e481999021863b1a9916e1",
+        "resp_0c05c1ced6472e3b016a71811b11cc81999ec7036a4d8c0061",
+        "resp_0c236da161dc6217016a71811b399c819aa3c4c6cf2b97b86f",
+        "resp_0b0fbb261478f200016a71811e4e70819b8cc1ffb0f1daaa58",
+        "resp_069dac6b8ac8c35a016a71811d5644819a9f03733d5b753cf4",
+        "resp_0fe8320e5c5fac6d016a71811d6228819999d45e93ea60d565",
+        "resp_0b0daccee6e0ab3a016a71811ddb0c819993d8f2eedbcc88b6",
+        "resp_0383305767f1ddb1016a71811fe99c819997a625e7b7f1587d",
+        "resp_050de0e08d050754016a7181203e4c81989e552b776ea05737",
+        "resp_0e2f547da249adec016a7181217cc481988bd1accec67acfba",
+        "resp_0f2cd8b9d6ba6a1c016a718120f0648199aa5f5b68e5127bce",
+        "resp_012853baab9a1acb016a718121c7ac819bb0ea231e99e1674c",
+        "resp_05e12c116b73aeb5016a7181261f40819aa67a580f0858c5a9",
+        "resp_004e7437adb0db28016a71812890108198ac613c1cef099d64"
+      ],
+      "responses_received": 80,
+      "rows_expected": 40,
+      "rows_with_both_candidates": 40,
+      "schema_version": 2,
+      "stage": "comparison",
+      "truncation_rate": 0.0,
+      "unsuitable_rate": 0.1625,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 45902,
+        "output_tokens": 38462,
+        "p95_input_tokens": 683.4999999999999,
+        "p95_output_tokens": 1645.5999999999997,
+        "reasoning_tokens": 23574
+      },
+      "verifier_fatal_error_rate": 0.0
+    },
+    "comparison:medium": {
+      "canonical_integer_extraction_rate": 1.0,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "first_candidate_exact_accuracy": 0.625,
+      "gate_checks": {
+        "canonical_integer_extraction": true,
+        "completed_json_parse": true,
+        "completed_schema": true,
+        "first_candidate_accuracy": false,
+        "non_integer_final_answers": true,
+        "pass_at_2": false,
+        "response_completion": false,
+        "verifier_fatal_error_rate": true
+      },
+      "gate_passed": false,
+      "generated_at_utc": "2026-08-04T06:09:12.852203+00:00",
+      "label_mismatch_rate": 0.20634920634920634,
+      "model": "gpt-5.6-luna",
+      "non_integer_final_answer_count": 0,
+      "noncanonical_integer_output_count": 0,
+      "noncanonical_integer_output_rate": 0.0,
+      "pair_outcomes": {
+        "both_match": 24,
+        "neither_match": 14,
+        "one_match": 2
+      },
+      "pass_at_2": 0.65,
+      "reasoning_effort": "medium",
+      "requests_expected": 80,
+      "response_completion_rate": 0.95,
+      "response_ids": [
+        "resp_0463ab6a498331b5016a718148fa9c819990f8a3a6b0bbbed6",
+        "resp_0306048ec007d5b8016a718148f8748198a67189852a554a7a",
+        "resp_09562aa115a96b3b016a718148f9f48199bc75764a5685c252",
+        "resp_09ac04d7d25cbdd2016a718148ffe08198be3b4294887a527c",
+        "resp_033e337128b0267e016a71814b92788199a8ce3ed164648e33",
+        "resp_0688774c84c6535a016a71814b8e9c819bbda7a7ed9ce1a12d",
+        "resp_089d3da67cd791a2016a71814befe88199a488be8c61fd7a09",
+        "resp_06f3f06edeb14dcf016a71814c00bc8198afff5910a998d146",
+        "resp_018781a6b9fd041f016a7181511f5c819b9a341fdd3ca19275",
+        "resp_03c172bd87a0486f016a718150fa54819b8e402f308969b89e",
+        "resp_054f31cd07e76611016a7181536ee0819a892407cc71a14f30",
+        "resp_0a567dc1c4cf3cc3016a7181563db8819a9a16ca334c0f6dca",
+        "resp_0e0bfc032e5a01bf016a718164796c8199a660f176b53338e3",
+        "resp_0868d79f70a913f6016a71816972a88198bb0dadf4314dcf16",
+        "resp_0c5fb9bfe9511723016a71816d0e948198a86f9074a7eb994f",
+        "resp_07e4342a77b04410016a71816dc32c819883b21c1c896053c8",
+        "resp_043998e5e76644f1016a71817168cc819babc30359f6fadad4",
+        "resp_037e0c89e2a34678016a718171f32481999786f833853bc672",
+        "resp_0c1d9e99e1c1fb4b016a7181743424819894d3485edc1fe8a5",
+        "resp_096e06a7ad44dcb4016a718174dabc819b82e0868cd25d78f9",
+        "resp_06166de76e376fec016a7181772bac8198855ad267bc6cc397",
+        "resp_01036f2056fa0f8e016a7181786d8881988d2e631d047cc515",
+        "resp_0115721a090b615c016a71817ab4348199a8fea71fd8e9255f",
+        "resp_0cba3b9936b65572016a71817b8880819981d3d85956f1ab02",
+        "resp_058ea04ffc343e8c016a71817cb7248198a5fec7a6dac70f3d",
+        "resp_0d9b4dcca8219540016a71817cee488199a88fe27f49453166",
+        "resp_062e4791c962bb73016a71817daea0819bbfaba581425a178b",
+        "resp_042b1f9d46ed088b016a71817f5e348198a9747b5ea23cf87a",
+        "resp_0df5087d818324fa016a71817fb8fc819a9c325a00586fd7c4",
+        "resp_032e1f1617e17c5f016a71818070fc819981c76aa3bf85002a",
+        "resp_09bdfdba5823b6b3016a718182e2fc819bb7d695833a224fd4",
+        "resp_036aec14d4662f18016a7181831cf88198802953af3f15c0b7",
+        "resp_0a8cfb225690a79c016a718183ad38819890593b58960a85c7",
+        "resp_016b1725021cc520016a71818a5084819b909551a03663bcf8",
+        "resp_0492cdc18b0f7d6e016a71819f64e0819b9d3413740d42fa35",
+        "resp_0df5aab6dbcdff74016a7181a559bc81998dc3abe2802e705e",
+        "resp_036dc07a45f1a87c016a7181a5d5cc81999d9aa2ac6426d358",
+        "resp_02f6c5020b1ec005016a7181a9e440819b825fb4c35d0f782a",
+        "resp_04c7e500005fca64016a7181ad7988819bac569250b1e5616b",
+        "resp_052370b6b8cfa1f1016a7181ac4f68819992d09a7001b6089e",
+        "resp_0a512f04b840b897016a7181ad4530819a92bf823beedad14d",
+        "resp_0215ff0e4769a8b0016a7181ae64548198afe915c87a43fe8a",
+        "resp_0cbc0d84e5bcb31c016a7181af46288198b0443c5007d38cba",
+        "resp_0664e2ed77b3ee79016a7181b0898c8199a623fcf33d65c7b0",
+        "resp_07ed8ba91bece5df016a7181b1eb2c819b99e769d593e75b50",
+        "resp_0ad8db857abcee55016a7181b582f8819a9f92a4768b766337",
+        "resp_09dd9f580723473f016a7181b4fa4c819b84c69393caef141d",
+        "resp_0201fc539cc068f1016a7181b7c198819b8d6fee6e9fa2f21e",
+        "resp_05df9894e50d9641016a7181b968908199bbc7a9260c7d6ae4",
+        "resp_0a1ebd6ce96a6c39016a7181b9c990819a988efbf31daa9fd2",
+        "resp_00f6131b521c3e65016a7181ba5af0819abcb8bf7064b882a2",
+        "resp_0e6cd87f6f2f4d94016a7181bd5150819b889148f856b3f48f",
+        "resp_059317434d6efad0016a7181bdf068819a9b799cd7504b0348",
+        "resp_0f01cf677e967d66016a7181c0ab50819995aac2babeca4ae7",
+        "resp_0d5b00aadb311d91016a7181c145a8819ab7f1d55d4c368f2d",
+        "resp_0e270072ba9b456a016a7181c1d1b0819a9b9e75499fb015e6",
+        "resp_09ffd0f3f591edad016a7181c3743c819b9fc709ddaceef637",
+        "resp_09c758fa5fdddc61016a7181c53f9481998f0ad5c207fefff4",
+        "resp_06dab1caece02c21016a7181c599e08198a0e12cc547bf887b",
+        "resp_0a62dc29088b71ff016a7181c6a96c819b89dd11e038134825",
+        "resp_0f6d5c57dea00de4016a7181c6b480819a8908b721f625a87f",
+        "resp_0fc9a3c521b5d17b016a7181c83f4c8199bf859b34385e2e98",
+        "resp_0e81fbd70027f1f1016a7181c8be2481998b0c5caa3fa26b19",
+        "resp_07d8859e63021c95016a7181c98efc8198ae6b806a9cd8db00",
+        "resp_0a48e84e565672fa016a7181cbed7c819b8dc42a36c3ae3299",
+        "resp_0c73c0344294c1f7016a7181cc9638819892ab5b8d77ebc482",
+        "resp_041578871da0d7c5016a7181cf0bd8819ab36b39a064521484",
+        "resp_0abb63e01ea4b3f7016a7181cfbb40819abb67c6b1dcf91f6f",
+        "resp_075f90f046ede335016a7181d1ab44819b9b3ff592d1c1ac5b",
+        "resp_066cc0cd2bd9f2e1016a7181d293388199a65a8c192d61ca0a",
+        "resp_0b4d1a645f7deefc016a7181d2ad34819ba50f9a913a0e938a",
+        "resp_03e488e884b8e8c5016a7181d3be1c819bbd6ca56ca6775440",
+        "resp_0cc6e27bdc6bc11a016a7181d47d708199abd8473035755d39",
+        "resp_002a35288afca8be016a7181d4f97c819abe68bb0a097f927e",
+        "resp_09f36e372da7a2c3016a7181d54c4c8199824eb7d299485691",
+        "resp_033a74895f83aea0016a7181d66b0c819ba1dc1499fb34bfbf",
+        "resp_0f304da5a3e70787016a7181d75274819b8f81fa889f93b031",
+        "resp_0871eae75f2043fc016a7181da866c8198b38d667bb7cf09ae",
+        "resp_0ee7510c45c3eafa016a7181db39ec81998822acee6d63a78d",
+        "resp_0e4f6e9dc29bb2a4016a7181dca1f8819999ea240dbc35f67a"
+      ],
+      "responses_received": 80,
+      "rows_expected": 40,
+      "rows_with_both_candidates": 40,
+      "schema_version": 2,
+      "stage": "comparison",
+      "truncation_rate": 0.05,
+      "unsuitable_rate": 0.1625,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 45902,
+        "output_tokens": 56524,
+        "p95_input_tokens": 683.4999999999999,
+        "p95_output_tokens": 4085.55,
+        "reasoning_tokens": 43105
+      },
+      "verifier_fatal_error_rate": 0.0
+    },
+    "smoke:low": {
+      "canonical_integer_extraction_rate": 1.0,
+      "completed_response_json_parse_rate": 1.0,
+      "completed_response_schema_rate": 1.0,
+      "first_candidate_exact_accuracy": 0.7,
+      "gate_checks": {
+        "canonical_integer_extraction": true,
+        "completed_json_parse": true,
+        "completed_schema": true,
+        "non_integer_final_answers": true,
+        "response_completion": true
+      },
+      "gate_passed": true,
+      "generated_at_utc": "2026-08-04T06:03:14.724919+00:00",
+      "label_mismatch_rate": 0.17647058823529413,
+      "model": "gpt-5.6-luna",
+      "non_integer_final_answer_count": 0,
+      "noncanonical_integer_output_count": 0,
+      "noncanonical_integer_output_rate": 0.0,
+      "pair_outcomes": {
+        "both_match": 7,
+        "neither_match": 3
+      },
+      "pass_at_2": 0.7,
+      "reasoning_effort": "low",
+      "requests_expected": 20,
+      "response_completion_rate": 1.0,
+      "response_ids": [
+        "resp_0c1197de174132f2016a717f978db0819bbd737e391745a5f0",
+        "resp_0db8d9bbfacd27d1016a717f9b6cbc8198a5e0795f37a03274",
+        "resp_0833992df5f0aeee016a717fb88b40819894ee55d60a14ebff",
+        "resp_0235906d776a0f6e016a717fbb9428819893255224888bb844",
+        "resp_0024c863f710cadd016a717fbf0690819ba3bc115daa93c915",
+        "resp_0b2c37de45317142016a717fc61c6c819bb3b1595d7897a22e",
+        "resp_0dd25ce66ca41c95016a717fcb8bf4819b9cb7c737f4be77cc",
+        "resp_01887bfd02258893016a717fce4840819bae0524036deea6ed",
+        "resp_0a7b99408b507738016a717fd0c81c8199b88a335653e2628b",
+        "resp_0a97e426a33fc2dd016a717fd8c490819b89989a83ecce8eb1",
+        "resp_0345ae48c0f61377016a717fe70ddc8198b46dee4440b350f4",
+        "resp_08be858c8b5609d2016a717feb7ea8819bb8a55fdb2a033840",
+        "resp_018f2170d46b3993016a717fee59b08199aed6370a108fd7b0",
+        "resp_06163c0e5369ce55016a717ff088f4819aae7c92e9b3bc6848",
+        "resp_053d0f3368721b7c016a717ff3a508819baefbb3786229fd51",
+        "resp_0c6d0d1aa158db8f016a717ffbb75881988ba7683cd48cc440",
+        "resp_0eeba3e501283d76016a718004760481989e947e0af842e7db",
+        "resp_0a119afb03223f81016a7180081a14819a97abc035c493045a",
+        "resp_0fcb6c708affc018016a71800c154c8198b266d3c74c4b87bb",
+        "resp_0b5c2e9d16b81ff8016a71801f5fd4819ab3218a6e625e880e"
+      ],
+      "responses_received": 20,
+      "rows_expected": 10,
+      "rows_with_both_candidates": 10,
+      "schema_version": 2,
+      "stage": "smoke",
+      "truncation_rate": 0.0,
+      "unsuitable_rate": 0.15,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 11748,
+        "output_tokens": 10388,
+        "p95_input_tokens": 697.25,
+        "p95_output_tokens": 1546.25,
+        "reasoning_tokens": 6854
+      },
+      "verifier_fatal_error_rate": 0.0
+    }
+  },
+  "raw_responses": {
+    "shards": 180,
+    "tree_sha256": "41775c77292b7a74214c1449bb46fe97ba46cf7518e9d811644f3ea58a1d0bab"
+  },
+  "runtime_artifacts": {
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\comparison_low_metrics.json": {
+      "bytes": 6499,
+      "sha256": "33e2c5301341613df2efd0a859b67dc2a3974b6e8863b3807d714d08a3195b48"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\comparison_medium_metrics.json": {
+      "bytes": 6496,
+      "sha256": "f7e3e71ab062b18ff46b98975ed6fbd3ff14386e6edb4faaad1d833e543041c2"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\cost_ledger.jsonl": {
+      "bytes": 154675,
+      "sha256": "815d19d4dde864d4d7540e588c051f7643ea468d71a625bd92128fedc368a278"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\request_manifest.jsonl": {
+      "bytes": 66656,
+      "sha256": "80599720aaf1a4fb08b61db5320c317b84b84aa360e8a5d601f883e3c8102298"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\selected_effort.json": {
+      "bytes": 551,
+      "sha256": "e20b7571d46ef23f18565fe9d64bcc380a0f669d258f24a44e6f324348babb83"
+    },
+    "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\smoke_low_metrics.json": {
+      "bytes": 2563,
+      "sha256": "284c156afce04148dd2be010c01c4344dc8c703b4547b16fe7fee45ebdb035cc"
+    },
+    "data\\phase2\\phase2_verified_cot_luna_3k_v2\\teacher_request_ids.txt": {
+      "bytes": 650,
+      "sha256": "f5704fa14cacd2b8e50cefb11a43c6ea60d3b4dea040441e2e5ada4b7b508f96"
+    }
+  },
+  "safe_resume_command": "python scripts/run_phase2_v2_luna.py --config configs/phase2_v2.json metrics --stage comparison --effort low",
+  "schema_version": 2,
+  "selected_effort": {
+    "actual_comparison_cost_usd": {
+      "low": 0.055334799999999996,
+      "medium": 0.0770092
+    },
+    "comparison_gate_passed": false,
+    "metrics_paths": {
+      "low": "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\comparison_low_metrics.json",
+      "medium": "artifacts\\phase2\\phase2_verified_cot_luna_3k_v2\\comparison_medium_metrics.json"
+    },
+    "schema_version": 2,
+    "selected_at_utc": "2026-08-04T06:09:54.628986+00:00",
+    "selected_effort": null,
+    "selection_rule": "lowest actual paid comparison cost among quality-gate passing efforts"
+  },
+  "sources": {
+    "data\\deep_chal_math_leaderboard.csv": {
+      "external_transmission": false,
+      "role": "local_protection_and_decontamination_only",
+      "rows": 1000,
+      "sha256": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7"
+    },
+    "data\\deep_chal_math_train.csv": {
+      "role": "provenance_and_filter_reproduction_only",
+      "rows": 17000,
+      "sha256": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+      "used_to_construct_phase2_eligible": false
+    },
+    "data\\deep_chal_math_train_filtered.csv": {
+      "role": "canonical_modeling_dataset",
+      "rows": 16528,
+      "sha256": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98"
+    }
+  },
+  "status": "blocked_comparison_gate",
+  "stop_reason": "No low/medium comparison setting passed the required gate.",
+  "teacher_contract": {
+    "answer_hidden": true,
+    "candidates_per_row": 2,
+    "canonical_integer_regex": "^-?(?:0|[1-9][0-9]*)$",
+    "final_grades": [
+      "A",
+      "B"
+    ],
+    "grade_c_used": false,
+    "incorrect_or_noncanonical_answers_repaired": false,
+    "store": false,
+    "tools": []
+  },
+  "usage_and_cost": {
+    "active_reservations": {},
+    "committed_cost_usd": 0.5429184,
+    "hard_limit_usd": 4.5,
+    "historical_paid_responses": 432,
+    "historical_source_ledger_path": "artifacts\\phase2\\phase2_verified_cot_luna_budget5_v1\\cost_ledger.jsonl",
+    "historical_source_ledger_sha256": "bbb6a7bc4b550aacc77d0cbce69b45ba3d61eb33785c6e2e4973693a8fef309b",
+    "ledger_events": 541,
+    "paid_cost_usd": 0.5429184,
+    "remaining_paid_budget_usd": 3.9570816,
+    "tokens": {
+      "cache_write_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 259368,
+      "output_tokens": 409204,
+      "reasoning_tokens": 277225
+    },
+    "total_paid_responses": 612,
+    "v2_paid_responses": 180
+  },
+  "verifier_before_after": {
+    "actual_response_metrics": {
+      "low": {
+        "corrected_verifier_error_rate": 0.0,
+        "old_verifier_error_rate": 0.28
+      },
+      "medium": {
+        "corrected_verifier_error_rate": 0.0,
+        "old_verifier_error_rate": 0.31
+      }
+    },
+    "generated_at_utc": "2026-08-04T05:57:47.765255+00:00",
+    "regression_cases": [
+      {
+        "corrected_failures": [],
+        "expression": "7 × 1500 = 10,500",
+        "not_checked_complex_expression": [],
+        "old_false_failure": [
+          "7 × 1500 = 10"
+        ]
+      },
+      {
+        "corrected_failures": [],
+        "expression": "20 × 52 = 1,040",
+        "not_checked_complex_expression": [],
+        "old_false_failure": [
+          "20 × 52 = 1"
+        ]
+      },
+      {
+        "corrected_failures": [],
+        "expression": "(999−102)/3 + 1 = 300",
+        "not_checked_complex_expression": [
+          "(999-102)/3 + 1 = 300"
+        ],
+        "old_false_failure": [
+          "3 + 1 = 300"
+        ]
+      },
+      {
+        "corrected_failures": [],
+        "expression": "300(102+999)/2 = 165150",
+        "not_checked_complex_expression": [
+          "300(102+999)/2 = 165150"
+        ],
+        "old_false_failure": []
+      }
+    ],
+    "schema_version": 2
+  }
+}

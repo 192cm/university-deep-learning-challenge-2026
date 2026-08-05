@@ -1,0 +1,16 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Phase 2 paid/raw/generated data (keep manifests and reports explicit)
+artifacts/phase2/**/raw_responses/
+artifacts/phase2/**/requests/
+data/phase2/**/phase2_verified_cot_luna_budget5_v1.jsonl
+data/phase2/**/openmathinstruct2_curriculum_v1.jsonl
+data/phase2/openmathinstruct2_integer_quality_v1/openmathinstruct2_integer_quality_v1.jsonl
+data/phase2/**/external_download_cache/

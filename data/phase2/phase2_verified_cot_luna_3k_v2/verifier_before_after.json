@@ -1,0 +1,50 @@
+{
+  "actual_response_metrics": {
+    "low": {
+      "corrected_verifier_error_rate": 0.0,
+      "old_verifier_error_rate": 0.28
+    },
+    "medium": {
+      "corrected_verifier_error_rate": 0.0,
+      "old_verifier_error_rate": 0.31
+    }
+  },
+  "generated_at_utc": "2026-08-04T05:57:47.765255+00:00",
+  "regression_cases": [
+    {
+      "corrected_failures": [],
+      "expression": "7 × 1500 = 10,500",
+      "not_checked_complex_expression": [],
+      "old_false_failure": [
+        "7 × 1500 = 10"
+      ]
+    },
+    {
+      "corrected_failures": [],
+      "expression": "20 × 52 = 1,040",
+      "not_checked_complex_expression": [],
+      "old_false_failure": [
+        "20 × 52 = 1"
+      ]
+    },
+    {
+      "corrected_failures": [],
+      "expression": "(999−102)/3 + 1 = 300",
+      "not_checked_complex_expression": [
+        "(999-102)/3 + 1 = 300"
+      ],
+      "old_false_failure": [
+        "3 + 1 = 300"
+      ]
+    },
+    {
+      "corrected_failures": [],
+      "expression": "300(102+999)/2 = 165150",
+      "not_checked_complex_expression": [
+        "300(102+999)/2 = 165150"
+      ],
+      "old_false_failure": []
+    }
+  ],
+  "schema_version": 2
+}

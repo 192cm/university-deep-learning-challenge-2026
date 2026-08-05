@@ -1,0 +1,3 @@
+legacy_artifact_path,legacy_raw_file_count,v3_raw_file_count_at_input_build,reused_for_v3,reused_for_current,reason
+artifacts\phase2\phase2_verified_cot_luna_3k_v2\raw_responses,180,0,False,False,"v2/v3 raw payloads remain diagnostic-only and are not copied, read as candidates, or used as training targets"
+artifacts\phase2\phase2_verified_cot_luna_3k_final_v1_v3\raw_responses,180,0,False,False,"v2/v3 raw payloads remain diagnostic-only and are not copied, read as candidates, or used as training targets"

@@ -1,0 +1,40 @@
+{
+  "diagnostic_bundle_sha256": "655ab3baf23d1a4ed2e6dd234b7e6d6bc0c57a157f049eef0db5eef03d645939",
+  "files": {
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_cross_effort.csv": {
+      "bytes": 5462,
+      "sha256": "5bba61990f6a4ed376b8fa13f37ac24e605bc749c52d208e4a530624ec6b46c0"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_diagnostics.json": {
+      "bytes": 8589,
+      "sha256": "3a0e4ef52c922939b2aeefbae465a96fdb727ebda1d5b0eac5afb482e19d2e1a"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_pair_diagnostics.csv": {
+      "bytes": 11751,
+      "sha256": "69c7f895081aab2cc3f6830ffbff43e9686d140874929fe999cfd90ca4df070c"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_raw_response_hashes.csv": {
+      "bytes": 39161,
+      "sha256": "282eee37214da8a8cdde2dddd11ebe57f6862baa790cd02f07dbaa456cdc8268"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_request_diagnostics.csv": {
+      "bytes": 34266,
+      "sha256": "3a9de91812ed50f202f4ffd2697074c8ebbb6591465da0fa7946878441ac981d"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_segment_diagnostics.csv": {
+      "bytes": 1651,
+      "sha256": "0fb143f39768cf64bb1179db1cdfb11d7e8509163cd67259480c45f80f6a9dd4"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_truncations.csv": {
+      "bytes": 260,
+      "sha256": "2dcbe2513041e038fbcfa64b4cc87de165006fe871666ae8e32b2f49f7f1ef8f"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_v3_comparison.csv": {
+      "bytes": 605,
+      "sha256": "4b39edd0046ae9122bad0dd77fbdb58358418d4a8e3a69f2b0bf3e03ab173d1f"
+    }
+  },
+  "generated_at_utc": "2026-08-04T17:11:31.372406+00:00",
+  "raw_response_tree_sha256": "06553b0da1fb36997ada83ef75b522f7f2450c04cb99778d29ec6ab74114c50d",
+  "schema_version": 1
+}

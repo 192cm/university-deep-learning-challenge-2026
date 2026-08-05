@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "source_train_unchanged": true,
+    "source_leaderboard_unchanged": true,
+    "train_rows_17000": true,
+    "filtered_train_rows_16528": true,
+    "train_audit_rows_17000": true,
+    "leaderboard_rows_1000": true,
+    "leaderboard_filtered_rows_831": true,
+    "all_ids_unique": true,
+    "reproduced_filtered_content_equal": true,
+    "reproduced_filtered_byte_equal": true,
+    "reproduced_audit_policy_fields_equal": true,
+    "reproduced_audit_questions_equal_after_newline_normalization": true
+  },
+  "passed": true
+}

@@ -1,0 +1,220 @@
+{
+  "counts": {
+    "all_exclusion_reasons": {
+      "abnormal_control_or_replacement_character": 0,
+      "detectable_self_contradiction": 324,
+      "duplicate_or_blank_id": 0,
+      "empty_solution": 0,
+      "external_visual_or_problem_code_dependency": 891,
+      "final_marker_inside_solution": 30,
+      "id_provenance_mismatch": 0,
+      "manual_quality_audit_failed": 4,
+      "messages_or_final_line_inconsistent": 0,
+      "non_integer_decimal_answer": 3165,
+      "non_integer_fraction_answer": 6236,
+      "non_integer_other_answer": 36,
+      "schema_error": 0,
+      "simple_equation_verifier_failed": 50,
+      "tool_or_code_dependent_solution": 8,
+      "truncated_solution": 67
+    },
+    "excluded_rows": 10550,
+    "f1_candidate_excluded_integer_rows": 40103,
+    "f1_candidate_rows": 460,
+    "final_high_manual_audit_verdicts": {
+      "pass": 11
+    },
+    "included_integer_quality_rows": 39450,
+    "input_rows": 50000,
+    "manual_audit_verdicts": {
+      "fail": 4,
+      "pass": 11
+    },
+    "primary_exclusion_reasons": {
+      "abnormal_control_or_replacement_character": 0,
+      "detectable_self_contradiction": 287,
+      "duplicate_or_blank_id": 0,
+      "empty_solution": 0,
+      "external_visual_or_problem_code_dependency": 705,
+      "final_marker_inside_solution": 23,
+      "id_provenance_mismatch": 0,
+      "manual_quality_audit_failed": 1,
+      "messages_or_final_line_inconsistent": 0,
+      "non_integer_decimal_answer": 3165,
+      "non_integer_fraction_answer": 6236,
+      "non_integer_other_answer": 36,
+      "schema_error": 0,
+      "simple_equation_verifier_failed": 29,
+      "tool_or_code_dependent_solution": 7,
+      "truncated_solution": 61
+    },
+    "quality_tiers": {
+      "excluded": 10550,
+      "high": 460,
+      "low": 31941,
+      "medium": 7049
+    },
+    "source_quality_tiers": {
+      "augmented_gsm8k": {
+        "excluded": 1225,
+        "high": 416,
+        "low": 775,
+        "medium": 6264
+      },
+      "augmented_math": {
+        "excluded": 9150,
+        "low": 31164,
+        "medium": 58
+      },
+      "gsm8k": {
+        "excluded": 1,
+        "high": 43,
+        "medium": 268
+      },
+      "math": {
+        "excluded": 174,
+        "high": 1,
+        "low": 2,
+        "medium": 459
+      }
+    }
+  },
+  "dataset_version": "openmathinstruct2_integer_quality_v1",
+  "decontamination_inheritance": {
+    "accepted_exact_or_template_matches": 0,
+    "accepted_near_matches": 0,
+    "comparison_is_local_only": true,
+    "competition_train_original": {
+      "path": "data\\deep_chal_math_train.csv",
+      "rows": 17000,
+      "sha256": "94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df",
+      "unique_ids": 17000
+    },
+    "leaderboard_original": {
+      "path": "data\\deep_chal_math_leaderboard.csv",
+      "rows": 1000,
+      "sha256": "f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7",
+      "unique_ids": 1000
+    },
+    "method": "exact, normalized-template, normalized token-trigram Jaccard",
+    "near_threshold": 0.86,
+    "questions_solutions_answers_unchanged": true,
+    "subset_only": true
+  },
+  "generated_at_utc": "2026-08-05T17:31:46.956617+00:00",
+  "input": {
+    "answer_type_counts": {
+      "decimal": 3165,
+      "fraction": 6236,
+      "integer": 40563,
+      "other": 36
+    },
+    "bytes_after": 155502795,
+    "bytes_before": 155502795,
+    "immutable": true,
+    "path": "data\\phase2\\phase2_verified_cot_luna_budget5_v1\\openmathinstruct2_curriculum_v1.jsonl",
+    "rows": 50000,
+    "sha256_after": "0e61b2abef33fa303f98474830ad28f8e3ed32e3c4ab94412ac71934de9ae8c8",
+    "sha256_before": "0e61b2abef33fa303f98474830ad28f8e3ed32e3c4ab94412ac71934de9ae8c8"
+  },
+  "non_corrective_transformation": true,
+  "outputs": {
+    "dataset": {
+      "bytes": 133651042,
+      "path": "data\\phase2\\openmathinstruct2_integer_quality_v1\\openmathinstruct2_integer_quality_v1.jsonl",
+      "rows": 39450,
+      "sha256": "7a5101ea9ee5a19cca9fe4c857d2708002b81b67e8ab41723b89f0ac198df894"
+    },
+    "exclusion_stats": {
+      "bytes": 589,
+      "path": "data\\phase2\\openmathinstruct2_integer_quality_v1\\openmathinstruct2_integer_quality_v1_exclusion_stats.csv",
+      "rows": 16,
+      "sha256": "f743d0b253dedda268a0ba606351003784e4ad1e5cb3d7b04acd2357b59d1a65"
+    },
+    "f1_ids": {
+      "bytes": 6900,
+      "path": "data\\phase2\\openmathinstruct2_integer_quality_v1\\openmathinstruct2_integer_quality_v1_f1_candidate_ids.txt",
+      "rows": 460,
+      "sha256": "3c348b63a5c637ab7e6f46e4779c9c79d48fd1189e362c30f6014a3ebe3fc579"
+    },
+    "report": {
+      "bytes": 6906,
+      "path": "report\\phase2\\openmathinstruct2_integer_quality_v1_quality_audit.md",
+      "sha256": "a32de534f9e9da38602ca948935051552fe9249e8105a9e09e312032b6001833"
+    },
+    "row_audit": {
+      "bytes": 10931249,
+      "path": "data\\phase2\\openmathinstruct2_integer_quality_v1\\openmathinstruct2_integer_quality_v1_row_audit.csv",
+      "rows": 50000,
+      "sha256": "1947788beda15302a9e9b4f6de8551fa69b1347cab18b501665fec2b6a4988b4"
+    },
+    "stratified_audit": {
+      "bytes": 182504,
+      "path": "data\\phase2\\openmathinstruct2_integer_quality_v1\\openmathinstruct2_integer_quality_v1_stratified_quality_audit.csv",
+      "rows": 132,
+      "sha256": "f91dc5e990167d379927933395ea38c3c50aa8ce94c90d9ea0f9083d10734eff"
+    },
+    "tier_stats": {
+      "bytes": 740,
+      "path": "data\\phase2\\openmathinstruct2_integer_quality_v1\\openmathinstruct2_integer_quality_v1_tier_stats.csv",
+      "rows": 18,
+      "sha256": "a52b815dc3dbfcd1e111b3a9115fff9b3de7f7c3c6ffe4440ce12086a40f5f3b"
+    }
+  },
+  "policy": {
+    "canonical_integer_regex": "^-?(?:0|[1-9][0-9]*)$",
+    "decimal_or_fraction_conversion": "never",
+    "f1_candidate_tiers": [
+      "high"
+    ],
+    "integer_filter_alone_is_verified": false,
+    "quality": {
+      "acceptable_solution_words": [
+        35,
+        650
+      ],
+      "high_min_score": 6,
+      "medium_min_score": 4,
+      "preferred_solution_words": [
+        60,
+        450
+      ],
+      "source_points": {
+        "augmented_gsm8k": 2,
+        "augmented_math": 0,
+        "gsm8k": 3,
+        "math": 3
+      }
+    },
+    "verifier": {
+      "complex_expressions": "not_checked",
+      "implementation": "scripts/phase2_v2_common.py::review_arithmetic",
+      "repairs_solution_or_answer": false,
+      "simple_independent_binary_equations_only": true
+    }
+  },
+  "reproducibility": {
+    "command": "python scripts/refine_openmathinstruct2_integer_quality.py --config configs/openmathinstruct2_integer_quality_v1.json",
+    "config_path": "configs\\openmathinstruct2_integer_quality_v1.json",
+    "config_sha256": "92648daf8fb5b1637ab859ff19cb9499bb2c5494109531f8d5d0918c168ba36e",
+    "network_access": false,
+    "script_path": "C:\\Users\\kyle0\\Develops\\university-deep-learning-challenge-2026\\scripts\\refine_openmathinstruct2_integer_quality.py",
+    "script_sha256": "234e757bad3ec8e027933ac16d4816639189f923f36c544aeefdfeed496203a4"
+  },
+  "schema_version": 1,
+  "source_provenance": {
+    "dataset": "nvidia/OpenMathInstruct-2",
+    "license": "CC-BY-4.0",
+    "path": "data\\phase2\\phase2_verified_cot_luna_budget5_v1\\openmathinstruct2_provenance.json",
+    "retrieved_at_utc": "2026-08-03T18:40:06.975164+00:00",
+    "revision": "469216e3f46f4dacf476b382e192485ea51a143e",
+    "sha256": "8d0c183ec9a27a1882d0ee46da147a198c87d7c02900c0d47510f2e59e0815be"
+  },
+  "stratified_audit": {
+    "manual_annotations_path": "configs\\openmathinstruct2_integer_quality_v1_manual_audit.csv",
+    "manual_annotations_sha256": "7d37a7ecf62cf2a73cd69dc5208d02d6bfdd015f1184d98061bfe60daaa95919",
+    "method": "deterministic hash rank by source and quality tier; exclusions by source and primary reason",
+    "rows_per_stratum": 5,
+    "seed": 20260806
+  }
+}

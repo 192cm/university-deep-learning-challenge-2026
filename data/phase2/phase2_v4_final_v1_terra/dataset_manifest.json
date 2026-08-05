@@ -1,0 +1,1740 @@
+{
+  "cost": {
+    "active_reservations": {},
+    "cumulative_paid_cost_usd": 3.4784912,
+    "cumulative_paid_responses": 992,
+    "cumulative_tokens": {
+      "cache_write_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 460986,
+      "output_tokens": 707928,
+      "reasoning_tokens": 487677
+    },
+    "current_tokens": {
+      "cache_write_tokens": 0,
+      "cached_input_tokens": 0,
+      "input_tokens": 105988,
+      "output_tokens": 166160,
+      "reasoning_tokens": 115483
+    },
+    "final_failed_requests": 0,
+    "hard_paid_limit_usd": 4.5,
+    "historical_paid_cost_usd": 0.7211212,
+    "historical_paid_responses": 792,
+    "pre_response_failed_attempt_events": 4,
+    "release_outcomes": {
+      "completed": 200,
+      "request_failed_before_response": 4
+    },
+    "remaining_above_reserve_usd": 0.5215087999999999,
+    "remaining_usd": 1.0215087999999999,
+    "safety_reserve_usd": 0.5,
+    "stage_cost_usd": {
+      "comparison:low": 1.092885,
+      "comparison:medium": 1.30707,
+      "smoke:low": 0.17834,
+      "smoke:medium": 0.179075
+    },
+    "stage_successful_requests": {
+      "comparison:low": 80,
+      "comparison:medium": 80,
+      "smoke:low": 20,
+      "smoke:medium": 20
+    },
+    "terra_paid_cost_usd": 2.75737,
+    "terra_successful_requests": 200
+  },
+  "created_at_utc": "2026-08-04T17:11:31.433784+00:00",
+  "dataset_version": "phase2_v4_final_v1_terra",
+  "decision": "reject_for_quality_audit_and_main",
+  "decision_reason": "Neither Terra fixed comparison effort passed all gates.",
+  "diagnostic_bundle_sha256": "655ab3baf23d1a4ed2e6dd234b7e6d6bc0c57a157f049eef0db5eef03d645939",
+  "input_manifest_path": "data\\phase2\\phase2_v4_final_v1_terra\\input_manifest.json",
+  "input_manifest_sha256": "6aee6ce75c0106efe962501376109a9f129c42b05cabe17199314b541ea736c2",
+  "main_batch_executed": false,
+  "model": "gpt-5.6-terra",
+  "outputs": {
+    "data\\phase2\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "quality_audit_executed": false,
+  "raw_response_tree_sha256": "06553b0da1fb36997ada83ef75b522f7f2450c04cb99778d29ec6ab74114c50d",
+  "runtime_artifacts": {
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\comparison_low_metrics.json": {
+      "bytes": 6521,
+      "sha256": "43e63ff976c6e634c28343b0935548d19a8b59b86f37fdcdac935d0dcd50bb7e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\comparison_medium_metrics.json": {
+      "bytes": 6499,
+      "sha256": "a5818865f5027a3e0d9104622271e78eb4a98693647349f6fa35e3ffe8d91923"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\cost_ledger.jsonl": {
+      "bytes": 177974,
+      "sha256": "7bff6a4ff7b41b77313d1a090b4d4d1e2ea861b7dcd989be2a38cf4a36e0336d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000108_a_low_5d0f05eeea2e.json": {
+      "bytes": 11200,
+      "sha256": "1ec4ec645c94ffa8ce4d2edc61369dd6438953979a0ba7c2fa665e04bbd610c8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000108_a_medium_0219d7397a70.json": {
+      "bytes": 9141,
+      "sha256": "6bc7ea1bbeba8f2fdda3fb144e8b7117ce66b61725531593fc987a6c118dbd14"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000108_b_low_0a002970ef10.json": {
+      "bytes": 9118,
+      "sha256": "3fadff29502f70029fcebddd0b24c509e2fbc916f77743acc60c49837da0c2e7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000108_b_medium_aa2171407591.json": {
+      "bytes": 8512,
+      "sha256": "256d7e5a14b27ac1c2837c579023b2f22ceb16d973c2a5ad51acccd9fc5b79fd"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000825_a_low_f3158d0b5fac.json": {
+      "bytes": 7747,
+      "sha256": "19e88f2a9ba30725a07af009c2631626df165e9ddbd4d837e1978dff3465b357"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000825_a_medium_2c8a18e5230a.json": {
+      "bytes": 7694,
+      "sha256": "c76884cb392fcf81a437e1e8857a82826542cfce2f92648f3b2faff8bef02623"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000825_b_low_21ad991f8a56.json": {
+      "bytes": 7768,
+      "sha256": "a8f863567c492cac2eeb1e0bfcd2dc40930603a6ee1b06cd863cc3f4bd13ab56"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-000825_b_medium_6eb14d2dad43.json": {
+      "bytes": 8080,
+      "sha256": "f3db2c1f23e107c90bb0ed60dd5d136af038a41956460a9dfef8f772c8868dc1"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001103_a_low_6e57dd40c7b5.json": {
+      "bytes": 18983,
+      "sha256": "a1f42f1279cd33f2d1c03ba8ebff81454e9640a6a57860359b00c909dbc7de57"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001103_a_medium_b9bcee9baa3d.json": {
+      "bytes": 29810,
+      "sha256": "cfaa508b472d4452188d38e8bfcc584afd4fecd80f99f797668e1642fb6805cf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001103_b_low_2653c2fffce3.json": {
+      "bytes": 13003,
+      "sha256": "db3ccffa18a9fa3ce8d46c2ade67674eab956795a64abcb30307970a3b334b86"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001103_b_medium_6340774abb3a.json": {
+      "bytes": 19105,
+      "sha256": "578d3aa749e2a2e2f2ad1996a010339a296af10df8060be344443aa2c9d85baa"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001639_a_low_73a653fb7d6a.json": {
+      "bytes": 7946,
+      "sha256": "9502c80b8ae825454c5a439a9a0e3784b4819c8422c8b53baadf033ffff89248"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001639_a_medium_d23b2118786e.json": {
+      "bytes": 9442,
+      "sha256": "a760878e93baaaefb450720ccac70d770e1ce845233b0131fc00826d0bb090dc"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001639_b_low_b1925fb875e0.json": {
+      "bytes": 7804,
+      "sha256": "0e370d1ae6630c10802fbbce82afb676545ad35d1e2a533834293d2bac770fee"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001639_b_medium_bcc28ee01d46.json": {
+      "bytes": 14574,
+      "sha256": "28f64b2b855abc327b3e6f1e5097fe1fa11982e1f023eb056212c81a95e39242"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001972_a_low_187529d56cb6.json": {
+      "bytes": 12109,
+      "sha256": "0ac7f237bfd46740986e63f6d1ea5e74eee8660a9c6071bfe807164027ee6412"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001972_a_medium_3ea26dcf31c8.json": {
+      "bytes": 20414,
+      "sha256": "474c1f644a0f14a0322986193f88977297a361d8016b316b30612f38abfeabc0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001972_b_low_16a3f08e10cd.json": {
+      "bytes": 11186,
+      "sha256": "740d0f5f4c40ba97af0fe8d0a32795660a294e4fb49ab024e4d58d607fa6c6ad"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-001972_b_medium_cade8d1ca0f5.json": {
+      "bytes": 7511,
+      "sha256": "a4b089af62037defd3097c72a9a6e955e822bce3e209808554e09273b49b96d3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002025_a_low_06ca19ab62d4.json": {
+      "bytes": 7014,
+      "sha256": "117eb61abef16639418ec20e8bb890a4b4ec159b4d53622c0a17eb754ad5d1f4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002025_a_medium_1bc13bb8557c.json": {
+      "bytes": 7099,
+      "sha256": "b62ea443daa3e3990aae222637023133a44d5d1003a0f5f52e766fd786e8410b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002025_b_low_861f46d902f8.json": {
+      "bytes": 7042,
+      "sha256": "49b0dc161c193b15c795be93ff495cdfd23c9808055522c048f4d510ca7a811a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002025_b_medium_b36ef3e913b6.json": {
+      "bytes": 7092,
+      "sha256": "d949bf86b8575c06a3704abb933e6cab8b1a2cafb2bf503cd7920ab1b3b8d665"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002777_a_low_652da9417793.json": {
+      "bytes": 7530,
+      "sha256": "cab2cb8ba98a2928d095358764558c36334590a18397cd48bd94cba5b9843f9c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002777_a_medium_077a2e312988.json": {
+      "bytes": 7902,
+      "sha256": "9614605d05e73ffceafde68540d2ef6e76a63e0522769a7de808d3ff41a4d526"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002777_b_low_1e7a0f13deb2.json": {
+      "bytes": 8086,
+      "sha256": "4e41985d336214deb0504e21de121c637569c7370d96baa1b215ce72d274245a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002777_b_medium_7585b0686033.json": {
+      "bytes": 8435,
+      "sha256": "b39b2b58fba70533a1a6fe5ab9cb10a4c87247724e5213d95d7d94416291a3c5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002863_a_low_c034b823fcc7.json": {
+      "bytes": 6755,
+      "sha256": "b05febf80f86d1658a21082818d9d3892cdb2961ea5e7db8d9ef298de14e90ed"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002863_a_medium_cb458986c289.json": {
+      "bytes": 14944,
+      "sha256": "c6da91d81fad656a633d56b8a02768f28936b412e2e7400f41f0abd5602be3a0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002863_b_low_771ec32073b2.json": {
+      "bytes": 12171,
+      "sha256": "a8bd318dd96f8ca733736900418c976f4d173174ff7ff027e12301573320efb9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-002863_b_medium_cfc04ad98a78.json": {
+      "bytes": 8452,
+      "sha256": "ce2da233dad5b2623aaf99c42b7a1d046b82fffb7e450ccfcb1f5c4c2c5fa228"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003183_a_low_b525127daa10.json": {
+      "bytes": 7317,
+      "sha256": "80b924aefa07634bcf98fd4b397d1b806744d1e921cfabbd4b6aa205b47fd875"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003183_a_medium_93324570d6c1.json": {
+      "bytes": 7962,
+      "sha256": "530549b3df62fdc4e166a5609d610bf5f8f9bf2919199f151573a4bcf82b58c1"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003183_b_low_1a0ea09e1f57.json": {
+      "bytes": 7203,
+      "sha256": "eb264fa98f48fdf5bc01e025f6247348b1f63839540043427d10e6e676e9869e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003183_b_medium_e50bf31e21e1.json": {
+      "bytes": 7720,
+      "sha256": "7f5367222ab46129515f33268f02ac674e4fc0afb283023c3b9e0869b4793975"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003920_a_low_f837cfe4fddc.json": {
+      "bytes": 6798,
+      "sha256": "76f80ac0e260f44ed86dab107f00a9f37f96fb6f5e6d689a0e47849cb8f11aa0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003920_a_medium_8acd29c959cd.json": {
+      "bytes": 6870,
+      "sha256": "1855b8608b881d8c0a6c7f644d1f932bfd7bc2c8ddeb88353428c8a1185ebd76"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003920_b_low_ad05ed39a827.json": {
+      "bytes": 7076,
+      "sha256": "48a6b598bbb1a69ff9eebe4b0b01f8cf40ba47124bca7b5ecd757039a24c0aa0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-003920_b_medium_79892b0c2e0f.json": {
+      "bytes": 7390,
+      "sha256": "152d2b695bb5e06ac173a84dd8e54c64a8766850b91c4d324249f84aec56edbb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004144_a_low_c324b259f09c.json": {
+      "bytes": 7085,
+      "sha256": "f672c7f793b4a5c2696921b24535a41a43961146ebaf4168260c12d06eb2b63f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004144_a_medium_b6a2a2dd68bf.json": {
+      "bytes": 6804,
+      "sha256": "46569af31d0b1677f3a3b071858eec9585de9af9db431078b6f005691e611773"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004144_b_low_8a2dcc381b61.json": {
+      "bytes": 7013,
+      "sha256": "e018b02ca803880d7f2e2f613def6601b588d9a1e8133f47aaa28e9531cc092b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004144_b_medium_fe4b0a45e2be.json": {
+      "bytes": 7751,
+      "sha256": "179063b97df6e67ed68b6e77344cd37e5166878bec88e33de2da5efab3ecb32c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004679_a_low_51d5b4d9107a.json": {
+      "bytes": 7060,
+      "sha256": "26849890d77330d351a57d4fc36e48dadc457e8a6dca50bd96a004f1feb6272a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004679_a_medium_2e883c28c227.json": {
+      "bytes": 7044,
+      "sha256": "d4d6d0fe57f88c2db6f3b002a7d95f1c2b52e5837388e4ead18321866fff8a29"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004679_b_low_487bc4c27543.json": {
+      "bytes": 5492,
+      "sha256": "a207b55797ed310d41a16a684eb19dd209a297d3f4cd46b51b244d179b1a36fd"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-004679_b_medium_8a7adbc54097.json": {
+      "bytes": 5510,
+      "sha256": "0a4114068f5554f86fa12723652046b35ea4d53614f244050afb282d07d70f60"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006313_a_low_5f10f4692ab8.json": {
+      "bytes": 5566,
+      "sha256": "a08c85be318453fbc6453104d41cf10d38789726dbe115d1ebbb1d976962d62d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006313_a_medium_c3800a56fabc.json": {
+      "bytes": 7043,
+      "sha256": "82a6d4801112beff807c252ad66852c10e82bdf5c3acc906efa16a2e25f46cdc"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006313_b_low_99917d6a4bed.json": {
+      "bytes": 7321,
+      "sha256": "192fd98ff9794ce074e49406fb76cb9b3d3d5636269dc75056e01d4ba4251577"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006313_b_medium_34d80ba030e1.json": {
+      "bytes": 7752,
+      "sha256": "71508c72226280e7198fa22ec53962dfc1500c123b70f97b5635f61e02faff93"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006453_a_low_a240e022365d.json": {
+      "bytes": 6628,
+      "sha256": "467617ceaa212cd8718b13a018c0450583f485fe39329579802497fcff31cf36"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006453_a_medium_e4248dde0e36.json": {
+      "bytes": 6627,
+      "sha256": "c297a087fbb43036e74e47414f1fe0f4141cbbb0cc878878bdaf47463ca804e4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006453_b_low_402be221e691.json": {
+      "bytes": 6645,
+      "sha256": "29ad8304a4a2246bfff102cfcc7376d2f1b6d56cdf833479dbed9359a2ae1de0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006453_b_medium_d5383144f293.json": {
+      "bytes": 6945,
+      "sha256": "f5a516982268407bb4340a69f40fc291c2536f238b4808a11a0597d8010c16a7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006480_a_low_df2a78e4b605.json": {
+      "bytes": 6998,
+      "sha256": "fc18e1819e5628ae909dd983b543b917c6df9724c06c9b3380e42545828b1a0c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006480_a_medium_2eac9334214a.json": {
+      "bytes": 7206,
+      "sha256": "4a55c27a01987825ffe162a968602f5ae2efb1ee7550a3271f9d47b23565bde5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006480_b_low_6b62c23874d9.json": {
+      "bytes": 7245,
+      "sha256": "1d0a903a7a610fecc371a9c17de47bf321022b76c43700636459c0c623b4c0b1"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006480_b_medium_118b1db954c0.json": {
+      "bytes": 8219,
+      "sha256": "4951e662c4b06d702800d603e03be2d253ffc2819a5e1cbc8f948e10ff7a52e2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006750_a_low_6acf34315d58.json": {
+      "bytes": 23609,
+      "sha256": "c7522ea1e793235b0b8aa8014a41fbcddb1b7e9b7cf6c84337a9cd921cf76cbd"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006750_a_medium_96adedc83233.json": {
+      "bytes": 40762,
+      "sha256": "e593cda4d7fec98206ce3a406822fa284b0594ccecca553732ccb33824afe2b6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006750_b_low_e782463e3d40.json": {
+      "bytes": 28135,
+      "sha256": "3477041eae4cce70b5d861bfb10ad9ee5800dc1f5ef99f8dcd16d0be2f8edcde"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006750_b_medium_6af111a16ab0.json": {
+      "bytes": 29808,
+      "sha256": "34550acd411542fcd87ef8927a6fc3982249774f534b852f2a4cc6a36d7f33bb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006848_a_low_f68c5f4db282.json": {
+      "bytes": 12158,
+      "sha256": "d9cbc9f0b1ea290b92e61e61a9a56844a88b4561860644bcf28dbebe59b2852f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006848_a_medium_6317af4108a9.json": {
+      "bytes": 12873,
+      "sha256": "3157d21bc1602592c3d20814e0a5ef5d2a2221968674b486111b3c168c7dda5a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006848_b_low_0090ba0e08c3.json": {
+      "bytes": 9869,
+      "sha256": "74fd16b4d86ea4ce9d45cd0009f6f33e1dadb69a5d546996edb95c42e7ea9cbb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-006848_b_medium_2fb06ae0b369.json": {
+      "bytes": 13308,
+      "sha256": "138b8ef8ddcecde935a358d0040302cc2463dbeb2a6731a6513e90bdee1d54ba"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-008050_a_low_f5c53b44c1e0.json": {
+      "bytes": 6775,
+      "sha256": "c2ec87027334af34a6283d682cf04d750ea0246637bbc15d44530b55ce5c1cdb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-008050_a_medium_9dc8cdb98b69.json": {
+      "bytes": 6850,
+      "sha256": "d726c0d552af0719dc27ddefd709cee937f0edc8f26c2182b315b2df8832a7ad"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-008050_b_low_a6a75def5296.json": {
+      "bytes": 6815,
+      "sha256": "cd92462f6a033972e9ccdb125ac50d51241fc759a508309e208056bcc1dff45b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-008050_b_medium_35ffe8a04e73.json": {
+      "bytes": 7035,
+      "sha256": "80d47428f2a2822b428ecf73616f7f2920f283d6a52b3b52360c0d4edc62b603"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009106_a_low_aeb87238f084.json": {
+      "bytes": 6967,
+      "sha256": "2c996d416439835620262926ba9f7402bf12f131bc3a448b0180b3aae817df22"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009106_a_medium_70a7a5e5d4b9.json": {
+      "bytes": 7039,
+      "sha256": "8005b2d23a251dabe50b737f0617f84ad7a2bf5662ba4caf39c4431039e25db4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009106_b_low_fd972d5efbd9.json": {
+      "bytes": 6876,
+      "sha256": "9cf881aac6faed4e5bbc6e7868af92321073473d4764dec13e931fc0734707f5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009106_b_medium_3aa8c1ea96af.json": {
+      "bytes": 7948,
+      "sha256": "07b5a421ed2cbb67e3b1248e33c457fad5a40606d20f1bcb1bac793f47abed3e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009400_a_low_3ba85a8d8ccc.json": {
+      "bytes": 13561,
+      "sha256": "4a31da4c841d9594647a3b1fe70bbca40de4dbdaeca86ac340cf9447edcc2f81"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009400_a_medium_9ededdc37b39.json": {
+      "bytes": 13577,
+      "sha256": "f4aa7f7d4eb24231fe9c6d696625c4ad1a7081496ddcad010c6b49dcf9236a05"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009400_b_low_45ecde9c1ac3.json": {
+      "bytes": 13564,
+      "sha256": "cec2a77bef9ec777d794d3d44331cc7a2bffd7829f1b88769dcc87ec3659fc17"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009400_b_medium_5bea6f91ae9d.json": {
+      "bytes": 13494,
+      "sha256": "0c05809d234b52ff3e06f2cf9349316ebdf6262b003b0a1863dfd5c156a14866"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009414_a_low_4b796b896048.json": {
+      "bytes": 7736,
+      "sha256": "5a6a74cdd998db1d72629a68fad00a6d50f2818e9a27c08fc2804b2f8c70281f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009414_a_medium_74590b035094.json": {
+      "bytes": 8239,
+      "sha256": "7352d27026290b65c3a7dd8b1eaefbe0163483c66c0e50d82bab6f93c9a5e73e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009414_b_low_0b7f4ac6c7be.json": {
+      "bytes": 7769,
+      "sha256": "5e8b6b72ce5f5a80ae3fab8ce8cea0d507f22273b54a611b6c1fb5537d4e85fe"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009414_b_medium_ec5bf7887d93.json": {
+      "bytes": 7416,
+      "sha256": "60545f79c657c9651f1568b1993d9f9b1e8d18e397600c6208c4e628468903cf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009669_a_low_6c4a4d6d3eb1.json": {
+      "bytes": 34103,
+      "sha256": "207d4f8852206eed778b537fe4ff2514e5e0f80030b282429c7ee8b5737358db"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009669_a_medium_bb5afe2e8a7e.json": {
+      "bytes": 23347,
+      "sha256": "e783637c25a180324dae7f1ad407071f6a8b776c5d92b39875eb4db218677e8a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009669_b_low_bb0f8fa55400.json": {
+      "bytes": 30118,
+      "sha256": "d6bec74b44a43ad5a70a8d3515a0eeaa539ed3c2888e083909bce922b460f05f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009669_b_medium_3c76f55d2bb0.json": {
+      "bytes": 46438,
+      "sha256": "3c61c087cd90c706f55f95af1ceb1fcedf77ae3d62b62c6c54732c624f71f8bf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009903_a_low_b9415ab4f379.json": {
+      "bytes": 7613,
+      "sha256": "db31948a22d13a1d2097e35dcdb4f3781ecea351f8294b57aea5d3fee162e285"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009903_a_medium_6f204490972b.json": {
+      "bytes": 8072,
+      "sha256": "e708f4cfc69e8a1b0f3e961aecc9be4e39e1b8a02bd0aa31306feb93e636c944"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009903_b_low_c89eb8e65d71.json": {
+      "bytes": 7601,
+      "sha256": "690144ab50a95c4b8556d160821782de099eccaacb5cf01ea91de5cf36970904"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-009903_b_medium_c63a5dc887c8.json": {
+      "bytes": 8770,
+      "sha256": "7a18c7abe6af61e8028c81ec0e0f023a8c717a8b178e5dd46c62fa6708c791b8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-010982_a_low_af8ff8b189d6.json": {
+      "bytes": 7457,
+      "sha256": "e97589a2d52de4bc046a20ed6fb892b83a043c5a2e43393880c35f029fa3a9a0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-010982_a_medium_756190ad667c.json": {
+      "bytes": 7065,
+      "sha256": "714cfcc5832ae29bcbe65b34f54e86c07bae1adb34efa5faf1036d3ffabb6068"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-010982_b_low_e41e4cb1364c.json": {
+      "bytes": 6876,
+      "sha256": "dbf34475d3f43897766e48e99a608a1a4181ccb08b6a4bada3029e00d8f463a3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-010982_b_medium_2b3153604972.json": {
+      "bytes": 6771,
+      "sha256": "d1c019f2054d6791f04c04dbdc5dd8cdd878e45eb682dd240e6cd749f0a6fc7a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011275_a_low_934eb0c8b477.json": {
+      "bytes": 7378,
+      "sha256": "faa7861feff845fde1da70eb84e0db162608ee38c8a433d0c6dcff39d7c7c2a5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011275_a_medium_822d33b9b358.json": {
+      "bytes": 7263,
+      "sha256": "39a2bd12fddf0c22549ed8cd0e27c1436edd425e43ba7cafd6fd13c91e136387"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011275_b_low_2bc1f45369b1.json": {
+      "bytes": 7380,
+      "sha256": "1ead3afbba3a772065af93a11c323968396ddc9ce60c1224bcef0249c46da30a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011275_b_medium_9ca1d27730fe.json": {
+      "bytes": 7072,
+      "sha256": "3f21b66dd6c36a461060473cb4d7dcedd18f0f29e5494bec54aacf22ee26f5b4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011302_a_low_a0020b37ef01.json": {
+      "bytes": 7121,
+      "sha256": "5f9a2070310a068ba39a66f5aeef9b328cc36d9867358183ed19059379a3d09d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011302_a_medium_c4e8ad59b84b.json": {
+      "bytes": 7442,
+      "sha256": "7c38370e193037f22a6932a3724ac7af358fa96bd7e37b989e30a625df480a63"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011302_b_low_3bde4611d6b7.json": {
+      "bytes": 7349,
+      "sha256": "ff827083ec539ef640a6d45f3fbb957499c4a114943688a96949b0559dd2a4f2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011302_b_medium_b33720f6c4d8.json": {
+      "bytes": 7286,
+      "sha256": "a181498a1f1c66ae56243bc3eccdc880a7cb24b537393a8d722590c28776ab6f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011721_a_low_eb71bd003bd2.json": {
+      "bytes": 16469,
+      "sha256": "a745e3523b87d984642ac16275de70b2504e0cf7034cee5caa5e14f0e7671131"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011721_a_medium_90b530238ddc.json": {
+      "bytes": 26475,
+      "sha256": "cd54bde1a30fb5665e64d3182c348a8cbbe7ea69d4bd37bf648f829e9daf497b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011721_b_low_36e9e3b7503d.json": {
+      "bytes": 16590,
+      "sha256": "74b6d3296133370ada6ec4680b433aedd80075332886a704fd144d17a974c15f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011721_b_medium_e657feae047f.json": {
+      "bytes": 30569,
+      "sha256": "669764962569b1e6e06dc5f2cb3971a38039f4fe7d8d1f5d6141d0f0cdb76fc4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011934_a_low_9aa19582bc4b.json": {
+      "bytes": 6655,
+      "sha256": "e46ca6ed679fcce487ac505a955a9d1b20fb3ba54b03cff53840391981e5a093"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011934_a_medium_3596e17f2ef9.json": {
+      "bytes": 5391,
+      "sha256": "28f74d70ee08db12e4c447c3ceef91247798b32f3c4b0b75ef25053f82a00cbe"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011934_b_low_45984d44a2dd.json": {
+      "bytes": 6590,
+      "sha256": "b3273a3575b69630a89d85a0ab7490a46cf1aba4f7896e4c6604a44893498b1d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-011934_b_medium_a75b183c1950.json": {
+      "bytes": 5417,
+      "sha256": "e82979a0fb241c4799ccfc67539112710194b1ecbf3a08738fc2519649ec0d33"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012372_a_low_4a70ee753cba.json": {
+      "bytes": 8495,
+      "sha256": "a749121883d6a46946e2971ef0224fdafebdf6440006e2004cb47e06b2cba737"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012372_a_medium_eea4ba3be70d.json": {
+      "bytes": 7710,
+      "sha256": "e8b4e2ba22df94345071f0de94d2321d5f5433e111e3eaad0b2d38705087a846"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012372_b_low_50f789e9b5d7.json": {
+      "bytes": 8420,
+      "sha256": "260fcab917b3c0c0d150fa3eba6b91ff6959b66c18ceb63c4f9c92e45d6577d2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012372_b_medium_9169cd80e3ee.json": {
+      "bytes": 7809,
+      "sha256": "a3aa877729fe85102e864a74407e0da8150fd6ac3c753322856aa0aac9fe7bca"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012486_a_low_4f521bb5fad1.json": {
+      "bytes": 6836,
+      "sha256": "e012ca6cd93959bccc8cf5178d284e02564698aaf660aeb69d92eee8ee3982ae"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012486_a_medium_fbd3b581bb33.json": {
+      "bytes": 7014,
+      "sha256": "59c1b240db8bc350575ebe7f7b77fb40d223900c04b04454195e02c60cbb8f55"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012486_b_low_f33e34853665.json": {
+      "bytes": 6872,
+      "sha256": "fa84639dd72ae6a48a9e917d6c7f7dd7f6ed8ef2bca6f00a8cb40876d7fade24"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012486_b_medium_387b96277c34.json": {
+      "bytes": 6949,
+      "sha256": "59add57c67a9f7d6c40bab54831305ab491b4c066b5224336d845e5ae3ef1727"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012517_a_low_9b9f1826ad8c.json": {
+      "bytes": 7105,
+      "sha256": "dd83b8175a39b1a25ec078b9c8617a1cb17a4d78e863367b6eeaa68c6681bca2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012517_a_medium_da9ad5c3c4a0.json": {
+      "bytes": 7083,
+      "sha256": "8f0ea3429687f0c9e22d540d5cfd8c442c6f57ef4c389228d86dd73ac60f69d5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012517_b_low_5456e128b06f.json": {
+      "bytes": 7069,
+      "sha256": "4d65796b1d29ca7b33bccd7841903fe98a6314e47e0bbdca8d513eeab7810bcf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012517_b_medium_95a12d38948f.json": {
+      "bytes": 7209,
+      "sha256": "9e223c184a3f5da28245e8850647322f7d54263d188126b5658ab62cdade3046"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012715_a_low_96ebb498d9c3.json": {
+      "bytes": 6777,
+      "sha256": "feaa0fd029b43e60e8018f9aabdfc50f86a91e629288055475c65ad7ffde8d4b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012715_a_medium_84d2ef5753d2.json": {
+      "bytes": 6923,
+      "sha256": "6859a6cd2bc786d6f64a27fea7d2124d4173a589bab5dbc98b74111222ef49b0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012715_b_low_dbd165f6dd94.json": {
+      "bytes": 6966,
+      "sha256": "43e8cde9312bc95b3726ae73411d77a6e7e6f0fe68c19ad7afa3961c59d196f9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012715_b_medium_3df02a1b3fe8.json": {
+      "bytes": 6962,
+      "sha256": "693b6b1d5cd08b124d993c6516a215a6feff0084423bad9e52f1799a388ad960"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012887_a_low_2a56d3c2a97a.json": {
+      "bytes": 9467,
+      "sha256": "5eb10f4ed8a52b0dfe1e2896abfcd69f12da079ccd99193af59445e6d1516d8b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012887_a_medium_b9f5a9bf538c.json": {
+      "bytes": 8397,
+      "sha256": "27107f9bda03148a33b9ee1c8057f043f3586f0056323d83b3c9311c11bec824"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012887_b_low_75ba2813ba69.json": {
+      "bytes": 7630,
+      "sha256": "ec4e39dea81396e24a733a77c8c488a018a8b4a929229b4f204a98de6997a0c6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-012887_b_medium_234ee21039e2.json": {
+      "bytes": 8939,
+      "sha256": "160f42a9d80e19c6a2754c10f4fa317b9ebb576173ba25d58de36ae1d732c240"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-013689_a_low_b36c44def9cc.json": {
+      "bytes": 7561,
+      "sha256": "a78f6fb102888f5c86649cbbaa13802f3d753a14e2cd68b42c5d1b6b2193f2f5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-013689_a_medium_498d1e51bde2.json": {
+      "bytes": 8202,
+      "sha256": "162f34b967851df73e4df64692517c633af96340b00021db46a72fef2e96cc23"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-013689_b_low_4f6ebffdac43.json": {
+      "bytes": 9188,
+      "sha256": "c493eb447ca7412c4495cf9164394342ea9473fd8c77d9d488de199bccececb6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-013689_b_medium_5115b2932694.json": {
+      "bytes": 9842,
+      "sha256": "0d357b4f2afc86b21a6bdf265e9672550211a12e2d6d462e133ca96c7b01a94b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014215_a_low_347a7daf23ac.json": {
+      "bytes": 43888,
+      "sha256": "66d11f00fcb8bdce03867db29ba9d1bb5042aa564e72aef4e8fc44019c182593"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014215_a_medium_ae2d71f2e6b8.json": {
+      "bytes": 50026,
+      "sha256": "00ef174b327dc95b92be2153c74c93413db0a077545500405cff8cb21e2124fe"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014215_b_low_a631b69d6dd5.json": {
+      "bytes": 40207,
+      "sha256": "2ded44af887563d755da14a8b42d5b9440abc08189a88ad0c5f9430dad0f9db3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014215_b_medium_91b099c4f7bf.json": {
+      "bytes": 50126,
+      "sha256": "fcedf7aea7e7ee58f0fffed0fcc5acd4cc8db2d594804fff7712de6ef44b5185"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014786_a_low_05257961aa2c.json": {
+      "bytes": 13938,
+      "sha256": "3a1d231c0ea7411993768337c1526c32294e0c37bfae2b5f89df6e76c6ac0b76"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014786_a_medium_2924e6f42099.json": {
+      "bytes": 13740,
+      "sha256": "103c3c62004a78a2c5832b67b23f17e6882eead741b65139580685511ab4a71f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014786_b_low_8ea6d055ba03.json": {
+      "bytes": 10390,
+      "sha256": "c08ec79afcff7a9ee8b7eeed2261a3804f8764111d382d71e5916e00ed0a3d20"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-014786_b_medium_3c78bc204d70.json": {
+      "bytes": 8649,
+      "sha256": "c5dc7aae69b18a69f5b9046501e404f7d85a9860535e21a5a72d57b58300a05f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015243_a_low_5d3d19391830.json": {
+      "bytes": 5314,
+      "sha256": "00bbd2a3e7a5cc8826f9a6363df50a0183a6803af2cbce9ce01822a1c03bab24"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015243_a_medium_bd0ca90b1717.json": {
+      "bytes": 5362,
+      "sha256": "7d26abd1d7fe5219ee2352f658a61b4b3721d0b49087c9ff4dd016f1f1c7dd2a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015243_b_low_629051935a43.json": {
+      "bytes": 5357,
+      "sha256": "5b78c47c5f98a56e670def87380b5699c3ff1bd208dbd1fd82526895e1941475"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015243_b_medium_b8034760310a.json": {
+      "bytes": 5299,
+      "sha256": "ec0ae94fc4202577b14284998436dcb29a0dc3d9f40882aa323a0f5ed5388917"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015366_a_low_6026f3b9e74a.json": {
+      "bytes": 7082,
+      "sha256": "75983f87138f1c7c5d129f8aafa68de0301e81d565caaaf5424dcc30cc19127e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015366_a_medium_e3e2c1923127.json": {
+      "bytes": 7261,
+      "sha256": "fdee8b1f1a24e90bbe3d9f6cffd294a74650c92c941251c6b0c50c9ea7bfd75c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015366_b_low_d35263444601.json": {
+      "bytes": 6953,
+      "sha256": "bb1830e3e6b060563664c340e37849abd58e192934303efe6a107775c35a96d8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015366_b_medium_4087cf52f150.json": {
+      "bytes": 7076,
+      "sha256": "2712eef9141b8ff13d1bfb4f630906b0125d0ce24ef153db210c0729d29d37b5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015402_a_low_debf859e1cea.json": {
+      "bytes": 6817,
+      "sha256": "9941ffb962a6e16cd1912b57b14f01a61b4f3c11972e6eb29e3faf560d94a2f9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015402_a_medium_767df38c5222.json": {
+      "bytes": 6750,
+      "sha256": "ae7e3bd0565113193425e0fa0ac3d68d9e41a9a855dff0f0f92e20643f18cfd1"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015402_b_low_04d2424f58af.json": {
+      "bytes": 6822,
+      "sha256": "97f66e6a674ec593a2c1f482784459361994c37ea18bbd162eb97879835a6665"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015402_b_medium_dd4df86317f1.json": {
+      "bytes": 6878,
+      "sha256": "eee5158a2d31012886c73d2d342a201b7548b555fad171123ac34673eedc73fd"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015589_a_low_a76a347b423d.json": {
+      "bytes": 7343,
+      "sha256": "1d6866a568d9000b2ef97b54d75201b5f2fed466e7ab80413cffdfc708f8bab8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015589_a_medium_16601ab8e0e4.json": {
+      "bytes": 6983,
+      "sha256": "c3ab1f7c97a0e1ec6bb71598d79958c1490387ebba5f1437c1e80dfa5bc736cc"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015589_b_low_01ee5e2b1789.json": {
+      "bytes": 7041,
+      "sha256": "9b018f9faeebfd417e3c2bc7274eb6f2e293bf4bf980a5ea47dd2a4b1a01c045"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_comparison_train-015589_b_medium_8da8d551b5cf.json": {
+      "bytes": 7151,
+      "sha256": "625a582d66dc5f0780cb05f1636446594a42b7ffa1d8a73d043e968f97da4f46"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-004295_a_low_68d05f3290f3.json": {
+      "bytes": 6706,
+      "sha256": "8a31ca0031a78d8a24888a21d66fe2f9628426516d33854b51b0c15a36b8ee3a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-004295_a_medium_216a4aa9a055.json": {
+      "bytes": 6754,
+      "sha256": "23a52ea7cfe05e397cae53d02000233bee445eabfa6aae08e2ff393e8ae2e973"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-004295_b_low_b9d1b18d4411.json": {
+      "bytes": 6888,
+      "sha256": "4997400981c9dd8a0b55b6c67c6ed9197d41e2f5b986cf0ed9aacba6e592ef15"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-004295_b_medium_69a401f2c433.json": {
+      "bytes": 6637,
+      "sha256": "bf310ca3f00145a8aad2370fc8f2f3346d30176022ef9c4dc75e265bba80e298"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-006714_a_low_9e1b3545f388.json": {
+      "bytes": 6866,
+      "sha256": "045e5300c880b8432cb9013cc7fe45d2d44ff0224f71c80c16086c98b93489e6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-006714_a_medium_146da762bffa.json": {
+      "bytes": 6787,
+      "sha256": "ddab5d6a0273812f4406c2edd06277ba0473fcc6d1d0b0ee577537c3b8981fb6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-006714_b_low_b029bd36a6ee.json": {
+      "bytes": 7226,
+      "sha256": "15afa4e45ae085809870ed6c62e14fbedd9b60629ab2b7ff95f539e4c90e8605"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-006714_b_medium_8dc7c429928b.json": {
+      "bytes": 7005,
+      "sha256": "2a4832a37b5820dc14755fdaf5f4c93df17844dafb6fb8d8a1775b8e18c368fd"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007019_a_low_bae20e13969a.json": {
+      "bytes": 6731,
+      "sha256": "08480e4c130f1486d9ed4655a9deed4c633b2d8cca95f62d79a3ccef697abfbc"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007019_a_medium_03de733bd9e0.json": {
+      "bytes": 7102,
+      "sha256": "081ca708d8474778443c017270c21f9995f72c5eda1a86e9f9ec5663e6911ed8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007019_b_low_92462546eab9.json": {
+      "bytes": 6671,
+      "sha256": "9e7eccd7eec5805e6a0456379e8d1cf209dc087f62ee9bfd00e9d2ba854d08f3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007019_b_medium_517bc3aa4670.json": {
+      "bytes": 6812,
+      "sha256": "f93856be4442b94937a4feab737e02252f3f829af40a8fde11262a19b2c1eb3b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007638_a_low_ec2b68f7c506.json": {
+      "bytes": 11023,
+      "sha256": "73b370c788c1091afa9f67d9635de648e84b501e88180f88916d0bee443f5c5c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007638_a_medium_99d29f5a506e.json": {
+      "bytes": 11191,
+      "sha256": "f485d7eb6213024663167fcd6b4b94684bbae8c6ffc6fb625bf0e65d92552ab1"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007638_b_low_0da5697c4a4f.json": {
+      "bytes": 7825,
+      "sha256": "dc08f41461967ad6edb741c98559497b38a3eab634bf650d8b36c7cd9c21894d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-007638_b_medium_53153559c642.json": {
+      "bytes": 8257,
+      "sha256": "174543902e105f64195569084142f7cf829933022ece6d6cddc92239ad4330f9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-009839_a_low_d91d25816f62.json": {
+      "bytes": 7326,
+      "sha256": "65dd5fe9ea18f78101cce9057b351f0330ada7deed970c41492d7663d128c2f2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-009839_a_medium_d4b282bd4c14.json": {
+      "bytes": 7113,
+      "sha256": "9c25c949aba97e3cf9d742031d972997e16282eac2940d3269f9ab8d29ae022f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-009839_b_low_6f6701fd6175.json": {
+      "bytes": 7452,
+      "sha256": "44c1cb0a1cf01eec7c64e8fcc03816b7a3cde87517af0b401070a020f55ab611"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-009839_b_medium_6539f248baf8.json": {
+      "bytes": 8077,
+      "sha256": "2afe12adf7a1b44c09fa7b91616527e39f4d7a01d6a0ba3928b20c0c470fc9e0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-010768_a_low_6e981cfa9a8b.json": {
+      "bytes": 7267,
+      "sha256": "42cbcb63b94d2d39a1490b1c01bce3d41b3b969fb14667a56e687b0f836f1a78"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-010768_a_medium_e9b3812e22ac.json": {
+      "bytes": 9690,
+      "sha256": "55bac6acc95d2fb52890003017218058873e4a06cc6b01fcc3d06e06883907fe"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-010768_b_low_8a2aa6fbedc2.json": {
+      "bytes": 7073,
+      "sha256": "7eea7c8725074d9ff7d6361ea8869875f36e8b3c32512323db43c9fa1734ed01"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-010768_b_medium_1f8abd675eb4.json": {
+      "bytes": 7809,
+      "sha256": "c9d4effb8203fe6969cdee78f7f76def1bc836941768143ee8555bdb2cdf0f49"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-011202_a_low_e15025865cb8.json": {
+      "bytes": 7231,
+      "sha256": "e99e36a46dfeef40b4c1830799cfec1ba57db1c5b7aeab44bc3b4ca32bc0bec9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-011202_a_medium_ef14cf00f54d.json": {
+      "bytes": 7418,
+      "sha256": "1545bf7fca6cfabf583c1f4e8ba3f845f9f11da9600bb91e5e5024613bd907d6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-011202_b_low_2f3073432fcf.json": {
+      "bytes": 6914,
+      "sha256": "5d102982b35a11f3f24ca50fa67f5310747c1566426dfbbac47b5a84b1b77d82"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-011202_b_medium_9d088f6f0154.json": {
+      "bytes": 7050,
+      "sha256": "f0bc3b51963a577eea5106a81b13eb6355ab62704240f121f25ba687b3e91769"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013384_a_low_55c0f4565322.json": {
+      "bytes": 11289,
+      "sha256": "0e0d2aaff37cbb12ef1323c611299bdafe5efedef09cf084a3ea9a77faca57ca"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013384_a_medium_409d56959651.json": {
+      "bytes": 7419,
+      "sha256": "2534053d72e72de5a13ae825e27747fbb27a6704a5150dd619e02080cd5651d4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013384_b_low_63e3898313a3.json": {
+      "bytes": 13621,
+      "sha256": "2a94278815e8691acd468218ca79ea05be12116d9dbe6971dd348ee2cd7f6a50"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013384_b_medium_b0c46356f783.json": {
+      "bytes": 14787,
+      "sha256": "25b4c5958ebf3cafa775be9b93a15e85d7491461a0c379e106f1cdd7d12789d4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013388_a_low_254603289cb4.json": {
+      "bytes": 7567,
+      "sha256": "2a45564c24bbe5a11eea227757785f6e84fe1866f15a7e40bbd2ec75dc10c34e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013388_a_medium_93202c87cf5b.json": {
+      "bytes": 7823,
+      "sha256": "c5581c3746c6c98937f0142a800e6db09738c2e4c114920f329b09606d6f458a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013388_b_low_f7157fbc34da.json": {
+      "bytes": 7753,
+      "sha256": "91e56c462120e7b2709242f51a1afc71aec9366ccf0817acf1dacd2ac0981595"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-013388_b_medium_e7175e4255ea.json": {
+      "bytes": 7836,
+      "sha256": "061f468946c902e98632f33ef47505e90f954ca627dad09398f69be1e48dc797"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-014655_a_low_f8e34155cd70.json": {
+      "bytes": 7070,
+      "sha256": "b74cff52666ac900b21454df4a1ee99ddc70be352b4dbe29bd88d7fbb76a7323"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-014655_a_medium_d985000355f4.json": {
+      "bytes": 7116,
+      "sha256": "5955a5d3c6f02aeab131e0eeb1c3bfc818d0d7efbd31c0ba875bd197b7264029"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-014655_b_low_c7fd4d413bb1.json": {
+      "bytes": 7153,
+      "sha256": "0e338ed7fec539fbc1960b827860d2cc876fdacb65991c1f2b3f2212bb4f027e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\raw_responses\\sync\\p2_v4_terra_r1_smoke_train-014655_b_medium_874afd487ddf.json": {
+      "bytes": 7030,
+      "sha256": "fb0d86206e1e1a26adecc6f492b48546084be0e33915d42e1b24a06015b2427e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\request_manifest.jsonl": {
+      "bytes": 75042,
+      "sha256": "c1f27101b8d341bb04d8fb2f2a92929046f1460165381378654ff13e988c0460"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000108_a_low_5d0f05eeea2e.json": {
+      "bytes": 3229,
+      "sha256": "4f6faa7ed463f9663224ee1d49ec5bb7b6764d5f53881f3311d17ed71b65e3c8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000108_a_medium_0219d7397a70.json": {
+      "bytes": 3232,
+      "sha256": "25b52abef13a92bf0f3f72dbbe50dd78aaeb46cfdee3e321f97055453c1b9fb3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000108_b_low_0a002970ef10.json": {
+      "bytes": 3264,
+      "sha256": "56ee873ce32925ba390fb278026e28523c5f868664b31c7d4e07cdb5f3d9ce14"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000108_b_medium_aa2171407591.json": {
+      "bytes": 3267,
+      "sha256": "0feacafeefcfefbcdbc28f793c7b18ad595e2f84e2a9e466e99be720f6174293"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000825_a_low_f3158d0b5fac.json": {
+      "bytes": 3212,
+      "sha256": "226d6dda1a3f0133604e62a7a2e6e537c7e8d98660a7904e89605e6d122c6806"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000825_a_medium_2c8a18e5230a.json": {
+      "bytes": 3215,
+      "sha256": "6150ba1618aee2887406a25ffafb46befab073f3ef1dd29317d4fc354801fa65"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000825_b_low_21ad991f8a56.json": {
+      "bytes": 3247,
+      "sha256": "6d9443c1a6d9960e2fca43f83aab408fe328c1dc5814dfcf30c6082765a0557d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-000825_b_medium_6eb14d2dad43.json": {
+      "bytes": 3250,
+      "sha256": "7526547aede4d29cd71ca1f3268d6e13fa0a3d2e14e2e83e9e92ec916a98a18e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001103_a_low_6e57dd40c7b5.json": {
+      "bytes": 3658,
+      "sha256": "1138785aa8e538b7d6d355bf9861e3e9a9954f85a32aaf3f22f293a2cf0c5792"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001103_a_medium_b9bcee9baa3d.json": {
+      "bytes": 3661,
+      "sha256": "5e6e9feb807be61a2dc37df5f76a7258646017899e8d42c99c79946fef2e75f9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001103_b_low_2653c2fffce3.json": {
+      "bytes": 3693,
+      "sha256": "458385f908e735574826da4686b7ca421b37ff03001ebb3a6ad22deea74e3a8c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001103_b_medium_6340774abb3a.json": {
+      "bytes": 3696,
+      "sha256": "d0aa36aee32b9941e846fa422ffb33c6102300257e00eb21a576aaff8e741b82"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001639_a_low_73a653fb7d6a.json": {
+      "bytes": 3684,
+      "sha256": "bc443a16743f44811076a7d6520408a0e5e891520d3f3fc46102890f01be7836"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001639_a_medium_d23b2118786e.json": {
+      "bytes": 3687,
+      "sha256": "94ec36396925182b84c675616ce7a3cd85c7620f9084405e5159920c5baf0d64"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001639_b_low_b1925fb875e0.json": {
+      "bytes": 3719,
+      "sha256": "8cda4f3428eade060fb21bc4abe9da7b4c3ab5b5737660a0068335ab980f1825"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001639_b_medium_bcc28ee01d46.json": {
+      "bytes": 3722,
+      "sha256": "a21d8549bc187835a0a5ffb07d3da67c37f30ec721ec1b20eea4436f0da3338d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001972_a_low_187529d56cb6.json": {
+      "bytes": 3447,
+      "sha256": "6ae2d92e3781fc61055d0d5cd23402ef952a3dff2f9b65a8d89b16d4b62e7e69"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001972_a_medium_3ea26dcf31c8.json": {
+      "bytes": 3450,
+      "sha256": "23bafa377cbc85d366ae387d2e6fc517dbde760a5351b7b249b5be352aba5f9c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001972_b_low_16a3f08e10cd.json": {
+      "bytes": 3482,
+      "sha256": "484367e6b30e385262f33fb62e031d84334bda47936fd3c0f8a435c332d216ac"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-001972_b_medium_cade8d1ca0f5.json": {
+      "bytes": 3485,
+      "sha256": "0e4d5f5b69b1c6957a92cd9ac05de269a9c926a7211ccef8fc27b928ef80079b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002025_a_low_06ca19ab62d4.json": {
+      "bytes": 3388,
+      "sha256": "a3028e1d055d17acd9f10cf749e0bb74558a2480165991db1f93afb1ba7f5044"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002025_a_medium_1bc13bb8557c.json": {
+      "bytes": 3391,
+      "sha256": "11ad54d49f1cd56fd1d9fbd52af199a89834d4fdc33afdddeb706e7416d62c96"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002025_b_low_861f46d902f8.json": {
+      "bytes": 3423,
+      "sha256": "fa8144633b3067bd3424f1e4c47b7b51fe33b9510e240be57768cbf93f907396"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002025_b_medium_b36ef3e913b6.json": {
+      "bytes": 3426,
+      "sha256": "a443a142427485bfb5cbea091bd88f900ca16d0553d5c6d147b9f538f3f1761a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002777_a_low_652da9417793.json": {
+      "bytes": 3538,
+      "sha256": "465df6beae2bbc68e2b21c4e22bab187447d8fd67c0abad85fb47efd789d6780"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002777_a_medium_077a2e312988.json": {
+      "bytes": 3541,
+      "sha256": "921988be01024cf38d1678c01a99352cc71e3020dfea32a3b6982a5bc26332bb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002777_b_low_1e7a0f13deb2.json": {
+      "bytes": 3573,
+      "sha256": "70b3b4683002d0e26f4a5139173e22b1809682a792aa1e70c2ba83e7045b84f6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002777_b_medium_7585b0686033.json": {
+      "bytes": 3576,
+      "sha256": "1029ef006b250031a5dfc8011f8a671e75f1ecf204a3487c972050c9f175b510"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002863_a_low_c034b823fcc7.json": {
+      "bytes": 3807,
+      "sha256": "afeb343488ed0abfc79c96664ad212cbbeef3bce3e2d967ee6503208bf75f6f9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002863_a_medium_cb458986c289.json": {
+      "bytes": 3810,
+      "sha256": "f72811a40102d9799c54de57870504b771c34dcd7a9f56022ce7321e3a697ccf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002863_b_low_771ec32073b2.json": {
+      "bytes": 3842,
+      "sha256": "91baca4e3a673292de3f3511fddc1129e64ff4bf4163496cfb3fd0731581c320"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-002863_b_medium_cfc04ad98a78.json": {
+      "bytes": 3845,
+      "sha256": "535be3169fc6f262c9a8efa6a6ab4686cfc3b087a78b39821a8ad0b97769d490"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003183_a_low_b525127daa10.json": {
+      "bytes": 3170,
+      "sha256": "5610246e12df7c9bf44e258c8ae8377f709fc1076c5d9d0e0cba4fcda50d930e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003183_a_medium_93324570d6c1.json": {
+      "bytes": 3173,
+      "sha256": "c9ae21ceebec34751e4975111f0b054b152836c66be9a9fc2cf10018155e8fe7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003183_b_low_1a0ea09e1f57.json": {
+      "bytes": 3205,
+      "sha256": "64f12c082076b71055cdb3fb02338483618ea650a38318d30fa23cb862210d0e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003183_b_medium_e50bf31e21e1.json": {
+      "bytes": 3208,
+      "sha256": "e80da35d6bdd1e22ba45adc03f4d20e78a9f2292139aceb5727f93e3c43b25c5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003920_a_low_f837cfe4fddc.json": {
+      "bytes": 3185,
+      "sha256": "9b79c31f88c36f1b24b982ad1b710464a5557322cd1a12df2c04c7414db1b9bf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003920_a_medium_8acd29c959cd.json": {
+      "bytes": 3188,
+      "sha256": "3e3d9095781714509b5d4fa1de2b62f2b3719f81c2d66dd5a5d574de9faca3c2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003920_b_low_ad05ed39a827.json": {
+      "bytes": 3220,
+      "sha256": "093f8c11293d55f4dab2184ba6295196011424206eea1da743e63490b73a2d61"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-003920_b_medium_79892b0c2e0f.json": {
+      "bytes": 3223,
+      "sha256": "2aee7a9acddc46c332882f09abe6900c26ce0cc2de94f0d64a680609159709ba"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004144_a_low_c324b259f09c.json": {
+      "bytes": 3129,
+      "sha256": "0c1233a6e46e568d78163db4c0f3717e67d450b7f45214d0852e2b3a7f9bf4df"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004144_a_medium_b6a2a2dd68bf.json": {
+      "bytes": 3132,
+      "sha256": "6fc84fb5a6bb3886d392f82736fa5824b049d623ebbe64c3d64070dcd1dff769"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004144_b_low_8a2dcc381b61.json": {
+      "bytes": 3164,
+      "sha256": "963dcf7a55584ed9836b317716d2af302c75deb0f9734c0574f51971a923fd01"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004144_b_medium_fe4b0a45e2be.json": {
+      "bytes": 3167,
+      "sha256": "92848677c551c2fd39ee94385926708ca38e0051a2e0359b0f83d09adfb3a66a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004679_a_low_51d5b4d9107a.json": {
+      "bytes": 3201,
+      "sha256": "452027386a43bda41323415d289235fab2f447f7b25277cbfeaf900618e1e1ff"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004679_a_medium_2e883c28c227.json": {
+      "bytes": 3204,
+      "sha256": "6a9fbccb77c63fa60b47c508bafb2112605e9fb11827d24be601a1e45740f09e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004679_b_low_487bc4c27543.json": {
+      "bytes": 3236,
+      "sha256": "e9b5125770b6b6de1e4e2b6fcfe2fbff96b4f2bab348ea691c69e0f0e8553729"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-004679_b_medium_8a7adbc54097.json": {
+      "bytes": 3239,
+      "sha256": "63229cefa5552a5474c993ccfec40a39f98f02eb15c01744ceb128674ff5232e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006313_a_low_5f10f4692ab8.json": {
+      "bytes": 3151,
+      "sha256": "f4d2b617a32696f7db46b3e2e82c3da37ad5f6c98fbfa27b0a964e3a7f3d8b78"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006313_a_medium_c3800a56fabc.json": {
+      "bytes": 3154,
+      "sha256": "2f05d5baa04e2a2a838395fec0d7da36936efc573fe6889bd0f7242aac4b4694"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006313_b_low_99917d6a4bed.json": {
+      "bytes": 3186,
+      "sha256": "0f44503184bbd2b83cdab9a328cb47c475d6ceebb7da944e59f7cd00f81fe55c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006313_b_medium_34d80ba030e1.json": {
+      "bytes": 3189,
+      "sha256": "ee8d160594f7c8bb1002e9698ab58b9b7756f24b42251a8fea587171f1603c07"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006453_a_low_a240e022365d.json": {
+      "bytes": 3125,
+      "sha256": "b5d31058f30a32bd9e7e0ab1bf7a2f07a0c3f89e1e221f4350f8dbe85f8d1a59"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006453_a_medium_e4248dde0e36.json": {
+      "bytes": 3128,
+      "sha256": "558e44d05b253a9f3f700db01e07198e9637bf7726cd51b575be9a307c7044d7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006453_b_low_402be221e691.json": {
+      "bytes": 3160,
+      "sha256": "e33abac07492e3fcc5ae39cef1f3c38415dfec868a47be652fce696dd7082f7c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006453_b_medium_d5383144f293.json": {
+      "bytes": 3163,
+      "sha256": "e49eea0aa995795c8a88f1198d0ac96da5904dce6627a9124ad5c193e8f09b2c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006480_a_low_df2a78e4b605.json": {
+      "bytes": 3611,
+      "sha256": "ffc7f1b6b5a420669e494e521c5a70851386446aa97aaa2a0139ee90e6606deb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006480_a_medium_2eac9334214a.json": {
+      "bytes": 3614,
+      "sha256": "d32a906e2240953ad9a2c64d0b7f9790f53782b1f01451930fef37b17612d6ff"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006480_b_low_6b62c23874d9.json": {
+      "bytes": 3646,
+      "sha256": "289a6895f30a714950833079c0c3511d126699c662bfe2ab94bac54e2d0fc151"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006480_b_medium_118b1db954c0.json": {
+      "bytes": 3649,
+      "sha256": "9b1863925b96565abe4f63d14ee839134d77a98038c6797bacd719afe0bf15f5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006750_a_low_6acf34315d58.json": {
+      "bytes": 3706,
+      "sha256": "0b3a4bf1a77e7f2b3dc8216e1b2cafb8f1e620fe8f435a155af47f23e8cc9fb0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006750_a_medium_96adedc83233.json": {
+      "bytes": 3709,
+      "sha256": "bcd2ab30b4ddcc8936e61b13a39ded5ed290aa85f0175a563f35d543d7a93c89"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006750_b_low_e782463e3d40.json": {
+      "bytes": 3741,
+      "sha256": "882af06995c6e38d433268896fb1600f1b0ae6e66627ac99cef40b5ef5c4547c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006750_b_medium_6af111a16ab0.json": {
+      "bytes": 3744,
+      "sha256": "beab6a20686e64fc387e841c522d0a27734bcecd33a9b93549f54cdb754a38e4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006848_a_low_f68c5f4db282.json": {
+      "bytes": 3765,
+      "sha256": "5937480cd264f043b6d2cf8bccba3b5530fb8990260903b07a626391fee1c4f2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006848_a_medium_6317af4108a9.json": {
+      "bytes": 3768,
+      "sha256": "73dd6b89d3da41ecb0125d9bd1e08d1a4ce470d8446248112a31a9f83fe590c6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006848_b_low_0090ba0e08c3.json": {
+      "bytes": 3800,
+      "sha256": "64f540b56c468d6d07394b5d15e44dbb157b05b44aea619868a6abf42114616d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-006848_b_medium_2fb06ae0b369.json": {
+      "bytes": 3803,
+      "sha256": "311d11c3c49039106d9409288aa2d7da14ccf6c700599a97da8eb3a66afb3ef4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-008050_a_low_f5c53b44c1e0.json": {
+      "bytes": 3181,
+      "sha256": "f8ff883e5a5e0f9b026c1ebd94f7dacb2358fa8cf0b19ef048f41e0691ae0eb1"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-008050_a_medium_9dc8cdb98b69.json": {
+      "bytes": 3184,
+      "sha256": "29d1b08840adf632b4858929bfedea29135afdf8316e3b8dfde6785a8a0f3ace"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-008050_b_low_a6a75def5296.json": {
+      "bytes": 3216,
+      "sha256": "fb2954eded86c849e00b69f483fcdf5ec8204878e98125498fe7c492c392d7fb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-008050_b_medium_35ffe8a04e73.json": {
+      "bytes": 3219,
+      "sha256": "f2cb2226abb3e09deb362a41248342337d03c43e83157e68835aff8b4aaaca54"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009106_a_low_aeb87238f084.json": {
+      "bytes": 3214,
+      "sha256": "27330d625a57da3d30b06be4f8b2f386f18feacb8b8a5536b4b90b4c972c1066"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009106_a_medium_70a7a5e5d4b9.json": {
+      "bytes": 3217,
+      "sha256": "f8ed0eea014fc46fec7fff277b00eb0564b128565ea6a1a8a821d801239d6c1f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009106_b_low_fd972d5efbd9.json": {
+      "bytes": 3249,
+      "sha256": "1a74a1b0dfe618a75c129d1c4b403c6a024fe05a425ba73fedecaae37b31d657"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009106_b_medium_3aa8c1ea96af.json": {
+      "bytes": 3252,
+      "sha256": "ce6f0478b6e769c9c15c587729614f10ed72923e80f732e201986a24b4651556"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009400_a_low_3ba85a8d8ccc.json": {
+      "bytes": 3307,
+      "sha256": "409ab4e8b8f63995db440b75f482383a6529f42a6ced10aeb7b2986ac31e3319"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009400_a_medium_9ededdc37b39.json": {
+      "bytes": 3310,
+      "sha256": "f595f6d850bf2b1caac79922ecef2a200cbaf59a6ce0d1aa7e858a585e54bcde"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009400_b_low_45ecde9c1ac3.json": {
+      "bytes": 3342,
+      "sha256": "b95d38f97e30459b6692bc7e9086f862382d157dba1862b549347b9e867824f3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009400_b_medium_5bea6f91ae9d.json": {
+      "bytes": 3345,
+      "sha256": "10458d49788ae5c31d5b1d27157bbb0f22f6f5d33d14a38089857534a2ec137b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009414_a_low_4b796b896048.json": {
+      "bytes": 3249,
+      "sha256": "c4a1f0f5828115f3c84f6b1edb91821f27817e326a32a018767b3f1cac56e084"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009414_a_medium_74590b035094.json": {
+      "bytes": 3252,
+      "sha256": "e67516a7072ef88ddca49ed816a7e1c4737c992a0ee1d1a3c0f5b5b6f7d03c7b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009414_b_low_0b7f4ac6c7be.json": {
+      "bytes": 3284,
+      "sha256": "be567658cc3364ec87d84cb37aba2108d18aa6a9b3e17718eeb101a0314e7680"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009414_b_medium_ec5bf7887d93.json": {
+      "bytes": 3287,
+      "sha256": "2460acaac24f64c855fe831882da5e3466353b97b4982ba0ff6ff6310de8a211"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009669_a_low_6c4a4d6d3eb1.json": {
+      "bytes": 3647,
+      "sha256": "4daf1ec3e110c0be6423c69621e8bea30278690d8fc6b97dfd08d36a830f3100"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009669_a_medium_bb5afe2e8a7e.json": {
+      "bytes": 3650,
+      "sha256": "297ccfb990b13817d3ca007845705ec1a92e7e1f479d874fc679eebeab16c1a0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009669_b_low_bb0f8fa55400.json": {
+      "bytes": 3682,
+      "sha256": "b0b25bfb113f0cd69ab7c0297eabc19ac1fc69c4caba56c59e41c854558e9ae2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009669_b_medium_3c76f55d2bb0.json": {
+      "bytes": 3685,
+      "sha256": "4f715a952f5135ec63576dc0ec59dc9cd1d5635d29e5787a3162ef01af5364da"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009903_a_low_b9415ab4f379.json": {
+      "bytes": 3516,
+      "sha256": "6d660debd54c444addc2fba64228554f6b4ed562aed5ea572242904cca22ffa8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009903_a_medium_6f204490972b.json": {
+      "bytes": 3519,
+      "sha256": "7820a8f49abed2dae93cb54e2ffe35542ddf09c1e536b4d882269797da5ecec7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009903_b_low_c89eb8e65d71.json": {
+      "bytes": 3551,
+      "sha256": "564da2fd571972343c2689c81e1fd2533df66e07fb826943b5f967777e1ebf52"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-009903_b_medium_c63a5dc887c8.json": {
+      "bytes": 3554,
+      "sha256": "372d9af207e80484bce54a13c1f8cd2cd271a908e940c9ca9fc3ed120e652b3e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-010982_a_low_af8ff8b189d6.json": {
+      "bytes": 3131,
+      "sha256": "bfa5cf847da0c118af405a5c3940323aa0e3b8badf997a6e9d79bcd599654e34"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-010982_a_medium_756190ad667c.json": {
+      "bytes": 3134,
+      "sha256": "627ef03bce1781d87b6e04f37286d00253e3b1e4ebf9819aa202b529d0452df7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-010982_b_low_e41e4cb1364c.json": {
+      "bytes": 3166,
+      "sha256": "c85a946c2b7b67130ae77ba649267f4b0431ee5c93851efa777e8129a8d1a3f7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-010982_b_medium_2b3153604972.json": {
+      "bytes": 3169,
+      "sha256": "99eadef9b383dd7e3640e154a372e1f975aa7d9aee2391f529872288c670c74d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011275_a_low_934eb0c8b477.json": {
+      "bytes": 3121,
+      "sha256": "f4689b4e9767633c7e9fc6dcff8924a15b620526d77acf1b9fd5127d187c228e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011275_a_medium_822d33b9b358.json": {
+      "bytes": 3124,
+      "sha256": "c7d93d3193fb3c6224c5308af5da1248f88d11704f6cccd47c14728134fad8d6"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011275_b_low_2bc1f45369b1.json": {
+      "bytes": 3156,
+      "sha256": "19e64a7056ff76ab218b64b70a90074a00e50fd3671e796e39bb688ad05c1177"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011275_b_medium_9ca1d27730fe.json": {
+      "bytes": 3159,
+      "sha256": "019ae6cdab140142958457dae72779d4407d2448d9d49b9f8052ab6b40f8d902"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011302_a_low_a0020b37ef01.json": {
+      "bytes": 3315,
+      "sha256": "c7761f3f116065b959c6a653e73d3c775c9c9cbbe2a0fc47623cd238383524de"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011302_a_medium_c4e8ad59b84b.json": {
+      "bytes": 3318,
+      "sha256": "d31c7c5e5d4b1d2ded3f2a8b831a46dbd1d59b1697bc2da4a02ca0fa66ed208a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011302_b_low_3bde4611d6b7.json": {
+      "bytes": 3350,
+      "sha256": "8b9377205074e14105fded3d3d1592a4060a7cf72ba59749b95af7ff8119142a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011302_b_medium_b33720f6c4d8.json": {
+      "bytes": 3353,
+      "sha256": "33528b1c7fc83979063da85fc9fdd7d915ed8c486ab8eb0984ef4431c0ff29fe"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011721_a_low_eb71bd003bd2.json": {
+      "bytes": 3366,
+      "sha256": "b4c84c0ee2acfaf729e8f242b9915c80bccbbbe50bfeea56645aae1073b724b4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011721_a_medium_90b530238ddc.json": {
+      "bytes": 3369,
+      "sha256": "cd8e81c4aae135d54503bbc5caf1520e9a2b61ebc59858e1c38016cc95b7cc9d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011721_b_low_36e9e3b7503d.json": {
+      "bytes": 3401,
+      "sha256": "56e9cdbea53e2a6bc383359895594992a7532f8ce7658cdd05e4be8b4308c659"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011721_b_medium_e657feae047f.json": {
+      "bytes": 3404,
+      "sha256": "72e2ed9b5c32bca75922dcaede3e5e0f3fbcde5d6b4bcb8ba5077a949a34cb07"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011934_a_low_9aa19582bc4b.json": {
+      "bytes": 3136,
+      "sha256": "ff9d93aea758eca107625091b1bef160ea97a8eb655a49827c73bed89d77a0a7"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011934_a_medium_3596e17f2ef9.json": {
+      "bytes": 3139,
+      "sha256": "8d59b10f0d4031d3867af8f0c6485fb822eefbea2250c5091da130011ff1d546"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011934_b_low_45984d44a2dd.json": {
+      "bytes": 3171,
+      "sha256": "8cd40735942696fa4151a40ed1da25c03ef764a347de3e71a971e27cbf559e07"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-011934_b_medium_a75b183c1950.json": {
+      "bytes": 3174,
+      "sha256": "3b14037f9a0ed4cd96d06627a5aa5776598174ba08a18f017495aefa8e9a3b97"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012372_a_low_4a70ee753cba.json": {
+      "bytes": 3364,
+      "sha256": "d911699a65cb63818a4e097176804d632d37ac12f4d1cc2084caae8262e8d93d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012372_a_medium_eea4ba3be70d.json": {
+      "bytes": 3367,
+      "sha256": "5c445db0beb290eb8ce0b43022ace38379ddb58ecde63a54b213b9b056c01c80"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012372_b_low_50f789e9b5d7.json": {
+      "bytes": 3399,
+      "sha256": "0c1013142a33dff0bcc7796372c7246609cdd119638a43989a69e3fa964d3825"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012372_b_medium_9169cd80e3ee.json": {
+      "bytes": 3402,
+      "sha256": "c35280a147f0011fc98e12aa9853a7960fed1eb0a80789a4014dca844f076925"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012486_a_low_4f521bb5fad1.json": {
+      "bytes": 3285,
+      "sha256": "3d8cba8dda0862acf749e349490ad3a8727ed595e6ddff4a4b4ec6cb1b4f4d84"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012486_a_medium_fbd3b581bb33.json": {
+      "bytes": 3288,
+      "sha256": "7f6f8f3dd1d09d8181626a72476c00281b54ee2fe3704091d4d26faf7390d98d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012486_b_low_f33e34853665.json": {
+      "bytes": 3320,
+      "sha256": "82020bfc136b8cd21a21f611c026ed0360652c2c332f3bd027eeb64d3056cf0e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012486_b_medium_387b96277c34.json": {
+      "bytes": 3323,
+      "sha256": "89f68dc3e8f57080eda78e5ad6c890cc34f588a787c67dad108a4e7c0395a32e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012517_a_low_9b9f1826ad8c.json": {
+      "bytes": 3136,
+      "sha256": "293f13bbf498b8dd0fa94835b4706d611c362d211a1406b30bae1ff4c4518dc8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012517_a_medium_da9ad5c3c4a0.json": {
+      "bytes": 3139,
+      "sha256": "218d60051aae736c5e0a420703074b990a0b9c3f19f79ff72f42d375df15f128"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012517_b_low_5456e128b06f.json": {
+      "bytes": 3171,
+      "sha256": "18c55e8b4ecedaf5b0576dbf00b3f3ac00e4d61eb614f0bd0484c1007db5cfec"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012517_b_medium_95a12d38948f.json": {
+      "bytes": 3174,
+      "sha256": "93d8f7bf57da5b4035d61a6b11e25979507ce2f7f67dbbf4662bd00635db8a54"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012715_a_low_96ebb498d9c3.json": {
+      "bytes": 3150,
+      "sha256": "c542a7282e22c95dcb23239243a9275bd1b3373744a9021f301a2798682d60b5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012715_a_medium_84d2ef5753d2.json": {
+      "bytes": 3153,
+      "sha256": "d68f54766f518ffc039669a8db141f68b29d90fb821b606fe0da8e3f8cbf0d96"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012715_b_low_dbd165f6dd94.json": {
+      "bytes": 3185,
+      "sha256": "b9e89bbed169fefcbb08c93f6c6d0304f5eefe3205544122835db1a27d3fac48"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012715_b_medium_3df02a1b3fe8.json": {
+      "bytes": 3188,
+      "sha256": "6a319a0002d3e9c908cd6c622b9fb88072092d9f6c1857abecf1f5b679b22be3"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012887_a_low_2a56d3c2a97a.json": {
+      "bytes": 3621,
+      "sha256": "c6c5543f2da7e062d7ae0ad142e7dc5c8a35a3b752c46408167356a474a501fb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012887_a_medium_b9f5a9bf538c.json": {
+      "bytes": 3624,
+      "sha256": "5076919f22b783bd42b4c195cf4e51869325d8b0d5dd9ba6a22a3c2b44d2f994"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012887_b_low_75ba2813ba69.json": {
+      "bytes": 3656,
+      "sha256": "c726cf5fe9c8a69757007555512d1f2da5ebd24878b09f3181a2ec0320e7fd7b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-012887_b_medium_234ee21039e2.json": {
+      "bytes": 3659,
+      "sha256": "a8aaac67441c2754323b150d78446faa17e9ed1b1887cdbf459b009c318e2720"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-013689_a_low_b36c44def9cc.json": {
+      "bytes": 3390,
+      "sha256": "b966272215f9888ce453a2f9791d9468563fc5eb008a5c48f0bc527b9ea19883"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-013689_a_medium_498d1e51bde2.json": {
+      "bytes": 3393,
+      "sha256": "c3efbfaad0c1dab7515c9c98b1a827600e6a6c355a679628b56ba053b2e0fe44"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-013689_b_low_4f6ebffdac43.json": {
+      "bytes": 3425,
+      "sha256": "d91098a9f791c3476e4ad41dceaacde7b8736c81d1dcb3614d1ca1c69150fa61"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-013689_b_medium_5115b2932694.json": {
+      "bytes": 3428,
+      "sha256": "3d5470125fbf0463a6004e6e5a7e7fcb43f055a5bc8edc030d9393ff6c4b8a8e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014215_a_low_347a7daf23ac.json": {
+      "bytes": 3918,
+      "sha256": "1ee94965bcbc1279962c93f914157af70ab0de97845b4327a57b4918580d770c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014215_a_medium_ae2d71f2e6b8.json": {
+      "bytes": 3921,
+      "sha256": "7f3dbcfbfc6446373961520de9e83a26c05bf836b30f6612608ba4ac5f186abd"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014215_b_low_a631b69d6dd5.json": {
+      "bytes": 3953,
+      "sha256": "89d25d68bdbfe31d5d46db773edada10c00108f0c83524584139cad668045014"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014215_b_medium_91b099c4f7bf.json": {
+      "bytes": 3956,
+      "sha256": "fa7494ea1448efea19b100bd64046dc71bf277a8cc9260de30ddbdfd33550a6c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014786_a_low_05257961aa2c.json": {
+      "bytes": 3190,
+      "sha256": "2b706e4554e85a7896f4ba015fff7a53557ab2716b6db6577b949f48b0868be5"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014786_a_medium_2924e6f42099.json": {
+      "bytes": 3193,
+      "sha256": "eaa6314c90398f871b239c88d40f4ba2c2cdee4ccb13397f42e2ee008c68d4e0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014786_b_low_8ea6d055ba03.json": {
+      "bytes": 3225,
+      "sha256": "70971d7246bde03c836e1e90bb87d0d83cc5f2f3f97dbbb0f4c735f2c02b0c1d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-014786_b_medium_3c78bc204d70.json": {
+      "bytes": 3228,
+      "sha256": "cd2fa5c9613708e97ea82fa7b64394786341bf8370c3bce590d2bc4d67862da0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015243_a_low_5d3d19391830.json": {
+      "bytes": 3436,
+      "sha256": "320adac6f913f641baad6372cfbc7f44248cf70089e20bb3698954d1232f2139"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015243_a_medium_bd0ca90b1717.json": {
+      "bytes": 3439,
+      "sha256": "72c7d6decb4471a42f069c58f26118e18c69ab6bfaf406b64f9fa82a92c932cb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015243_b_low_629051935a43.json": {
+      "bytes": 3471,
+      "sha256": "817d6b5bcf2a08a7d119c90ce3f7f12667ac8eae3689feca064877e8415cb53a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015243_b_medium_b8034760310a.json": {
+      "bytes": 3474,
+      "sha256": "a0508424d70ef1e15e17c66a5a980c850c81e5cede62c92e24dd55f2691fe653"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015366_a_low_6026f3b9e74a.json": {
+      "bytes": 3377,
+      "sha256": "f254eb90f3e5b1b5b0704832e64beed3903e0235da2759ffcb5f92a0c0d50f8a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015366_a_medium_e3e2c1923127.json": {
+      "bytes": 3380,
+      "sha256": "c3016a11765aeeedbb1fdb0108ab95671fc48875e105a9cd3a8c292d63ed4537"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015366_b_low_d35263444601.json": {
+      "bytes": 3412,
+      "sha256": "507e1d20df3d7f8f119daa267e3f86ee29c0d8d05da5010fd9229fdc2d1d13f2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015366_b_medium_4087cf52f150.json": {
+      "bytes": 3415,
+      "sha256": "b7188f5106207159bb687e36c546fcc84e56696c477c8de178c66fc33e14543c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015402_a_low_debf859e1cea.json": {
+      "bytes": 3111,
+      "sha256": "70de784597edf9cef1bdde4be4863e45b07c852e8d27f359900010e1aafd65bf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015402_a_medium_767df38c5222.json": {
+      "bytes": 3114,
+      "sha256": "23e2fd58f7464079e7601d25e1c32f3153f464e2f5b835517d42f59852539908"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015402_b_low_04d2424f58af.json": {
+      "bytes": 3146,
+      "sha256": "e53efe9e3ce3e68490cd770d7377815a03b4604e6715c6ca7d60d037857deb8b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015402_b_medium_dd4df86317f1.json": {
+      "bytes": 3149,
+      "sha256": "89a9e5910a34ff63123faed322beb10bef7fecc37c166c8d7440f7b5d75c0f8a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015589_a_low_a76a347b423d.json": {
+      "bytes": 3111,
+      "sha256": "e1babd236a18d42d2c97831c892bda6e82662365feee4e805a83ae63e34da323"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015589_a_medium_16601ab8e0e4.json": {
+      "bytes": 3114,
+      "sha256": "293ed60b16d1d2f5cf2ec056680627c38c275aadadf67e5d6d41c47bff9f5109"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015589_b_low_01ee5e2b1789.json": {
+      "bytes": 3146,
+      "sha256": "b69756077a31e79099b5e2f1f6840321ad85a312573cd8c69fb99869d1f0cb2e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_comparison_train-015589_b_medium_8da8d551b5cf.json": {
+      "bytes": 3149,
+      "sha256": "a2bd53f73e3033ef7849e09d93233213938c042ce7ba7cc75a5cffb7c6500278"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-004295_a_low_68d05f3290f3.json": {
+      "bytes": 3149,
+      "sha256": "d08358648baa4a8587e20293f536de50dfeb9e6270682f7bf17e88913fe5afdf"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-004295_a_medium_216a4aa9a055.json": {
+      "bytes": 3152,
+      "sha256": "9458881c9c8048aed603a6557df44225cc6d29ec840007ec9332b7d1f8c4c046"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-004295_b_low_b9d1b18d4411.json": {
+      "bytes": 3184,
+      "sha256": "7d585ff04b6e08b2a65c14b684170e680b4965e0dd0dfe25a0f1f18bfaf3f28c"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-004295_b_medium_69a401f2c433.json": {
+      "bytes": 3187,
+      "sha256": "972d68cb09115d923a7f59231b40e09593aac5b16882b2675aea3eacd31bd359"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-006714_a_low_9e1b3545f388.json": {
+      "bytes": 3564,
+      "sha256": "7768cc4f48b30448a31bb874fe4cd747b45e1e86fff38db6d875e41ea2290025"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-006714_a_medium_146da762bffa.json": {
+      "bytes": 3567,
+      "sha256": "a4e96f404c2cf302a124b30a70cd41a2e448dd05a3968ff5dbdfa5499246f5fa"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-006714_b_low_b029bd36a6ee.json": {
+      "bytes": 3599,
+      "sha256": "adc1e23f0e7a4365b6b6f901c3c9c219558b49990eef799f28d16b41ca75eeae"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-006714_b_medium_8dc7c429928b.json": {
+      "bytes": 3602,
+      "sha256": "429c1ee1da06a4e2933131780e2d86cc683859ab91df68a8e36a3061a164782a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007019_a_low_bae20e13969a.json": {
+      "bytes": 3085,
+      "sha256": "9036e33eaa9906ada94a9d9eb57eb43eac9c53b577a33c82a5786324ef61e65b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007019_a_medium_03de733bd9e0.json": {
+      "bytes": 3088,
+      "sha256": "d47a5c46d2f40fec6d7a53389b7f354d783176c3516427df17fffc69221c0c29"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007019_b_low_92462546eab9.json": {
+      "bytes": 3120,
+      "sha256": "7750342dfee14cdb16c3472851ede0391e861797f70703f9720deb858e68a348"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007019_b_medium_517bc3aa4670.json": {
+      "bytes": 3123,
+      "sha256": "f8f1e2c46b784e31b6e9cd6a3c497996067b18cddb78e3d1be7758b08b51fd11"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007638_a_low_ec2b68f7c506.json": {
+      "bytes": 3237,
+      "sha256": "8e73075a96a85635fb3820f36629d70970c53a5ef95684f0af3293b60330d375"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007638_a_medium_99d29f5a506e.json": {
+      "bytes": 3240,
+      "sha256": "1f58fe35320ab11dd30b9b02a9f4e8e720745f3885b8b5ff7a1067c032cbc21a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007638_b_low_0da5697c4a4f.json": {
+      "bytes": 3272,
+      "sha256": "b4eeafb7d8a2ceced7c1a229720e29c563f04e62730ae2ca09a0cc31f665fa3e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-007638_b_medium_53153559c642.json": {
+      "bytes": 3275,
+      "sha256": "7f16bfc58f83c45a7a016ec8a8bd03f1bc21cb168aa553134408e50ec8bfc4ce"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-009839_a_low_d91d25816f62.json": {
+      "bytes": 3138,
+      "sha256": "95bcfd3ebfe2b512b5c0ad36ea5ebc58c817e226a5a74fa04a6335866b3b6f9d"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-009839_a_medium_d4b282bd4c14.json": {
+      "bytes": 3141,
+      "sha256": "e31a35d038a8e9e7b121ab74b1efad0081b4202d845479bb6064d5232414f9c9"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-009839_b_low_6f6701fd6175.json": {
+      "bytes": 3173,
+      "sha256": "b9028f470406629a8a09fd8d3f5b30710d27fe077c8085b42ed756b738d95fc8"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-009839_b_medium_6539f248baf8.json": {
+      "bytes": 3176,
+      "sha256": "a9d4212597b025a8f06cca1af30f204473b9042041d50096972b560b50ecbc41"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-010768_a_low_6e981cfa9a8b.json": {
+      "bytes": 3623,
+      "sha256": "974bbe82fc5accbd8fdc147094d78eb5a2d57376afe9e34d956d93829ce1ea32"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-010768_a_medium_e9b3812e22ac.json": {
+      "bytes": 3626,
+      "sha256": "952602f8b34d4b67f46a071e2517d3e209a96a0a13a9cfae8ff93c6794ec3008"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-010768_b_low_8a2aa6fbedc2.json": {
+      "bytes": 3658,
+      "sha256": "ead5260c3fd2307edbe5f9c8e5cfb3c3bf4d6939293c4100a4573aa92fcc845a"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-010768_b_medium_1f8abd675eb4.json": {
+      "bytes": 3661,
+      "sha256": "935faa00be845f365497158ea87ca8575ce53b1b8c5860dadf84cd4ea945972b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-011202_a_low_e15025865cb8.json": {
+      "bytes": 3315,
+      "sha256": "92f16679daf28f434ec8818a4e5931010678d7c3435383cd51d69984d06554de"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-011202_a_medium_ef14cf00f54d.json": {
+      "bytes": 3318,
+      "sha256": "a1ca54a40e43862bc87314ec2d1883e1793874617764ba720e7e6ac03a7619db"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-011202_b_low_2f3073432fcf.json": {
+      "bytes": 3350,
+      "sha256": "fc184d8d5a6b4a1c058441135de381687f4ed909b23166166c4257150b1d4a20"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-011202_b_medium_9d088f6f0154.json": {
+      "bytes": 3353,
+      "sha256": "897cb9cb643e18307eb264c11b24a46098c9ebe5931fa6bcd901824616cdc0f0"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013384_a_low_55c0f4565322.json": {
+      "bytes": 3173,
+      "sha256": "8e808366c6c92f6d8bfa719189f5dcd8e369e1adb01b045020f055ac79652d7b"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013384_a_medium_409d56959651.json": {
+      "bytes": 3176,
+      "sha256": "2338b7a6059616fe60db02ca30014b745e0452e418e2a429e48bd52da818994f"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013384_b_low_63e3898313a3.json": {
+      "bytes": 3208,
+      "sha256": "3fb44d0fde4c3440dd5928dd93e8f28be0b97a96c396aebbf01cd70c999a3e19"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013384_b_medium_b0c46356f783.json": {
+      "bytes": 3211,
+      "sha256": "dcc132f59aab1fe4a811960166009dc68fc43ecfe999e5e15812ed8cd2d2c749"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013388_a_low_254603289cb4.json": {
+      "bytes": 3529,
+      "sha256": "af3f4107978284a712f71d60afe21eb0118cff3c2d3acecab5ad4b0d9d905039"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013388_a_medium_93202c87cf5b.json": {
+      "bytes": 3532,
+      "sha256": "b6acf03f1423f79c3eed618aa0763ad78528e57d48804c030b1a89fee588b943"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013388_b_low_f7157fbc34da.json": {
+      "bytes": 3564,
+      "sha256": "886d5405264997c7d0fc95328984b96e8afa364d31e1fa85caadc42d2ba89ce2"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-013388_b_medium_e7175e4255ea.json": {
+      "bytes": 3567,
+      "sha256": "f110605354ad83bdcf3c0dab11eff3d1196ec3aba79d2871d0b2e78da5f7fa21"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-014655_a_low_f8e34155cd70.json": {
+      "bytes": 3369,
+      "sha256": "6f071a6afead1778400d2435b9bc1367db6bf5c74f5811d666abefa1ea3dcd7e"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-014655_a_medium_d985000355f4.json": {
+      "bytes": 3372,
+      "sha256": "31c52630299e6c68f35fb3e0545c07d3b9a969fd3bc582e224b9e46d3ae362ec"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-014655_b_low_c7fd4d413bb1.json": {
+      "bytes": 3404,
+      "sha256": "94a7b59f17b145cff0ac6de767a3843a11f66af0cbf4b5528954e73cb8a15934"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\requests\\sync\\p2_v4_terra_r1_smoke_train-014655_b_medium_874afd487ddf.json": {
+      "bytes": 3407,
+      "sha256": "e19db1baf47a3d9325437571ba72c64dca1fabf238d0c9ee6093098a61dcd944"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\selected_effort.json": {
+      "bytes": 525,
+      "sha256": "ecc4a6e7dbb1ce9ebc64443b307ae159a79589f2e5ddc9fb880d07a9a9119ce4"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\smoke_low_metrics.json": {
+      "bytes": 2633,
+      "sha256": "7451970b17a78a6e686de94b8f7081e3c27d086a0e875ff22ce4750e31ad5cdb"
+    },
+    "artifacts\\phase2\\phase2_v4_final_v1_terra\\smoke_medium_metrics.json": {
+      "bytes": 2636,
+      "sha256": "f851701e38719bc83cf235dc4e86852f7a3a6229d13bd1af562ff365f29fe234"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_cost_report.md": {
+      "bytes": 883,
+      "sha256": "c3e0fb5fbf72f1f315098a1b6c3142e144ad8636d944c34e9fbd918e594c829f"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_cross_effort.csv": {
+      "bytes": 5462,
+      "sha256": "5bba61990f6a4ed376b8fa13f37ac24e605bc749c52d208e4a530624ec6b46c0"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_diagnostic_hashes.json": {
+      "bytes": 1891,
+      "sha256": "3556326fbaa0ce97bf0a6fc9bd2dba9414f42a3f5100c86c72cd5b59c3abe531"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_diagnostics.json": {
+      "bytes": 8589,
+      "sha256": "3a0e4ef52c922939b2aeefbae465a96fdb727ebda1d5b0eac5afb482e19d2e1a"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_pair_diagnostics.csv": {
+      "bytes": 11751,
+      "sha256": "69c7f895081aab2cc3f6830ffbff43e9686d140874929fe999cfd90ca4df070c"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_raw_response_hashes.csv": {
+      "bytes": 39161,
+      "sha256": "282eee37214da8a8cdde2dddd11ebe57f6862baa790cd02f07dbaa456cdc8268"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_request_diagnostics.csv": {
+      "bytes": 34266,
+      "sha256": "3a9de91812ed50f202f4ffd2697074c8ebbb6591465da0fa7946878441ac981d"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_segment_diagnostics.csv": {
+      "bytes": 1651,
+      "sha256": "0fb143f39768cf64bb1179db1cdfb11d7e8509163cd67259480c45f80f6a9dd4"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_summary.md": {
+      "bytes": 2360,
+      "sha256": "56ebf742bb8c890443840ea68b52638cdfc4ff4e9f1357d09242f750b7c34fad"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_truncations.csv": {
+      "bytes": 260,
+      "sha256": "2dcbe2513041e038fbcfa64b4cc87de165006fe871666ae8e32b2f49f7f1ef8f"
+    },
+    "report\\phase2_v4_final_v1_terra\\phase2_v4_final_v1_terra_v3_comparison.csv": {
+      "bytes": 605,
+      "sha256": "4b39edd0046ae9122bad0dd77fbdb58358418d4a8e3a69f2b0bf3e03ab173d1f"
+    }
+  },
+  "schema_version": 4,
+  "status": "blocked_comparison_gate"
+}

@@ -1,0 +1,33 @@
+{
+  "api_calls_started": false,
+  "created_at_utc": "2026-08-04T16:09:28.700796+00:00",
+  "dataset_version": "phase2_verified_cot_luna_3k_final_v1_v3",
+  "hard_paid_limit_usd": 4.5,
+  "historical_paid_cost_usd": 0.5429184,
+  "max_output_tokens_change_from_phase2_v2": {
+    "current": 6144,
+    "previous": 4096,
+    "reason": "four medium comparison requests were incomplete at the previous output-token ceiling"
+  },
+  "preflight_gate_passed": true,
+  "quality_audit_worst_case_is_one_selected_effort_only": true,
+  "remaining_before_api_usd": 3.9570816,
+  "safety_reserve_after_worst_case_gates": 0.9524892,
+  "safety_reserve_usd": 0.5,
+  "schema_version": 1,
+  "stage_request_counts": {
+    "comparison_low": 80,
+    "comparison_medium": 80,
+    "quality_audit_low": 200,
+    "quality_audit_medium": 200,
+    "smoke_low": 20
+  },
+  "worst_case_all_gated_stages_usd": 3.0045924,
+  "worst_case_standard_cost_usd": {
+    "comparison_low": 0.6327112,
+    "comparison_medium": 0.6327592,
+    "quality_audit_low": 1.5809792,
+    "quality_audit_medium": 1.5810992,
+    "smoke_low": 0.1580228
+  }
+}

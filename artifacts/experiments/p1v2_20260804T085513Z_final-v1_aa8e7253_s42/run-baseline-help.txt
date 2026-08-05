@@ -1,0 +1,17 @@
+usage: run_baseline.py [-h] --config CONFIG --baseline-id BASELINE_ID
+                       --train-filtered TRAIN_FILTERED --split-dir SPLIT_DIR
+                       --output-dir OUTPUT_DIR [--id-file ID_FILE]
+                       [--max-ids MAX_IDS] [--batch-size BATCH_SIZE]
+
+Run offline, pinned Qwen Phase 1 baselines with JSONL cache/resume.
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --baseline-id BASELINE_ID
+  --train-filtered TRAIN_FILTERED
+  --split-dir SPLIT_DIR
+  --output-dir OUTPUT_DIR
+  --id-file ID_FILE
+  --max-ids MAX_IDS
+  --batch-size BATCH_SIZE

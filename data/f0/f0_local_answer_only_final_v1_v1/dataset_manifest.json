@@ -1,0 +1,202 @@
+{
+  "created_at_utc": "2026-08-05T17:13:48.274219+00:00",
+  "dataset_version": "f0_local_answer_only_final_v1_v1",
+  "determinism_verification": {
+    "audit_rows_per_run": 16359,
+    "byte_identical_artifacts": [
+      "dataset",
+      "audit",
+      "protected_ids"
+    ],
+    "full_size_runs": 2,
+    "hashes": {
+      "audit_sha256": "f9034bd90cc0ebb3610f3a197a084c01333769853d96fc061b00ca7af7f94566",
+      "dataset_sha256": "51e572b03ee6456e8eea4b6aec8a794ac6e35709f892ddb7ef79175754d2b6d7",
+      "protected_ids_sha256": "549b072707990198dbd5cb4b46ae1ae8e9303eca360a42e82ea20b261896669c"
+    },
+    "input_rows_per_run": 16359,
+    "output_rows_per_run": 12631,
+    "temporary_run_outputs_retained": false,
+    "verified_at_utc": "2026-08-05T17:13:05.3563971Z"
+  },
+  "deterministic_seed": 20260806,
+  "exclusions": {
+    "primary_reason_counts_exclusive": {
+      "format_diagnostic": 159,
+      "hard_diagnostic": 460,
+      "phase2_quality_exclusion:corrupted_multi_output": 1,
+      "phase2_quality_exclusion:inconsistent_problem_statement": 1,
+      "phase2_quality_exclusion:likely_noisy_label": 3,
+      "phase2_quality_exclusion:likely_noisy_label_noninteger_answer": 1,
+      "phase2_quality_exclusion:strict_contract_multiple_possible": 1,
+      "phase2_quality_exclusion:strict_contract_non_numeric_answer": 1,
+      "phase2_quality_exclusion:strict_contract_underdetermined": 1,
+      "random_validation": 1636,
+      "template_validation": 1464
+    },
+    "primary_reason_precedence": [
+      "random_validation",
+      "template_validation",
+      "hard_diagnostic",
+      "format_diagnostic",
+      "phase2_quality_exclusion:<category>",
+      "final_sft_protected",
+      "phase2_strict_ineligible"
+    ],
+    "reason_counts_nonexclusive": {
+      "format_diagnostic": 256,
+      "hard_diagnostic": 554,
+      "phase2_quality_exclusion": 9,
+      "random_validation": 1636,
+      "template_validation": 1636
+    }
+  },
+  "generator": {
+    "command": "python scripts/build_f0_answer_only.py --config configs/f0_local_answer_only_final_v1_v1.json",
+    "config_path": "configs/f0_local_answer_only_final_v1_v1.json",
+    "config_sha256": "6d7f50da9c905fb88836907db1ab6baa5587b8d6aa5ed122adc0383ca57f1ed8",
+    "script_path": "scripts/build_f0_answer_only.py",
+    "script_sha256": "b0b53a0962640d89385f7aa65294961c2d5318de7ad9cfc00547c5d9307dfff3"
+  },
+  "output_schema": {
+    "assistant_target_regex": "^FINAL_ANSWER: -?(?:0|[1-9][0-9]*)$",
+    "final_answer_regex": "^-?(?:0|[1-9][0-9]*)$",
+    "grade": "local_answer_only",
+    "messages": [
+      {
+        "content": "exact source question",
+        "role": "user"
+      },
+      {
+        "content": "FINAL_ANSWER: <integer>",
+        "role": "assistant"
+      }
+    ],
+    "one_line_assistant_target": true,
+    "top_level_fields": [
+      "id",
+      "messages",
+      "final_answer",
+      "grade",
+      "provenance"
+    ]
+  },
+  "outputs": {
+    "audit": {
+      "path": "data/f0/f0_local_answer_only_final_v1_v1/inclusion_exclusion_audit.csv",
+      "rows": 16359,
+      "sha256": "f9034bd90cc0ebb3610f3a197a084c01333769853d96fc061b00ca7af7f94566"
+    },
+    "dataset": {
+      "path": "data/f0/f0_local_answer_only_final_v1_v1/f0_local_answer_only_final_v1_v1.jsonl",
+      "rows": 12631,
+      "sha256": "51e572b03ee6456e8eea4b6aec8a794ac6e35709f892ddb7ef79175754d2b6d7"
+    },
+    "protected_ids": {
+      "path": "data/f0/f0_local_answer_only_final_v1_v1/protected_ids.txt",
+      "rows": 3728,
+      "sha256": "549b072707990198dbd5cb4b46ae1ae8e9303eca360a42e82ea20b261896669c"
+    },
+    "qa_report": {
+      "path": "report/f0/f0_local_answer_only_final_v1_v1_qa.md",
+      "sha256": "db0984e927c12d18ffc1b1d746e74a85fecf3303d44886b7384929f4128c054a"
+    }
+  },
+  "pool_policy": {
+    "answer_only_dedicated_rows": 12631,
+    "dedicated_additional_rows_vs_strict": 422,
+    "rationale": "Use an answer-only-specific pool because Phase 2 strict eligibility also removes teacher-generation holdout/smoke/comparison/audit rows and teacher-specific duplicate/decontamination/heuristic rows. F0 is derived only from canonical local labels, so it applies the explicit Phase 1, confirmed Phase 2 label/problem-quality, final-SFT, and canonical-answer protections without importing teacher-only exclusions.",
+    "selected": "answer_only_dedicated",
+    "strict_ids_missing_from_dedicated": 0,
+    "strict_phase2_pool_used": false,
+    "strict_phase2_reference_rows": 12209
+  },
+  "protection": {
+    "combined_protected_union_count": 3728,
+    "final_sft_ids": {
+      "path": "data/phase2/phase2_v4_final_v1_terra/final_sft_ids.txt",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "phase1_source_counts_are_nonexclusive": true,
+    "phase1_sources": {
+      "format_diagnostic": {
+        "path": "data/splits/phase1_v2_final_v1/format_diagnostic_ids.txt",
+        "rows": 256,
+        "sha256": "0253769deeb9d453df0108a92361cf72774ab267bdc39058faf38ba3f6ce68a1"
+      },
+      "hard_diagnostic": {
+        "path": "data/splits/phase1_v2_final_v1/hard_diagnostic_ids.txt",
+        "rows": 554,
+        "sha256": "7ee780bdb1191db57bafa4513431654131c771c1ed82449c72722d38dcee31fb"
+      },
+      "random_validation": {
+        "path": "data/splits/phase1_v2_final_v1/random_validation_ids.txt",
+        "rows": 1636,
+        "sha256": "2db070dbd335779a5af1f604a65b297cf1075f11cb8a25e2e320182ff87656ce"
+      },
+      "template_validation": {
+        "path": "data/splits/phase1_v2_final_v1/template_validation_ids.txt",
+        "rows": 1636,
+        "sha256": "9ca38bca621a0c144cb5a69e3e104b18d1f1e58819b798b6f71edcb33761231d"
+      }
+    },
+    "phase1_union_count": 3719,
+    "phase2_quality_exclusion": {
+      "category_counts": {
+        "corrupted_multi_output": 1,
+        "inconsistent_problem_statement": 1,
+        "likely_noisy_label": 3,
+        "likely_noisy_label_noninteger_answer": 1,
+        "strict_contract_multiple_possible": 1,
+        "strict_contract_non_numeric_answer": 1,
+        "strict_contract_underdetermined": 1
+      },
+      "path": "data/phase2/phase2_v4_final_v1_terra/phase2_quality_exclusion_audit.csv",
+      "required_confidence": "high",
+      "selected_decision": "exclude_from_phase2_v3",
+      "selected_rows": 9,
+      "sha256": "16c2b679b235781cff5728cc744e7128ec72a4803c79bd65578bd07327a84257"
+    },
+    "protected_ids_path": "data/f0/f0_local_answer_only_final_v1_v1/protected_ids.txt",
+    "protected_ids_sha256": "549b072707990198dbd5cb4b46ae1ae8e9303eca360a42e82ea20b261896669c"
+  },
+  "quality_checks": {
+    "all_targets_one_line_canonical": true,
+    "audit_covers_every_source_row_once": true,
+    "grade_is_local_answer_only": true,
+    "output_ids_match_selected_pool": true,
+    "output_ids_unique": true,
+    "protected_output_intersection_zero": true,
+    "source_answers_canonical": true,
+    "source_ids_unique": true,
+    "source_schema_exact": true,
+    "source_unchanged": true,
+    "strict_pool_is_subset_of_dedicated_pool": true,
+    "two_full_size_runs_byte_identical": true
+  },
+  "row_counts": {
+    "audit": 16359,
+    "excluded_unique": 3728,
+    "input": 16359,
+    "output": 12631
+  },
+  "schema_version": 1,
+  "source": {
+    "ids_unique": true,
+    "path": "data/deep_chal_math_train_filtered_final_v1.csv",
+    "rows": 16359,
+    "schema": [
+      "id",
+      "question",
+      "answer"
+    ],
+    "sha256": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a",
+    "sha256_after_generation": "9d5de9320861830bf6d0a9113685dd00dcc90b02baa877c4fecc4eb22cd61b4a"
+  },
+  "strict_phase2_reference": {
+    "path": "data/phase2/phase2_v4_final_v1_terra/phase2_eligible_ids.txt",
+    "rows": 12209,
+    "sha256": "fba5c3a2b1137774c2abbfd3349443bdb5f811baae5cf1c2309a22b22e42a8e2"
+  }
+}
