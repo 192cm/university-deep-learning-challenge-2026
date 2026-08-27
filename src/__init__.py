@@ -1,0 +1,1 @@
+"""Core competition pipeline modules."""

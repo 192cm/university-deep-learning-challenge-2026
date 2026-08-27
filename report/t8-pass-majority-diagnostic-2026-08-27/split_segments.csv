@@ -1,0 +1,5 @@
+order,split,split_label,questions,pass_count,majority_correct_count,selection_failure_count,oracle_failure_count,pass_pct,majority_accuracy_pct,selection_gap_pp,oracle_failure_pct
+1,random_holdout,random,1637,1448,1216,232,189,88.4545,74.2822,14.1723,11.5455
+2,template_holdout,template,1637,1443,1211,232,194,88.1491,73.9768,14.1723,11.8509
+3,hard_diagnostic,hard,550,324,218,106,226,58.9091,39.6364,19.2727,41.0909
+4,format_diagnostic,format,256,187,129,58,69,73.0469,50.3906,22.6562,26.9531

@@ -1,0 +1,5 @@
+order,segment,segment_label,questions,pass_count,majority_correct_count,selection_failure_count,oracle_failure_count,pass_pct,majority_accuracy_pct,selection_gap_pp,oracle_failure_pct,selection_failure_share_pct
+1,le128,≤128자,755,682,597,85,73,90.3311,79.0728,11.2583,9.6689,15.0709
+2,129_256,129–256자,1688,1488,1277,211,200,88.1517,75.6517,12.5,11.8483,37.4113
+3,257_512,257–512자,1032,819,618,201,213,79.3605,59.8837,19.4767,20.6395,35.6383
+4,gt512,>512자,262,165,98,67,97,62.9771,37.4046,25.5725,37.0229,11.8794

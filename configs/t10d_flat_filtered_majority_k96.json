@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "task": "T10d",
+  "name": "three-view flat filtered majority@96",
+  "objective": "Combine three immutable same-base k=32 pools with the frozen T8-3 vote-quality filter, then run one flat answer-string majority vote without new generation or training.",
+  "status_before_execution": "post-hoc exploratory candidate; freeze this byte-level rule before producing the submission",
+  "model_contract": {
+    "base_model": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "external_models": 0,
+    "new_generations": 0,
+    "new_training": 0
+  },
+  "arms": [
+    {
+      "name": "base",
+      "prompt": "T8 base prompt",
+      "adapter": null,
+      "k": 32,
+      "holdout_generations": "artifacts/t8_self_consistency/generations.jsonl",
+      "holdout_canonical_lf_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "leaderboard_generations": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "leaderboard_canonical_lf_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e"
+    },
+    {
+      "name": "cot_boxed",
+      "prompt": "T10a cot-boxed",
+      "prompt_sha256": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+      "adapter": null,
+      "k": 32,
+      "holdout_generations": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+      "holdout_canonical_lf_sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d",
+      "leaderboard_generations": "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl",
+      "leaderboard_canonical_lf_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1"
+    },
+    {
+      "name": "rft_r1",
+      "prompt": "T8 base prompt",
+      "adapter": "artifacts/t6_sft_v1/adapters/rft_r1",
+      "adapter_sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1",
+      "k": 32,
+      "holdout_generations": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+      "holdout_canonical_lf_sha256": "51e105d7c682f2a72f9ca7069ef907f401af39ed21b4fdb234164f16def5ca1a",
+      "leaderboard_generations": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+      "leaderboard_canonical_lf_sha256": "dc773b52afdb64b3ae9a758f0f3f4dbc0e39a4516b215d83f5d21c68fd0626cf"
+    }
+  ],
+  "vote_filter": {
+    "excluded_extraction_paths": [
+      "last_integer",
+      "standalone_last_line"
+    ],
+    "exclude_hit_max_new_tokens": true,
+    "minimum_distinct_explicit_candidates": 2,
+    "combine_conditions": "or",
+    "kept_path_weights": {
+      "final_answer_marker": 1.0,
+      "boxed": 1.0
+    },
+    "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+    "majority_tie_break": "first generated answer among tied top vote counts"
+  },
+  "aggregation": {
+    "mode": "flat_majority_over_per_arm_filtered_candidates",
+    "maximum_source_votes_per_question": 96,
+    "arm_order": [
+      "base",
+      "cot_boxed",
+      "rft_r1"
+    ],
+    "sample_order_within_arm": "sample_index ascending",
+    "per_arm_all_votes_filtered_fallback": "restore that arm's unfiltered 32 candidates before flattening",
+    "ignore_invalid_extracted_answers": true,
+    "tie_break": "first valid generated answer in arm_order then sample_index order",
+    "ground_truth_or_question_features_used": false
+  },
+  "evaluation": {
+    "holdout_union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "canonical_labels": "data/canonical/train.csv",
+    "template_group_audit": "data/splits/audit.csv",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    },
+    "primary_reference": "T8 base unfiltered majority@32",
+    "secondary_reference": "T8-3 base filtered majority@32",
+    "decision_gate": {
+      "minimum_union_delta_pp": 1.5,
+      "maximum_exact_mcnemar_p": 0.05,
+      "maximum_hard_or_format_drop_pp": 2.0,
+      "maximum_union_invalid_increase_pp": 1.0
+    },
+    "interpretation": "Exploratory because the three-arm composition was proposed after prior holdout results were known; passing the numerical gate is not an independent preregistered confirmation."
+  },
+  "leaderboard": {
+    "input": "data/deep_chal_math_leaderboard_filtered.csv",
+    "expected_rows": 831,
+    "labels_available": false,
+    "accuracy_computed": false
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/submissions/t10d_flat_filtered_majority_k96",
+    "root_submission": "submission.csv"
+  },
+  "regulatory_note": {
+    "classification": "same-base local multi-sampling plus answer-string majority; not arithmetic verification",
+    "sample_count_cap_found_in_recorded_rules": false,
+    "remaining_uncertainty": "Obtain written organizer confirmation for 96 samples across two prompts and one same-base LoRA, and for extraction-path/termination-based vote exclusion."
+  }
+}

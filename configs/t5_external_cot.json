@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task": "T5",
+  "seed": 42,
+  "source": {
+    "dataset": "nvidia/OpenMathInstruct-2",
+    "revision": "469216e3f46f4dacf476b382e192485ea51a143e",
+    "license": "CC-BY-4.0",
+    "config": "default",
+    "split": "train",
+    "cache_dir": "/workspace/.hf_home/datasets"
+  },
+  "filtering": {
+    "min_source_rows": 50000,
+    "max_source_rows": 100000,
+    "target_rows": 15000,
+    "min_solution_words": 20,
+    "max_solution_words": 700,
+    "max_problem_chars": 2000,
+    "near_duplicate_jaccard_threshold": 0.8,
+    "integer_normalization": "notation-only; no decimal/fraction conversion",
+    "quality_exclusions": [
+      "visual dependency",
+      "code or tool dependency",
+      "truncated solution",
+      "self-contradictory explicit answer",
+      "excessive length"
+    ]
+  },
+  "data": {
+    "leaderboard_path": "data/deep_chal_math_leaderboard.csv",
+    "canonical_path": "data/canonical/train.csv",
+    "reference_ids_path": "data/rft_pool_ids.txt",
+    "output_dir": "data/external_cot"
+  }
+}

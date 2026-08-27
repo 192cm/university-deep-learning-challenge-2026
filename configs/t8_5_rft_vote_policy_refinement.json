@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "task": "T8-5",
+  "status": "stage2_discovery_after_stage1_boxed_weight_hit_upper_boundary",
+  "objective": "Refine the RFT path/truncation vote-policy search by extending the boxed-weight range while retaining all stage-1 baseline policies.",
+  "policy_family": {
+    "vote_rule": "sum fixed nonnegative candidate weights per extracted answer",
+    "final_answer_marker_weight": 1.0,
+    "boxed_weights": [
+      0.0,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0,
+      2.5,
+      3.0,
+      4.0
+    ],
+    "last_integer_weights": [
+      0.0,
+      0.05,
+      0.15,
+      0.3,
+      0.5,
+      1.0
+    ],
+    "standalone_last_line_weights": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "hit_max_multipliers": [
+      0.0,
+      0.05,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "conflicting_explicit_candidates_weight": 0.0,
+    "all_zero_fallback": "unfiltered_majority_for_same_question",
+    "tie_break": "first positive-weight generated answer among tied top weighted sums",
+    "grid_policy_count": 1320
+  },
+  "selection": {
+    "group_column": "template_group_id",
+    "folds": 5,
+    "fold_hash_prefix": "t8-vote-cv-v1:",
+    "training_metric": "exact_answer_accuracy",
+    "exact_tie_break": [
+      "fewest weights changed from unfiltered 1.0",
+      "fewest fractional weights outside {0,1}",
+      "smallest total absolute deviation from 1.0",
+      "lexicographic policy name"
+    ],
+    "report_full_data_winner": true,
+    "report_outer_fold_selected_oof": true,
+    "deduplicate_identical_prediction_vectors": true
+  },
+  "baselines": {
+    "unfiltered": {
+      "boxed": 1.0,
+      "last_integer": 1.0,
+      "standalone_last_line": 1.0,
+      "hit_max_multiplier": 1.0
+    },
+    "t8_3_frozen_binary": {
+      "boxed": 1.0,
+      "last_integer": 0.0,
+      "standalone_last_line": 0.0,
+      "hit_max_multiplier": 0.0
+    },
+    "last_integer_only": {
+      "boxed": 1.0,
+      "last_integer": 0.0,
+      "standalone_last_line": 1.0,
+      "hit_max_multiplier": 1.0
+    },
+    "boxed_boost_last_drop": {
+      "boxed": 1.25,
+      "last_integer": 0.0,
+      "standalone_last_line": 1.0,
+      "hit_max_multiplier": 1.0
+    }
+  },
+  "sources": {
+    "canonical": "data/canonical/train.csv",
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "template_group_audit": "data/splits/audit.csv",
+    "rft_holdout_generations": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+    "t8_base_predictions": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    }
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t8_5_rft_vote_policy_search",
+    "search": "artifacts/t8_5_rft_vote_policy_search/refinement.json"
+  },
+  "provenance": {
+    "stage1_result_already_observed": true,
+    "reason_for_refinement": "stage-1 winner used boxed=1.25, the maximum frozen stage-1 value",
+    "interpretation": "adaptive post-hoc sensitivity discovery, not an independent confirmatory estimate",
+    "ground_truth_contract": "all 1320 refinement policy prediction maps are frozen before labels are loaded",
+    "confirmation_requirement": "freeze one selected policy and evaluate it on a newly generated RFT k=32 set whose labels were not used for either discovery stage"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "task": "T8-4",
+  "policy_name": "drop-low-quality-votes-v1",
+  "objective": "Apply the frozen T8-3 binary vote-quality filter to immutable T8-1 RFT majority@32 pools without new generation or training.",
+  "vote_filter": {
+    "excluded_extraction_paths": [
+      "last_integer",
+      "standalone_last_line"
+    ],
+    "exclude_hit_max_new_tokens": true,
+    "minimum_distinct_explicit_candidates": 2,
+    "combine_conditions": "or",
+    "kept_path_weights": {
+      "final_answer_marker": 1.0,
+      "boxed": 1.0
+    },
+    "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+    "majority_tie_break": "first generated answer among tied top vote counts"
+  },
+  "generation_contract": {
+    "k": 32,
+    "new_generations": 0,
+    "new_training": 0,
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "adapter_path": "artifacts/t6_sft_v1/adapters/rft_r1",
+    "adapter_sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1"
+  },
+  "comparisons": {
+    "primary_filter_transfer": "filtered T8-1 RFT majority@32 vs unfiltered T8-1 RFT majority@32",
+    "end_to_end_adoption_reference": "filtered T8-1 RFT majority@32 vs current final T8 base unfiltered majority@32",
+    "candidate_ranking": "filtered T8-1 RFT majority@32 vs T8-3 base filtered majority@32"
+  },
+  "cross_validation": {
+    "folds": 5,
+    "group_column": "template_group_id",
+    "fold_hash_prefix": "t8-vote-cv-v1:",
+    "candidate_policies": [
+      "unfiltered_majority_k32",
+      "drop-low-quality-votes-v1"
+    ],
+    "selection_metric": "training_fold_union_accuracy",
+    "exact_tie_break": "unfiltered_majority_k32"
+  },
+  "decision_gate": {
+    "minimum_union_delta_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "maximum_union_invalid_increase_pp": 1.0
+  },
+  "sources": {
+    "canonical": "data/canonical/train.csv",
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "template_group_audit": "data/splits/audit.csv",
+    "rft_holdout_generations": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+    "rft_holdout_metadata": "artifacts/t8_1_rft_self_consistency/run-metadata.json",
+    "t8_3_predictions": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+    "leaderboard_input": "data/deep_chal_math_leaderboard_filtered.csv",
+    "rft_leaderboard_generations": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+    "rft_leaderboard_metadata": "artifacts/submissions/t8_1_rft_majority_k32/run-metadata.json",
+    "rft_unfiltered_submission": "artifacts/submissions/t8_1_rft_majority_k32/submission.csv"
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t8_4_rft_vote_filter",
+    "experiment": "artifacts/t8_4_rft_vote_filter/experiment.json",
+    "tests": "artifacts/t8_4_rft_vote_filter/tests.xml"
+  },
+  "provenance": {
+    "combined_result_status": "unknown when analysis/t8_4_rft_vote_filter_preregistration.json was authored",
+    "policy_selection_status": "T8-3 policy was previously discovered post-hoc on the same holdout questions",
+    "interpretation": "frozen-policy cross-solver transfer/composition experiment, not a fully independent validation set",
+    "ground_truth_use": "predictions are frozen before labels are loaded; labels are used only for post-freeze evaluation"
+  }
+}

@@ -1,0 +1,9 @@
+candidate_group,path_order,extraction_path,path_class,candidates,share_pct
+정답 후보,1,final_answer_marker,명시적,1797,79.163
+정답 후보,2,boxed,명시적,244,10.7489
+정답 후보,3,standalone_last_line,약한 경로,2,0.0881
+정답 후보,4,last_integer,약한 경로,227,10.0
+선택된 오답 후보,1,final_answer_marker,명시적,4793,64.2235
+선택된 오답 후보,2,boxed,명시적,708,9.4868
+선택된 오답 후보,3,standalone_last_line,약한 경로,9,0.1206
+선택된 오답 후보,4,last_integer,약한 경로,1953,26.1691

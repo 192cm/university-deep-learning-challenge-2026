@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "task": "T6",
+  "seed": 42,
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "hf_home": "/workspace/.hf_home",
+    "cache_dir": "/workspace/.hf_home/hub"
+  },
+  "training": {
+    "max_length": 2048,
+    "num_train_epochs": 2,
+    "learning_rate": 0.0001,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "effective_batch_size": 32,
+    "optim": "paged_adamw_8bit",
+    "bf16": true,
+    "group_by_length": true,
+    "dataloader_num_workers": 16,
+    "dataloader_prefetch_factor": 2,
+    "packing": true,
+    "logging_steps": 1,
+    "save_steps": 100,
+    "save_total_limit": 2,
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "target_preservation_tokens": 128
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_use_double_quant": true
+  },
+  "lora": {
+    "r": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.0,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "calibration": {
+    "max_steps": 10,
+    "batch_sizes": [1, 2, 4, 8, 16, 32],
+    "adopt_fraction_of_maximum": 0.9,
+    "minimum_mean_gpu_utilization_pct": 90.0,
+    "probe_rows": 256,
+    "compare_gradient_checkpointing": [true, false]
+  },
+  "evaluation": {
+    "generation_config": "configs/t4_output_contract.json",
+    "input": "data/canonical/train.csv",
+    "ids_file": "artifacts/t3_baseline/holdout_union_ids.txt",
+    "engine": "vllm",
+    "extractor": "t1_fallback_exact_string",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    }
+  },
+  "experiments": {
+    "answer_only": [
+      "data/answer_only/sft.jsonl"
+    ],
+    "external_cot": [
+      "data/external_cot/sft.jsonl"
+    ],
+    "rft_r1": [
+      "data/rft_r1/sft.jsonl"
+    ],
+    "rft_external": [
+      "data/rft_r1/sft.jsonl",
+      "data/external_cot/sft.jsonl"
+    ]
+  }
+}

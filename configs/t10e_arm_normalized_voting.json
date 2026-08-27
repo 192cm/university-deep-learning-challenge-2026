@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "task": "T10e",
+  "name": "three-view arm-normalized filtered voting@96",
+  "objective": "Reuse the frozen T10d arms and T8-3 filter, normalize each arm's surviving valid answer histogram to total mass one, and sum the three arm distributions without new generation or training.",
+  "status_before_execution": "post-hoc exploratory reaggregation requested after T10d; freeze the exact rule before evaluating labels or producing the leaderboard submission",
+  "source_contract": {
+    "config": "configs/t10d_flat_filtered_majority_k96.json",
+    "config_sha256": "5953fa2df41dbfdc994568558ed03a258c18adb3f643200ce4070083eb8df6de",
+    "arms": [
+      "base",
+      "cot_boxed",
+      "rft_r1"
+    ],
+    "k_per_arm": 32,
+    "maximum_source_candidates_per_question": 96,
+    "new_generations": 0,
+    "new_training": 0
+  },
+  "aggregation": {
+    "mode": "sum_per_arm_empirical_answer_share",
+    "arm_order": [
+      "base",
+      "cot_boxed",
+      "rft_r1"
+    ],
+    "sample_order_within_arm": "sample_index ascending",
+    "per_arm_filter_and_fallback": "reuse T10d/T8-3 byte-frozen selection independently for each arm",
+    "per_arm_denominator": "number of valid extracted integer answers remaining after filter and per-arm fallback",
+    "per_arm_total_mass_when_valid": 1.0,
+    "answer_score": "sum over arms of count_arm(answer) / valid_votes_arm",
+    "arm_with_zero_valid_votes": "contributes zero mass",
+    "ignore_invalid_extracted_answers": true,
+    "tie_break": "first valid generated answer in arm_order then sample_index order",
+    "ground_truth_question_features_or_leaderboard_scores_used": false
+  },
+  "evaluation": {
+    "holdout_union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "canonical_labels": "data/canonical/train.csv",
+    "template_group_audit": "data/splits/audit.csv",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    },
+    "primary_reference": "T8 base unfiltered majority@32",
+    "incremental_reference": "T10d three-view flat filtered majority@96 on the identical candidate pools",
+    "decision_gate": {
+      "minimum_union_delta_vs_t8_pp": 1.5,
+      "maximum_exact_mcnemar_p_vs_t8": 0.05,
+      "maximum_hard_or_format_drop_vs_t8_pp": 2.0,
+      "maximum_union_invalid_increase_vs_t8_pp": 1.0
+    },
+    "interpretation": "Exploratory because arm normalization was proposed after prior holdout results were known. Passing the numerical T8 gate does not constitute independent confirmatory adoption; the incremental comparison against T10d must be reported separately."
+  },
+  "leaderboard": {
+    "input": "data/deep_chal_math_leaderboard_filtered.csv",
+    "expected_rows": 831,
+    "labels_available": false,
+    "accuracy_computed": false
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/submissions/t10e_arm_normalized_k96",
+    "root_submission": "submission.csv"
+  },
+  "regulatory_note": {
+    "classification": "same-base local multi-sampling plus answer-string distribution aggregation; no arithmetic or semantic verifier",
+    "sample_count_cap_found_in_recorded_rules": false,
+    "remaining_uncertainty": "Retain T10d's request for written organizer confirmation of the 96-sample composition and extraction-path/termination-based vote exclusion; also confirm that per-arm answer-frequency normalization is accepted as majority-vote post-processing."
+  }
+}

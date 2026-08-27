@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "validated_at_utc": "2026-08-27T13:26:34+00:00",
+  "status": "passed",
+  "checks": {
+    "outcomes_sum_to_3737": true,
+    "outcome_counts_exact": true,
+    "support_bands_sum_to_564": true,
+    "margin_bands_sum_to_564": true,
+    "correct_ranks_sum_to_564": true,
+    "rank_distribution_exact": true,
+    "oracle_ceiling_starts_at_majority": true,
+    "oracle_ceiling_ends_at_pass32": true,
+    "problem_types_partition_union": true,
+    "length_buckets_partition_union": true,
+    "segment_selection_failures_sum": true,
+    "filter_paired_identity": true,
+    "seven_verified_examples": true,
+    "parser_example_exact": true,
+    "no_correct_example_exact": true,
+    "title_block_matches_manifest": true,
+    "all_widget_datasets_exist": true,
+    "all_widget_sources_exist": true,
+    "native_widget_sources_have_sql": true,
+    "all_blocks_packaged": true,
+    "all_charts_packaged": true,
+    "all_tables_packaged": true,
+    "critical_text_packaged": true
+  },
+  "note": "Portable builder validation and packaging passed. Browser screenshot verification was unavailable; HTML structure and packaged chart/table fallbacks were checked independently."
+}

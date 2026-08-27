@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "experiment": "T8-1 RFT majority@32 plus frozen T8-3 vote-quality filter",
+  "status": "preregistered_before_combined_result",
+  "new_generations": 0,
+  "new_training": 0,
+  "candidate": {
+    "solver_pool": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+    "policy": "drop-low-quality-votes-v1",
+    "policy_source": "configs/t8_3_vote_filter.json",
+    "k": 32
+  },
+  "comparisons": {
+    "primary_filter_transfer": "filtered T8-1 RFT majority@32 vs unfiltered T8-1 RFT majority@32",
+    "end_to_end_adoption_reference": "filtered T8-1 RFT majority@32 vs current final T8 base unfiltered majority@32",
+    "candidate_ranking": "filtered T8-1 RFT majority@32 vs T8-3 base filtered majority@32"
+  },
+  "diagnostics": [
+    "paired exact McNemar and 95% CI on the 3737-question union",
+    "random/template/hard/format split deltas",
+    "template_group_id five-fold transfer check",
+    "condition removal counts, answer changes, and all-votes-filtered fallbacks",
+    "label-blind reaggregation of the 831-row leaderboard input"
+  ],
+  "candidate_gate_vs_current_final_t8": {
+    "minimum_union_delta_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "maximum_union_invalid_increase_pp": 1.0
+  },
+  "interpretation_contract": "The combined result was not known when this file was authored. The frozen T8-3 policy was previously discovered on the same holdout labels, so this remains a transfer/composition experiment rather than a fully independent validation set."
+}

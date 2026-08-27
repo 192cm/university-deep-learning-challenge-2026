@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "task": "T8-6",
+  "status": "post_hoc_policy_freeze_after_base_pool_grid_discovery",
+  "objective": "Repair the frozen T8-3 binary filter with a stable weighted vote over the same immutable base-model k=32 outputs, without new generation or training.",
+  "policy_family": {
+    "vote_rule": "sum fixed nonnegative extraction-quality weights per answer",
+    "final_answer_marker_weight": 1.0,
+    "boxed_weights": [
+      0.0,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0,
+      2.5,
+      3.0,
+      4.0
+    ],
+    "last_integer_weights": [
+      0.0,
+      0.05,
+      0.15,
+      0.3,
+      0.5,
+      1.0
+    ],
+    "standalone_last_line_weights": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "hit_max_multipliers": [
+      0.0,
+      0.05,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "grid_policy_count": 1320
+  },
+  "frozen_candidate": {
+    "boxed": 1.25,
+    "last_integer": 0.05,
+    "standalone_last_line": 1.0,
+    "hit_max_multiplier": 1.0,
+    "all_zero_fallback": "unfiltered_majority_for_same_question",
+    "tie_break": "first positive-weight generated answer among tied top weighted sums"
+  },
+  "baselines": {
+    "unfiltered": {
+      "boxed": 1.0,
+      "last_integer": 1.0,
+      "standalone_last_line": 1.0,
+      "hit_max_multiplier": 1.0
+    },
+    "t8_3_frozen_binary": {
+      "boxed": 1.0,
+      "last_integer": 0.0,
+      "standalone_last_line": 0.0,
+      "hit_max_multiplier": 0.0
+    }
+  },
+  "selection": {
+    "group_column": "template_group_id",
+    "folds": 5,
+    "fold_hash_prefix": "t8-vote-cv-v1:",
+    "training_metric": "exact_answer_accuracy",
+    "exact_tie_break": [
+      "fewest weights changed from unfiltered 1.0",
+      "fewest fractional weights outside {0,1}",
+      "smallest total absolute deviation from 1.0",
+      "lexicographic policy name"
+    ]
+  },
+  "decision": {
+    "primary_reference": "t8_3_frozen_binary",
+    "candidate_status": "challenger_not_automatic_replacement",
+    "reason": "The incremental local gain over T8-3 is positive and fold-stable but below the preregistered +1.5pp replacement gate.",
+    "minimum_union_delta_vs_unfiltered_pp": 1.5,
+    "maximum_exact_mcnemar_p_vs_unfiltered": 0.05,
+    "maximum_hard_or_format_drop_vs_t8_3_pp": 2.0
+  },
+  "sources": {
+    "canonical": "data/canonical/train.csv",
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "template_group_audit": "data/splits/audit.csv",
+    "holdout_generations": "artifacts/t8_self_consistency/generations.jsonl",
+    "leaderboard_input": "data/deep_chal_math_leaderboard_filtered.csv",
+    "leaderboard_generations": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+    "t8_3_submission": "artifacts/submissions/t8_3_filtered_k32/submission.csv",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    }
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t8_6_base_vote_policy",
+    "experiment": "artifacts/t8_6_base_vote_policy/experiment.json",
+    "submission": "artifacts/submissions/t8_6_base_weighted_k32/submission.csv",
+    "submission_audit": "artifacts/submissions/t8_6_base_weighted_k32/submission-audit.json"
+  },
+  "provenance": {
+    "new_generations": 0,
+    "new_training": 0,
+    "labels_used_for_policy_search": true,
+    "leaderboard_labels_available": false,
+    "independent_confirmation": false,
+    "interpretation": "Post-hoc robustness candidate. Keep T8-3 as the known-good fallback until independent evidence justifies replacement."
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "train-012155",
+      "mechanism": "파서·출력 형식 오류",
+      "ground_truth": "400",
+      "vote_summary": "50=16, 400=16",
+      "correct_votes": 16,
+      "winner_votes": 16,
+      "evidence": "25야드=75피트, 나무당 1.5피트이므로 50그루, 그루당 $8이라 정답은 $400이다. 32개 답 모두 계산은 400으로 끝났지만, ‘FINAL_ANSWER: $400.00’ 16개는 정수 전용 파서가 거부해 본문의 마지막 정수 50으로 후퇴했다.",
+      "implication": "추론이 아니라 정답 표기의 계약 문제다. 금액·소수점 표기를 정규화하거나 약한 추출 경로를 제외하면 회수 가능하다.",
+      "recommended_fix": "추출기 계약 보강 + FINAL_ANSWER 정수 형식 강제",
+      "t8_3_result": "회수",
+      "question": "Holly wants to plant a wall of privacy trees along her fence line.  Her fence is 25 yards long.  At maturity, the trees she wants to plant will measure 1.5 feet wide.  Right now, these trees are on sale for $8.00 apiece.  How much will it cost her to plant a row of the trees to run the length of her fence?",
+      "selected_answer": "50",
+      "correct_rank": 1,
+      "winner_margin": 0,
+      "verification": "원시 32개 출력과 문제 산술을 직접 대조",
+      "illustrative_outputs": [
+        {
+          "sample_index": 1,
+          "extracted_answer": "400",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "First, we need to determine how many trees Holly needs to plant. Since her fence is 25 yards long and each tree will be 1.5 feet wide at maturity, we need to convert the length of the fence to feet to match the units of the tree width. There are 3 feet in a yard, so the fence is:\n\n\\[ 25 \\text{ yards} \\times 3 \\text{ feet/yard} = 75 \\text{ feet} \\]\n\nNext, we calculate the number of trees required. Each tree is 1.5 feet wide, so:\n\n\\[ \\frac{75 \\text{ feet}}{1.5 \\text{ feet/tree}} = 50 \\text{ trees} \\]\n\nNow, we need to determine the total cost to plant these trees. Each tree costs $8.00, so:\n\n\\[ 50 \\text{ trees} \\times 8 \\text{ dollars/tree} = 400 \\text{ dollars} \\]\n\nFINAL_ANSWER: 400"
+        },
+        {
+          "sample_index": 0,
+          "extracted_answer": "50",
+          "extraction_path": "last_integer",
+          "raw_tail": "First, let's convert the length of the fence from yards to feet, since the width of the trees is given in feet.\n\n1 yard = 3 feet\n\nSo, 25 yards = 25 * 3 = 75 feet\n\nNext, we'll calculate how many trees are needed to cover the length of the fence.\n\nEach tree is 1.5 feet wide and the fence is 75 feet long.\n\nNumber of trees needed = Total length of fence / Width of each tree\n                       = 75 feet / 1.5 feet\n                       = 50 trees\n\nNow, we need to calculate the total cost of the trees.\n\nEach tree costs $8.00.\n\nTotal cost = Number of trees * Cost per tree\n           = 50 trees * $8.00 per tree\n           = $400.00\n\nFINAL_ANSWER: $400.00"
+        }
+      ]
+    },
+    {
+      "id": "train-003341",
+      "mechanism": "근접한 추론 분기",
+      "ground_truth": "59",
+      "vote_summary": "39=15, 59=14, 50=2, 49=1",
+      "correct_votes": 14,
+      "winner_votes": 15,
+      "evidence": "Jon의 총시간은 170분이고 10분 차로 이겼으므로 James는 180분이다. 수영 36분과 자전거 85분을 빼면 달리기는 59분이다. 우세 오답 39는 승패 방향을 뒤집어 James의 총시간을 160분으로 둔다.",
+      "implication": "정답과 오답 모두 명시적 FINAL_ANSWER를 사용한다. 형식 필터로는 구별할 수 없고 문장 관계를 검증하는 scorer가 필요하다.",
+      "recommended_fix": "쌍대 비교 verifier 또는 승패·시간관계 hard-negative SFT",
+      "t8_3_result": "미회수",
+      "question": "Jon runs a triathlon.  It takes him 40 minutes for the swim, an hour and 20 minutes for the bike ride and 50 minutes for the run.  Compared to Jon, James finishes the swim 10% faster but takes 5 minutes longer on the bike.  If Jon won by 10 minutes, how long did it take James to do the run?",
+      "selected_answer": "39",
+      "correct_rank": 2,
+      "winner_margin": 1,
+      "verification": "원시 출력의 두 추론 분기와 문제 산술을 직접 대조",
+      "illustrative_outputs": [
+        {
+          "sample_index": 0,
+          "extracted_answer": "59",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": " 10% faster than Jon's swim time. So, we calculate the swim time for James:\n\\[ \\text{James's swim time} = 40 \\times (1 - 0.10) = 40 \\times 0.90 = 36 \\text{ minutes} \\]\n\nJames's bike time is 5 minutes longer than Jon's bike time:\n\\[ \\text{James's bike time} = 80 + 5 = 85 \\text{ minutes} \\]\n\nLet \\( R \\) be the time James took for the run. According to the problem, Jon won by 10 minutes. Therefore, James’s total time is:\n\\[ \\text{James's total time} = 170 + 10 = 180 \\text{ minutes} \\]\n\nNow we can set up an equation based on James's total time:\n\\[ 36 + 85 + R = 180 \\]\n\nSolving for \\( R \\):\n\\[ 121 + R = 180 \\]\n\\[ R = 180 - 121 \\]\n\\[ R = 59 \\text{ minutes} \\]\n\nThe final answer is:\nFINAL_ANSWER: 59"
+        },
+        {
+          "sample_index": 2,
+          "extracted_answer": "39",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "nutes\n- Jon's run: 50 minutes\n\nTotal time for Jon to complete the triathlon:\n40 + 80 + 50 = 170 minutes\n\nNow, let's calculate James's times:\n- James's swim: 40 minutes * (1 - 10%) = 40 * 0.9 = 36 minutes\n- James's bike: 80 minutes + 5 minutes = 85 minutes\n- James's run: We need to find this\n\nTotal time for James to complete the triathlon:\n36 + 85 + James's run = James's total time\n\nGiven that Jon won by 10 minutes, James's total time is 170 - 10 = 160 minutes.\n\nWe can now set up the equation to solve for James's run time:\n\\[ 36 + 85 + \\text{James's run} = 160 \\]\n\nSimplify:\n\\[ 121 + \\text{James's run} = 160 \\]\n\nSolve for James's run:\n\\[ \\text{James's run} = 160 - 121 = 39 \\]\n\nFINAL_ANSWER: 39"
+        }
+      ]
+    },
+    {
+      "id": "train-008317",
+      "mechanism": "상관된 조합론 오개념",
+      "ground_truth": "120",
+      "vote_summary": "20=23, 120=7, 24=2",
+      "correct_votes": 7,
+      "winner_votes": 23,
+      "evidence": "6권 중 3권만 동일하고 나머지 3권은 서로 다르므로 6!/3!=120이다. 우세 오답 20은 6!/(3!3!)를 써서 서로 다른 3권까지 동일한 묶음처럼 취급한다.",
+      "implication": "23개 표가 같은 오개념에 몰려 있다. 단순 다수결은 독립 표본 가정을 만족하지 않는다.",
+      "recommended_fix": "오개념 대조 데이터 + 의미 verifier",
+      "t8_3_result": "미회수",
+      "question": "I have 6 books on a shelf, three of which are identical copies of the same science book, and the other three books are all different from each other and from the science books. In how many ways can I arrange these books?",
+      "selected_answer": "20",
+      "correct_rank": 2,
+      "winner_margin": 16,
+      "verification": "T8-6 수동 검증 사례와 원시 표 분포 교차 확인",
+      "illustrative_outputs": [
+        {
+          "sample_index": 3,
+          "extracted_answer": "120",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "of items to arrange, and \\( n_1, n_2, \\ldots, n_k \\) are the frequencies of the distinct items.\n\nIn our case, \\( n = 6 \\) (total books), and the three science books are identical (so \\( n_1 = 3 \\)) and the three different books are distinct (so each has a frequency of 1, thus \\( n_2 = n_3 = n_4 = n_5 = n_6 = 1 \\)).\n\nPlugging these values into the formula, we get:\n\n\\[\n\\frac{6!}{3!}\n\\]\n\nFirst, calculate \\( 6! \\):\n\n\\[\n6! = 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 720\n\\]\n\nNext, calculate \\( 3! \\):\n\n\\[\n3! = 3 \\times 2 \\times 1 = 6\n\\]\n\nNow, divide \\( 6! \\) by \\( 3! \\):\n\n\\[\n\\frac{720}{6} = 120\n\\]\n\nTherefore, the number of ways to arrange these books is:\n\n\\[\n\\boxed{120}\n\\]\n\nFINAL_ANSWER: 120"
+        },
+        {
+          "sample_index": 0,
+          "extracted_answer": "20",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "}{n_1! \\cdot n_2! \\cdot \\ldots \\cdot n_k!} \\]\n\nHere, \\( n \\) is the total number of books (6), and the science books \\( n_1 \\) (3 identical science books) and the different books \\( n_2 \\) (3 different books) are given.\n\nSo, we have:\n\n\\[ \\text{Total number of arrangements} = \\frac{6!}{3! \\cdot 3!} \\]\n\nFirst, calculate \\( 6! \\):\n\n\\[ 6! = 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 720 \\]\n\nNext, calculate \\( 3! \\):\n\n\\[ 3! = 3 \\times 2 \\times 1 = 6 \\]\n\nNow, substitute these values into the formula:\n\n\\[ \\text{Total number of arrangements} = \\frac{720}{3! \\cdot 3!} = \\frac{720}{6 \\cdot 6} = \\frac{720}{36} = 20 \\]\n\nTherefore, the total number of ways to arrange the books is:\n\nFINAL_ANSWER: 20"
+        }
+      ]
+    },
+    {
+      "id": "train-003015",
+      "mechanism": "희소 정답·계산 연쇄 오류",
+      "ground_truth": "29",
+      "vote_summary": "1=24, 29=4, 3=2, 17=1, 14=1",
+      "correct_votes": 4,
+      "winner_votes": 24,
+      "evidence": "요구되는 수는 gcd(1255-8, 1490-11)=gcd(1247,1479)=29이다. 많은 출력이 gcd 설정까지는 맞지만 유클리드 알고리즘 산술에서 1로 잘못 수렴한다.",
+      "implication": "정답은 4개뿐이고 오답 1은 24개다. top-2 reranking조차 완전한 계산 검증 없이는 어렵다.",
+      "recommended_fix": "산술 검증형 verifier + 계산 오류 hard-negative SFT",
+      "t8_3_result": "미회수",
+      "question": "Find the greatest number which, on dividing 1255 and 1490, leaves a remainder of 8 and 11 respectively.",
+      "selected_answer": "1",
+      "correct_rank": 2,
+      "winner_margin": 20,
+      "verification": "T8-6 수동 검증 사례와 원시 표 분포 교차 확인",
+      "illustrative_outputs": [
+        {
+          "sample_index": 4,
+          "extracted_answer": "29",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "s implies:\n\n\\[ \\frac{1247}{d} = q \\]\n\\[ \\frac{1479}{d} = r \\]\n\nThe greatest common divisor (GCD) of 1247 and 1479 will give us the greatest possible \\( d \\). We calculate the GCD of 1247 and 1479:\n\nUsing the Euclidean algorithm:\n\n1. \\( 1479 \\mod 1247 = 1479 - 1247 = 232 \\)\n2. \\( 1247 \\mod 232 = 1247 - 5 \\times 232 = 1247 - 1160 = 87 \\)\n3. \\( 232 \\mod 87 = 232 - 2 \\times 87 = 232 - 174 = 58 \\)\n4. \\( 87 \\mod 58 = 87 - 1 \\times 58 = 87 - 58 = 29 \\)\n5. \\( 58 \\mod 29 = 58 - 2 \\times 29 = 58 - 58 = 0 \\)\n\nSince the remainder is now 0, the GCD of 1247 and 1479 is 29. Therefore, the greatest number \\( d \\) that divides 1255 and 1490 leaving the specified remainders is:\n\n\\[ \\text{FINAL_ANSWER: } 29 \\]"
+        },
+        {
+          "sample_index": 1,
+          "extracted_answer": "1",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "ind the remainder:\n   \\[ 62 = 23 \\times 2 + 16 \\]\n   So, \\( 62 \\equiv 16 \\pmod{23} \\).\n\n7. Then, divide 23 by 16 and find the remainder:\n   \\[ 23 = 16 \\times 1 + 7 \\]\n   So, \\( 23 \\equiv 7 \\pmod{16} \\).\n\n8. Next, divide 16 by 7 and find the remainder:\n   \\[ 16 = 7 \\times 2 + 2 \\]\n   So, \\( 16 \\equiv 2 \\pmod{7} \\).\n\n9. Then, divide 7 by 2 and find the remainder:\n   \\[ 7 = 2 \\times 3 + 1 \\]\n   So, \\( 7 \\equiv 1 \\pmod{2} \\).\n\n10. Finally, divide 2 by 1 and find the remainder:\n    \\[ 2 = 1 \\times 2 + 0 \\]\n    So, \\( 2 \\equiv 0 \\pmod{1} \\).\n\nThe GCD of 1247 and 1479 is 1.\n\nThus, the greatest number \\( d \\) that divides 1255 and 1490 leaving remainders of 8 and 11 respectively is:\n\nFINAL_ANSWER: 1"
+        }
+      ]
+    },
+    {
+      "id": "train-007230",
+      "mechanism": "불필요 정보의 중복 차감",
+      "ground_truth": "82",
+      "vote_summary": "74=26, 82=4, 84=2",
+      "correct_votes": 4,
+      "winner_votes": 26,
+      "evidence": "Dan은 97장을 갖고 있고 Sam이 15장을 사므로 남은 수는 82장이다. 찢어진 8장은 상태 설명인데 우세 오답은 8과 15를 모두 빼 74를 만든다.",
+      "implication": "모든 숫자를 연산에 넣는 강한 편향이 26개 표에 반복된다. 출력 형식 가중치로는 해결되지 않는다.",
+      "recommended_fix": "관련성 판별 대조학습 + 의미 verifier",
+      "t8_3_result": "미회수",
+      "question": "Dan had 97 baseball cards, and 8 were torn. Sam bought 15 of Dan's baseball cards. How many baseball cards does Dan have now?",
+      "selected_answer": "74",
+      "correct_rank": 2,
+      "winner_margin": 22,
+      "verification": "T8-6 수동 검증 사례와 원시 표 분포 교차 확인",
+      "illustrative_outputs": [
+        {
+          "sample_index": 6,
+          "extracted_answer": "82",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "ds.\n\n2. **Torn Baseball Cards:**\n   Dan had 8 baseball cards that were torn. These are not part of the cards he can sell.\n\n3. **Cards Bought by Sam:**\n   Sam bought 15 of Dan's baseball cards. This means these 15 cards are no longer Dan's.\n\n4. **Calculating the Remaining Cards:**\n   To find out how many cards Dan has left, we subtract the number of cards bought by Sam from the initial number of cards Dan had:\n\n   \\[\n   \\text{Remaining cards} = \\text{Initial cards} - \\text{Cards bought by Sam}\n   \\]\n\n   Substituting the values:\n\n   \\[\n   \\text{Remaining cards} = 97 - 15\n   \\]\n\n5. **Performing the Subtraction:**\n\n   \\[\n   97 - 15 = 82\n   \\]\n\nSo, Dan has 82 baseball cards now.\n\nFINAL_ANSWER: 82"
+        },
+        {
+          "sample_index": 0,
+          "extracted_answer": "74",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "To solve the problem, follow these steps:\n\n1. Start with the initial number of baseball cards Dan has: 97.\n2. Subtract the number of torn cards: 97 - 8 = 89.\n3. Subtract the number of cards Sam bought: 89 - 15 = 74.\n\nSo, Dan has 74 baseball cards now.\n\nFINAL_ANSWER: 74"
+        }
+      ]
+    },
+    {
+      "id": "train-013974",
+      "mechanism": "엄격 부등식 경계 오류",
+      "ground_truth": "-220",
+      "vote_summary": "-221=28, 0=2, -220=2",
+      "correct_votes": 2,
+      "winner_votes": 28,
+      "evidence": "완전제곱을 만들면 (x-5)^2+4(y+7)^2=k+221이다. 비퇴화 조건은 k>-221이므로 최소 정수는 -220인데, 28개 출력이 등호 경계 -221을 택한다.",
+      "implication": "유도식은 맞아도 마지막 논리 조건을 놓치는 체계적 오류다. 같은 모델 표본을 더 뽑아도 오답 상관이 유지된다.",
+      "recommended_fix": "경계조건 검증 단계 + strict/non-strict 대조 SFT",
+      "t8_3_result": "미회수",
+      "question": "If the graph of the equation $x^2 + 4y^2 - 10x + 56y = k$ is a non-degenerate ellipse, what is the minimum value of $k$ that guarantees this condition?",
+      "selected_answer": "-221",
+      "correct_rank": 2,
+      "winner_margin": 26,
+      "verification": "T8-6 수동 검증 사례와 원시 표 분포 교차 확인",
+      "illustrative_outputs": [
+        {
+          "sample_index": 20,
+          "extracted_answer": "-220",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "x - 5)^2}{k + 221} + \\frac{(y + 7)^2}{\\frac{k + 221}{4}} = 1\n\\]\n\nFor this to be the equation of a non-degenerate ellipse, both denominators must be positive:\n\\[\nk + 221 > 0\n\\]\nThe minimum value of \\( k \\) that satisfies this inequality is:\n\\[\nk + 221 = 0 \\implies k = -221\n\\]\n\n### Step 5: Verify the minimum value\nIf \\( k = -221 \\):\n\\[\n\\frac{(x - 5)^2}{0} + \\frac{(y + 7)^2}{0} = 1\n\\]\nThis would result in division by zero, which is undefined. Hence, the correct minimum value for \\( k \\) that keeps both denominators positive is:\n\\[\nk = -221 + 1 = -220\n\\]\n\nThus, the minimum value of \\( k \\) that guarantees the equation represents a non-degenerate ellipse is:\n\\[\nk = -220\n\\]\n\nFINAL_ANSWER: \\(-220\\)"
+        },
+        {
+          "sample_index": 0,
+          "extracted_answer": "-221",
+          "extraction_path": "boxed",
+          "raw_tail": "y^2 + 14y) = 4((y + 7)^2 - 49) = 4(y + 7)^2 - 196 \\]\n\nNow substitute these back into the original equation:\n\\[ (x - 5)^2 - 25 + 4(y + 7)^2 - 196 = k \\]\nCombine the constants:\n\\[ (x - 5)^2 + 4(y + 7)^2 - 221 = k \\]\nRearrange to isolate the squared terms:\n\\[ (x - 5)^2 + 4(y + 7)^2 = k + 221 \\]\n\nFor the equation to represent a non-degenerate ellipse, the right-hand side must be positive (since the sum of the squares of non-zero real numbers must be positive):\n\\[ k + 221 > 0 \\]\nThus,\n\\[ k > -221 \\]\n\nThe minimum value of $k$ that satisfies this inequality is:\n\\[ k = -221 \\]\n\nTherefore, the minimum value of $k$ that guarantees the equation represents a non-degenerate ellipse is:\n\\[ \\boxed{-221} \\]"
+        }
+      ]
+    },
+    {
+      "id": "train-008043",
+      "mechanism": "정답 미생성(대조군)",
+      "ground_truth": "12",
+      "vote_summary": "252=31, 32=1",
+      "correct_votes": 0,
+      "winner_votes": 31,
+      "evidence": "10개 교점을 K5의 변으로 보면, 5개를 골라 어떤 원래 직선에도 3개가 없으려면 각 꼭짓점 차수가 2인 5-cycle이어야 한다. 개수는 (5-1)!/2=12지만 32개 중 정답 표가 없다.",
+      "implication": "선택기는 존재하지 않는 정답을 고를 수 없다. 이 583문항 구간은 생성 능력과 학습 데이터가 핵심이다.",
+      "recommended_fix": "교사 생성·검증 데이터와 targeted SFT/RFT",
+      "t8_3_result": "미회수",
+      "question": "A regular pentagon can have the line segments forming its boundary extended to lines, giving an arrangement of lines that intersect at ten points. How many ways are there to choose five points of these ten so that no three of the points are collinear?",
+      "selected_answer": "252",
+      "correct_rank": null,
+      "winner_margin": null,
+      "verification": "T8-6 수동 검증 사례와 원시 표 분포 교차 확인",
+      "illustrative_outputs": [
+        {
+          "sample_index": 0,
+          "extracted_answer": "252",
+          "extraction_path": "final_answer_marker",
+          "raw_tail": "]\n\n2. **Subtract the Cases Where Three Points are Collinear**:\n   Since the points are on the boundary of a regular pentagon, any group of 5 points chosen will automatically be non-collinear. There is no set of 5 points where three are collinear because the points are distributed in such a way that no three lie on the same line.\n\n3. **Conclusion**:\n   Since every group of 5 points chosen from the 10 points will necessarily be non-collinear, we do not need to exclude any sets. Therefore, the total number of ways to choose 5 points out of 10, such that no three points are collinear, is simply the total number of combinations of 5 points out of 10.\n\nThus, the final answer is:\n\nFINAL_ANSWER: 252"
+        }
+      ]
+    }
+  ]
+}

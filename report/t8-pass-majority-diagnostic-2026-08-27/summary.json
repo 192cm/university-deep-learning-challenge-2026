@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-08-27T13:23:23+00:00",
+  "scope": {
+    "questions": 3737,
+    "samples_per_question": 32,
+    "generations": 119584
+  },
+  "reproduced_metrics": {
+    "majority_correct": 2590,
+    "majority_accuracy": 0.693069306930693,
+    "pass_count": 3154,
+    "pass_at32": 0.843992507358844,
+    "selection_failures": 564,
+    "selection_gap_pp": 15.092320042815093,
+    "oracle_failures": 583,
+    "oracle_failure_pct": 15.600749264115601,
+    "selection_share_of_current_errors_pct": 49.17175239755885
+  },
+  "selection_failure_severity": {
+    "correct_support_1_to_4": 378,
+    "correct_support_1_to_4_pct": 67.02127659574468,
+    "tie_or_one_vote_behind": 65,
+    "tie_or_one_vote_behind_pct": 11.52482269503546,
+    "nine_or_more_votes_behind": 231,
+    "nine_or_more_votes_behind_pct": 40.95744680851064
+  },
+  "vote_filter_comparison": {
+    "filtered_correct": 2645,
+    "filtered_accuracy": 0.7077869949157077,
+    "net_gain_questions": 55,
+    "net_gain_pp": 1.4717687985014718,
+    "selection_failures_recovered": 69,
+    "base_correct_broken": 14,
+    "selection_failure_recovery_pct": 12.23404255319149
+  },
+  "extraction_path_diagnostic": {
+    "correct_candidate_paths": {
+      "last_integer": 227,
+      "boxed": 244,
+      "final_answer_marker": 1797,
+      "standalone_last_line": 2
+    },
+    "winning_wrong_candidate_paths": {
+      "final_answer_marker": 4793,
+      "boxed": 708,
+      "last_integer": 1953,
+      "standalone_last_line": 9
+    },
+    "all_correct_candidates_explicit_questions": 456,
+    "all_winning_wrong_candidates_weak_questions": 97,
+    "majority_winning_wrong_support_weak_questions": 132,
+    "parser_like_proxy_questions": 101,
+    "parser_like_proxy_pct": 17.907801418439718,
+    "correct_output_tokens_median": 572.0,
+    "correct_output_tokens_mean": 670.5638766519824,
+    "winning_wrong_output_tokens_median": 545,
+    "winning_wrong_output_tokens_mean": 632.211443119389
+  },
+  "validation": {
+    "frozen_hashes_passed": true,
+    "newline_normalization_required_for": [
+      "T8 generations",
+      "T8 sweep",
+      "T8 union IDs"
+    ],
+    "metric_assertions_passed": true
+  }
+}

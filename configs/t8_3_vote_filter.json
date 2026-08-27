@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "task": "T8-3",
+  "policy_name": "drop-low-quality-votes-v1",
+  "vote_filter": {
+    "excluded_extraction_paths": [
+      "last_integer",
+      "standalone_last_line"
+    ],
+    "exclude_hit_max_new_tokens": true,
+    "minimum_distinct_explicit_candidates": 2,
+    "combine_conditions": "or",
+    "kept_path_weights": {
+      "final_answer_marker": 1.0,
+      "boxed": 1.0
+    },
+    "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+    "majority_tie_break": "first generated answer among tied top vote counts"
+  },
+  "generation_contract": {
+    "k": 32,
+    "new_generations": 0,
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "adapter": null
+  },
+  "cross_validation": {
+    "folds": 5,
+    "group_column": "template_group_id",
+    "fold_hash_prefix": "t8-vote-cv-v1:",
+    "candidate_policies": [
+      "unfiltered_majority_k32",
+      "drop-low-quality-votes-v1"
+    ],
+    "selection_metric": "training_fold_union_accuracy",
+    "exact_tie_break": "unfiltered_majority_k32"
+  },
+  "decision_gate": {
+    "minimum_union_delta_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "maximum_union_invalid_increase_pp": 1.0
+  },
+  "sources": {
+    "canonical": "data/canonical/train.csv",
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "template_group_audit": "data/splits/audit.csv",
+    "holdout_generations": "artifacts/t8_self_consistency/generations.jsonl",
+    "holdout_metadata": "artifacts/t8_self_consistency/run-metadata.json",
+    "leaderboard_input": "data/deep_chal_math_leaderboard_filtered.csv",
+    "leaderboard_generations": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+    "leaderboard_metadata": "artifacts/submissions/t8_majority_k32/run-metadata.json",
+    "unfiltered_submission": "artifacts/submissions/t8_majority_k32/submission.csv",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    }
+  },
+  "protected_inputs": {
+    "trees": [
+      "artifacts/t8_self_consistency",
+      "artifacts/t8_1_rft_self_consistency",
+      "artifacts/t8_2_cot_routing",
+      "artifacts/t9_genselect"
+    ],
+    "files": [
+      "configs/t8_self_consistency.json",
+      "configs/t8_1_rft_self_consistency.json",
+      "configs/t8_2_cot_routing.json",
+      "configs/t9_genselect.json",
+      "scripts/run_t8.sh",
+      "scripts/run_t8_submission.sh",
+      "scripts/run_t8_1.sh",
+      "scripts/run_t8_2.sh",
+      "scripts/run_t9.sh"
+    ]
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t8_3_vote_filter",
+    "submission_dir": "artifacts/submissions/t8_3_filtered_k32"
+  },
+  "provenance": {
+    "policy_selection_status": "post_hoc_holdout_discovery",
+    "leaderboard_application_status": "preregistered_label_blind_application",
+    "ground_truth_use": "predictions are frozen before labels are loaded; labels are used only for post-selection evaluation and cross-validation diagnostics"
+  }
+}

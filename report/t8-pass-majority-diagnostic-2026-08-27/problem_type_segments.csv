@@ -1,0 +1,6 @@
+order,segment,segment_label,questions,pass_count,majority_correct_count,selection_failure_count,oracle_failure_count,pass_pct,majority_accuracy_pct,selection_gap_pp,oracle_failure_pct,selection_failure_share_pct
+1,algebra,대수,300,237,180,57,63,79.0,60.0,19.0,21.0,10.1064
+2,arithmetic_word_problem,산술 문장제,2594,2329,1999,330,265,89.7841,77.0625,12.7217,10.2159,58.5106
+3,combinatorics_probability,조합·확률,159,110,81,29,49,69.1824,50.9434,18.239,30.8176,5.1418
+4,geometry,기하,429,302,209,93,127,70.3963,48.7179,21.6783,29.6037,16.4894
+5,number_theory,정수론,255,176,121,55,79,69.0196,47.451,21.5686,30.9804,9.7518

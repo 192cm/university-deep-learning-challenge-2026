@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "task": "T10a C-1",
+  "arm": "C-1",
+  "parent_task": "T10a",
+  "parent_arm": "C",
+  "policy_name": "drop-low-quality-votes-v1",
+  "objective": "Apply the frozen T8-3 vote-quality filter to the immutable T10a cot-boxed C majority@32 pool without new generation, training, or policy search.",
+  "vote_filter": {
+    "excluded_extraction_paths": [
+      "last_integer",
+      "standalone_last_line"
+    ],
+    "exclude_hit_max_new_tokens": true,
+    "minimum_distinct_explicit_candidates": 2,
+    "combine_conditions": "or",
+    "kept_path_weights": {
+      "final_answer_marker": 1.0,
+      "boxed": 1.0
+    },
+    "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+    "majority_tie_break": "first generated answer among tied top vote counts"
+  },
+  "generation_contract": {
+    "k": 32,
+    "new_generations": 0,
+    "new_training": 0,
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "adapter": null,
+    "prompt_name": "cot_boxed",
+    "prompt_sha256": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+    "generation_pool_sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d"
+  },
+  "comparisons": {
+    "filter_effect": "T10a C-1 filtered cot-boxed majority@32 vs T10a C unfiltered cot-boxed majority@32",
+    "end_to_end_adoption_reference": "T10a C-1 vs current T8 base unfiltered majority@32",
+    "matched_filter_reference": "T10a C-1 vs T8-3 base prompt plus the same frozen filter"
+  },
+  "cross_validation": {
+    "folds": 5,
+    "group_column": "template_group_id",
+    "fold_hash_prefix": "t8-vote-cv-v1:",
+    "candidate_policies": [
+      "unfiltered_majority_k32",
+      "drop-low-quality-votes-v1"
+    ],
+    "selection_metric": "training_fold_union_accuracy",
+    "exact_tie_break": "unfiltered_majority_k32"
+  },
+  "decision_gate": {
+    "minimum_union_delta_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "maximum_union_invalid_increase_pp": 1.0
+  },
+  "sources": {
+    "canonical": "data/canonical/train.csv",
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "template_group_audit": "data/splits/audit.csv",
+    "t10a_config": "configs/t10a_prompt_improvement.json",
+    "t10a_c_generations": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+    "t10a_c_metadata": "artifacts/t10a_prompt_improvement/cot_boxed/run-metadata.json",
+    "t10a_prediction_freeze": "artifacts/t10a_prompt_improvement/prediction-freeze.json",
+    "t10a_comparison": "artifacts/t10a_prompt_improvement/comparison.json",
+    "t10a_filter_interaction": "artifacts/t10a_prompt_improvement/filter-interaction.json",
+    "t8_3_config": "configs/t8_3_vote_filter.json",
+    "t8_3_predictions": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    }
+  },
+  "expected_source_sha256": {
+    "t10a_config": "2c9655a0d32f7f5d2c7b7b76c7c932e4fe501934b111b73be78a106774c66da2",
+    "t10a_c_generations": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d",
+    "t10a_c_metadata": "9554a883364d0d251d08c58face8d8ce3297ea549ede77a7b3fa0780ce2fe27d",
+    "t10a_prediction_freeze": "fe712fc82efffdbd3e99872890b961b27d55d4651485b15d40bf89d17dc042e8",
+    "t10a_comparison": "85f88f0749498f7e11171a2dcba7df147483f876f0d115fe3cd3425e85e18eda",
+    "t10a_filter_interaction": "ec2414318d2332a4950809ed193af2e44dca5be3f70907acc8c7289ee6055613",
+    "t8_3_config": "f02259557bc58d79a7eea40a4bef3d135116eb4a3422ac157b5977aa6c29f32a",
+    "t8_3_predictions": "e4cebbd06e5e3c1063abcc80dfd50d3a9da3a31d5fc75cdf64cce6cfafdb7370",
+    "union_ids": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34",
+    "template_group_audit": "e65b4de31cd90d85ada1e79079113ea222a02b4a4e506d48a30bdb7f8ec189fa"
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t10a_c1_vote_filter",
+    "experiment": "artifacts/t10a_c1_vote_filter/experiment.json",
+    "predictions": "artifacts/t10a_c1_vote_filter/predictions.jsonl",
+    "summary": "artifacts/t10a_c1_vote_filter/summary.md",
+    "tests": "artifacts/t10a_c1_vote_filter/tests.xml"
+  },
+  "provenance": {
+    "naming_status": "C-1 is a retrospective name for the filter interaction already specified and measured inside T10a.",
+    "policy_selection_status": "The T8-3 policy and thresholds were frozen before T10a C generation; no C-specific filter tuning is allowed.",
+    "validation_status": "Composition diagnostic on the same 3,737-question holdout union, not a new independent validation set.",
+    "ground_truth_use": "C and C-1 predictions are reproduced and frozen before labels are loaded; labels are used only for post-freeze evaluation."
+  }
+}

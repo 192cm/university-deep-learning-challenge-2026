@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "task": "T2",
+  "seed": 42,
+  "sources": {
+    "train": "data/deep_chal_math_train.csv",
+    "organizer_exclusions": "data/train_filtered_ids.csv",
+    "leaderboard": "data/deep_chal_math_leaderboard.csv",
+    "leaderboard_filtered": "data/deep_chal_math_leaderboard_filtered.csv"
+  },
+  "expected": {
+    "train_rows": 17000,
+    "organizer_exclusion_rows": 627,
+    "canonical_rows": 16373,
+    "exclusion_question_raw_mismatches": 352,
+    "leaderboard_rows": 1000,
+    "leaderboard_filtered_rows": 831,
+    "canonical_image_signal_rows": 42,
+    "answers_with_10_plus_digits": 20,
+    "answers_strictly_over_10_digits": 11
+  },
+  "random_holdout": {
+    "fraction": 0.1,
+    "question_length_upper_bounds": [128, 256, 512],
+    "answer_magnitude_digit_upper_bounds": [1, 2, 3, 5]
+  },
+  "template_holdout": {
+    "fraction": 0.1
+  },
+  "hard_diagnostic": {
+    "target_rows": 550,
+    "long_question_min_chars": 600,
+    "large_answer_min_digits": 7,
+    "categories": [
+      "geometry",
+      "number_theory",
+      "combinatorics_probability",
+      "long_question",
+      "large_integer_answer"
+    ]
+  },
+  "format_diagnostic": {
+    "target_rows": 256,
+    "negative_additional_rows": 64,
+    "zero_additional_rows": 64,
+    "large_answer_min_digits": 10
+  },
+  "answer_only": {
+    "exclude_image_dependent": true,
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "assistant_template": "FINAL_ANSWER: {answer}"
+  }
+}

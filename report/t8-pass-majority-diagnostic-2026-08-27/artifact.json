@@ -1,0 +1,1341 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "T8의 15%p 선택 격차는 얼마나 회수 가능한가",
+    "description": "T8의 119,584개 원시 생성을 재파싱해 pass@32와 plurality 사이의 오류를 분해한 기술 진단",
+    "generatedAt": "2026-08-27T13:23:23+00:00",
+    "filters": [],
+    "cards": [
+      {
+        "id": "accuracy_card",
+        "description": "같은 32개 후보에서의 실제 선택 성능과 gold oracle",
+        "dataset": "key_metrics",
+        "sourceId": "t8_analysis",
+        "metrics": [
+          {
+            "label": "plurality 정확도",
+            "field": "majority_accuracy_pct",
+            "format": "number",
+            "unit": "%"
+          },
+          {
+            "label": "pass@32",
+            "field": "pass_at32_pct",
+            "format": "number",
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "id": "gap_card",
+        "description": "정답 후보가 있었지만 현재 규칙이 틀린 구간",
+        "dataset": "key_metrics",
+        "sourceId": "t8_analysis",
+        "metrics": [
+          {
+            "label": "selection oracle gap",
+            "field": "selection_gap_pp",
+            "format": "number",
+            "unit": "%p"
+          },
+          {
+            "label": "현재 오답 중 비중",
+            "field": "selection_share_of_errors_pct",
+            "format": "number",
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "id": "filter_card",
+        "description": "동일 후보에 단순 출력 품질 필터를 적용한 실제 효과",
+        "dataset": "key_metrics",
+        "sourceId": "t8_3_filter",
+        "metrics": [
+          {
+            "label": "순정확도 개선",
+            "field": "filter_net_gain_pp",
+            "format": "number",
+            "signed": true,
+            "unit": "%p"
+          },
+          {
+            "label": "선택 실패 회수율",
+            "field": "filter_gap_recovery_pct",
+            "format": "number",
+            "unit": "%"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "outcome_chart",
+        "title": "현재 오답 1,147건은 선택 564건과 생성 583건으로 거의 반반이다",
+        "subtitle": "전체 3,737문항 기준",
+        "headerMarkdown": "**15.09%p는 선택 oracle**, **15.60%는 32번 안에 정답이 한 번도 없었던 생성 실패**입니다.",
+        "intent": "comparison",
+        "question": "T8의 전체 문항은 어떤 결과 상태로 나뉘는가?",
+        "rationale": "세 결과 상태의 절대 규모와 전체 비중을 직접 비교합니다.",
+        "comparisonContext": {
+          "denominator": "3,737문항",
+          "grain": "결과 상태",
+          "unit": "문항"
+        },
+        "type": "horizontalBar",
+        "dataset": "outcomes",
+        "sourceId": "t8_analysis",
+        "valueFormat": "number",
+        "unit": "문항",
+        "encodings": {
+          "x": {
+            "field": "outcome",
+            "type": "nominal",
+            "label": "결과"
+          },
+          "y": {
+            "field": "questions",
+            "type": "quantitative",
+            "label": "문항 수",
+            "unit": "문항"
+          },
+          "tooltip": [
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "label": "전체 비중",
+              "format": "number",
+              "unit": "%"
+            }
+          ]
+        },
+        "labels": {
+          "values": "all"
+        },
+        "palette": {
+          "kind": "sequential"
+        },
+        "settings": {
+          "orientation": "horizontal",
+          "showValues": true,
+          "categoryLabelPolicy": "wrap"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "support_chart",
+        "title": "선택 실패의 67%는 정답 후보가 1–4개뿐이다",
+        "subtitle": "selection failure 564문항에서 정답 표 수",
+        "headerMarkdown": "정답이 희소한 1–4표 구간이 **378건**입니다. 출력 품질 필터의 회수율도 정답 지지가 클수록 4.7%→30.9%로 올라갑니다.",
+        "intent": "comparison",
+        "question": "선택 실패에서 정답은 몇 표를 받았는가?",
+        "rationale": "정답 지지 강도별 문항 수와 필터 회수율을 비교합니다.",
+        "comparisonContext": {
+          "denominator": "selection failure 564문항",
+          "grain": "정답 표 band",
+          "unit": "문항"
+        },
+        "type": "horizontalBar",
+        "dataset": "support_bands",
+        "sourceId": "t8_analysis",
+        "valueFormat": "number",
+        "unit": "문항",
+        "encodings": {
+          "x": {
+            "field": "support_band",
+            "type": "nominal",
+            "label": "정답 표 수"
+          },
+          "y": {
+            "field": "selection_failures",
+            "type": "quantitative",
+            "label": "선택 실패",
+            "unit": "문항"
+          },
+          "tooltip": [
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "label": "선택 실패 내 비중",
+              "format": "number",
+              "unit": "%"
+            },
+            {
+              "field": "filter_recovery_pct",
+              "type": "quantitative",
+              "label": "T8-3 회수율",
+              "format": "number",
+              "unit": "%"
+            }
+          ]
+        },
+        "labels": {
+          "values": "all"
+        },
+        "palette": {
+          "kind": "sequential"
+        },
+        "settings": {
+          "orientation": "horizontal",
+          "showValues": true,
+          "categoryLabelPolicy": "wrap"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "margin_chart",
+        "title": "동률·1표 차이는 11.5%뿐이고, 41%는 9표 이상 뒤진다",
+        "subtitle": "우세 오답 표 수 − 정답 표 수, selection failure 564문항",
+        "headerMarkdown": "작은 tie-break 변경이 직접 겨냥할 수 있는 동률·1표 차이는 **65건**인 반면, **231건**은 9표 이상 열세입니다.",
+        "intent": "comparison",
+        "question": "우세 오답과 정답 후보의 표 차이는 얼마나 큰가?",
+        "rationale": "근소한 선택 오류와 상관된 대규모 오답 모드를 분리합니다.",
+        "comparisonContext": {
+          "denominator": "selection failure 564문항",
+          "grain": "표 차이 band",
+          "unit": "문항"
+        },
+        "type": "horizontalBar",
+        "dataset": "margin_bands",
+        "sourceId": "t8_analysis",
+        "valueFormat": "number",
+        "unit": "문항",
+        "encodings": {
+          "x": {
+            "field": "margin_band",
+            "type": "nominal",
+            "label": "우세 오답의 표 차이"
+          },
+          "y": {
+            "field": "selection_failures",
+            "type": "quantitative",
+            "label": "선택 실패",
+            "unit": "문항"
+          },
+          "tooltip": [
+            {
+              "field": "share_pct",
+              "type": "quantitative",
+              "label": "선택 실패 내 비중",
+              "format": "number",
+              "unit": "%"
+            }
+          ]
+        },
+        "labels": {
+          "values": "all"
+        },
+        "palette": {
+          "kind": "sequential"
+        },
+        "settings": {
+          "orientation": "horizontal",
+          "showValues": true,
+          "categoryLabelPolicy": "wrap"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "type_gap_chart",
+        "title": "기하·정수론의 선택 격차는 21%p를 넘지만, 건수는 산술 문장제가 가장 많다",
+        "subtitle": "문제 유형별 pass@32 − plurality accuracy",
+        "headerMarkdown": "기하는 **21.68%p**, 정수론은 **21.57%p**입니다. 다만 산술 문장제가 전체 선택 실패의 **58.5%(330건)**를 차지합니다.",
+        "intent": "comparison",
+        "question": "어떤 문제 유형에서 선택 격차가 크며, 전체 오류 기여는 얼마나 되는가?",
+        "rationale": "유형별 오류율과 절대 오류 기여를 함께 비교해 개선 우선순위를 정합니다.",
+        "comparisonContext": {
+          "denominator": "유형별 문항 수",
+          "grain": "문제 유형",
+          "unit": "%p"
+        },
+        "type": "horizontalBar",
+        "dataset": "type_segments",
+        "sourceId": "t8_analysis",
+        "valueFormat": "number",
+        "unit": "%p",
+        "encodings": {
+          "x": {
+            "field": "segment_label",
+            "type": "nominal",
+            "label": "문제 유형"
+          },
+          "y": {
+            "field": "selection_gap_pp",
+            "type": "quantitative",
+            "label": "선택 격차",
+            "unit": "%p"
+          },
+          "tooltip": [
+            {
+              "field": "selection_failure_count",
+              "type": "quantitative",
+              "label": "선택 실패",
+              "format": "number",
+              "unit": "문항"
+            },
+            {
+              "field": "selection_failure_share_pct",
+              "type": "quantitative",
+              "label": "전체 선택 실패 기여",
+              "format": "number",
+              "unit": "%"
+            },
+            {
+              "field": "oracle_failure_pct",
+              "type": "quantitative",
+              "label": "정답 미생성률",
+              "format": "number",
+              "unit": "%"
+            }
+          ]
+        },
+        "labels": {
+          "values": "all"
+        },
+        "palette": {
+          "kind": "sequential"
+        },
+        "settings": {
+          "orientation": "horizontal",
+          "sort": "descending",
+          "showValues": true,
+          "categoryLabelPolicy": "wrap"
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "oracle_ceiling_table",
+        "title": "완벽한 의미 verifier가 있을 때의 이론적 상한",
+        "subtitle": "정답 후보의 vote-rank까지 완벽하게 식별한다고 가정",
+        "dataset": "oracle_ceiling",
+        "sourceId": "t8_analysis",
+        "density": "spacious",
+        "columns": [
+          {
+            "field": "policy",
+            "label": "가정",
+            "type": "text"
+          },
+          {
+            "field": "oracle_correct",
+            "label": "정답",
+            "type": "number"
+          },
+          {
+            "field": "oracle_accuracy_pct",
+            "label": "정확도 (%)",
+            "type": "number"
+          },
+          {
+            "field": "gain_vs_majority_pp",
+            "label": "현재 대비 (%p)",
+            "type": "number"
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "path_summary_table",
+        "title": "오답 쪽에 약한 추출 경로가 더 많지만 대부분은 명시적 답이다",
+        "subtitle": "564개 선택 실패 안의 후보-level 경로 구성",
+        "dataset": "path_summary",
+        "sourceId": "t8_analysis",
+        "density": "spacious",
+        "columns": [
+          {
+            "field": "candidate_group",
+            "label": "후보 집합",
+            "type": "text"
+          },
+          {
+            "field": "candidates",
+            "label": "후보 수",
+            "type": "number"
+          },
+          {
+            "field": "explicit_candidates",
+            "label": "명시적 final/boxed",
+            "type": "number"
+          },
+          {
+            "field": "explicit_pct",
+            "label": "명시적 비중 (%)",
+            "type": "number"
+          },
+          {
+            "field": "weak_candidates",
+            "label": "약한 추출 경로",
+            "type": "number"
+          },
+          {
+            "field": "weak_pct",
+            "label": "약한 경로 비중 (%)",
+            "type": "number"
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "filter_comparison_table",
+        "title": "단순 출력 품질 필터는 oracle gap의 12.2%만 회수했다",
+        "subtitle": "동일한 32개 후보에 대한 paired 결과",
+        "dataset": "strategy_comparison",
+        "sourceId": "t8_3_filter",
+        "density": "spacious",
+        "columns": [
+          {
+            "field": "strategy",
+            "label": "정책",
+            "type": "text"
+          },
+          {
+            "field": "correct",
+            "label": "정답",
+            "type": "number"
+          },
+          {
+            "field": "accuracy_pct",
+            "label": "정확도 (%)",
+            "type": "number"
+          },
+          {
+            "field": "rescued_vs_base",
+            "label": "회수",
+            "type": "number"
+          },
+          {
+            "field": "broken_vs_base",
+            "label": "파손",
+            "type": "number"
+          },
+          {
+            "field": "net_gain",
+            "label": "순증",
+            "type": "number"
+          },
+          {
+            "field": "net_gain_pp",
+            "label": "순증 (%p)",
+            "type": "number"
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "example_table",
+        "title": "실제 32개 출력에서 확인한 대표 사례",
+        "subtitle": "형식 오류 1건, 상관된 추론 오류 5건, 정답 미생성 1건",
+        "dataset": "examples",
+        "sourceId": "verified_examples",
+        "density": "spacious",
+        "columns": [
+          {
+            "field": "id",
+            "label": "ID",
+            "type": "text"
+          },
+          {
+            "field": "mechanism",
+            "label": "메커니즘",
+            "type": "text"
+          },
+          {
+            "field": "vote_summary",
+            "label": "상위 표 분포",
+            "type": "text"
+          },
+          {
+            "field": "evidence",
+            "label": "정답과 오답 분기",
+            "type": "text"
+          },
+          {
+            "field": "implication",
+            "label": "왜 투표만으로 어려운가",
+            "type": "text"
+          },
+          {
+            "field": "recommended_fix",
+            "label": "맞는 처방",
+            "type": "text"
+          },
+          {
+            "field": "t8_3_result",
+            "label": "T8-3",
+            "type": "text"
+          }
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "length_table",
+        "title": "문제가 길어질수록 선택과 생성이 동시에 악화된다",
+        "subtitle": "질문 문자열 길이 bucket",
+        "dataset": "length_segments",
+        "sourceId": "t8_analysis",
+        "density": "spacious",
+        "columns": [
+          {
+            "field": "segment_label",
+            "label": "길이",
+            "type": "text"
+          },
+          {
+            "field": "questions",
+            "label": "문항",
+            "type": "number"
+          },
+          {
+            "field": "pass_pct",
+            "label": "pass@32 (%)",
+            "type": "number"
+          },
+          {
+            "field": "majority_accuracy_pct",
+            "label": "plurality (%)",
+            "type": "number"
+          },
+          {
+            "field": "selection_gap_pp",
+            "label": "선택 격차 (%p)",
+            "type": "number"
+          },
+          {
+            "field": "oracle_failure_pct",
+            "label": "정답 미생성 (%)",
+            "type": "number"
+          }
+        ],
+        "layout": "full"
+      }
+    ],
+    "sources": [
+      {
+        "id": "t8_analysis",
+        "label": "T8 pass@32–plurality 재현 분석",
+        "path": "report/t8-pass-majority-diagnostic-2026-08-27/analyze.py"
+      },
+      {
+        "id": "t8_generations",
+        "label": "T8 원시 32-sample 생성",
+        "path": "artifacts/t8_self_consistency/generations.jsonl"
+      },
+      {
+        "id": "t8_sweep",
+        "label": "T8 frozen sweep metrics",
+        "path": "artifacts/t8_self_consistency/sweep.json"
+      },
+      {
+        "id": "labels_splits",
+        "label": "Canonical labels and diagnostic splits",
+        "path": "data/canonical/train.csv"
+      },
+      {
+        "id": "t8_3_filter",
+        "label": "T8-3 paired vote-filter predictions",
+        "path": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl"
+      },
+      {
+        "id": "vote_code",
+        "label": "Production extraction and plurality implementation",
+        "path": "src/evaluate.py"
+      },
+      {
+        "id": "verified_examples",
+        "label": "수동 검증된 genuine-error 사례",
+        "path": "artifacts/t8_6_base_vote_policy/train_error_analysis/verified_genuine_error_examples.json"
+      },
+      {
+        "id": "method_notes",
+        "label": "지표 정의·검증·해석 guardrail",
+        "path": "report/t8-pass-majority-diagnostic-2026-08-27/source-notes.md"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# T8의 15%p 선택 격차는 얼마나 회수 가능한가\n\n2026-08-27 · frozen union 3,737문항 · 32 samples/question"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "sourceId": "t8_analysis",
+        "body": "## Technical Summary\n\n**‘정답을 이미 만들었는데 잘못 골랐다’는 진술은 정확하지만, 그 15.09%p가 곧바로 투표 규칙의 실현 가능한 개선 폭이라는 뜻은 아닙니다.** 현재 오답 1,147건은 선택 실패 564건과 정답 미생성 583건으로 거의 정확히 반반입니다. 선택 실패 중 동률 또는 1표 차이는 65건뿐이고, 378건은 정답이 1–4번만 등장했으며, 231건은 우세 오답보다 9표 이상 뒤졌습니다.\n\n따라서 개선은 두 갈래여야 합니다. **파서·출력 품질 정책은 확인된 1–2%p 구간을 먼저 회수**하고, 나머지 상관된 추론 오류는 **의미 verifier와 targeted SFT/teacher 데이터**로 다뤄야 합니다. pass@32는 gold를 아는 oracle이므로 실제 selector 목표치로 그대로 사용할 수 없습니다."
+      },
+      {
+        "id": "metrics",
+        "type": "metric-strip",
+        "cardIds": [
+          "accuracy_card",
+          "gap_card",
+          "filter_card"
+        ]
+      },
+      {
+        "id": "error_budget_text",
+        "type": "markdown",
+        "sourceId": "t8_analysis",
+        "body": "## 1. 오류 예산은 선택과 생성으로 반씩 갈립니다\n\nplurality가 맞힌 2,590건을 제외한 1,147건 중 **49.17%는 선택 실패**, **50.83%는 32회 모두 정답이 없었던 생성 실패**입니다. 즉 selector만 개선하면 절반의 오류에는 손도 대지 못합니다."
+      },
+      {
+        "id": "outcome",
+        "type": "chart",
+        "chartId": "outcome_chart"
+      },
+      {
+        "id": "headroom_text",
+        "type": "markdown",
+        "sourceId": "t8_analysis",
+        "body": "## 2. 15.09%p의 대부분은 단순 tie-break 문제가 아닙니다\n\n정답이 우세 오답과 동률인 문항은 29건뿐입니다. 완벽한 tie-break로도 69.31%→70.08%, **+0.78%p**가 상한입니다. 완벽한 top-2 의미 verifier를 가정하면 76.85%까지 갈 수 있지만, 이는 표 수가 아니라 실제 풀이의 옳고 그름을 판정하는 별도 능력을 가정한 값입니다."
+      },
+      {
+        "id": "support",
+        "type": "chart",
+        "chartId": "support_chart"
+      },
+      {
+        "id": "margin",
+        "type": "chart",
+        "chartId": "margin_chart"
+      },
+      {
+        "id": "oracle_table",
+        "type": "table",
+        "tableId": "oracle_ceiling_table"
+      },
+      {
+        "id": "format_text",
+        "type": "markdown",
+        "sourceId": "t8_3_filter",
+        "body": "## 3. 출력 형식은 실제 병목이지만 전체 병목은 아닙니다\n\n선택 실패에서 정답 후보의 89.91%는 명시적 `FINAL_ANSWER` 또는 `\\boxed{}` 경로였고, 선택된 오답 지지의 73.71%도 명시적이었습니다. 오답 쪽 약한 추출 경로가 26.29%로 더 많아 품질 신호는 분명하지만, **대부분의 오답도 형식상 정상**입니다. 실제 T8-3 필터는 69건을 살리고 14건을 망쳐 순 +55건, **+1.47%p**를 만들었습니다."
+      },
+      {
+        "id": "path_table",
+        "type": "table",
+        "tableId": "path_summary_table"
+      },
+      {
+        "id": "filter_table",
+        "type": "table",
+        "tableId": "filter_comparison_table"
+      },
+      {
+        "id": "parser_example",
+        "type": "markdown",
+        "sourceId": "t8_generations",
+        "body": "### 사례 A — `train-012155`: 모델은 32번 모두 400을 계산했는데 파서가 16번을 50으로 바꿨습니다\n\n25야드는 75피트이고 1.5피트 간격이면 50그루, 그루당 $8이므로 $400입니다. 16개 출력은 `FINAL_ANSWER: 400`이라 400으로 추출됐습니다. 나머지 16개도 풀이 결론은 $400이지만 `FINAL_ANSWER: $400.00`으로 썼습니다. 정수 전용 explicit parser가 이를 거부한 뒤 본문의 마지막 정수 50으로 fallback하여 **50=16, 400=16 동률**이 되었고, 먼저 등장한 50이 선택됐습니다. T8-3는 약한 경로 16개를 제외해 이 문항을 회수했습니다.\n\n이 사례는 **SFT보다 추출기·출력 계약을 먼저 고쳐야 하는 명백한 구간**입니다."
+      },
+      {
+        "id": "semantic_examples_text",
+        "type": "markdown",
+        "sourceId": "verified_examples",
+        "body": "## 4. 다수는 같은 오개념이 반복된 ‘상관된 오답’입니다\n\n아래 사례는 저장 라벨과 수학적 풀이를 수동 대조했습니다. `train-003341`은 1표 차이지만 양쪽 모두 정상적인 final marker를 사용하고, `train-008317`, `train-007230`, `train-013974`는 우세 오답이 23–28표에 달합니다. 이런 경우 표의 개수는 확신처럼 보이지만, 실제로는 **같은 모델의 같은 편향이 반복된 횟수**입니다."
+      },
+      {
+        "id": "examples",
+        "type": "table",
+        "tableId": "example_table"
+      },
+      {
+        "id": "segments_text",
+        "type": "markdown",
+        "sourceId": "t8_analysis",
+        "body": "## 5. semantic selector와 SFT의 우선순위는 다릅니다\n\n선택 격차율은 기하·정수론이 가장 높지만, 전체 선택 실패 건수의 58.5%는 데이터량이 큰 산술 문장제입니다. 또 질문이 512자를 넘으면 선택 격차가 25.57%p, 정답 미생성률이 37.02%까지 동시에 상승합니다. **selector는 산술 문장제의 대량 오류와 format을 먼저**, **SFT는 긴 문제·기하·정수론·조합론의 체계적 추론 실패를 먼저** 겨냥하는 편이 합리적입니다."
+      },
+      {
+        "id": "type_gap",
+        "type": "chart",
+        "chartId": "type_gap_chart"
+      },
+      {
+        "id": "length",
+        "type": "table",
+        "tableId": "length_table"
+      },
+      {
+        "id": "what_to_do",
+        "type": "markdown",
+        "sourceId": "method_notes",
+        "body": "## Recommended Next Experiments\n\n1. **파서/포맷 패치부터 분리 평가합니다.** 통화기호와 `.00`을 안전하게 정수로 정규화하고, conflicting explicit answer와 weak fallback을 보수적으로 처리합니다. 같은 frozen 32-pool에 재적용해 순증과 파손을 paired로 측정합니다.\n2. **선생은 ‘정답 생성기’보다 ‘두 풀이 중 무엇이 틀렸는지 설명하는 verifier’로 설계합니다.** 비holdout 문제에서 정답 풀이와 우세 오답 풀이를 쌍으로 만들고, 관계 반전·불필요 숫자·중복 조합 나눗셈·엄격 경계·Euclidean 산술 같은 오류 태그를 붙입니다.\n3. **selector 학습과 generator SFT를 분리합니다.** verifier/reranker는 이미 존재하는 정답을 고르는 564건 유형을, targeted SFT/RFT는 상관된 오답과 583건의 no-correct 유형을 개선해야 합니다.\n4. **이 3,737문항은 학습에 넣지 않습니다.** 여기서는 오류 패턴만 정의하고, 별도 train pool에서 유사 문항을 수확·검증합니다. 최종 평가는 frozen union과 fresh holdout에서 각각 한 번씩 수행합니다.\n5. 채택 판단은 `accuracy`, `rescued`, `broken`, hard/format guardrail을 함께 봅니다. 목표를 pass@32에 두지 말고, label-blind end-to-end 정확도 개선에 둡니다."
+      },
+      {
+        "id": "bottom_line",
+        "type": "markdown",
+        "sourceId": "method_notes",
+        "body": "## Bottom Line\n\n**투표·선택 정책 개선은 맞는 첫 단계지만, 그것만으로 15%p를 얻는 것은 불가능에 가깝습니다.** 현재 데이터가 보여주는 보수적 실증치는 단순 품질 필터의 +1.47%p입니다. 나머지 큰 구간에는 문제를 실제로 다시 판단하는 semantic verifier가 필요하고, 정답 자체가 없거나 같은 오개념이 압도하는 사례에는 targeted SFT/teacher 데이터가 필요합니다. 즉 ‘선생을 얻는다’는 방향은 맞되, 한 모델에게 모든 역할을 맡기기보다 **파서 → verifier → generator SFT**의 세 층으로 분리하는 것이 핵심입니다."
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "sourceId": "method_notes",
+        "body": "## Caveats and Assumptions\n\n- `pass@32`와 selection failure는 stored gold label을 사용하는 사후 oracle입니다. 테스트 시 그대로 계산할 수 없습니다.\n- visible 사례는 수동 검증한 illustration이며, 전체 3,737 라벨의 수동 감사 결과가 아닙니다.\n- 네 진단 split은 서로 겹치므로 split별 오류 수를 합산하면 안 됩니다.\n- T8-3 비교는 동일 후보 pool의 paired 분석이라 선택 정책 효과를 깨끗하게 보여주지만, 다른 생성 모델이나 prompt로 일반화된다는 보장은 없습니다.\n- 반복적인 holdout 튜닝을 피하기 위해 다음 정책은 사전등록하고 fresh holdout으로 확인해야 합니다."
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "sourceId": "method_notes",
+        "body": "## Further Questions\n\n- 통화·소수점 정규화와 explicit-answer 충돌 처리만으로 T8-3의 +1.47%p를 얼마나 넘어설 수 있는가?\n- top-2 pairwise verifier가 69개의 기존 회수 건 외에 얼마나 더 살리며, 기존 정답을 몇 건 파손하는가?\n- 오류 유형별 targeted SFT가 `pass@32`뿐 아니라 plurality와 greedy를 함께 높이는가?\n- 긴 문제에서 hit-max, 문맥 누락, 관계 추적 중 무엇이 selection과 generation을 각각 지배하는가?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-27T13:23:23+00:00",
+    "status": "ready",
+    "datasets": {
+      "key_metrics": [
+        {
+          "majority_accuracy_pct": 69.31,
+          "pass_at32_pct": 84.4,
+          "selection_gap_pp": 15.09,
+          "selection_share_of_errors_pct": 49.17,
+          "filter_net_gain_pp": 1.47,
+          "filter_gap_recovery_pct": 12.23
+        }
+      ],
+      "outcomes": [
+        {
+          "order": 1,
+          "outcome": "plurality 정답",
+          "questions": 2590,
+          "share_pct": 69.3069
+        },
+        {
+          "order": 2,
+          "outcome": "정답 생성·선택 실패",
+          "questions": 564,
+          "share_pct": 15.0923
+        },
+        {
+          "order": 3,
+          "outcome": "정답 미생성",
+          "questions": 583,
+          "share_pct": 15.6007
+        }
+      ],
+      "support_bands": [
+        {
+          "order": 1,
+          "support_band": "1–2표",
+          "selection_failures": 253,
+          "share_pct": 44.8582,
+          "filter_recovered": 12,
+          "filter_recovery_pct": 4.7431
+        },
+        {
+          "order": 2,
+          "support_band": "3–4표",
+          "selection_failures": 125,
+          "share_pct": 22.1631,
+          "filter_recovered": 12,
+          "filter_recovery_pct": 9.6
+        },
+        {
+          "order": 3,
+          "support_band": "5–8표",
+          "selection_failures": 118,
+          "share_pct": 20.922,
+          "filter_recovered": 24,
+          "filter_recovery_pct": 20.339
+        },
+        {
+          "order": 4,
+          "support_band": "9–16표",
+          "selection_failures": 68,
+          "share_pct": 12.0567,
+          "filter_recovered": 21,
+          "filter_recovery_pct": 30.8824
+        }
+      ],
+      "margin_bands": [
+        {
+          "order": 1,
+          "margin_band": "동률",
+          "selection_failures": 29,
+          "share_pct": 5.1418
+        },
+        {
+          "order": 2,
+          "margin_band": "+1표",
+          "selection_failures": 36,
+          "share_pct": 6.383
+        },
+        {
+          "order": 3,
+          "margin_band": "+2표",
+          "selection_failures": 45,
+          "share_pct": 7.9787
+        },
+        {
+          "order": 4,
+          "margin_band": "+3–4표",
+          "selection_failures": 81,
+          "share_pct": 14.3617
+        },
+        {
+          "order": 5,
+          "margin_band": "+5–8표",
+          "selection_failures": 142,
+          "share_pct": 25.1773
+        },
+        {
+          "order": 6,
+          "margin_band": "+9표 이상",
+          "selection_failures": 231,
+          "share_pct": 40.9574
+        }
+      ],
+      "oracle_ceiling": [
+        {
+          "policy": "현재 plurality",
+          "rank_threshold": 0,
+          "oracle_correct": 2590,
+          "oracle_accuracy_pct": 69.3069,
+          "gain_vs_majority_pp": 0.0
+        },
+        {
+          "policy": "정답이 rank≤1이면 완벽 선택",
+          "rank_threshold": 1,
+          "oracle_correct": 2619,
+          "oracle_accuracy_pct": 70.083,
+          "gain_vs_majority_pp": 0.776
+        },
+        {
+          "policy": "정답이 rank≤2이면 완벽 선택",
+          "rank_threshold": 2,
+          "oracle_correct": 2872,
+          "oracle_accuracy_pct": 76.8531,
+          "gain_vs_majority_pp": 7.5462
+        },
+        {
+          "policy": "정답이 rank≤3이면 완벽 선택",
+          "rank_threshold": 3,
+          "oracle_correct": 2971,
+          "oracle_accuracy_pct": 79.5023,
+          "gain_vs_majority_pp": 10.1953
+        },
+        {
+          "policy": "정답이 rank≤4이면 완벽 선택",
+          "rank_threshold": 4,
+          "oracle_correct": 3039,
+          "oracle_accuracy_pct": 81.3219,
+          "gain_vs_majority_pp": 12.015
+        },
+        {
+          "policy": "정답이 rank≤5이면 완벽 선택",
+          "rank_threshold": 5,
+          "oracle_correct": 3079,
+          "oracle_accuracy_pct": 82.3923,
+          "gain_vs_majority_pp": 13.0854
+        },
+        {
+          "policy": "정답이 rank≤8이면 완벽 선택",
+          "rank_threshold": 8,
+          "oracle_correct": 3147,
+          "oracle_accuracy_pct": 84.2119,
+          "gain_vs_majority_pp": 14.905
+        },
+        {
+          "policy": "정답이 rank≤10이면 완벽 선택",
+          "rank_threshold": 10,
+          "oracle_correct": 3154,
+          "oracle_accuracy_pct": 84.3993,
+          "gain_vs_majority_pp": 15.0923
+        }
+      ],
+      "type_segments": [
+        {
+          "order": 1,
+          "segment": "algebra",
+          "segment_label": "대수",
+          "questions": 300,
+          "pass_count": 237,
+          "majority_correct_count": 180,
+          "selection_failure_count": 57,
+          "oracle_failure_count": 63,
+          "pass_pct": 79.0,
+          "majority_accuracy_pct": 60.0,
+          "selection_gap_pp": 19.0,
+          "oracle_failure_pct": 21.0,
+          "selection_failure_share_pct": 10.1064
+        },
+        {
+          "order": 2,
+          "segment": "arithmetic_word_problem",
+          "segment_label": "산술 문장제",
+          "questions": 2594,
+          "pass_count": 2329,
+          "majority_correct_count": 1999,
+          "selection_failure_count": 330,
+          "oracle_failure_count": 265,
+          "pass_pct": 89.7841,
+          "majority_accuracy_pct": 77.0625,
+          "selection_gap_pp": 12.7217,
+          "oracle_failure_pct": 10.2159,
+          "selection_failure_share_pct": 58.5106
+        },
+        {
+          "order": 3,
+          "segment": "combinatorics_probability",
+          "segment_label": "조합·확률",
+          "questions": 159,
+          "pass_count": 110,
+          "majority_correct_count": 81,
+          "selection_failure_count": 29,
+          "oracle_failure_count": 49,
+          "pass_pct": 69.1824,
+          "majority_accuracy_pct": 50.9434,
+          "selection_gap_pp": 18.239,
+          "oracle_failure_pct": 30.8176,
+          "selection_failure_share_pct": 5.1418
+        },
+        {
+          "order": 4,
+          "segment": "geometry",
+          "segment_label": "기하",
+          "questions": 429,
+          "pass_count": 302,
+          "majority_correct_count": 209,
+          "selection_failure_count": 93,
+          "oracle_failure_count": 127,
+          "pass_pct": 70.3963,
+          "majority_accuracy_pct": 48.7179,
+          "selection_gap_pp": 21.6783,
+          "oracle_failure_pct": 29.6037,
+          "selection_failure_share_pct": 16.4894
+        },
+        {
+          "order": 5,
+          "segment": "number_theory",
+          "segment_label": "정수론",
+          "questions": 255,
+          "pass_count": 176,
+          "majority_correct_count": 121,
+          "selection_failure_count": 55,
+          "oracle_failure_count": 79,
+          "pass_pct": 69.0196,
+          "majority_accuracy_pct": 47.451,
+          "selection_gap_pp": 21.5686,
+          "oracle_failure_pct": 30.9804,
+          "selection_failure_share_pct": 9.7518
+        }
+      ],
+      "length_segments": [
+        {
+          "order": 1,
+          "segment": "le128",
+          "segment_label": "≤128자",
+          "questions": 755,
+          "pass_count": 682,
+          "majority_correct_count": 597,
+          "selection_failure_count": 85,
+          "oracle_failure_count": 73,
+          "pass_pct": 90.3311,
+          "majority_accuracy_pct": 79.0728,
+          "selection_gap_pp": 11.2583,
+          "oracle_failure_pct": 9.6689,
+          "selection_failure_share_pct": 15.0709
+        },
+        {
+          "order": 2,
+          "segment": "129_256",
+          "segment_label": "129–256자",
+          "questions": 1688,
+          "pass_count": 1488,
+          "majority_correct_count": 1277,
+          "selection_failure_count": 211,
+          "oracle_failure_count": 200,
+          "pass_pct": 88.1517,
+          "majority_accuracy_pct": 75.6517,
+          "selection_gap_pp": 12.5,
+          "oracle_failure_pct": 11.8483,
+          "selection_failure_share_pct": 37.4113
+        },
+        {
+          "order": 3,
+          "segment": "257_512",
+          "segment_label": "257–512자",
+          "questions": 1032,
+          "pass_count": 819,
+          "majority_correct_count": 618,
+          "selection_failure_count": 201,
+          "oracle_failure_count": 213,
+          "pass_pct": 79.3605,
+          "majority_accuracy_pct": 59.8837,
+          "selection_gap_pp": 19.4767,
+          "oracle_failure_pct": 20.6395,
+          "selection_failure_share_pct": 35.6383
+        },
+        {
+          "order": 4,
+          "segment": "gt512",
+          "segment_label": ">512자",
+          "questions": 262,
+          "pass_count": 165,
+          "majority_correct_count": 98,
+          "selection_failure_count": 67,
+          "oracle_failure_count": 97,
+          "pass_pct": 62.9771,
+          "majority_accuracy_pct": 37.4046,
+          "selection_gap_pp": 25.5725,
+          "oracle_failure_pct": 37.0229,
+          "selection_failure_share_pct": 11.8794
+        }
+      ],
+      "split_segments": [
+        {
+          "order": 1,
+          "split": "random_holdout",
+          "split_label": "random",
+          "questions": 1637,
+          "pass_count": 1448,
+          "majority_correct_count": 1216,
+          "selection_failure_count": 232,
+          "oracle_failure_count": 189,
+          "pass_pct": 88.4545,
+          "majority_accuracy_pct": 74.2822,
+          "selection_gap_pp": 14.1723,
+          "oracle_failure_pct": 11.5455
+        },
+        {
+          "order": 2,
+          "split": "template_holdout",
+          "split_label": "template",
+          "questions": 1637,
+          "pass_count": 1443,
+          "majority_correct_count": 1211,
+          "selection_failure_count": 232,
+          "oracle_failure_count": 194,
+          "pass_pct": 88.1491,
+          "majority_accuracy_pct": 73.9768,
+          "selection_gap_pp": 14.1723,
+          "oracle_failure_pct": 11.8509
+        },
+        {
+          "order": 3,
+          "split": "hard_diagnostic",
+          "split_label": "hard",
+          "questions": 550,
+          "pass_count": 324,
+          "majority_correct_count": 218,
+          "selection_failure_count": 106,
+          "oracle_failure_count": 226,
+          "pass_pct": 58.9091,
+          "majority_accuracy_pct": 39.6364,
+          "selection_gap_pp": 19.2727,
+          "oracle_failure_pct": 41.0909
+        },
+        {
+          "order": 4,
+          "split": "format_diagnostic",
+          "split_label": "format",
+          "questions": 256,
+          "pass_count": 187,
+          "majority_correct_count": 129,
+          "selection_failure_count": 58,
+          "oracle_failure_count": 69,
+          "pass_pct": 73.0469,
+          "majority_accuracy_pct": 50.3906,
+          "selection_gap_pp": 22.6562,
+          "oracle_failure_pct": 26.9531
+        }
+      ],
+      "diagnostic_flags": [
+        {
+          "flag": "정답 후보가 모두 명시적 경로",
+          "questions": 456,
+          "share_pct": 80.8511,
+          "interpretation": "정답 측 출력 형식은 이미 안정적"
+        },
+        {
+          "flag": "우세 오답 지지가 전부 약한 추출 경로",
+          "questions": 97,
+          "share_pct": 17.1986,
+          "interpretation": "파서/필터만으로 회수 가능성이 높은 하위집합"
+        },
+        {
+          "flag": "우세 오답 지지의 절반 이상이 약한 경로",
+          "questions": 132,
+          "share_pct": 23.4043,
+          "interpretation": "형식 품질 신호가 의미 있는 하위집합"
+        },
+        {
+          "flag": "오답은 약한 경로 절반 이상·정답은 명시적 경로 절반 이상",
+          "questions": 101,
+          "share_pct": 17.9078,
+          "interpretation": "형식 기반 선택이 유리한 보수적 proxy"
+        }
+      ],
+      "path_summary": [
+        {
+          "candidate_group": "정답 후보",
+          "candidates": 2270,
+          "explicit_candidates": 2041,
+          "explicit_pct": 89.91,
+          "weak_candidates": 229,
+          "weak_pct": 10.09
+        },
+        {
+          "candidate_group": "선택된 오답 후보",
+          "candidates": 7463,
+          "explicit_candidates": 5501,
+          "explicit_pct": 73.71,
+          "weak_candidates": 1962,
+          "weak_pct": 26.29
+        }
+      ],
+      "strategy_comparison": [
+        {
+          "strategy": "T8 plurality@32",
+          "correct": 2590,
+          "accuracy_pct": 69.3069,
+          "rescued_vs_base": 0,
+          "broken_vs_base": 0,
+          "net_gain": 0,
+          "net_gain_pp": 0.0
+        },
+        {
+          "strategy": "T8-3 출력 품질 필터",
+          "correct": 2645,
+          "accuracy_pct": 70.7787,
+          "rescued_vs_base": 69,
+          "broken_vs_base": 14,
+          "net_gain": 55,
+          "net_gain_pp": 1.4718
+        }
+      ],
+      "examples": [
+        {
+          "id": "train-012155",
+          "mechanism": "파서·출력 형식 오류",
+          "ground_truth": 400,
+          "vote_summary": "50=16, 400=16",
+          "correct_votes": 16,
+          "winner_votes": 16,
+          "evidence": "25야드=75피트, 나무당 1.5피트이므로 50그루, 그루당 $8이라 정답은 $400이다. 32개 답 모두 계산은 400으로 끝났지만, ‘FINAL_ANSWER: $400.00’ 16개는 정수 전용 파서가 거부해 본문의 마지막 정수 50으로 후퇴했다.",
+          "implication": "추론이 아니라 정답 표기의 계약 문제다. 금액·소수점 표기를 정규화하거나 약한 추출 경로를 제외하면 회수 가능하다.",
+          "recommended_fix": "추출기 계약 보강 + FINAL_ANSWER 정수 형식 강제",
+          "t8_3_result": "회수"
+        },
+        {
+          "id": "train-003341",
+          "mechanism": "근접한 추론 분기",
+          "ground_truth": 59,
+          "vote_summary": "39=15, 59=14, 50=2, 49=1",
+          "correct_votes": 14,
+          "winner_votes": 15,
+          "evidence": "Jon의 총시간은 170분이고 10분 차로 이겼으므로 James는 180분이다. 수영 36분과 자전거 85분을 빼면 달리기는 59분이다. 우세 오답 39는 승패 방향을 뒤집어 James의 총시간을 160분으로 둔다.",
+          "implication": "정답과 오답 모두 명시적 FINAL_ANSWER를 사용한다. 형식 필터로는 구별할 수 없고 문장 관계를 검증하는 scorer가 필요하다.",
+          "recommended_fix": "쌍대 비교 verifier 또는 승패·시간관계 hard-negative SFT",
+          "t8_3_result": "미회수"
+        },
+        {
+          "id": "train-008317",
+          "mechanism": "상관된 조합론 오개념",
+          "ground_truth": 120,
+          "vote_summary": "20=23, 120=7, 24=2",
+          "correct_votes": 7,
+          "winner_votes": 23,
+          "evidence": "6권 중 3권만 동일하고 나머지 3권은 서로 다르므로 6!/3!=120이다. 우세 오답 20은 6!/(3!3!)를 써서 서로 다른 3권까지 동일한 묶음처럼 취급한다.",
+          "implication": "23개 표가 같은 오개념에 몰려 있다. 단순 다수결은 독립 표본 가정을 만족하지 않는다.",
+          "recommended_fix": "오개념 대조 데이터 + 의미 verifier",
+          "t8_3_result": "미회수"
+        },
+        {
+          "id": "train-003015",
+          "mechanism": "희소 정답·계산 연쇄 오류",
+          "ground_truth": 29,
+          "vote_summary": "1=24, 29=4, 3=2, 17=1, 14=1",
+          "correct_votes": 4,
+          "winner_votes": 24,
+          "evidence": "요구되는 수는 gcd(1255-8, 1490-11)=gcd(1247,1479)=29이다. 많은 출력이 gcd 설정까지는 맞지만 유클리드 알고리즘 산술에서 1로 잘못 수렴한다.",
+          "implication": "정답은 4개뿐이고 오답 1은 24개다. top-2 reranking조차 완전한 계산 검증 없이는 어렵다.",
+          "recommended_fix": "산술 검증형 verifier + 계산 오류 hard-negative SFT",
+          "t8_3_result": "미회수"
+        },
+        {
+          "id": "train-007230",
+          "mechanism": "불필요 정보의 중복 차감",
+          "ground_truth": 82,
+          "vote_summary": "74=26, 82=4, 84=2",
+          "correct_votes": 4,
+          "winner_votes": 26,
+          "evidence": "Dan은 97장을 갖고 있고 Sam이 15장을 사므로 남은 수는 82장이다. 찢어진 8장은 상태 설명인데 우세 오답은 8과 15를 모두 빼 74를 만든다.",
+          "implication": "모든 숫자를 연산에 넣는 강한 편향이 26개 표에 반복된다. 출력 형식 가중치로는 해결되지 않는다.",
+          "recommended_fix": "관련성 판별 대조학습 + 의미 verifier",
+          "t8_3_result": "미회수"
+        },
+        {
+          "id": "train-013974",
+          "mechanism": "엄격 부등식 경계 오류",
+          "ground_truth": -220,
+          "vote_summary": "-221=28, 0=2, -220=2",
+          "correct_votes": 2,
+          "winner_votes": 28,
+          "evidence": "완전제곱을 만들면 (x-5)^2+4(y+7)^2=k+221이다. 비퇴화 조건은 k>-221이므로 최소 정수는 -220인데, 28개 출력이 등호 경계 -221을 택한다.",
+          "implication": "유도식은 맞아도 마지막 논리 조건을 놓치는 체계적 오류다. 같은 모델 표본을 더 뽑아도 오답 상관이 유지된다.",
+          "recommended_fix": "경계조건 검증 단계 + strict/non-strict 대조 SFT",
+          "t8_3_result": "미회수"
+        },
+        {
+          "id": "train-008043",
+          "mechanism": "정답 미생성(대조군)",
+          "ground_truth": 12,
+          "vote_summary": "252=31, 32=1",
+          "correct_votes": 0,
+          "winner_votes": 31,
+          "evidence": "10개 교점을 K5의 변으로 보면, 5개를 골라 어떤 원래 직선에도 3개가 없으려면 각 꼭짓점 차수가 2인 5-cycle이어야 한다. 개수는 (5-1)!/2=12지만 32개 중 정답 표가 없다.",
+          "implication": "선택기는 존재하지 않는 정답을 고를 수 없다. 이 583문항 구간은 생성 능력과 학습 데이터가 핵심이다.",
+          "recommended_fix": "교사 생성·검증 데이터와 targeted SFT/RFT",
+          "t8_3_result": "미회수"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "t8_analysis",
+      "path": "report/t8-pass-majority-diagnostic-2026-08-27/analyze.py",
+      "query": {
+        "engine": "python",
+        "language": "python",
+        "description": "Production extractor로 119,584개 생성을 재파싱하고 question-level outcome, vote support, margin, rank, extraction path, segment를 집계했습니다.",
+        "tables_used": [
+          "artifacts/t8_self_consistency/generations.jsonl",
+          "artifacts/t8_self_consistency/holdout_union_ids.txt",
+          "data/canonical/train.csv",
+          "data/splits/random_holdout.csv",
+          "data/splits/template_holdout.csv",
+          "data/splits/hard_diagnostic.csv",
+          "data/splits/format_diagnostic.csv",
+          "artifacts/t8_3_vote_filter/holdout/predictions.jsonl"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00",
+        "filters": [
+          "frozen union IDs",
+          "k=32",
+          "exact integer match",
+          "labels attached after prediction freeze"
+        ],
+        "sql": "SELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/outcome_decomposition.csv');\nSELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/support_bands.csv');\nSELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/margin_bands.csv');\nSELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/oracle_rank_ceiling.csv');\nSELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/problem_type_segments.csv');\nSELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/question_length_segments.csv');",
+        "metric_definitions": [
+          "plurality accuracy = plurality-selected answer가 stored label과 일치한 문항 수 / 3,737",
+          "pass@32 = 32개 extracted answer 중 stored label이 하나 이상 존재한 문항 수 / 3,737",
+          "selection gap (%p) = 100 × (pass count − plurality-correct count) / 3,737",
+          "selection share of errors = selection failures / (3,737 − plurality-correct count)"
+        ]
+      }
+    },
+    {
+      "id": "t8_generations",
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "query": {
+        "engine": "filesystem",
+        "language": "jsonl",
+        "description": "T8 base model의 3,737×32 원시 생성, sample index, token 수, 종료 상태를 사용했습니다.",
+        "tables_used": [
+          "artifacts/t8_self_consistency/generations.jsonl"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00"
+      }
+    },
+    {
+      "id": "t8_sweep",
+      "path": "artifacts/t8_self_consistency/sweep.json",
+      "query": {
+        "engine": "filesystem",
+        "language": "json",
+        "description": "재현한 plurality@32와 pass@32를 frozen fixed-k32 metric에 assert했습니다.",
+        "tables_used": [
+          "artifacts/t8_self_consistency/sweep.json"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00"
+      }
+    },
+    {
+      "id": "labels_splits",
+      "path": "data/canonical/train.csv",
+      "query": {
+        "engine": "filesystem",
+        "language": "csv",
+        "description": "저장 정답과 질문 텍스트, 네 진단 split membership을 결합했습니다.",
+        "tables_used": [
+          "data/canonical/train.csv",
+          "data/splits/random_holdout.csv",
+          "data/splits/template_holdout.csv",
+          "data/splits/hard_diagnostic.csv",
+          "data/splits/format_diagnostic.csv"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00"
+      }
+    },
+    {
+      "id": "t8_3_filter",
+      "path": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+      "query": {
+        "engine": "filesystem",
+        "language": "jsonl",
+        "description": "동일 32-candidate pool에서 frozen T8-3 품질 필터의 rescue/break/net effect를 paired 비교했습니다.",
+        "tables_used": [
+          "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+          "artifacts/t8_3_vote_filter/final_config.json"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00",
+        "sql": "WITH paired AS (\n  SELECT id, unfiltered_correct, filtered_correct\n  FROM read_json_auto('artifacts/t8_3_vote_filter/holdout/predictions.jsonl')\n)\nSELECT\n  SUM(CASE WHEN filtered_correct THEN 1 ELSE 0 END) AS filtered_correct,\n  SUM(CASE WHEN NOT unfiltered_correct AND filtered_correct THEN 1 ELSE 0 END) AS rescued,\n  SUM(CASE WHEN unfiltered_correct AND NOT filtered_correct THEN 1 ELSE 0 END) AS broken,\n  rescued - broken AS net_gain\nFROM paired;",
+        "metric_definitions": [
+          "rescued = base plurality 오답이 T8-3 filtered prediction에서 정답으로 바뀐 문항 수",
+          "broken = base plurality 정답이 T8-3 filtered prediction에서 오답으로 바뀐 문항 수",
+          "net gain = rescued − broken; net gain (%p) = 100 × net gain / 3,737"
+        ]
+      }
+    },
+    {
+      "id": "vote_code",
+      "path": "src/evaluate.py",
+      "query": {
+        "engine": "python",
+        "language": "python",
+        "description": "plurality tie-break와 문제 유형·길이 분류 규칙을 확인하고, 답 추출에는 src/extract.py를 직접 호출했습니다.",
+        "tables_used": [
+          "src/evaluate.py",
+          "src/extract.py"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00"
+      }
+    },
+    {
+      "id": "verified_examples",
+      "path": "artifacts/t8_6_base_vote_policy/train_error_analysis/verified_genuine_error_examples.json",
+      "query": {
+        "engine": "filesystem",
+        "language": "json",
+        "description": "기존 수동 검증 사례를 원시 T8 표 분포와 교차 확인하고, 추가 두 사례를 직접 산술 검증했습니다.",
+        "tables_used": [
+          "artifacts/t8_6_base_vote_policy/train_error_analysis/verified_genuine_error_examples.json",
+          "report/t8-pass-majority-diagnostic-2026-08-27/example_cases.json"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00",
+        "sql": "SELECT * FROM read_csv_auto('report/t8-pass-majority-diagnostic-2026-08-27/example_cases.csv');"
+      }
+    },
+    {
+      "id": "method_notes",
+      "path": "report/t8-pass-majority-diagnostic-2026-08-27/source-notes.md",
+      "query": {
+        "engine": "filesystem",
+        "language": "markdown",
+        "description": "지표 정의, frozen hash 검증, chart contract, 해석 guardrail과 leakage 방지 원칙을 기록했습니다.",
+        "tables_used": [
+          "report/t8-pass-majority-diagnostic-2026-08-27/source-notes.md",
+          "report/t8-pass-majority-diagnostic-2026-08-27/source_hash_validation.csv"
+        ],
+        "executed_at": "2026-08-27T13:23:23+00:00"
+      }
+    }
+  ]
+}

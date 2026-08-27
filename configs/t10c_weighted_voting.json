@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "task": "T10c",
+  "frozen_before_holdout_evaluation": true,
+  "objective": "Reaggregate the immutable T8 k=32 pool with four label-blind extraction-confidence weighting policies.",
+  "model_contract": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "adapter": null,
+    "k": 32,
+    "new_generations": 0
+  },
+  "vote_contract": {
+    "answer_score": "sum of positive candidate weights for each syntactically extracted answer",
+    "weighted_tie_break": "first generated answer among answers tied at the maximum exact decimal weight sum",
+    "all_zero_weight_fallback": "unfiltered equal-weight majority over the same 32 candidates",
+    "unfiltered_tie_break": "first generated answer among tied top vote counts",
+    "factor_combination": "multiplicative",
+    "labels_or_question_metadata_consumed": false,
+    "arithmetic_verifier": false
+  },
+  "policies": {
+    "policy1": {
+      "name": "path_binary_t8_3_reproduction",
+      "path_weights": {
+        "final_answer_marker": 1.0,
+        "boxed": 1.0,
+        "last_integer": 0.0,
+        "standalone_last_line": 0.0,
+        "none": 0.0
+      },
+      "hit_max_new_tokens_multiplier": 0.0,
+      "distinct_explicit_candidates_at_least": 2,
+      "conflicting_explicit_candidates_multiplier": 0.0,
+      "length_correction": null,
+      "completion_correction": null
+    },
+    "policy2": {
+      "name": "path_continuous",
+      "path_weights": {
+        "final_answer_marker": 1.0,
+        "boxed": 0.7,
+        "last_integer": 0.15,
+        "standalone_last_line": 0.1,
+        "none": 0.0
+      },
+      "hit_max_new_tokens_multiplier": 0.05,
+      "distinct_explicit_candidates_at_least": 2,
+      "conflicting_explicit_candidates_multiplier": 0.0,
+      "length_correction": null,
+      "completion_correction": null
+    },
+    "policy3": {
+      "name": "path_plus_length",
+      "path_weights": {
+        "final_answer_marker": 1.0,
+        "boxed": 0.7,
+        "last_integer": 0.15,
+        "standalone_last_line": 0.1,
+        "none": 0.0
+      },
+      "hit_max_new_tokens_multiplier": 0.05,
+      "distinct_explicit_candidates_at_least": 2,
+      "conflicting_explicit_candidates_multiplier": 0.0,
+      "length_correction": {
+        "formula": "min(output_tokens / 100, 1.0)",
+        "full_weight_tokens": 100
+      },
+      "completion_correction": null
+    },
+    "policy4": {
+      "name": "path_plus_completion",
+      "path_weights": {
+        "final_answer_marker": 1.0,
+        "boxed": 0.7,
+        "last_integer": 0.15,
+        "standalone_last_line": 0.1,
+        "none": 0.0
+      },
+      "hit_max_new_tokens_multiplier": 1.0,
+      "distinct_explicit_candidates_at_least": 2,
+      "conflicting_explicit_candidates_multiplier": 0.0,
+      "length_correction": null,
+      "completion_correction": {
+        "final_answer_marker_last_nonempty_line_multiplier": 1.0,
+        "normal_eos_without_final_answer_last_line_multiplier": 0.8,
+        "hit_max_new_tokens_multiplier": 0.05,
+        "precedence": "hit_max_new_tokens, then FINAL_ANSWER last nonempty line, then normal EOS"
+      }
+    }
+  },
+  "cross_validation": {
+    "folds": 5,
+    "group_column": "template_group_id",
+    "fold_hash_prefix": "t8-vote-cv-v1:",
+    "candidate_policies": [
+      "unfiltered_majority_k32",
+      "policy1",
+      "policy2",
+      "policy3",
+      "policy4"
+    ],
+    "training_selection": "for each candidate independently, use it on the held-out fold only when its complementary training-fold accuracy exceeds the unfiltered reference; exact tie selects the reference",
+    "overfit_signal": {
+      "positive_in_sample_to_nonpositive_selected_oof": true,
+      "maximum_in_sample_minus_selected_oof_delta_pp": 1.0
+    }
+  },
+  "decision_gate": {
+    "minimum_union_delta_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "maximum_union_invalid_increase_pp": 1.0,
+    "candidate_policy_order_for_exact_delta_ties": [
+      "policy2",
+      "policy4",
+      "policy3"
+    ]
+  },
+  "sources": {
+    "canonical": "data/canonical/train.csv",
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "template_group_audit": "data/splits/audit.csv",
+    "holdout_generations": "artifacts/t8_self_consistency/generations.jsonl",
+    "holdout_metadata": "artifacts/t8_self_consistency/run-metadata.json",
+    "t8_3_predictions": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+    "t10a_final_config": "artifacts/t10a_prompt_improvement/final_config.json",
+    "t10b_final_config": "artifacts/t10b_prompt_diversity/final_config.json",
+    "execution_prompt": "docs/strategy/execution-prompts.md",
+    "splits": {
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "format_diagnostic": "data/splits/format_diagnostic.csv"
+    }
+  },
+  "protected_inputs": {
+    "trees": [
+      "artifacts/t8_self_consistency",
+      "artifacts/t8_1_rft_self_consistency",
+      "artifacts/t8_2_cot_routing",
+      "artifacts/t8_3_vote_filter",
+      "artifacts/t8_4_rft_vote_filter",
+      "artifacts/t8_5_rft_vote_policy_search",
+      "artifacts/t8_6_base_vote_policy",
+      "artifacts/t9_genselect",
+      "artifacts/t10a_prompt_improvement",
+      "artifacts/t10a_c1_vote_filter",
+      "artifacts/t10b_prompt_diversity"
+    ],
+    "files": [
+      "configs/t8_self_consistency.json",
+      "configs/t8_1_rft_self_consistency.json",
+      "configs/t8_2_cot_routing.json",
+      "configs/t8_3_vote_filter.json",
+      "configs/t8_4_rft_vote_filter.json",
+      "configs/t8_5_rft_vote_policy_search.json",
+      "configs/t8_5_rft_vote_policy_refinement.json",
+      "configs/t8_6_base_vote_policy.json",
+      "configs/t9_genselect.json",
+      "configs/t10a_prompt_improvement.json",
+      "configs/t10a_c1_vote_filter.json",
+      "configs/t10b_prompt_diversity.json",
+      "scripts/run_t8.sh",
+      "scripts/run_t8_submission.sh",
+      "scripts/run_t8_1.sh",
+      "scripts/run_t8_1_submission.sh",
+      "scripts/run_t8_2.sh",
+      "scripts/run_t8_3.sh",
+      "scripts/run_t8_4.sh",
+      "scripts/run_t8_6.sh",
+      "scripts/run_t9.sh",
+      "scripts/run_t10a.sh",
+      "scripts/run_t10a_c1.sh",
+      "scripts/run_t10b.sh"
+    ]
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t10c_weighted_voting"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "task": "T11",
+  "seed": 42,
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "hf_home": "/workspace/.hf_home",
+    "cache_dir": "/workspace/.hf_home/hub"
+  },
+  "prompt_mode": "cot_boxed",
+  "prompt_template": "Think through this problem step by step, showing your reasoning clearly.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+  "prompt_templates": {
+    "base": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "strong_cot": "Solve the following problem carefully.\n1. Identify all relevant quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the reasoning and calculation.\nWrite the final answer on the last line exactly as FINAL_ANSWER: <answer>.\nDo not write anything after that line.\n\nProblem:\n{question}",
+    "cot_boxed": "Think through this problem step by step, showing your reasoning clearly.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+    "cot_brief": "Solve the following problem step by step. Show your work, then state the final answer as\nFINAL_ANSWER: <answer>.\n\nProblem:\n{question}"
+  },
+  "prompt_sha256": {
+    "base": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "strong_cot": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b",
+    "cot_boxed": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+    "cot_brief": "ac00dd5497039e7af7806146047ac6646e386328c5561e5613813a92b6f60061"
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "n": 32,
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "generation_schedules": {
+    "probe": {"n": 8, "seed": 42000},
+    "validation": {"n": 8, "seed": 52000},
+    "holdout": {"n": 32, "seed": 42},
+    "leaderboard": {"n": 32, "seed": 42}
+  },
+  "hf": {
+    "attn_implementation": "sdpa",
+    "max_batch_size": 64,
+    "max_batch_tokens": 196608,
+    "load_in_4bit": false
+  },
+  "vllm": {
+    "batch_invariant": true,
+    "dtype": "bfloat16",
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 4096,
+    "max_num_seqs": 256,
+    "enable_prefix_caching": true,
+    "request_chunk_size": 64,
+    "enforce_eager": false
+  },
+  "teacher": {
+    "provider": "local_vllm",
+    "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+    "revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "tokenizer_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "license": "apache-2.0",
+    "cache_dir": "/workspace/.hf_home/hub",
+    "system_prompt": "You are a careful mathematical reasoning teacher. Produce a self-contained text-only derivation. Never use or propose code, Python, SymPy, calculators, tools, external computation, or tool calls.",
+    "user_prompt_template": "Think through this problem step by step, showing a complete and rigorous derivation.\nUse only text and mathematical notation; do not use code or tools.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line exactly as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+    "system_prompt_sha256": "c81d7fce66ab95f3a8ce549668332e0d226db93e85265e8a99027042eba83593",
+    "user_prompt_sha256": "1cc2e308e223d03d222c45448e9a2f53c3aa43a67b0832a44ab89a3c866028f1",
+    "combined_prompt_sha256": "1b1f80807f63b2d0e6f748a3c54e7423237da07ee354ebccd2773fb4f1a16521",
+    "tool_use": false,
+    "generation": {
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 2048,
+      "seed": 62000,
+      "samples_first_round": 4,
+      "samples_second_round": 4,
+      "samples_max": 8
+    },
+    "vllm": {
+      "dtype": "bfloat16",
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 128,
+      "enable_prefix_caching": true,
+      "request_chunk_size": 32,
+      "enforce_eager": false
+    },
+    "budget": {
+      "input_usd_per_million_tokens": 0.0,
+      "output_usd_per_million_tokens": 0.0,
+      "maximum_api_cost_usd": 0.0,
+      "maximum_preflight_wall_hours": 2.0,
+      "maximum_full_wall_hours": 12.0
+    },
+    "preflight": {
+      "questions": 64,
+      "samples_per_question": 4,
+      "minimum_questions_with_accepted_correct": 32,
+      "minimum_accepted_correct_traces": 64
+    }
+  },
+  "data": {
+    "canonical": "data/canonical/train.csv",
+    "leaderboard_full": "data/deep_chal_math_leaderboard.csv",
+    "holdout_union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "validation_csv": "data/splits/rft_validation_500.csv",
+    "validation_ids": "data/splits/rft_validation_500_ids.txt",
+    "suspect_ids": "data/suspect_set/ids.txt",
+    "t5_audit": "data/rft_r1/audit.csv",
+    "near_duplicate_jaccard_threshold": 0.8,
+    "output_dir": "data/t11_aimo_generation_quality"
+  },
+  "difficulty": {
+    "hard_max_correct_count": 2,
+    "hard_max_questions": 2000,
+    "hard_hash_prefix": "t11-hard-v1:",
+    "anchor_min_correct_count": 6,
+    "probe_samples": 8
+  },
+  "trace_filter": {
+    "minimum_assistant_tokens": 128,
+    "maximum_assistant_tokens_exclusive": 2048,
+    "require_exact_final_line": true,
+    "require_one_distinct_explicit_answer": true,
+    "forbid_code_and_tools": true
+  },
+  "sft_data": {
+    "maximum_hard_traces_per_question": 2,
+    "anchor_to_hard_row_ratio_max": 0.25,
+    "hard_row_fraction_min": 0.8,
+    "quantiles": [0.5, 0.75]
+  },
+  "dpo_data": {
+    "maximum_pairs": 2000,
+    "maximum_pairs_per_question": 1,
+    "minimum_correct_wrong_fraction": 0.75,
+    "maximum_length_only_fraction": 0.25,
+    "shorter_ratio_max": 0.8
+  },
+  "training": {
+    "max_length": 4096,
+    "num_train_epochs": 1.0,
+    "learning_rate": 0.00003,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "effective_batch_size": 32,
+    "optim": "paged_adamw_8bit",
+    "bf16": true,
+    "group_by_length": true,
+    "dataloader_num_workers": 16,
+    "dataloader_prefetch_factor": 2,
+    "packing": false,
+    "logging_steps": 1,
+    "save_steps": 100,
+    "save_total_limit": 8,
+    "checkpoint_epochs": [0.25, 0.5, 0.75, 1.0],
+    "max_grad_norm": 1.0,
+    "weight_decay": 0.0,
+    "target_preservation_tokens": 128
+  },
+  "quantization": {
+    "load_in_4bit": false,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_use_double_quant": true
+  },
+  "lora": {
+    "r": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.0,
+    "bias": "none",
+    "task_type": "CAUSAL_LM",
+    "target_modules": [
+      "q_proj", "k_proj", "v_proj", "o_proj",
+      "gate_proj", "up_proj", "down_proj"
+    ]
+  },
+  "calibration": {
+    "max_steps": 4,
+    "batch_sizes": [1, 2, 4],
+    "adopt_fraction_of_maximum": 0.9,
+    "minimum_mean_gpu_utilization_pct": 90.0,
+    "probe_rows": 256,
+    "compare_gradient_checkpointing": [true]
+  },
+  "hp_sweep": {
+    "learning_rates": [0.00001, 0.00003, 0.0001],
+    "epochs": 1.0,
+    "checkpoint_epochs": [0.25, 0.5, 0.75, 1.0]
+  },
+  "dpo": {
+    "beta": 0.1,
+    "learning_rate": 0.000001,
+    "lr_scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "optim": "paged_adamw_8bit",
+    "effective_batch_size": 16,
+    "micro_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "seed": 43,
+    "num_train_epochs": 1.0,
+    "checkpoint_epochs": [0.25, 0.5, 0.75, 1.0],
+    "max_length": 4096,
+    "packing": false,
+    "precompute_ref_log_probs": true
+  },
+  "validation_selection": {
+    "minimum_sample_accuracy_delta_pp": 1.0,
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 42,
+    "tie_break_order": [
+      "invalid_rate", "hit_max_rate", "mean_output_tokens", "earlier_checkpoint"
+    ]
+  },
+  "baseline": {
+    "raw_generations": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+    "filtered_submission": "artifacts/submissions/t10a_c1_filtered_k32/submission.csv",
+    "raw_sample_accuracy": 0.605415440193,
+    "raw_majority_accuracy": 0.693604495585,
+    "filtered_majority_accuracy": 0.705378645973,
+    "filtered_correct": 2636,
+    "holdout_questions": 3737,
+    "holdout_samples": 119584
+  },
+  "vote_filter": {
+    "policy_source": "configs/t8_3_vote_filter.json",
+    "policy_name": "drop-low-quality-votes-v1"
+  },
+  "decision": {
+    "minimum_raw_sample_accuracy_delta_pp": 1.5,
+    "minimum_filtered_majority_delta_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_hard_drop_pp": 2.0,
+    "maximum_format_drop_pp": 2.0,
+    "maximum_invalid_increase_pp": 1.0,
+    "maximum_hit_max_increase_pp": 1.0,
+    "maximum_1000_question_runtime_hours": 18.0,
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 42
+  },
+  "splits": {
+    "random": "data/splits/random_holdout.csv",
+    "template": "data/splits/template_holdout.csv",
+    "hard": "data/splits/hard_diagnostic.csv",
+    "format": "data/splits/format_diagnostic.csv"
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t11_aimo_generation_quality",
+    "submission_dir": "artifacts/submissions/t11_c1_filtered_k32"
+  }
+}
