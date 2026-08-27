@@ -1,2 +1,0 @@
-94f3302a6240b91b6fb3d093696b898750b8c4ca1d8ae1eb54210358664af9df  data/deep_chal_math_train.csv
-f00b83805479140fb4d59fedb01c092e16c6cd35ac588f387b281ffea55eb2d7  data/deep_chal_math_leaderboard.csv

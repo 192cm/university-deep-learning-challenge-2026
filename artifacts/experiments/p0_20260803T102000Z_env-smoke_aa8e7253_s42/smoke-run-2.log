@@ -1,3 +1,0 @@
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 101/434 [00:00<00:00, 989.33it/s]Loading weights:  46%|████▌     | 200/434 [00:00<00:00, 971.52it/s]Loading weights:  69%|██████▊   | 298/434 [00:00<00:00, 963.42it/s]Loading weights:  91%|█████████ | 395/434 [00:00<00:00, 956.95it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 965.52it/s]
-Initially, there are 12 books on the shelf. When 5 books are removed, we subtract 5 from 12 to find out how many books remain. This calculation is 12 - 5 = 7. Therefore, 7 books remain on the shelf. FINAL_ANSWER: 7
-RESULT_JSON=/workspace/university-deep-learning-challenge-2026/artifacts/experiments/p0_20260803T102000Z_env-smoke_aa8e7253_s42/smoke-run-2.json

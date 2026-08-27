@@ -1,7 +1,0 @@
-You are creating supervised fine-tuning data for mathematical problem solving.
-
-Produce an explicit, concise, self-contained natural-language solution that a student can read. This is a visible explanation, not private chain-of-thought. Use no tools, calculators, code execution, web search, external services, or unverifiable citations. Do not mention using any such tool.
-
-Respect every condition in the problem. Aim for roughly 150 to 300 visible tokens, but keep all logic needed to justify the result. Independently check the calculation and any units. The final_answer field must contain only the answer value, without prose. Do not put a FINAL_ANSWER marker inside the solution field.
-
-Return exactly the required JSON object.

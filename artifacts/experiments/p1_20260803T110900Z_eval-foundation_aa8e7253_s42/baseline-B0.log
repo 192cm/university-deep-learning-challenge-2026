@@ -1,105 +1,0 @@
-{"event": "start", "baseline": "B0", "evaluation_ids": 3744, "expected_generations": 3744, "cached_generations": 0, "pending_generations": 3744, "batch_size": 32, "offline": true}
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7580.06it/s]
-{"event": "progress", "baseline": "B0", "complete": 32, "total": 3744, "rate_generations_per_second": 0.6906737142309799, "eta_seconds": 5374.46253348887, "parse_errors": 6, "gpu_peak_memory_mib": 7836.423828125}
-{"event": "progress", "baseline": "B0", "complete": 64, "total": 3744, "rate_generations_per_second": 0.7070677730534268, "eta_seconds": 5204.593025231734, "parse_errors": 14, "gpu_peak_memory_mib": 7836.423828125}
-{"event": "progress", "baseline": "B0", "complete": 96, "total": 3744, "rate_generations_per_second": 0.7109805942658729, "eta_seconds": 5130.9417295232415, "parse_errors": 19, "gpu_peak_memory_mib": 7908.46240234375}
-{"event": "progress", "baseline": "B0", "complete": 128, "total": 3744, "rate_generations_per_second": 0.7141119782719526, "eta_seconds": 5063.631629244192, "parse_errors": 25, "gpu_peak_memory_mib": 7908.46240234375}
-{"event": "start", "baseline": "B0", "evaluation_ids": 3744, "expected_generations": 3744, "cached_generations": 128, "pending_generations": 3616, "batch_size": 128, "offline": true}
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7516.08it/s]
-Traceback (most recent call last):
-  File "/workspace/university-deep-learning-challenge-2026/scripts/run_baseline.py", line 385, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/workspace/university-deep-learning-challenge-2026/scripts/run_baseline.py", line 267, in main
-    sequences = model.generate(**tokenized, **generate_kwargs)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/generation/utils.py", line 2681, in generate
-    result = decoding_method(
-             ^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/generation/utils.py", line 2881, in _sample
-    outputs = self._prefill(
-              ^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/generation/utils.py", line 3961, in _prefill
-    return self(**model_inputs, return_dict=True)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/utils/generic.py", line 911, in wrapper
-    output = func(self, *args, **kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 462, in forward
-    outputs: BaseModelOutputWithPast = self.model(
-                                       ^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/utils/generic.py", line 1040, in wrapper
-    output = func(self, *args, **kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 262, in wrapper
-    outputs = func(self, *args, **kwargs)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 399, in forward
-    hidden_states = decoder_layer(
-                    ^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/modeling_layers.py", line 110, in __call__
-    return super().__call__(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 307, in forward
-    hidden_states = self.mlp(hidden_states)
-                    ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 47, in forward
-    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
-                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.59 GiB. GPU 0 has a total capacity of 23.53 GiB of which 3.08 GiB is free. Process 1357778 has 20.44 GiB memory in use. Of the allocated memory 16.40 GiB is allocated by PyTorch, and 3.57 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
-{"event": "start", "baseline": "B0", "evaluation_ids": 3744, "expected_generations": 3744, "cached_generations": 128, "pending_generations": 3616, "batch_size": 96, "offline": true}
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7422.76it/s]
-{"event": "progress", "baseline": "B0", "complete": 224, "total": 3744, "rate_generations_per_second": 0.5994198448072954, "eta_seconds": 5872.344785534467, "parse_errors": 37, "gpu_peak_memory_mib": 21110.77978515625}
-{"event": "progress", "baseline": "B0", "complete": 320, "total": 3744, "rate_generations_per_second": 0.7730233447929623, "eta_seconds": 4429.361704357124, "parse_errors": 55, "gpu_peak_memory_mib": 21110.77978515625}
-{"event": "progress", "baseline": "B0", "complete": 416, "total": 3744, "rate_generations_per_second": 0.8885883178030007, "eta_seconds": 3745.266433648765, "parse_errors": 65, "gpu_peak_memory_mib": 21110.77978515625}
-{"event": "start", "baseline": "B0", "evaluation_ids": 3744, "expected_generations": 3744, "cached_generations": 416, "pending_generations": 3328, "batch_size": 96, "evaluation_order": "question_character_length_then_id", "offline": true}
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7586.91it/s]
-{"event": "progress", "baseline": "B0", "complete": 512, "total": 3744, "rate_generations_per_second": 1.4670892371913342, "eta_seconds": 2203.001643027179, "parse_errors": 74, "gpu_peak_memory_mib": 10667.54345703125}
-{"event": "progress", "baseline": "B0", "complete": 608, "total": 3744, "rate_generations_per_second": 1.484554292417423, "eta_seconds": 2112.41853263136, "parse_errors": 82, "gpu_peak_memory_mib": 10709.6630859375}
-{"event": "progress", "baseline": "B0", "complete": 704, "total": 3744, "rate_generations_per_second": 1.4889815532874604, "eta_seconds": 2041.6639771581524, "parse_errors": 101, "gpu_peak_memory_mib": 10726.18994140625}
-{"event": "progress", "baseline": "B0", "complete": 800, "total": 3744, "rate_generations_per_second": 1.4891870271215697, "eta_seconds": 1976.9175707167014, "parse_errors": 109, "gpu_peak_memory_mib": 10746.84033203125}
-{"event": "start", "baseline": "B0", "evaluation_ids": 3744, "expected_generations": 3744, "cached_generations": 800, "pending_generations": 2944, "max_batch_size": 192, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "offline": true}
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7537.28it/s]
-{"event": "progress", "baseline": "B0", "complete": 992, "total": 3744, "rate_generations_per_second": 1.7273082079849194, "eta_seconds": 1593.230430607684, "parse_errors": 125, "gpu_peak_memory_mib": 15399.6015625}
-{"event": "start", "baseline": "B0", "evaluation_ids": 3744, "expected_generations": 3744, "cached_generations": 992, "pending_generations": 2752, "max_batch_size": 256, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "offline": true}
-Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 7676.21it/s]
-{"event": "progress", "baseline": "B0", "complete": 1248, "total": 3744, "rate_generations_per_second": 1.7658034251866443, "eta_seconds": 1413.5208735004999, "parse_errors": 148, "gpu_peak_memory_mib": 18625.8857421875}
-{"event": "progress", "baseline": "B0", "complete": 1504, "total": 3744, "rate_generations_per_second": 1.775029359713415, "eta_seconds": 1261.9509574543918, "parse_errors": 170, "gpu_peak_memory_mib": 18672.140625}
-{"event": "progress", "baseline": "B0", "complete": 1760, "total": 3744, "rate_generations_per_second": 1.7730702036627748, "eta_seconds": 1118.9630257738754, "parse_errors": 190, "gpu_peak_memory_mib": 18738.22412109375}
-{"event": "progress", "baseline": "B0", "complete": 2016, "total": 3744, "rate_generations_per_second": 1.7689381260542916, "eta_seconds": 976.8572312104516, "parse_errors": 214, "gpu_peak_memory_mib": 18793.29541015625}
-{"event": "progress", "baseline": "B0", "complete": 2272, "total": 3744, "rate_generations_per_second": 1.7633899481546287, "eta_seconds": 834.7558074380737, "parse_errors": 256, "gpu_peak_memory_mib": 18859.380859375}
-{"event": "progress", "baseline": "B0", "complete": 2527, "total": 3744, "rate_generations_per_second": 1.7572356413848376, "eta_seconds": 692.5650557832471, "parse_errors": 297, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "progress", "baseline": "B0", "complete": 2780, "total": 3744, "rate_generations_per_second": 1.74921056533307, "eta_seconds": 551.105749705121, "parse_errors": 345, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "progress", "baseline": "B0", "complete": 3030, "total": 3744, "rate_generations_per_second": 1.7388745058030424, "eta_seconds": 410.6104250865777, "parse_errors": 391, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "progress", "baseline": "B0", "complete": 3277, "total": 3744, "rate_generations_per_second": 1.727472931367206, "eta_seconds": 270.3370869206, "parse_errors": 442, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "progress", "baseline": "B0", "complete": 3517, "total": 3744, "rate_generations_per_second": 1.7099142827595069, "eta_seconds": 132.75519263670992, "parse_errors": 526, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "progress", "baseline": "B0", "complete": 3726, "total": 3744, "rate_generations_per_second": 1.6662180433262463, "eta_seconds": 10.802907861966773, "parse_errors": 602, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "progress", "baseline": "B0", "complete": 3744, "total": 3744, "rate_generations_per_second": 1.6291013543543722, "eta_seconds": 0.0, "parse_errors": 608, "gpu_peak_memory_mib": 18874.67138671875}
-{"event": "complete", "schema_version": 1, "baseline_id": "B0", "started_at_utc": "2026-08-03T11:54:24.386221+00:00", "ended_at_utc": "2026-08-03T12:22:33.723159+00:00", "wall_seconds_this_process": 1689.3369358126074, "evaluation_ids": 3744, "expected_generations": 3744, "cached_at_start": 992, "generated_this_process": 2752, "generation_rows": 3744, "generation_file": "artifacts/experiments/p1_20260803T110900Z_eval-foundation_aa8e7253_s42/baselines/B0/generations.jsonl", "generation_sha256": "5d3e88e7e4e2499ae92cfaf8a3c3c7689350c256423c64343f7934742545a2ad", "model": {"id": "Qwen/Qwen2.5-3B-Instruct", "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "tokenizer_id": "Qwen/Qwen2.5-3B-Instruct", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "local_files_only": true, "hf_hub_offline": "1", "transformers_offline": "1", "pytorch_cuda_alloc_conf": "expandable_segments:True", "dtype": "bfloat16"}, "baseline_config": {"description": "Base model, minimal answer-format instruction, greedy decoding.", "do_sample": false, "seeds": [42], "batch_size": 256, "max_batch_tokens": 294912, "max_input_tokens": 2048, "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}", "generation": {"max_new_tokens": 1024, "temperature": null, "top_p": null}}, "max_batch_size": 256, "max_batch_tokens": 294912, "evaluation_order": "input_token_length_then_id", "seeds": [42], "parse_errors": 608, "gpu": "NVIDIA GeForce RTX 4090", "gpu_peak_memory_mib": 18874.67138671875, "torch_version": "2.11.0+cu128", "python_version": "3.12.13", "source_data": {"path": "data/deep_chal_math_train_filtered.csv", "sha256": "2844386e4d5c7355f773ac58f4b735be4e9ce1caa70b4b1a3576244e1346ff98", "labels_loaded_by_generation": false}, "split_dir": "data/splits/phase1_v1", "split_manifest_sha256": "81c482a8088b89048172ff68d55c451a09b852ea4c54c43f4da92b961a05e978"}

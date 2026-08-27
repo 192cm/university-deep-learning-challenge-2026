@@ -1,6 +1,0 @@
-[90mHint: A new version of huggingface_hub (1.26.0) is available! You are using version 1.18.0.
-To update, run: hf update[0m
-Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Fetching 12 files:   8%|▊         | 1/12 [00:00<00:01,  6.92it/s]Fetching 12 files:  58%|█████▊    | 7/12 [00:21<00:16,  3.21s/it]Fetching 12 files: 100%|██████████| 12/12 [00:21<00:00,  1.79s/it]
-[32m✓ Downloaded[0m
-  path: /workspace/.cache/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1

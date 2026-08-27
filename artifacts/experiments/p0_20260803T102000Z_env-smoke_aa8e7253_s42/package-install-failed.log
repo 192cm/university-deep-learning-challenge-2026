@@ -1,7 +1,0 @@
-Using Python 3.12.13 environment at: /venv/main
-  × No solution found when resolving dependencies:
-  ╰─▶ Because transformers==5.14.1 depends on tokenizers>=0.22.0,<=0.23.0
-      and you require transformers==5.14.1, we can conclude that you require
-      tokenizers>=0.22.0,<=0.23.0.
-      And because you require tokenizers==0.23.1, we can conclude that your
-      requirements are unsatisfiable.

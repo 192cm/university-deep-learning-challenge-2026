@@ -18,7 +18,7 @@ Public 점수는 최종 순위에 영향을 주지 않으며, **Private Leaderbo
 
 ## 제출 파일
 
-- 파일명: `submission.csv`
+- 파일명: `submisson.csv`i
 - 컬럼: `ID`, `answer`
 - `answer`에는 정수만 기입해야 합니다.
 - 모든 문제의 답을 포함해야 하며 빈 값은 오답 처리됩니다.

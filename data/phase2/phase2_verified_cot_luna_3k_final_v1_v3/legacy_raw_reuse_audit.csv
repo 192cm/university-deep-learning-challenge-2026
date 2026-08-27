@@ -1,2 +1,0 @@
-legacy_artifact_path,legacy_raw_file_count,v3_raw_file_count_at_input_build,reused_for_v3,reason
-artifacts\phase2\phase2_verified_cot_luna_3k_v2\raw_responses,180,0,False,historical Phase 2 responses are diagnostic-only and no raw payload is copied or read for targets
