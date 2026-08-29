@@ -1,223 +1,124 @@
 <div align="center">
 
-# 🧠 아주 소중한 딥러닝 챌린지 2026
+# 🧠 제5회 대학 연합 아주 소중한 딥러닝 챌린지 2026
 
-**수학 추론 실험 파이프라인** — `Qwen/Qwen2.5-3B-Instruct`를 미세조정하고 정수 답 제출까지 검증합니다.
+**프로젝트 아카이브** — 수학 추론 시스템을 설계하고 실험한 과정, 판단, 결과를 보존합니다.
 
 <br>
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![vLLM](https://img.shields.io/badge/vLLM-0.27.1-5E5CE6?style=flat-square)](https://docs.vllm.ai/)
-[![Hugging Face](https://img.shields.io/badge/Base-Qwen2.5--3B--Instruct-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)
+[![PyTorch 2.13](https://img.shields.io/badge/PyTorch-2.13%20%7C%20CUDA%2013-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![vLLM 0.27.1](https://img.shields.io/badge/vLLM-0.27.1-5E5CE6?style=flat-square)](https://docs.vllm.ai/)
+[![Qwen2.5 3B](https://img.shields.io/badge/Base-Qwen2.5--3B--Instruct-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct)
 
 <br>
 
-[기능](#기능) · [빠른 시작](#빠른-시작) · [사용법](#사용법) · [설정](#설정) · [구조](#구조) · [모델 및 평가](#모델-및-평가) · [의존성](#의존성)
+[프로젝트 개요](#-프로젝트-개요) · [실험 여정](#-실험-여정) · [기록 읽는 법](#-기록-읽는-법) · [저장소 구조](#-저장소-구조) · [공개 범위](#-데이터와-공개-범위) · [환경 기록](#-환경-기록)
 
 </div>
 
-이 저장소는 대학 연합 딥러닝 챌린지에서 처음 보는 수학 문제의 정수 답을 추론하기 위한 실험 코드와 재현 기록을 관리합니다. 데이터 구축, 모델 생성, 미세조정, 후보 선택, 평가, 제출 파일 검증을 단계별 실험으로 분리하고 각 단계의 설정·해시·지표를 `manifest.json`에 남깁니다.
+> [!IMPORTANT]
+> 이 저장소는 **재현용 배포판이 아니라 프로젝트 기록 보관소**입니다. 대회가 제공한 데이터와 그 파생본은 공개할 수 없으므로 포함하지 않습니다. 대신 소스 코드, 설정, 실험 로그, 집계 지표, 분석 보고서와 의사결정 근거를 보존합니다.
 
-## ✨ 기능
+## 🎯 프로젝트 개요
 
-- **재현 가능한 데이터 구축** — 원본 데이터에서 canonical train, 고정 holdout, RFT pool을 SHA-256 기반으로 결정론적으로 생성합니다.
-- **검증 가능한 생성 파이프라인** — Hugging Face 또는 vLLM으로 label-blind 생성 결과와 실행 메타데이터를 resume 가능한 JSONL로 저장합니다.
-- **문자열 기반 정수 추출** — `FINAL_ANSWER:`와 `\boxed{}` 등을 읽고 표기만 정규화하며, 추론 중 계산이나 수식 동치 판정을 수행하지 않습니다.
-- **단계별 학습 실험** — RFT 데이터 구축, QLoRA SFT, DPO, self-consistency, 후보 선택, ORM 기반 점수화를 각각 고정된 설정으로 비교합니다.
-- **제출 전 안전장치** — exact-match 평가, 다수결·가중 투표, ID coverage·중복·정수 형식 검증과 실험별 audit을 제공합니다.
+아주대학교 AI융합교육원이 주최한 대학 연합 딥러닝 챌린지에서, 수학에 특화되지 않은 고정 베이스 모델 `Qwen/Qwen2.5-3B-Instruct`로 처음 보는 수학 문제의 정수 답을 추론하는 시스템을 개발했습니다. 평가는 정답 문자열의 exact match를 기준으로 했습니다.
 
----
+이 저장소의 중심은 최종 점수 하나가 아니라, T0부터 T13까지 이어진 실험에서 **무엇을 시도했고, 어떤 근거로 채택·보류·기각했는지**를 남기는 데 있습니다.
 
-## 🚀 빠른 시작
-
-전체 학습과 모델 생성은 Linux/CUDA 환경을 기준으로 합니다. CPU에서도 데이터 계약과 대부분의 단위 테스트를 실행할 수 있지만, 생성·학습 단계에는 GPU와 로컬 모델 캐시가 필요합니다.
-
-### 환경 준비
-
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements.lock pytest
-```
-
-### 모델 및 런타임 설정
-
-실험 설정은 모델과 tokenizer를 `Qwen/Qwen2.5-3B-Instruct` revision `aa8e72537993ba99e69dfaafa59ed015b17504d1`로 고정합니다. 모델을 설정 파일의 Hugging Face 캐시에 준비한 뒤, 재현 실행에서는 다음 환경 변수를 사용합니다.
-
-```bash
-export HF_HUB_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
-export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-```
-
-외부 API credential은 최종 로컬 추론·평가에 사용하지 않습니다. T12/T12b ORM 경로는 설정상 NVIDIA GeForce RTX 4090 2장이 필요합니다.
-
-### 테스트 실행
-
-```bash
-python -m pytest -q
-```
+- **단계별 실험 기록** — 데이터 계약, 출력 형식, SFT/RFT, self-consistency, 후보 선택, ORM 실험을 순서대로 보존합니다.
+- **근거 기반 의사결정** — 각 실험의 gate, 집계 지표, audit과 후속 판단을 함께 기록합니다.
+- **평가 오염 방지** — 생성 단계에서는 정답 라벨을 사용하지 않고, 평가는 별도 단계로 분리했습니다.
+- **비용을 고려한 탐색** — 사전 gate를 통과하지 못한 경로는 고비용 학습으로 확장하지 않았습니다.
+- **기록 가능한 결과 중심** — 대용량 원시 산출물 대신 설정, manifest, 요약 지표, 보고서와 실행 당시 소스 스냅샷을 남깁니다.
 
 ---
 
-## 📖 사용법
+## 🧭 실험 여정
 
-### 데이터 재생성
-
-T2 설정은 원본 CSV를 수정하지 않고 canonical 데이터와 고정 holdout을 생성합니다. `--verify-reproducibility`를 지정하면 독립적인 두 번의 materialization 결과가 같은지 확인합니다.
-
-```bash
-python -m src.build_data \
-  --config configs/t2_data.json \
-  --verify-reproducibility
-```
-
-주요 결과는 `data/canonical/`, `data/splits/`, `data/rft_pool_ids.txt`, `data/answer_only/`에 기록됩니다.
-
-### 베이스라인 생성 및 평가
-
-아래 예시는 고정 random holdout에서 vLLM greedy baseline을 생성하고 exact-match 지표를 계산합니다. `configs/*.json`에 기록된 `/workspace/.hf_home` 캐시와 CUDA 런타임을 사용할 수 있는 환경에서 실행해야 합니다.
-
-```bash
-mkdir -p artifacts/local-baseline
-
-python -m src.generate \
-  --config configs/t3_baseline.json \
-  --input data/canonical/train.csv \
-  --ids-file data/splits/random_holdout_ids.txt \
-  --output artifacts/local-baseline/generations.jsonl \
-  --metadata artifacts/local-baseline/run-metadata.json \
-  --engine vllm
-
-python -m src.evaluate \
-  --generations artifacts/local-baseline/generations.jsonl \
-  --labels data/splits/random_holdout.csv \
-  --k 1 \
-  --output artifacts/local-baseline/metrics.json
-```
-
-### 실험 runner
-
-`scripts/`의 runner는 이전 단계의 산출물과 manifest를 확인하면서 각 실험을 실행합니다. 대부분의 GPU runner는 `/workspace`와 `/venv/main`이 준비된 원격 Linux 환경을 전제로 합니다.
-
-| 단계 | 목적 | 실행 파일 |
+| 단계 | 탐색 내용 | 내부 검증 결과와 판단 |
 |---|---|---|
-| T5 | 16-sample rejection sampling 기반 RFT 생성 | `scripts/run_t5_rft.sh` |
-| T6 | answer-only·RFT·외부 CoT QLoRA SFT 비교 | `scripts/run_t6.sh` |
-| T7 | 두 번째 RFT 라운드와 hard-tail 데이터 구축 | `scripts/run_t7.sh` |
-| T8 | self-consistency와 adaptive sampling | `scripts/run_t8.sh` |
-| T9 | 생성 후보를 읽고 선택하는 GenSelect | `scripts/run_t9.sh` |
-| T11 | hard-CoT 품질 확인과 SFT/DPO 경로 | `scripts/run_t11.sh` |
-| T12 | ORM 점수화·가중 투표·2-way sharding | `scripts/run_t12_cmu_orm.sh` |
-| T12b | question-local ORM 데이터 gate와 후속 학습 | `scripts/run_t12b_question_local_orm.sh` |
+| T0–T4 | 베이스라인과 출력 계약 | random holdout 정확도 `64.20% → 67.99%`, invalid rate `15.03% → 0.61%` — 출력 계약 채택 |
+| T5–T7 | RFT 데이터와 QLoRA SFT | 유의미한 개선이 없거나 성능이 하락해 베이스 모델 유지 — SFT-v2는 실행 전 중단 |
+| T8 | fixed majority@32 | random holdout `74.28%`, union `69.31%`, T4c 대비 `+6.61%p` — 채택 |
+| T8-3–T10c | vote-quality filter, prompt 다양화, GenSelect, weighted vote | 일부 근접 결과가 있었지만 사전 gate를 충족하지 못해 보류 또는 기각 |
+| T10d–T10e | 3-view 추론 | union `71.18%` / `71.29%` — 규칙 확인과 운영 판단이 남은 후보로 보존 |
+| T11 | teacher 기반 SFT/DPO 경로 | teacher preflight gate 실패 — 후속 고비용 학습 미실행 |
+| T12 | pointwise ORM weighted vote | fresh validation `87.4% → 87.6%` (`+0.2%p`) — 효과가 불충분해 보류 |
+| T12b | question-local selective override | override `0건`, baseline과 동일 — 기존 결과 보존 |
 
-### 제출 payload 검증
+> 표의 수치는 서로 다른 내부 holdout 또는 진단 조건에서 얻은 실험 기록이며, 공식 리더보드 점수가 아닙니다. 조건이 다른 행의 수치를 직접 비교해서는 안 됩니다.
 
-`src.submit`은 리더보드 문항에 대한 생성 결과를 label-blind majority-vote payload로 변환합니다. 아래 명령은 현재 보존된 T8 `k=32` 생성 결과를 검증하며, 최종 CSV 자체가 아니라 `submission-prepared.json`을 작성합니다.
-
-```bash
-python -m src.submit \
-  --input data/deep_chal_math_leaderboard.csv \
-  --generations artifacts/submissions/t8_majority_k32/generations.jsonl \
-  --config configs/t8_self_consistency.json \
-  --metadata artifacts/submissions/t8_majority_k32/run-metadata.json \
-  --output artifacts/submissions/t8_majority_k32/submission-prepared.json \
-  --k 32
-```
+T12에서는 ORM이 raw majority의 선택을 24건 바꿨고, 8건을 복구하는 동안 6건을 악화시켜 순증은 2건이었습니다. 후보 수준의 분류력은 확인했지만 fold별 효과가 일관되지 않아, 모델 점수를 최종 선택 규칙으로 채택하지 않았습니다.
 
 ---
 
-## ⚙️ 설정
+## 📚 기록 읽는 법
 
-실험 계약은 `configs/*.json`에 둡니다. 모델 revision, prompt, sampling, 학습 하이퍼파라미터, 출력 경로, 의사결정 gate를 코드와 분리해 관리합니다.
+처음 살펴본다면 아래 순서가 프로젝트의 흐름을 가장 잘 보여줍니다.
 
-| 설정 파일 | 역할 |
-|---|---|
-| `configs/t2_data.json` | canonical 데이터·holdout·RFT pool 생성 규칙 |
-| `configs/t3_baseline.json` | greedy baseline 생성 계약 |
-| `configs/t4_output_contract.json` | 답 출력 형식과 generation 재측정 계약 |
-| `configs/t5_rft_r1.json` | 16-sample RFT 생성 설정 |
-| `configs/t6_sft_v1.json` | QLoRA SFT 학습·calibration 설정 |
-| `configs/t8_self_consistency.json` | `k=32` self-consistency와 adaptive sampling |
-| `configs/t9_genselect.json` | 후보 선택기 학습·평가 설정 |
-| `configs/t12_cmu_orm.json` | pointwise ORM과 2-GPU scoring 설정 |
-| `configs/t12b_question_local_orm.json` | question-local ranking ORM 설정 |
+1. [실험 실행 기록](docs/strategy/execution-prompts.md) — T0–T13의 실행 맥락, 관찰 결과, 채택·보류·기각 판단을 시간순으로 정리한 중심 문서입니다.
+2. [초기 전략](docs/strategy/winning-strategy.md) — 실험을 시작할 때 세운 가설과 우선순위를 담고 있습니다.
+3. [T8 진단 보고서의 근거 기록](report/t8-pass-majority-diagnostic-2026-08-27/source-notes.md) — majority voting을 채택한 근거와 오류 분석을 기록합니다.
+4. [T12 ORM 진단 보고서의 근거 기록](report/t12-orm-diagnostic-2026-08-28/source-notes.md) — ORM의 개선·악화 사례를 집계하고 보류 결정을 설명합니다.
+5. [`configs/`](configs/)와 [`artifacts/`](artifacts/) — 실험 계약과 공개 가능한 manifest, metrics, audit, 실행 로그를 확인할 수 있습니다.
+
+코드의 현재 상태는 [`src/`](src/), 실행 흐름은 [`scripts/`](scripts/), 계약 검증은 [`tests/`](tests/)에 남아 있습니다. 이 파일들은 당시 작업을 설명하고 보존하기 위한 자료이며, 데이터와 모델이 빠진 새 clone에서 전체 실험을 그대로 실행할 수 있다는 의미는 아닙니다.
 
 ---
 
-## 🏗️ 구조
+## 🏗️ 저장소 구조
 
 ```text
 .
-├── src/
-│   ├── build_data.py       # 데이터셋과 holdout 생성
-│   ├── generate.py         # HF/vLLM 생성
-│   ├── extract.py          # 표기 기반 정수 추출
-│   ├── evaluate.py         # exact-match 평가
-│   ├── train_sft.py        # QLoRA SFT
-│   ├── train_dpo.py        # DPO 학습
-│   ├── genselect.py        # 후보 선택기
-│   ├── orm_*.py            # ORM 점수화와 투표
-│   └── submit.py           # 제출 payload 검증
-├── configs/                # 단계별 실험 계약
-├── scripts/                # 실행·원격 runner
-├── data/                   # 원본·파생 데이터
-├── artifacts/              # 생성물·adapter·manifest·지표
-├── tests/                  # 단위·계약 테스트
-└── docs/                   # 대회 정보와 전략 문서
+├── src/          # 생성·평가·학습·선택 로직
+├── configs/      # 단계별 실험 계약과 의사결정 gate
+├── scripts/      # 로컬·원격 실행 runner
+├── analysis/     # 실험 후 분석 코드
+├── artifacts/    # 공개 가능한 manifest·지표·audit·로그
+├── report/       # 장기 보존용 진단 보고서
+├── docs/         # 대회 정보, 전략, 실행 기록
+├── tests/        # 단위·계약 테스트
+├── submission.csv
+└── data/         # 대회 제공 데이터 — 로컬 전용, Git 제외
 ```
 
 ```text
-원본 CSV + T2 config
-  │ 데이터 검증·결정론적 분할
-  ▼
-src/build_data.py ──▶ canonical train / holdouts / RFT pool
-  │ 학습 또는 label-blind 생성
-  ▼
-src/generate.py ──▶ raw generations.jsonl
-  │ 표기만 정규화한 후보 답
-  ▼
-src/extract.py ──▶ src/evaluate.py / self-consistency / ORM / submit.py
-  │ 선택·형식·coverage 검증
-  ▼
-submission.csv
+대회 제공 데이터 (로컬 전용)
+          │
+          ▼
+  config + runner ──▶ 학습·생성 (원시 산출물은 로컬 전용)
+                              │
+                              ▼ 집계·진단
+                         artifacts/
+                              │
+                              ▼
+                    reports · docs · submission
 ```
 
-> 학습·추론의 계약은 config와 manifest로 고정하고, 정답 라벨은 생성이 아닌 평가 단계에서만 사용합니다.
+설정과 실행 코드는 실험의 의도를, manifest와 집계 지표는 실제 수행 여부를, 보고서는 결과 해석과 다음 결정을 설명합니다. 원시 데이터나 모델 파일이 없어도 프로젝트의 판단 과정이 이어지도록 이 세 층을 함께 보존합니다.
 
 ---
 
-## 🤖 모델 및 평가
+## 🔒 데이터와 공개 범위
 
-### 모델과 추론 규칙
+대회 문제와 정답은 주최 측이 제공한 자료이므로 경로와 형식에 관계없이 Git에 올리지 않습니다. `.gitignore`는 확장자 허용 목록이 아니라 민감하거나 기록 가치가 낮은 파일을 차단하는 denylist로 관리합니다.
 
-- **학생 모델** — `Qwen/Qwen2.5-3B-Instruct`, revision `aa8e72537993ba99e69dfaafa59ed015b17504d1`
-- **생성 엔진** — Hugging Face 또는 vLLM; 실험 설정에서는 vLLM `bfloat16` 경로가 주로 선택되어 있습니다.
-- **답 형식** — 모델 출력에서 정수 문자열을 추출한 뒤 `^-?(?:0|[1-9][0-9]*)$` 형식으로 정규화합니다.
-- **추론 중 제한** — 외부 API·검색·코드 실행·수학 solver를 사용하지 않으며, majority voting·self-consistency와 같은 다중 샘플링은 별도 계약으로 관리합니다.
+| Git에 보존 | 로컬에만 보존 |
+|---|---|
+| 소스 코드, 테스트, 실행 스크립트, 설정 | `data/` 전체와 대회 데이터 복사본 |
+| 전략 문서, 실행 기록, 분석 보고서 | 문제문·정답·행 단위 평가 결과가 담긴 CSV |
+| manifest, 집계 metrics, comparison, audit | 원시 생성 결과인 JSONL·NDJSON |
+| 대회 원문을 포함하지 않는 로그와 소스 스냅샷 | 모델 가중치, adapter, checkpoint, optimizer state |
+| 제출 CSV와 결과 이미지 | 캐시, 가상환경, 임시 파일, 압축 파일 |
 
-### 데이터와 지표
-
-| 항목 | 현재 저장소 기준 |
-|---|---:|
-| 원본 train | 17,000행 |
-| organizer exclusion | 627행 |
-| canonical train | 16,373행 |
-| leaderboard | 1,000행 |
-| random/template holdout | 각 1,637행 |
-| hard/format diagnostic | 550행 / 256행 |
-| RFT pool | 12,636행 |
-| 평가 지표 | Accuracy (Exact Match) |
-
-리더보드 원본 CSV의 세 번째 헤더는 공백이 포함된 ` answer`이므로, 로더는 헤더를 `strip()`한 뒤 사용합니다. 자세한 대회 조건과 데이터 provenance는 [대회 정보 문서](docs/information/README.md), 전략과 실험 판단 근거는 [전략 문서](docs/strategy/winning-strategy.md)에서 확인할 수 있습니다.
+따라서 이 저장소만 clone해서 실험을 재현할 수는 없습니다. 실행에는 별도로 사용 권한을 가진 대회 데이터, 로컬 모델 자산, 기록된 하드웨어 환경이 필요합니다. 설정과 로그에 남은 `/workspace` 등의 절대 경로는 당시 원격 실행 환경을 나타내는 역사적 기록입니다.
 
 ---
 
-## 📦 의존성
+## 📦 환경 기록
 
-`requirements.lock`은 기록된 Linux/CUDA 실행 환경의 패키지를 고정합니다.
+아래 버전은 설치 지원 범위가 아니라, 주요 실험을 수행했을 당시의 환경 스냅샷입니다. 전체 패키지 목록은 [`requirements.lock`](requirements.lock), 런타임 정보는 [`environment.json`](environment.json)에 보존되어 있습니다.
 
 | 구성 요소 | 기록된 버전 또는 조건 |
 |---|---|
@@ -227,6 +128,8 @@ submission.csv
 | PEFT | 0.20.0 |
 | TRL | 1.10.0 |
 | vLLM | 0.27.1 |
-| GPU | 생성·학습용 CUDA GPU; T12/T12b는 RTX 4090 2장 |
+| datasets | 5.0.1 |
+| bitsandbytes | 0.50.1 |
+| T12/T12b 하드웨어 | NVIDIA GeForce RTX 4090 2장 |
 
-단위 테스트는 `pytest`, runner와 일부 하드웨어 검사는 Bash·`jq`·`nvidia-smi`를 사용합니다. 저장소에 license 파일은 확인되지 않아 README에 라이선스를 지정하지 않습니다.
+베이스 모델은 `Qwen/Qwen2.5-3B-Instruct` revision `aa8e72537993ba99e69dfaafa59ed015b17504d1`로 고정해 기록했습니다.
