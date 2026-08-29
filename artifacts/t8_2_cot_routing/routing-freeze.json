@@ -1,0 +1,86 @@
+{
+  "created_at_utc": "2026-08-24T03:16:26.880424+00:00",
+  "generation_budget": {
+    "base": 66832,
+    "strong_cot": 52752,
+    "total": 119584
+  },
+  "ground_truth_values_consumed": false,
+  "outputs": {
+    "predictions": {
+      "bytes": 459709,
+      "path": "artifacts/t8_2_cot_routing/predictions.jsonl",
+      "rows": 3737,
+      "sha256": "9abe61ea87a15eb7f2092b5ea9e14c072fd4c20b40fbee77000359d68680ba34"
+    },
+    "routes": {
+      "bytes": 32579710,
+      "path": "artifacts/t8_2_cot_routing/routes.jsonl",
+      "rows": 3737,
+      "sha256": "38cf6341f88a64b6cc2ef338f5f1c704bb704705a13c6755ce710f63a42e5e4d"
+    }
+  },
+  "prompt_sha256": {
+    "base": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "strong_cot": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b"
+  },
+  "questions": 3737,
+  "route_counts": {
+    "base": 1853,
+    "strong_cot": 1884
+  },
+  "routing_inputs": [
+    "raw model text",
+    "src.extract syntactic answer",
+    "sample_index",
+    "ID order"
+  ],
+  "run_fingerprints": {
+    "reference": "aa6c1b6213323b60927989bdb923825273e6ccb4c475a92e968cae83ece39a34",
+    "strong_cot": "1b97bad4abea3089213e45acce4fbe3ca73113544357b3334041f76e380e3b92"
+  },
+  "samples_per_question": 32,
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "bytes": 5161,
+      "path": "configs/t8_2_cot_routing.json",
+      "sha256": "1a3cec80a3f699e7108ec5efc8c7c90f94068ce30ab09a6e19558255449beb13"
+    },
+    "reference_generations": {
+      "bytes": 234212343,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "rows": 119584,
+      "sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54"
+    },
+    "reference_metadata": {
+      "bytes": 3384272,
+      "path": "artifacts/t8_self_consistency/run-metadata.json",
+      "sha256": "419a84f14aff7cd7f8a42dedc1872600d1aa193704c5cd4f993abadca89a7abd"
+    },
+    "strong_cot_generations": {
+      "bytes": 299788825,
+      "path": "artifacts/t8_2_cot_routing/strong_cot/generations.jsonl",
+      "rows": 119584,
+      "sha256": "3d4ad7d17fd252a313ca520ca28513ce02fd21ca28698074ea1b05695bbcb4a2"
+    },
+    "strong_cot_metadata": {
+      "bytes": 4156120,
+      "path": "artifacts/t8_2_cot_routing/strong_cot/run-metadata.json",
+      "sha256": "6c7ec5ecb760490878fb0313b2ba65e42953ff37f78e7137943c84e3dbf2b9f1"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "frozen",
+  "task": "T8-2",
+  "trigger_counts": {
+    "disagreement": 1830,
+    "invalid": 54,
+    "valid_unanimous": 1853
+  }
+}

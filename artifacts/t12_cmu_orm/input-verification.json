@@ -1,0 +1,146 @@
+{
+  "base_model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "candidate_sources": [
+    {
+      "checkpoint_kind": "base",
+      "generations": {
+        "bytes": 368308896,
+        "path": "artifacts/t5_rft_r1/generations.jsonl",
+        "sha256": "fff6af5232f9dd7fe77d1733dd0272b53210011c53c3bb16f9e724a3b00aa590"
+      },
+      "metadata": {
+        "bytes": 6247989,
+        "path": "artifacts/t5_rft_r1/run-metadata.json",
+        "sha256": "58dd8d65cc9150faef0ad851440cc3a4fdfc0bb1f89a26485c4b0af4c1c61ff0"
+      },
+      "name": "t5_base_k16"
+    },
+    {
+      "checkpoint_kind": "base",
+      "generations": {
+        "bytes": 187111651,
+        "path": "data/t11_aimo_generation_quality/student_probe.jsonl",
+        "sha256": "31b2af19392bbe86089ddfc27450d75af2aac27fba565dd633c9254ef3c63a4c"
+      },
+      "metadata": {
+        "bytes": 3577200,
+        "path": "artifacts/t11_aimo_generation_quality/student-probe-run-metadata.json",
+        "sha256": "67039752f214cbe51ae2568884122388d35a611278dd7ea40d4da4d1f97adc5c"
+      },
+      "name": "t11_base_cot_boxed_k8"
+    },
+    {
+      "checkpoint_kind": "base",
+      "generations": {
+        "bytes": 245167207,
+        "path": "artifacts/t5_rft_targeted/generations.jsonl",
+        "sha256": "0edc6cb3e87dfb206ab4a6c9608d04241f4771a779d77f1c87e18d0d79f4a5fd"
+      },
+      "metadata": {
+        "bytes": 3401,
+        "path": "artifacts/t5_rft_targeted/run-metadata.json",
+        "sha256": "1bc4adac7e511cdfd56192b185a5e73a370289dce060de8d20d4911dbfdd5421"
+      },
+      "name": "t5_base_targeted_k48"
+    },
+    {
+      "checkpoint_kind": "base",
+      "generations": {
+        "bytes": 152120856,
+        "path": "data/rft_r2/generations.jsonl",
+        "sha256": "3e1f2a81425aaacba6750501a718127731827c33f7a10c6aeb8ff96b1c2bcfa7"
+      },
+      "metadata": {
+        "bytes": 2361115,
+        "path": "data/rft_r2/run-metadata.json",
+        "sha256": "8fc9279c6da3715d91f1fc8eb4f706072a05ae7d1181a6a77c920e3ab6d0cb0b"
+      },
+      "name": "t7_base_hard_tail_k32"
+    }
+  ],
+  "checks": {
+    "canonical_rows_16373": true,
+    "fresh_validation_has_no_answer_column": true,
+    "fresh_validation_questions_1000": true,
+    "leaderboard_rows_1000": true,
+    "post_guard_question_text_near_template_intersection_zero": true,
+    "t11_protected_ids_5475": true
+  },
+  "created_at_utc": "2026-08-27T20:47:30.095233+00:00",
+  "fresh_validation": {
+    "bytes": 326541,
+    "path": "data/cmu_orm/validation.csv",
+    "rows": 1000,
+    "sha256": "83769d276ba1205b5e8e8ee443ce285e53a8082a217928a0f0dbcb3d49e7ea05"
+  },
+  "leaderboard": {
+    "bytes": 254899,
+    "path": "data/deep_chal_math_leaderboard.csv",
+    "rows": 1000,
+    "sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32"
+  },
+  "protected": {
+    "all_prior_selection_unique": 6000,
+    "sources": {
+      "t11_suspect": {
+        "path": "data/suspect_set/ids.txt",
+        "rows": 1311,
+        "sha256": "ad3ac6669f3058071580531eb43eb5b7a5d5d82b99bd21fae3b982c27910dd75"
+      },
+      "t11_teacher_preflight": {
+        "path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+        "rows": 64,
+        "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9"
+      },
+      "t11_validation": {
+        "path": "data/splits/rft_validation_500_ids.txt",
+        "rows": 500,
+        "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+      },
+      "t11c_teacher_preflight": {
+        "path": "data/t11c_qwen7b_repaired_teacher_preflight/preflight_ids.txt",
+        "rows": 64,
+        "sha256": "a3f26bbe1fd1f692f1fb695ca73d161f938a112008fc4265014a4c1847114655"
+      },
+      "t11d_prompt_canary": {
+        "path": "data/t11d_extractor_contract/canary_ids.txt",
+        "rows": 128,
+        "sha256": "ce6a8a62935121c2f7b9c4905b8bff66dd65ef1e5765da88ae2b79093fb7edb2"
+      },
+      "t8_holdout_union": {
+        "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+        "rows": 3737,
+        "sha256": "70fb620a31be2b20b9b637341ff95a20108e6854118cd2de0142470f0b34d219"
+      },
+      "t9_validation": {
+        "path": "data/genselect/validation.jsonl",
+        "rows": 320,
+        "sha256": "8db3802189cebbe44771df5ef618ca7ca86235225e0016c0a96b0bd143e52c25"
+      }
+    },
+    "t11_frozen_unique": 5475
+  },
+  "schema_version": 1,
+  "solver": {
+    "config": {
+      "bytes": 2099,
+      "path": "configs/t8_self_consistency.json",
+      "sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630"
+    },
+    "prompt_and_sampling_frozen": true
+  },
+  "status": "complete",
+  "task": "T12",
+  "train_validation_intersections_after_guard": {
+    "near_duplicate": 0,
+    "normalized_text": 0,
+    "question_id": 0,
+    "template_group": 0
+  }
+}

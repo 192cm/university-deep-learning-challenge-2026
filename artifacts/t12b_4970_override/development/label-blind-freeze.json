@@ -1,0 +1,50 @@
+{
+  "candidate_scores": {
+    "bytes": 33859367,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/candidate-scores-enriched.jsonl",
+    "sha256": "be1c7f669210f1b0cbf1b3a14445a4f5962886924a34853ce1115595b908ceae"
+  },
+  "fallback_count": 5,
+  "fallback_exclusion_count": 1,
+  "fallback_exclusions": {
+    "bytes": 220,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/label-blind-fallback-exclusions.jsonl",
+    "sha256": "60d0d33f6d06067075bf550c72748739a959350bf3d585bf9a1212c02357b347"
+  },
+  "fallbacks": {
+    "bytes": 1444,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/label-blind-fallbacks.jsonl",
+    "sha256": "4ccac3ecce7f39efc30992d43b7e815017fc3d795c30bbbc55b73f1e6a3d71d6"
+  },
+  "gold_opened": false,
+  "group_features": {
+    "bytes": 1259252,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/label-blind-group-features.jsonl",
+    "sha256": "5a465d8abce992727d258eb8af68fa6144e36cf658d7ae2a1999ab089cbf3557"
+  },
+  "group_selector": {
+    "alpha": 1.440881717652158,
+    "beta": 1.0273162585597724,
+    "gamma": 0.2841477714226564,
+    "iterations": 2000,
+    "l2": 0.001,
+    "learning_rate": 0.05,
+    "tie_break": [
+      "first_generation_index",
+      "integer_value_ascending"
+    ]
+  },
+  "override_inputs": {
+    "bytes": 242914,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/label-blind-override-inputs.jsonl",
+    "sha256": "daaf5153bc85b7e294e4a75c6fb620aa507b0eca5db857d6422253cd4ae494f3"
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12b-4970-override"
+}

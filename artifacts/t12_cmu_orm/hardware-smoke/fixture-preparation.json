@@ -1,0 +1,33 @@
+{
+  "created_at_utc": "2026-08-27T20:38:53.696459+00:00",
+  "fixture_questions": 4,
+  "label_blind": true,
+  "outputs": {
+    "config": {
+      "bytes": 1744,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/generation-config.json",
+      "sha256": "d73b2024cd8cd09d271e29b7fd7e71839df8efd1c10b8fd8b40a52296aad9373"
+    },
+    "ids": {
+      "bytes": 52,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/ids.txt",
+      "rows": 4,
+      "sha256": "db57323a41e908247a49c768c113a88fdcb4ea4e1c4d12b632b365b229c192ea"
+    },
+    "manifest": {
+      "bytes": 995,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/generation-shard-manifest.json",
+      "sha256": "274e6c57d027bdc8167a14d9acde841f40a84570c77a17e62422305c1e9d21c0"
+    },
+    "questions": {
+      "bytes": 709,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/questions.csv",
+      "rows": 4,
+      "sha256": "27cd04e458be152ebb1204566cfcadba2f79f6e13b83e607b845171006141edb"
+    }
+  },
+  "samples_per_question": 2,
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12"
+}

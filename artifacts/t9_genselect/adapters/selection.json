@@ -1,0 +1,7 @@
+{
+  "learning_rate": 0.0001,
+  "output": "artifacts/t9_genselect/adapters/selector",
+  "sha256": "c6d4aa3fc53b93e5fadfa661cba8460cadf46d62689a5d8ee1e7463004add74d",
+  "source": "artifacts/t9_genselect/hp/lr_1em04/trainer/checkpoints/checkpoint-47",
+  "source_epoch": 0.5013333333333333
+}

@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "ddp_optimizer_checksum_match": true,
+    "distributed_logits_match_single_4090": true,
+    "generation_reproducibility_and_resume": true,
+    "group_weights_byte_identical": true,
+    "model_smokes_distinct_uuid": true,
+    "predictions_byte_identical": true,
+    "two_model_load_smokes": true
+  },
+  "ddp_smoke": {
+    "bytes": 577,
+    "path": "artifacts/t12_cmu_orm/hardware-smoke/ddp-smoke.json",
+    "sha256": "c08e81ba101a38fecd4acbff274f6002b9666742fe82a9c69fa45e52a79d44f8"
+  },
+  "frozen_scoring_fixture_candidates": 32,
+  "generation_smoke": {
+    "bytes": 796,
+    "path": "artifacts/t12_cmu_orm/hardware-smoke/generation-smoke.json",
+    "sha256": "2f7212688be04a4e3781dfb9228d77ab10ca575c41e83332cffdbae4acdbaea0"
+  },
+  "model_smokes": [
+    {
+      "bytes": 412,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/model-smoke-gpu0.json",
+      "sha256": "ca3ae4c05f077678b2868cc461dbf4cfc2ea892be68e08c9eb69bef5a26a7ad6"
+    },
+    {
+      "bytes": 412,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/model-smoke-gpu1.json",
+      "sha256": "40c08f0aa2980af2d4ce2f1ba3ae35f23b08a1b02c68ede3c1dd2a976d24269e"
+    }
+  ],
+  "passed": true,
+  "schema_version": 1,
+  "score_compare": {
+    "bytes": 126,
+    "path": "artifacts/t12_cmu_orm/scoring-smoke/score-compare.json",
+    "sha256": "e33bb1cdbc993bb1b02fd067c2b2f321baa4d9bda9843fc4096e91aff951bf55"
+  },
+  "status": "complete",
+  "task": "T12"
+}

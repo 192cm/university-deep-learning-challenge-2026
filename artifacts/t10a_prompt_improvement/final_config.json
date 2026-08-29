@@ -1,0 +1,94 @@
+{
+  "adopted": false,
+  "decision": {
+    "adopted": false,
+    "adopted_arm": null,
+    "arms": {
+      "B": {
+        "arm": "B",
+        "criteria": {
+          "exact_mcnemar_p_below_0_05": false,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "exact_mcnemar_p": 0.6258605795002065,
+          "format_drop_pp": -2.734375,
+          "hard_drop_pp": -0.5454545454545434,
+          "union_delta_pp": 0.21407546160021407,
+          "union_invalid_increase_pp": -0.15219427348140221
+        },
+        "prompt": "strong_cot",
+        "status": "hold"
+      },
+      "C": {
+        "arm": "C",
+        "criteria": {
+          "exact_mcnemar_p_below_0_05": false,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "exact_mcnemar_p": 0.9424925696532238,
+          "format_drop_pp": -3.125,
+          "hard_drop_pp": 1.2727272727272754,
+          "union_delta_pp": 0.05351886540005352,
+          "union_invalid_increase_pp": 0.5736553385068237
+        },
+        "prompt": "cot_boxed",
+        "status": "hold"
+      },
+      "D": {
+        "arm": "D",
+        "criteria": {
+          "exact_mcnemar_p_below_0_05": false,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "exact_mcnemar_p": 0.2542469517320609,
+          "format_drop_pp": -0.390625,
+          "hard_drop_pp": 0.363636363636366,
+          "union_delta_pp": -0.45491035590045487,
+          "union_invalid_increase_pp": 0.3587436446347338
+        },
+        "prompt": "cot_brief",
+        "status": "reject"
+      }
+    },
+    "final_arm": "A",
+    "final_prompt_name": "base",
+    "primary_order": [
+      "C",
+      "D",
+      "B"
+    ],
+    "reason": "At least one candidate improved but no candidate passed every adoption gate.",
+    "status": "hold"
+  },
+  "final_strategy": {
+    "arm": "A",
+    "k": 32,
+    "max_new_tokens": 2048,
+    "prompt_name": "base",
+    "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "vote": "unfiltered equal-weight majority"
+  },
+  "schema_version": 1,
+  "status": "hold",
+  "t10b_base_template": {
+    "prompt_name": "base",
+    "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "reason": "At least one candidate improved but no candidate passed every adoption gate.",
+    "source_task": "T8"
+  },
+  "task": "T10a"
+}

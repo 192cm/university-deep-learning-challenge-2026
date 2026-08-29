@@ -1,0 +1,54 @@
+{
+  "actual_epoch": 0.256,
+  "checkpoint": "artifacts/t9_genselect/hp/lr_3em05/trainer/checkpoints/checkpoint-24",
+  "checkpoint_step": 24,
+  "created_at_utc": "2026-08-22T20:02:01.127386+00:00",
+  "learning_rate": 3e-05,
+  "metrics": {
+    "answer_accuracy": 0.196875,
+    "candidate_final_answer_mismatch_rate": 0.196875,
+    "cases": 320,
+    "correct": 63,
+    "output_tokens": {
+      "max": 256,
+      "mean": 138.271875,
+      "median": 125.0,
+      "p95": 256.0
+    },
+    "resolution_paths": {
+      "selected_candidate_answer": 289,
+      "selector_final_answer_fallback": 31
+    },
+    "selected_position_counts": {
+      "1": 26,
+      "10": 85,
+      "12": 44,
+      "13": 26,
+      "14": 60,
+      "15": 17,
+      "16": 30,
+      "7": 1,
+      "8": 1
+    },
+    "valid_candidate_number_rate": 0.90625
+  },
+  "schema_version": 1,
+  "sources": {
+    "cases": {
+      "bytes": 2888966,
+      "path": "data/genselect/validation.jsonl",
+      "rows": 320,
+      "sha256": "fd94fcb1b9fcbfbf3f76414533f50200532693a25275fcc35f143a77ca88930e"
+    },
+    "checkpoint_adapter_sha256": "8903a2c4fceda07c591120873e2809ed4460c2f1e09605c17bb2c93c2f20c55d",
+    "generations": {
+      "bytes": 305334,
+      "path": "artifacts/t9_genselect/hp/lr_3em05/validation/checkpoint-24/generations.jsonl",
+      "rows": 320,
+      "sha256": "613c9252bf5f692cdc45e1c4fe41354bce299a9b5ca70a04e8283fd3e588d6ad"
+    }
+  },
+  "stage": "selection_validation",
+  "status": "complete",
+  "task": "T9"
+}

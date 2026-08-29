@@ -1,0 +1,103 @@
+{
+  "calibration": {
+    "fit_brier": 0.19969112037609527,
+    "method": "class_prior_logit_correction",
+    "shift": 0.336234805623481,
+    "temperature": 1.0
+  },
+  "created_at_utc": "2026-08-28T19:58:09.671326+00:00",
+  "development_scope": "operational_single_holdout_not_original_nested_oof",
+  "evaluation": {
+    "delta_group_vs_raw_pp": 0.31645569620253167,
+    "delta_override_vs_raw_pp": 0.0,
+    "fallback_exclusions": 1,
+    "group_selector_accuracy": 0.7689873417721519,
+    "is_original_nested_oof": false,
+    "override_fit_questions": 328,
+    "override_metrics": {
+      "breaks": 0,
+      "coverage": 0.0,
+      "net_gain": 0,
+      "overrides": 0,
+      "questions": 316,
+      "rescues": 0,
+      "wrong_to_wrong": 0,
+      "wrong_to_wrong_rate": 0.0
+    },
+    "partitions_are_template_group_disjoint": true,
+    "questions": 316,
+    "raw_majority_accuracy": 0.7658227848101266,
+    "schema_version": 1,
+    "scope": "operational_single_holdout_partitioned_evaluation",
+    "selective_override_accuracy": 0.7658227848101266,
+    "selector_fit_questions": 359,
+    "task": "T12b-4970-override"
+  },
+  "evaluation_partition": 2,
+  "fallback_count": 5,
+  "fallback_exclusion_count": 1,
+  "fallback_exclusion_ids": [
+    "train-006720"
+  ],
+  "group_selector": {
+    "alpha": 1.440881717652158,
+    "beta": 1.0273162585597724,
+    "gamma": 0.2841477714226564,
+    "iterations": 2000,
+    "l2": 0.001,
+    "learning_rate": 0.05,
+    "tie_break": [
+      "first_generation_index",
+      "integer_value_ascending"
+    ]
+  },
+  "inputs": {
+    "generations": {
+      "bytes": 31685095,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/development/generations.jsonl",
+      "sha256": "3fc21d3457d95638c11229aa577020aefcaf99abec25e8e48928aa01aba3ac33"
+    },
+    "label_blind_freeze": {
+      "bytes": 1634,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/development/label-blind-freeze.json",
+      "sha256": "28017ddf323be65e4a0e0c675bc0f04f5febee0ad51ced9a98c9b093d6d932c4"
+    },
+    "scores": {
+      "bytes": 6168192,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/development/scoring/candidate-scores.jsonl",
+      "sha256": "cfe6a5cf14580210889f6ef85f674442457c5b689c44f526a52c7dc426ea0dd6"
+    }
+  },
+  "loss": {
+    "arm": "B1",
+    "lambda_list": 0.0,
+    "lambda_pair": 1.0,
+    "tau": 1.0
+  },
+  "override_fit_metrics": {
+    "breaks": 0,
+    "coverage": 0.0,
+    "net_gain": 0,
+    "overrides": 0,
+    "questions": 328,
+    "rescues": 0,
+    "wrong_to_wrong": 0,
+    "wrong_to_wrong_rate": 0.0
+  },
+  "override_fit_partition": 1,
+  "override_policy": {
+    "g_min": 0.0,
+    "m_max": 0.0,
+    "n_min": 1.0,
+    "r_max": 0.0
+  },
+  "override_policy_selection_status": "no_guardrail_match_preserve_raw_zero_overrides",
+  "schema_version": 1,
+  "selector_fit_partition": 0,
+  "status": "complete",
+  "strict_t12b_nested_oof_completed": false,
+  "task": "T12b-4970-override"
+}

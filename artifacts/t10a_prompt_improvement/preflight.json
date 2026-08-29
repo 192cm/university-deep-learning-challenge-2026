@@ -1,0 +1,77 @@
+{
+  "created_at_utc": "2026-08-24T08:07:49.352257+00:00",
+  "ground_truth_loaded": false,
+  "prompts": {
+    "base": {
+      "sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+      "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+      "utf8_bytes": 163
+    },
+    "cot_boxed": {
+      "sha256": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+      "template": "Think through this problem step by step, showing your reasoning clearly.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+      "utf8_bytes": 250
+    },
+    "cot_brief": {
+      "sha256": "ac00dd5497039e7af7806146047ac6646e386328c5561e5613813a92b6f60061",
+      "template": "Solve the following problem step by step. Show your work, then state the final answer as\nFINAL_ANSWER: <answer>.\n\nProblem:\n{question}",
+      "utf8_bytes": 133
+    },
+    "strong_cot": {
+      "sha256": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b",
+      "template": "Solve the following problem carefully.\n1. Identify all relevant quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the reasoning and calculation.\nWrite the final answer on the last line exactly as FINAL_ANSWER: <answer>.\nDo not write anything after that line.\n\nProblem:\n{question}",
+      "utf8_bytes": 316
+    }
+  },
+  "reused_arms": {
+    "A": {
+      "generation_wall_seconds": 11210.403731103987,
+      "generations": {
+        "bytes": 234212343,
+        "path": "artifacts/t8_self_consistency/generations.jsonl",
+        "rows": 119584,
+        "sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54"
+      },
+      "metadata": {
+        "bytes": 3384272,
+        "path": "artifacts/t8_self_consistency/run-metadata.json",
+        "sha256": "419a84f14aff7cd7f8a42dedc1872600d1aa193704c5cd4f993abadca89a7abd"
+      },
+      "new_generations": 0,
+      "prompt": {
+        "sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+        "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+        "utf8_bytes": 163
+      }
+    },
+    "B": {
+      "generation_wall_seconds": 13942.581472988,
+      "generations": {
+        "bytes": 299788825,
+        "path": "artifacts/t8_2_cot_routing/strong_cot/generations.jsonl",
+        "rows": 119584,
+        "sha256": "3d4ad7d17fd252a313ca520ca28513ce02fd21ca28698074ea1b05695bbcb4a2"
+      },
+      "metadata": {
+        "bytes": 4156120,
+        "path": "artifacts/t8_2_cot_routing/strong_cot/run-metadata.json",
+        "sha256": "6c7ec5ecb760490878fb0313b2ba65e42953ff37f78e7137943c84e3dbf2b9f1"
+      },
+      "new_generations": 0,
+      "prompt": {
+        "sha256": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b",
+        "template": "Solve the following problem carefully.\n1. Identify all relevant quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the reasoning and calculation.\nWrite the final answer on the last line exactly as FINAL_ANSWER: <answer>.\nDo not write anything after that line.\n\nProblem:\n{question}",
+        "utf8_bytes": 316
+      }
+    }
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T10a",
+  "union_ids": {
+    "bytes": 48581,
+    "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+    "rows": 3737,
+    "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+  }
+}

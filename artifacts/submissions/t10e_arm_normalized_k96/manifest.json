@@ -1,0 +1,314 @@
+{
+  "config": {
+    "bytes": 3581,
+    "path": "configs/t10e_arm_normalized_voting.json",
+    "sha256": "c4953d644c194cadb11f4cbc24cd38da3482d4fdf0ded0106701c6646e9964c2"
+  },
+  "created_at_utc": "2026-08-26T18:25:32.915144+00:00",
+  "ground_truth_contract": {
+    "holdout_predictions_written_before_labels_loaded": true,
+    "labels_used_for_generation_filtering_or_voting": false,
+    "leaderboard_labels_available": false
+  },
+  "holdout": {
+    "candidate": {
+      "accuracy": 0.7128712871287128,
+      "correct": 2664,
+      "invalid_prediction_rate": 0.0,
+      "invalid_predictions": 0,
+      "questions": 3737
+    },
+    "gate": {
+      "checks": {
+        "effect_size_vs_t8": true,
+        "format_guardrail_vs_t8": true,
+        "hard_guardrail_vs_t8": true,
+        "invalid_guardrail_vs_t8": true,
+        "significance_vs_t8": true
+      },
+      "confirmatory_adoption": false,
+      "criteria": {
+        "maximum_exact_mcnemar_p_vs_t8": 0.05,
+        "maximum_hard_or_format_drop_vs_t8_pp": 2.0,
+        "maximum_union_invalid_increase_vs_t8_pp": 1.0,
+        "minimum_union_delta_vs_t8_pp": 1.5
+      },
+      "numerically_passes": true,
+      "reason": "Exploratory because arm normalization was proposed after prior holdout results were known. Passing the numerical T8 gate does not constitute independent confirmatory adoption; the incremental comparison against T10d must be reported separately.",
+      "status": "exploratory_passes_numerical_t8_gate"
+    },
+    "incremental_comparison": {
+      "both_correct": 2649,
+      "both_wrong": 1062,
+      "candidate_accuracy": 0.7128712871287128,
+      "candidate_correct_reference_wrong": 15,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        -0.16037119895018367,
+        0.3744466605503977
+      ],
+      "delta_pp": 0.10703773080010703,
+      "discordant": 26,
+      "paired_bootstrap_95_ci_pp": {
+        "high_pp": 0.3746320578003747,
+        "low_pp": -0.16055659620016055,
+        "method": "paired percentile bootstrap over per-question exact-match differences",
+        "replicates": 100000,
+        "seed": 42
+      },
+      "questions": 3737,
+      "reference_accuracy": 0.7118009098207118,
+      "reference_correct_candidate_wrong": 11,
+      "two_sided_exact_p": 0.557197093963623
+    },
+    "primary_comparison": {
+      "both_correct": 2536,
+      "both_wrong": 1019,
+      "candidate_accuracy": 0.7128712871287128,
+      "candidate_correct_reference_wrong": 128,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        1.2754963809198083,
+        2.684899658684152
+      ],
+      "delta_pp": 1.9801980198019802,
+      "discordant": 182,
+      "paired_bootstrap_95_ci_pp": {
+        "high_pp": 2.675943270002676,
+        "low_pp": 1.2844527696012844,
+        "method": "paired percentile bootstrap over per-question exact-match differences",
+        "replicates": 100000,
+        "seed": 42
+      },
+      "questions": 3737,
+      "reference_accuracy": 0.693069306930693,
+      "reference_correct_candidate_wrong": 54,
+      "two_sided_exact_p": 4.1199834087486815e-08
+    }
+  },
+  "leaderboard": {
+    "accuracy_computed": false,
+    "aggregation": {
+      "active_arm_counts": {
+        "2": 1,
+        "3": 830
+      },
+      "changed_vs_flat_questions": 9,
+      "invalid_prediction_rate": 0.0,
+      "invalid_predictions": 0,
+      "maximum_source_candidates": 79776,
+      "questions": 831,
+      "selected_candidates_after_filter_and_fallback": 75038,
+      "tie_questions": 3,
+      "tie_rate": 0.0036101083032490976,
+      "valid_votes": 74976
+    },
+    "changed_vs_source_filtered_answer": {
+      "base": 60,
+      "cot_boxed": 63,
+      "rft_r1": 74
+    },
+    "changed_vs_t10d_flat": 9,
+    "input": "data/deep_chal_math_leaderboard_filtered.csv",
+    "labels_available": false,
+    "per_arm_all_votes_filtered_fallback_count": {
+      "base": 5,
+      "cot_boxed": 2,
+      "rft_r1": 0
+    },
+    "rows": 831,
+    "t10d_flat_reference": {
+      "byte_frozen_predictions_match": true,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/leaderboard-predictions.jsonl",
+      "rows": 831,
+      "sha256": "9998cc529c749b30737e4d684886a6521c1bb045a4ca98736519a6f839b19708"
+    }
+  },
+  "leaderboard_input": {
+    "bytes": 206340,
+    "path": "data/deep_chal_math_leaderboard_filtered.csv",
+    "rows": 831,
+    "sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1"
+  },
+  "outputs": {
+    "comparison_markdown": {
+      "bytes": 941,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/comparison.md",
+      "sha256": "a4e6ec6a81e0f31e5ef26dec1159fc0e60f908a96cb379dd9d1c3fecce9ff179"
+    },
+    "holdout_comparison": {
+      "bytes": 18152,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/holdout-comparison.json",
+      "sha256": "cb2310f76b4001256689111e8bf7de478979b5f63360726533f14165d1392e14"
+    },
+    "holdout_predictions": {
+      "bytes": 6305874,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/holdout-predictions.jsonl",
+      "rows": 3737,
+      "sha256": "73ab44293addf9a31e138896dfa8dfdb394ab094b2068e4779d45ea1b04b55c2"
+    },
+    "leaderboard_audit": {
+      "bytes": 1041,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/leaderboard-audit.json",
+      "sha256": "637a20b4842fe118af25723d419dee3818c05d9823718fa69a6b98b372c07338"
+    },
+    "leaderboard_predictions": {
+      "bytes": 1238068,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/leaderboard-predictions.jsonl",
+      "rows": 831,
+      "sha256": "a72eb086d83ca41dfa00c460d31f75f158a03bd7022849cad1ef2b379cda4388"
+    },
+    "root_submission": {
+      "bytes": 12573,
+      "path": "submission.csv",
+      "rows": 831,
+      "sha256": "19920b909702da2e1b7037d60fed8616b912a6728c6e12135bc53150c62a26d8"
+    },
+    "submission": {
+      "bytes": 12573,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/submission.csv",
+      "rows": 831,
+      "sha256": "19920b909702da2e1b7037d60fed8616b912a6728c6e12135bc53150c62a26d8"
+    },
+    "tests": {
+      "bytes": 1742,
+      "path": "artifacts/submissions/t10e_arm_normalized_k96/tests.xml",
+      "sha256": "02321f288098d7c5e7260e0a345ee374673b0d16b348dcdca94f844c791e2551"
+    }
+  },
+  "protected_sources_unchanged": true,
+  "regulatory_status": {
+    "classification": "same-base local multi-sampling plus answer-string distribution aggregation; no arithmetic or semantic verifier",
+    "remaining_uncertainty": "Retain T10d's request for written organizer confirmation of the 96-sample composition and extraction-path/termination-based vote exclusion; also confirm that per-arm answer-frequency normalization is accepted as majority-vote post-processing.",
+    "sample_count_cap_found_in_recorded_rules": false
+  },
+  "root_submission_before": {
+    "bytes": 12573,
+    "exists": true,
+    "sha256": "19920b909702da2e1b7037d60fed8616b912a6728c6e12135bc53150c62a26d8"
+  },
+  "schema_version": 1,
+  "source_config_task": "T10d",
+  "source_identity_after": {
+    "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl": {
+      "bytes": 73944693,
+      "canonical_lf_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1",
+      "crlf_lines_normalized_for_identity": 0,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl",
+      "raw_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1"
+    },
+    "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl": {
+      "bytes": 64395227,
+      "canonical_lf_sha256": "dc773b52afdb64b3ae9a758f0f3f4dbc0e39a4516b215d83f5d21c68fd0626cf",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+      "raw_sha256": "a7b277a0c5e0c8f7b66b595b0a31d97d2e6180405a452e79b0a25a73f0cf1cd5"
+    },
+    "artifacts/submissions/t8_majority_k32/generations.jsonl": {
+      "bytes": 59843830,
+      "canonical_lf_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "raw_sha256": "f01d4cc9028611b1a8e2963a1df959d8f10aa04a387ac6c21863200863ff84f0"
+    },
+    "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl": {
+      "bytes": 271779042,
+      "canonical_lf_sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+      "raw_sha256": "4b0d17aa85c08ff8343c6fdf3196ce8b773da880b8fc3d00775d0c853d7eed70"
+    },
+    "artifacts/t8_1_rft_self_consistency/generations.jsonl": {
+      "bytes": 251002623,
+      "canonical_lf_sha256": "51e105d7c682f2a72f9ca7069ef907f401af39ed21b4fdb234164f16def5ca1a",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+      "raw_sha256": "6a35902feaa65178099104bc4d537fc729d4488ba8e564283b340bb30a58259f"
+    },
+    "artifacts/t8_self_consistency/generations.jsonl": {
+      "bytes": 234331927,
+      "canonical_lf_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21"
+    }
+  },
+  "source_identity_before": {
+    "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl": {
+      "bytes": 73944693,
+      "canonical_lf_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1",
+      "crlf_lines_normalized_for_identity": 0,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl",
+      "raw_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1"
+    },
+    "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl": {
+      "bytes": 64395227,
+      "canonical_lf_sha256": "dc773b52afdb64b3ae9a758f0f3f4dbc0e39a4516b215d83f5d21c68fd0626cf",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+      "raw_sha256": "a7b277a0c5e0c8f7b66b595b0a31d97d2e6180405a452e79b0a25a73f0cf1cd5"
+    },
+    "artifacts/submissions/t8_majority_k32/generations.jsonl": {
+      "bytes": 59843830,
+      "canonical_lf_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "raw_sha256": "f01d4cc9028611b1a8e2963a1df959d8f10aa04a387ac6c21863200863ff84f0"
+    },
+    "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl": {
+      "bytes": 271779042,
+      "canonical_lf_sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+      "raw_sha256": "4b0d17aa85c08ff8343c6fdf3196ce8b773da880b8fc3d00775d0c853d7eed70"
+    },
+    "artifacts/t8_1_rft_self_consistency/generations.jsonl": {
+      "bytes": 251002623,
+      "canonical_lf_sha256": "51e105d7c682f2a72f9ca7069ef907f401af39ed21b4fdb234164f16def5ca1a",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+      "raw_sha256": "6a35902feaa65178099104bc4d537fc729d4488ba8e564283b340bb30a58259f"
+    },
+    "artifacts/t8_self_consistency/generations.jsonl": {
+      "bytes": 234331927,
+      "canonical_lf_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21"
+    }
+  },
+  "source_t10d_config": {
+    "bytes": 5142,
+    "path": "configs/t10d_flat_filtered_majority_k96.json",
+    "sha256": "5953fa2df41dbfdc994568558ed03a258c18adb3f643200ce4070083eb8df6de"
+  },
+  "status": "complete",
+  "strategy": {
+    "aggregation": "sum_per_arm_empirical_answer_share",
+    "arms": [
+      "base",
+      "cot_boxed",
+      "rft_r1"
+    ],
+    "k_per_arm": 32,
+    "maximum_source_candidates_per_question": 96,
+    "new_generations": 0,
+    "new_training": 0,
+    "vote_filter": {
+      "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+      "combine_conditions": "or",
+      "exclude_hit_max_new_tokens": true,
+      "excluded_extraction_paths": [
+        "last_integer",
+        "standalone_last_line"
+      ],
+      "kept_path_weights": {
+        "boxed": 1.0,
+        "final_answer_marker": 1.0
+      },
+      "majority_tie_break": "first generated answer among tied top vote counts",
+      "minimum_distinct_explicit_candidates": 2
+    }
+  },
+  "task": "T10e arm-normalized filtered voting@96"
+}

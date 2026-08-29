@@ -1,0 +1,510 @@
+{
+  "coverage": {
+    "cross_shard_writes": 0,
+    "duplicates": 0,
+    "expected": 8,
+    "missing": 0,
+    "observed": 8
+  },
+  "effective_config": {
+    "engine": "vllm",
+    "generation": {
+      "do_sample": true,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 64,
+      "n": 2,
+      "seed": 42,
+      "temperature": 0.8,
+      "top_p": 0.95
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": false,
+      "max_batch_size": 128,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "schema_version": 1,
+    "task": "T8",
+    "vllm": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 256,
+      "request_chunk_size": 64
+    }
+  },
+  "kind": "generation",
+  "manifest": {
+    "manifest_sha256": "97f443dac453c982b608beb6fcb2531abac173a6c09510422defade74aad7296",
+    "path": "artifacts/t12_cmu_orm/hardware-smoke/generation-shard-manifest.json",
+    "sha256": "274e6c57d027bdc8167a14d9acde841f40a84570c77a17e62422305c1e9d21c0"
+  },
+  "output": {
+    "bytes": 6579,
+    "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/merged.jsonl",
+    "rows": 8,
+    "sha256": "8c843f06928b742c6964d9d56da766f1166d531b03f8fd72a99c1885a3cdb05f"
+  },
+  "schema_version": 1,
+  "shards": [
+    {
+      "logical_rank": 0,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/shard-0.jsonl",
+      "rows": 4,
+      "sha256": "7a8cc2c6bbdab18f1eb91a35eb695626b893990fff8672038494735295fd48f9"
+    },
+    {
+      "logical_rank": 1,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/shard-1.jsonl",
+      "rows": 4,
+      "sha256": "3f1c77c2d5bed90b7298379dff1be5768ad5db4142600b742c8ef0f119f54758"
+    }
+  ],
+  "status": "complete",
+  "workers": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-08-27T20:44:02.903632+00:00",
+          "generation_metadata": {
+            "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/generation-metadata-0.json",
+            "sha256": "89313f5c568a58e50f43e6afeb4c61133a5c7bfd26ed9d4324f208b3af7fd6d6"
+          },
+          "generation_runtime": {
+            "generation_wall_seconds": 2.2548283070791513,
+            "generations_per_second": 1.7739709881421086,
+            "gpu_monitor": {
+              "active_utilization_gpu_pct": {
+                "max": 100.0,
+                "mean": 100.0,
+                "median": 100.0,
+                "min": 100.0,
+                "p10": 100.0,
+                "p90": 100.0
+              },
+              "error": null,
+              "fraction_active_samples_at_least_90_pct": 1.0,
+              "fraction_all_samples_at_least_90_pct": 0.4,
+              "peak_memory_used_mib": 23752.25,
+              "raw_samples": [
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270924.891247618,
+                  "utilization_gpu_pct": 0.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270925.391506733,
+                  "utilization_gpu_pct": 0.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270925.891728538,
+                  "utilization_gpu_pct": 0.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270926.391915676,
+                  "utilization_gpu_pct": 100.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270926.892182833,
+                  "utilization_gpu_pct": 100.0
+                }
+              ],
+              "samples": 5,
+              "sampling_interval_seconds": 0.5,
+              "utilization_gpu_pct": {
+                "max": 100.0,
+                "mean": 40.0,
+                "median": 0.0,
+                "min": 0.0,
+                "p10": 0.0,
+                "p90": 100.0
+              }
+            },
+            "invocation_wall_seconds": 206.1644905838184,
+            "oom_events": 0,
+            "torch_peak_allocated_mib": 0.0
+          },
+          "gpu": {
+            "name": "NVIDIA GeForce RTX 4090",
+            "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+          },
+          "oom_events": 0,
+          "output": {
+            "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/shard-0.jsonl",
+            "rows": 4,
+            "sha256": "7a8cc2c6bbdab18f1eb91a35eb695626b893990fff8672038494735295fd48f9"
+          },
+          "physical_index": 0,
+          "started_at_utc": "2026-08-27T20:40:36.680765+00:00",
+          "status": "complete",
+          "wall_seconds": 206.22286234004423
+        }
+      ],
+      "effective_config": {
+        "engine": "vllm",
+        "generation": {
+          "do_sample": true,
+          "max_input_tokens": 2048,
+          "max_new_tokens": 64,
+          "n": 2,
+          "seed": 42,
+          "temperature": 0.8,
+          "top_p": 0.95
+        },
+        "hf": {
+          "attn_implementation": "sdpa",
+          "bnb_4bit_compute_dtype": "bfloat16",
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_use_double_quant": true,
+          "load_in_4bit": false,
+          "max_batch_size": 128,
+          "max_batch_tokens": 294912
+        },
+        "model": {
+          "cache_dir": "/workspace/.hf_home/hub",
+          "hf_home": "/workspace/.hf_home",
+          "id": "Qwen/Qwen2.5-3B-Instruct",
+          "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+        },
+        "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+        "schema_version": 1,
+        "task": "T8",
+        "vllm": {
+          "batch_invariant": true,
+          "dtype": "bfloat16",
+          "enable_prefix_caching": true,
+          "enforce_eager": false,
+          "gpu_memory_utilization": 0.92,
+          "max_model_len": 4096,
+          "max_num_seqs": 256,
+          "request_chunk_size": 64
+        }
+      },
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+      },
+      "logical_rank": 0,
+      "manifest_path": "artifacts/t12_cmu_orm/hardware-smoke/generation-shard-manifest.json",
+      "manifest_sha256": "97f443dac453c982b608beb6fcb2531abac173a6c09510422defade74aad7296",
+      "physical_index": 0,
+      "schema_version": 1,
+      "status": "complete",
+      "successful_attempt": {
+        "attempt": 1,
+        "completed_at_utc": "2026-08-27T20:44:02.903632+00:00",
+        "generation_metadata": {
+          "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/generation-metadata-0.json",
+          "sha256": "89313f5c568a58e50f43e6afeb4c61133a5c7bfd26ed9d4324f208b3af7fd6d6"
+        },
+        "generation_runtime": {
+          "generation_wall_seconds": 2.2548283070791513,
+          "generations_per_second": 1.7739709881421086,
+          "gpu_monitor": {
+            "active_utilization_gpu_pct": {
+              "max": 100.0,
+              "mean": 100.0,
+              "median": 100.0,
+              "min": 100.0,
+              "p10": 100.0,
+              "p90": 100.0
+            },
+            "error": null,
+            "fraction_active_samples_at_least_90_pct": 1.0,
+            "fraction_all_samples_at_least_90_pct": 0.4,
+            "peak_memory_used_mib": 23752.25,
+            "raw_samples": [
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270924.891247618,
+                "utilization_gpu_pct": 0.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270925.391506733,
+                "utilization_gpu_pct": 0.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270925.891728538,
+                "utilization_gpu_pct": 0.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270926.391915676,
+                "utilization_gpu_pct": 100.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270926.892182833,
+                "utilization_gpu_pct": 100.0
+              }
+            ],
+            "samples": 5,
+            "sampling_interval_seconds": 0.5,
+            "utilization_gpu_pct": {
+              "max": 100.0,
+              "mean": 40.0,
+              "median": 0.0,
+              "min": 0.0,
+              "p10": 0.0,
+              "p90": 100.0
+            }
+          },
+          "invocation_wall_seconds": 206.1644905838184,
+          "oom_events": 0,
+          "torch_peak_allocated_mib": 0.0
+        },
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4090",
+          "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+        },
+        "oom_events": 0,
+        "output": {
+          "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/shard-0.jsonl",
+          "rows": 4,
+          "sha256": "7a8cc2c6bbdab18f1eb91a35eb695626b893990fff8672038494735295fd48f9"
+        },
+        "physical_index": 0,
+        "started_at_utc": "2026-08-27T20:40:36.680765+00:00",
+        "status": "complete",
+        "wall_seconds": 206.22286234004423
+      }
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-08-27T20:44:03.071177+00:00",
+          "generation_metadata": {
+            "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/generation-metadata-1.json",
+            "sha256": "e857d6ce10d45dc407182292aefcf4ef2287d421e3aafa2650a2e55b7ccf9c35"
+          },
+          "generation_runtime": {
+            "generation_wall_seconds": 2.245841170893982,
+            "generations_per_second": 1.7810698511719578,
+            "gpu_monitor": {
+              "active_utilization_gpu_pct": {
+                "max": 100.0,
+                "mean": 100.0,
+                "median": 100.0,
+                "min": 100.0,
+                "p10": 100.0,
+                "p90": 100.0
+              },
+              "error": null,
+              "fraction_active_samples_at_least_90_pct": 1.0,
+              "fraction_all_samples_at_least_90_pct": 0.4,
+              "peak_memory_used_mib": 23752.25,
+              "raw_samples": [
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270924.934612097,
+                  "utilization_gpu_pct": 0.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270925.434924971,
+                  "utilization_gpu_pct": 0.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270925.935098397,
+                  "utilization_gpu_pct": 0.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270926.435234145,
+                  "utilization_gpu_pct": 100.0
+                },
+                {
+                  "memory_used_mib": 23752.25,
+                  "monotonic_seconds": 1270926.935379203,
+                  "utilization_gpu_pct": 100.0
+                }
+              ],
+              "samples": 5,
+              "sampling_interval_seconds": 0.5,
+              "utilization_gpu_pct": {
+                "max": 100.0,
+                "mean": 40.0,
+                "median": 0.0,
+                "min": 0.0,
+                "p10": 0.0,
+                "p90": 100.0
+              }
+            },
+            "invocation_wall_seconds": 206.32457164209336,
+            "oom_events": 0,
+            "torch_peak_allocated_mib": 0.0
+          },
+          "gpu": {
+            "name": "NVIDIA GeForce RTX 4090",
+            "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+          },
+          "oom_events": 0,
+          "output": {
+            "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/shard-1.jsonl",
+            "rows": 4,
+            "sha256": "3f1c77c2d5bed90b7298379dff1be5768ad5db4142600b742c8ef0f119f54758"
+          },
+          "physical_index": 1,
+          "started_at_utc": "2026-08-27T20:40:36.679903+00:00",
+          "status": "complete",
+          "wall_seconds": 206.39126896904781
+        }
+      ],
+      "effective_config": {
+        "engine": "vllm",
+        "generation": {
+          "do_sample": true,
+          "max_input_tokens": 2048,
+          "max_new_tokens": 64,
+          "n": 2,
+          "seed": 42,
+          "temperature": 0.8,
+          "top_p": 0.95
+        },
+        "hf": {
+          "attn_implementation": "sdpa",
+          "bnb_4bit_compute_dtype": "bfloat16",
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_use_double_quant": true,
+          "load_in_4bit": false,
+          "max_batch_size": 128,
+          "max_batch_tokens": 294912
+        },
+        "model": {
+          "cache_dir": "/workspace/.hf_home/hub",
+          "hf_home": "/workspace/.hf_home",
+          "id": "Qwen/Qwen2.5-3B-Instruct",
+          "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+        },
+        "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+        "schema_version": 1,
+        "task": "T8",
+        "vllm": {
+          "batch_invariant": true,
+          "dtype": "bfloat16",
+          "enable_prefix_caching": true,
+          "enforce_eager": false,
+          "gpu_memory_utilization": 0.92,
+          "max_model_len": 4096,
+          "max_num_seqs": 256,
+          "request_chunk_size": 64
+        }
+      },
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+      },
+      "logical_rank": 1,
+      "manifest_path": "artifacts/t12_cmu_orm/hardware-smoke/generation-shard-manifest.json",
+      "manifest_sha256": "97f443dac453c982b608beb6fcb2531abac173a6c09510422defade74aad7296",
+      "physical_index": 1,
+      "schema_version": 1,
+      "status": "complete",
+      "successful_attempt": {
+        "attempt": 1,
+        "completed_at_utc": "2026-08-27T20:44:03.071177+00:00",
+        "generation_metadata": {
+          "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/generation-metadata-1.json",
+          "sha256": "e857d6ce10d45dc407182292aefcf4ef2287d421e3aafa2650a2e55b7ccf9c35"
+        },
+        "generation_runtime": {
+          "generation_wall_seconds": 2.245841170893982,
+          "generations_per_second": 1.7810698511719578,
+          "gpu_monitor": {
+            "active_utilization_gpu_pct": {
+              "max": 100.0,
+              "mean": 100.0,
+              "median": 100.0,
+              "min": 100.0,
+              "p10": 100.0,
+              "p90": 100.0
+            },
+            "error": null,
+            "fraction_active_samples_at_least_90_pct": 1.0,
+            "fraction_all_samples_at_least_90_pct": 0.4,
+            "peak_memory_used_mib": 23752.25,
+            "raw_samples": [
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270924.934612097,
+                "utilization_gpu_pct": 0.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270925.434924971,
+                "utilization_gpu_pct": 0.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270925.935098397,
+                "utilization_gpu_pct": 0.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270926.435234145,
+                "utilization_gpu_pct": 100.0
+              },
+              {
+                "memory_used_mib": 23752.25,
+                "monotonic_seconds": 1270926.935379203,
+                "utilization_gpu_pct": 100.0
+              }
+            ],
+            "samples": 5,
+            "sampling_interval_seconds": 0.5,
+            "utilization_gpu_pct": {
+              "max": 100.0,
+              "mean": 40.0,
+              "median": 0.0,
+              "min": 0.0,
+              "p10": 0.0,
+              "p90": 100.0
+            }
+          },
+          "invocation_wall_seconds": 206.32457164209336,
+          "oom_events": 0,
+          "torch_peak_allocated_mib": 0.0
+        },
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4090",
+          "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+        },
+        "oom_events": 0,
+        "output": {
+          "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-a/shard-1.jsonl",
+          "rows": 4,
+          "sha256": "3f1c77c2d5bed90b7298379dff1be5768ad5db4142600b742c8ef0f119f54758"
+        },
+        "physical_index": 1,
+        "started_at_utc": "2026-08-27T20:40:36.679903+00:00",
+        "status": "complete",
+        "wall_seconds": 206.39126896904781
+      }
+    }
+  ]
+}

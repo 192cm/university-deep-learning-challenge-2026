@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "existing_t10_fallback_preserved": true,
+    "holdout_generation_rows": 0,
+    "holdout_generations_created": false,
+    "preregistered_gate_enforced": true,
+    "tests_passed": true
+  },
+  "created_at_utc": "2026-08-27T04:11:17.594685+00:00",
+  "decision": "teacher_gate_failed",
+  "outputs": {
+    "comparison": {
+      "bytes": 551,
+      "path": "artifacts/t11_aimo_generation_quality/comparison.md",
+      "sha256": "0db0b951bf8dd0799aadee3e5a350b264457c99964e99e29b84a8cac7810d8e1"
+    }
+  },
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "bytes": 9532,
+      "path": "configs/t11_aimo_generation_quality.json",
+      "sha256": "2584181f0a24c4cc4a57c4f0760fca0ba5ee55405250500c4526214b9ab765ba"
+    },
+    "difficulty_audit": {
+      "bytes": 5032,
+      "path": "data/t11_aimo_generation_quality/difficulty-audit.json",
+      "sha256": "f3fda6f2985561c70d419536b04d97960896484e23f62feb1497193c4e74058d"
+    },
+    "teacher_preflight": {
+      "bytes": 10642,
+      "path": "artifacts/t11_aimo_generation_quality/teacher-preflight.json",
+      "sha256": "59484f387c30336242592f310b146404c2268171bb539f98d9a3eb4135616606"
+    },
+    "tests": {
+      "bytes": 8424,
+      "path": "artifacts/t11_aimo_generation_quality/tests.xml",
+      "sha256": "3b3817784800699813df8c8bfe90e6f105a54ddde1b7cc95e3a2dfdd3fb2aaa0"
+    }
+  },
+  "status": "complete",
+  "task": "T11"
+}

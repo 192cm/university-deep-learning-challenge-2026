@@ -1,0 +1,658 @@
+{
+  "completion_checks": {
+    "all_four_policy_predictions_frozen_before_labels": true,
+    "all_four_split_guardrails_recorded": true,
+    "all_four_union_mcnemar_reports_recorded": true,
+    "binary_vs_continuous_difference_quantified": true,
+    "config_sha256_recorded": true,
+    "continuous_policy_agreement_recorded": true,
+    "cross_validation_overfit_decision_recorded": true,
+    "five_fold_cv_for_each_policy_recorded": true,
+    "focused_and_regression_tests_passed": true,
+    "policy1_t8_3_prediction_bytes_identical": true,
+    "preregistered_decision_recorded": true,
+    "presentation_record_updated": true,
+    "protected_t8_through_t10b_hashes_unchanged": true,
+    "source_generation_pool_unchanged": true,
+    "t10_end_to_end_vs_original_t8_recorded": true,
+    "t10a_t10b_adopted_pool_combination_recorded": true,
+    "weighted_tie_and_fallback_recorded": true
+  },
+  "created_at_utc": "2026-08-26T12:05:42.539744+00:00",
+  "decision": {
+    "adopted": false,
+    "final_policy": "unfiltered_majority_k32",
+    "policy_decisions": {
+      "policy1": {
+        "adoption_eligible": false,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 6.802593482929839e-10,
+          "format_delta_pp": 2.734375,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.4717687985014718,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy1",
+        "reason": "T8-3 byte-reproduction control; preregistration excludes policy 1 from independent adoption",
+        "status": "control"
+      },
+      "policy2": {
+        "adoption_eligible": true,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 6.209495737562187e-08,
+          "format_delta_pp": 1.5625,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.1774150388011775,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy2",
+        "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+        "status": "hold"
+      },
+      "policy3": {
+        "adoption_eligible": true,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 6.209495737562187e-08,
+          "format_delta_pp": 1.5625,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.1774150388011775,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy3",
+        "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+        "status": "hold"
+      },
+      "policy4": {
+        "adoption_eligible": true,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 8.909847968334874e-07,
+          "format_delta_pp": 1.953125,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.1506556061011506,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy4",
+        "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+        "status": "hold"
+      }
+    },
+    "reason": "policy2 had the largest positive eligible delta but did not pass every adoption gate; retain unfiltered T8 majority@32",
+    "selected_candidate_policy": "policy2",
+    "status": "hold"
+  },
+  "elapsed_seconds": 14.719989499993972,
+  "environment": {
+    "platform": "macOS-26.5-arm64-arm-64bit",
+    "python_version": "3.12.13"
+  },
+  "final_strategy": {
+    "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+    "generation_pool_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+    "k": 32,
+    "max_new_tokens": 2048,
+    "prompt": "T8 base prompt",
+    "reason": "policy2 had the largest positive eligible delta but did not pass every adoption gate; retain unfiltered T8 majority@32",
+    "source_task": "T8",
+    "vote_policy": "unfiltered_majority_k32"
+  },
+  "ground_truth_loaded_after_prediction_freeze": true,
+  "model": {
+    "adapter": null,
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "new_generations": 0,
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "objective": "reaggregate the immutable T8 k=32 pool with four preregistered, label-blind extraction-confidence weighting policies",
+  "outputs": {
+    "comparison": {
+      "bytes": 117240,
+      "path": "artifacts/t10c_weighted_voting/comparison.json",
+      "sha256": "680a4efac01754b25b47834704ae030034cd43a52f55bae40d43859267ddc363"
+    },
+    "comparison_markdown": {
+      "bytes": 1523,
+      "path": "artifacts/t10c_weighted_voting/comparison.md",
+      "sha256": "c34e21e7959bbae99e543f6b5a76ae02ecdd182f3b8a065fec6e8f61ce7faae2"
+    },
+    "cross_validation": {
+      "bytes": 55488,
+      "path": "artifacts/t10c_weighted_voting/cross-validation.json",
+      "sha256": "6a38c0297b31e0c4b40e4e0a512250ff530b8a7e24e221c16de0a9ab058faa1a"
+    },
+    "end_to_end": {
+      "bytes": 7715,
+      "path": "artifacts/t10c_weighted_voting/end-to-end.json",
+      "sha256": "a64dbc6602dfd2f08fbd0c9dd631927d2a67eaf387f01255612310d90d4bb7d4"
+    },
+    "final_config": {
+      "bytes": 5375,
+      "path": "artifacts/t10c_weighted_voting/final_config.json",
+      "sha256": "6557f8d67e47192430fbbb05a7428e284454573d7c2d257efa81bd2ea2509ab1"
+    },
+    "prediction_freeze": {
+      "bytes": 3670,
+      "path": "artifacts/t10c_weighted_voting/prediction-freeze.json",
+      "sha256": "4ea45c7b2f6687cee0b6e234d1647e6039160aa328393ed434525d6ff12cca2f"
+    },
+    "predictions": {
+      "policy1": {
+        "bytes": 2645831,
+        "path": "artifacts/t10c_weighted_voting/holdout/policy1_predictions.jsonl",
+        "rows": 3737,
+        "sha256": "7b413eaa8cf6893bcba8c32816886616ffeb0a469c49258c1bcbb58a2d6f4dc6"
+      },
+      "policy2": {
+        "bytes": 2820428,
+        "path": "artifacts/t10c_weighted_voting/holdout/policy2_predictions.jsonl",
+        "rows": 3737,
+        "sha256": "637b8e92ed5676cfab592868d128d3f69b04f22acec7bebc60fe417e576c5d18"
+      },
+      "policy3": {
+        "bytes": 2826400,
+        "path": "artifacts/t10c_weighted_voting/holdout/policy3_predictions.jsonl",
+        "rows": 3737,
+        "sha256": "c072eecd270fd9d31832e8955e301dff70d725a4bae2cfcc296964d1d5784f0a"
+      },
+      "policy4": {
+        "bytes": 2865388,
+        "path": "artifacts/t10c_weighted_voting/holdout/policy4_predictions.jsonl",
+        "rows": 3737,
+        "sha256": "15cbcc02a65332aecd8dc0e5f485ba305b428dd13971a59d3bbc7814431511ed"
+      }
+    },
+    "test_environment": {
+      "bytes": 2800,
+      "path": "artifacts/t10c_weighted_voting/test-environment.json",
+      "sha256": "9836d2e1a45040121edbaa515ab7671d69ecfe93cd0d52dd756628eb09c9af8d"
+    },
+    "tests": {
+      "bytes": 9494,
+      "path": "artifacts/t10c_weighted_voting/tests.xml",
+      "sha256": "6276992117278785e38c2185a42870dd923742b8416c2bdf2b9ef252180a11b2"
+    }
+  },
+  "policy_config": {
+    "path": "configs/t10c_weighted_voting.json",
+    "policies": {
+      "policy1": {
+        "completion_correction": null,
+        "conflicting_explicit_candidates_multiplier": 0.0,
+        "distinct_explicit_candidates_at_least": 2,
+        "hit_max_new_tokens_multiplier": 0.0,
+        "length_correction": null,
+        "name": "path_binary_t8_3_reproduction",
+        "path_weights": {
+          "boxed": 1.0,
+          "final_answer_marker": 1.0,
+          "last_integer": 0.0,
+          "none": 0.0,
+          "standalone_last_line": 0.0
+        }
+      },
+      "policy2": {
+        "completion_correction": null,
+        "conflicting_explicit_candidates_multiplier": 0.0,
+        "distinct_explicit_candidates_at_least": 2,
+        "hit_max_new_tokens_multiplier": 0.05,
+        "length_correction": null,
+        "name": "path_continuous",
+        "path_weights": {
+          "boxed": 0.7,
+          "final_answer_marker": 1.0,
+          "last_integer": 0.15,
+          "none": 0.0,
+          "standalone_last_line": 0.1
+        }
+      },
+      "policy3": {
+        "completion_correction": null,
+        "conflicting_explicit_candidates_multiplier": 0.0,
+        "distinct_explicit_candidates_at_least": 2,
+        "hit_max_new_tokens_multiplier": 0.05,
+        "length_correction": {
+          "formula": "min(output_tokens / 100, 1.0)",
+          "full_weight_tokens": 100
+        },
+        "name": "path_plus_length",
+        "path_weights": {
+          "boxed": 0.7,
+          "final_answer_marker": 1.0,
+          "last_integer": 0.15,
+          "none": 0.0,
+          "standalone_last_line": 0.1
+        }
+      },
+      "policy4": {
+        "completion_correction": {
+          "final_answer_marker_last_nonempty_line_multiplier": 1.0,
+          "hit_max_new_tokens_multiplier": 0.05,
+          "normal_eos_without_final_answer_last_line_multiplier": 0.8,
+          "precedence": "hit_max_new_tokens, then FINAL_ANSWER last nonempty line, then normal EOS"
+        },
+        "conflicting_explicit_candidates_multiplier": 0.0,
+        "distinct_explicit_candidates_at_least": 2,
+        "hit_max_new_tokens_multiplier": 1.0,
+        "length_correction": null,
+        "name": "path_plus_completion",
+        "path_weights": {
+          "boxed": 0.7,
+          "final_answer_marker": 1.0,
+          "last_integer": 0.15,
+          "none": 0.0,
+          "standalone_last_line": 0.1
+        }
+      }
+    },
+    "sha256": "9871cc56a23f0b931c135d75d87b1ddd9361cd568bc795ee0d17228d10f815ea"
+  },
+  "presentation_record": {
+    "candidate_policy": "policy2",
+    "decision": "hold",
+    "delta_vs_original_t8_pp": 0.0,
+    "format_accuracy": 0.50390625,
+    "hard_accuracy": 0.39636363636363636,
+    "mcnemar_p_vs_original_t8": 1.0,
+    "policy": "unfiltered_majority_k32",
+    "random_accuracy": 0.74282223579719,
+    "source_random_invalid_output_rate": 0.005268784361637141,
+    "template_accuracy": 0.7397678680513133,
+    "union_accuracy": 0.693069306930693
+  },
+  "protected_inputs": {
+    "after_verification": {
+      "file_count": 250,
+      "mismatches": [],
+      "verified": true
+    },
+    "before_verification": {
+      "file_count": 250,
+      "mismatches": [],
+      "verified": true
+    },
+    "snapshot": {
+      "bytes": 44286,
+      "path": "artifacts/t10c_weighted_voting/invariant-snapshot.json",
+      "sha256": "9cf8e801c1cf1bcb50927e64ceb73a87c27c6454ed0040520919048da05e85df"
+    }
+  },
+  "raw_generations_deleted": false,
+  "schema_version": 1,
+  "sources": {
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "config": {
+      "bytes": 6552,
+      "path": "configs/t10c_weighted_voting.json",
+      "sha256": "9871cc56a23f0b931c135d75d87b1ddd9361cd568bc795ee0d17228d10f815ea"
+    },
+    "execution_prompt": {
+      "bytes": 158844,
+      "path": "docs/strategy/execution-prompts.md",
+      "sha256": "85055ada4d97434a07817bef6763ce5181f969e244a2187adc138b5d2779cb0f"
+    },
+    "holdout_generation_identity": {
+      "canonical_lf_sha256_after": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "canonical_lf_sha256_before": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "crlf_lines_after": 119584,
+      "crlf_lines_before": 119584,
+      "raw_sha256_after": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+      "raw_sha256_before": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+      "unchanged": true
+    },
+    "holdout_generations": {
+      "bytes": 234331927,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "rows": 119584,
+      "sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21"
+    },
+    "holdout_metadata": {
+      "bytes": 3496489,
+      "path": "artifacts/t8_self_consistency/run-metadata.json",
+      "sha256": "6b13a52aa8c2ff0d6dad66ed21776c5ecfcfc2a277f4d3c700305b4273bc8a42"
+    },
+    "implementation": {
+      "bytes": 72095,
+      "path": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/src/weighted_vote.py",
+      "sha256": "fbac46a9b93e018c3a7da729abacf9b45f11138cc4bff5edf061c9685627b257"
+    },
+    "splits": {
+      "format_diagnostic": {
+        "bytes": 114768,
+        "path": "data/splits/format_diagnostic.csv",
+        "rows": 256,
+        "sha256": "4862ead40601421680946cb1b70988284876cf325705fe6d2320c61a0c2fc82a"
+      },
+      "hard_diagnostic": {
+        "bytes": 274033,
+        "path": "data/splits/hard_diagnostic.csv",
+        "rows": 550,
+        "sha256": "b4710d1fedc4d4093ffb9ac249d9f0961330cdafe0b4ec8d09b417314109b50f"
+      },
+      "random_holdout": {
+        "bytes": 535264,
+        "path": "data/splits/random_holdout.csv",
+        "rows": 1637,
+        "sha256": "b3f69bb26cbf715bf4e3cda09164222f6ebaff3847d6d899173f0ae0ec88cf29"
+      },
+      "template_holdout": {
+        "bytes": 453525,
+        "path": "data/splits/template_holdout.csv",
+        "rows": 1637,
+        "sha256": "587a768ed89610a488a233f0bbcd237d7c8fcaea63eb09debadefbfb55c9fb13"
+      }
+    },
+    "t8_3_predictions": {
+      "bytes": 2478843,
+      "path": "artifacts/t8_3_vote_filter/holdout/predictions.jsonl",
+      "rows": 3737,
+      "sha256": "7037075a1577b4ea01821cda9bbe96b7d1d58086eb7c6e995e70a6df2fd09c15"
+    },
+    "template_group_audit": {
+      "bytes": 3820742,
+      "path": "data/splits/audit.csv",
+      "sha256": "e65b4de31cd90d85ada1e79079113ea222a02b4a4e506d48a30bdb7f8ec189fa"
+    },
+    "union_ids": {
+      "bytes": 52318,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "70fb620a31be2b20b9b637341ff95a20108e6854118cd2de0142470f0b34d219"
+    },
+    "upstream": {
+      "adopted_pool_is_original_t8": true,
+      "crlf_lines_normalized_for_identity_check": 119584,
+      "pool_raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+      "pool_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "t10a": {
+        "adopted": false,
+        "final_strategy": {
+          "arm": "A",
+          "k": 32,
+          "max_new_tokens": 2048,
+          "prompt_name": "base",
+          "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+          "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+          "vote": "unfiltered equal-weight majority"
+        },
+        "source": {
+          "bytes": 3298,
+          "path": "artifacts/t10a_prompt_improvement/final_config.json",
+          "sha256": "419eab90de70c435d9dbaa873411860a723105700f5340fff429ebe7e0a51081"
+        },
+        "status": "hold"
+      },
+      "t10b": {
+        "adopted": false,
+        "final_strategy": {
+          "arm": "A",
+          "k": 32,
+          "max_new_tokens": 2048,
+          "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+          "prompt_strategy": "single T8 base prompt",
+          "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+          "vote": "unfiltered equal-weight majority"
+        },
+        "source": {
+          "bytes": 1760,
+          "path": "artifacts/t10b_prompt_diversity/final_config.json",
+          "sha256": "de990c367555841a5ee011e075572f21a8fc79b034baefd3bf6669405dce96fa"
+        },
+        "status": "reject",
+        "t10c_input": {
+          "arm": "A",
+          "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+          "generation_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+          "k": 32,
+          "reason": "Arm C failed to improve or violated a preregistered guardrail/runtime gate.",
+          "source_task": "T10b",
+          "vote_baseline": "unfiltered equal-weight majority"
+        }
+      }
+    }
+  },
+  "status": "complete",
+  "t10_end_to_end": {
+    "best_t10c_candidate": {
+      "policy": "policy2",
+      "status": "hold",
+      "vs_original_t8": {
+        "both_correct": 2578,
+        "both_wrong": 1091,
+        "candidate_accuracy": 0.7048434573187048,
+        "candidate_correct_reference_wrong": 56,
+        "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+        "delta_95_ci_pp": [
+          0.7465723134228103,
+          1.6082577641795444
+        ],
+        "delta_pp": 1.1774150388011775,
+        "discordant": 68,
+        "questions": 3737,
+        "reference_accuracy": 0.693069306930693,
+        "reference_correct_candidate_wrong": 12,
+        "two_sided_exact_p": 6.209495737562187e-08
+      }
+    },
+    "combination": {
+      "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+      "generation_pool_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "k": 32,
+      "max_new_tokens": 2048,
+      "prompt": "T8 base prompt retained by T10a",
+      "prompt_strategy": "single T8 prompt retained by T10b",
+      "weighted_policy": "unfiltered_majority_k32"
+    },
+    "created_at_utc": "2026-08-26T12:05:41.093798+00:00",
+    "decision": {
+      "adopted": false,
+      "final_policy": "unfiltered_majority_k32",
+      "policy_decisions": {
+        "policy1": {
+          "adoption_eligible": false,
+          "checks": {
+            "exact_mcnemar_p_below_0_05": true,
+            "format_drop_not_over_2pp": true,
+            "hard_drop_not_over_2pp": true,
+            "invalid_increase_not_over_1pp": true,
+            "no_cross_validation_overfit_signal": true,
+            "union_delta_at_least_1_5pp": false
+          },
+          "observed": {
+            "cross_validation_overfit_signal": false,
+            "exact_mcnemar_p": 6.802593482929839e-10,
+            "format_delta_pp": 2.734375,
+            "hard_delta_pp": 1.090909090909091,
+            "union_delta_pp": 1.4717687985014718,
+            "union_invalid_increase_pp": 0.0
+          },
+          "policy": "policy1",
+          "reason": "T8-3 byte-reproduction control; preregistration excludes policy 1 from independent adoption",
+          "status": "control"
+        },
+        "policy2": {
+          "adoption_eligible": true,
+          "checks": {
+            "exact_mcnemar_p_below_0_05": true,
+            "format_drop_not_over_2pp": true,
+            "hard_drop_not_over_2pp": true,
+            "invalid_increase_not_over_1pp": true,
+            "no_cross_validation_overfit_signal": true,
+            "union_delta_at_least_1_5pp": false
+          },
+          "observed": {
+            "cross_validation_overfit_signal": false,
+            "exact_mcnemar_p": 6.209495737562187e-08,
+            "format_delta_pp": 1.5625,
+            "hard_delta_pp": 1.090909090909091,
+            "union_delta_pp": 1.1774150388011775,
+            "union_invalid_increase_pp": 0.0
+          },
+          "policy": "policy2",
+          "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+          "status": "hold"
+        },
+        "policy3": {
+          "adoption_eligible": true,
+          "checks": {
+            "exact_mcnemar_p_below_0_05": true,
+            "format_drop_not_over_2pp": true,
+            "hard_drop_not_over_2pp": true,
+            "invalid_increase_not_over_1pp": true,
+            "no_cross_validation_overfit_signal": true,
+            "union_delta_at_least_1_5pp": false
+          },
+          "observed": {
+            "cross_validation_overfit_signal": false,
+            "exact_mcnemar_p": 6.209495737562187e-08,
+            "format_delta_pp": 1.5625,
+            "hard_delta_pp": 1.090909090909091,
+            "union_delta_pp": 1.1774150388011775,
+            "union_invalid_increase_pp": 0.0
+          },
+          "policy": "policy3",
+          "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+          "status": "hold"
+        },
+        "policy4": {
+          "adoption_eligible": true,
+          "checks": {
+            "exact_mcnemar_p_below_0_05": true,
+            "format_drop_not_over_2pp": true,
+            "hard_drop_not_over_2pp": true,
+            "invalid_increase_not_over_1pp": true,
+            "no_cross_validation_overfit_signal": true,
+            "union_delta_at_least_1_5pp": false
+          },
+          "observed": {
+            "cross_validation_overfit_signal": false,
+            "exact_mcnemar_p": 8.909847968334874e-07,
+            "format_delta_pp": 1.953125,
+            "hard_delta_pp": 1.090909090909091,
+            "union_delta_pp": 1.1506556061011506,
+            "union_invalid_increase_pp": 0.0
+          },
+          "policy": "policy4",
+          "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+          "status": "hold"
+        }
+      },
+      "reason": "policy2 had the largest positive eligible delta but did not pass every adoption gate; retain unfiltered T8 majority@32",
+      "selected_candidate_policy": "policy2",
+      "status": "hold"
+    },
+    "final_t10_vs_original_t8": {
+      "both_correct": 2590,
+      "both_wrong": 1147,
+      "candidate_accuracy": 0.693069306930693,
+      "candidate_correct_reference_wrong": 0,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "delta_pp": 0.0,
+      "discordant": 0,
+      "questions": 3737,
+      "reference_accuracy": 0.693069306930693,
+      "reference_correct_candidate_wrong": 0,
+      "two_sided_exact_p": 1.0
+    },
+    "final_union_accuracy": 0.693069306930693,
+    "original_t8_union_accuracy": 0.693069306930693,
+    "schema_version": 1,
+    "task": "T10",
+    "upstream_selection": {
+      "adopted_pool_is_original_t8": true,
+      "crlf_lines_normalized_for_identity_check": 119584,
+      "pool_raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+      "pool_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "t10a": {
+        "adopted": false,
+        "final_strategy": {
+          "arm": "A",
+          "k": 32,
+          "max_new_tokens": 2048,
+          "prompt_name": "base",
+          "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+          "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+          "vote": "unfiltered equal-weight majority"
+        },
+        "source": {
+          "bytes": 3298,
+          "path": "artifacts/t10a_prompt_improvement/final_config.json",
+          "sha256": "419eab90de70c435d9dbaa873411860a723105700f5340fff429ebe7e0a51081"
+        },
+        "status": "hold"
+      },
+      "t10b": {
+        "adopted": false,
+        "final_strategy": {
+          "arm": "A",
+          "k": 32,
+          "max_new_tokens": 2048,
+          "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+          "prompt_strategy": "single T8 base prompt",
+          "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+          "vote": "unfiltered equal-weight majority"
+        },
+        "source": {
+          "bytes": 1760,
+          "path": "artifacts/t10b_prompt_diversity/final_config.json",
+          "sha256": "de990c367555841a5ee011e075572f21a8fc79b034baefd3bf6669405dce96fa"
+        },
+        "status": "reject",
+        "t10c_input": {
+          "arm": "A",
+          "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+          "generation_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+          "k": 32,
+          "reason": "Arm C failed to improve or violated a preregistered guardrail/runtime gate.",
+          "source_task": "T10b",
+          "vote_baseline": "unfiltered equal-weight majority"
+        }
+      }
+    }
+  },
+  "task": "T10c"
+}

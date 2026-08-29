@@ -1,0 +1,242 @@
+{
+  "attempt_is_terminal": true,
+  "superseded_by": "T12b-dev nested-CV specification",
+  "audit": {
+    "after_id_guard": 0,
+    "after_normalized_text_guard": 0,
+    "after_template_guard": 0,
+    "canonical_questions": 16373,
+    "eligible_untouched_questions": 0,
+    "guards": {
+      "near_duplicate": true,
+      "normalized_text": true,
+      "question_id": true,
+      "template_group": true
+    },
+    "near_duplicate_removed": 0,
+    "protected_canonical_ids": 16373,
+    "protected_unique_ids": 33009,
+    "required_fresh_2_questions": 1000,
+    "shortfall": 1000,
+    "source_audits": [
+      {
+        "bytes": 52318,
+        "canonical_id_overlap": 3737,
+        "kind": "ids",
+        "name": "t3_t8_holdout_union",
+        "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+        "rows": 3737,
+        "sha256": "70fb620a31be2b20b9b637341ff95a20108e6854118cd2de0142470f0b34d219",
+        "unique_ids": 3737,
+        "unique_normalized_questions": 3737
+      },
+      {
+        "bytes": 164268,
+        "canonical_id_overlap": 12636,
+        "kind": "ids",
+        "name": "t5_label_selected_candidate_pool",
+        "path": "data/rft_pool_ids.txt",
+        "rows": 12636,
+        "sha256": "9549a6a1a59cfcf9fe8d810a2dce86e3785722bd172d4751289406adc010bef6",
+        "unique_ids": 12636,
+        "unique_normalized_questions": 12636
+      },
+      {
+        "bytes": 6784635,
+        "canonical_id_overlap": 12618,
+        "kind": "jsonl",
+        "name": "t6_answer_only_train",
+        "path": "data/answer_only/sft.jsonl",
+        "rows": 12618,
+        "sha256": "d78d96fdcd28af845727bd5673b2523857673a2197ed5a18306dc48d64071a34",
+        "unique_ids": 12618,
+        "unique_normalized_questions": 12618
+      },
+      {
+        "bytes": 40865878,
+        "canonical_id_overlap": 0,
+        "kind": "jsonl",
+        "name": "t6_external_cot_train",
+        "path": "data/external_cot/sft.jsonl",
+        "rows": 15000,
+        "sha256": "8f87f4d1b55437bfa8ff2a4160be6a3cc52d63199ca274cc87925e438c006f4c",
+        "unique_ids": 15000,
+        "unique_normalized_questions": 15000
+      },
+      {
+        "bytes": 38594203,
+        "canonical_id_overlap": 0,
+        "kind": "jsonl",
+        "name": "t6_external_cot_v2_train",
+        "path": "data/external_cot_v2/sft.jsonl",
+        "rows": 15000,
+        "sha256": "8d2ed90a976124dcdc15c1020432c782781a31206d98fa04ba17e1f28190e1f8",
+        "unique_ids": 15000,
+        "unique_normalized_questions": 15000
+      },
+      {
+        "bytes": 108581895,
+        "canonical_id_overlap": 10826,
+        "kind": "jsonl",
+        "name": "t6_rft_train",
+        "path": "data/rft_r1/sft.jsonl",
+        "rows": 40645,
+        "sha256": "7ce9d4df512b7c220a02cf02d7a20b9c495a80556afc3fdc80e83a87e70cc7a6",
+        "unique_ids": 10826,
+        "unique_normalized_questions": 10826
+      },
+      {
+        "bytes": 30443258,
+        "canonical_id_overlap": 5717,
+        "kind": "jsonl",
+        "name": "t6_rft_v2_train",
+        "path": "data/rft_r1_v2/sft.jsonl",
+        "rows": 6588,
+        "sha256": "3460ea7e0db196922b0a8c5f608efa79d3e7165e1173c181a916a7cc9781c2af",
+        "unique_ids": 5717,
+        "unique_normalized_questions": 5717
+      },
+      {
+        "bytes": 4611067,
+        "canonical_id_overlap": 486,
+        "kind": "jsonl",
+        "name": "t7_rft_train",
+        "path": "data/rft_r2/sft.jsonl",
+        "rows": 911,
+        "sha256": "d9c1adc2c341d20ec14c82427ae21a50fc4c11f59d98f24fd00178b662d0a8bd",
+        "unique_ids": 486,
+        "unique_normalized_questions": 486
+      },
+      {
+        "bytes": 27171723,
+        "canonical_id_overlap": 2085,
+        "kind": "jsonl",
+        "name": "t9_genselect_train",
+        "path": "data/genselect/train.jsonl",
+        "rows": 3000,
+        "sha256": "846d0edb1cd174c4b7f6c313c136f8b9b7c61f0615ada5eb317bda6d01576d11",
+        "unique_ids": 2085,
+        "unique_normalized_questions": 2085
+      },
+      {
+        "bytes": 2889286,
+        "canonical_id_overlap": 320,
+        "kind": "jsonl",
+        "name": "t9_genselect_validation",
+        "path": "data/genselect/validation.jsonl",
+        "rows": 320,
+        "sha256": "8db3802189cebbe44771df5ef618ca7ca86235225e0016c0a96b0bd143e52c25",
+        "unique_ids": 320,
+        "unique_normalized_questions": 320
+      },
+      {
+        "bytes": 6500,
+        "canonical_id_overlap": 500,
+        "kind": "ids",
+        "name": "t11_validation",
+        "path": "data/splits/rft_validation_500_ids.txt",
+        "rows": 500,
+        "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8",
+        "unique_ids": 500,
+        "unique_normalized_questions": 500
+      },
+      {
+        "bytes": 17043,
+        "canonical_id_overlap": 1311,
+        "kind": "ids",
+        "name": "t11_suspect",
+        "path": "data/suspect_set/ids.txt",
+        "rows": 1311,
+        "sha256": "ad3ac6669f3058071580531eb43eb5b7a5d5d82b99bd21fae3b982c27910dd75",
+        "unique_ids": 1311,
+        "unique_normalized_questions": 1311
+      },
+      {
+        "bytes": 832,
+        "canonical_id_overlap": 64,
+        "kind": "ids",
+        "name": "t11_teacher_preflight",
+        "path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+        "rows": 64,
+        "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9",
+        "unique_ids": 64,
+        "unique_normalized_questions": 64
+      },
+      {
+        "bytes": 187111651,
+        "canonical_id_overlap": 10861,
+        "kind": "jsonl",
+        "name": "t11_student_probe_questions",
+        "path": "data/t11_aimo_generation_quality/student_probe.jsonl",
+        "rows": 86888,
+        "sha256": "31b2af19392bbe86089ddfc27450d75af2aac27fba565dd633c9254ef3c63a4c",
+        "unique_ids": 10861,
+        "unique_normalized_questions": 10861
+      },
+      {
+        "bytes": 832,
+        "canonical_id_overlap": 64,
+        "kind": "ids",
+        "name": "t11c_teacher_preflight",
+        "path": "data/t11c_qwen7b_repaired_teacher_preflight/preflight_ids.txt",
+        "rows": 64,
+        "sha256": "a3f26bbe1fd1f692f1fb695ca73d161f938a112008fc4265014a4c1847114655",
+        "unique_ids": 64,
+        "unique_normalized_questions": 64
+      },
+      {
+        "bytes": 1664,
+        "canonical_id_overlap": 128,
+        "kind": "ids",
+        "name": "t11d_prompt_canary",
+        "path": "data/t11d_extractor_contract/canary_ids.txt",
+        "rows": 128,
+        "sha256": "ce6a8a62935121c2f7b9c4905b8bff66dd65ef1e5765da88ae2b79093fb7edb2",
+        "unique_ids": 128,
+        "unique_normalized_questions": 128
+      },
+      {
+        "bytes": 70602645,
+        "canonical_id_overlap": 6034,
+        "kind": "jsonl",
+        "name": "t12_pointwise_train",
+        "path": "data/cmu_orm/train.jsonl",
+        "rows": 30912,
+        "sha256": "baa32811779901a888b59387ee611fffa182b16ecdc4a338adb8af950ad2fa8b",
+        "unique_ids": 6034,
+        "unique_normalized_questions": 6034
+      },
+      {
+        "bytes": 326541,
+        "canonical_id_overlap": 1000,
+        "kind": "csv",
+        "name": "t12_fresh_diagnosis",
+        "path": "data/cmu_orm/validation.csv",
+        "rows": 1000,
+        "sha256": "83769d276ba1205b5e8e8ee443ce285e53a8082a217928a0f0dbcb3d49e7ea05",
+        "unique_ids": 1000,
+        "unique_normalized_questions": 1000
+      },
+      {
+        "bytes": 254899,
+        "canonical_id_overlap": 0,
+        "kind": "csv",
+        "name": "leaderboard_full",
+        "path": "data/deep_chal_math_leaderboard.csv",
+        "rows": 1000,
+        "sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+        "unique_ids": 1000,
+        "unique_normalized_questions": 1000
+      }
+    ]
+  },
+  "config_sha256": "6d47e117e113d4c6d70d1e78f8ced00e01285dcbdce1ec3ca2a407b43261e8d3",
+  "created_at_utc": "2026-08-28T15:54:49.605774+00:00",
+  "fresh_2_written": false,
+  "gold_opened_for_model_selection": false,
+  "reason": "insufficient_untouched_canonical_questions",
+  "replacement_fresh_2_permitted": false,
+  "schema_version": 1,
+  "status": "data_gate_failed",
+  "task": "T12b"
+}

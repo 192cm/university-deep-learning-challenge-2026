@@ -1,0 +1,60 @@
+{
+  "answers_loaded": false,
+  "api_cost_usd": 0.0,
+  "batch_invariance": {
+    "batched_generation_sha256": "7cee16294ace737d5f37aedd78e75a5bcb842c7f3f5c0cdf2c06179bf0d26259",
+    "batched_token_ids_sha256": "8391a1c9aaceca1fcfaba3f27f945419917ef1ef406a3e709c4957c9f6a10e26",
+    "byte_identical": true,
+    "finish_reason_identical": true,
+    "standalone_generation_sha256": "7cee16294ace737d5f37aedd78e75a5bcb842c7f3f5c0cdf2c06179bf0d26259",
+    "standalone_token_ids_sha256": "8391a1c9aaceca1fcfaba3f27f945419917ef1ef406a3e709c4957c9f6a10e26",
+    "target_child_seed": 1457919284,
+    "token_ids_identical": true
+  },
+  "completed_at_utc": "2026-08-27T09:34:43.916541+00:00",
+  "environment": {
+    "VLLM_ALLOW_LONG_MAX_MODEL_LEN": "1",
+    "VLLM_BATCH_INVARIANT": "1",
+    "VLLM_WORKER_MULTIPROC_METHOD": "spawn"
+  },
+  "gpu_memory": {
+    "baseline_device_used_mib": 1,
+    "measurement_note": "nvidia-smi samples include the vLLM worker process",
+    "peak_device_used_mib": 21808,
+    "peak_engine_delta_mib": 21807
+  },
+  "included_in_gate": false,
+  "load_only_smoke_passed": true,
+  "protected_or_validation_or_leaderboard_or_test_rows_sent": 0,
+  "runtime_packages": {
+    "huggingface_hub": "1.28.0",
+    "python": "3.12.13",
+    "torch": "2.13.0+cu129",
+    "transformers": "5.16.1",
+    "vllm": "0.27.1+cu129"
+  },
+  "schema_version": 1,
+  "seed_or_batch_invariance_passed": true,
+  "started_at_utc": "2026-08-27T09:33:56.856632+00:00",
+  "status": "passed",
+  "synthetic_only": true,
+  "task": "T11c",
+  "teacher": {
+    "dtype": "torch.bfloat16",
+    "load_format": "auto",
+    "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+    "prompt_contract_sha256": "85da2d7bb47345cf3bfdf69cddf41f5ba2f93feecdcb8137ca4ac5ebfb650ea5",
+    "quantization": null,
+    "requested_model_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "requested_tokenizer_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "resolved_model_commit": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "resolved_tokenizer_commit": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d"
+  },
+  "timing": {
+    "batch_generation_seconds": 2.293104777985718,
+    "generation_wall_seconds": 4.644812065991573,
+    "model_load_seconds": 40.1938817659975,
+    "snapshot_resolution_seconds": 0.006028702016919851,
+    "standalone_generation_seconds": 2.351707288005855
+  }
+}

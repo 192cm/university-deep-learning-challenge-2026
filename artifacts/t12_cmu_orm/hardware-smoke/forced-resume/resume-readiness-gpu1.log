@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 4603.26it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B-Instruct
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+{"finite_logit": true, "gpu": {"name": "NVIDIA GeForce RTX 4090", "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"}, "model": "Qwen/Qwen2.5-3B-Instruct", "passed": true, "prompt_has_only_problem_and_trace": true, "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "schema_version": 1, "status": "complete", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"}

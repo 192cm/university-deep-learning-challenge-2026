@@ -1,0 +1,34 @@
+{
+  "config_sha256": "d73b2024cd8cd09d271e29b7fd7e71839df8efd1c10b8fd8b40a52296aad9373",
+  "expected_rows": 8,
+  "kind": "generation",
+  "manifest_sha256": "97f443dac453c982b608beb6fcb2531abac173a6c09510422defade74aad7296",
+  "namespace": "t12-generation-shard-v1:",
+  "question_count": 4,
+  "samples_per_question": 2,
+  "schema_version": 1,
+  "shards": [
+    {
+      "expected_rows": 4,
+      "logical_rank": 0,
+      "question_count": 2,
+      "question_ids": [
+        "train-009500",
+        "train-012734"
+      ],
+      "question_ids_sha256": "a4f22c19307d269aa4861d9c80545934560fc266388f5a06bcb72c6a649fd5b2"
+    },
+    {
+      "expected_rows": 4,
+      "logical_rank": 1,
+      "question_count": 2,
+      "question_ids": [
+        "train-009475",
+        "train-014778"
+      ],
+      "question_ids_sha256": "adda3c73b78c3086b0f4c416c25056ce5f3f8702363bcf95bc76b0e65c1945dc"
+    }
+  ],
+  "source_sha256": "27cd04e458be152ebb1204566cfcadba2f79f6e13b83e607b845171006141edb",
+  "ways": 2
+}

@@ -1,0 +1,18 @@
+{
+  "fallback_questions": {
+    "bytes": 1555,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/leaderboard-label-blind/fallback-questions.csv",
+    "sha256": "3a0d55ca7eeb126a85849632cbbc0ea4d2dca88183b69ba5bb7d419bc3afcb71"
+  },
+  "ids": [
+    "val-000228",
+    "val-000519",
+    "val-000801"
+  ],
+  "questions": 3,
+  "schema_version": 1,
+  "status": "fallback_required",
+  "submission_rows_written": false,
+  "task": "T12b-4970-override"
+}

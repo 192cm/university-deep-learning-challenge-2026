@@ -1,0 +1,221 @@
+{
+  "adaptive_decision": {
+    "outperformed_same_budget_fixed": true,
+    "same_budget_delta_pp": 0.4816697886004806,
+    "selected_for_final": false
+  },
+  "completion_checks": {
+    "adaptive_same_budget_comparison_present": true,
+    "adaptive_staged_path_executed": true,
+    "adaptive_uses_only_answer_agreement_for_stopping": true,
+    "all_sweep_metrics_present": true,
+    "full_run_gpu_mean_at_least_90_percent": true,
+    "full_run_no_oom": true,
+    "greedy_improvement_recorded": true,
+    "k_sweep_is_exactly_4_8_16_32": true,
+    "model_identity_contract_satisfied": true,
+    "preserved_t8_reference_hashes_unchanged": true,
+    "raw_generations_preserved": true,
+    "selected_runtime_at_most_18_hours": true,
+    "selected_runtime_leaves_at_least_6_hours": true,
+    "t8_1_end_to_end_comparison_present": true,
+    "tie_break_is_first_generated": true
+  },
+  "created_at_utc": "2026-08-23T22:34:55.537415+00:00",
+  "decision": {
+    "estimated_1000_question_hours": 0.634685053734848,
+    "greedy_accuracy": 0.630987423066631,
+    "improvement_vs_own_greedy_pp": 6.74337704040674,
+    "mcnemar_vs_own_greedy": {
+      "both_correct": 2296,
+      "both_wrong": 1065,
+      "candidate_accuracy": 0.6984211934706984,
+      "candidate_correct_reference_wrong": 314,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        5.74962904890893,
+        7.737125031904557
+      ],
+      "delta_pp": 6.7433770404067435,
+      "discordant": 376,
+      "questions": 3737,
+      "reference_accuracy": 0.630987423066631,
+      "reference_correct_candidate_wrong": 62,
+      "two_sided_exact_p": 1.143201046002237e-41
+    },
+    "reserve_hours_within_24": 23.36531494626515,
+    "selected_majority_accuracy": 0.6984211934706984,
+    "selected_policy": "fixed_k32",
+    "selection_rule": "adaptive only if separately staged accuracy exceeds fixed k=32 within 18 hours; otherwise fixed k=32"
+  },
+  "end_to_end_decision": {
+    "adopted": false,
+    "criteria": {
+      "maximum_exact_p": 0.05,
+      "maximum_hard_or_format_drop_pp": 2.0,
+      "minimum_union_delta_pp": 1.5
+    },
+    "reason": "union accuracy improved but the preregistered +1.5 pp and p<0.05 adoption gate was not fully met; preserve T4c + T8",
+    "status": "hold"
+  },
+  "environment": {
+    "finalizer_python": "3.12.13",
+    "generation_environment": {
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.13",
+      "torch_cuda_runtime": "12.8",
+      "torch_version": "2.11.0+cu128",
+      "vllm_batch_invariant": true
+    }
+  },
+  "model": {
+    "adapter": {
+      "base_model_name_or_path": "Qwen/Qwen2.5-3B-Instruct",
+      "config_sha256": "537819b72447ced90971e276aa17b4ca2b68860e61652701cb67c577f3aa3a26",
+      "path": "/workspace/artifacts/t6_sft_v1/adapters/rft_r1",
+      "peft_type": "LORA",
+      "rank": 64,
+      "sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1"
+    },
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "objective": "revalidate T6-4 LoRA self-consistency against preserved T4c T8 at equal k=32",
+  "outputs": {
+    "curve": {
+      "bytes": 1588,
+      "path": "artifacts/t8_1_rft_self_consistency/curve.md",
+      "sha256": "592f6d54bf3837c0056a2dcb5e844129354445f9d210d01d45cb6f34bccb3bf2"
+    },
+    "final_config": {
+      "bytes": 2645,
+      "path": "artifacts/t8_1_rft_self_consistency/final_config.json",
+      "sha256": "0bdc8cdc18020bdd6dc915ae6c0bd04f8531dbbec88f9c3c9803a314da1e2c1d"
+    },
+    "sweep": {
+      "bytes": 329994,
+      "path": "artifacts/t8_1_rft_self_consistency/sweep.json",
+      "sha256": "acedc8255da6ec1ea48269cef4770cbea0751e0c788cfaba24be0a0eb1658caa"
+    }
+  },
+  "presentation_record": {
+    "format_accuracy": 0.53515625,
+    "hard_accuracy": 0.39454545454545453,
+    "random_accuracy": 0.7507635919364691,
+    "random_invalid_output_rate": 0.005192425167990226,
+    "template_accuracy": 0.7422113622480146,
+    "union_delta_vs_reference_pp": 0.5351886540005352,
+    "union_mcnemar_p": 0.2275537562891068
+  },
+  "raw_generations_deleted": false,
+  "schema_version": 1,
+  "seed": 42,
+  "sources": {
+    "adaptive_stage1_generations": {
+      "bytes": 31412704,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage1/generations.jsonl",
+      "rows": 14948,
+      "sha256": "258ac2684bde6317f54caa8815e0d781a596cf16ad141c1c7d67de5a3aede776"
+    },
+    "adaptive_stage1_metadata": {
+      "bytes": 1102937,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage1/run-metadata.json",
+      "sha256": "87c03c9f62ccdbb173ebc4e95110c057a693c2ec6c202d192f64b4876d69aa74"
+    },
+    "adaptive_stage2_generations": {
+      "bytes": 132918704,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage2/generations.jsonl",
+      "rows": 50372,
+      "sha256": "aaad90298cfa5894e17550adf895b86b2e5cb257e7397be84a704ddb74fc6ce1"
+    },
+    "adaptive_stage2_ids": {
+      "bytes": 23387,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage2/ids.txt",
+      "rows": 1799,
+      "sha256": "0468182aa89039fec14da5a5d60e85a79aef58f9882a6c9e8c974336a29c691a"
+    },
+    "adaptive_stage2_metadata": {
+      "bytes": 2358951,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage2/run-metadata.json",
+      "sha256": "9cfc21effedfa8f083bdf25c0b5dac07acec3a4adebf913cf30d6a68ab9d6a28"
+    },
+    "adaptive_stage2_preparation": {
+      "bytes": 1602,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage2/preparation.json",
+      "sha256": "dfa070ce8a54dc2fdaa6869fc9cce7a2dd0eff0614ce58d263bc2eec9752b7e2"
+    },
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "config": {
+      "bytes": 2340,
+      "path": "configs/t8_1_rft_self_consistency.json",
+      "sha256": "880bfa9a0b9cabec1b4d7b0a19f6f397719ae051581e5b6ce24626703b2a7acb"
+    },
+    "finalizer": {
+      "bytes": 78649,
+      "path": "/workspace/src/self_consistency.py",
+      "sha256": "02c20cacb46dc64faf97d587ac330bacb664e3779f02781b30b467e387039830"
+    },
+    "full_generations": {
+      "bytes": 250883039,
+      "path": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+      "rows": 119584,
+      "sha256": "51e105d7c682f2a72f9ca7069ef907f401af39ed21b4fdb234164f16def5ca1a"
+    },
+    "full_metadata": {
+      "bytes": 2498483,
+      "path": "artifacts/t8_1_rft_self_consistency/run-metadata.json",
+      "sha256": "3a11a4a477be938ff9982f637124733b1cac54d93f01dbb65d2b9747ab764a45"
+    },
+    "splits": {
+      "format_diagnostic": {
+        "bytes": 114768,
+        "path": "data/splits/format_diagnostic.csv",
+        "rows": 256,
+        "sha256": "4862ead40601421680946cb1b70988284876cf325705fe6d2320c61a0c2fc82a"
+      },
+      "hard_diagnostic": {
+        "bytes": 274033,
+        "path": "data/splits/hard_diagnostic.csv",
+        "rows": 550,
+        "sha256": "b4710d1fedc4d4093ffb9ac249d9f0961330cdafe0b4ec8d09b417314109b50f"
+      },
+      "random_holdout": {
+        "bytes": 535264,
+        "path": "data/splits/random_holdout.csv",
+        "rows": 1637,
+        "sha256": "b3f69bb26cbf715bf4e3cda09164222f6ebaff3847d6d899173f0ae0ec88cf29"
+      },
+      "template_holdout": {
+        "bytes": 453525,
+        "path": "data/splits/template_holdout.csv",
+        "rows": 1637,
+        "sha256": "587a768ed89610a488a233f0bbcd237d7c8fcaea63eb09debadefbfb55c9fb13"
+      }
+    },
+    "t4_greedy_generations": {
+      "bytes": 7368676,
+      "path": "artifacts/t6_sft_v1/rft_r1/evaluation/generations.jsonl",
+      "rows": 3737,
+      "sha256": "075c0db5fc9c5664a10a7d5f8918309f277ddc44c7c9a61f764270245116063b"
+    },
+    "t4_greedy_metadata": {
+      "bytes": 163639,
+      "path": "artifacts/t6_sft_v1/rft_r1/evaluation/run-metadata.json",
+      "sha256": "59fb21718111467086a55b3e39279e8a64c6c4c1f9526f03959e672f3b9bf4a1"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "complete",
+  "task": "T8-1"
+}

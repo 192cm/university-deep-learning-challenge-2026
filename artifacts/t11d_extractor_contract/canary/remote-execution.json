@@ -1,0 +1,32 @@
+{
+  "cuda_available": true,
+  "external_api_calls": 0,
+  "focused_tests": {
+    "local": "71 passed",
+    "remote": "71 passed"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "labels_loaded": false,
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "nvidia_driver": "570.133.07",
+  "orchestration_fix": {
+    "effect": "After the old arm was frozen, re-entry verification was changed only to exclude mutable execution-status.json. Immutable canary ID and request-manifest hash checks and generation logic were unchanged.",
+    "old_arm_raw_output_preserved": true,
+    "old_arm_runner_source": "artifacts/t11d_extractor_contract/canary/execution-source-runner-old-arm.py"
+  },
+  "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+  "purpose": "remote CUDA canary execution provenance",
+  "python": "3.12.13",
+  "schema_version": 1,
+  "source_hashes": {
+    "config": "b89db4529be824822440a5cb904145bb9049337008f76ecd6be2bb7ebd7565f5",
+    "extractor": "db8219e5cb37f3ad9fff7ec10341e3f47bc1a50e640243dc642b75d50e47e158",
+    "runner_new_arm_and_scoring": "febc0fd2d66082cfdbd769d0673ee04e043786925a2b0343f00e6a92e2913b27",
+    "runner_old_arm": "33609626ac0cac21c24a18b6265d5581958b722e0cdcf439cb2edbf0bfa2f5b7"
+  },
+  "task": "T11d",
+  "torch": "2.11.0+cu128",
+  "torch_cuda": "12.8",
+  "transformers": "5.15.1",
+  "vllm": "0.24.0"
+}

@@ -1,0 +1,2 @@
+{"cached_generations": 1024, "engine": "vllm", "event": "preflight", "expected_generations": 1024, "n": 32, "pending_generations": 0, "rows": 32, "run_fingerprint": "75bb8dfcfb662d115c208efbc2f8824705d72cdfafe4b9a9ea94cb860b20f6aa"}
+{"event": "complete_cache_preserved", "metadata": "artifacts/t8_2_cot_routing/smoke/base/run-metadata.json", "run_fingerprint": "75bb8dfcfb662d115c208efbc2f8824705d72cdfafe4b9a9ea94cb860b20f6aa"}

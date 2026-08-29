@@ -1,0 +1,35 @@
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:  79%|███████▉  | 344/434 [00:00<00:00, 3439.30it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 3854.41it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B-Instruct
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 730, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 689, in main
+    result = score_worker(
+             ^^^^^^^^^^^^^
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 420, in score_worker
+    logits = _score_model_batches(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 326, in _score_model_batches
+    values = logits[: len(real_keys)].cpu().tolist()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 6289.03it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B-Instruct
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+{"metadata": "artifacts/t12_cmu_orm/reused-t8/score-shards/worker-metadata-1.json", "rows": 59792, "status": "complete"}

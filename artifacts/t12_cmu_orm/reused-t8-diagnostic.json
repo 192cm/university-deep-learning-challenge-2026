@@ -1,0 +1,17 @@
+{
+  "accuracies": {
+    "orm_argmax": 0.6582820444206583,
+    "orm_weighted": 0.7077869949157077,
+    "raw_majority": 0.7072518062617072,
+    "t8_3_filter": 0.7083221835697083
+  },
+  "can_change_fresh_decision": false,
+  "deltas": {
+    "vs_raw_majority": 0.0005351886540004847,
+    "vs_t8_3_filter": -0.0005351886540005957
+  },
+  "questions": 3737,
+  "schema_version": 1,
+  "status": "reused_t8_diagnostic",
+  "task": "T12"
+}

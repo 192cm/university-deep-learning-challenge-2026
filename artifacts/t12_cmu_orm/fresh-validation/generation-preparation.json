@@ -1,0 +1,16 @@
+{
+  "created_at_utc": "2026-08-27T20:47:30.267010+00:00",
+  "gold_columns_exposed": 0,
+  "outputs": {
+    "manifest": {
+      "bytes": 24919,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/generation-shard-manifest.json",
+      "sha256": "28bc9efb5f7745709208fffbc55b77868e88a4eec7173fc1cc1b4f89dc1e483e"
+    }
+  },
+  "questions": 1000,
+  "samples_per_question": 32,
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12"
+}

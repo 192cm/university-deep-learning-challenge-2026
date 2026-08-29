@@ -1,0 +1,115 @@
+{
+  "created_at_utc": "2026-08-26T14:42:37.884133+00:00",
+  "diagnostics": {
+    "all_answers_canonical_integers": true,
+    "all_votes_filtered_fallback_count": 10,
+    "changed_vs_unfiltered_count": 56,
+    "csv_round_trip_verified": true,
+    "rows": 1000,
+    "unique_ids": 1000
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "n": 32,
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "ground_truth_contract": {
+    "accuracy_computed": false,
+    "leaderboard_labels_available": false,
+    "used_for_filtering": false,
+    "used_for_generation": false,
+    "used_for_voting": false
+  },
+  "model": {
+    "adapter": null,
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "outputs": {
+    "audit": {
+      "bytes": 5840,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission-audit.json",
+      "sha256": "f046aca24c1ab152d47af5cc456628b0f4956d67aa004015601c826f3cdfe346"
+    },
+    "diff_vs_unfiltered": {
+      "bytes": 90586,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/diff-vs-unfiltered.json",
+      "rows": 56,
+      "sha256": "ebf0375c90fa531f0a9cd800d2e7c9f8e24cadf4f78a9d48fd4ef82758d105f9"
+    },
+    "prepared_payload": {
+      "bytes": 935888,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission-prepared.json",
+      "rows": 1000,
+      "sha256": "b3fa0fe8ec4b83070930dbe4783bf0a04e38a3a95052962484d0e9a537363f4f"
+    },
+    "submission": {
+      "bytes": 15159,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission.csv",
+      "rows": 1000,
+      "sha256": "e3491e0d414467fbfda11eb3ca9306cace1947e2f4ddfcbc9b3813775501a0d3"
+    }
+  },
+  "prompt": {
+    "name": "cot_boxed",
+    "sha256": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91"
+  },
+  "runtime": {
+    "engine": "vllm",
+    "generation_wall_seconds": 3248.0429923459888,
+    "generations_per_second": 9.852086341039199
+  },
+  "schema_version": 1,
+  "sources": {
+    "c1_config": {
+      "bytes": 5073,
+      "path": "configs/t10a_c1_vote_filter.json",
+      "sha256": "efaccd327cd5f09a85426df20133b512afb73581a176922d4f7a4557c16deeeb"
+    },
+    "generation_metadata": {
+      "bytes": 979584,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/run-metadata.json",
+      "sha256": "a12e9418107b3641a0b94da90a27f859886749ed5d9f319e82a4aff3be7a3fe0"
+    },
+    "generations": {
+      "bytes": 73944693,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl",
+      "rows": 32000,
+      "sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1"
+    },
+    "leaderboard": {
+      "bytes": 254899,
+      "path": "data/deep_chal_math_leaderboard.csv",
+      "rows": 1000,
+      "sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32"
+    },
+    "t10a_config": {
+      "bytes": 5351,
+      "path": "configs/t10a_prompt_improvement.json",
+      "sha256": "2c9655a0d32f7f5d2c7b7b76c7c932e4fe501934b111b73be78a106774c66da2"
+    }
+  },
+  "status": "complete",
+  "strategy": "cot_boxed prompt improvement + frozen vote-quality filter",
+  "task": "T10a C-1 leaderboard submission",
+  "vote_filter": {
+    "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+    "combine_conditions": "or",
+    "exclude_hit_max_new_tokens": true,
+    "excluded_extraction_paths": [
+      "last_integer",
+      "standalone_last_line"
+    ],
+    "kept_path_weights": {
+      "boxed": 1.0,
+      "final_answer_marker": 1.0
+    },
+    "majority_tie_break": "first generated answer among tied top vote counts",
+    "minimum_distinct_explicit_candidates": 2
+  }
+}

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="T12 CMU ORM focused tests" tests="20" failures="0" errors="0" skipped="0" time="0.054287">
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_generation_assignment_and_manifest_ignore_input_order" time="0.005978" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_merge_is_canonical_and_rejects_missing_duplicate_cross_shard" time="0.000471" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_runtime_gate_excludes_offline_training_gap" time="0.002137" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_runtime_gate_includes_failed_retry_window" time="0.001366" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_score_assignment_is_exclusive_and_order_invariant" time="0.006029" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_score_manifest_is_stable" time="0.000157" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_whole_question_stays_on_one_generation_worker" time="0.000089" />
+    <testcase classname="t12_test_0_test_t12_sharding.T12ShardingTests" name="test_worker_completion_order_does_not_change_merged_bytes" time="0.025268" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_balancing_is_per_question_one_to_one_and_source_diverse" time="0.000717" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_fixed_shape_scoring_plan_is_order_and_shard_invariant" time="0.000102" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_frozen_distributed_epoch_order_is_global_batch_aligned" time="0.000122" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_global_effective_batch_contract_is_exact" time="0.000035" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_inference_prompt_accepts_only_question_and_full_trace" time="0.000035" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_internal_split_has_no_question_or_template_leakage" time="0.000075" />
+    <testcase classname="t12_test_1_test_orm_data.OrmDataTests" name="test_scoring_batch_size_and_candidate_order_do_not_change_mapping" time="0.000047" />
+    <testcase classname="t12_test_2_test_orm_vote.OrmVoteTests" name="test_clip_invalid_nan_fallback_and_tie_break" time="0.000147" />
+    <testcase classname="t12_test_2_test_orm_vote.OrmVoteTests" name="test_geometric_mean_is_not_arithmetic_mean" time="0.000047" />
+    <testcase classname="t12_test_2_test_orm_vote.OrmVoteTests" name="test_golden_fixture_bytes_are_deterministic" time="0.000091" />
+    <testcase classname="t12_test_2_test_orm_vote.OrmVoteTests" name="test_same_frozen_inputs_reproduce_prediction_and_group_hashes" time="0.011063" />
+    <testcase classname="t12_test_2_test_orm_vote.OrmVoteTests" name="test_two_point_nine_votes_beat_one_point_ninenine_vote" time="0.000060" />
+    <system-out>test_generation_assignment_and_manifest_ignore_input_order (t12_test_0_test_t12_sharding.T12ShardingTests.test_generation_assignment_and_manifest_ignore_input_order) ... ok
+test_merge_is_canonical_and_rejects_missing_duplicate_cross_shard (t12_test_0_test_t12_sharding.T12ShardingTests.test_merge_is_canonical_and_rejects_missing_duplicate_cross_shard) ... ok
+test_runtime_gate_excludes_offline_training_gap (t12_test_0_test_t12_sharding.T12ShardingTests.test_runtime_gate_excludes_offline_training_gap) ... ok
+test_runtime_gate_includes_failed_retry_window (t12_test_0_test_t12_sharding.T12ShardingTests.test_runtime_gate_includes_failed_retry_window) ... ok
+test_score_assignment_is_exclusive_and_order_invariant (t12_test_0_test_t12_sharding.T12ShardingTests.test_score_assignment_is_exclusive_and_order_invariant) ... ok
+test_score_manifest_is_stable (t12_test_0_test_t12_sharding.T12ShardingTests.test_score_manifest_is_stable) ... ok
+test_whole_question_stays_on_one_generation_worker (t12_test_0_test_t12_sharding.T12ShardingTests.test_whole_question_stays_on_one_generation_worker) ... ok
+test_worker_completion_order_does_not_change_merged_bytes (t12_test_0_test_t12_sharding.T12ShardingTests.test_worker_completion_order_does_not_change_merged_bytes) ... ok
+test_balancing_is_per_question_one_to_one_and_source_diverse (t12_test_1_test_orm_data.OrmDataTests.test_balancing_is_per_question_one_to_one_and_source_diverse) ... ok
+test_fixed_shape_scoring_plan_is_order_and_shard_invariant (t12_test_1_test_orm_data.OrmDataTests.test_fixed_shape_scoring_plan_is_order_and_shard_invariant) ... ok
+test_frozen_distributed_epoch_order_is_global_batch_aligned (t12_test_1_test_orm_data.OrmDataTests.test_frozen_distributed_epoch_order_is_global_batch_aligned) ... ok
+test_global_effective_batch_contract_is_exact (t12_test_1_test_orm_data.OrmDataTests.test_global_effective_batch_contract_is_exact) ... ok
+test_inference_prompt_accepts_only_question_and_full_trace (t12_test_1_test_orm_data.OrmDataTests.test_inference_prompt_accepts_only_question_and_full_trace) ... ok
+test_internal_split_has_no_question_or_template_leakage (t12_test_1_test_orm_data.OrmDataTests.test_internal_split_has_no_question_or_template_leakage) ... ok
+test_scoring_batch_size_and_candidate_order_do_not_change_mapping (t12_test_1_test_orm_data.OrmDataTests.test_scoring_batch_size_and_candidate_order_do_not_change_mapping) ... ok
+test_clip_invalid_nan_fallback_and_tie_break (t12_test_2_test_orm_vote.OrmVoteTests.test_clip_invalid_nan_fallback_and_tie_break) ... ok
+test_geometric_mean_is_not_arithmetic_mean (t12_test_2_test_orm_vote.OrmVoteTests.test_geometric_mean_is_not_arithmetic_mean) ... ok
+test_golden_fixture_bytes_are_deterministic (t12_test_2_test_orm_vote.OrmVoteTests.test_golden_fixture_bytes_are_deterministic) ... ok
+test_same_frozen_inputs_reproduce_prediction_and_group_hashes (t12_test_2_test_orm_vote.OrmVoteTests.test_same_frozen_inputs_reproduce_prediction_and_group_hashes) ... ok
+test_two_point_nine_votes_beat_one_point_ninenine_vote (t12_test_2_test_orm_vote.OrmVoteTests.test_two_point_nine_votes_beat_one_point_ninenine_vote) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.054s
+
+OK
+</system-out>
+  </testsuite>
+</testsuites>

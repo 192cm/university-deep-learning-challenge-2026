@@ -1,0 +1,169 @@
+{
+  "all_answers_canonical_integers": true,
+  "csv_round_trip_verified": true,
+  "diff_audit": {
+    "changed_count": 34,
+    "path": "artifacts/submissions/t8_3_filtered_k32/diff-vs-t8-unfiltered.json"
+  },
+  "extraction_failure_counts": {
+    "conflicting_explicit_answers": 25,
+    "no_supported_answer_marker": 18,
+    "non_integer_only": 4
+  },
+  "extraction_path_counts": {
+    "boxed": 1504,
+    "final_answer_marker": 23026,
+    "last_integer": 1993,
+    "none": 47,
+    "standalone_last_line": 22
+  },
+  "fallback_answer": "0",
+  "fallback_count": 0,
+  "fallback_rows": [],
+  "filter_off_regression": {
+    "byte_identical": true,
+    "expected_path": "artifacts/submissions/t8_majority_k32/submission.csv",
+    "expected_sha256": "e13f933abd73017a845cf683ed3df6d91f34c7769dabe7d5bc7c1cbb13ca236b",
+    "filtered_changed_rows": 34,
+    "reaggregated_sha256": "e13f933abd73017a845cf683ed3df6d91f34c7769dabe7d5bc7c1cbb13ca236b",
+    "row_mismatches": 0
+  },
+  "first_id": "val-000000",
+  "generation_count": 26592,
+  "generation_identity": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "run_fingerprint": "2bf189cf7b814ff1189faabb20f339c9e49cfe330231a0359d007131c249fbb9"
+  },
+  "generation_scope": {
+    "allow_generation_superset": true,
+    "ignored_generation_count": 5408,
+    "ignored_generation_id_count": 169,
+    "selected_generation_count": 26592,
+    "selected_generation_id_count": 831,
+    "source_generation_count": 32000,
+    "source_generation_id_count": 1000
+  },
+  "generations_path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+  "generations_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+  "ground_truth_used_for_selection": false,
+  "hit_max_new_tokens_count": 292,
+  "hit_max_new_tokens_rate": 0.010980746089049339,
+  "id_order_preserved": true,
+  "ignored_generation_count": 5408,
+  "ignored_generation_id_count": 169,
+  "input_path": "data/deep_chal_math_leaderboard_filtered.csv",
+  "input_sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+  "invalid_candidate_count": 47,
+  "invalid_candidate_rate": 0.0017674488567990373,
+  "k": 32,
+  "last_id": "val-000999",
+  "majority_tie_break": "first generated answer among tied top vote counts",
+  "mean_agreement": 0.7330400120336944,
+  "median_agreement": 0.90625,
+  "minimum_agreement": 0.03125,
+  "output_bytes": 12575,
+  "output_header": [
+    "id",
+    "answer"
+  ],
+  "output_path": "artifacts/submissions/t8_3_filtered_k32/submission.csv",
+  "output_rows": 831,
+  "output_sha256": "1a99b8eb0797fd4699a65b392cae2286c29647354cdfa56cde39dc6a71ecdb63",
+  "row_count": 831,
+  "run_contract": {
+    "config_path": "configs/t8_self_consistency.json",
+    "config_sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630",
+    "input_scope": "validated_subset",
+    "metadata_input_sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+    "metadata_input_sha256_match": false,
+    "metadata_path": "artifacts/submissions/t8_majority_k32/run-metadata.json",
+    "metadata_sha256": "8637c4c5d77d67708198d00ce4c4cc345c6cbd575d02a6a4f3060a24e5fbe4c9",
+    "selected_input_sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+    "validated": true
+  },
+  "sample_submission_path": null,
+  "sample_submission_sha256": null,
+  "schema_version": 1,
+  "source_generation_count": 32000,
+  "source_generation_id_count": 1000,
+  "strategy": "T8-3 filtered fixed self-consistency majority@k",
+  "unique_id_count": 831,
+  "vote_filter": {
+    "all_votes_filtered_fallback_count": 5,
+    "all_votes_filtered_fallback_ids": [
+      "val-000228",
+      "val-000456",
+      "val-000519",
+      "val-000801",
+      "val-000853"
+    ],
+    "changed_answer_count": 34,
+    "changed_answer_ids": [
+      "val-000053",
+      "val-000068",
+      "val-000091",
+      "val-000092",
+      "val-000094",
+      "val-000096",
+      "val-000147",
+      "val-000248",
+      "val-000285",
+      "val-000306",
+      "val-000347",
+      "val-000423",
+      "val-000427",
+      "val-000503",
+      "val-000523",
+      "val-000542",
+      "val-000586",
+      "val-000589",
+      "val-000636",
+      "val-000638",
+      "val-000652",
+      "val-000659",
+      "val-000696",
+      "val-000779",
+      "val-000797",
+      "val-000891",
+      "val-000910",
+      "val-000916",
+      "val-000919",
+      "val-000945",
+      "val-000956",
+      "val-000964",
+      "val-000987",
+      "val-000989"
+    ],
+    "condition_candidate_count_unique": 2042,
+    "condition_candidate_counts": {
+      "conflicting_explicit_candidates": 25,
+      "hit_max_new_tokens": 292,
+      "weak_extraction_path": 2015
+    },
+    "condition_removed_vote_counts": {
+      "hit_max_new_tokens": 292,
+      "weak_extraction_path": 2015
+    },
+    "enabled": true,
+    "ground_truth_used": false,
+    "policy": {
+      "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+      "combine_conditions": "or",
+      "exclude_hit_max_new_tokens": true,
+      "excluded_extraction_paths": [
+        "last_integer",
+        "standalone_last_line"
+      ],
+      "kept_path_weights": {
+        "boxed": 1.0,
+        "final_answer_marker": 1.0
+      },
+      "majority_tie_break": "first generated answer among tied top vote counts",
+      "minimum_distinct_explicit_candidates": 2
+    },
+    "removed_vote_count_unique": 2017
+  },
+  "vote_tie_count": 32,
+  "vote_tie_rate": 0.03850782190132371
+}

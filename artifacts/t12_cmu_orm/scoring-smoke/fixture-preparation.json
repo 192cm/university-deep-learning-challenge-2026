@@ -1,0 +1,22 @@
+{
+  "candidates": 32,
+  "label_blind": true,
+  "outputs": {
+    "candidates": {
+      "bytes": 81786,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/candidates.jsonl",
+      "rows": 32,
+      "sha256": "3586d276b0f545c09e2c47d9a7f8a20c3033239d09691cfa8ba9f509581a48eb"
+    },
+    "questions": {
+      "bytes": 366,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/questions.csv",
+      "rows": 1,
+      "sha256": "f513d0415ba093a6131e96aab358fd5a0cb4a11a935b2ec6e582e4522043faad"
+    }
+  },
+  "question_id": "train-000001",
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12"
+}

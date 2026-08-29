@@ -1,0 +1,73 @@
+{
+  "budget_match": {
+    "exactly_equal": true,
+    "genselect_selection_generations": 4,
+    "genselect_solution_generations": 28,
+    "genselect_total_generations": 32,
+    "majority_reference_generations": 32
+  },
+  "counts": {
+    "evaluation_cases": 29896,
+    "modes": 2,
+    "questions": 3737,
+    "selector_runs": 4,
+    "shuffle_questions": 512,
+    "subset_size": 16
+  },
+  "created_at_utc": "2026-08-22T20:41:57.107931+00:00",
+  "ground_truth_used_for_candidate_choice": false,
+  "outputs": {
+    "cases": {
+      "bytes": 256429808,
+      "path": "artifacts/t9_genselect/evaluation/evaluation-cases.jsonl",
+      "rows": 29896,
+      "sha256": "19ad5d46d7b86ff6c25bd9fa54a396acd8345daf0d632841ccbd91bf06cf8aa0"
+    },
+    "csv": {
+      "bytes": 184251636,
+      "path": "artifacts/t9_genselect/evaluation/evaluation.csv",
+      "rows": 29896,
+      "sha256": "2952b5831bcf29be16d1c638e1d6fb96b7a0714cd3dec3fe4605e308ee489301"
+    },
+    "shuffle_cases": {
+      "bytes": 4392725,
+      "path": "artifacts/t9_genselect/evaluation/shuffle-cases.jsonl",
+      "rows": 512,
+      "sha256": "cb9db35849a9df3022298b4aeb7717c24d344f1e3dba3f52f4734921ff6b2302"
+    },
+    "shuffle_csv": {
+      "bytes": 3149858,
+      "path": "artifacts/t9_genselect/evaluation/shuffle.csv",
+      "rows": 512,
+      "sha256": "707d32c40049544153c84d19e3cb1ca79b3e63352ca162ebcf8453f9d3d54579"
+    }
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "sources": {
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "config": {
+      "bytes": 3676,
+      "path": "configs/t9_genselect.json",
+      "sha256": "091e09f559c3a7630b03cb21df2ba5ff69ceec9fc7d028f36f2db6ea699b45e7"
+    },
+    "t8_generations": {
+      "bytes": 234212343,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "complete",
+  "task": "T9"
+}

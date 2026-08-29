@@ -1,0 +1,86 @@
+{
+  "absolute_difference_pp": 1.6493585827733637,
+  "created_at_utc": "2026-08-21T11:10:54.418023+00:00",
+  "decision": "switch_to_bf16_lora",
+  "hf_nf4_adapter": {
+    "correct": 1100,
+    "greedy_accuracy": 0.6719609040928528,
+    "hit_max_new_tokens_rate": 0.0177153329260843,
+    "invalid_output_rate": 0.0030543677458766036,
+    "invalid_outputs": 5,
+    "mean_output_tokens": 450.7220525351252,
+    "median_output_tokens": 312,
+    "questions": 1637
+  },
+  "nf4_minus_bf16_pp": -1.6493585827733637,
+  "outputs": {
+    "resolved_sweep_configs": {
+      "lr_1em04": {
+        "bytes": 2819,
+        "path": "artifacts/t6_1_sft_v1r/resolved-configs/lr_1em04.json",
+        "sha256": "c22291ddecf71c2d97ff9e1555bf27a6e7b054b74b9cff3f980edddf41643ce4"
+      },
+      "lr_1em05": {
+        "bytes": 2818,
+        "path": "artifacts/t6_1_sft_v1r/resolved-configs/lr_1em05.json",
+        "sha256": "a4b891fad86002e5f8295c8213b40296f4cb94f72a8a144f631ebdd109618b86"
+      },
+      "lr_3em05": {
+        "bytes": 2818,
+        "path": "artifacts/t6_1_sft_v1r/resolved-configs/lr_3em05.json",
+        "sha256": "6d582a6840eb169004acfe2ca6dd02ba40c104b4aa52c5611830a1d94dfb4d2b"
+      }
+    }
+  },
+  "resolved_load_in_4bit": false,
+  "resolved_training_precision": "bf16",
+  "schema_version": 1,
+  "scope": {
+    "questions": 1637,
+    "split": "random_holdout"
+  },
+  "sources": {
+    "base_config": {
+      "bytes": 2667,
+      "path": "configs/t6_1_sft_v1r.json",
+      "sha256": "3e9883ef7ca492ca86c20cdfc8da1814fe359ced6c57e3627d75bb4f90bbbb1f"
+    },
+    "bf16_generations": {
+      "bytes": 7368676,
+      "path": "artifacts/t6_sft_v1/rft_r1/evaluation/generations.jsonl",
+      "rows": 3737,
+      "sha256": "075c0db5fc9c5664a10a7d5f8918309f277ddc44c7c9a61f764270245116063b"
+    },
+    "ids": {
+      "bytes": 21281,
+      "path": "data/splits/random_holdout_ids.txt",
+      "rows": 1637,
+      "sha256": "cc76d7fd77e98d070b46d833f8d1737319ca0dc6baf292009803a1c34e8146e4"
+    },
+    "labels": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "nf4_generations": {
+      "bytes": 2909816,
+      "path": "artifacts/t6_1_sft_v1r/precision-probe/hf_nf4/generations.jsonl",
+      "rows": 1637,
+      "sha256": "67ab069f73b478ee9d930a2081faca08bd4ae002d784031cec73b2dc5035a1e9"
+    }
+  },
+  "stage": "precision_probe",
+  "status": "complete",
+  "task": "T6-1",
+  "threshold_pp": 1.0,
+  "vllm_bf16_adapter": {
+    "correct": 1127,
+    "greedy_accuracy": 0.6884544899205864,
+    "hit_max_new_tokens_rate": 0.028711056811240074,
+    "invalid_output_rate": 0.005497861942577886,
+    "invalid_outputs": 9,
+    "mean_output_tokens": 481.0018326206475,
+    "median_output_tokens": 330,
+    "questions": 1637
+  }
+}

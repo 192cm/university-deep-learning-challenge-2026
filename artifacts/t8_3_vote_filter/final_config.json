@@ -1,0 +1,49 @@
+{
+  "adopted": false,
+  "candidate_policy": {
+    "config": "configs/t8_3_vote_filter.json",
+    "config_sha256": "f02259557bc58d79a7eea40a4bef3d135116eb4a3422ac157b5977aa6c29f32a",
+    "name": "drop-low-quality-votes-v1",
+    "vote_filter": {
+      "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+      "combine_conditions": "or",
+      "exclude_hit_max_new_tokens": true,
+      "excluded_extraction_paths": [
+        "last_integer",
+        "standalone_last_line"
+      ],
+      "kept_path_weights": {
+        "boxed": 1.0,
+        "final_answer_marker": 1.0
+      },
+      "majority_tie_break": "first generated answer among tied top vote counts",
+      "minimum_distinct_explicit_candidates": 2
+    }
+  },
+  "decision": {
+    "adopted": false,
+    "checks": {
+      "effect_size": false,
+      "hard_format_guardrail": true,
+      "significance": true
+    },
+    "criteria": {
+      "maximum_exact_mcnemar_p": 0.05,
+      "maximum_hard_or_format_drop_pp": 2.0,
+      "maximum_union_invalid_increase_pp": 1.0,
+      "minimum_union_delta_pp": 1.5
+    },
+    "reason": "union accuracy improved, but the preregistered +1.5pp effect-size gate was not met",
+    "status": "hold"
+  },
+  "final_strategy": {
+    "k": 32,
+    "policy": "unfiltered_majority_k32",
+    "reason": "T8-3 retained as a candidate but did not pass the +1.5pp gate",
+    "task": "T8"
+  },
+  "schema_version": 1,
+  "status": "hold",
+  "t10_update_required": false,
+  "task": "T8-3"
+}

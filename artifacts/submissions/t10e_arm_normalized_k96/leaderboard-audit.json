@@ -1,0 +1,38 @@
+{
+  "accuracy_computed": false,
+  "aggregation": {
+    "active_arm_counts": {
+      "2": 1,
+      "3": 830
+    },
+    "changed_vs_flat_questions": 9,
+    "invalid_prediction_rate": 0.0,
+    "invalid_predictions": 0,
+    "maximum_source_candidates": 79776,
+    "questions": 831,
+    "selected_candidates_after_filter_and_fallback": 75038,
+    "tie_questions": 3,
+    "tie_rate": 0.0036101083032490976,
+    "valid_votes": 74976
+  },
+  "changed_vs_source_filtered_answer": {
+    "base": 60,
+    "cot_boxed": 63,
+    "rft_r1": 74
+  },
+  "changed_vs_t10d_flat": 9,
+  "input": "data/deep_chal_math_leaderboard_filtered.csv",
+  "labels_available": false,
+  "per_arm_all_votes_filtered_fallback_count": {
+    "base": 5,
+    "cot_boxed": 2,
+    "rft_r1": 0
+  },
+  "rows": 831,
+  "t10d_flat_reference": {
+    "byte_frozen_predictions_match": true,
+    "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/leaderboard-predictions.jsonl",
+    "rows": 831,
+    "sha256": "9998cc529c749b30737e4d684886a6521c1bb045a4ca98736519a6f839b19708"
+  }
+}

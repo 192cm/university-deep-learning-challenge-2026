@@ -1,0 +1,156 @@
+{
+  "budget": {
+    "minimum_reserve_hours": 6,
+    "total_hours": 24
+  },
+  "calibration": {
+    "adopt_fraction_of_maximum": 0.9,
+    "batch_sizes": [
+      1,
+      2,
+      4
+    ],
+    "compare_gradient_checkpointing": [
+      true
+    ],
+    "max_steps": 4,
+    "minimum_mean_gpu_utilization_pct": 90.0,
+    "probe_rows": 128
+  },
+  "data": {
+    "candidates_per_example": 16,
+    "max_question_chars": 2000,
+    "summary_head_chars": 80,
+    "summary_tail_chars": 180,
+    "train_quotas": {
+      "r1_c1_3": 1000,
+      "r1_c4_7": 600,
+      "r1_c_ge8_anchor": 200,
+      "r2_hard_tail": 1200
+    },
+    "validation_quotas": {
+      "r1_c1_3": 120,
+      "r1_c4_7": 100,
+      "r1_c_ge8_anchor": 20,
+      "r2_hard_tail": 80
+    }
+  },
+  "evaluation": {
+    "adapter_adoption": "strictly higher union accuracy than identical-prompt few-shot control",
+    "budget_matched_candidate_pool": 28,
+    "full_candidate_pool": 32,
+    "genselect_adoption": "strictly higher union accuracy than majority@32 under 28 solve + 4 select = 32 total generations",
+    "selector_runs": 4,
+    "selector_vote_tie_break": "first emitted selected answer among tied top counts",
+    "shuffle_questions": 512,
+    "subset_size": 16
+  },
+  "generation": {
+    "do_sample": false,
+    "max_input_tokens": 7936,
+    "max_new_tokens": 256,
+    "n": 1,
+    "seed": 42,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "hf": {
+    "attn_implementation": "sdpa",
+    "max_batch_size": 8,
+    "max_batch_tokens": 49152
+  },
+  "hp_sweep": {
+    "checkpoint_epochs": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "epochs": 1.0,
+    "learning_rates": [
+      1e-05,
+      3e-05,
+      0.0001
+    ],
+    "selection_scope": "data/genselect/validation.jsonl only"
+  },
+  "lora": {
+    "bias": "none",
+    "lora_alpha": 128,
+    "lora_dropout": 0.0,
+    "r": 64,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "task_type": "CAUSAL_LM"
+  },
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "prompt_template": "{question}",
+  "provenance": {
+    "candidate_sources": [
+      "artifacts/t5_rft_r1/generations.jsonl",
+      "data/rft_r2/candidates.jsonl"
+    ],
+    "selector_model": "same pinned base with one unmerged selection-only LoRA",
+    "solution_generation": "T8 fixed k=32, temperature=0.8, top_p=0.95",
+    "solution_model": "T4 base with no adapter"
+  },
+  "quantization": {
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "load_in_4bit": false
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "task": "T9",
+  "training": {
+    "bf16": true,
+    "checkpoint_epochs": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "dataloader_num_workers": 16,
+    "dataloader_prefetch_factor": 2,
+    "effective_batch_size": 32,
+    "group_by_length": true,
+    "learning_rate": 3e-05,
+    "logging_steps": 1,
+    "lr_scheduler_type": "cosine",
+    "max_grad_norm": 1.0,
+    "max_length": 8192,
+    "num_train_epochs": 1.0,
+    "optim": "paged_adamw_8bit",
+    "packing": false,
+    "save_steps": 100,
+    "save_total_limit": 8,
+    "target_preservation_tokens": 128,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0
+  },
+  "vllm": {
+    "batch_invariant": true,
+    "dtype": "bfloat16",
+    "enable_prefix_caching": true,
+    "enforce_eager": false,
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 8192,
+    "max_num_batched_tokens": 65536,
+    "max_num_seqs": 64,
+    "request_chunk_size": 256
+  }
+}

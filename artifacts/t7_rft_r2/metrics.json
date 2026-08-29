@@ -1,0 +1,66 @@
+{
+  "candidate_questions": 1801,
+  "extraction_paths": {
+    "boxed": 6545,
+    "final_answer_marker": 38203,
+    "last_integer": 12012,
+    "none": 661,
+    "standalone_last_line": 211
+  },
+  "failure_reasons": {
+    "conflicting_explicit_answers": 349,
+    "no_supported_answer_marker": 129,
+    "non_integer_only": 183
+  },
+  "generation_run_fingerprint": "9ef7e998b6c59a64073d80d04741a1f0531e5100760609817ef6f21ac7548408",
+  "generation_source": {
+    "adapter_arm": null,
+    "adapter_path": null,
+    "kind": "base",
+    "name": "T4 base",
+    "reason": "T6-1 adopted no adapter; its manifest explicitly routes T7 to T4 base"
+  },
+  "prospective_r1_plus_r2_sft_samples": 41556,
+  "r1_generation_run_fingerprint": "603839f5af80c7eb777149e314580e78f04d8bf7f947d8ff22d52f44fc421154",
+  "r1_samples_per_question": 16,
+  "r1_sft_samples": 40645,
+  "r2_c_distribution": {
+    "c=0": 1311,
+    "c=1": 249,
+    "c=2-3": 174,
+    "c>=4": 67
+  },
+  "r2_harvest_rate": 0.2698500832870627,
+  "r2_harvested_problems": 486,
+  "r2_rejected_or_surplus_samples": 56721,
+  "r2_samples_per_question": 32,
+  "r2_selected_samples": 911,
+  "r2_solved_problems_including_image_audit_rows": 490,
+  "raw_r2_generations": 57632,
+  "schema_version": 1,
+  "suspect_0_of_48_problems": 1311,
+  "t9_handoff": {
+    "decision": "include T7 R2 candidates as the highest-priority T9 stratum",
+    "minimum_r2_harvested_problems": 100,
+    "r2_harvested_problems": 486,
+    "use_r2_hard_tail": true
+  },
+  "target_questions": 1801,
+  "task": "T7",
+  "throughput_remeasurement": {
+    "full_run_generations_per_second": 7.373207855461268,
+    "short_calibration_generations_per_second": 6.77160548392686,
+    "short_vs_t5_ratio": 0.9502320277905844,
+    "t5_documented_generations_per_second": 7.12626525509958
+  },
+  "usage_policy": {
+    "hint_conditioned_generation_executed": false,
+    "note": "sft.jsonl preserves verified additions for audit compatibility only; T7 does not train or adopt an SFT model",
+    "r2_additions_used_for_sft_training": false,
+    "retained_for": [
+      "T7 data-quality audit",
+      "T9 GenSelect candidate handoff"
+    ],
+    "sft_v2_executed": false
+  }
+}

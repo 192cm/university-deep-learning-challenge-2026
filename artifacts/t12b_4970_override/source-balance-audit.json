@@ -1,0 +1,144 @@
+{
+  "audit": {
+    "length_only_cross_fitted_auc": 0.5205725632,
+    "length_probe_passed": true,
+    "maximum_non_exception_absolute_smd": 0.08154751420359395,
+    "source_balance_and_smd": {
+      "maximum_absolute_smd": 1.3375942115115074,
+      "negative_rows": 12500,
+      "positive_rows": 12500,
+      "rows": 25000,
+      "source_balance_violations": {},
+      "source_counts": {
+        "t11_base_cot_boxed_k8": {
+          "0": 5575,
+          "1": 5575
+        },
+        "t12_base_cot_brief_high_temperature_k16": {
+          "0": 231,
+          "1": 231
+        },
+        "t5_base_k16": {
+          "0": 5073,
+          "1": 5073
+        },
+        "t5_base_targeted_k48": {
+          "0": 1449,
+          "1": 1449
+        },
+        "t7_base_hard_tail_k32": {
+          "0": 172,
+          "1": 172
+        }
+      },
+      "standardized_mean_differences": {
+        "answer_support_bucket": {
+          "support_1": -1.0327239642474686,
+          "support_2_3": -0.2537797648356863,
+          "support_4_7": 1.3375942115115074
+        },
+        "extraction_path": {
+          "answer_phrase": -0.02969019991844247,
+          "boxed": -0.009226362612730216,
+          "final_answer_marker": 0.052954852054827424,
+          "terminal_integer": -0.1178833744683749
+        },
+        "hard_normal": {
+          "normal": 0.0
+        },
+        "problem_type": {
+          "algebra": 0.015467817931978014,
+          "arithmetic_word_problem": -0.014205871863500863,
+          "combinatorics_probability": 0.0014722651052501876,
+          "geometry": 0.002536841338216873,
+          "number_theory": 0.004033143292737752
+        },
+        "prompt_format": {
+          "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91": 0.0,
+          "ac00dd5497039e7af7806146047ac6646e386328c5561e5613813a92b6f60061": 0.0,
+          "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687": 0.0
+        },
+        "source": {
+          "t11_base_cot_boxed_k8": 0.0,
+          "t12_base_cot_brief_high_temperature_k16": 0.0,
+          "t5_base_k16": 0.0,
+          "t5_base_targeted_k48": 0.0,
+          "t7_base_hard_tail_k32": 0.0
+        },
+        "trace_length": -0.08154751420359395,
+        "trace_length_quartile": {
+          "q1": 0.057620075311645466,
+          "q2": 0.04489212747119488,
+          "q3": -0.06269613535613029,
+          "q4": -0.03972134788640803
+        }
+      }
+    },
+    "source_only_cross_fitted_auc": 0.4912639104,
+    "source_probe_passed": true,
+    "unavoidable_exceptions": {
+      "answer_support_bucket": {
+        "absolute_smd_lower_bound_using_bernoulli_sd_at_most_0_5": 0.85072,
+        "negative_support_4_7_maximum_by_raw_capacity": 1432,
+        "positive_minus_negative_count_lower_bound": 5317,
+        "positive_support_4_7_minimum_by_raw_capacity": 6749
+      },
+      "terminal_integer_extraction_path": {
+        "count_difference_bound_used": 138,
+        "selected_negative": 180,
+        "selected_positive": 42
+      }
+    }
+  },
+  "operational_override_authorized": true,
+  "schema_version": 1,
+  "selection": {
+    "deduplicated_rows": 30910,
+    "input_rows": 30912,
+    "negative_rows": 12500,
+    "pointwise_auxiliary_questions": 1745,
+    "positive_rows": 12500,
+    "ranking_questions": 3225,
+    "selected_key_sha256": "54afe755afada14acd02dd7d9a8075790ef8b3878dd4769c0207664465fc2bfc",
+    "selected_questions": 4970,
+    "selected_rows": 25000,
+    "solver": {
+      "binary_variables": 36944,
+      "constraints": 24158,
+      "feature_bound_factor": 0.08,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "mip_gap": 1.8577572303492364e-12,
+      "nonzero_coefficients": 308360,
+      "objective": "operational",
+      "objective_value": 6765.312000124689,
+      "scipy_version": "1.13.1",
+      "status": 0,
+      "trace_length_sum_difference_bound": 775586,
+      "variables": 36944
+    },
+    "source_counts": {
+      "t11_base_cot_boxed_k8": {
+        "0": 5575,
+        "1": 5575
+      },
+      "t12_base_cot_brief_high_temperature_k16": {
+        "0": 231,
+        "1": 231
+      },
+      "t5_base_k16": {
+        "0": 5073,
+        "1": 5073
+      },
+      "t5_base_targeted_k48": {
+        "0": 1449,
+        "1": 1449
+      },
+      "t7_base_hard_tail_k32": {
+        "0": 172,
+        "1": 172
+      }
+    }
+  },
+  "strict_gate_passed": false,
+  "task": "T12b-4970-override"
+}

@@ -1,0 +1,44 @@
+{
+  "continued_ids_sha256": "0468182aa89039fec14da5a5d60e85a79aef58f9882a6c9e8c974336a29c691a",
+  "counts": {
+    "continued_questions": 1799,
+    "early_stop_rate": 0.5185978057265186,
+    "initial_generations": 14948,
+    "projected_average_samples_per_question": 17.479261439657478,
+    "projected_total_generations": 65320,
+    "questions": 3737,
+    "stopped_questions": 1938
+  },
+  "created_at_utc": "2026-08-23T20:22:23.479418+00:00",
+  "ground_truth_labels_consumed": false,
+  "output": {
+    "bytes": 23387,
+    "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage2/ids.txt",
+    "rows": 1799,
+    "sha256": "0468182aa89039fec14da5a5d60e85a79aef58f9882a6c9e8c974336a29c691a"
+  },
+  "schema_version": 1,
+  "selection_inputs": [
+    "model output strings",
+    "syntactic answer extraction"
+  ],
+  "sources": {
+    "stage1_generations": {
+      "bytes": 31412704,
+      "path": "artifacts/t8_1_rft_self_consistency/adaptive/stage1/generations.jsonl",
+      "rows": 14948,
+      "sha256": "258ac2684bde6317f54caa8815e0d781a596cf16ad141c1c7d67de5a3aede776"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "complete",
+  "stopped_ids_sha256": "895a9717c2e2bbfcf73bb2d07916df3966d30d491c468ae75ca7aa38e8c53631",
+  "stopping_rule": "stop after 4 only when every extracted answer is valid and all are identical",
+  "task": "T8-1",
+  "tie_break": "first generated answer among tied top vote counts"
+}

@@ -1,0 +1,40 @@
+{
+  "completed_at_utc": "2026-08-22T18:52:33.425553+00:00",
+  "error": {
+    "message": "CUDA out of memory. Tried to allocate 7.62 GiB. GPU 0 has a total capacity of 23.53 GiB of which 3.04 GiB is free. Process 554923 has 20.47 GiB memory in use. Of the allocated memory 19.94 GiB is allocated by PyTorch, and 85.17 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+    "type": "OutOfMemoryError"
+  },
+  "experiment": "sweep_gc_on_b2",
+  "gpu": {
+    "monitor": {
+      "active_utilization_mean_pct": 54.0,
+      "fraction_samples_at_least_90_pct": 0.5,
+      "peak_memory_used_mib": 21116.0,
+      "samples": 4,
+      "utilization_mean_pct": 54.0
+    },
+    "torch_peak_allocated_mib": 20418.833984375,
+    "torch_peak_reserved_mib": 20644.0
+  },
+  "schema_version": 1,
+  "settings": {
+    "assistant_only_loss": true,
+    "batch_size": 2,
+    "checkpoint_epochs": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "effective_batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "gradient_checkpointing": true,
+    "max_steps": 4,
+    "num_train_epochs": 1.0,
+    "packing": false,
+    "stop_after_final_checkpoint": false
+  },
+  "started_at_utc": "2026-08-22T18:52:27.133820+00:00",
+  "status": "oom",
+  "task": "T9"
+}

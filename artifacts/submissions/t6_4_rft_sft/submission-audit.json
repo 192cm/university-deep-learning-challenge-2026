@@ -1,0 +1,34 @@
+{
+  "input_path": "data/deep_chal_math_leaderboard_filtered.csv",
+  "input_sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+  "generations_path": "artifacts/submissions/t6_4_rft_sft/generations.jsonl",
+  "generations_sha256": "8f561d5a7038888f0b69adaf0570af94519eebb94f8e5ea17ca9b12fa865714c",
+  "generation_rows_available": 1000,
+  "generation_extra_id_count": 169,
+  "row_count": 831,
+  "unique_id_count": 831,
+  "first_id": "val-000000",
+  "last_id": "val-000999",
+  "fallback_answer": "0",
+  "fallback_count": 0,
+  "fallback_rows": [],
+  "extraction_path_counts": {
+    "boxed": 3,
+    "final_answer_marker": 797,
+    "last_integer": 30,
+    "standalone_last_line": 1
+  },
+  "extraction_failure_counts": {},
+  "hit_max_new_tokens_count": 24,
+  "output_path": "artifacts/submissions/t6_4_rft_sft/submission.csv",
+  "output_sha256": "113bb91dce66e1fb6ce290dbb0964e0e8b2c8102bfa9f5a424b457e70985e4ec",
+  "output_bytes": 12612,
+  "output_header": [
+    "id",
+    "answer"
+  ],
+  "output_rows": 831,
+  "csv_round_trip_verified": true,
+  "all_answers_canonical_integers": true,
+  "id_order_preserved": true
+}

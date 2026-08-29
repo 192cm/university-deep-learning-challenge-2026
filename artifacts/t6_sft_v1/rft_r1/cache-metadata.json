@@ -1,0 +1,82 @@
+{
+  "cache": {
+    "path": "artifacts/t6_sft_v1/rft_r1/cache",
+    "rows": 8894,
+    "sha256": "6acd7787d6186940b5a3ee1b2a89842dc69c62575c4378893aca067706d20a2b"
+  },
+  "cache_fingerprint": "5eefebc3c1b7e05c093569786b0aef365301d7ce39b28a2345888fa018872728",
+  "cache_identity": {
+    "inputs": [
+      {
+        "path": "data/rft_r1/sft.jsonl",
+        "sha256": "63b27e0a3fc3fd3e05fd4a610bd53de108d5bc6486b3598946652b6f3b7bf354"
+      }
+    ],
+    "max_length": 2048,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "packing": true,
+    "schema_version": 1,
+    "seed": 42,
+    "target_preservation_tokens": 128,
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "created_at_utc": "2026-08-20T15:39:38.002456+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "tokenizers_parallelism": "true"
+  },
+  "packing": {
+    "algorithm": "best_fit_decreasing",
+    "assistant_loss_tokens": 13126356,
+    "assistant_only_mask_preserved": true,
+    "capacity_tokens": 18214912,
+    "efficiency": 0.9897389018404261,
+    "enabled": true,
+    "packed_sequences": 8894,
+    "sample_boundaries_begin_masked": true,
+    "source_samples": 40645,
+    "total_tokens": 18028007
+  },
+  "runtime_seconds": 63.207876451313496,
+  "schema_version": 1,
+  "source_audit": {
+    "duplicate_exact_rows_detected": 34,
+    "duplicate_exact_rows_removed": 0,
+    "final_line_contract_100_percent": true,
+    "inputs": [
+      {
+        "path": "data/rft_r1/sft.jsonl",
+        "rows": 40645,
+        "sha256": "63b27e0a3fc3fd3e05fd4a610bd53de108d5bc6486b3598946652b6f3b7bf354"
+      }
+    ],
+    "rows": 40645,
+    "source_counts": {
+      "rft_r1": 40645
+    }
+  },
+  "status": "complete",
+  "task": "T6",
+  "tokenization": {
+    "assistant_only_loss": true,
+    "assistant_tokens": {
+      "max": 1969,
+      "mean": 322.9513101242465,
+      "median": 245,
+      "p95": 818.0
+    },
+    "chat_template_applied": true,
+    "label_token_identity_100_percent": true,
+    "length": {
+      "max": 2048,
+      "mean": 443.54796407922254,
+      "median": 368,
+      "p95": 961.0
+    },
+    "max_length": 2048,
+    "prompt_labels_all_minus_100": true,
+    "source_samples": 40645,
+    "truncated_samples": 32,
+    "truncation_preserves_prompt_and_completion_tail": true
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "api_cost_usd": 0.0,
+  "checks": {
+    "all_out_of_scope_counts_zero": true,
+    "existing_t11_and_submission_unchanged": true,
+    "gate_uses_preregistered_normalized_metrics": true,
+    "normalized_256_frozen": true,
+    "normalizer_arithmetic_free": true,
+    "normalizer_label_blind": true,
+    "normalizer_tests_passed": true,
+    "normalizer_two_pass_deterministic": true,
+    "presentation_record_updated": true,
+    "raw_256_frozen": true,
+    "source_hashes_match": true,
+    "submission_unchanged": true,
+    "teacher_revision_frozen": true,
+    "tokenizer_revision_frozen": true
+  },
+  "created_at_utc": "2026-08-27T07:53:50.435445+00:00",
+  "decision": "teacher_gate_failed",
+  "fallback_attempted": false,
+  "immutable_after": {
+    "artifacts_t11_tree": {
+      "comparison.md": {
+        "bytes": 551,
+        "sha256": "0db0b951bf8dd0799aadee3e5a350b264457c99964e99e29b84a8cac7810d8e1"
+      },
+      "manifest.json": {
+        "bytes": 1405,
+        "sha256": "863f68fd811f8102a7fe36803b39bd0422db279e23d94cc0b74cf17b9903d0cd"
+      },
+      "student-probe-run-metadata.json": {
+        "bytes": 3577200,
+        "sha256": "67039752f214cbe51ae2568884122388d35a611278dd7ea40d4da4d1f97adc5c"
+      },
+      "supervisor.log": {
+        "bytes": 2509919,
+        "sha256": "8edaebaab7e9343b2728188864a63b2ce1210a6a8978832d68ae642e6556676c"
+      },
+      "teacher-preflight.json": {
+        "bytes": 10642,
+        "sha256": "59484f387c30336242592f310b146404c2268171bb539f98d9a3eb4135616606"
+      },
+      "teacher-run-metadata.json": {
+        "bytes": 1433,
+        "sha256": "fc25cdf2083e97e1ed5167ff30d22ef181a21ff04546dc77b9f3a65b722ca4ec"
+      },
+      "tests.xml": {
+        "bytes": 8424,
+        "sha256": "3b3817784800699813df8c8bfe90e6f105a54ddde1b7cc95e3a2dfdd3fb2aaa0"
+      }
+    },
+    "config_t11": {
+      "bytes": 9532,
+      "path": "configs/t11_aimo_generation_quality.json",
+      "sha256": "2584181f0a24c4cc4a57c4f0760fca0ba5ee55405250500c4526214b9ab765ba"
+    },
+    "data_t11_tree": {
+      "anchor_ids.txt": {
+        "bytes": 95966,
+        "sha256": "bcab39941dda0d9f07692a750ef95542b5c5a98fbbc3c32113756c9d49e2ab45"
+      },
+      "contamination-audit.csv": {
+        "bytes": 1101329,
+        "sha256": "b051ceb7ef1cd4308de8b40bc6babffe8d237c30a996c3f20089fdf28992ca0a"
+      },
+      "difficulty-audit.json": {
+        "bytes": 5032,
+        "sha256": "f3fda6f2985561c70d419536b04d97960896484e23f62feb1497193c4e74058d"
+      },
+      "eligible_ids.txt": {
+        "bytes": 141193,
+        "sha256": "1e4ad13857b71a1decdfb6cc94efce6b21a4f86b00819685954792353e39611b"
+      },
+      "hard_ids.txt": {
+        "bytes": 24479,
+        "sha256": "77a10c579e870e3cd912c03fbb19d4635d6b1e826c7bdbae7b1c30b631441abb"
+      },
+      "preflight-data.json": {
+        "bytes": 2563,
+        "sha256": "66ef59c106b1e284d52ba18772d734c4113967bf78daae38660c9819f7c6e837"
+      },
+      "student_probe.jsonl": {
+        "bytes": 187111651,
+        "sha256": "31b2af19392bbe86089ddfc27450d75af2aac27fba565dd633c9254ef3c63a4c"
+      },
+      "teacher_generations.jsonl": {
+        "bytes": 1032212,
+        "sha256": "764f5e8fcc31bc61303ee8ed76e23b653a6b220effeb525f375aa78df9099e3c"
+      },
+      "teacher_preflight_ids.txt": {
+        "bytes": 832,
+        "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9"
+      }
+    },
+    "root_submission": {
+      "bytes": 12570,
+      "path": "submission.csv",
+      "sha256": "06f4eeb04668185d2a3691478e2b452008149ccd99a6509641128650abf653f5"
+    },
+    "run_t11": {
+      "bytes": 13781,
+      "path": "scripts/run_t11.sh",
+      "sha256": "9e1a376e95c39f12124c4e3f2a3394cd22e8dc708fd50320686c7b13bfe697b5"
+    }
+  },
+  "next_action": "keep_t10a_c1_and_t10e_without_teacher_fallback",
+  "presentation_record_update_required": false,
+  "schema_version": 1,
+  "scope_counts": {
+    "dpo": 0,
+    "full_teacher": 0,
+    "holdout": 0,
+    "leaderboard": 0,
+    "sft": 0,
+    "submission": 0,
+    "validation": 0
+  },
+  "sources": {
+    "comparison_vs_t11": {
+      "bytes": 3428,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/comparison-vs-t11.json",
+      "sha256": "e60c3371a2fe97d80bf7c7d1256f424ca94dd72ad2f6396e4b54c84010596447"
+    },
+    "config": {
+      "bytes": 6201,
+      "path": "configs/t11b_deepseek14b_teacher_preflight.json",
+      "sha256": "3f48a1cdfd976906a95054a4cfaef2c9fc17658cfec866821d5bbf29b3b3198b"
+    },
+    "execution_source_config": {
+      "bytes": 6201,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/execution-source-config.json",
+      "sha256": "3f48a1cdfd976906a95054a4cfaef2c9fc17658cfec866821d5bbf29b3b3198b"
+    },
+    "execution_source_normalizer": {
+      "bytes": 85978,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/execution-source-normalize_teacher_trace.py",
+      "sha256": "4bbceecb1072d0f069cca08cf30fe23517e683a4d9dfe230a5f8cefcfa9f21df"
+    },
+    "execution_source_runner": {
+      "bytes": 2417,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/execution-source-run_t11b.sh",
+      "sha256": "c1224934a7a44c6aed07e27fab483e44770a631f3f59e1a4ba3ecadec459839f"
+    },
+    "input_verification": {
+      "bytes": 6599,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/input-verification.json",
+      "sha256": "7d6a930e54cf002aac23b1627ac78ef5f9dc6a59d6a6b9b2b6577f5becea37f6"
+    },
+    "normalization_audit": {
+      "bytes": 99209,
+      "path": "data/t11b_deepseek14b_teacher_preflight/normalization-audit.jsonl",
+      "rows": 256,
+      "sha256": "fcd4251a724121bf3f417c828110af1ab1d1d437f5b7f4b0da69cdacd34e3f52"
+    },
+    "normalized_generations": {
+      "bytes": 2935864,
+      "path": "data/t11b_deepseek14b_teacher_preflight/normalized_teacher_generations.jsonl",
+      "rows": 256,
+      "sha256": "1847e3e27285080b821516cf5610d9cc694fe0f259cee34c53da66a5d5312e1e"
+    },
+    "normalizer": {
+      "bytes": 87650,
+      "path": "src/normalize_teacher_trace.py",
+      "sha256": "eddbb846ea25bd2c39924c6df01cfa5349a9f9fc9dffb59fcd8c569de083ad89"
+    },
+    "presentation_record": {
+      "bytes": 202304,
+      "path": "docs/strategy/execution-prompts.md",
+      "sha256": "96eaa7808d15223288f61ec5ff5e415948fdf053737bd887b504db229e53000b"
+    },
+    "raw_generations": {
+      "bytes": 1494307,
+      "path": "data/t11b_deepseek14b_teacher_preflight/raw_teacher_generations.jsonl",
+      "rows": 256,
+      "sha256": "e8ab88378e048e4eabdd88a86195be950e1daf4355179bdcdb848e8aff65d408"
+    },
+    "runner": {
+      "bytes": 2870,
+      "path": "scripts/run_t11b.sh",
+      "sha256": "685308248ef9222a5c2bcef245e66893ba1901181b193c4278d7c72565c58fdf"
+    },
+    "supervisor_config": {
+      "bytes": 581,
+      "path": "configs/supervisor_t11b.conf",
+      "sha256": "795fa949be08a72da128248628ce3dacf05d89b6702b52e86612b8ca2a5388d8"
+    },
+    "supervisor_runner": {
+      "bytes": 390,
+      "path": "scripts/supervisor_t11b.sh",
+      "sha256": "68921158acd73f0064ff0d318e20c7640958265831e5937f27c677e2bd1b4190"
+    },
+    "teacher_preflight": {
+      "bytes": 20051,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/teacher-preflight.json",
+      "sha256": "23ae71215ff8517ebb7823e99357971e2064251817f4363ca404703a0d99e239"
+    },
+    "teacher_run_metadata": {
+      "bytes": 3354,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/teacher-run-metadata.json",
+      "sha256": "682354a6641996a8d8b1146caef3786c9744e6c5bc5c16eecf64266166763a2d"
+    },
+    "test_report": {
+      "bytes": 7651,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/tests.xml",
+      "sha256": "782e7ec77e39806660ec248346242fa04bf7c3316bd48f07f0ba30c9d826d6fd"
+    },
+    "tests": {
+      "bytes": 7165,
+      "path": "tests/test_normalize_teacher_trace.py",
+      "sha256": "81fd2b998aeacca3954af32e960c989cb67b0bcb755d392735fd9434b1c0d9d2"
+    }
+  },
+  "status": "teacher_gate_failed",
+  "task": "T11b",
+  "test_summary": {
+    "errors": 0,
+    "failures": 0,
+    "passed": true,
+    "tests": 55
+  }
+}

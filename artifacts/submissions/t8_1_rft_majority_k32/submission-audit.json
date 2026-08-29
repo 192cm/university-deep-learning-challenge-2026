@@ -1,0 +1,91 @@
+{
+  "all_answers_canonical_integers": true,
+  "extraction_failure_counts": {
+    "conflicting_explicit_answers": 129,
+    "no_supported_answer_marker": 43
+  },
+  "extraction_path_counts": {
+    "boxed": 123,
+    "final_answer_marker": 30528,
+    "last_integer": 1131,
+    "none": 172,
+    "standalone_last_line": 46
+  },
+  "fallback_answer": "0",
+  "fallback_count": 0,
+  "fallback_rows": [],
+  "first_id": "val-000000",
+  "generation_count": 32000,
+  "generation_identity": {
+    "adapter_path": "/workspace/artifacts/t6_sft_v1/adapters/rft_r1",
+    "adapter_sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "run_fingerprint": "a7dbeeb75a393bd62135ebfabcd61250e04772204fce9798c8e6eeacb563c76a"
+  },
+  "generation_scope": {
+    "allow_generation_superset": false,
+    "ignored_generation_count": 0,
+    "ignored_generation_id_count": 0,
+    "selected_generation_count": 32000,
+    "selected_generation_id_count": 1000,
+    "source_generation_count": 32000,
+    "source_generation_id_count": 1000
+  },
+  "generations_path": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+  "generations_sha256": "dc773b52afdb64b3ae9a758f0f3f4dbc0e39a4516b215d83f5d21c68fd0626cf",
+  "ground_truth_used_for_selection": false,
+  "hit_max_new_tokens_count": 661,
+  "hit_max_new_tokens_rate": 0.02065625,
+  "id_order_preserved": true,
+  "ignored_generation_count": 0,
+  "ignored_generation_id_count": 0,
+  "input_path": "data/deep_chal_math_leaderboard.csv",
+  "input_sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+  "invalid_candidate_count": 172,
+  "invalid_candidate_rate": 0.005375,
+  "k": 32,
+  "last_id": "val-000999",
+  "majority_tie_break": "first generated answer among tied top vote counts",
+  "mean_agreement": 0.739375,
+  "median_agreement": 0.90625,
+  "minimum_agreement": 0.0625,
+  "output_header": [
+    "id",
+    "answer"
+  ],
+  "row_count": 1000,
+  "run_contract": {
+    "adapter": {
+      "path": "artifacts/t6_sft_v1/adapters/rft_r1",
+      "sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1",
+      "validated": true
+    },
+    "config_path": "configs/t8_1_rft_self_consistency.json",
+    "config_sha256": "880bfa9a0b9cabec1b4d7b0a19f6f397719ae051581e5b6ce24626703b2a7acb",
+    "input_scope": "generation_source",
+    "metadata_input_sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+    "metadata_input_sha256_match": true,
+    "metadata_path": "artifacts/submissions/t8_1_rft_majority_k32/run-metadata.json",
+    "metadata_sha256": "8821f0a36ed046a5e48f3c0f0502dcb81c7cda8c3d4c6712082d1392630d66ef",
+    "selected_input_sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+    "task": "T8-1",
+    "validated": true
+  },
+  "sample_submission_path": null,
+  "sample_submission_sha256": null,
+  "schema_version": 1,
+  "source_generation_count": 32000,
+  "source_generation_id_count": 1000,
+  "strategy": "T8-1 RFT fixed self-consistency majority@k",
+  "unique_id_count": 1000,
+  "vote_tie_count": 29,
+  "vote_tie_rate": 0.029,
+  "output_path": "submission.csv",
+  "output_sha256": "07a487c9309d5733a2cb3251e36e19dec6a04580b765bea3ba2bac5eb3e5aab9",
+  "output_bytes": 15142,
+  "output_rows": 1000,
+  "csv_round_trip_verified": true,
+  "artifact_workbook_verified": true,
+  "source_id_order_verified": true
+}

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="T12b question-local ORM focused tests" tests="21" failures="0" errors="0" skipped="0" time="0.026570">
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_cross_fitted_source_probe_is_order_invariant" time="0.000168" />
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_near_duplicate_and_model_input_guards" time="0.000073" />
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_nested_outer_inner_folds_exclude_outer_test" time="0.000587" />
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_source_balance_and_matched_feature_smd_gate" time="0.000055" />
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_source_balance_capacity_certificate_is_a_hard_upper_bound" time="0.000038" />
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_source_matching_is_exact_deduplicated_and_order_invariant" time="0.000159" />
+    <testcase classname="t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests" name="test_template_folds_have_zero_leakage" time="0.000044" />
+    <testcase classname="t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests" name="test_listwise_uses_positive_numerator_and_all_valid_denominator" time="0.000022" />
+    <testcase classname="t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests" name="test_objective_and_pair_sampling_are_order_invariant" time="0.000062" />
+    <testcase classname="t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests" name="test_oof_predictions_ignore_row_and_worker_completion_order" time="0.000145" />
+    <testcase classname="t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests" name="test_pairwise_loss_decreases_monotonically_with_margin" time="0.000014" />
+    <testcase classname="t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests" name="test_question_is_never_split_between_ddp_ranks" time="0.000126" />
+    <testcase classname="t12b_test_2_test_orm_group_selector.OrmGroupSelectorTests" name="test_cross_fitted_selector_predicts_every_question_once" time="0.015955" />
+    <testcase classname="t12b_test_2_test_orm_group_selector.OrmGroupSelectorTests" name="test_non_negative_fit_and_fold_label_guard" time="0.008258" />
+    <testcase classname="t12b_test_2_test_orm_group_selector.OrmGroupSelectorTests" name="test_variance_penalty_and_golden_tie_break" time="0.000025" />
+    <testcase classname="t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests" name="test_arm_a_is_byte_identical_to_original_t12_replay" time="0.000097" />
+    <testcase classname="t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests" name="test_each_condition_is_required_to_override" time="0.000029" />
+    <testcase classname="t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests" name="test_label_blind_rows_reject_labels" time="0.000014" />
+    <testcase classname="t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests" name="test_normalized_margin_and_support_are_k_invariant" time="0.000012" />
+    <testcase classname="t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests" name="test_policy_grid_prefers_net_then_fewer_overrides" time="0.000561" />
+    <testcase classname="t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests" name="test_two_stage_fallback_order_and_no_arbitrary_zero" time="0.000016" />
+    <system-out>test_cross_fitted_source_probe_is_order_invariant (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_near_duplicate_and_model_input_guards (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_nested_outer_inner_folds_exclude_outer_test (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_source_balance_and_matched_feature_smd_gate (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_source_balance_capacity_certificate_is_a_hard_upper_bound (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_source_matching_is_exact_deduplicated_and_order_invariant (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_template_folds_have_zero_leakage (t12b_test_0_test_question_local_orm_data.QuestionLocalOrmDataTests) ... ok
+test_listwise_uses_positive_numerator_and_all_valid_denominator (t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests) ... ok
+test_objective_and_pair_sampling_are_order_invariant (t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests) ... ok
+test_oof_predictions_ignore_row_and_worker_completion_order (t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests) ... ok
+test_pairwise_loss_decreases_monotonically_with_margin (t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests) ... ok
+test_question_is_never_split_between_ddp_ranks (t12b_test_1_test_question_local_orm_loss.QuestionLocalOrmLossTests) ... ok
+test_cross_fitted_selector_predicts_every_question_once (t12b_test_2_test_orm_group_selector.OrmGroupSelectorTests) ... ok
+test_non_negative_fit_and_fold_label_guard (t12b_test_2_test_orm_group_selector.OrmGroupSelectorTests) ... ok
+test_variance_penalty_and_golden_tie_break (t12b_test_2_test_orm_group_selector.OrmGroupSelectorTests) ... ok
+test_arm_a_is_byte_identical_to_original_t12_replay (t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests) ... ok
+test_each_condition_is_required_to_override (t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests) ... ok
+test_label_blind_rows_reject_labels (t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests) ... ok
+test_normalized_margin_and_support_are_k_invariant (t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests) ... ok
+test_policy_grid_prefers_net_then_fewer_overrides (t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests) ... ok
+test_two_stage_fallback_order_and_no_arbitrary_zero (t12b_test_3_test_orm_selective_override.OrmSelectiveOverrideTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.027s
+
+OK
+</system-out>
+  </testsuite>
+</testsuites>

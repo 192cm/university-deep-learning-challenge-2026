@@ -1,0 +1,105 @@
+{
+  "all_answers_canonical_integers": true,
+  "changed_vs_t8_3": [
+    {
+      "candidate_answer": "4",
+      "id": "val-000094",
+      "t8_3_answer": "8"
+    },
+    {
+      "candidate_answer": "5",
+      "id": "val-000285",
+      "t8_3_answer": "60"
+    },
+    {
+      "candidate_answer": "2",
+      "id": "val-000291",
+      "t8_3_answer": "2022"
+    },
+    {
+      "candidate_answer": "80",
+      "id": "val-000306",
+      "t8_3_answer": "67"
+    },
+    {
+      "candidate_answer": "31",
+      "id": "val-000347",
+      "t8_3_answer": "54"
+    },
+    {
+      "candidate_answer": "99999",
+      "id": "val-000376",
+      "t8_3_answer": "33333"
+    },
+    {
+      "candidate_answer": "3",
+      "id": "val-000427",
+      "t8_3_answer": "6"
+    },
+    {
+      "candidate_answer": "36",
+      "id": "val-000797",
+      "t8_3_answer": "62"
+    },
+    {
+      "candidate_answer": "6",
+      "id": "val-000799",
+      "t8_3_answer": "1"
+    },
+    {
+      "candidate_answer": "30",
+      "id": "val-000916",
+      "t8_3_answer": "14"
+    },
+    {
+      "candidate_answer": "28",
+      "id": "val-000919",
+      "t8_3_answer": "1024"
+    },
+    {
+      "candidate_answer": "1",
+      "id": "val-000987",
+      "t8_3_answer": "6000"
+    }
+  ],
+  "changed_vs_t8_3_count": 12,
+  "fallback_answer": "0",
+  "fallback_count": 0,
+  "fallback_ids": [],
+  "generations": {
+    "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+    "scope": {
+      "ignored_generations": 5408,
+      "ignored_ids": 169,
+      "selected_generations": 26592,
+      "selected_ids": 831,
+      "source_generations": 32000,
+      "source_ids": 1000
+    },
+    "sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e"
+  },
+  "ground_truth_used": false,
+  "id_order_preserved": true,
+  "input": {
+    "path": "data/deep_chal_math_leaderboard_filtered.csv",
+    "sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1"
+  },
+  "output_bytes": 12566,
+  "output_sha256": "e848be5ec39f3d38e37bd72002a388d55af5f7a95bcd162b75b9c7b93d7b34f3",
+  "policy": {
+    "boxed": 1.25,
+    "hit_max_multiplier": 1.0,
+    "last_integer": 0.05,
+    "name": "boxed=1.25|last=0.05|standalone=1|hitmax=1",
+    "standalone_last_line": 1.0
+  },
+  "reference_submission": {
+    "path": "artifacts/submissions/t8_3_filtered_k32/submission.csv",
+    "sha256": "1a99b8eb0797fd4699a65b392cae2286c29647354cdfa56cde39dc6a71ecdb63"
+  },
+  "rows": 831,
+  "schema_version": 1,
+  "strategy": "base k=32 extraction-quality weighted vote",
+  "task": "T8-6",
+  "unique_ids": 831
+}

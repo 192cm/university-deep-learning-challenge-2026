@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "gpu_count_exactly_two": true,
+    "gpu_names_exact": true,
+    "minimum_24gb_each": true,
+    "uuid_unique": true
+  },
+  "created_at_utc": "2026-08-27T20:38:50.476138+00:00",
+  "gpus": [
+    {
+      "driver_version": "580.159.03",
+      "logical_rank": 0,
+      "memory_free_mib": 24080.0,
+      "memory_total_mib": 24564.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "physical_index": 0,
+      "power_limit_w": 450.0,
+      "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+    },
+    {
+      "driver_version": "580.159.03",
+      "logical_rank": 1,
+      "memory_free_mib": 24080.0,
+      "memory_total_mib": 24564.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "physical_index": 1,
+      "power_limit_w": 450.0,
+      "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+    }
+  ],
+  "required": {
+    "count": 2,
+    "name": "NVIDIA GeForce RTX 4090"
+  },
+  "schema_version": 1,
+  "software": {
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.1",
+    "cuda_available": true,
+    "datasets": "5.0.1",
+    "nccl": "2.28.9",
+    "peft": "0.20.0",
+    "python": "3.12.14",
+    "torch": "2.13.0",
+    "torch_cuda_runtime": "13.0",
+    "torch_nccl": [
+      2,
+      29,
+      7
+    ],
+    "transformers": "5.15.1",
+    "vllm": "0.27.1"
+  },
+  "status": "preflight_pending_smokes",
+  "topology": "\u001b[4mGPU0\tGPU1\tCPU Affinity\tNUMA Affinity\tGPU NUMA ID\u001b[0m\nGPU0\t X \tNODE\t64-127,192-255\t1\t\tN/A\nGPU1\tNODE\t X \t64-127,192-255\t1\t\tN/A\n\nLegend:\n\n  X    = Self\n  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)\n  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node\n  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)\n  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)\n  PIX  = Connection traversing at most a single PCIe bridge\n  NV#  = Connection traversing a bonded set of # NVLinks"
+}

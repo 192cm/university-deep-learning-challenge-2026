@@ -1,0 +1,240 @@
+{
+  "coverage": {
+    "cross_shard_writes": 0,
+    "duplicates": 0,
+    "expected": 119584,
+    "missing": 0,
+    "observed": 119584
+  },
+  "effective_config": null,
+  "kind": "score",
+  "manifest": {
+    "manifest_sha256": "24bc375858e3cb2e778aec1b411bb3bda7d1d858f2bd263f0b1a60a3f1d80ed3",
+    "path": "artifacts/t12_cmu_orm/reused-t8/score-shard-manifest.json",
+    "sha256": "e65dc621362bead9a0e49f6a4cb9aece40e2c85203d77836d1952b180877bc6f"
+  },
+  "output": {
+    "bytes": 45823493,
+    "path": "artifacts/t12_cmu_orm/reused-t8/candidate-scores.jsonl",
+    "rows": 119584,
+    "sha256": "dd9c2c0467db6d484c0491af5ee7fe2a89b67d8207a7622cedbad4f4114fdd04"
+  },
+  "schema_version": 1,
+  "shards": [
+    {
+      "logical_rank": 0,
+      "path": "artifacts/t12_cmu_orm/reused-t8/score-shards/shard-0.jsonl",
+      "rows": 59792,
+      "sha256": "1bffb8607d552f140fbb3761439f2cefb11c2df97c6394aa64e1c8d5393033c9"
+    },
+    {
+      "logical_rank": 1,
+      "path": "artifacts/t12_cmu_orm/reused-t8/score-shards/shard-1.jsonl",
+      "rows": 59792,
+      "sha256": "a269b9169561f1295ba732fc24a3087ccda5cc011ce1a38b0930c111877e40ee"
+    }
+  ],
+  "status": "complete",
+  "workers": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-08-28T02:28:52.340913+00:00",
+          "gpu": {
+            "name": "NVIDIA GeForce RTX 4090",
+            "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+          },
+          "gpu_monitor": {
+            "active_utilization_mean_pct": 96.09455128205128,
+            "peak_memory_used_mib": 8392.0,
+            "samples": 624,
+            "utilization_mean_pct": 96.09455128205128
+          },
+          "oom_events": 0,
+          "physical_index": 0,
+          "started_at_epoch_seconds": 1787883450.9029167,
+          "started_at_utc": "2026-08-28T02:17:30.902922+00:00",
+          "status": "failed",
+          "wall_seconds": 681.4379410068505
+        },
+        {
+          "attempt": 2,
+          "checkpoint_rows": 1024,
+          "completed_at_utc": "2026-08-28T03:19:32.194979+00:00",
+          "gpu": {
+            "name": "NVIDIA GeForce RTX 4090",
+            "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+          },
+          "gpu_monitor": {
+            "active_utilization_mean_pct": 97.88392213410238,
+            "peak_memory_used_mib": 8612.0,
+            "samples": 2834,
+            "utilization_mean_pct": 95.81157374735356
+          },
+          "oom_events": 0,
+          "output": {
+            "path": "artifacts/t12_cmu_orm/reused-t8/score-shards/shard-0.jsonl",
+            "rows": 59792,
+            "sha256": "1bffb8607d552f140fbb3761439f2cefb11c2df97c6394aa64e1c8d5393033c9"
+          },
+          "peak_allocated_mib": 7988.66357421875,
+          "physical_index": 0,
+          "resumed_rows": 4560,
+          "started_at_epoch_seconds": 1787884173.4187953,
+          "started_at_utc": "2026-08-28T02:29:33.418800+00:00",
+          "status": "complete",
+          "wall_seconds": 2998.776134392014
+        }
+      ],
+      "frozen_scoring": {
+        "adapter_sha256": "47e46330da1f07b07af1202278a1e5ddb02028e2e00257885dada0cd35e84866",
+        "algorithm": "pointwise-bf16-fixed-shape-buckets-v1",
+        "batch_size": 4,
+        "candidate_pool_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+        "checkpoint_rows": 1024,
+        "config_sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189",
+        "max_length": 4096,
+        "padding_bucket_tokens": 128,
+        "questions_sha256": "f4c35627ce968f2aa5ab136fd06e24be3c4f8c412d6575309f39d82dcacefd5e"
+      },
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+      },
+      "logical_rank": 0,
+      "manifest_sha256": "24bc375858e3cb2e778aec1b411bb3bda7d1d858f2bd263f0b1a60a3f1d80ed3",
+      "physical_index": 0,
+      "schema_version": 1,
+      "status": "complete",
+      "successful_attempt": {
+        "attempt": 2,
+        "checkpoint_rows": 1024,
+        "completed_at_utc": "2026-08-28T03:19:32.194979+00:00",
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4090",
+          "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+        },
+        "gpu_monitor": {
+          "active_utilization_mean_pct": 97.88392213410238,
+          "peak_memory_used_mib": 8612.0,
+          "samples": 2834,
+          "utilization_mean_pct": 95.81157374735356
+        },
+        "oom_events": 0,
+        "output": {
+          "path": "artifacts/t12_cmu_orm/reused-t8/score-shards/shard-0.jsonl",
+          "rows": 59792,
+          "sha256": "1bffb8607d552f140fbb3761439f2cefb11c2df97c6394aa64e1c8d5393033c9"
+        },
+        "peak_allocated_mib": 7988.66357421875,
+        "physical_index": 0,
+        "resumed_rows": 4560,
+        "started_at_epoch_seconds": 1787884173.4187953,
+        "started_at_utc": "2026-08-28T02:29:33.418800+00:00",
+        "status": "complete",
+        "wall_seconds": 2998.776134392014
+      }
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-08-28T02:28:52.368565+00:00",
+          "gpu": {
+            "name": "NVIDIA GeForce RTX 4090",
+            "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+          },
+          "gpu_monitor": {
+            "active_utilization_mean_pct": 95.3424,
+            "peak_memory_used_mib": 8392.0,
+            "samples": 627,
+            "utilization_mean_pct": 95.03827751196172
+          },
+          "oom_events": 0,
+          "physical_index": 1,
+          "started_at_epoch_seconds": 1787883450.913291,
+          "started_at_utc": "2026-08-28T02:17:30.913297+00:00",
+          "status": "failed",
+          "wall_seconds": 681.4552080470603
+        },
+        {
+          "attempt": 2,
+          "checkpoint_rows": 1024,
+          "completed_at_utc": "2026-08-28T03:19:21.757388+00:00",
+          "gpu": {
+            "name": "NVIDIA GeForce RTX 4090",
+            "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+          },
+          "gpu_monitor": {
+            "active_utilization_mean_pct": 97.9353323699422,
+            "peak_memory_used_mib": 8772.0,
+            "samples": 2826,
+            "utilization_mean_pct": 95.92533616418967
+          },
+          "oom_events": 0,
+          "output": {
+            "path": "artifacts/t12_cmu_orm/reused-t8/score-shards/shard-1.jsonl",
+            "rows": 59792,
+            "sha256": "a269b9169561f1295ba732fc24a3087ccda5cc011ce1a38b0930c111877e40ee"
+          },
+          "peak_allocated_mib": 8140.55615234375,
+          "physical_index": 1,
+          "resumed_rows": 4552,
+          "started_at_epoch_seconds": 1787884173.409049,
+          "started_at_utc": "2026-08-28T02:29:33.409054+00:00",
+          "status": "complete",
+          "wall_seconds": 2988.3482880857773
+        }
+      ],
+      "frozen_scoring": {
+        "adapter_sha256": "47e46330da1f07b07af1202278a1e5ddb02028e2e00257885dada0cd35e84866",
+        "algorithm": "pointwise-bf16-fixed-shape-buckets-v1",
+        "batch_size": 4,
+        "candidate_pool_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+        "checkpoint_rows": 1024,
+        "config_sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189",
+        "max_length": 4096,
+        "padding_bucket_tokens": 128,
+        "questions_sha256": "f4c35627ce968f2aa5ab136fd06e24be3c4f8c412d6575309f39d82dcacefd5e"
+      },
+      "gpu": {
+        "name": "NVIDIA GeForce RTX 4090",
+        "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+      },
+      "logical_rank": 1,
+      "manifest_sha256": "24bc375858e3cb2e778aec1b411bb3bda7d1d858f2bd263f0b1a60a3f1d80ed3",
+      "physical_index": 1,
+      "schema_version": 1,
+      "status": "complete",
+      "successful_attempt": {
+        "attempt": 2,
+        "checkpoint_rows": 1024,
+        "completed_at_utc": "2026-08-28T03:19:21.757388+00:00",
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 4090",
+          "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+        },
+        "gpu_monitor": {
+          "active_utilization_mean_pct": 97.9353323699422,
+          "peak_memory_used_mib": 8772.0,
+          "samples": 2826,
+          "utilization_mean_pct": 95.92533616418967
+        },
+        "oom_events": 0,
+        "output": {
+          "path": "artifacts/t12_cmu_orm/reused-t8/score-shards/shard-1.jsonl",
+          "rows": 59792,
+          "sha256": "a269b9169561f1295ba732fc24a3087ccda5cc011ce1a38b0930c111877e40ee"
+        },
+        "peak_allocated_mib": 8140.55615234375,
+        "physical_index": 1,
+        "resumed_rows": 4552,
+        "started_at_epoch_seconds": 1787884173.409049,
+        "started_at_utc": "2026-08-28T02:29:33.409054+00:00",
+        "status": "complete",
+        "wall_seconds": 2988.3482880857773
+      }
+    }
+  ]
+}

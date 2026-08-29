@@ -1,0 +1,135 @@
+{
+  "budget": {
+    "minimum_reserve_hours": 6,
+    "total_hours": 24
+  },
+  "decision": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 42,
+    "maximum_exact_mcnemar_p": 0.05,
+    "maximum_format_drop_pp": 2.0,
+    "maximum_hard_drop_pp": 2.0,
+    "maximum_union_invalid_increase_pp": 1.0,
+    "minimum_union_delta_pp": 1.5,
+    "primary_order": [
+      "C",
+      "D",
+      "B"
+    ]
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "n": 16,
+    "seed": 12042,
+    "temperature": 1.2,
+    "top_p": 0.95
+  },
+  "hf": {
+    "attn_implementation": "sdpa",
+    "max_batch_size": 128,
+    "max_batch_tokens": 294912
+  },
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t10a_prompt_improvement"
+  },
+  "prompt_mode": "cot_brief",
+  "prompt_sha256": {
+    "base": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "cot_boxed": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+    "cot_brief": "ac00dd5497039e7af7806146047ac6646e386328c5561e5613813a92b6f60061",
+    "strong_cot": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b"
+  },
+  "prompt_template": "Solve the following problem step by step. Show your work, then state the final answer as\nFINAL_ANSWER: <answer>.\n\nProblem:\n{question}",
+  "prompt_templates": {
+    "base": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "cot_boxed": "Think through this problem step by step, showing your reasoning clearly.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+    "cot_brief": "Solve the following problem step by step. Show your work, then state the final answer as\nFINAL_ANSWER: <answer>.\n\nProblem:\n{question}",
+    "strong_cot": "Solve the following problem carefully.\n1. Identify all relevant quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the reasoning and calculation.\nWrite the final answer on the last line exactly as FINAL_ANSWER: <answer>.\nDo not write anything after that line.\n\nProblem:\n{question}"
+  },
+  "protected_inputs": {
+    "files": [
+      "configs/t8_self_consistency.json",
+      "configs/t8_2_cot_routing.json",
+      "configs/t8_3_vote_filter.json",
+      "configs/t9_genselect.json",
+      "scripts/run_t8.sh",
+      "scripts/run_t8_2.sh",
+      "scripts/run_t8_3.sh",
+      "scripts/run_t9.sh"
+    ],
+    "trees": [
+      "artifacts/t8_self_consistency",
+      "artifacts/t8_2_cot_routing",
+      "artifacts/t8_3_vote_filter",
+      "artifacts/t9_genselect"
+    ]
+  },
+  "provenance": {
+    "source_name": "t12_base_cot_brief_high_temperature_k16",
+    "t12_usage": "ORM-train-only candidate diversity; never fresh validation",
+    "target_rule": "every currently one-sided or valid-empty ORM-train question"
+  },
+  "schema_version": 1,
+  "sources": {
+    "arms": {
+      "A": {
+        "expected_generations_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+        "expected_task": "T8",
+        "generations": "artifacts/t8_self_consistency/generations.jsonl",
+        "metadata": "artifacts/t8_self_consistency/run-metadata.json",
+        "name": "base"
+      },
+      "B": {
+        "expected_generations_sha256": "3d4ad7d17fd252a313ca520ca28513ce02fd21ca28698074ea1b05695bbcb4a2",
+        "expected_task": "T8-2",
+        "generations": "artifacts/t8_2_cot_routing/strong_cot/generations.jsonl",
+        "metadata": "artifacts/t8_2_cot_routing/strong_cot/run-metadata.json",
+        "name": "strong_cot"
+      },
+      "C": {
+        "expected_task": "T10a",
+        "generations": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+        "metadata": "artifacts/t10a_prompt_improvement/cot_boxed/run-metadata.json",
+        "name": "cot_boxed"
+      },
+      "D": {
+        "expected_task": "T10a",
+        "generations": "artifacts/t10a_prompt_improvement/cot_brief/generations.jsonl",
+        "metadata": "artifacts/t10a_prompt_improvement/cot_brief/run-metadata.json",
+        "name": "cot_brief"
+      }
+    },
+    "canonical": "data/canonical/train.csv",
+    "splits": {
+      "format_diagnostic": "data/splits/format_diagnostic.csv",
+      "hard_diagnostic": "data/splits/hard_diagnostic.csv",
+      "random_holdout": "data/splits/random_holdout.csv",
+      "template_holdout": "data/splits/template_holdout.csv"
+    },
+    "union_ids": "artifacts/t8_self_consistency/holdout_union_ids.txt"
+  },
+  "task": "T10a",
+  "vllm": {
+    "batch_invariant": true,
+    "dtype": "bfloat16",
+    "enable_prefix_caching": true,
+    "enforce_eager": false,
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 4096,
+    "max_num_seqs": 256,
+    "request_chunk_size": 64
+  },
+  "vote_filter": {
+    "policy_name": "drop-low-quality-votes-v1",
+    "policy_source": "configs/t8_3_vote_filter.json"
+  }
+}

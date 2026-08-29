@@ -1,0 +1,127 @@
+{
+  "adapter": {
+    "path": "artifacts/t6_1_sft_v1r/rft_v2_external/final-adapter",
+    "sha256": "1e896e2cfb9ec4a882eaa25e7168a05a86adc177df7a9aa33ddb5032809a906f"
+  },
+  "checkpoints": [
+    {
+      "adapter_sha256": "116f961cf3b2e40dddd20f4a3a888e30daa1470a65bf9415cc38ed27793056c4",
+      "epoch": 0.7500463220307578,
+      "path": "artifacts/t6_1_sft_v1r/rft_v2_external/trainer/checkpoints/checkpoint-506",
+      "step": 506
+    }
+  ],
+  "completed_at_utc": "2026-08-21T15:33:46.420994+00:00",
+  "dataset": {
+    "cache_path": "artifacts/t6_1_sft_v1r/rft_v2_external/cache",
+    "cache_sha256": "d8e0e9c8f9402c96788d134d36edb063cebdac92336ce267e8f274f2289de876",
+    "rows_before_probe_selection": 21588,
+    "rows_used": 21588,
+    "source_samples": 21588
+  },
+  "environment": {
+    "bf16_supported": true,
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python": "3.12.13",
+    "torch": "2.13.0+cu130"
+  },
+  "events": {
+    "path": "artifacts/t6_1_sft_v1r/rft_v2_external/trainer/training-events.jsonl",
+    "rows": 1013,
+    "sha256": "602ea198fc2bdea9ae03f2e223e7ecac21f1774a7ae29af7ecc245bfb9516f59"
+  },
+  "experiment": "rft_v2_external",
+  "gpu": {
+    "monitor": {
+      "active_utilization_mean_pct": 59.506727158948685,
+      "fraction_samples_at_least_90_pct": 0.21683949852963938,
+      "peak_memory_used_mib": 16862.0,
+      "samples": 6461,
+      "utilization_mean_pct": 58.87122736418511
+    },
+    "torch_peak_allocated_mib": 14562.0625,
+    "torch_peak_reserved_mib": 16122.0
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "lora": {
+      "bias": "none",
+      "lora_alpha": 128,
+      "lora_dropout": 0.0,
+      "r": 64,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "task_type": "CAUSAL_LM"
+    },
+    "parameters": {
+      "total_visible": 3205672960,
+      "trainable": 119734272,
+      "trainable_fraction": 0.03735074459997317
+    },
+    "quantization": {
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": false
+    },
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "resume": {
+    "checkpoint": null
+  },
+  "runtime": {
+    "estimated_input_tokens": 8151605,
+    "estimated_tokens_per_second": 2335.41019621789,
+    "global_steps": 506,
+    "model_load_seconds": 5.644026022404432,
+    "step_seconds_mean": 6.88345757521792,
+    "step_seconds_median": 6.415844211354852,
+    "step_seconds_p95": 10.0372655,
+    "trainer_metrics": {
+      "epoch": 0.7500463220307578,
+      "total_flos": 1.4526521576993587e+17,
+      "train_loss": 0.2625553617511578,
+      "train_runtime": 3490.1537,
+      "train_samples_per_second": 12.371,
+      "train_steps_per_second": 0.387
+    },
+    "training_seconds": 3490.438216464594
+  },
+  "schema_version": 1,
+  "settings": {
+    "assistant_only_loss": true,
+    "batch_size": 2,
+    "checkpoint_epochs": [
+      0.75
+    ],
+    "effective_batch_size": 32,
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "max_steps": null,
+    "num_train_epochs": 2.0,
+    "packing": false,
+    "stop_after_final_checkpoint": true
+  },
+  "sources": {
+    "cache_metadata": {
+      "path": "artifacts/t6_1_sft_v1r/rft_v2_external/cache-metadata.json",
+      "sha256": "6ffbd7ae553ab442e3b5d281c67616e6a9b14a30140abd08f968a70318285fc9"
+    },
+    "config": {
+      "path": "artifacts/t6_1_sft_v1r/resolved-configs/final.json",
+      "sha256": "ee89e17cae64a1aac742775b6677d3a5e53074943d474d212b1d1ffbfd58038e"
+    }
+  },
+  "started_at_utc": "2026-08-21T14:35:28.982529+00:00",
+  "status": "complete",
+  "task": "T6-1"
+}

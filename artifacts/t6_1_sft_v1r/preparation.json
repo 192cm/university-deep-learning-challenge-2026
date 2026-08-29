@@ -1,0 +1,105 @@
+{
+  "completion_checks": {
+    "targeted_exactly_2125": true,
+    "validation_exactly_500": true,
+    "validation_holdout_intersection_zero": true,
+    "validation_rft_pool_scope": true
+  },
+  "created_at_utc": "2026-08-21T11:10:54.717337+00:00",
+  "outputs": {
+    "targeted_ids": {
+      "bytes": 27625,
+      "path": "artifacts/t5_rft_targeted/target_ids.txt",
+      "rows": 2125,
+      "sha256": "2727ff7904ae243acde4a9ec43d76b0c07ac8f641bf0054e40451e2d73503d08"
+    },
+    "validation_audit": {
+      "bytes": 12276,
+      "path": "data/splits/rft_validation_500_audit.csv",
+      "rows": 500,
+      "sha256": "a63854cf61a1f2ae3571cf849ae0ff247643dee3e826d345e71a2c9d6f9b1dca"
+    },
+    "validation_csv": {
+      "bytes": 131916,
+      "path": "data/splits/rft_validation_500.csv",
+      "rows": 500,
+      "sha256": "f8d07dea9a9abb6105dcdb4f000dd02cc125afabab84cf4fe9dcd33d4a7f19e2"
+    },
+    "validation_ids": {
+      "bytes": 6500,
+      "path": "data/splits/rft_validation_500_ids.txt",
+      "rows": 500,
+      "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+    }
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "sources": {
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "holdout_ids": [
+      {
+        "bytes": 21281,
+        "path": "data/splits/random_holdout_ids.txt",
+        "rows": 1637,
+        "sha256": "cc76d7fd77e98d070b46d833f8d1737319ca0dc6baf292009803a1c34e8146e4"
+      },
+      {
+        "bytes": 21281,
+        "path": "data/splits/template_holdout_ids.txt",
+        "rows": 1637,
+        "sha256": "22da14c3d56e67dfb8a78859daa3199167ddb7b0cb6f3ac06475996e33aca063"
+      },
+      {
+        "bytes": 7150,
+        "path": "data/splits/hard_diagnostic_ids.txt",
+        "rows": 550,
+        "sha256": "7ff5241e407b3b3cefb91f2e615a4d29b37ec7b1845840290e080e20fedbc021"
+      },
+      {
+        "bytes": 3328,
+        "path": "data/splits/format_diagnostic_ids.txt",
+        "rows": 256,
+        "sha256": "0e31dbba9592151d3dbf12ea6b27756a7e34efbdfb15a23f94f80f06d7de657d"
+      }
+    ],
+    "rft_audit": {
+      "bytes": 570712,
+      "path": "data/rft_r1/audit.csv",
+      "rows": 12636,
+      "sha256": "2d91343261d295c021134a6baa09d5dbc21683d1efa6855c3eb0fcbdc015a4a4"
+    },
+    "rft_ids": {
+      "bytes": 164268,
+      "path": "data/rft_pool_ids.txt",
+      "rows": 12636,
+      "sha256": "9549a6a1a59cfcf9fe8d810a2dce86e3785722bd172d4751289406adc010bef6"
+    }
+  },
+  "status": "complete",
+  "targeted_generation": {
+    "definition": "eligible non-image RFT-pool questions with original-16 c in [1,7]",
+    "expected_generations": 102000,
+    "original_c_definition_preserved": true,
+    "questions": 2125,
+    "samples_per_question": 48
+  },
+  "task": "T6-1",
+  "validation": {
+    "allocation": {
+      "c=0": 100,
+      "c=1-3": 100,
+      "c=13-16": 100,
+      "c=4-7": 100,
+      "c=8-12": 100
+    },
+    "holdout_intersection": 0,
+    "ids_sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8",
+    "rows": 500,
+    "targeted_generation_intersection": 200
+  }
+}

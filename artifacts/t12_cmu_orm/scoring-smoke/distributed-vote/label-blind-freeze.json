@@ -1,0 +1,68 @@
+{
+  "candidates_per_question": 32,
+  "counters": {
+    "clipped_scores": 0,
+    "fallback:None": 0,
+    "fallbacks": 0,
+    "invalid_candidates": 1,
+    "nan_scores": 0,
+    "questions": 1,
+    "ties": 0
+  },
+  "gold_or_label_files_opened": 0,
+  "inputs": {
+    "candidate_scores": {
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/distributed-scores.jsonl",
+      "rows": 32,
+      "sha256": "7983978790a75db8bf40e0cd3a1a4a1e05a68b038c5480411e2c5b87f6f2234a"
+    },
+    "config": {
+      "path": "configs/t12_cmu_orm.json",
+      "sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189"
+    },
+    "generations": {
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/candidates.jsonl",
+      "sha256": "3586d276b0f545c09e2c47d9a7f8a20c3033239d09691cfa8ba9f509581a48eb"
+    },
+    "questions": {
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/questions.csv",
+      "sha256": "f513d0415ba093a6131e96aab358fd5a0cb4a11a935b2ec6e582e4522043faad"
+    }
+  },
+  "outputs": {
+    "changed-cases-label-blind.jsonl": {
+      "bytes": 0,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/distributed-vote/changed-cases-label-blind.jsonl",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "group-weights.jsonl": {
+      "bytes": 1713,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/distributed-vote/group-weights.jsonl",
+      "rows": 1,
+      "sha256": "dc942279cd8afdecb4fdce9b053b897fa9385274e05a63ea84ff560fdc3e8b79"
+    },
+    "predictions.jsonl": {
+      "bytes": 227,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/distributed-vote/predictions.jsonl",
+      "rows": 1,
+      "sha256": "4b585e39dc1e77897470711ccaf9f82d7072f1de5a71dfc729654a7dbc4c201a"
+    },
+    "raw-majority-predictions.jsonl": {
+      "bytes": 50,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/distributed-vote/raw-majority-predictions.jsonl",
+      "rows": 1,
+      "sha256": "824fab65a6740266672cf676c37b4fc8b75da5dee2b385719a4d00e0c1186db5"
+    },
+    "t8-3-filter-predictions.jsonl": {
+      "bytes": 81,
+      "path": "artifacts/t12_cmu_orm/scoring-smoke/distributed-vote/t8-3-filter-predictions.jsonl",
+      "rows": 1,
+      "sha256": "2123421bedc3b964013b03e505fbc3f9366a4cdb339481348702f78532de3640"
+    }
+  },
+  "question_count": 1,
+  "schema_version": 1,
+  "status": "label_blind_frozen",
+  "task": "T12"
+}

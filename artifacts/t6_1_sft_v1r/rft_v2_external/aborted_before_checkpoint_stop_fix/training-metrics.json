@@ -1,0 +1,20 @@
+{
+  "experiment": "rft_v2_external",
+  "schema_version": 1,
+  "settings": {
+    "assistant_only_loss": true,
+    "batch_size": 2,
+    "checkpoint_epochs": [
+      0.75
+    ],
+    "effective_batch_size": 32,
+    "gradient_accumulation_steps": 16,
+    "gradient_checkpointing": true,
+    "max_steps": null,
+    "num_train_epochs": 2.0,
+    "packing": false
+  },
+  "started_at_utc": "2026-08-21T14:23:03.410836+00:00",
+  "status": "running",
+  "task": "T6-1"
+}

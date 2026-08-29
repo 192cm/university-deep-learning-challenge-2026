@@ -1,0 +1,69 @@
+{
+  "candidates_per_question": 32,
+  "counters": {
+    "clipped_scores": 0,
+    "fallback:None": 0,
+    "fallback:no_valid_candidates": 20,
+    "fallbacks": 20,
+    "invalid_candidates": 11166,
+    "nan_scores": 0,
+    "questions": 3737,
+    "ties": 0
+  },
+  "gold_or_label_files_opened": 0,
+  "inputs": {
+    "candidate_scores": {
+      "path": "artifacts/t12_cmu_orm/reused-t8/candidate-scores.jsonl",
+      "rows": 119584,
+      "sha256": "dd9c2c0467db6d484c0491af5ee7fe2a89b67d8207a7622cedbad4f4114fdd04"
+    },
+    "config": {
+      "path": "configs/t12_cmu_orm.json",
+      "sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189"
+    },
+    "generations": {
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21"
+    },
+    "questions": {
+      "path": "data/cmu_orm/reused-t8-questions.csv",
+      "sha256": "f4c35627ce968f2aa5ab136fd06e24be3c4f8c412d6575309f39d82dcacefd5e"
+    }
+  },
+  "outputs": {
+    "changed-cases-label-blind.jsonl": {
+      "bytes": 58924,
+      "path": "artifacts/t12_cmu_orm/reused-t8/changed-cases-label-blind.jsonl",
+      "rows": 261,
+      "sha256": "9fc549897883a5b4786a1c6e8d4605246230f438b07c5d0a06a5026b663d4b46"
+    },
+    "group-weights.jsonl": {
+      "bytes": 5591954,
+      "path": "artifacts/t12_cmu_orm/reused-t8/group-weights.jsonl",
+      "rows": 3737,
+      "sha256": "3e67a8379c6915dec1dc95272c4efdb9720d512843ec906fe06b81e5342cbc0a"
+    },
+    "predictions.jsonl": {
+      "bytes": 837607,
+      "path": "artifacts/t12_cmu_orm/reused-t8/predictions.jsonl",
+      "rows": 3737,
+      "sha256": "cc08c46caa49d4a8d6334aee30f529f4ee7e49c97a8a73fb93e0cede26cd2a87"
+    },
+    "raw-majority-predictions.jsonl": {
+      "bytes": 184051,
+      "path": "artifacts/t12_cmu_orm/reused-t8/raw-majority-predictions.jsonl",
+      "rows": 3737,
+      "sha256": "e64d4100e2e51c871e8549fd58ab4c2565a34580cfdc9bc5c791de9d944397b8"
+    },
+    "t8-3-filter-predictions.jsonl": {
+      "bytes": 299928,
+      "path": "artifacts/t12_cmu_orm/reused-t8/t8-3-filter-predictions.jsonl",
+      "rows": 3737,
+      "sha256": "08370f2125875bd1affb8b6b6a3fe72dd2fcda5905797d603601d51f3e0f427e"
+    }
+  },
+  "question_count": 3737,
+  "schema_version": 1,
+  "status": "label_blind_frozen",
+  "task": "T12"
+}

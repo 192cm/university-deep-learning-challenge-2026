@@ -1,0 +1,20 @@
+{
+  "input": {
+    "bytes": 1555,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/leaderboard-label-blind/fallback-questions.csv",
+    "sha256": "3a0d55ca7eeb126a85849632cbbc0ea4d2dca88183b69ba5bb7d419bc3afcb71"
+  },
+  "instruction": "Return exactly one integer matching ^-?(?:0|[1-9][0-9]*)$ and no other text.",
+  "label_blind": true,
+  "output": {
+    "bytes": 1789,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/leaderboard-label-blind/fallback-repair-questions.csv",
+    "sha256": "a570417513bbd4f557c7207e12a2e496efe0e308debdaabaa00788ccf4dc3227"
+  },
+  "rows": 3,
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12b-4970-override"
+}

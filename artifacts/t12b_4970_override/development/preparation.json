@@ -1,0 +1,38 @@
+{
+  "candidate_rows": 16096,
+  "corpus_manifest_sha256": "7c50e9c9083115a43e1bf4eb7011ce1813348d3abddd748fd57cf28cd4d6a23e",
+  "created_at_utc": "2026-08-28T17:56:05.817610+00:00",
+  "heldout_outer_fold": 0,
+  "outputs": {
+    "generations": {
+      "bytes": 31685095,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/development/generations.jsonl",
+      "sha256": "3fc21d3457d95638c11229aa577020aefcaf99abec25e8e48928aa01aba3ac33"
+    },
+    "gold": {
+      "bytes": 38429,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/development/gold.csv",
+      "sha256": "46f80e31dadba1febd4c5efdba2aaf4ccd35ba8957561759929a2443b8542df1"
+    },
+    "questions": {
+      "bytes": 252585,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/development/questions.csv",
+      "sha256": "0c725a6920f15ea0e6d3dcaad12cbd515dbf3b22a0ce597df4d632c8c87b8f7d"
+    }
+  },
+  "partition_counts": {
+    "0": 361,
+    "1": 329,
+    "2": 316
+  },
+  "questions": 1006,
+  "samples_per_question": 16,
+  "schema_version": 1,
+  "scope": "operational_single_holdout_not_original_nested_oof",
+  "status": "complete",
+  "task": "T12b-4970-override",
+  "template_group_cross_partition_intersections": 0
+}

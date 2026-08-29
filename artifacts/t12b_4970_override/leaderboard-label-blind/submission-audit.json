@@ -1,0 +1,59 @@
+{
+  "fallbacks": 3,
+  "forced_zero_fallbacks": 0,
+  "inputs": {
+    "generations": {
+      "bytes": 46957120,
+      "kind": "file",
+      "path": "artifacts/submissions/t12_cmu_orm_831/generations.jsonl",
+      "sha256": "1b14920a39eb1e91d88d8187ba935d23541c55f7dc5ce07197d17db37df5aaf8"
+    },
+    "questions": {
+      "bytes": 206340,
+      "kind": "file",
+      "path": "data/deep_chal_math_leaderboard_filtered.csv",
+      "sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1"
+    },
+    "scores": {
+      "bytes": 10134125,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/leaderboard-label-blind/scoring/candidate-scores.jsonl",
+      "sha256": "166e1c9c81eecdf4a503b1730251a96b2e48755b4fcf80a13c06ef400c09f5a9"
+    }
+  },
+  "integer_predictions": 831,
+  "label_blind": true,
+  "null_or_nan": 0,
+  "outputs": {
+    "group_scores": {
+      "bytes": 1406132,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/leaderboard-label-blind/group-scores.jsonl",
+      "sha256": "1ab66ab832add0c1d43907124d63249db44398b0f9a4cbab74824c56b5724b95"
+    },
+    "predictions": {
+      "bytes": 551237,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/leaderboard-label-blind/predictions.jsonl",
+      "sha256": "5bd44d3022e032316deb87f81815c03d4736b5d99e877831f4227ceeef7c0338"
+    },
+    "submission_rows": {
+      "bytes": 50041,
+      "kind": "file",
+      "path": "artifacts/t12b_4970_override/leaderboard-label-blind/submission-rows.json",
+      "sha256": "33611c1ad3ad75a25c3cd70de15572ef06b23af299ed1546f18cbebcbd6e3b57"
+    }
+  },
+  "overrides": 0,
+  "policy": {
+    "bytes": 2953,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/frozen-policy.json",
+    "sha256": "7b5a71f28bb2db7d4102910fde29de21c402e8226a11f0a7e7c38c81a00d472a"
+  },
+  "questions": 831,
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12b-4970-override",
+  "unique_ids": 831
+}

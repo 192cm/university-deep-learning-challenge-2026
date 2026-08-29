@@ -1,0 +1,177 @@
+{
+  "checks": {
+    "all_preregistered_hashes_match": true,
+    "answer_column_used_for_selection": false,
+    "contamination_audit_rerun": false,
+    "difficulty_probe_rerun": false,
+    "hard_ids_rows": 1883,
+    "intersection_with_holdout_union": 0,
+    "intersection_with_suspect": 0,
+    "intersection_with_t11_preflight": 0,
+    "intersection_with_validation": 0,
+    "selected_first_id": "train-000045",
+    "selected_last_id": "train-001696",
+    "selected_rows": 64,
+    "selected_sha256": "a3f26bbe1fd1f692f1fb695ca73d161f938a112008fc4265014a4c1847114655",
+    "selected_unique": 64
+  },
+  "created_at_utc": "2026-08-27T09:33:56.775583+00:00",
+  "elapsed_seconds": 0.4628162769949995,
+  "execution_sources": {
+    "config": {
+      "bytes": 7292,
+      "path": "configs/t11c_qwen7b_repaired_teacher_preflight.json",
+      "sha256": "16a59cbe4b4c83b2d8c6fd616b780f13de6b601641ca177bf42e123b75b79d54"
+    },
+    "normalizer_dependency": {
+      "bytes": 11217,
+      "path": "src/extract.py",
+      "sha256": "68283644e400c492b482518b811c46f105abd30410cc1da87366604f74a2ab12"
+    },
+    "run_script": {
+      "bytes": 3687,
+      "path": "scripts/run_t11c.sh",
+      "sha256": "daeaedecbd5d41899a69002daccb79ab549ce3624c9e2f9175edd2191bbf9bca"
+    },
+    "runner": {
+      "bytes": 111036,
+      "path": "src/run_t11c_qwen_teacher.py",
+      "sha256": "63e8b17c02a037f9976c727aafde23dadd1475a6133bbf50848f3a5a60701c20"
+    },
+    "supervisor_config": {
+      "bytes": 1175,
+      "path": "configs/supervisor_t11c.conf",
+      "sha256": "2db44fa0cad52d971345e0827d2bb022e25beb3bdc8406facdc7dfd71130c417"
+    },
+    "supervisor_script": {
+      "bytes": 397,
+      "path": "scripts/supervisor_t11c.sh",
+      "sha256": "e48b56651e564b6ba02159c7a3307d46d3b684265d2c3236e1ed0a7f01b3c9aa"
+    },
+    "tests": {
+      "bytes": 10264,
+      "path": "tests/test_t11c_qwen_teacher.py",
+      "sha256": "b0e5c0de187be277adbbdca4bde5f22cdaa69c22a16261a3489c98da5b5333af"
+    },
+    "trace_filter_dependency": {
+      "bytes": 69066,
+      "path": "src/build_t11_hard_cot.py",
+      "sha256": "60b7a62d18b32563f8c7dba065b1cfa9be738079572ff06fbcb95e2dbd6c71b0"
+    }
+  },
+  "immutable_before": {
+    "root_submission": {
+      "bytes": 12570,
+      "path": "submission.csv",
+      "sha256": "06f4eeb04668185d2a3691478e2b452008149ccd99a6509641128650abf653f5"
+    },
+    "t11_artifacts": {
+      "files": 7,
+      "path": "artifacts/t11_aimo_generation_quality",
+      "sha256": "b4f8f84cc9e1d32e625bc7e12fecac74769b949936c61dd40f93246e7f3d9818"
+    },
+    "t11_data": {
+      "files": 9,
+      "path": "data/t11_aimo_generation_quality",
+      "sha256": "c0ec3a4e92212aba2033b9159c772932ecf7fa101b7083c680f626305905176b"
+    },
+    "t11b_artifacts": {
+      "files": 13,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight",
+      "sha256": "503753dec596a1b79c6183cf501fbac1053591e724758d0dfc56720e533ac8f2"
+    },
+    "t11b_data": {
+      "files": 7,
+      "path": "data/t11b_deepseek14b_teacher_preflight",
+      "sha256": "4eff28ac1bc3e7ff6fdf5d21c551395ec334dae62d37b2fba3cddcb05e74b78b"
+    }
+  },
+  "preflight_ids": {
+    "bytes": 832,
+    "path": "data/t11c_qwen7b_repaired_teacher_preflight/preflight_ids.txt",
+    "rows": 64,
+    "sha256": "a3f26bbe1fd1f692f1fb695ca73d161f938a112008fc4265014a4c1847114655"
+  },
+  "schema_version": 1,
+  "sources": {
+    "canonical_train": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "hard_ids": {
+      "bytes": 24479,
+      "path": "data/t11_aimo_generation_quality/hard_ids.txt",
+      "rows": 1883,
+      "sha256": "77a10c579e870e3cd912c03fbb19d4635d6b1e826c7bdbae7b1c30b631441abb"
+    },
+    "holdout_union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    },
+    "root_submission": {
+      "bytes": 12570,
+      "path": "submission.csv",
+      "sha256": "06f4eeb04668185d2a3691478e2b452008149ccd99a6509641128650abf653f5"
+    },
+    "student_probe": {
+      "bytes": 187111651,
+      "path": "data/t11_aimo_generation_quality/student_probe.jsonl",
+      "rows": 86888,
+      "sha256": "31b2af19392bbe86089ddfc27450d75af2aac27fba565dd633c9254ef3c63a4c"
+    },
+    "suspect_ids": {
+      "bytes": 17043,
+      "path": "data/suspect_set/ids.txt",
+      "rows": 1311,
+      "sha256": "ad3ac6669f3058071580531eb43eb5b7a5d5d82b99bd21fae3b982c27910dd75"
+    },
+    "t11_config": {
+      "bytes": 9532,
+      "path": "configs/t11_aimo_generation_quality.json",
+      "sha256": "2584181f0a24c4cc4a57c4f0760fca0ba5ee55405250500c4526214b9ab765ba"
+    },
+    "t11_preflight": {
+      "bytes": 10642,
+      "path": "artifacts/t11_aimo_generation_quality/teacher-preflight.json",
+      "sha256": "59484f387c30336242592f310b146404c2268171bb539f98d9a3eb4135616606"
+    },
+    "t11_preflight_ids": {
+      "bytes": 832,
+      "path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+      "rows": 64,
+      "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9"
+    },
+    "t11_teacher_generations": {
+      "bytes": 1032212,
+      "path": "data/t11_aimo_generation_quality/teacher_generations.jsonl",
+      "rows": 256,
+      "sha256": "764f5e8fcc31bc61303ee8ed76e23b653a6b220effeb525f375aa78df9099e3c"
+    },
+    "t11b_historical_normalizer_replay": {
+      "bytes": 1284,
+      "path": "data/t11b_deepseek14b_teacher_preflight/historical-normalizer-replay.json",
+      "sha256": "1fc1e332dde093fb73909b078eed2f845c2378d48c8aec97791b92c7bbfb9d3d"
+    },
+    "t11b_preflight": {
+      "bytes": 20051,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/teacher-preflight.json",
+      "sha256": "23ae71215ff8517ebb7823e99357971e2064251817f4363ca404703a0d99e239"
+    },
+    "t11b_run_metadata": {
+      "bytes": 3354,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/teacher-run-metadata.json",
+      "sha256": "682354a6641996a8d8b1146caef3786c9744e6c5bc5c16eecf64266166763a2d"
+    },
+    "validation_ids": {
+      "bytes": 6500,
+      "path": "data/splits/rft_validation_500_ids.txt",
+      "rows": 500,
+      "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+    }
+  },
+  "status": "verified",
+  "task": "T11c"
+}

@@ -1,0 +1,65 @@
+{
+  "commit_rule": "files are atomically replaced individually; this hash record is the final freeze commit",
+  "counts": {
+    "candidates": 119584,
+    "change_categories": {
+      "answer_or_path_changed": 11488,
+      "explicit_barrier_removed_last_integer": 9451,
+      "explicit_zero_decimal_normalized": 1185,
+      "failure_reason_changed": 10370,
+      "newly_invalid": 10301
+    },
+    "changed_candidate_rows": 11498,
+    "changed_questions": 1368,
+    "questions": 3737
+  },
+  "created_at_utc": "2026-08-27T14:02:46.798455+00:00",
+  "execution_sources": {
+    "new_config_sha256": "b89db4529be824822440a5cb904145bb9049337008f76ecd6be2bb7ebd7565f5",
+    "new_extractor_sha256": "db8219e5cb37f3ad9fff7ec10341e3f47bc1a50e640243dc642b75d50e47e158",
+    "old_config_sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630",
+    "old_extractor_sha256": "68283644e400c492b482518b811c46f105abd30410cc1da87366604f74a2ab12",
+    "runner_sha256": "7583b6de5211864eb5f16dc4f5922fdbc1d2b88d56fce262c59e4137846bbecb"
+  },
+  "label_boundary": {
+    "canonical_labels_parsed": false,
+    "changed_case_audit_frozen": true,
+    "predictions_frozen": true,
+    "split_membership_parsed": false
+  },
+  "outputs": {
+    "changed_cases": {
+      "bytes": 29579425,
+      "path": "artifacts/t11d_extractor_contract/changed-cases-label-blind.jsonl",
+      "rows": 11498,
+      "sha256": "72bc9b4108813871f92e6e1bd0084fb532f3d77ba41b717b99f17a8683f55124"
+    },
+    "new_extractions": {
+      "bytes": 25543703,
+      "path": "artifacts/t11d_extractor_contract/new-extractions.jsonl",
+      "rows": 119584,
+      "sha256": "72c0478b1de8aaa7b6d5b0b49cf2edc176b95e918ae6d7a5f306dc4a4570ea3d"
+    },
+    "new_predictions": {
+      "bytes": 886402,
+      "path": "artifacts/t11d_extractor_contract/new-predictions.jsonl",
+      "rows": 3737,
+      "sha256": "9be47c8f749f80e320783069963b2cae7a05989420cc32e3b1c8307158500f06"
+    },
+    "old_extractions": {
+      "bytes": 25448302,
+      "path": "artifacts/t11d_extractor_contract/old-extractions.jsonl",
+      "rows": 119584,
+      "sha256": "59c560bf49e68c02eb8608d81eebf7a585f079684665a786edf0168c92b20e72"
+    },
+    "old_predictions": {
+      "bytes": 914796,
+      "path": "artifacts/t11d_extractor_contract/old-predictions.jsonl",
+      "rows": 3737,
+      "sha256": "d893013f0eaa62c3bc85494f55eb7777e67b238986539fed41455da60a8df811"
+    }
+  },
+  "schema_version": 1,
+  "status": "label_blind_frozen",
+  "task": "T11d"
+}

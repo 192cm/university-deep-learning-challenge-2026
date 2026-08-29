@@ -1,0 +1,75 @@
+{
+  "created_at_utc": "2026-08-24T03:33:25.043073+00:00",
+  "fallback": null,
+  "generation": {
+    "do_sample": true,
+    "k": 32,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "validation_seed": 42
+  },
+  "model": {
+    "adapter": null,
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "prompts": {
+    "base": {
+      "sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+      "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+      "utf8_bytes": 163
+    },
+    "strong_cot": {
+      "sha256": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b",
+      "template": "Solve the following problem carefully.\n1. Identify all relevant quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the reasoning and calculation.\nWrite the final answer on the last line exactly as FINAL_ANSWER: <answer>.\nDo not write anything after that line.\n\nProblem:\n{question}",
+      "utf8_bytes": 316
+    }
+  },
+  "routing": {
+    "base_only_when_first_four_valid_and_identical": true,
+    "first_k": 4,
+    "ground_truth_consumed": false,
+    "otherwise_use_strong_cot_for_logical_samples_4_through_31": true
+  },
+  "runtime": {
+    "estimated_1000_question_hours": 1.0415445629157716,
+    "maximum_allowed_hours": 18.0
+  },
+  "schema_version": 1,
+  "selected_task": "T8",
+  "status": "reject",
+  "strategy": "base_prompt_fixed_majority_32",
+  "task": "T8-2",
+  "validation": {
+    "adopted": false,
+    "criteria": {
+      "exact_mcnemar_p_below_0_05": false,
+      "format_drop_not_over_2pp": true,
+      "hard_drop_not_over_2pp": true,
+      "invalid_increase_not_over_1pp": true,
+      "staged_runtime_at_most_18h": true,
+      "union_delta_at_least_1_5pp": false
+    },
+    "reason": "Primary routed accuracy did not improve over preserved T8.",
+    "status": "reject",
+    "strong_cot_fixed_arm_is_ablation_only": true,
+    "thresholds": {
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 42,
+      "maximum_format_drop_pp": 2.0,
+      "maximum_hard_drop_pp": 2.0,
+      "maximum_invalid_increase_pp": 1.0,
+      "maximum_mcnemar_p": 0.05,
+      "maximum_staged_runtime_hours": 18.0,
+      "minimum_union_delta_pp": 1.5
+    }
+  },
+  "voting": {
+    "ground_truth_or_calculation_verifier_used": false,
+    "majority_tie_break": "first generated answer among tied top vote counts",
+    "normalization": "byte-identical src.extract syntactic extraction"
+  }
+}

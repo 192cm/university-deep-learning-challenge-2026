@@ -1,0 +1,96 @@
+{
+  "completed_at_utc": "2026-08-27T07:49:30.684518+00:00",
+  "engine_arguments": {
+    "dtype": "bfloat16",
+    "enable_prefix_caching": true,
+    "gpu_memory_utilization": 0.9,
+    "load_format": "bitsandbytes",
+    "max_model_len": 4096,
+    "max_num_seqs": 16,
+    "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "quantization": "bitsandbytes",
+    "request_chunk_size": 8,
+    "revision": "1df8507178afcc1bef68cd8c393f61a886323761",
+    "tensor_parallel_size": 1,
+    "tokenizer": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "tokenizer_revision": "1df8507178afcc1bef68cd8c393f61a886323761",
+    "trust_remote_code": false
+  },
+  "generation_arguments": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "sample_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "samples_per_question": 4,
+    "seed": 62000,
+    "temperature": 0.7,
+    "top_p": 0.95
+  },
+  "gpu_memory": {
+    "baseline_device_used_mib": 1,
+    "measurement_note": "nvidia-smi samples include the vLLM worker process; PyTorch allocator peaks cover only allocations visible in this driver process",
+    "peak_device_used_mib": 24082,
+    "peak_engine_delta_mib": 24081,
+    "torch_driver_peak_allocated_bytes": 0,
+    "torch_driver_peak_reserved_bytes": 0
+  },
+  "invocation": {
+    "answers_loaded": false,
+    "api_cost_usd": 0.0,
+    "generated": 256,
+    "generation_wall_seconds": 1743.948197321035,
+    "generations_per_second": 0.14679335108305067,
+    "ids_path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+    "ids_sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9",
+    "input_tokens": 49976,
+    "model_load_seconds": 33.74593522801297,
+    "output_tokens": 432782,
+    "protected_or_leaderboard_or_test_rows_sent": 0,
+    "questions": 64,
+    "sample_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "scope": "teacher_preflight_64x4",
+    "snapshot_resolution_seconds": 0.11499337997520342
+  },
+  "license": "MIT",
+  "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+  "offline_engine_load_and_generation": true,
+  "prompt_sha256": "1b1f80807f63b2d0e6f748a3c54e7423237da07ee354ebccd2773fb4f1a16521",
+  "provider": "local_vllm",
+  "raw_generations": {
+    "bytes": 1494307,
+    "path": "data/t11b_deepseek14b_teacher_preflight/raw_teacher_generations.jsonl",
+    "rows": 256,
+    "sha256": "e8ab88378e048e4eabdd88a86195be950e1daf4355179bdcdb848e8aff65d408"
+  },
+  "requested_model_revision": "1df8507178afcc1bef68cd8c393f61a886323761",
+  "requested_tokenizer_revision": "1df8507178afcc1bef68cd8c393f61a886323761",
+  "resolved_model_commit": "1df8507178afcc1bef68cd8c393f61a886323761",
+  "resolved_tokenizer_commit": "1df8507178afcc1bef68cd8c393f61a886323761",
+  "runtime_packages": {
+    "bitsandbytes": "0.50.1",
+    "huggingface_hub": "1.28.0",
+    "python": "3.12.13",
+    "torch": "2.13.0+cu129",
+    "torchaudio": "2.11.0+cu129",
+    "torchcodec": "0.16.0+cu129",
+    "torchvision": "0.28.0+cu129",
+    "transformers": "5.16.1",
+    "vllm": "0.27.1+cu129"
+  },
+  "schema_version": 1,
+  "snapshot_path": "/workspace/.hf_home/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-14B/snapshots/1df8507178afcc1bef68cd8c393f61a886323761",
+  "started_at_utc": "2026-08-27T07:19:52.820500+00:00",
+  "status": "complete",
+  "task": "T11b",
+  "tool_use": false
+}

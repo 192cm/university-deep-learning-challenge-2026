@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="T8-3 focused tests" tests="30" failures="0" errors="0" skipped="0" time="3.455159">
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_boxed_negative_integer" time="0.000176" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_conflicting_explicit_answers_fail" time="0.000064" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_currency_symbol_is_treated_as_notation" time="0.000065" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_decimal_and_fraction_only_outputs_fail" time="0.002120" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_empty_and_incomplete_marker_fail" time="0.000064" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_extractor_has_no_forbidden_calls_imports_or_arithmetic" time="0.003929" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_invalid_explicit_marker_continues_through_fallback_cascade" time="0.000092" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_large_integer_and_thousands_separator" time="0.000038" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_marker_accepts_trailing_unit_and_period" time="0.000033" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_negative_zero_and_negative_zero_normalization" time="0.000079" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_normalization_does_not_convert_nonintegers" time="0.000027" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_repeated_identical_marker_uses_last_occurrence" time="0.000032" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_standalone_last_line_and_markerless_body_fallbacks" time="0.000060" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_unicode_minus_fullwidth_hyphen_digits_and_leading_plus" time="0.000042" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_units_with_a_slash_are_stripped_without_calculation" time="0.000032" />
+    <testcase classname="t8_3_test_0_test_extract.ExtractAnswerTests" name="test_unrequested_unicode_number_forms_are_not_converted" time="0.000037" />
+    <testcase classname="t8_3_test_1_test_evaluate.EvaluateTests" name="test_dummy_jsonl_emits_every_required_metric" time="0.019584" />
+    <testcase classname="t8_3_test_1_test_evaluate.EvaluateTests" name="test_majority_tie_uses_first_generated_answer_without_label" time="0.000038" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed" time="0.004435" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_filter_selection_is_ground_truth_blind" time="0.010412" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_generation_superset_requires_opt_in_and_validates_source_metadata" time="0.010168" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_incomplete_generation_coverage_fails" time="0.002737" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_low_quality_filter_is_opt_in_and_keeps_boxed_votes" time="0.006806" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back" time="0.005019" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_sample_submission_preserves_exact_headers_and_requires_id_order" time="0.009769" />
+    <testcase classname="t8_3_test_2_test_submit.SubmitTests" name="test_t8_config_and_completed_run_metadata_are_hash_validated" time="0.009026" />
+    <testcase classname="t8_3_test_3_test_vote_filter.VoteFilterTests" name="test_prediction_builder_cannot_accept_ground_truth" time="0.000077" />
+    <testcase classname="t8_3_test_3_test_vote_filter.VoteFilterTests" name="test_real_filter_off_regression_is_byte_identical" time="3.369707" />
+    <testcase classname="t8_3_test_3_test_vote_filter.VoteFilterTests" name="test_submission_csv_encoding_is_crlf_and_canonical" time="0.000041" />
+    <testcase classname="t8_3_test_3_test_vote_filter.VoteFilterTests" name="test_template_group_fold_assignment_is_deterministic" time="0.000038" />
+    <system-out>test_boxed_negative_integer (t8_3_test_0_test_extract.ExtractAnswerTests.test_boxed_negative_integer) ... ok
+test_conflicting_explicit_answers_fail (t8_3_test_0_test_extract.ExtractAnswerTests.test_conflicting_explicit_answers_fail) ... ok
+test_currency_symbol_is_treated_as_notation (t8_3_test_0_test_extract.ExtractAnswerTests.test_currency_symbol_is_treated_as_notation) ... ok
+test_decimal_and_fraction_only_outputs_fail (t8_3_test_0_test_extract.ExtractAnswerTests.test_decimal_and_fraction_only_outputs_fail) ... ok
+test_empty_and_incomplete_marker_fail (t8_3_test_0_test_extract.ExtractAnswerTests.test_empty_and_incomplete_marker_fail) ... ok
+test_extractor_has_no_forbidden_calls_imports_or_arithmetic (t8_3_test_0_test_extract.ExtractAnswerTests.test_extractor_has_no_forbidden_calls_imports_or_arithmetic) ... ok
+test_invalid_explicit_marker_continues_through_fallback_cascade (t8_3_test_0_test_extract.ExtractAnswerTests.test_invalid_explicit_marker_continues_through_fallback_cascade) ... ok
+test_large_integer_and_thousands_separator (t8_3_test_0_test_extract.ExtractAnswerTests.test_large_integer_and_thousands_separator) ... ok
+test_marker_accepts_trailing_unit_and_period (t8_3_test_0_test_extract.ExtractAnswerTests.test_marker_accepts_trailing_unit_and_period) ... ok
+test_negative_zero_and_negative_zero_normalization (t8_3_test_0_test_extract.ExtractAnswerTests.test_negative_zero_and_negative_zero_normalization) ... ok
+test_normalization_does_not_convert_nonintegers (t8_3_test_0_test_extract.ExtractAnswerTests.test_normalization_does_not_convert_nonintegers) ... ok
+test_repeated_identical_marker_uses_last_occurrence (t8_3_test_0_test_extract.ExtractAnswerTests.test_repeated_identical_marker_uses_last_occurrence) ... ok
+test_standalone_last_line_and_markerless_body_fallbacks (t8_3_test_0_test_extract.ExtractAnswerTests.test_standalone_last_line_and_markerless_body_fallbacks) ... ok
+test_unicode_minus_fullwidth_hyphen_digits_and_leading_plus (t8_3_test_0_test_extract.ExtractAnswerTests.test_unicode_minus_fullwidth_hyphen_digits_and_leading_plus) ... ok
+test_units_with_a_slash_are_stripped_without_calculation (t8_3_test_0_test_extract.ExtractAnswerTests.test_units_with_a_slash_are_stripped_without_calculation) ... ok
+test_unrequested_unicode_number_forms_are_not_converted (t8_3_test_0_test_extract.ExtractAnswerTests.test_unrequested_unicode_number_forms_are_not_converted) ... ok
+test_dummy_jsonl_emits_every_required_metric (t8_3_test_1_test_evaluate.EvaluateTests.test_dummy_jsonl_emits_every_required_metric) ... ok
+test_majority_tie_uses_first_generated_answer_without_label (t8_3_test_1_test_evaluate.EvaluateTests.test_majority_tie_uses_first_generated_answer_without_label) ... ok
+test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed (t8_3_test_2_test_submit.SubmitTests.test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed) ... ok
+test_filter_selection_is_ground_truth_blind (t8_3_test_2_test_submit.SubmitTests.test_filter_selection_is_ground_truth_blind) ... ok
+test_generation_superset_requires_opt_in_and_validates_source_metadata (t8_3_test_2_test_submit.SubmitTests.test_generation_superset_requires_opt_in_and_validates_source_metadata) ... ok
+test_incomplete_generation_coverage_fails (t8_3_test_2_test_submit.SubmitTests.test_incomplete_generation_coverage_fails) ... ok
+test_low_quality_filter_is_opt_in_and_keeps_boxed_votes (t8_3_test_2_test_submit.SubmitTests.test_low_quality_filter_is_opt_in_and_keeps_boxed_votes) ... ok
+test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back (t8_3_test_2_test_submit.SubmitTests.test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back) ... ok
+test_sample_submission_preserves_exact_headers_and_requires_id_order (t8_3_test_2_test_submit.SubmitTests.test_sample_submission_preserves_exact_headers_and_requires_id_order) ... ok
+test_t8_config_and_completed_run_metadata_are_hash_validated (t8_3_test_2_test_submit.SubmitTests.test_t8_config_and_completed_run_metadata_are_hash_validated) ... ok
+test_prediction_builder_cannot_accept_ground_truth (t8_3_test_3_test_vote_filter.VoteFilterTests.test_prediction_builder_cannot_accept_ground_truth) ... ok
+test_real_filter_off_regression_is_byte_identical (t8_3_test_3_test_vote_filter.VoteFilterTests.test_real_filter_off_regression_is_byte_identical) ... ok
+test_submission_csv_encoding_is_crlf_and_canonical (t8_3_test_3_test_vote_filter.VoteFilterTests.test_submission_csv_encoding_is_crlf_and_canonical) ... ok
+test_template_group_fold_assignment_is_deterministic (t8_3_test_3_test_vote_filter.VoteFilterTests.test_template_group_fold_assignment_is_deterministic) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 3.455s
+
+OK
+</system-out>
+  </testsuite>
+</testsuites>

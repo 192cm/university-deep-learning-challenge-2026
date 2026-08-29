@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "task": "T8-2",
+  "status": "complete",
+  "purpose": "presentation-table comparison of frozen T8-2 routed predictions against preserved T4c greedy predictions",
+  "post_freeze_analysis": true,
+  "sources": {
+    "candidate_predictions": {
+      "path": "artifacts/t8_2_cot_routing/predictions.jsonl",
+      "rows": 3737,
+      "sha256": "9abe61ea87a15eb7f2092b5ea9e14c072fd4c20b40fbee77000359d68680ba34"
+    },
+    "t4c_generations": {
+      "path": "artifacts/t4_output_contract/generations.jsonl",
+      "rows": 3737,
+      "sha256": "26ae2464fa574ca62eaa5874413a30e68d2fd836b0f972449e546563db9e3273"
+    },
+    "canonical_labels": {
+      "path": "data/canonical/train.csv",
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "union_ids": {
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "comparison": {
+    "questions": 3737,
+    "candidate_accuracy": 0.693069306930693,
+    "reference_accuracy": 0.626973508161627,
+    "delta_pp": 6.60957987690661,
+    "candidate_correct_reference_wrong": 335,
+    "reference_correct_candidate_wrong": 88,
+    "both_correct": 2255,
+    "both_wrong": 1059,
+    "discordant": 423,
+    "two_sided_exact_mcnemar_p": 5.162178106344026e-35,
+    "paired_bootstrap_95_ci": {
+      "low_pp": 5.565962001605565,
+      "high_pp": 7.67995718490768,
+      "method": "paired percentile bootstrap over per-question exact-match differences",
+      "replicates": 20000,
+      "seed": 42
+    }
+  }
+}

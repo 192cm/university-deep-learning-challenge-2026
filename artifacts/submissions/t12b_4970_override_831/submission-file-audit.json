@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "task": "T12b-4970-override",
+  "status": "complete",
+  "artifact_tool": true,
+  "rows": 831,
+  "columns": [
+    "id",
+    "answer"
+  ],
+  "unique_ids": 831,
+  "reference_ids_exact_order_match": true,
+  "canonical_integer_answers": 831,
+  "null_or_nan": 0,
+  "numeric_zero_answers": 23,
+  "forced_zero_fallbacks": 0,
+  "output_sha256": "70fbae7005502d36f9e393d74859769eea56d01b4588f4e438335e1931c45e58",
+  "candidate_sha256": "70fbae7005502d36f9e393d74859769eea56d01b4588f4e438335e1931c45e58",
+  "preexisting_output_sha256": null,
+  "inputs": {
+    "submission_rows": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/artifacts/t12b_4970_override/leaderboard-label-blind/submission-rows.json",
+    "reference_questions": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/data/deep_chal_math_leaderboard_filtered.csv"
+  },
+  "outputs": {
+    "submission": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/artifacts/submissions/t12b_4970_override_831/submission.csv",
+    "candidate": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/artifacts/submissions/t12b_4970_override_831/submission-candidate.csv",
+    "backup": null,
+    "verification_xlsx": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/artifacts/submissions/t12b_4970_override_831/submission-verification.xlsx",
+    "preview_top": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/artifacts/submissions/t12b_4970_override_831/submission-preview-top.png",
+    "preview_bottom": "/Users/kunho/Developer/competitions/university-deep-learning-challenge-2026/artifacts/submissions/t12b_4970_override_831/submission-preview-bottom.png"
+  },
+  "inspections": {
+    "key_region": "{\"kind\":\"region\",\"sheet\":\"Submission\",\"address\":\"A1:B15\",\"rows\":15,\"cols\":2,\"nonEmpty\":30,\"text\":30,\"maxTextLength\":10,\"preview\":[[\"id\",\"answer\"],[\"val-000000\",\"-13\"],[\"val-000001\",\"2400\"],[\"val-000002\",\"3\"],[\"val-000003\",\"355\"]],\"previewAddress\":\"A1:B5\",\"previewRows\":5,\"previewCols\":2}",
+    "tail_region": "{\"kind\":\"region\",\"sheet\":\"Submission\",\"address\":\"A818:B832\",\"rows\":15,\"cols\":2,\"nonEmpty\":30,\"text\":30,\"maxTextLength\":10,\"preview\":[[\"val-000983\",\"1\"],[\"val-000984\",\"5\"],[\"val-000985\",\"120\"],[\"val-000986\",\"17\"],[\"val-000987\",\"1\"]],\"previewAddress\":\"A818:B822\",\"previewRows\":5,\"previewCols\":2}",
+    "formula_errors": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  }
+}

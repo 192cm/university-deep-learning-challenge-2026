@@ -1,0 +1,76 @@
+{
+  "adaptive": null,
+  "created_at_utc": "2026-08-23T22:34:55.537415+00:00",
+  "end_to_end_decision": {
+    "adopted": false,
+    "criteria": {
+      "maximum_exact_p": 0.05,
+      "maximum_hard_or_format_drop_pp": 2.0,
+      "minimum_union_delta_pp": 1.5
+    },
+    "reason": "union accuracy improved but the preregistered +1.5 pp and p<0.05 adoption gate was not fully met; preserve T4c + T8",
+    "status": "hold"
+  },
+  "fallback": {
+    "config": "configs/t8_self_consistency.json",
+    "policy": "fixed majority@32",
+    "solver": "T4c base"
+  },
+  "generation": {
+    "do_sample": true,
+    "k": 32,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "model": {
+    "adapter": {
+      "base_model_name_or_path": "Qwen/Qwen2.5-3B-Instruct",
+      "config_sha256": "537819b72447ced90971e276aa17b4ca2b68860e61652701cb67c577f3aa3a26",
+      "path": "/workspace/artifacts/t6_sft_v1/adapters/rft_r1",
+      "peft_type": "LORA",
+      "rank": 64,
+      "sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1"
+    },
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "schema_version": 1,
+  "status": "hold",
+  "strategy": "fixed_self_consistency",
+  "task": "T8-1",
+  "validation": {
+    "estimated_1000_question_hours": 0.634685053734848,
+    "greedy_accuracy": 0.630987423066631,
+    "improvement_vs_own_greedy_pp": 6.74337704040674,
+    "mcnemar_vs_own_greedy": {
+      "both_correct": 2296,
+      "both_wrong": 1065,
+      "candidate_accuracy": 0.6984211934706984,
+      "candidate_correct_reference_wrong": 314,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        5.74962904890893,
+        7.737125031904557
+      ],
+      "delta_pp": 6.7433770404067435,
+      "discordant": 376,
+      "questions": 3737,
+      "reference_accuracy": 0.630987423066631,
+      "reference_correct_candidate_wrong": 62,
+      "two_sided_exact_p": 1.143201046002237e-41
+    },
+    "reserve_hours_within_24": 23.36531494626515,
+    "selected_majority_accuracy": 0.6984211934706984,
+    "selected_policy": "fixed_k32",
+    "selection_rule": "adaptive only if separately staged accuracy exceeds fixed k=32 within 18 hours; otherwise fixed k=32"
+  },
+  "voting": {
+    "ground_truth_or_calculation_verifier_used": false,
+    "majority_tie_break": "first generated answer among tied top vote counts",
+    "normalization": "src.extract syntactic string extraction only"
+  }
+}

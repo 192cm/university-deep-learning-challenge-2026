@@ -1,0 +1,94 @@
+{
+  "cache": {
+    "path": "artifacts/t6_1_sft_v1r/rft_v2_external/cache",
+    "rows": 21588,
+    "sha256": "d8e0e9c8f9402c96788d134d36edb063cebdac92336ce267e8f274f2289de876"
+  },
+  "cache_fingerprint": "dde96100ece5576027f62d14e3c86b2c97274125dc35626ece192d28917bcc16",
+  "cache_identity": {
+    "inputs": [
+      {
+        "path": "data/rft_r1_v2/sft.jsonl",
+        "sha256": "03e6a7bdf937144bc1bf8a8595320bdeba430ee2f0558906bf6a32594c1c890e"
+      },
+      {
+        "path": "data/external_cot_v2/sft.jsonl",
+        "sha256": "5c5d636a0609e027010ddbc32571f6b3640481b1a63f70965356f8f16dbb8237"
+      }
+    ],
+    "max_length": 2048,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "packing": false,
+    "schema_version": 1,
+    "seed": 42,
+    "target_preservation_tokens": 128,
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "created_at_utc": "2026-08-21T14:22:55.843055+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "tokenizers_parallelism": "true"
+  },
+  "packing": {
+    "algorithm": null,
+    "assistant_loss_tokens": 8177528,
+    "assistant_only_mask_preserved": true,
+    "capacity_tokens": 44212224,
+    "efficiency": 0.24581744632434685,
+    "enabled": false,
+    "packed_sequences": 21588,
+    "sample_boundaries_begin_masked": true,
+    "source_samples": 21588,
+    "total_tokens": 10868136
+  },
+  "runtime_seconds": 32.69235271215439,
+  "schema_version": 1,
+  "source_audit": {
+    "duplicate_exact_rows_detected": 0,
+    "duplicate_exact_rows_removed": 0,
+    "final_line_contract_100_percent": true,
+    "inputs": [
+      {
+        "path": "data/rft_r1_v2/sft.jsonl",
+        "rows": 6588,
+        "sha256": "03e6a7bdf937144bc1bf8a8595320bdeba430ee2f0558906bf6a32594c1c890e"
+      },
+      {
+        "path": "data/external_cot_v2/sft.jsonl",
+        "rows": 15000,
+        "sha256": "5c5d636a0609e027010ddbc32571f6b3640481b1a63f70965356f8f16dbb8237"
+      }
+    ],
+    "rows": 21588,
+    "source_counts": {
+      "openmathinstruct_2": 15000,
+      "rft_r1_v2": 6588
+    }
+  },
+  "status": "complete",
+  "task": "T6-1",
+  "tokenization": {
+    "assistant_eos_labeled_100_percent": true,
+    "assistant_eos_labeled_samples": 21588,
+    "assistant_only_loss": true,
+    "assistant_tokens": {
+      "max": 1971,
+      "mean": 378.79970353900313,
+      "median": 281.0,
+      "p95": 1017.0
+    },
+    "chat_template_applied": true,
+    "label_token_identity_100_percent": true,
+    "length": {
+      "max": 2048,
+      "mean": 503.43413007226235,
+      "median": 405.0,
+      "p95": 1157.0
+    },
+    "max_length": 2048,
+    "prompt_labels_all_minus_100": true,
+    "source_samples": 21588,
+    "truncated_samples": 97,
+    "truncation_preserves_prompt_and_completion_tail": true
+  }
+}

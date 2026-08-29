@@ -1,0 +1,144 @@
+{
+  "arms": {
+    "A": {
+      "filter_removed_valid_vote_count": 12702,
+      "filter_target_candidate_count": 13544,
+      "hit_max_new_tokens_rate": 0.012183904201230934,
+      "invalid_output_rate": 0.007726786192132727,
+      "mean_output_tokens": 518.1830428819909,
+      "median_output_tokens": 383.0,
+      "p95_output_tokens": 1298.0,
+      "parse_path_distribution": {
+        "boxed": {
+          "count": 7856,
+          "rate": 0.0656944072785657
+        },
+        "final_answer_marker": {
+          "count": 98134,
+          "rate": 0.8206281776826331
+        },
+        "last_integer": {
+          "count": 12508,
+          "rate": 0.1045959325662296
+        },
+        "none": {
+          "count": 924,
+          "rate": 0.007726786192132727
+        },
+        "standalone_last_line": {
+          "count": 162,
+          "rate": 0.0013546962804388547
+        }
+      },
+      "prompt": "base"
+    },
+    "B": {
+      "filter_removed_valid_vote_count": 13666,
+      "filter_target_candidate_count": 14408,
+      "hit_max_new_tokens_rate": 0.014232673267326733,
+      "invalid_output_rate": 0.006204843457318704,
+      "mean_output_tokens": 680.7759817366872,
+      "median_output_tokens": 579.0,
+      "p95_output_tokens": 1403.0,
+      "parse_path_distribution": {
+        "boxed": {
+          "count": 6505,
+          "rate": 0.05439690928552315
+        },
+        "final_answer_marker": {
+          "count": 98699,
+          "rate": 0.8253528900187316
+        },
+        "last_integer": {
+          "count": 13554,
+          "rate": 0.11334292213005084
+        },
+        "none": {
+          "count": 742,
+          "rate": 0.006204843457318704
+        },
+        "standalone_last_line": {
+          "count": 84,
+          "rate": 0.0007024351083757025
+        }
+      },
+      "prompt": "strong_cot"
+    },
+    "C": {
+      "filter_removed_valid_vote_count": 13086,
+      "filter_target_candidate_count": 14686,
+      "hit_max_new_tokens_rate": 0.01373093390420123,
+      "invalid_output_rate": 0.013463339577200964,
+      "mean_output_tokens": 613.3810543216484,
+      "median_output_tokens": 488.0,
+      "p95_output_tokens": 1399.0,
+      "parse_path_distribution": {
+        "boxed": {
+          "count": 20111,
+          "rate": 0.16817467219694943
+        },
+        "final_answer_marker": {
+          "count": 84842,
+          "rate": 0.709476184104897
+        },
+        "last_integer": {
+          "count": 12953,
+          "rate": 0.10831716617607706
+        },
+        "none": {
+          "count": 1610,
+          "rate": 0.013463339577200964
+        },
+        "standalone_last_line": {
+          "count": 68,
+          "rate": 0.0005686379448755686
+        }
+      },
+      "prompt": "cot_boxed"
+    },
+    "D": {
+      "filter_removed_valid_vote_count": 26575,
+      "filter_target_candidate_count": 27926,
+      "hit_max_new_tokens_rate": 0.014450093658014451,
+      "invalid_output_rate": 0.011314222638480064,
+      "mean_output_tokens": 629.8273849344394,
+      "median_output_tokens": 504.0,
+      "p95_output_tokens": 1434.0,
+      "parse_path_distribution": {
+        "boxed": {
+          "count": 47918,
+          "rate": 0.4007057800374632
+        },
+        "final_answer_marker": {
+          "count": 43794,
+          "rate": 0.36621956114530374
+        },
+        "last_integer": {
+          "count": 26343,
+          "rate": 0.22028866738025155
+        },
+        "none": {
+          "count": 1353,
+          "rate": 0.011314222638480064
+        },
+        "standalone_last_line": {
+          "count": 176,
+          "rate": 0.0014717687985014718
+        }
+      },
+      "prompt": "cot_brief"
+    }
+  },
+  "cot_boxed_chain": {
+    "boxed_delta_pp_C_minus_A": 10.248026491838374,
+    "boxed_rate_A": 0.0656944072785657,
+    "boxed_rate_C": 0.16817467219694943,
+    "filter_accuracy_delta_pp_C": 1.1774150388011773,
+    "filter_target_delta_C_minus_A": 1142,
+    "last_integer_delta_pp_C_minus_A": 0.37212336098474685,
+    "last_integer_rate_A": 0.1045959325662296,
+    "last_integer_rate_C": 0.10831716617607706
+  },
+  "schema_version": 1,
+  "task": "T10a"
+}

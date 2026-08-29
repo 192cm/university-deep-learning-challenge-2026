@@ -1,0 +1,184 @@
+{
+  "candidates": [
+    {
+      "actual_epoch": 0.25258044930176077,
+      "adapter_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-52/adapter",
+      "adapter_sha256": "5070d52d0460c16d55affb435f7337eb5363e1f8849e3f1aecebd07155b272b0",
+      "generation": {
+        "bytes": 1036581,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-52/generations.jsonl",
+        "rows": 500,
+        "sha256": "f4d540c7f7d7a5b8297cfae76ef57383889e6f64e4d0caab53585ae310d7f681"
+      },
+      "generation_metadata": {
+        "bytes": 31662,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-52/run-metadata.json",
+        "sha256": "daf5812595f6b3d9721b9b4fafa392f0952536d91d6ac6ec057710f2440d0428"
+      },
+      "learning_rate": 3e-05,
+      "metrics": {
+        "correct": 232,
+        "greedy_accuracy": 0.464,
+        "hit_max_new_tokens_rate": 0.04,
+        "invalid_output_rate": 0.002,
+        "invalid_outputs": 1,
+        "mean_output_tokens": 583.36,
+        "median_output_tokens": 422.0,
+        "questions": 500
+      },
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-52",
+      "step": 52,
+      "target_epoch": 0.25,
+      "training_checkpoint_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-52"
+    },
+    {
+      "actual_epoch": 0.5003035822707954,
+      "adapter_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-103/adapter",
+      "adapter_sha256": "7c5454a0936dbefda83357ba08fb32cb3786326238f806c6d9d58927de5ee1fa",
+      "generation": {
+        "bytes": 1139443,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-103/generations.jsonl",
+        "rows": 500,
+        "sha256": "3f9a773389a955c04165262c3118982e30cdbb5ffee3351f7a867b81d16c7801"
+      },
+      "generation_metadata": {
+        "bytes": 32291,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-103/run-metadata.json",
+        "sha256": "7fd3c0ae518477b6ccc8249fdabba35d94a5c32d8f225d3380b14b8a6fff9b92"
+      },
+      "learning_rate": 3e-05,
+      "metrics": {
+        "correct": 237,
+        "greedy_accuracy": 0.474,
+        "hit_max_new_tokens_rate": 0.04,
+        "invalid_output_rate": 0.004,
+        "invalid_outputs": 2,
+        "mean_output_tokens": 641.38,
+        "median_output_tokens": 489.5,
+        "questions": 500
+      },
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-103",
+      "step": 103,
+      "target_epoch": 0.5,
+      "training_checkpoint_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-103"
+    },
+    {
+      "actual_epoch": 0.7528840315725561,
+      "adapter_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-155/adapter",
+      "adapter_sha256": "0ae3e324035f23827f8055798a3be1ed57cfe4f7fe2ceec2f76d28bbaf325124",
+      "generation": {
+        "bytes": 1137686,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-155/generations.jsonl",
+        "rows": 500,
+        "sha256": "17b9f8b1b08ce0070537de7c3b968369e4117b40f1e0875498519517a203876f"
+      },
+      "generation_metadata": {
+        "bytes": 32734,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-155/run-metadata.json",
+        "sha256": "df999c9cd568e47192209748ec735f666685694e804d51aa7470ab7b2637f444"
+      },
+      "learning_rate": 3e-05,
+      "metrics": {
+        "correct": 236,
+        "greedy_accuracy": 0.472,
+        "hit_max_new_tokens_rate": 0.04,
+        "invalid_output_rate": 0.002,
+        "invalid_outputs": 1,
+        "mean_output_tokens": 642.382,
+        "median_output_tokens": 478.5,
+        "questions": 500
+      },
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-155",
+      "step": 155,
+      "target_epoch": 0.75,
+      "training_checkpoint_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-155"
+    },
+    {
+      "actual_epoch": 1.0,
+      "adapter_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-206/adapter",
+      "adapter_sha256": "9a9c4b188b80c04c430068f223e189c1a9a9ab7a6630b4a44116cfe79e3eab9a",
+      "generation": {
+        "bytes": 1150074,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-206/generations.jsonl",
+        "rows": 500,
+        "sha256": "a7f4f50b2d626c2f12b2f383950999a7e75130136d6f54e3bf808d9b844ff5f7"
+      },
+      "generation_metadata": {
+        "bytes": 32585,
+        "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-206/run-metadata.json",
+        "sha256": "fc8918277b73a00d148ce204d5142d9f4ef494b4fbb94e88859371a3e9170810"
+      },
+      "learning_rate": 3e-05,
+      "metrics": {
+        "correct": 231,
+        "greedy_accuracy": 0.462,
+        "hit_max_new_tokens_rate": 0.058,
+        "invalid_output_rate": 0.006,
+        "invalid_outputs": 3,
+        "mean_output_tokens": 654.836,
+        "median_output_tokens": 484.5,
+        "questions": 500
+      },
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-206",
+      "step": 206,
+      "target_epoch": 1.0,
+      "training_checkpoint_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-206"
+    }
+  ],
+  "created_at_utc": "2026-08-21T12:31:31.795605+00:00",
+  "learning_rate": 3e-05,
+  "name": "lr_3em05",
+  "schema_version": 1,
+  "selected": {
+    "actual_epoch": 0.5003035822707954,
+    "adapter_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-103/adapter",
+    "adapter_sha256": "7c5454a0936dbefda83357ba08fb32cb3786326238f806c6d9d58927de5ee1fa",
+    "generation": {
+      "bytes": 1139443,
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-103/generations.jsonl",
+      "rows": 500,
+      "sha256": "3f9a773389a955c04165262c3118982e30cdbb5ffee3351f7a867b81d16c7801"
+    },
+    "generation_metadata": {
+      "bytes": 32291,
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/validation/checkpoint-103/run-metadata.json",
+      "sha256": "7fd3c0ae518477b6ccc8249fdabba35d94a5c32d8f225d3380b14b8a6fff9b92"
+    },
+    "learning_rate": 3e-05,
+    "metrics": {
+      "correct": 237,
+      "greedy_accuracy": 0.474,
+      "hit_max_new_tokens_rate": 0.04,
+      "invalid_output_rate": 0.004,
+      "invalid_outputs": 2,
+      "mean_output_tokens": 641.38,
+      "median_output_tokens": 489.5,
+      "questions": 500
+    },
+    "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-103",
+    "step": 103,
+    "target_epoch": 0.5,
+    "training_checkpoint_path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/trainer/checkpoints/checkpoint-103"
+  },
+  "selection_scope": {
+    "labels_path": "data/splits/rft_validation_500.csv",
+    "rows": 500
+  },
+  "selection_tie_break": "higher accuracy, then earlier target epoch",
+  "sources": {
+    "training_metrics": {
+      "bytes": 4498,
+      "path": "artifacts/t6_1_sft_v1r/hp/lr_3em05/training-metrics.json",
+      "sha256": "7341e61fc5fd1421273d592ba5fe418326c3783074405c549ade6fdced11f0bd"
+    },
+    "validation_ids": {
+      "bytes": 6500,
+      "path": "data/splits/rft_validation_500_ids.txt",
+      "rows": 500,
+      "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+    }
+  },
+  "stage": "checkpoint_validation",
+  "status": "complete",
+  "task": "T6-1"
+}

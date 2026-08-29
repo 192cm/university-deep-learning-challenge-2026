@@ -1,0 +1,38 @@
+{
+  "contracts": {
+    "fsdp_zero_or_offload": false,
+    "generation_workers": 2,
+    "scoring_workers": 2,
+    "single_gpu_fallback": false,
+    "tensor_parallel": false,
+    "training_world_size": 2
+  },
+  "fresh_generation": {
+    "bytes": 841941,
+    "path": "artifacts/t12_cmu_orm/fresh-validation/generation-merge-audit.json",
+    "sha256": "60e00ef1d3a9394431b0a9092e90f9e49a32db7bf07e4eb234dea7dfc46e37e0"
+  },
+  "fresh_scoring": {
+    "bytes": 7136,
+    "path": "artifacts/t12_cmu_orm/fresh-validation/score-merge-audit.json",
+    "sha256": "e594b73d860c1f704d0e7cd485ed9c48cd7bd70764dde5013ebaa6c4a4ac7205"
+  },
+  "hardware": {
+    "bytes": 3033,
+    "path": "artifacts/t12_cmu_orm/hardware-preflight.json",
+    "sha256": "b53be021c93b9674fd066a01ab60ab137021042b4b0a0c1996738a1ec0fcdedb"
+  },
+  "runtime": {
+    "bytes": 407970,
+    "path": "artifacts/t12_cmu_orm/fresh-validation/runtime.json",
+    "sha256": "6800648137ddd8d003995b43101d500b5cf9e349db83396aaf21d7dbecafc65a"
+  },
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12",
+  "training": {
+    "bytes": 12418,
+    "path": "artifacts/t12_cmu_orm/train-metrics.json",
+    "sha256": "42375aaae03fb23307e9c2232fc4f95f769cedd08a9aa23630e90eb3f9575312"
+  }
+}

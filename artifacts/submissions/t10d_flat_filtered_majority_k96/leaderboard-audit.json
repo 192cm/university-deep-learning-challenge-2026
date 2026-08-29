@@ -1,0 +1,32 @@
+{
+  "accuracy_computed": false,
+  "changed_vs_source_filtered_answer": {
+    "base": 61,
+    "cot_boxed": 66,
+    "rft_r1": 70
+  },
+  "flat_vote": {
+    "invalid_prediction_rate": 0.0,
+    "invalid_predictions": 0,
+    "maximum_source_candidates": 79776,
+    "questions": 831,
+    "selected_candidates_after_filter_and_fallback": 75038,
+    "tie_questions": 10,
+    "tie_rate": 0.012033694344163659,
+    "valid_votes": 74976
+  },
+  "labels_available": false,
+  "per_arm_all_votes_filtered_fallback_count": {
+    "base": 5,
+    "cot_boxed": 2,
+    "rft_r1": 0
+  },
+  "rows": 831,
+  "source_final_answer_consensus": {
+    "all_agree": 688,
+    "all_different": 41,
+    "base_cot_boxed_agree": 39,
+    "base_rft_agree": 32,
+    "cot_boxed_rft_agree": 31
+  }
+}

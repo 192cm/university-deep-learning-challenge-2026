@@ -1,0 +1,112 @@
+{
+  "adapter": null,
+  "completed_at_utc": "2026-08-20T15:47:00.007067+00:00",
+  "dataset": {
+    "cache_path": "artifacts/t6_sft_v1/rft_external/cache",
+    "cache_sha256": "f7034507648c58e42fa78af54602bbdb7cd7c60f8da7350630919ba84b7b5278",
+    "rows_before_probe_selection": 11973,
+    "rows_used": 256,
+    "source_samples": 55645
+  },
+  "environment": {
+    "bf16_supported": true,
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python": "3.12.13",
+    "torch": "2.13.0+cu130"
+  },
+  "events": {
+    "path": "artifacts/t6_sft_v1/calibration-probes/compare_gc_on_b3_ga11/work/training-events.jsonl",
+    "rows": 21,
+    "sha256": "4e4f28919b068bc00213bba583c29f50c8129b3d811be30795ac5327bc3cbcaf"
+  },
+  "experiment": "compare_gc_on_b3_ga11",
+  "gpu": {
+    "monitor": {
+      "active_utilization_mean_pct": 98.4635922330097,
+      "fraction_samples_at_least_90_pct": 0.944578313253012,
+      "peak_memory_used_mib": 19526.0,
+      "samples": 415,
+      "utilization_mean_pct": 97.75180722891567
+    },
+    "torch_peak_allocated_mib": 16545.01708984375,
+    "torch_peak_reserved_mib": 18788.0
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "lora": {
+      "bias": "none",
+      "lora_alpha": 128,
+      "lora_dropout": 0.0,
+      "r": 64,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "task_type": "CAUSAL_LM"
+    },
+    "parameters": {
+      "total_visible": 1818406912,
+      "trainable": 119734272,
+      "trainable_fraction": 0.06584569779725959
+    },
+    "quantization": {
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": true
+    },
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "resume": {
+    "checkpoint": null
+  },
+  "runtime": {
+    "estimated_input_tokens": 675840,
+    "estimated_tokens_per_second": 3027.4494166294116,
+    "global_steps": 10,
+    "model_load_seconds": 4.796880293637514,
+    "step_seconds_mean": 22.218857395835222,
+    "step_seconds_median": 22.649204603396356,
+    "step_seconds_p95": 23.315015849999998,
+    "trainer_metrics": {
+      "epoch": 1.255813953488372,
+      "total_flos": 1.1452804132503552e+16,
+      "train_loss": 0.27669319212436677,
+      "train_runtime": 222.9385,
+      "train_samples_per_second": 1.48,
+      "train_steps_per_second": 0.045
+    },
+    "training_seconds": 223.23742100782692
+  },
+  "schema_version": 1,
+  "settings": {
+    "assistant_only_loss": true,
+    "batch_size": 3,
+    "effective_batch_size": 33,
+    "gradient_accumulation_steps": 11,
+    "gradient_checkpointing": true,
+    "max_steps": 10,
+    "num_train_epochs": 2,
+    "packing": true
+  },
+  "sources": {
+    "cache_metadata": {
+      "path": "artifacts/t6_sft_v1/rft_external/cache-metadata.json",
+      "sha256": "55dd4f285bab7f9ac254ce51fd8870f29eebf6c15c28c0a40738f72820abcb6b"
+    },
+    "config": {
+      "path": "configs/t6_sft_v1.json",
+      "sha256": "bbb48a76f3ce2db6b29b69b535d6ccc50619ffeccde70400785da45f06ffec12"
+    }
+  },
+  "started_at_utc": "2026-08-20T15:43:11.929417+00:00",
+  "status": "complete",
+  "task": "T6"
+}

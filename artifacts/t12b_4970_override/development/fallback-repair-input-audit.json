@@ -1,0 +1,20 @@
+{
+  "input": {
+    "bytes": 1731,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/fallback-questions.csv",
+    "sha256": "e9fdd6553cdcc6363947978d74430b4fe2941460d1ce5561cb80a5342b4a7cdb"
+  },
+  "instruction": "Return exactly one integer matching ^-?(?:0|[1-9][0-9]*)$ and no other text.",
+  "label_blind": true,
+  "output": {
+    "bytes": 2199,
+    "kind": "file",
+    "path": "artifacts/t12b_4970_override/development/fallback-repair-questions.csv",
+    "sha256": "3449ca7967a7e7b692e7d01ecd8fed7d3f4c6fd774691086c1c68b92771a94f2"
+  },
+  "rows": 6,
+  "schema_version": 1,
+  "status": "complete",
+  "task": "T12b-4970-override"
+}

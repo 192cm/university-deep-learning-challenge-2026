@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "scope": "Manual audit of all 14 train-holdout questions where the frozen T8-6 prediction disagrees with the stored label and all 32 base generations yield the same extracted answer.",
+  "status_counts": {
+    "suspected_label_error": 9,
+    "genuine_model_reasoning_error": 1,
+    "answer_extraction_error": 1,
+    "malformed_or_ambiguous_training_item": 3
+  },
+  "caveat": "This is a targeted audit of unanimous mismatches, not a random sample of all 1,086 measured errors. Its status proportions must not be extrapolated to every error.",
+  "cases": [
+    {
+      "id": "train-000465",
+      "stored_label": "2",
+      "t8_6_prediction": "3",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "Writing a2=x and common difference d gives (x+d)^2=x(x+4d), hence x=d/2 and a6/a3=(x+4d)/(x+d)=3.",
+      "recommended_action": "Quarantine from evaluation and relabel to 3 after human review."
+    },
+    {
+      "id": "train-001198",
+      "stored_label": "72",
+      "t8_6_prediction": "84",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "For six indistinguishable balls in four distinguishable boxes with empty boxes allowed, the nonnegative-solution count is C(9,3)=84; the prompt gives no additional restriction that produces 72.",
+      "recommended_action": "Quarantine from evaluation and relabel to 84 after human review."
+    },
+    {
+      "id": "train-003959",
+      "stored_label": "10",
+      "t8_6_prediction": "5",
+      "status": "genuine_model_reasoning_error",
+      "confidence": "high",
+      "evidence": "The constraint is a circle centered at (1,-2) with radius sqrt(5). Maximizing x-2y gives center value 5 plus norm sqrt(5) times radius sqrt(5), for 10.",
+      "recommended_action": "Keep as a hard noisy-prompt reasoning case; emphasize constrained linear optimization."
+    },
+    {
+      "id": "train-006171",
+      "stored_label": "40",
+      "t8_6_prediction": "9",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "There are 42+7=49 fruits and 40 left over, so 49-40=9 students received fruit.",
+      "recommended_action": "Quarantine from evaluation and relabel to 9 after human review."
+    },
+    {
+      "id": "train-006402",
+      "stored_label": "6",
+      "t8_6_prediction": "12",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "Of 30 members, 12 order lemon; one third of the remaining 18 is 6 mango, leaving 12 orange.",
+      "recommended_action": "Quarantine from evaluation and relabel to 12 after human review."
+    },
+    {
+      "id": "train-007628",
+      "stored_label": "300000000",
+      "t8_6_prediction": "8",
+      "status": "answer_extraction_error",
+      "confidence": "high",
+      "evidence": "All inspected raw generations correctly end with FINAL_ANSWER: 3 x 10^8, but the integer-only extractor falls back to the last integer and records the exponent 8.",
+      "recommended_action": "Strengthen the model output contract to require a canonical integer; do not add test-time arithmetic evaluation of scientific notation."
+    },
+    {
+      "id": "train-011767",
+      "stored_label": "1002001",
+      "t8_6_prediction": "4",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "(10^3+1)^2=1002001, whose digit sum is 4; the stored label is the integer itself rather than the requested digit sum.",
+      "recommended_action": "Quarantine from evaluation and relabel to 4 after human review."
+    },
+    {
+      "id": "train-012023",
+      "stored_label": "2",
+      "t8_6_prediction": "1",
+      "status": "malformed_or_ambiguous_training_item",
+      "confidence": "high",
+      "evidence": "The item is a fragment followed by an instruction to translate it into English, not a well-formed single-answer math question, so the integer label cannot be audited from the request.",
+      "recommended_action": "Remove from exact-answer evaluation and quarantine from answer-supervised training."
+    },
+    {
+      "id": "train-012265",
+      "stored_label": "8",
+      "t8_6_prediction": "16",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "For an isosceles right triangle, altitude 4 to the hypotenuse implies hypotenuse 8; area=(8*4)/2=16. The stored label is the hypotenuse, not the requested area.",
+      "recommended_action": "Quarantine from evaluation and relabel to 16 after human review."
+    },
+    {
+      "id": "train-013010",
+      "stored_label": "243",
+      "t8_6_prediction": "3125",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "The legs are log_5(125)=3 and log_3(81)=4, so h=5 and 5^h=3125.",
+      "recommended_action": "Quarantine from evaluation and relabel to 3125 after human review."
+    },
+    {
+      "id": "train-013260",
+      "stored_label": "127",
+      "t8_6_prediction": "7",
+      "status": "malformed_or_ambiguous_training_item",
+      "confidence": "high",
+      "evidence": "There are 12 ordered pairs and the maximum x+y is 7. The stored integer 127 appears to concatenate two requested outputs and is incompatible with a single canonical answer.",
+      "recommended_action": "Rewrite as two separate questions or define an explicit structured answer format."
+    },
+    {
+      "id": "train-014624",
+      "stored_label": "51",
+      "t8_6_prediction": "49",
+      "status": "malformed_or_ambiguous_training_item",
+      "confidence": "high",
+      "evidence": "The prompt embeds a worked solution that asserts n=49, but n=49 gives 552 scalene integer triangles while n=51 gives 600, matching the stored label. The model follows the contradictory solution text.",
+      "recommended_action": "Remove the faulty embedded solution or quarantine the item; retain 51 only with a corrected prompt."
+    },
+    {
+      "id": "train-015642",
+      "stored_label": "-4",
+      "t8_6_prediction": "1",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "The recurrence produces the period-6 sequence 1,4,3,-1,-4,-3. Since 2023 is congruent to 1 modulo 6, b_2023=1.",
+      "recommended_action": "Quarantine from evaluation and relabel to 1 after human review."
+    },
+    {
+      "id": "train-015875",
+      "stored_label": "670",
+      "t8_6_prediction": "650",
+      "status": "suspected_label_error",
+      "confidence": "high",
+      "evidence": "The stated animal counts sum to 100+80+20+200+50+200=650.",
+      "recommended_action": "Quarantine from evaluation and relabel to 650 after human review."
+    }
+  ]
+}

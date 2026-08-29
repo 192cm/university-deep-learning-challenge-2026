@@ -1,0 +1,83 @@
+{
+  "all_answers_canonical_integers": true,
+  "extraction_failure_counts": {
+    "conflicting_explicit_answers": 25,
+    "no_supported_answer_marker": 18,
+    "non_integer_only": 4
+  },
+  "extraction_path_counts": {
+    "boxed": 1504,
+    "final_answer_marker": 23026,
+    "last_integer": 1993,
+    "none": 47,
+    "standalone_last_line": 22
+  },
+  "fallback_answer": "0",
+  "fallback_count": 0,
+  "fallback_rows": [],
+  "first_id": "val-000000",
+  "generation_count": 26592,
+  "generation_identity": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "run_fingerprint": "2bf189cf7b814ff1189faabb20f339c9e49cfe330231a0359d007131c249fbb9"
+  },
+  "generation_scope": {
+    "allow_generation_superset": true,
+    "ignored_generation_count": 5408,
+    "ignored_generation_id_count": 169,
+    "selected_generation_count": 26592,
+    "selected_generation_id_count": 831,
+    "source_generation_count": 32000,
+    "source_generation_id_count": 1000
+  },
+  "generations_path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+  "generations_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+  "ground_truth_used_for_selection": false,
+  "hit_max_new_tokens_count": 292,
+  "hit_max_new_tokens_rate": 0.010980746089049339,
+  "id_order_preserved": true,
+  "ignored_generation_count": 5408,
+  "ignored_generation_id_count": 169,
+  "input_path": "data/deep_chal_math_leaderboard_filtered.csv",
+  "input_sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+  "invalid_candidate_count": 47,
+  "invalid_candidate_rate": 0.0017674488567990373,
+  "k": 32,
+  "last_id": "val-000999",
+  "majority_tie_break": "first generated answer among tied top vote counts",
+  "mean_agreement": 0.7523315282791817,
+  "median_agreement": 0.90625,
+  "minimum_agreement": 0.0625,
+  "output_header": [
+    "id",
+    "answer"
+  ],
+  "row_count": 831,
+  "run_contract": {
+    "config_path": "configs/t8_self_consistency.json",
+    "config_sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630",
+    "input_scope": "validated_subset",
+    "metadata_input_sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+    "metadata_input_sha256_match": false,
+    "metadata_path": "artifacts/submissions/t8_majority_k32/run-metadata.json",
+    "metadata_sha256": "8637c4c5d77d67708198d00ce4c4cc345c6cbd575d02a6a4f3060a24e5fbe4c9",
+    "selected_input_sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+    "validated": true
+  },
+  "sample_submission_path": null,
+  "sample_submission_sha256": null,
+  "schema_version": 1,
+  "source_generation_count": 32000,
+  "source_generation_id_count": 1000,
+  "strategy": "T8 fixed self-consistency majority@k",
+  "unique_id_count": 831,
+  "vote_tie_count": 27,
+  "vote_tie_rate": 0.032490974729241874,
+  "output_path": "submission.csv",
+  "output_sha256": "e13f933abd73017a845cf683ed3df6d91f34c7769dabe7d5bc7c1cbb13ca236b",
+  "output_bytes": 12569,
+  "output_rows": 831,
+  "csv_round_trip_verified": true,
+  "artifact_workbook_verified": true
+}

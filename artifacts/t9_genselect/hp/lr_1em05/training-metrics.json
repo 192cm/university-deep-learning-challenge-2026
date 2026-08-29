@@ -1,0 +1,148 @@
+{
+  "adapter": {
+    "path": "artifacts/t9_genselect/hp/lr_1em05/final-adapter",
+    "sha256": "196d1cca778a4e36e4e04fc85ca48828893e745f085e24e53d98ee4c37c4a950"
+  },
+  "checkpoints": [
+    {
+      "adapter_sha256": "88457acd4a1a12225279a6a3e9d3d9139a57d3a6c4f18e17dd66f1777167dffa",
+      "epoch": 0.256,
+      "path": "artifacts/t9_genselect/hp/lr_1em05/trainer/checkpoints/checkpoint-24",
+      "step": 24
+    },
+    {
+      "adapter_sha256": "2a56f056b2ca3f2de4952e8dcf9cc5e12651e931d2fc6190e8843ff9c3cd0ef2",
+      "epoch": 0.5013333333333333,
+      "path": "artifacts/t9_genselect/hp/lr_1em05/trainer/checkpoints/checkpoint-47",
+      "step": 47
+    },
+    {
+      "adapter_sha256": "304b9b77407ec2da1bcbea27528b4b632a70a8c3994cce5729bbc6581e6b015b",
+      "epoch": 0.7573333333333333,
+      "path": "artifacts/t9_genselect/hp/lr_1em05/trainer/checkpoints/checkpoint-71",
+      "step": 71
+    },
+    {
+      "adapter_sha256": "56954fd95d5b9dd04bdb4ef8a0cf873d1158d79a9e1936e9d87af578138b1790",
+      "epoch": 1.0,
+      "path": "artifacts/t9_genselect/hp/lr_1em05/trainer/checkpoints/checkpoint-94",
+      "step": 94
+    }
+  ],
+  "completed_at_utc": "2026-08-22T19:24:03.255810+00:00",
+  "dataset": {
+    "cache_path": "artifacts/t9_genselect/hp/lr_1em05/cache",
+    "cache_sha256": "cce4de74a972ce08c18d2112dc60c6b4ec717abcd8a7836bba5c86890ee074c9",
+    "rows_before_probe_selection": 3000,
+    "rows_used": 3000,
+    "source_samples": 3000
+  },
+  "environment": {
+    "bf16_supported": true,
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python": "3.12.13",
+    "torch": "2.11.0+cu128"
+  },
+  "events": {
+    "path": "artifacts/t9_genselect/hp/lr_1em05/trainer/training-events.jsonl",
+    "rows": 189,
+    "sha256": "b3e4aad27f26cada9bdf739d04c15e5cd28c8eb9485bb8142e7d9a894cc6ae13"
+  },
+  "experiment": "t9_lr_1em05",
+  "gpu": {
+    "monitor": {
+      "active_utilization_mean_pct": 97.34046511627906,
+      "fraction_samples_at_least_90_pct": 0.9060858819894965,
+      "peak_memory_used_mib": 22404.0,
+      "samples": 3237,
+      "utilization_mean_pct": 96.97961075069509
+    },
+    "torch_peak_allocated_mib": 19097.63623046875,
+    "torch_peak_reserved_mib": 21668.0
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "lora": {
+      "bias": "none",
+      "lora_alpha": 128,
+      "lora_dropout": 0.0,
+      "r": 64,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "task_type": "CAUSAL_LM"
+    },
+    "parameters": {
+      "total_visible": 3205672960,
+      "trainable": 119734272,
+      "trainable_fraction": 0.03735074459997317
+    },
+    "quantization": {
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": false
+    },
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "resume": {
+    "checkpoint": null
+  },
+  "runtime": {
+    "estimated_input_tokens": 6541872,
+    "estimated_tokens_per_second": 3704.401670746356,
+    "global_steps": 94,
+    "model_load_seconds": 3.8725464027374983,
+    "step_seconds_mean": 18.74589710482495,
+    "step_seconds_median": 18.525153052061796,
+    "step_seconds_p95": 22.811278899999998,
+    "trainer_metrics": {
+      "epoch": 1.0,
+      "total_flos": 1.1379209529085133e+17,
+      "train_loss": 0.4942512870468992,
+      "train_runtime": 1765.7719,
+      "train_samples_per_second": 1.699,
+      "train_steps_per_second": 0.053
+    },
+    "training_seconds": 1765.9726405106485
+  },
+  "schema_version": 1,
+  "settings": {
+    "assistant_only_loss": true,
+    "batch_size": 1,
+    "checkpoint_epochs": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "effective_batch_size": 32,
+    "gradient_accumulation_steps": 32,
+    "gradient_checkpointing": true,
+    "max_steps": null,
+    "num_train_epochs": 1.0,
+    "packing": false,
+    "stop_after_final_checkpoint": false
+  },
+  "sources": {
+    "cache_metadata": {
+      "path": "artifacts/t9_genselect/hp/lr_1em05/cache-metadata.json",
+      "sha256": "ca66f786fa8a223f57ca68ce804635326b465b850897e8d8255048d5a0419fb6"
+    },
+    "config": {
+      "path": "artifacts/t9_genselect/resolved-configs/lr_1em05.json",
+      "sha256": "b35857a4f32c4fde49f773865e7afdb1fe4eebb6a4e456c1f862c156ddadd436"
+    }
+  },
+  "started_at_utc": "2026-08-22T18:54:31.657556+00:00",
+  "status": "complete",
+  "task": "T9"
+}

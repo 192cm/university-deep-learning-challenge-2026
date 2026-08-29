@@ -1,0 +1,306 @@
+{
+  "arms": {
+    "rft_v2": {
+      "decision": "hold",
+      "format_delta_pp": -3.90625,
+      "hard_delta_pp": 0.0,
+      "metrics": {
+        "format_diagnostic": {
+          "correct": 110,
+          "greedy_accuracy": 0.4296875,
+          "hit_max_new_tokens_rate": 0.0546875,
+          "invalid_output_rate": 0.01171875,
+          "invalid_outputs": 3,
+          "mean_output_tokens": 886.00390625,
+          "median_output_tokens": 760.0,
+          "questions": 256
+        },
+        "hard_diagnostic": {
+          "correct": 179,
+          "greedy_accuracy": 0.32545454545454544,
+          "hit_max_new_tokens_rate": 0.05090909090909091,
+          "invalid_output_rate": 0.01090909090909091,
+          "invalid_outputs": 6,
+          "mean_output_tokens": 712.7636363636364,
+          "median_output_tokens": 602.5,
+          "questions": 550
+        },
+        "random_holdout": {
+          "correct": 1112,
+          "greedy_accuracy": 0.6792913866829566,
+          "hit_max_new_tokens_rate": 0.031154551007941355,
+          "invalid_output_rate": 0.004886988393402566,
+          "invalid_outputs": 8,
+          "mean_output_tokens": 513.2156383628588,
+          "median_output_tokens": 372,
+          "questions": 1637
+        },
+        "template_holdout": {
+          "correct": 1110,
+          "greedy_accuracy": 0.678069639584606,
+          "hit_max_new_tokens_rate": 0.032376298106292,
+          "invalid_output_rate": 0.005497861942577886,
+          "invalid_outputs": 9,
+          "mean_output_tokens": 527.6169822846671,
+          "median_output_tokens": 375,
+          "questions": 1637
+        },
+        "union": {
+          "correct": 2353,
+          "greedy_accuracy": 0.6296494514316296,
+          "hit_max_new_tokens_rate": 0.03344929087503345,
+          "invalid_output_rate": 0.006422263848006422,
+          "invalid_outputs": 24,
+          "mean_output_tokens": 560.2507358843992,
+          "median_output_tokens": 406,
+          "questions": 3737
+        }
+      },
+      "name": "rft_v2",
+      "paired_vs_t4": {
+        "base_to_correct": 241,
+        "base_to_wrong": 231,
+        "confidence_interval_95_pp": [
+          -0.8718252610605581,
+          1.4070139150610934
+        ],
+        "delta_pp": 0.2675943270002676,
+        "discordant_total": 472,
+        "mcnemar_exact_two_sided_p": 0.6787292782679865,
+        "questions": 3737
+      },
+      "sources": {
+        "generations": {
+          "bytes": 7762093,
+          "path": "artifacts/t6_1_sft_v1r/rft_v2/evaluation/generations.jsonl",
+          "rows": 3737,
+          "sha256": "e8552dc572209dc27092c0d0865f1355381f3b8f75acba48761f665ab7dc45d1"
+        },
+        "training_metrics": {
+          "bytes": 4942,
+          "path": "artifacts/t6_1_sft_v1r/curve/training-metrics.json",
+          "sha256": "b441867b5c65c4693d76e000037c74501761ea434b3a723ce0feaaffab8a4013"
+        }
+      },
+      "split_regression_gate_passed": false
+    },
+    "rft_v2_external": {
+      "decision": "reject",
+      "format_delta_pp": -11.71875,
+      "hard_delta_pp": -7.818181818181816,
+      "metrics": {
+        "format_diagnostic": {
+          "correct": 90,
+          "greedy_accuracy": 0.3515625,
+          "hit_max_new_tokens_rate": 0.17578125,
+          "invalid_output_rate": 0.02734375,
+          "invalid_outputs": 7,
+          "mean_output_tokens": 845.64453125,
+          "median_output_tokens": 610.0,
+          "questions": 256
+        },
+        "hard_diagnostic": {
+          "correct": 136,
+          "greedy_accuracy": 0.24727272727272728,
+          "hit_max_new_tokens_rate": 0.1290909090909091,
+          "invalid_output_rate": 0.014545454545454545,
+          "invalid_outputs": 8,
+          "mean_output_tokens": 600.1254545454545,
+          "median_output_tokens": 294.5,
+          "questions": 550
+        },
+        "random_holdout": {
+          "correct": 969,
+          "greedy_accuracy": 0.5919364691508857,
+          "hit_max_new_tokens_rate": 0.05436774587660354,
+          "invalid_output_rate": 0.00794135613927917,
+          "invalid_outputs": 13,
+          "mean_output_tokens": 358.10995723885156,
+          "median_output_tokens": 172,
+          "questions": 1637
+        },
+        "template_holdout": {
+          "correct": 982,
+          "greedy_accuracy": 0.599877825290165,
+          "hit_max_new_tokens_rate": 0.0708613317043372,
+          "invalid_output_rate": 0.006719609040928528,
+          "invalid_outputs": 11,
+          "mean_output_tokens": 387.25595601710444,
+          "median_output_tokens": 176,
+          "questions": 1637
+        },
+        "union": {
+          "correct": 2033,
+          "greedy_accuracy": 0.544019266791544,
+          "hit_max_new_tokens_rate": 0.07572919454107573,
+          "invalid_output_rate": 0.009365801445009366,
+          "invalid_outputs": 35,
+          "mean_output_tokens": 420.66550709124965,
+          "median_output_tokens": 188,
+          "questions": 3737
+        }
+      },
+      "name": "rft_v2_external",
+      "paired_vs_t4": {
+        "base_to_correct": 201,
+        "base_to_wrong": 511,
+        "confidence_interval_95_pp": [
+          -9.669393309691653,
+          -6.921454964324935
+        ],
+        "delta_pp": -8.295424137008295,
+        "discordant_total": 712,
+        "mcnemar_exact_two_sided_p": 5.301031797453947e-32,
+        "questions": 3737
+      },
+      "sources": {
+        "generations": {
+          "bytes": 5850170,
+          "path": "artifacts/t6_1_sft_v1r/rft_v2_external/evaluation/generations.jsonl",
+          "rows": 3737,
+          "sha256": "4288df2397522c06466106dc412be9c62ae6596411841406e571301744135a48"
+        },
+        "training_metrics": {
+          "bytes": 3835,
+          "path": "artifacts/t6_1_sft_v1r/rft_v2_external/training-metrics.json",
+          "sha256": "9632dd7393fa2f95788a5f412a9bf9e418c5de21fc7f3e388bed45fbf3d5807e"
+        }
+      },
+      "split_regression_gate_passed": false
+    }
+  },
+  "base": {
+    "format_diagnostic": {
+      "correct": 120,
+      "greedy_accuracy": 0.46875,
+      "hit_max_new_tokens_rate": 0.05078125,
+      "invalid_output_rate": 0.01953125,
+      "invalid_outputs": 5,
+      "mean_output_tokens": 870.67578125,
+      "median_output_tokens": 766.5,
+      "questions": 256
+    },
+    "hard_diagnostic": {
+      "correct": 179,
+      "greedy_accuracy": 0.32545454545454544,
+      "hit_max_new_tokens_rate": 0.04909090909090909,
+      "invalid_output_rate": 0.016363636363636365,
+      "invalid_outputs": 9,
+      "mean_output_tokens": 736.6,
+      "median_output_tokens": 587.0,
+      "questions": 550
+    },
+    "random_holdout": {
+      "correct": 1113,
+      "greedy_accuracy": 0.679902260232132,
+      "hit_max_new_tokens_rate": 0.028100183262064753,
+      "invalid_output_rate": 0.006108735491753207,
+      "invalid_outputs": 10,
+      "mean_output_tokens": 491.142944410507,
+      "median_output_tokens": 337,
+      "questions": 1637
+    },
+    "template_holdout": {
+      "correct": 1096,
+      "greedy_accuracy": 0.6695174098961515,
+      "hit_max_new_tokens_rate": 0.02748930971288943,
+      "invalid_output_rate": 0.006719609040928528,
+      "invalid_outputs": 11,
+      "mean_output_tokens": 491.3512522907758,
+      "median_output_tokens": 338,
+      "questions": 1637
+    },
+    "union": {
+      "correct": 2343,
+      "greedy_accuracy": 0.626973508161627,
+      "hit_max_new_tokens_rate": 0.03104094193203104,
+      "invalid_output_rate": 0.008830612791008831,
+      "invalid_outputs": 33,
+      "mean_output_tokens": 538.0792079207921,
+      "median_output_tokens": 377,
+      "questions": 3737
+    }
+  },
+  "completion_checks": {
+    "assistant_tokens_p95_at_least_1500": true,
+    "bad_adapter_not_forwarded": true,
+    "c_1_3_share_at_least_30_percent": true,
+    "checkpoint_curve_complete": true,
+    "effective_batch_size_is_32": true,
+    "mcnemar_reported_for_every_arm": true,
+    "packing_disabled": true,
+    "precision_difference_recorded": true,
+    "preregistered_rule_applied": true,
+    "selected_checkpoint_is_curve_maximum": true,
+    "validation_500_disjoint": true
+  },
+  "created_at_utc": "2026-08-21T15:52:34.131436+00:00",
+  "decision": {
+    "adoption": "retain T4 base; proceed to T7",
+    "selected_adapter_arm": null,
+    "t7_source": "T4 base"
+  },
+  "objective": "Difficulty-weighted, length-stratified RFT-v2 with isolated unpacked LoRA training and checkpoint selection.",
+  "outputs": {
+    "comparison": {
+      "bytes": 850,
+      "path": "artifacts/t6_1_sft_v1r/comparison.md",
+      "sha256": "95a42c9aab868524f7ec01bb9729e7b248a127a8a4eba964b03491020ec36501"
+    }
+  },
+  "preregistered_adoption_rule": {
+    "hard_or_format_max_regression_pp": 2.0,
+    "nonpositive": "reject",
+    "positive_but_nonsignificant": "hold",
+    "primary_scope": "artifacts/t3_baseline/holdout_union_ids.txt",
+    "required_delta_pp": 1.5,
+    "required_mcnemar_p_below": 0.05
+  },
+  "schema_version": 1,
+  "sources": {
+    "base_generations": {
+      "bytes": 7453102,
+      "path": "artifacts/t4_output_contract/generations.jsonl",
+      "rows": 3737,
+      "sha256": "26ae2464fa574ca62eaa5874413a30e68d2fd836b0f972449e546563db9e3273"
+    },
+    "calibration": {
+      "bytes": 25000,
+      "path": "artifacts/t6_1_sft_v1r/calibration.json",
+      "sha256": "536426fe67eb797be852d3dc706afb2c0d98566a0b4997a2b923a6e10e85ea95"
+    },
+    "checkpoint_curve": {
+      "bytes": 9764,
+      "path": "artifacts/t6_1_sft_v1r/checkpoint-curve.json",
+      "sha256": "63f667c55105dd8686bd173289c6b7a090ec6a2884d248dfdf625f611c089fc4"
+    },
+    "config": {
+      "bytes": 2667,
+      "path": "configs/t6_1_sft_v1r.json",
+      "sha256": "3e9883ef7ca492ca86c20cdfc8da1814fe359ced6c57e3627d75bb4f90bbbb1f"
+    },
+    "hp_sweep": {
+      "bytes": 42170,
+      "path": "artifacts/t6_1_sft_v1r/hp-sweep.json",
+      "sha256": "bc533c7e04e0ff8b36323ad9f009030af4aeea866d6939d41f5956eaaaf9ad63"
+    },
+    "precision_probe": {
+      "bytes": 2815,
+      "path": "artifacts/t6_1_sft_v1r/precision-probe.json",
+      "sha256": "adb566ee52379ec076bdc49c868757e51942f443a4bdc0215ce88c12ba0f7949"
+    },
+    "rft_v2_manifest": {
+      "bytes": 5798,
+      "path": "data/rft_r1_v2/manifest.json",
+      "sha256": "fefc1a231f257e0c96898f5c6cdbb5952b4bc766dbe3cc72c4e07a86172fc7cc"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t3_baseline/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "complete",
+  "task": "T6-1"
+}

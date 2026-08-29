@@ -1,0 +1,130 @@
+{
+  "collected_at_utc": "2026-08-19T15:40:35.945989Z",
+  "cpu": {
+    "logical_cores": 64,
+    "model": "AMD EPYC 7502P 32-Core Processor",
+    "physical_cores_detected": 32
+  },
+  "deterministic_smoke": {
+    "byte_identical": true,
+    "problem_count": 8,
+    "run_1_path": "/workspace/artifacts/t0_bootstrap/smoke-run-1.json",
+    "run_1_sha256": "7a0bd5a1dc00ebbe90ae03b1f5862af92455ad686e86d41f957c871c536d5cc2",
+    "run_2_path": "/workspace/artifacts/t0_bootstrap/smoke-run-2.json",
+    "run_2_sha256": "7a0bd5a1dc00ebbe90ae03b1f5862af92455ad686e86d41f957c871c536d5cc2",
+    "seed": 42,
+    "verified_at_utc": "2026-08-19T15:40:05.086643Z"
+  },
+  "disk_workspace": {
+    "free_bytes": 312302878720,
+    "path": "/workspace",
+    "total_bytes": 322122547200,
+    "used_bytes": 9819668480
+  },
+  "gpu": {
+    "cuda": {
+      "driver_reported_max_cuda": "13.1",
+      "nvcc_output": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Wed_Aug_20_01:58:59_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.88\nBuild cuda_13.0.r13.0/compiler.36424714_0",
+      "toolkit_nvcc": "13.0"
+    },
+    "devices": [
+      {
+        "driver_version": "590.48.01",
+        "index": 0,
+        "memory_total_mib": 24564,
+        "name": "NVIDIA GeForce RTX 4090"
+      }
+    ],
+    "torch": {
+      "bf16_supported": true,
+      "compute_capability": "8.9",
+      "cuda_available": true,
+      "device_count": 1,
+      "torch_cuda_runtime": "13.0",
+      "torch_version": "2.13.0+cu130"
+    }
+  },
+  "instance": {
+    "container_id": "48123126",
+    "image": "PyTorch",
+    "workspace": "/workspace",
+    "workspace_is_volume": false
+  },
+  "model": {
+    "config_commit_hash": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "downloaded_at_utc": "2026-08-19T15:38:13.211658Z",
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_type": "qwen2",
+    "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "resolved_snapshot_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "revision_verified": true,
+    "snapshot_path": "/workspace/.hf_home/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_commit_hash": null,
+    "tokenizer_config_path": "/workspace/.hf_home/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json",
+    "tokenizer_snapshot_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "packages": {
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.1",
+    "datasets": "5.0.1",
+    "huggingface-hub": "1.27.0",
+    "peft": "0.20.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.15.1",
+    "trl": "1.10.0",
+    "vllm": "0.27.1"
+  },
+  "platform": {
+    "machine": "x86_64",
+    "python_executable": "/venv/main/bin/python",
+    "python_version": "3.12.13",
+    "release": "6.8.0-100-generic",
+    "system": "Linux"
+  },
+  "pytorch_cuda_alloc_conf": "expandable_segments:True",
+  "ram": {
+    "available_bytes": 237814366208,
+    "total_bytes": 269938753536
+  },
+  "required_packages_installed": true,
+  "schema_version": 1,
+  "vllm_install_status": "installed",
+  "vram_profiles": {
+    "bf16": {
+      "dtype": "torch.bfloat16",
+      "gpu_free_after_load_bytes": 18574147584,
+      "gpu_free_before_bytes": 24838340608,
+      "gpu_total_bytes": 25252724736,
+      "is_loaded_in_4bit": false,
+      "loaded_config_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "mode": "bf16",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "model_load_delta_bytes": 6264193024,
+      "profiled_at_utc": "2026-08-19T15:38:34.054699Z",
+      "remaining_vram_bytes": 18574147584,
+      "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "torch_allocated_bytes": 6171878400,
+      "torch_peak_allocated_bytes": 6171878400,
+      "torch_reserved_bytes": 6264193024
+    },
+    "nf4": {
+      "dtype": "torch.bfloat16",
+      "gpu_free_after_load_bytes": 22630039552,
+      "gpu_free_before_bytes": 24838340608,
+      "gpu_total_bytes": 25252724736,
+      "is_loaded_in_4bit": true,
+      "loaded_config_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "mode": "nf4",
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "model_load_delta_bytes": 2208301056,
+      "profiled_at_utc": "2026-08-19T15:38:55.022040Z",
+      "remaining_vram_bytes": 22630039552,
+      "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "torch_allocated_bytes": 2054668288,
+      "torch_peak_allocated_bytes": 2097683456,
+      "torch_reserved_bytes": 2143289344
+    }
+  }
+}

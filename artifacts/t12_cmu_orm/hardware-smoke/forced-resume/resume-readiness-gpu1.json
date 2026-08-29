@@ -1,0 +1,14 @@
+{
+  "finite_logit": true,
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+  },
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "passed": true,
+  "prompt_has_only_problem_and_trace": true,
+  "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "schema_version": 1,
+  "status": "complete",
+  "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+}

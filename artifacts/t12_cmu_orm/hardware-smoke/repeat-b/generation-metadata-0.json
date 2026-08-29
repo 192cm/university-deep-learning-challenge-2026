@@ -1,0 +1,151 @@
+{
+  "completed_at_utc": "2026-08-27T20:45:01.625871+00:00",
+  "effective_config": {
+    "engine": "vllm",
+    "generation": {
+      "do_sample": true,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 64,
+      "n": 2,
+      "seed": 42,
+      "temperature": 0.8,
+      "top_p": 0.95
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": false,
+      "max_batch_size": 128,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "schema_version": 1,
+    "task": "T8",
+    "vllm": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 256,
+      "request_chunk_size": 64
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python_version": "3.12.14",
+    "torch_cuda_runtime": "13.0",
+    "torch_version": "2.13.0+cu130",
+    "vllm_batch_invariant": true
+  },
+  "invocation_wall_seconds": 55.789224467938766,
+  "output": {
+    "path": "artifacts/t12_cmu_orm/hardware-smoke/repeat-b/shard-0.jsonl",
+    "rows": 4,
+    "sha256": "7a8cc2c6bbdab18f1eb91a35eb695626b893990fff8672038494735295fd48f9"
+  },
+  "prompt_tokenization": {
+    "chat_template_applied": true,
+    "max_input_tokens": 2048,
+    "padding_side": "left",
+    "truncated_prompts": 0,
+    "truncation_side": "right"
+  },
+  "results": {
+    "generated_this_invocation": 4,
+    "generation_wall_seconds": 1.8763940220233053,
+    "generations_per_second": 2.131748424399062,
+    "gpu_monitor": {
+      "active_utilization_gpu_pct": {
+        "max": 100.0,
+        "mean": 100.0,
+        "median": 100.0,
+        "min": 100.0,
+        "p10": 100.0,
+        "p90": 100.0
+      },
+      "error": null,
+      "fraction_active_samples_at_least_90_pct": 1.0,
+      "fraction_all_samples_at_least_90_pct": 0.5,
+      "peak_memory_used_mib": 23752.25,
+      "raw_samples": [
+        {
+          "memory_used_mib": 23752.25,
+          "monotonic_seconds": 1270985.003734005,
+          "utilization_gpu_pct": 0.0
+        },
+        {
+          "memory_used_mib": 23752.25,
+          "monotonic_seconds": 1270985.503908489,
+          "utilization_gpu_pct": 0.0
+        },
+        {
+          "memory_used_mib": 23752.25,
+          "monotonic_seconds": 1270986.004230401,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 23752.25,
+          "monotonic_seconds": 1270986.504401907,
+          "utilization_gpu_pct": 100.0
+        }
+      ],
+      "samples": 4,
+      "sampling_interval_seconds": 0.5,
+      "utilization_gpu_pct": {
+        "max": 100.0,
+        "mean": 50.0,
+        "median": 50.0,
+        "min": 0.0,
+        "p10": 0.0,
+        "p90": 100.0
+      }
+    },
+    "oom_events": [],
+    "request_chunks": 1,
+    "throughput_guard": {
+      "checked": false,
+      "configured": false,
+      "observation": null
+    },
+    "torch_peak_allocated_mib": 0.0
+  },
+  "resume": {
+    "cached_generations_at_start": 0,
+    "pending_generations_at_start": 4
+  },
+  "run_fingerprint": "6abddf7551493c7646b6decbe27d26cf2a44a2ac1b72395c93c4b4e280df35da",
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/generation-config.json",
+      "sha256": "d73b2024cd8cd09d271e29b7fd7e71839df8efd1c10b8fd8b40a52296aad9373"
+    },
+    "ids_file": {
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/fixture-shards/shard-0-ids.txt",
+      "sha256": "a4f22c19307d269aa4861d9c80545934560fc266388f5a06bcb72c6a649fd5b2"
+    },
+    "input": {
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/questions.csv",
+      "rows_before_selection": 4,
+      "sha256": "27cd04e458be152ebb1204566cfcadba2f79f6e13b83e607b845171006141edb"
+    },
+    "max_prompts": null,
+    "selected_ids_sha256": "a4f22c19307d269aa4861d9c80545934560fc266388f5a06bcb72c6a649fd5b2",
+    "selected_rows": 2,
+    "selection_seed": 42
+  },
+  "started_at_utc": "2026-08-27T20:44:05.836666+00:00",
+  "status": "complete",
+  "task": "T8"
+}

@@ -1,0 +1,118 @@
+{
+  "changed_only": [
+    "teacher_model_and_revision",
+    "in_flight_bitsandbytes_4bit_load",
+    "label_blind_final_line_normalizer"
+  ],
+  "created_at_utc": "2026-08-27T07:51:22.304375+00:00",
+  "decision": "teacher_gate_failed",
+  "gate_criteria": {
+    "accepted_correct_traces_at_least_64": false,
+    "api_cost_zero": true,
+    "code_or_tool_dependency_zero": false,
+    "preflight_within_two_hours": true,
+    "projected_worst_case_full_within_twelve_hours": false,
+    "protected_or_leaderboard_or_test_sent_zero": true,
+    "questions_with_accepted_correct_at_least_32": false
+  },
+  "next_action": "keep_t10a_c1_and_t10e_without_teacher_fallback",
+  "same_preflight_ids_and_order": true,
+  "same_prompt_bytes": true,
+  "same_sampling_and_gate": true,
+  "schema_version": 1,
+  "t11_normalizer_replay": {
+    "accepted_correct_traces": 71,
+    "extracted_correct": 76,
+    "outputs": 256,
+    "questions_with_accepted_correct": 30
+  },
+  "t11_raw": {
+    "accepted_correct_traces": 0,
+    "extracted_correct": 76,
+    "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+    "questions_with_accepted_correct": 0
+  },
+  "t11b_normalized": {
+    "accepted_correct_traces": 23,
+    "accepted_quality_traces": 72,
+    "assistant_token_distribution": {
+      "count": 256,
+      "max": 2057,
+      "mean": 1691.421875,
+      "median": 2048.0,
+      "min": 264,
+      "p95": 2048.0
+    },
+    "code_or_tool_dependency_traces": 2,
+    "explicit_conflict_traces": 11,
+    "extracted_correct": 36,
+    "extracted_correct_rate": 0.140625,
+    "extraction_path_counts": {
+      "final_answer_marker": 81,
+      "last_integer": 164,
+      "none": 11
+    },
+    "final_line_compliance_rate": 0.31640625,
+    "final_line_compliant": 81,
+    "finish_reason_counts": {
+      "length": 173,
+      "stop": 83
+    },
+    "hit_max_new_tokens": 173,
+    "invalid_extractions": 11,
+    "outputs": 256,
+    "questions": 64,
+    "questions_with_accepted_correct": 12,
+    "trace_rejection_reason_counts": {
+      "code_or_tool_dependency": 2,
+      "explicit_candidate_contract": 176,
+      "extraction_conflicting_explicit_answers": 11,
+      "final_line_contract": 175,
+      "hit_max_or_length_finish": 173,
+      "output_tokens_not_below_2048": 173
+    }
+  },
+  "t11b_raw": {
+    "accepted_correct_traces": 17,
+    "accepted_quality_traces": 44,
+    "assistant_token_distribution": {
+      "count": 256,
+      "max": 2048,
+      "mean": 1690.5546875,
+      "median": 2048.0,
+      "min": 265,
+      "p95": 2048.0
+    },
+    "code_or_tool_dependency_traces": 2,
+    "explicit_conflict_traces": 11,
+    "extracted_correct": 36,
+    "extracted_correct_rate": 0.140625,
+    "extraction_path_counts": {
+      "boxed": 21,
+      "final_answer_marker": 54,
+      "last_integer": 164,
+      "none": 11,
+      "standalone_last_line": 6
+    },
+    "final_line_compliance_rate": 0.171875,
+    "final_line_compliant": 44,
+    "finish_reason_counts": {
+      "length": 173,
+      "stop": 83
+    },
+    "hit_max_new_tokens": 173,
+    "invalid_extractions": 11,
+    "outputs": 256,
+    "questions": 64,
+    "questions_with_accepted_correct": 10,
+    "trace_rejection_reason_counts": {
+      "code_or_tool_dependency": 2,
+      "explicit_candidate_contract": 182,
+      "extraction_conflicting_explicit_answers": 11,
+      "final_line_contract": 212,
+      "hit_max_or_length_finish": 173,
+      "output_tokens_not_below_2048": 173
+    }
+  },
+  "task": "T11b"
+}

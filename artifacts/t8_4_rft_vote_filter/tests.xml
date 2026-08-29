@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="T8-4 focused tests" tests="14" failures="0" errors="0" skipped="0" time="2.693382">
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed" time="0.006790" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_filter_selection_is_ground_truth_blind" time="0.005648" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_generation_superset_requires_opt_in_and_validates_source_metadata" time="0.008026" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_incomplete_generation_coverage_fails" time="0.002292" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_low_quality_filter_is_opt_in_and_keeps_boxed_votes" time="0.004879" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back" time="0.004329" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_sample_submission_preserves_exact_headers_and_requires_id_order" time="0.012536" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_t8_1_adapter_mismatch_fails" time="0.011782" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_t8_1_config_metadata_and_generation_adapter_are_validated" time="0.007025" />
+    <testcase classname="t8_4_test_0_test_submit.SubmitTests" name="test_t8_config_and_completed_run_metadata_are_hash_validated" time="0.011841" />
+    <testcase classname="t8_4_test_1_test_vote_filter.VoteFilterTests" name="test_prediction_builder_cannot_accept_ground_truth" time="0.000071" />
+    <testcase classname="t8_4_test_1_test_vote_filter.VoteFilterTests" name="test_real_filter_off_regression_is_byte_identical" time="2.617843" />
+    <testcase classname="t8_4_test_1_test_vote_filter.VoteFilterTests" name="test_submission_csv_encoding_is_crlf_and_canonical" time="0.000030" />
+    <testcase classname="t8_4_test_1_test_vote_filter.VoteFilterTests" name="test_template_group_fold_assignment_is_deterministic" time="0.000036" />
+    <system-out>test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed (t8_4_test_0_test_submit.SubmitTests.test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed) ... ok
+test_filter_selection_is_ground_truth_blind (t8_4_test_0_test_submit.SubmitTests.test_filter_selection_is_ground_truth_blind) ... ok
+test_generation_superset_requires_opt_in_and_validates_source_metadata (t8_4_test_0_test_submit.SubmitTests.test_generation_superset_requires_opt_in_and_validates_source_metadata) ... ok
+test_incomplete_generation_coverage_fails (t8_4_test_0_test_submit.SubmitTests.test_incomplete_generation_coverage_fails) ... ok
+test_low_quality_filter_is_opt_in_and_keeps_boxed_votes (t8_4_test_0_test_submit.SubmitTests.test_low_quality_filter_is_opt_in_and_keeps_boxed_votes) ... ok
+test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back (t8_4_test_0_test_submit.SubmitTests.test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back) ... ok
+test_sample_submission_preserves_exact_headers_and_requires_id_order (t8_4_test_0_test_submit.SubmitTests.test_sample_submission_preserves_exact_headers_and_requires_id_order) ... ok
+test_t8_1_adapter_mismatch_fails (t8_4_test_0_test_submit.SubmitTests.test_t8_1_adapter_mismatch_fails) ... ok
+test_t8_1_config_metadata_and_generation_adapter_are_validated (t8_4_test_0_test_submit.SubmitTests.test_t8_1_config_metadata_and_generation_adapter_are_validated) ... ok
+test_t8_config_and_completed_run_metadata_are_hash_validated (t8_4_test_0_test_submit.SubmitTests.test_t8_config_and_completed_run_metadata_are_hash_validated) ... ok
+test_prediction_builder_cannot_accept_ground_truth (t8_4_test_1_test_vote_filter.VoteFilterTests.test_prediction_builder_cannot_accept_ground_truth) ... ok
+test_real_filter_off_regression_is_byte_identical (t8_4_test_1_test_vote_filter.VoteFilterTests.test_real_filter_off_regression_is_byte_identical) ... ok
+test_submission_csv_encoding_is_crlf_and_canonical (t8_4_test_1_test_vote_filter.VoteFilterTests.test_submission_csv_encoding_is_crlf_and_canonical) ... ok
+test_template_group_fold_assignment_is_deterministic (t8_4_test_1_test_vote_filter.VoteFilterTests.test_template_group_fold_assignment_is_deterministic) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.693s
+
+OK
+</system-out>
+  </testsuite>
+</testsuites>

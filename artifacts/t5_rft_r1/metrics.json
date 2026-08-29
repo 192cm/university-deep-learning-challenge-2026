@@ -1,0 +1,39 @@
+{
+  "c_distribution": {
+    "c=0": 1792,
+    "c=1": 533,
+    "c=2-3": 674,
+    "c>=4": 9619
+  },
+  "c_distribution_including_image_dependent": {
+    "c=0": 1801,
+    "c=1": 534,
+    "c=2-3": 677,
+    "c>=4": 9624
+  },
+  "eligible_problems": 12618,
+  "expected_n": 16,
+  "extraction_paths": {
+    "boxed": 11114,
+    "final_answer_marker": 172447,
+    "last_integer": 17622,
+    "none": 786,
+    "standalone_last_line": 207
+  },
+  "failure_reasons": {
+    "conflicting_explicit_answers": 549,
+    "no_supported_answer_marker": 87,
+    "non_integer_only": 150
+  },
+  "harvest_rate": 0.8579806625455698,
+  "harvested_problems": 10826,
+  "image_dependent_problems_excluded": 18,
+  "incorrect_answer_samples": 66469,
+  "raw_generations": 202176,
+  "rejected_or_surplus_samples": 161531,
+  "rft_pool_problems": 12636,
+  "run_fingerprint": "603839f5af80c7eb777149e314580e78f04d8bf7f947d8ff22d52f44fc421154",
+  "schema_version": 1,
+  "selected_sft_samples": 40645,
+  "task": "T5"
+}

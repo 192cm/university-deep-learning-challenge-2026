@@ -1,0 +1,46 @@
+{
+  "adopted": false,
+  "decision": {
+    "adopted": false,
+    "criteria": {
+      "estimated_1000_questions_within_18h": true,
+      "exact_mcnemar_p_below_0_05": false,
+      "format_drop_not_over_2pp": true,
+      "hard_drop_not_over_2pp": true,
+      "invalid_increase_not_over_1pp": true,
+      "union_delta_at_least_1_5pp": false
+    },
+    "final_arm": "A",
+    "observed": {
+      "estimated_1000_question_hours": 0.929405398365147,
+      "exact_mcnemar_p": 0.19495973532361924,
+      "format_drop_pp": -0.390625,
+      "hard_drop_pp": 1.2727272727272754,
+      "union_delta_pp": -0.5084292213005084,
+      "union_invalid_increase_pp": -0.39135670323789135
+    },
+    "reason": "Arm C failed to improve or violated a preregistered guardrail/runtime gate.",
+    "status": "reject"
+  },
+  "final_strategy": {
+    "arm": "A",
+    "k": 32,
+    "max_new_tokens": 2048,
+    "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "prompt_strategy": "single T8 base prompt",
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "vote": "unfiltered equal-weight majority"
+  },
+  "schema_version": 1,
+  "status": "reject",
+  "t10c_input": {
+    "arm": "A",
+    "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+    "generation_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+    "k": 32,
+    "reason": "Arm C failed to improve or violated a preregistered guardrail/runtime gate.",
+    "source_task": "T10b",
+    "vote_baseline": "unfiltered equal-weight majority"
+  },
+  "task": "T10b"
+}

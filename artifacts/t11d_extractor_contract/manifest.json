@@ -1,0 +1,241 @@
+{
+  "checks": {
+    "canary_uses_paired_ids_and_child_seeds": true,
+    "external_api_zero": true,
+    "full_holdout_regeneration_zero": true,
+    "functional_tests_recorded": true,
+    "label_blind_replay_frozen_before_label_join": true,
+    "leaderboard_generation_or_evaluation_zero": true,
+    "old_t8_2590_plurality_and_3154_pass_reproduced": true,
+    "submission_update_zero": true,
+    "training_zero": true
+  },
+  "created_at_utc": "2026-08-27T14:37:51.483090+00:00",
+  "decision": {
+    "extractor": "reused_holdout_diagnostic",
+    "extractor_adopted_for_t12": false,
+    "fresh_validation_required": true,
+    "prompt_adopted_for_t12": false,
+    "prompt_canary": "prompt_format_canary_failed"
+  },
+  "environment": {
+    "canary_generation": {
+      "cuda_available": true,
+      "external_api_calls": 0,
+      "focused_tests": {
+        "local": "71 passed",
+        "remote": "71 passed"
+      },
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "labels_loaded": false,
+      "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "nvidia_driver": "570.133.07",
+      "orchestration_fix": {
+        "effect": "After the old arm was frozen, re-entry verification was changed only to exclude mutable execution-status.json. Immutable canary ID and request-manifest hash checks and generation logic were unchanged.",
+        "old_arm_raw_output_preserved": true,
+        "old_arm_runner_source": "artifacts/t11d_extractor_contract/canary/execution-source-runner-old-arm.py"
+      },
+      "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+      "purpose": "remote CUDA canary execution provenance",
+      "python": "3.12.13",
+      "schema_version": 1,
+      "source_hashes": {
+        "config": "b89db4529be824822440a5cb904145bb9049337008f76ecd6be2bb7ebd7565f5",
+        "extractor": "db8219e5cb37f3ad9fff7ec10341e3f47bc1a50e640243dc642b75d50e47e158",
+        "runner_new_arm_and_scoring": "febc0fd2d66082cfdbd769d0673ee04e043786925a2b0343f00e6a92e2913b27",
+        "runner_old_arm": "33609626ac0cac21c24a18b6265d5581958b722e0cdcf439cb2edbf0bfa2f5b7"
+      },
+      "task": "T11d",
+      "torch": "2.11.0+cu128",
+      "torch_cuda": "12.8",
+      "transformers": "5.15.1",
+      "vllm": "0.24.0"
+    },
+    "platform": "macOS-26.5-arm64-arm-64bit",
+    "python": "3.12.13"
+  },
+  "outputs": {
+    "artifacts": {
+      "canary/execution-source-runner-old-arm.py": {
+        "bytes": 82488,
+        "path": "artifacts/t11d_extractor_contract/canary/execution-source-runner-old-arm.py",
+        "sha256": "33609626ac0cac21c24a18b6265d5581958b722e0cdcf439cb2edbf0bfa2f5b7"
+      },
+      "canary/execution-status.json": {
+        "bytes": 169,
+        "path": "artifacts/t11d_extractor_contract/canary/execution-status.json",
+        "sha256": "ff1de20798b12304123044da25eb95d4e181eec89b32561fe18f605ce29531e3"
+      },
+      "canary/format-comparison.json": {
+        "bytes": 5069,
+        "path": "artifacts/t11d_extractor_contract/canary/format-comparison.json",
+        "sha256": "ff0847bfc64c4ddff80758e604467cec975905edfb4d3eaaa039dee9b39e336c"
+      },
+      "canary/format-comparison.md": {
+        "bytes": 331,
+        "path": "artifacts/t11d_extractor_contract/canary/format-comparison.md",
+        "sha256": "44adcee4b2aa5e0c35271273fbf9d18eac61024c37c0541adceca3b6a7422b7c"
+      },
+      "canary/new-prompt-generations.jsonl": {
+        "bytes": 1030766,
+        "path": "artifacts/t11d_extractor_contract/canary/new-prompt-generations.jsonl",
+        "rows": 512,
+        "sha256": "35f80ba550ababc47230b7befc0e792f9ae29005b66a23a4addaf9727f251429"
+      },
+      "canary/new-prompt-run-metadata.json": {
+        "bytes": 3086,
+        "path": "artifacts/t11d_extractor_contract/canary/new-prompt-run-metadata.json",
+        "sha256": "7dc6dd7b36de5dbc693cbf1e9331d8709ac9e56e3e8b5ab2921ff530b927a2aa"
+      },
+      "canary/old-prompt-generations.jsonl": {
+        "bytes": 1030386,
+        "path": "artifacts/t11d_extractor_contract/canary/old-prompt-generations.jsonl",
+        "rows": 512,
+        "sha256": "4a1cf5474ae270deff98e5af11126c7f3cd9b4be055f67028bc6c0b44d5c91bc"
+      },
+      "canary/old-prompt-run-metadata.json": {
+        "bytes": 2514,
+        "path": "artifacts/t11d_extractor_contract/canary/old-prompt-run-metadata.json",
+        "sha256": "283dd9134eedda298da5cd543300d9d075f94b75b8c855e9a4b89721d771b784"
+      },
+      "canary/preparation.json": {
+        "bytes": 4479,
+        "path": "artifacts/t11d_extractor_contract/canary/preparation.json",
+        "sha256": "ec2a21caed418e2376a5a694480570b9f6350060db68ff45b492c9d0dc874d00"
+      },
+      "canary/raw-freeze.json": {
+        "bytes": 1052,
+        "path": "artifacts/t11d_extractor_contract/canary/raw-freeze.json",
+        "sha256": "5cd4ef7170d047177219daf7c7b9385d5ce2635cc64510b046509265288da69d"
+      },
+      "canary/remote-execution.json": {
+        "bytes": 1357,
+        "path": "artifacts/t11d_extractor_contract/canary/remote-execution.json",
+        "sha256": "a6d818143292ad30825cfd1c5b002b407519124bde9cb0dec1f94d1bae806415"
+      },
+      "changed-cases-label-blind.jsonl": {
+        "bytes": 29579425,
+        "path": "artifacts/t11d_extractor_contract/changed-cases-label-blind.jsonl",
+        "rows": 11498,
+        "sha256": "72bc9b4108813871f92e6e1bd0084fb532f3d77ba41b717b99f17a8683f55124"
+      },
+      "frozen-replay-comparison.json": {
+        "bytes": 3131677,
+        "path": "artifacts/t11d_extractor_contract/frozen-replay-comparison.json",
+        "sha256": "3583e24906d78cf6a426bac208c0f5ace720cb746bdc04f184156074dfe06e60"
+      },
+      "frozen-replay-comparison.md": {
+        "bytes": 990,
+        "path": "artifacts/t11d_extractor_contract/frozen-replay-comparison.md",
+        "sha256": "61bee21454b1e45f98590b32fe02cfbdddd508ec9897c74363491110e1f34994"
+      },
+      "input-verification.json": {
+        "bytes": 5133,
+        "path": "artifacts/t11d_extractor_contract/input-verification.json",
+        "sha256": "b88d73a437cda731f6d5ab8e6ce31a3466d7c9ee03045c25cd19ef0451137dcc"
+      },
+      "label-blind-freeze.json": {
+        "bytes": 2481,
+        "path": "artifacts/t11d_extractor_contract/label-blind-freeze.json",
+        "sha256": "aeb5021074ea63d28c1d0f01cfa37502d35cdb8e53fc0f7cb3e571b1a2bcb3e6"
+      },
+      "new-extractions.jsonl": {
+        "bytes": 25543703,
+        "path": "artifacts/t11d_extractor_contract/new-extractions.jsonl",
+        "rows": 119584,
+        "sha256": "72c0478b1de8aaa7b6d5b0b49cf2edc176b95e918ae6d7a5f306dc4a4570ea3d"
+      },
+      "new-predictions.jsonl": {
+        "bytes": 886402,
+        "path": "artifacts/t11d_extractor_contract/new-predictions.jsonl",
+        "rows": 3737,
+        "sha256": "9be47c8f749f80e320783069963b2cae7a05989420cc32e3b1c8307158500f06"
+      },
+      "old-extractions.jsonl": {
+        "bytes": 25448302,
+        "path": "artifacts/t11d_extractor_contract/old-extractions.jsonl",
+        "rows": 119584,
+        "sha256": "59c560bf49e68c02eb8608d81eebf7a585f079684665a786edf0168c92b20e72"
+      },
+      "old-predictions.jsonl": {
+        "bytes": 914796,
+        "path": "artifacts/t11d_extractor_contract/old-predictions.jsonl",
+        "rows": 3737,
+        "sha256": "d893013f0eaa62c3bc85494f55eb7777e67b238986539fed41455da60a8df811"
+      },
+      "tests.xml": {
+        "bytes": 20817,
+        "path": "artifacts/t11d_extractor_contract/tests.xml",
+        "sha256": "12685a3e4127e197bf7d9609deef33ff7d6924c2ad6bc3a36b45360edf3204ef"
+      }
+    },
+    "data": {
+      "canary_ids.txt": {
+        "bytes": 1664,
+        "path": "data/t11d_extractor_contract/canary_ids.txt",
+        "rows": 128,
+        "sha256": "ce6a8a62935121c2f7b9c4905b8bff66dd65ef1e5765da88ae2b79093fb7edb2"
+      },
+      "new-prompt-request-manifest.jsonl": {
+        "bytes": 238824,
+        "path": "data/t11d_extractor_contract/new-prompt-request-manifest.jsonl",
+        "rows": 512,
+        "sha256": "44d5dce1fa3d1b3256c8007d2c00ee7d070bf545760435691efefa64ff3b88d1"
+      },
+      "old-prompt-request-manifest.jsonl": {
+        "bytes": 238824,
+        "path": "data/t11d_extractor_contract/old-prompt-request-manifest.jsonl",
+        "rows": 512,
+        "sha256": "1ac39cdc9e791db9a80405b015ce915758eb8177fcdfe928bdaa8a34d737af49"
+      }
+    }
+  },
+  "prompts": {
+    "new": {
+      "sha256": "db3ca4c7d66966437a3453d219794bf38cd678cc0aabdcd3a7fca7daabdf1d35",
+      "template": "Solve the following problem carefully.\n\nThe required answer is a single base-10 integer. You may use units, currency\nsymbols, decimals, and mathematical notation in your reasoning, but the final\nline must contain only the canonical integer answer.\n\nOutput contract:\n- Write exactly one FINAL_ANSWER marker.\n- The final non-empty line must match:\n  FINAL_ANSWER: -?(0|[1-9][0-9]*)\n- Do not use a currency symbol, comma, decimal point, unit, LaTeX, markdown,\n  or \\boxed{} on that line.\n- If the computed result is a whole monetary amount such as $400.00, write 400.\n- Do not write anything after the FINAL_ANSWER line.\n- Before finishing, silently verify that the final line satisfies this contract.\n\nProblem:\n{question}"
+    },
+    "old": {
+      "sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+      "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}"
+    }
+  },
+  "schema_version": 1,
+  "scope_counts": {
+    "external_api_calls": 0,
+    "full_holdout_regenerations": 0,
+    "leaderboard_evaluations": 0,
+    "leaderboard_generations": 0,
+    "submission_changes": 0,
+    "training_runs": 0
+  },
+  "sources": {
+    "config": {
+      "bytes": 6083,
+      "path": "configs/t11d_extractor_contract.json",
+      "sha256": "b89db4529be824822440a5cb904145bb9049337008f76ecd6be2bb7ebd7565f5"
+    },
+    "new_extractor": {
+      "bytes": 13163,
+      "path": "src/extract.py",
+      "sha256": "db8219e5cb37f3ad9fff7ec10341e3f47bc1a50e640243dc642b75d50e47e158"
+    },
+    "old_config": {
+      "bytes": 2099,
+      "path": "configs/t8_self_consistency.json",
+      "sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630"
+    },
+    "old_extractor": {
+      "bytes": 11217,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/execution-source-extract.py",
+      "sha256": "68283644e400c492b482518b811c46f105abd30410cc1da87366604f74a2ab12"
+    },
+    "runner": {
+      "bytes": 83169,
+      "path": "analysis/t11d_extractor_contract.py",
+      "sha256": "9e63c5f323616ed4c19a395bbafe1f7e800db7ef2982527ccbfa9939a3c24ecc"
+    }
+  },
+  "status": "complete_diagnostic_only",
+  "task": "T11d"
+}

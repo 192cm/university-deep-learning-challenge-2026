@@ -1,0 +1,246 @@
+{
+  "c_diagnostic": {
+    "answer_only_c_eq_0_rows": 1792,
+    "answer_only_c_ge_1_rows": 10826,
+    "answer_only_image_dependent_excluded_rows": 18,
+    "answer_only_training_rows": 12618,
+    "holdout_ids_with_c": 0,
+    "holdout_union_rows": 3737,
+    "partial_holdout_metric_available": false,
+    "reason": "T5 c is defined only on the RFT pool, which is disjoint from all holdouts.",
+    "rft_pool_c_eq_0_rows": 1801,
+    "rft_pool_c_ge_1_rows": 10835,
+    "rft_pool_scope_rows": 12636,
+    "rft_training_rows": 40645
+  },
+  "calibration_selected": {
+    "batch_size": 3,
+    "effective_batch_size": 33,
+    "gradient_accumulation_steps": 11,
+    "gradient_checkpointing": true,
+    "packing": true,
+    "probe_active_gpu_utilization_mean_pct": 98.4635922330097,
+    "probe_peak_vram_mib": 19526.0,
+    "probe_step_seconds": 22.218857395835222,
+    "probe_tokens_per_second": 3027.4494166294116,
+    "selection_rule": "require a real 90%-of-maximum batch margin (maximum successful batch > 1), prefer trials meeting 90% active GPU utilization, then highest token throughput"
+  },
+  "completion_checks": {
+    "assistant_only_packing_mask_verified": true,
+    "bad_main_model_rejected_if_needed": true,
+    "calibration_contains_step_time_peak_vram_gpu_utilization": true,
+    "five_experiment_four_holdout_table_complete": true,
+    "invalid_output_rate_decreased": true,
+    "main_improves_base_random": false,
+    "main_outperforms_answer_only_clearly": true
+  },
+  "created_at_utc": "2026-08-21T02:27:19.119756+00:00",
+  "decision": {
+    "adoption": "본안 미채택; T4 base 유지",
+    "cot_value_clearly_demonstrated": true,
+    "invalid_rate_decreased": true,
+    "main_improves_base_random": false,
+    "main_vs_answer_only_random_pp": 44.71594379963347,
+    "main_vs_base_invalid_pp": -0.12217470983506415,
+    "main_vs_base_random_pp": -0.06108735491753281,
+    "main_wins_vs_answer_only_splits": 4,
+    "selected_adapter": null
+  },
+  "environment": {
+    "python": "3.12.13",
+    "remote_environment": {
+      "collected_at_utc": "2026-08-19T15:40:35.945989Z",
+      "cpu": {
+        "logical_cores": 64,
+        "model": "AMD EPYC 7502P 32-Core Processor",
+        "physical_cores_detected": 32
+      },
+      "deterministic_smoke": {
+        "byte_identical": true,
+        "problem_count": 8,
+        "run_1_path": "/workspace/artifacts/t0_bootstrap/smoke-run-1.json",
+        "run_1_sha256": "7a0bd5a1dc00ebbe90ae03b1f5862af92455ad686e86d41f957c871c536d5cc2",
+        "run_2_path": "/workspace/artifacts/t0_bootstrap/smoke-run-2.json",
+        "run_2_sha256": "7a0bd5a1dc00ebbe90ae03b1f5862af92455ad686e86d41f957c871c536d5cc2",
+        "seed": 42,
+        "verified_at_utc": "2026-08-19T15:40:05.086643Z"
+      },
+      "disk_workspace": {
+        "free_bytes": 312302878720,
+        "path": "/workspace",
+        "total_bytes": 322122547200,
+        "used_bytes": 9819668480
+      },
+      "gpu": {
+        "cuda": {
+          "driver_reported_max_cuda": "13.1",
+          "nvcc_output": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Wed_Aug_20_01:58:59_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.88\nBuild cuda_13.0.r13.0/compiler.36424714_0",
+          "toolkit_nvcc": "13.0"
+        },
+        "devices": [
+          {
+            "driver_version": "590.48.01",
+            "index": 0,
+            "memory_total_mib": 24564,
+            "name": "NVIDIA GeForce RTX 4090"
+          }
+        ],
+        "torch": {
+          "bf16_supported": true,
+          "compute_capability": "8.9",
+          "cuda_available": true,
+          "device_count": 1,
+          "torch_cuda_runtime": "13.0",
+          "torch_version": "2.13.0+cu130"
+        }
+      },
+      "instance": {
+        "container_id": "48123126",
+        "image": "PyTorch",
+        "workspace": "/workspace",
+        "workspace_is_volume": false
+      },
+      "model": {
+        "config_commit_hash": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "downloaded_at_utc": "2026-08-19T15:38:13.211658Z",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "model_type": "qwen2",
+        "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "resolved_snapshot_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "revision_verified": true,
+        "snapshot_path": "/workspace/.hf_home/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "tokenizer_commit_hash": null,
+        "tokenizer_config_path": "/workspace/.hf_home/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json",
+        "tokenizer_snapshot_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      },
+      "packages": {
+        "accelerate": "1.14.0",
+        "bitsandbytes": "0.50.1",
+        "datasets": "5.0.1",
+        "huggingface-hub": "1.27.0",
+        "peft": "0.20.0",
+        "safetensors": "0.8.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0+cu130",
+        "transformers": "5.15.1",
+        "trl": "1.10.0",
+        "vllm": "0.27.1"
+      },
+      "platform": {
+        "machine": "x86_64",
+        "python_executable": "/venv/main/bin/python",
+        "python_version": "3.12.13",
+        "release": "6.8.0-100-generic",
+        "system": "Linux"
+      },
+      "pytorch_cuda_alloc_conf": "expandable_segments:True",
+      "ram": {
+        "available_bytes": 237814366208,
+        "total_bytes": 269938753536
+      },
+      "required_packages_installed": true,
+      "schema_version": 1,
+      "vllm_install_status": "installed",
+      "vram_profiles": {
+        "bf16": {
+          "dtype": "torch.bfloat16",
+          "gpu_free_after_load_bytes": 18574147584,
+          "gpu_free_before_bytes": 24838340608,
+          "gpu_total_bytes": 25252724736,
+          "is_loaded_in_4bit": false,
+          "loaded_config_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "mode": "bf16",
+          "model_id": "Qwen/Qwen2.5-3B-Instruct",
+          "model_load_delta_bytes": 6264193024,
+          "profiled_at_utc": "2026-08-19T15:38:34.054699Z",
+          "remaining_vram_bytes": 18574147584,
+          "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "torch_allocated_bytes": 6171878400,
+          "torch_peak_allocated_bytes": 6171878400,
+          "torch_reserved_bytes": 6264193024
+        },
+        "nf4": {
+          "dtype": "torch.bfloat16",
+          "gpu_free_after_load_bytes": 22630039552,
+          "gpu_free_before_bytes": 24838340608,
+          "gpu_total_bytes": 25252724736,
+          "is_loaded_in_4bit": true,
+          "loaded_config_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "mode": "nf4",
+          "model_id": "Qwen/Qwen2.5-3B-Instruct",
+          "model_load_delta_bytes": 2208301056,
+          "profiled_at_utc": "2026-08-19T15:38:55.022040Z",
+          "remaining_vram_bytes": 22630039552,
+          "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "torch_allocated_bytes": 2054668288,
+          "torch_peak_allocated_bytes": 2097683456,
+          "torch_reserved_bytes": 2143289344
+        }
+      }
+    }
+  },
+  "inputs": {
+    "answer_only_audit": {
+      "path": "data/answer_only/audit.csv",
+      "sha256": "bfac08bab4f09632dd0aa061f52421f03793b4c306701f2bd6d74ba33afcf3c0"
+    },
+    "answer_only_manifest": {
+      "path": "data/answer_only/manifest.json",
+      "sha256": "071293a54162a323aff561ac7ce22d456df9ff0414576d6608b015dfab33a586"
+    },
+    "calibration": {
+      "path": "artifacts/t6_sft_v1/calibration.json",
+      "sha256": "6007d7d0205c25783bc8541d4a26f5b8bcc84af4abf49261d437f61751fb5f2e"
+    },
+    "config": {
+      "path": "configs/t6_sft_v1.json",
+      "sha256": "bbb48a76f3ce2db6b29b69b535d6ccc50619ffeccde70400785da45f06ffec12"
+    },
+    "environment": {
+      "path": "environment.json",
+      "sha256": "d1e97fae8b37261f53f522195cf8ae7e4d2eeaad683ebd82ef376426191273cd"
+    },
+    "rft_audit": {
+      "path": "data/rft_r1/audit.csv",
+      "sha256": "2d91343261d295c021134a6baa09d5dbc21683d1efa6855c3eb0fcbdc015a4a4"
+    }
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "objective": "QLoRA verified-CoT SFT with base, answer-only, external-CoT, RFT, and mixed controls.",
+  "outputs": {
+    "comparison": {
+      "path": "artifacts/t6_sft_v1/comparison.md",
+      "sha256": "9f4fbd1a260dd5f26f98cf400bec8a11c2efc452b5878b675f56b02e4b10cb7d"
+    },
+    "experiments": {
+      "answer_only": {
+        "path": "artifacts/t6_sft_v1/answer_only/metrics.json",
+        "sha256": "1b5228ac5b65c0e1d7e7163c64d11c4ec874bade71f65e381de24c6d4dddd9dc"
+      },
+      "base": {
+        "path": "artifacts/t6_sft_v1/base/metrics.json",
+        "sha256": "575d58e9a653bcf865939bf2940a70d5ba59f5d683fd200adac7b251c8d536e3"
+      },
+      "external_cot": {
+        "path": "artifacts/t6_sft_v1/external_cot/metrics.json",
+        "sha256": "11ee8e0f0fa0f6fd7f24b7800d6f4386e76d237d8a45aa380ea8b72615ac929c"
+      },
+      "rft_external": {
+        "path": "artifacts/t6_sft_v1/rft_external/metrics.json",
+        "sha256": "273de52e89afd2e2117805a3849cfc1a44ded5b998c00bb5873f00516d74d4a1"
+      },
+      "rft_r1": {
+        "path": "artifacts/t6_sft_v1/rft_r1/metrics.json",
+        "sha256": "11470da2824016fd1364d956c7a6bcedefd7c38951575f1be7c7792572329a0e"
+      }
+    }
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "status": "complete",
+  "task": "T6"
+}

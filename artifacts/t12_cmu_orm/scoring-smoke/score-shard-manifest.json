@@ -1,0 +1,66 @@
+{
+  "adapter_sha256": "47e46330da1f07b07af1202278a1e5ddb02028e2e00257885dada0cd35e84866",
+  "candidate_count": 32,
+  "candidate_pool_sha256": "3586d276b0f545c09e2c47d9a7f8a20c3033239d09691cfa8ba9f509581a48eb",
+  "expected_rows": 32,
+  "kind": "score",
+  "manifest_sha256": "cffc3e3ce0a7070477db754624b9b5a2c1d173cac554d4b938c04e45b5685ab2",
+  "namespace": "t12-score-shard-v1:",
+  "schema_version": 1,
+  "scoring_config_sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189",
+  "scoring_contract": {
+    "algorithm": "pointwise-bf16-fixed-shape-buckets-v1",
+    "batch_size": 4,
+    "max_length": 4096,
+    "padding_bucket_tokens": 128
+  },
+  "shards": [
+    {
+      "expected_rows": 16,
+      "keys": [
+        "train-000001:9",
+        "train-000001:24",
+        "train-000001:13",
+        "train-000001:3",
+        "train-000001:30",
+        "train-000001:23",
+        "train-000001:20",
+        "train-000001:31",
+        "train-000001:11",
+        "train-000001:8",
+        "train-000001:16",
+        "train-000001:7",
+        "train-000001:12",
+        "train-000001:10",
+        "train-000001:28",
+        "train-000001:18"
+      ],
+      "keys_sha256": "9ba262ef12c18e4b06b7490d882e979108a3aabba270b7190bc078c6f3189373",
+      "logical_rank": 0
+    },
+    {
+      "expected_rows": 16,
+      "keys": [
+        "train-000001:4",
+        "train-000001:6",
+        "train-000001:2",
+        "train-000001:1",
+        "train-000001:15",
+        "train-000001:5",
+        "train-000001:29",
+        "train-000001:19",
+        "train-000001:14",
+        "train-000001:25",
+        "train-000001:26",
+        "train-000001:27",
+        "train-000001:17",
+        "train-000001:21",
+        "train-000001:22",
+        "train-000001:0"
+      ],
+      "keys_sha256": "61d536ccbaed6c4b0f0ebb44ee48faa634d511475a4569918e77123b37cd945e",
+      "logical_rank": 1
+    }
+  ],
+  "ways": 2
+}

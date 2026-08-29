@@ -1,0 +1,85 @@
+{
+  "checks": {
+    "all_required_smokes_complete": true,
+    "gpu_count_exactly_two": true,
+    "gpu_names_exact": true,
+    "minimum_24gb_each": true,
+    "uuid_unique": true
+  },
+  "completed_at_utc": "2026-08-27T20:47:24.933279+00:00",
+  "created_at_utc": "2026-08-27T20:38:50.476138+00:00",
+  "gpus": [
+    {
+      "driver_version": "580.159.03",
+      "logical_rank": 0,
+      "memory_free_mib": 24080.0,
+      "memory_total_mib": 24564.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "physical_index": 0,
+      "power_limit_w": 450.0,
+      "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"
+    },
+    {
+      "driver_version": "580.159.03",
+      "logical_rank": 1,
+      "memory_free_mib": 24080.0,
+      "memory_total_mib": 24564.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "physical_index": 1,
+      "power_limit_w": 450.0,
+      "uuid": "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+    }
+  ],
+  "passed": true,
+  "required": {
+    "count": 2,
+    "name": "NVIDIA GeForce RTX 4090"
+  },
+  "schema_version": 1,
+  "smokes": [
+    {
+      "passed": true,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/model-smoke-gpu0.json",
+      "sha256": "ca3ae4c05f077678b2868cc461dbf4cfc2ea892be68e08c9eb69bef5a26a7ad6",
+      "status": "complete"
+    },
+    {
+      "passed": true,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/model-smoke-gpu1.json",
+      "sha256": "40c08f0aa2980af2d4ce2f1ba3ae35f23b08a1b02c68ede3c1dd2a976d24269e",
+      "status": "complete"
+    },
+    {
+      "passed": true,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/generation-smoke.json",
+      "sha256": "2f7212688be04a4e3781dfb9228d77ab10ca575c41e83332cffdbae4acdbaea0",
+      "status": "complete"
+    },
+    {
+      "passed": true,
+      "path": "artifacts/t12_cmu_orm/hardware-smoke/ddp-smoke.json",
+      "sha256": "c08e81ba101a38fecd4acbff274f6002b9666742fe82a9c69fa45e52a79d44f8",
+      "status": "complete"
+    }
+  ],
+  "software": {
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.1",
+    "cuda_available": true,
+    "datasets": "5.0.1",
+    "nccl": "2.28.9",
+    "peft": "0.20.0",
+    "python": "3.12.14",
+    "torch": "2.13.0",
+    "torch_cuda_runtime": "13.0",
+    "torch_nccl": [
+      2,
+      29,
+      7
+    ],
+    "transformers": "5.15.1",
+    "vllm": "0.27.1"
+  },
+  "status": "complete",
+  "topology": "\u001b[4mGPU0\tGPU1\tCPU Affinity\tNUMA Affinity\tGPU NUMA ID\u001b[0m\nGPU0\t X \tNODE\t64-127,192-255\t1\t\tN/A\nGPU1\tNODE\t X \t64-127,192-255\t1\t\tN/A\n\nLegend:\n\n  X    = Self\n  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)\n  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node\n  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)\n  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)\n  PIX  = Connection traversing at most a single PCIe bridge\n  NV#  = Connection traversing a bonded set of # NVLinks"
+}

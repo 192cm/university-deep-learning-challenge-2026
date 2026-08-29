@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "task": "T7",
+  "status": "passed",
+  "verified_at_utc": "2026-08-22T10:22:25.8405590Z",
+  "checks": {
+    "all_three_manifests_complete": true,
+    "all_manifest_completion_checks_true": true,
+    "all_declared_output_hashes_and_sizes_match": true,
+    "all_1801_targets_have_unique_r2_sample_indices_0_through_31": true,
+    "all_1801_candidate_sets_have_16_r1_and_32_r2_candidates": true,
+    "candidate_correct_incorrect_invalid_counts_reconcile_to_48": true,
+    "audit_matches_candidate_counts": true,
+    "suspect_ids_are_exactly_the_combined_0_of_48_rows": true,
+    "cumulative_record_table_contains_final_metrics": true,
+    "base_model_and_null_adapter_recorded": true,
+    "sft_v2_not_executed": true,
+    "r2_additions_not_used_for_sft_training": true,
+    "hint_conditioned_generation_not_executed": true,
+    "t9_r2_hard_tail_handoff_enabled": true,
+    "targeted_regression_tests_passed": true
+  },
+  "counts": {
+    "target_questions": 1801,
+    "r2_generations": 57632,
+    "candidate_questions": 1801,
+    "candidates_per_question": 48,
+    "mixed_correct_and_incorrect_candidate_sets": 490,
+    "r2_harvested_problems": 486,
+    "r2_selected_rows": 911,
+    "r2_rejected_or_surplus_rows": 56721,
+    "suspect_0_of_48": 1311,
+    "manual_review": {
+      "파손": 4,
+      "오답": 9,
+      "단순 고난도": 7
+    },
+    "targeted_tests_passed": 30
+  },
+  "performance": {
+    "full_generations_per_second": 7.373207855461268,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "peak_memory_used_mib": 23315.3125,
+    "oom_events": 0
+  },
+  "sources": {
+    "builder": {
+      "path": "src/build_rft_r2.py",
+      "sha256": "5ae647a3dd7342434280a75f0b8a42a3090484127cb8e239d8f9709f4f0511bf"
+    },
+    "builder_test": {
+      "path": "tests/test_build_rft_r2.py",
+      "sha256": "d2aaa849f6019df54deef1bf001d745fa87d1cbc51e1004172926a9fabb0ebb7"
+    },
+    "junit": {
+      "path": "artifacts/t7_rft_r2/tests.xml",
+      "sha256": "afad6711105016806ab5e3096f1a835d3d6303cef4ad697b09b2d29687332470"
+    }
+  }
+}

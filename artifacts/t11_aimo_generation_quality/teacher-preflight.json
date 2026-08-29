@@ -1,0 +1,456 @@
+{
+  "created_at_utc": "2026-08-27T04:11:17.522424+00:00",
+  "criteria": {
+    "accepted_correct_traces_at_least_64": false,
+    "code_or_tool_dependency_zero": false,
+    "preflight_within_wall_cap": true,
+    "protected_or_leaderboard_sent_zero": true,
+    "questions_with_accepted_at_least_32": false,
+    "teacher_identity_frozen": true,
+    "within_api_cost_cap": true,
+    "worst_case_full_within_wall_cap": true
+  },
+  "next_action": "stop_before_sft_and_dpo",
+  "observed": {
+    "accepted_correct_traces": 0,
+    "accepted_quality_traces": 0,
+    "api_cost_usd": 0.0,
+    "code_or_tool_dependency_traces": 7,
+    "extracted_correct_before_quality_filter": 76,
+    "finish_reason_counts": {
+      "length": 42,
+      "stop": 214
+    },
+    "generation_wall_seconds": 152.48901844600914,
+    "generations_per_second": 1.6788094159753566,
+    "outputs": 256,
+    "projected_worst_case_full_wall_hours": 2.4925071331062085,
+    "questions": 64,
+    "questions_with_accepted_correct": 0,
+    "trace_rejection_reason_counts": {
+      "answer_mismatch": 180,
+      "code_or_tool_dependency": 7,
+      "explicit_candidate_contract": 69,
+      "extraction_conflicting_explicit_answers": 16,
+      "final_line_contract": 256,
+      "hit_max_or_length_finish": 42,
+      "output_tokens_not_below_2048": 42
+    },
+    "worst_case_full_generations": 15064
+  },
+  "per_question": [
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-008421"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-006278"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-010250"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-012305"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-013887"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-015947"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-010092"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-003901"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-015777"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-012364"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-003951"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-010057"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-002135"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-004173"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-000886"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-012082"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-012255"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-008689"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-002838"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-003929"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-016913"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-004087"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-016532"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-003968"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-007837"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-011257"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-016607"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-011455"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-016455"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-013415"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-014843"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-007867"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-004835"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-011858"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-003666"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-011261"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-001184"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-016663"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-008509"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-014102"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-011843"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-013230"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-004582"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-004100"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-009323"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-004441"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-006429"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-007145"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-001174"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-010792"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-009959"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-007286"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 2,
+      "id": "train-006361"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-002027"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-013997"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 4,
+      "id": "train-015265"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-011839"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 3,
+      "id": "train-011652"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-013009"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-005456"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-016462"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 1,
+      "id": "train-012593"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-015034"
+    },
+    {
+      "accepted_correct": 0,
+      "accepted_quality": 0,
+      "extracted_correct": 0,
+      "id": "train-009374"
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "bytes": 9532,
+      "path": "configs/t11_aimo_generation_quality.json",
+      "sha256": "2584181f0a24c4cc4a57c4f0760fca0ba5ee55405250500c4526214b9ab765ba"
+    },
+    "generations": {
+      "bytes": 1032212,
+      "path": "data/t11_aimo_generation_quality/teacher_generations.jsonl",
+      "sha256": "764f5e8fcc31bc61303ee8ed76e23b653a6b220effeb525f375aa78df9099e3c"
+    },
+    "metadata": {
+      "bytes": 1433,
+      "path": "artifacts/t11_aimo_generation_quality/teacher-run-metadata.json",
+      "sha256": "fc25cdf2083e97e1ed5167ff30d22ef181a21ff04546dc77b9f3a65b722ca4ec"
+    }
+  },
+  "status": "teacher_gate_failed",
+  "task": "T11",
+  "teacher": {
+    "license": "apache-2.0",
+    "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+    "prompt_sha256": "1b1f80807f63b2d0e6f748a3c54e7423237da07ee354ebccd2773fb4f1a16521",
+    "provider": "local_vllm",
+    "revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "tokenizer_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "tool_use": false
+  }
+}

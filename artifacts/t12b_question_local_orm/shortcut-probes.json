@@ -1,0 +1,10 @@
+{
+  "labels_or_features_fit": false,
+  "length_only": null,
+  "maximum_auc": 0.6,
+  "reason": "source_balance_question_capacity_gate_failed_before_probe_fit",
+  "schema_version": 2,
+  "source_only": null,
+  "status": "not_run",
+  "task": "T12b"
+}

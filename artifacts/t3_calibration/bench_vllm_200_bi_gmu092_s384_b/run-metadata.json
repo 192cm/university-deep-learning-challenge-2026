@@ -1,0 +1,392 @@
+{
+  "completed_at_utc": "2026-08-19T17:12:24.257070+00:00",
+  "effective_config": {
+    "engine": "vllm",
+    "generation": {
+      "do_sample": false,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 1024,
+      "n": 1,
+      "seed": 42,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "max_batch_size": 256,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "schema_version": 1,
+    "task": "T3",
+    "vllm": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 384,
+      "request_chunk_size": 1024
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python_version": "3.12.13",
+    "torch_cuda_runtime": "13.0",
+    "torch_version": "2.13.0+cu130",
+    "vllm_batch_invariant": true
+  },
+  "invocation_wall_seconds": 78.7802374176681,
+  "output": {
+    "path": "artifacts/t3_determinism_probe/run_b/generations.jsonl",
+    "rows": 200,
+    "sha256": "65022aa8cd94ebf1013f078066f578082df3ca3e8bc591cf71bc117acc3f47fc"
+  },
+  "prompt_tokenization": {
+    "chat_template_applied": true,
+    "max_input_tokens": 2048,
+    "padding_side": "left",
+    "truncated_prompts": 0,
+    "truncation_side": "right"
+  },
+  "results": {
+    "generated_this_invocation": 200,
+    "generation_wall_seconds": 26.868063548579812,
+    "generations_per_second": 7.443781709030965,
+    "gpu_monitor": {
+      "active_utilization_gpu_pct": {
+        "max": 100.0,
+        "mean": 100.0,
+        "median": 100.0,
+        "min": 100.0,
+        "p10": 100.0,
+        "p90": 100.0
+      },
+      "error": null,
+      "fraction_active_samples_at_least_90_pct": 1.0,
+      "fraction_all_samples_at_least_90_pct": 0.9814814814814815,
+      "peak_memory_used_mib": 24260.3125,
+      "raw_samples": [
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137921.86989462,
+          "utilization_gpu_pct": 0.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137922.37017765,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137922.87047972,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137923.370745908,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137923.871048076,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137924.371333713,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137924.871628497,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137925.371907348,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137925.872196048,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137926.372480422,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137926.872766778,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137927.373065319,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137927.873309191,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137928.373539412,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137928.873742968,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137929.374074427,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137929.874304876,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137930.374559723,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137930.874778938,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137931.375014476,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137931.875282817,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137932.375603527,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137932.87586328,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137933.376164883,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137933.876433564,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137934.376652116,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137934.876913272,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137935.377132466,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137935.87738266,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137936.37759938,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137936.87782775,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137937.3780552,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137937.878325332,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137938.378613839,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137938.878875652,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137939.37911256,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137939.879368873,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137940.379736632,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137940.880018156,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137941.380334737,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137941.880601209,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137942.380853863,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137942.88115264,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137943.381420616,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137943.881711135,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137944.381956264,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137944.88235418,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137945.38260876,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137945.88287944,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137946.383461539,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137946.883766064,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137947.384049106,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137947.884325728,
+          "utilization_gpu_pct": 100.0
+        },
+        {
+          "memory_used_mib": 24260.3125,
+          "monotonic_seconds": 15137948.384602128,
+          "utilization_gpu_pct": 100.0
+        }
+      ],
+      "samples": 54,
+      "sampling_interval_seconds": 0.5,
+      "utilization_gpu_pct": {
+        "max": 100.0,
+        "mean": 98.14814814814815,
+        "median": 100.0,
+        "min": 0.0,
+        "p10": 100.0,
+        "p90": 100.0
+      }
+    },
+    "oom_events": [],
+    "request_chunks": 1,
+    "torch_peak_allocated_mib": 0.0
+  },
+  "resume": {
+    "cached_generations_at_start": 0,
+    "pending_generations_at_start": 200
+  },
+  "run_fingerprint": "aa5e772673f4385f5cba3ac7b194912265286423dc932395578d6ffabf27027b",
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "path": "configs/t3_baseline.json",
+      "sha256": "617eb00292a0b57bd0fdff234276d60fd01b57f13c7b7265b594b715cf4947ac"
+    },
+    "ids_file": {
+      "path": "artifacts/t3_baseline/holdout_union_ids.txt",
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    },
+    "input": {
+      "path": "data/canonical/train.csv",
+      "rows_before_selection": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "max_prompts": 200,
+    "selected_ids_sha256": "ead4396e2e40bcb223d3178e0ebe394e8332b2ba9105b327ef564385f15c42ce",
+    "selected_rows": 200,
+    "selection_seed": 42
+  },
+  "started_at_utc": "2026-08-19T17:11:05.476848+00:00",
+  "status": "complete",
+  "task": "T3"
+}

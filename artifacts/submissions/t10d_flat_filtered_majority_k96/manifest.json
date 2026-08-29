@@ -1,0 +1,296 @@
+{
+  "config": {
+    "bytes": 5142,
+    "path": "configs/t10d_flat_filtered_majority_k96.json",
+    "sha256": "5953fa2df41dbfdc994568558ed03a258c18adb3f643200ce4070083eb8df6de"
+  },
+  "created_at_utc": "2026-08-26T16:17:37.231678+00:00",
+  "ground_truth_contract": {
+    "holdout_predictions_written_before_labels_loaded": true,
+    "labels_used_for_generation_filtering_or_voting": false,
+    "leaderboard_labels_available": false
+  },
+  "holdout": {
+    "candidate": {
+      "accuracy": 0.7118009098207118,
+      "correct": 2660,
+      "invalid_prediction_rate": 0.0,
+      "invalid_predictions": 0,
+      "questions": 3737
+    },
+    "gate": {
+      "checks": {
+        "effect_size": true,
+        "format_guardrail": true,
+        "hard_guardrail": true,
+        "invalid_guardrail": true,
+        "significance": true
+      },
+      "confirmatory_adoption": false,
+      "criteria": {
+        "maximum_exact_mcnemar_p": 0.05,
+        "maximum_hard_or_format_drop_pp": 2.0,
+        "maximum_union_invalid_increase_pp": 1.0,
+        "minimum_union_delta_pp": 1.5
+      },
+      "numerically_passes": true,
+      "reason": "Exploratory because the three-arm composition was proposed after prior holdout results were known; passing the numerical gate is not an independent preregistered confirmation.",
+      "status": "exploratory_passes_numerical_gate"
+    },
+    "primary_comparison": {
+      "both_correct": 2540,
+      "both_wrong": 1027,
+      "candidate_accuracy": 0.7118009098207118,
+      "candidate_correct_reference_wrong": 120,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        1.1919705430144576,
+        2.554350034989289
+      ],
+      "delta_pp": 1.8731602890018733,
+      "discordant": 170,
+      "paired_bootstrap_95_ci_pp": {
+        "high_pp": 2.542146106502542,
+        "low_pp": 1.2041744715012042,
+        "method": "paired percentile bootstrap over per-question exact-match differences",
+        "replicates": 100000,
+        "seed": 42
+      },
+      "questions": 3737,
+      "reference_accuracy": 0.693069306930693,
+      "reference_correct_candidate_wrong": 50,
+      "two_sided_exact_p": 8.020158388607808e-08
+    },
+    "secondary_comparison": {
+      "both_correct": 2592,
+      "both_wrong": 1024,
+      "candidate_accuracy": 0.7118009098207118,
+      "candidate_correct_reference_wrong": 68,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        -0.17538772307080186,
+        0.9781707040716046
+      ],
+      "delta_pp": 0.4013914905004014,
+      "discordant": 121,
+      "paired_bootstrap_95_ci_pp": {
+        "high_pp": 0.9900990099009901,
+        "low_pp": -0.18731602890018734,
+        "method": "paired percentile bootstrap over per-question exact-match differences",
+        "replicates": 100000,
+        "seed": 42
+      },
+      "questions": 3737,
+      "reference_accuracy": 0.7077869949157077,
+      "reference_correct_candidate_wrong": 53,
+      "two_sided_exact_p": 0.20292429055143815
+    }
+  },
+  "leaderboard": {
+    "accuracy_computed": false,
+    "changed_vs_source_filtered_answer": {
+      "base": 61,
+      "cot_boxed": 66,
+      "rft_r1": 70
+    },
+    "flat_vote": {
+      "invalid_prediction_rate": 0.0,
+      "invalid_predictions": 0,
+      "maximum_source_candidates": 79776,
+      "questions": 831,
+      "selected_candidates_after_filter_and_fallback": 75038,
+      "tie_questions": 10,
+      "tie_rate": 0.012033694344163659,
+      "valid_votes": 74976
+    },
+    "labels_available": false,
+    "per_arm_all_votes_filtered_fallback_count": {
+      "base": 5,
+      "cot_boxed": 2,
+      "rft_r1": 0
+    },
+    "rows": 831,
+    "source_final_answer_consensus": {
+      "all_agree": 688,
+      "all_different": 41,
+      "base_cot_boxed_agree": 39,
+      "base_rft_agree": 32,
+      "cot_boxed_rft_agree": 31
+    }
+  },
+  "outputs": {
+    "comparison_markdown": {
+      "bytes": 1202,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/comparison.md",
+      "sha256": "ee4396b8f323d5daa7dac41079b0fd0c6fb1cf325bb7a7d207d02ad35ad13b80"
+    },
+    "holdout_comparison": {
+      "bytes": 12091,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/holdout-comparison.json",
+      "sha256": "459845004337bc3af934c5efd3305194aaa6d89b649725f0419ce081532a17f5"
+    },
+    "holdout_predictions": {
+      "bytes": 2470207,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/holdout-predictions.jsonl",
+      "rows": 3737,
+      "sha256": "d1758f9f6993ba1b67a106abd9c3de466e5b12dcf4b4cb05170b268842666d34"
+    },
+    "leaderboard_audit": {
+      "bytes": 757,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/leaderboard-audit.json",
+      "sha256": "c0b3021dccb00cafea81979f9d46b71aad7df29be7eca0dd56c4b39f748aa4e4"
+    },
+    "leaderboard_predictions": {
+      "bytes": 525305,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/leaderboard-predictions.jsonl",
+      "rows": 831,
+      "sha256": "9998cc529c749b30737e4d684886a6521c1bb045a4ca98736519a6f839b19708"
+    },
+    "root_submission": {
+      "bytes": 12568,
+      "path": "submission.csv",
+      "rows": 831,
+      "sha256": "4caa701cc1cb00ed39360f367fe92d122221972daa8ff53064aa2dff3421276e"
+    },
+    "submission": {
+      "bytes": 12568,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/submission.csv",
+      "rows": 831,
+      "sha256": "4caa701cc1cb00ed39360f367fe92d122221972daa8ff53064aa2dff3421276e"
+    },
+    "tests": {
+      "bytes": 879,
+      "path": "artifacts/submissions/t10d_flat_filtered_majority_k96/tests.xml",
+      "sha256": "df234c22a7146dd4b1ac14d8a2fbf8ae7d9b7abd0269ba4b6175ebe26817530a"
+    }
+  },
+  "protected_sources_unchanged": true,
+  "regulatory_status": {
+    "classification": "same-base local multi-sampling plus answer-string majority; not arithmetic verification",
+    "remaining_uncertainty": "Obtain written organizer confirmation for 96 samples across two prompts and one same-base LoRA, and for extraction-path/termination-based vote exclusion.",
+    "sample_count_cap_found_in_recorded_rules": false
+  },
+  "root_submission_before": {
+    "bytes": 12570,
+    "exists": true,
+    "sha256": "06f4eeb04668185d2a3691478e2b452008149ccd99a6509641128650abf653f5"
+  },
+  "schema_version": 1,
+  "source_identity_after": {
+    "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl": {
+      "bytes": 73944693,
+      "canonical_lf_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1",
+      "crlf_lines_normalized_for_identity": 0,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl",
+      "raw_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1"
+    },
+    "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl": {
+      "bytes": 64395227,
+      "canonical_lf_sha256": "dc773b52afdb64b3ae9a758f0f3f4dbc0e39a4516b215d83f5d21c68fd0626cf",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+      "raw_sha256": "a7b277a0c5e0c8f7b66b595b0a31d97d2e6180405a452e79b0a25a73f0cf1cd5"
+    },
+    "artifacts/submissions/t8_majority_k32/generations.jsonl": {
+      "bytes": 59843830,
+      "canonical_lf_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "raw_sha256": "f01d4cc9028611b1a8e2963a1df959d8f10aa04a387ac6c21863200863ff84f0"
+    },
+    "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl": {
+      "bytes": 271779042,
+      "canonical_lf_sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+      "raw_sha256": "4b0d17aa85c08ff8343c6fdf3196ce8b773da880b8fc3d00775d0c853d7eed70"
+    },
+    "artifacts/t8_1_rft_self_consistency/generations.jsonl": {
+      "bytes": 251002623,
+      "canonical_lf_sha256": "51e105d7c682f2a72f9ca7069ef907f401af39ed21b4fdb234164f16def5ca1a",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+      "raw_sha256": "6a35902feaa65178099104bc4d537fc729d4488ba8e564283b340bb30a58259f"
+    },
+    "artifacts/t8_self_consistency/generations.jsonl": {
+      "bytes": 234331927,
+      "canonical_lf_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21"
+    }
+  },
+  "source_identity_before": {
+    "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl": {
+      "bytes": 73944693,
+      "canonical_lf_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1",
+      "crlf_lines_normalized_for_identity": 0,
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/generations.jsonl",
+      "raw_sha256": "ba6c59b24a588dd99b7d7d3deb8946ed333412c57b631de6647cd3a0f10f32b1"
+    },
+    "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl": {
+      "bytes": 64395227,
+      "canonical_lf_sha256": "dc773b52afdb64b3ae9a758f0f3f4dbc0e39a4516b215d83f5d21c68fd0626cf",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_1_rft_majority_k32/generations.jsonl",
+      "raw_sha256": "a7b277a0c5e0c8f7b66b595b0a31d97d2e6180405a452e79b0a25a73f0cf1cd5"
+    },
+    "artifacts/submissions/t8_majority_k32/generations.jsonl": {
+      "bytes": 59843830,
+      "canonical_lf_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+      "crlf_lines_normalized_for_identity": 32000,
+      "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "raw_sha256": "f01d4cc9028611b1a8e2963a1df959d8f10aa04a387ac6c21863200863ff84f0"
+    },
+    "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl": {
+      "bytes": 271779042,
+      "canonical_lf_sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+      "raw_sha256": "4b0d17aa85c08ff8343c6fdf3196ce8b773da880b8fc3d00775d0c853d7eed70"
+    },
+    "artifacts/t8_1_rft_self_consistency/generations.jsonl": {
+      "bytes": 251002623,
+      "canonical_lf_sha256": "51e105d7c682f2a72f9ca7069ef907f401af39ed21b4fdb234164f16def5ca1a",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_1_rft_self_consistency/generations.jsonl",
+      "raw_sha256": "6a35902feaa65178099104bc4d537fc729d4488ba8e564283b340bb30a58259f"
+    },
+    "artifacts/t8_self_consistency/generations.jsonl": {
+      "bytes": 234331927,
+      "canonical_lf_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "crlf_lines_normalized_for_identity": 119584,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21"
+    }
+  },
+  "status": "complete",
+  "strategy": {
+    "aggregation": "flat_majority_over_per_arm_filtered_candidates",
+    "arms": [
+      "base",
+      "cot_boxed",
+      "rft_r1"
+    ],
+    "k_per_arm": 32,
+    "maximum_source_votes_per_question": 96,
+    "new_generations": 0,
+    "new_training": 0,
+    "vote_filter": {
+      "all_votes_filtered_fallback": "unfiltered_majority_for_same_question",
+      "combine_conditions": "or",
+      "exclude_hit_max_new_tokens": true,
+      "excluded_extraction_paths": [
+        "last_integer",
+        "standalone_last_line"
+      ],
+      "kept_path_weights": {
+        "boxed": 1.0,
+        "final_answer_marker": 1.0
+      },
+      "majority_tie_break": "first generated answer among tied top vote counts",
+      "minimum_distinct_explicit_candidates": 2
+    }
+  },
+  "task": "T10d flat filtered majority@96"
+}

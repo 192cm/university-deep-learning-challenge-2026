@@ -1,0 +1,375 @@
+{
+  "determinism_probe": {
+    "batch_invariant": true,
+    "byte_identical": true,
+    "prompt_count": 200,
+    "run_a_sha256": "65022aa8cd94ebf1013f078066f578082df3ca3e8bc591cf71bc117acc3f47fc",
+    "run_b_sha256": "65022aa8cd94ebf1013f078066f578082df3ca3e8bc591cf71bc117acc3f47fc",
+    "same_selected_ids": true,
+    "seed": 42
+  },
+  "engine_comparison": {
+    "hf_generations_per_second": 0.9754965406940731,
+    "prompt_count": 200,
+    "same_selected_ids": true,
+    "vllm_batch_invariant": true,
+    "vllm_generations_per_second": 7.471633567643654,
+    "vllm_speedup_over_hf": 7.6593132378793785
+  },
+  "estimated_200k_generation_runtime": {
+    "basis": "selected 512-prompt measured generation throughput",
+    "excludes_one-time_engine_initialization": true,
+    "hours": 4.292361191093935,
+    "seconds": 15452.500287938165
+  },
+  "schema_version": 1,
+  "selected": {
+    "active_gpu_utilization_mean_pct": 100.0,
+    "calibration_run": "bench_vllm_512_bi_gmu092_s384",
+    "engine": "vllm",
+    "fraction_samples_at_least_90_pct": 0.9746835443037974,
+    "gpu_utilization_mean_pct": 97.46835443037975,
+    "observed_generations_per_second": 12.942889258906211,
+    "peak_vram_mib": 24260.3125,
+    "reason": "vLLM exceeded HF by more than 5x; 0.92 memory utilization and max_num_seqs=384 completed the larger 512-prompt stress run without OOM while sustaining at least 90% GPU utilization. Batch-invariant kernels were enabled to make greedy output independent of continuous-batching shape.",
+    "settings": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 384,
+      "request_chunk_size": 1024
+    }
+  },
+  "setup_incidents_resolved": [
+    "Separated HF_HOME from the transformers cache_dir for offline loading.",
+    "Set VLLM_WORKER_MULTIPROC_METHOD=spawn before CUDA initialization.",
+    "A full non-batch-invariant vLLM rerun changed greedy tokens; enabled VLLM_BATCH_INVARIANT and preserved both failed-attempt outputs for audit."
+  ],
+  "task": "T3",
+  "trials": [
+    {
+      "active_gpu_utilization_mean_pct": 95.61333333333333,
+      "engine": "hf",
+      "fraction_samples_at_least_90_pct": 0.9501661129568106,
+      "generation_wall_seconds": 150.37858664430678,
+      "generations_per_second": 1.3299765908364578,
+      "gpu_utilization_mean_pct": 95.29568106312293,
+      "gpu_utilization_p10_pct": 97.0,
+      "invocation_wall_seconds": 156.84771088510752,
+      "metadata_path": "artifacts/t3_calibration/bench_hf_200/run-metadata.json",
+      "name": "bench_hf_200",
+      "oom_events": [],
+      "output": {
+        "bytes": 344951,
+        "path": "artifacts/t3_calibration/bench_hf_200/generations.jsonl",
+        "sha256": "452b9bc7c638220b4be531df1c65ba1cd1da880bd72ef941c7287fa300139afd"
+      },
+      "peak_vram_mib": 19926.3125,
+      "selected_ids_sha256": "44bed057f5318cb82c9dbb607b0bfc4b41387461ddd8ee6e115892660a03d58f",
+      "selected_rows": 200,
+      "settings": {
+        "attn_implementation": "sdpa",
+        "max_batch_size": 256,
+        "max_batch_tokens": 294912
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 90.66911764705883,
+      "engine": "hf",
+      "fraction_samples_at_least_90_pct": 0.8317073170731707,
+      "generation_wall_seconds": 205.0237921476364,
+      "generations_per_second": 0.9754965406940731,
+      "gpu_utilization_mean_pct": 90.22682926829269,
+      "gpu_utilization_p10_pct": 48.900000000000006,
+      "invocation_wall_seconds": 211.36722813174129,
+      "metadata_path": "artifacts/t3_calibration/bench_hf_200_holdout_union/run-metadata.json",
+      "name": "bench_hf_200_holdout_union",
+      "oom_events": [],
+      "output": {
+        "bytes": 382837,
+        "path": "artifacts/t3_calibration/bench_hf_200_holdout_union/generations.jsonl",
+        "sha256": "651908c7963760392fb75101fcf954adf2f0ffa975d66acd884a092032a10f40"
+      },
+      "peak_vram_mib": 20802.3125,
+      "selected_ids_sha256": "ead4396e2e40bcb223d3178e0ebe394e8332b2ba9105b327ef564385f15c42ce",
+      "selected_rows": 200,
+      "settings": {
+        "attn_implementation": "sdpa",
+        "max_batch_size": 256,
+        "max_batch_tokens": 294912
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 99.56603773584905,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9629629629629629,
+      "generation_wall_seconds": 26.76790800690651,
+      "generations_per_second": 7.471633567643654,
+      "gpu_utilization_mean_pct": 97.72222222222223,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 123.72893186099827,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_200_bi_gmu092_s384_a/run-metadata.json",
+      "name": "bench_vllm_200_bi_gmu092_s384_a",
+      "oom_events": [],
+      "output": {
+        "bytes": 378095,
+        "path": "artifacts/t3_calibration/bench_vllm_200_bi_gmu092_s384_a/generations.jsonl",
+        "sha256": "65022aa8cd94ebf1013f078066f578082df3ca3e8bc591cf71bc117acc3f47fc"
+      },
+      "peak_vram_mib": 24240.3125,
+      "selected_ids_sha256": "ead4396e2e40bcb223d3178e0ebe394e8332b2ba9105b327ef564385f15c42ce",
+      "selected_rows": 200,
+      "settings": {
+        "batch_invariant": true,
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.92,
+        "max_model_len": 4096,
+        "max_num_seqs": 384,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 100.0,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9814814814814815,
+      "generation_wall_seconds": 26.868063548579812,
+      "generations_per_second": 7.443781709030965,
+      "gpu_utilization_mean_pct": 98.14814814814815,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 78.7802374176681,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_200_bi_gmu092_s384_b/run-metadata.json",
+      "name": "bench_vllm_200_bi_gmu092_s384_b",
+      "oom_events": [],
+      "output": {
+        "bytes": 378095,
+        "path": "artifacts/t3_calibration/bench_vllm_200_bi_gmu092_s384_b/generations.jsonl",
+        "sha256": "65022aa8cd94ebf1013f078066f578082df3ca3e8bc591cf71bc117acc3f47fc"
+      },
+      "peak_vram_mib": 24260.3125,
+      "selected_ids_sha256": "ead4396e2e40bcb223d3178e0ebe394e8332b2ba9105b327ef564385f15c42ce",
+      "selected_rows": 200,
+      "settings": {
+        "batch_invariant": true,
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.92,
+        "max_model_len": 4096,
+        "max_num_seqs": 384,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 100.0,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9583333333333334,
+      "generation_wall_seconds": 11.697752444073558,
+      "generations_per_second": 17.09730146506273,
+      "gpu_utilization_mean_pct": 95.83333333333333,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 54.77311337925494,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_200_gmu085_s256/run-metadata.json",
+      "name": "bench_vllm_200_gmu085_s256",
+      "oom_events": [],
+      "output": {
+        "bytes": 341729,
+        "path": "artifacts/t3_calibration/bench_vllm_200_gmu085_s256/generations.jsonl",
+        "sha256": "fb31434ca482c437be35cb227c5fc6b8b0400d31f0d4c24d870cbdb2334b735b"
+      },
+      "peak_vram_mib": 22048.3125,
+      "selected_ids_sha256": "44bed057f5318cb82c9dbb607b0bfc4b41387461ddd8ee6e115892660a03d58f",
+      "selected_rows": 200,
+      "settings": {
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.85,
+        "max_model_len": 4096,
+        "max_num_seqs": 256,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 100.0,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9166666666666666,
+      "generation_wall_seconds": 11.700387168675661,
+      "generations_per_second": 17.093451448806846,
+      "gpu_utilization_mean_pct": 91.66666666666667,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 49.954527175053954,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_200_gmu090_s256/run-metadata.json",
+      "name": "bench_vllm_200_gmu090_s256",
+      "oom_events": [],
+      "output": {
+        "bytes": 341729,
+        "path": "artifacts/t3_calibration/bench_vllm_200_gmu090_s256/generations.jsonl",
+        "sha256": "def2a4d30de32cb173243639fe2dbba5088507beef0bdb675793504f1ef6e568"
+      },
+      "peak_vram_mib": 23248.3125,
+      "selected_ids_sha256": "44bed057f5318cb82c9dbb607b0bfc4b41387461ddd8ee6e115892660a03d58f",
+      "selected_rows": 200,
+      "settings": {
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.9,
+        "max_model_len": 4096,
+        "max_num_seqs": 256,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 100.0,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9583333333333334,
+      "generation_wall_seconds": 11.68120700865984,
+      "generations_per_second": 17.121518337251484,
+      "gpu_utilization_mean_pct": 95.83333333333333,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 51.713792093098164,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_200_gmu092_s256/run-metadata.json",
+      "name": "bench_vllm_200_gmu092_s256",
+      "oom_events": [],
+      "output": {
+        "bytes": 341729,
+        "path": "artifacts/t3_calibration/bench_vllm_200_gmu092_s256/generations.jsonl",
+        "sha256": "c842a8dfb6389470fa27b0b45de115be57a59930219e56b672dc52aa8c92d49a"
+      },
+      "peak_vram_mib": 23728.3125,
+      "selected_ids_sha256": "44bed057f5318cb82c9dbb607b0bfc4b41387461ddd8ee6e115892660a03d58f",
+      "selected_rows": 200,
+      "settings": {
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.92,
+        "max_model_len": 4096,
+        "max_num_seqs": 256,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 100.0,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9746835443037974,
+      "generation_wall_seconds": 39.5584007371217,
+      "generations_per_second": 12.942889258906211,
+      "gpu_utilization_mean_pct": 97.46835443037975,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 91.27004025131464,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_512_bi_gmu092_s384/run-metadata.json",
+      "name": "bench_vllm_512_bi_gmu092_s384",
+      "oom_events": [],
+      "output": {
+        "bytes": 944212,
+        "path": "artifacts/t3_calibration/bench_vllm_512_bi_gmu092_s384/generations.jsonl",
+        "sha256": "d75a598481bd2be0bcadb8630b360569b022dd215c21557a41fca3ce1b09d7c5"
+      },
+      "peak_vram_mib": 24260.3125,
+      "selected_ids_sha256": "e20df9581bb4c2ae5669305a0c35e3cba6d571e01b83d07830ec48c478516e39",
+      "selected_rows": 512,
+      "settings": {
+        "batch_invariant": true,
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.92,
+        "max_model_len": 4096,
+        "max_num_seqs": 384,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 97.97777777777777,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.9565217391304348,
+      "generation_wall_seconds": 22.843036679551005,
+      "generations_per_second": 22.413832590757966,
+      "gpu_utilization_mean_pct": 95.84782608695652,
+      "gpu_utilization_p10_pct": 100.0,
+      "invocation_wall_seconds": 62.363573955371976,
+      "metadata_path": "artifacts/t3_calibration/bench_vllm_512_gmu092_s384/run-metadata.json",
+      "name": "bench_vllm_512_gmu092_s384",
+      "oom_events": [],
+      "output": {
+        "bytes": 909006,
+        "path": "artifacts/t3_calibration/bench_vllm_512_gmu092_s384/generations.jsonl",
+        "sha256": "19f0a7fd45130288fa943b7c52717ab27ace6638759e29bb5a595c232fa711a8"
+      },
+      "peak_vram_mib": 23958.3125,
+      "selected_ids_sha256": "8358aa4320854a34eda12ab570d5d210b8b37ad1ae1276b838005bfbbacd764e",
+      "selected_rows": 512,
+      "settings": {
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.92,
+        "max_model_len": 4096,
+        "max_num_seqs": 384,
+        "request_chunk_size": 1024
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 27.0,
+      "engine": "hf",
+      "fraction_samples_at_least_90_pct": 0.0,
+      "generation_wall_seconds": 3.215531710535288,
+      "generations_per_second": 0.6219811154240059,
+      "gpu_utilization_mean_pct": 27.0,
+      "gpu_utilization_p10_pct": 1.0,
+      "invocation_wall_seconds": 9.649251101538539,
+      "metadata_path": "artifacts/t3_calibration/smoke_hf/run-metadata.json",
+      "name": "smoke_hf",
+      "oom_events": [],
+      "output": {
+        "bytes": 1519,
+        "path": "artifacts/t3_calibration/smoke_hf/generations.jsonl",
+        "sha256": "18517b15d8e83d4c2424468ea7f302a83ef7e95227251719e19d794d257cf949"
+      },
+      "peak_vram_mib": 6950.3125,
+      "selected_ids_sha256": "a4f163d5892c3e4573fae941b0dc437f1ccfc90cb646a11c189fdd47e7c22632",
+      "selected_rows": 2,
+      "settings": {
+        "attn_implementation": "sdpa",
+        "max_batch_size": 256,
+        "max_batch_tokens": 294912
+      }
+    },
+    {
+      "active_gpu_utilization_mean_pct": 97.0,
+      "engine": "vllm",
+      "fraction_samples_at_least_90_pct": 0.5,
+      "generation_wall_seconds": 0.589458528906107,
+      "generations_per_second": 3.3929443750886397,
+      "gpu_utilization_mean_pct": 48.5,
+      "gpu_utilization_p10_pct": 9.700000000000001,
+      "invocation_wall_seconds": 155.550111990422,
+      "metadata_path": "artifacts/t3_calibration/smoke_vllm/run-metadata.json",
+      "name": "smoke_vllm",
+      "oom_events": [],
+      "output": {
+        "bytes": 1561,
+        "path": "artifacts/t3_calibration/smoke_vllm/generations.jsonl",
+        "sha256": "9350b242c18aa5190afb8a7d0dcbf0eddb4566d070b896bb8027b665862b840d"
+      },
+      "peak_vram_mib": 21848.3125,
+      "selected_ids_sha256": "a4f163d5892c3e4573fae941b0dc437f1ccfc90cb646a11c189fdd47e7c22632",
+      "selected_rows": 2,
+      "settings": {
+        "dtype": "bfloat16",
+        "enable_prefix_caching": true,
+        "enforce_eager": false,
+        "gpu_memory_utilization": 0.85,
+        "max_model_len": 4096,
+        "max_num_seqs": 256,
+        "request_chunk_size": 1024
+      }
+    }
+  ]
+}

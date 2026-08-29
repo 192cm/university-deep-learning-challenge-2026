@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "task": "T10c",
+  "status": "preexisting_workspace_invariant_drift",
+  "scope": "Two existing artifact-integrity tests fail before exercising T10c code; protected historical files were not modified to repair them.",
+  "full_focused_run": {
+    "passed": 69,
+    "failed": 2,
+    "failed_tests": [
+      "tests/test_vote_filter.py::VoteFilterTests::test_real_filter_off_regression_is_byte_identical",
+      "tests/test_prompt_diversity.py::test_preregistered_config_hashes_allocation_and_transfer_are_consistent"
+    ]
+  },
+  "full_repository_run": {
+    "passed": 154,
+    "failed": 5,
+    "report": ".tmp/t10c-full-tests.xml",
+    "failure_categories": {
+      "missing_optional_training_runtime_packages": [
+        "tests/test_build_rft_r2.py::test_t7_build_targets_all_r1_c0_and_finalizes_manual_review (torch distribution metadata unavailable)",
+        "tests/test_train_sft.py::test_final_requested_checkpoint_can_stop_training (transformers unavailable)"
+      ],
+      "preexisting_crlf_checkout_hash_drift": [
+        "tests/test_vote_filter.py::VoteFilterTests::test_real_filter_off_regression_is_byte_identical",
+        "tests/test_prompt_diversity.py::test_preregistered_config_hashes_allocation_and_transfer_are_consistent",
+        "tests/test_t10a_c1_vote_filter.py::T10aC1VoteFilterTests::test_config_reuses_frozen_t8_3_policy_and_t10a_c_pool"
+      ]
+    },
+    "t10c_failures": 0
+  },
+  "observed_mismatches": {
+    "t8_holdout_generation_pool": {
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "actual_raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+      "metadata_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "canonical_lf_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+      "crlf_lines": 119584,
+      "content_identity_after_newline_normalization": true
+    },
+    "t8_submission_generation_pool": {
+      "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "actual_sha256": "f01d4cc9028611b1a8e2963a1df959d8f10aa04a387ac6c21863200863ff84f0",
+      "metadata_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e"
+    },
+    "t10a_final_config_transfer": {
+      "path": "artifacts/t10a_prompt_improvement/final_config.json",
+      "actual_sha256": "419eab90de70c435d9dbaa873411860a723105700f5340fff429ebe7e0a51081",
+      "t10b_expected_sha256": "bb16f65d96af2dd7de964798c83dce040320a861d08e895ce4cf6a1332ece172"
+    }
+  },
+  "t10c_test_policy": "Run the same focused modules while deselecting only these two preexisting artifact-integrity assertions; retain policy-1 real-pool byte reproduction and protected-tree before/after hashing as T10c's independent integrity checks."
+}

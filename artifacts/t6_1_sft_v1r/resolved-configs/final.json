@@ -1,0 +1,128 @@
+{
+  "adoption_rule": {
+    "hard_or_format_max_regression_pp": 2.0,
+    "nonpositive": "reject",
+    "positive_but_nonsignificant": "hold",
+    "primary_scope": "artifacts/t3_baseline/holdout_union_ids.txt",
+    "required_delta_pp": 1.5,
+    "required_mcnemar_p_below": 0.05
+  },
+  "calibration": {
+    "adopt_fraction_of_maximum": 0.9,
+    "batch_sizes": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "compare_gradient_checkpointing": [
+      true
+    ],
+    "max_steps": 4,
+    "minimum_mean_gpu_utilization_pct": 90.0,
+    "probe_rows": 256
+  },
+  "external_cot_policy": {
+    "max_solution_words": 400,
+    "require_assistant_eos_labeled_100_percent": true,
+    "required_rows": 15000
+  },
+  "hp_sweep": {
+    "checkpoint_epochs": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "epochs": 1.0,
+    "learning_rates": [
+      1e-05,
+      3e-05,
+      0.0001
+    ]
+  },
+  "lora": {
+    "bias": "none",
+    "lora_alpha": 128,
+    "lora_dropout": 0.0,
+    "r": 64,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "task_type": "CAUSAL_LM"
+  },
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "precision_policy": {
+    "below_threshold_action": "retain NF4 QLoRA",
+    "bf16_path": "existing vLLM bf16 rft_r1 generations",
+    "nf4_path": "HF generate with the existing T6 rft_r1 adapter",
+    "probe_scope": "random holdout 1,637 questions",
+    "switch_to_bf16_lora_at_absolute_accuracy_difference_pp": 1.0
+  },
+  "quantization": {
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "load_in_4bit": false
+  },
+  "resolved_from_hp_sweep": {
+    "path": "artifacts/t6_1_sft_v1r/hp-sweep.json",
+    "selected_learning_rate": 0.0001,
+    "sha256": "bc533c7e04e0ff8b36323ad9f009030af4aeea866d6939d41f5956eaaaf9ad63"
+  },
+  "resolved_from_precision_probe": true,
+  "resolved_selected_checkpoint": {
+    "epoch": 0.75,
+    "path": "artifacts/t6_1_sft_v1r/curve/validation/checkpoint-155/adapter",
+    "validation_accuracy": 0.488
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "task": "T6-1",
+  "training": {
+    "bf16": true,
+    "checkpoint_epochs": [
+      0.75
+    ],
+    "dataloader_num_workers": 16,
+    "dataloader_prefetch_factor": 2,
+    "effective_batch_size": 32,
+    "group_by_length": true,
+    "learning_rate": 0.0001,
+    "logging_steps": 1,
+    "lr_scheduler_type": "cosine",
+    "max_grad_norm": 1.0,
+    "max_length": 2048,
+    "num_train_epochs": 2.0,
+    "optim": "paged_adamw_8bit",
+    "packing": false,
+    "save_steps": 100,
+    "save_total_limit": 12,
+    "target_preservation_tokens": 128,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0
+  },
+  "validation": {
+    "allocation": {
+      "c=0": 100,
+      "c=1-3": 100,
+      "c=13-16": 100,
+      "c=4-7": 100,
+      "c=8-12": 100
+    },
+    "rows": 500,
+    "selection_only": true
+  }
+}

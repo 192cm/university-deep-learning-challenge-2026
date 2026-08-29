@@ -1,0 +1,63 @@
+{
+  "completion_checks": {
+    "generation_source_resolved_from_t6_1": true,
+    "r1_audit_covers_rft_pool": true,
+    "target_count_is_preregistered_1801": true,
+    "target_ids_in_canonical_order": true,
+    "targets_are_exactly_all_r1_c0": true
+  },
+  "counts": {
+    "expected_generations": 57632,
+    "image_dependent_r1_c0_included_for_audit": 9,
+    "r1_c0_including_image": 1801,
+    "rft_pool": 12636,
+    "samples_per_question": 32,
+    "target_questions": 1801
+  },
+  "created_at_utc": "2026-08-22T07:51:01.133441+00:00",
+  "generation_source": {
+    "adapter_arm": null,
+    "adapter_path": null,
+    "kind": "base",
+    "name": "T4 base",
+    "reason": "T6-1 adopted no adapter; its manifest explicitly routes T7 to T4 base"
+  },
+  "outputs": {
+    "target_ids": {
+      "bytes": 23413,
+      "path": "data/rft_r2/target_ids.txt",
+      "rows": 1801,
+      "sha256": "7f3751af62dc1dc7596094810d8e71600d5b822eaa17470804d2c2ca5809026b"
+    }
+  },
+  "schema_version": 1,
+  "seed": 42,
+  "sources": {
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "r1_audit": {
+      "bytes": 570712,
+      "path": "data/rft_r1/audit.csv",
+      "rows": 12636,
+      "sha256": "2d91343261d295c021134a6baa09d5dbc21683d1efa6855c3eb0fcbdc015a4a4"
+    },
+    "rft_ids": {
+      "bytes": 164268,
+      "path": "data/rft_pool_ids.txt",
+      "rows": 12636,
+      "sha256": "9549a6a1a59cfcf9fe8d810a2dce86e3785722bd172d4751289406adc010bef6"
+    },
+    "t6_1_manifest": {
+      "bytes": 10524,
+      "path": "artifacts/t6_1_sft_v1r/manifest.json",
+      "sha256": "b28501167bcc8be772c6ec359eea60a0a87ed86ecb63b6b6e01fc38c78aad9a5"
+    }
+  },
+  "stage": "prepare_r2",
+  "status": "complete",
+  "task": "T7"
+}

@@ -1,0 +1,328 @@
+{
+  "completion_checks": {
+    "A_and_B_reused_with_zero_new_generations": true,
+    "all_four_split_guardrails_recorded": true,
+    "all_generation_pool_hashes_preserved": true,
+    "arm_A_reproduces_existing_t8_3_predictions": true,
+    "existing_t8_through_t9_hashes_preserved": true,
+    "extraction_path_distributions_recorded": true,
+    "focused_tests_passed": true,
+    "four_complete_k32_pools_over_3737_questions": true,
+    "four_prompt_utf8_hashes_recorded": true,
+    "paired_mcnemar_for_B_C_D_recorded": true,
+    "predictions_frozen_before_labels": true,
+    "preregistered_decision_recorded": true,
+    "t10b_base_template_explicit": true,
+    "t8_3_filter_interaction_recorded": true
+  },
+  "created_at_utc": "2026-08-24T15:21:29.378702+00:00",
+  "decision": {
+    "adopted": false,
+    "adopted_arm": null,
+    "arms": {
+      "B": {
+        "arm": "B",
+        "criteria": {
+          "exact_mcnemar_p_below_0_05": false,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "exact_mcnemar_p": 0.6258605795002065,
+          "format_drop_pp": -2.734375,
+          "hard_drop_pp": -0.5454545454545434,
+          "union_delta_pp": 0.21407546160021407,
+          "union_invalid_increase_pp": -0.15219427348140221
+        },
+        "prompt": "strong_cot",
+        "status": "hold"
+      },
+      "C": {
+        "arm": "C",
+        "criteria": {
+          "exact_mcnemar_p_below_0_05": false,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "exact_mcnemar_p": 0.9424925696532238,
+          "format_drop_pp": -3.125,
+          "hard_drop_pp": 1.2727272727272754,
+          "union_delta_pp": 0.05351886540005352,
+          "union_invalid_increase_pp": 0.5736553385068237
+        },
+        "prompt": "cot_boxed",
+        "status": "hold"
+      },
+      "D": {
+        "arm": "D",
+        "criteria": {
+          "exact_mcnemar_p_below_0_05": false,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "exact_mcnemar_p": 0.2542469517320609,
+          "format_drop_pp": -0.390625,
+          "hard_drop_pp": 0.363636363636366,
+          "union_delta_pp": -0.45491035590045487,
+          "union_invalid_increase_pp": 0.3587436446347338
+        },
+        "prompt": "cot_brief",
+        "status": "reject"
+      }
+    },
+    "final_arm": "A",
+    "final_prompt_name": "base",
+    "primary_order": [
+      "C",
+      "D",
+      "B"
+    ],
+    "reason": "At least one candidate improved but no candidate passed every adoption gate.",
+    "status": "hold"
+  },
+  "elapsed_seconds": 103.02646408999863,
+  "environment": {
+    "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+    "python_version": "3.12.13"
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "n": 32,
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "ground_truth_loaded_after_prediction_freeze": true,
+  "model": {
+    "adapter": null,
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "objective": "compare four byte-frozen prompts at fixed majority@32 and transfer the preregistered winner to T10b",
+  "outputs": {
+    "comparison": {
+      "bytes": 102569,
+      "path": "artifacts/t10a_prompt_improvement/comparison.json",
+      "sha256": "85f88f0749498f7e11171a2dcba7df147483f876f0d115fe3cd3425e85e18eda"
+    },
+    "comparison_markdown": {
+      "bytes": 571,
+      "path": "artifacts/t10a_prompt_improvement/comparison.md",
+      "sha256": "3743945eaf0b28fd8a9867fd19e77f4b72c0c038723e09ba504e614cee9bd020"
+    },
+    "extraction_path_analysis": {
+      "bytes": 4106,
+      "path": "artifacts/t10a_prompt_improvement/extraction-path-analysis.json",
+      "sha256": "dc43514d81f6621cab6db29fd233b7ba138c0e036d20b593d578d715fa185ca6"
+    },
+    "filter_interaction": {
+      "bytes": 115855,
+      "path": "artifacts/t10a_prompt_improvement/filter-interaction.json",
+      "sha256": "ec2414318d2332a4950809ed193af2e44dca5be3f70907acc8c7289ee6055613"
+    },
+    "final_config": {
+      "bytes": 3204,
+      "path": "artifacts/t10a_prompt_improvement/final_config.json",
+      "sha256": "bb16f65d96af2dd7de964798c83dce040320a861d08e895ce4cf6a1332ece172"
+    },
+    "prediction_freeze": {
+      "bytes": 1772048,
+      "path": "artifacts/t10a_prompt_improvement/prediction-freeze.json",
+      "rows": 3737,
+      "sha256": "fe712fc82efffdbd3e99872890b961b27d55d4651485b15d40bf89d17dc042e8"
+    },
+    "tests": {
+      "bytes": 8382,
+      "path": "artifacts/t10a_prompt_improvement/tests.xml",
+      "sha256": "2ed301f6f3d52d926c487384f9708242f95d793875aa80f946dd06e48ac00c56"
+    }
+  },
+  "presentation_record": {
+    "decision": "hold",
+    "delta_vs_A_pp": 0.0,
+    "final_arm": "A",
+    "final_prompt": "base",
+    "format_accuracy": 0.50390625,
+    "hard_accuracy": 0.39636363636363636,
+    "mcnemar_p_vs_A": 1.0,
+    "random_accuracy": 0.74282223579719,
+    "template_accuracy": 0.7397678680513133,
+    "union_accuracy": 0.693069306930693,
+    "union_invalid_output_rate": 0.007726786192132727
+  },
+  "prompts": {
+    "base": {
+      "sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+      "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+      "utf8_bytes": 163
+    },
+    "cot_boxed": {
+      "sha256": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+      "template": "Think through this problem step by step, showing your reasoning clearly.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+      "utf8_bytes": 250
+    },
+    "cot_brief": {
+      "sha256": "ac00dd5497039e7af7806146047ac6646e386328c5561e5613813a92b6f60061",
+      "template": "Solve the following problem step by step. Show your work, then state the final answer as\nFINAL_ANSWER: <answer>.\n\nProblem:\n{question}",
+      "utf8_bytes": 133
+    },
+    "strong_cot": {
+      "sha256": "47229e28b263da4400686e0c05a4386b92899869a591e373ad6eba78b819195b",
+      "template": "Solve the following problem carefully.\n1. Identify all relevant quantities and constraints.\n2. Derive the answer step by step.\n3. Independently verify the reasoning and calculation.\nWrite the final answer on the last line exactly as FINAL_ANSWER: <answer>.\nDo not write anything after that line.\n\nProblem:\n{question}",
+      "utf8_bytes": 316
+    }
+  },
+  "protected_inputs": {
+    "after_verification": {
+      "file_count": 343,
+      "mismatches": [],
+      "verified": true
+    },
+    "snapshot": {
+      "bytes": 66316,
+      "path": "artifacts/t10a_prompt_improvement/invariant-snapshot.json",
+      "sha256": "0a03fa3feb2246984f8d1fec66ef51bd953bc52d3ef05853b52696541c83890e"
+    }
+  },
+  "raw_generations_deleted": false,
+  "schema_version": 1,
+  "sources": {
+    "arms": {
+      "A": {
+        "generations": {
+          "bytes": 234212343,
+          "path": "artifacts/t8_self_consistency/generations.jsonl",
+          "rows": 119584,
+          "sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54"
+        },
+        "metadata": {
+          "bytes": 3384272,
+          "path": "artifacts/t8_self_consistency/run-metadata.json",
+          "sha256": "419a84f14aff7cd7f8a42dedc1872600d1aa193704c5cd4f993abadca89a7abd"
+        }
+      },
+      "B": {
+        "generations": {
+          "bytes": 299788825,
+          "path": "artifacts/t8_2_cot_routing/strong_cot/generations.jsonl",
+          "rows": 119584,
+          "sha256": "3d4ad7d17fd252a313ca520ca28513ce02fd21ca28698074ea1b05695bbcb4a2"
+        },
+        "metadata": {
+          "bytes": 4156120,
+          "path": "artifacts/t8_2_cot_routing/strong_cot/run-metadata.json",
+          "sha256": "6c7ec5ecb760490878fb0313b2ba65e42953ff37f78e7137943c84e3dbf2b9f1"
+        }
+      },
+      "C": {
+        "generations": {
+          "bytes": 271659458,
+          "path": "artifacts/t10a_prompt_improvement/cot_boxed/generations.jsonl",
+          "rows": 119584,
+          "sha256": "17753da3393513fc0b6595e7d199ea6042528c594610f0aa7e51ba76fed7788d"
+        },
+        "metadata": {
+          "bytes": 3819459,
+          "path": "artifacts/t10a_prompt_improvement/cot_boxed/run-metadata.json",
+          "sha256": "9554a883364d0d251d08c58face8d8ce3297ea549ede77a7b3fa0780ce2fe27d"
+        }
+      },
+      "D": {
+        "generations": {
+          "bytes": 276918610,
+          "path": "artifacts/t10a_prompt_improvement/cot_brief/generations.jsonl",
+          "rows": 119584,
+          "sha256": "8f6c0259181d817b8f9488ab9996e5986ac38a2bbcca533bd55fb6eb3806da49"
+        },
+        "metadata": {
+          "bytes": 3899539,
+          "path": "artifacts/t10a_prompt_improvement/cot_brief/run-metadata.json",
+          "sha256": "78683fc5eb7bf1ee9ba00a8c6b376c53599c5ad5098aa5cde07bf13753d2850a"
+        }
+      }
+    },
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "config": {
+      "bytes": 5351,
+      "path": "configs/t10a_prompt_improvement.json",
+      "sha256": "2c9655a0d32f7f5d2c7b7b76c7c932e4fe501934b111b73be78a106774c66da2"
+    },
+    "generator": {
+      "bytes": 58233,
+      "path": "src/generate.py",
+      "sha256": "327e68228e7e2917d1a315dbafca0aba6ca831ec10cb68c6d0e44bff2e6868d3"
+    },
+    "implementation": {
+      "bytes": 42013,
+      "path": "/workspace/src/prompt_improvement.py",
+      "sha256": "1dbf2ebbf5f780a2571924d239813a8e6e617906c0c2a4c4ab146352c96f158f"
+    },
+    "preflight": {
+      "bytes": 3820,
+      "path": "artifacts/t10a_prompt_improvement/preflight.json",
+      "sha256": "3ad9670273c166dbe632506092f434468018b550407ae2e53afde0130656095e"
+    },
+    "splits": {
+      "format_diagnostic": {
+        "bytes": 114768,
+        "path": "data/splits/format_diagnostic.csv",
+        "rows": 256,
+        "sha256": "4862ead40601421680946cb1b70988284876cf325705fe6d2320c61a0c2fc82a"
+      },
+      "hard_diagnostic": {
+        "bytes": 274033,
+        "path": "data/splits/hard_diagnostic.csv",
+        "rows": 550,
+        "sha256": "b4710d1fedc4d4093ffb9ac249d9f0961330cdafe0b4ec8d09b417314109b50f"
+      },
+      "random_holdout": {
+        "bytes": 535264,
+        "path": "data/splits/random_holdout.csv",
+        "rows": 1637,
+        "sha256": "b3f69bb26cbf715bf4e3cda09164222f6ebaff3847d6d899173f0ae0ec88cf29"
+      },
+      "template_holdout": {
+        "bytes": 453525,
+        "path": "data/splits/template_holdout.csv",
+        "rows": 1637,
+        "sha256": "587a768ed89610a488a233f0bbcd237d7c8fcaea63eb09debadefbfb55c9fb13"
+      }
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    },
+    "vote_filter": {
+      "bytes": 46150,
+      "path": "src/vote_filter.py",
+      "sha256": "b52750e4655818512417a62cba6e469f47a98d4153ed1cfbbb61b0c988baf829"
+    }
+  },
+  "status": "complete",
+  "t10b_base_template": {
+    "prompt_name": "base",
+    "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "reason": "At least one candidate improved but no candidate passed every adoption gate.",
+    "source_task": "T8"
+  },
+  "task": "T10a"
+}

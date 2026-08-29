@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "scope": "Manually checked examples of genuine T8-6 reasoning or selection failures, chosen to illustrate recurring error patterns. This is illustrative rather than an exhaustive label audit.",
+  "cases": [
+    {
+      "id": "train-003015",
+      "pattern": "number_theory_remainder_to_gcd",
+      "stored_label": "29",
+      "t8_6_prediction": "1",
+      "correct_samples_of_32": 4,
+      "winner_votes_of_32": 24,
+      "evidence": "The required divisor is gcd(1255-8,1490-11)=gcd(1247,1479)=29.",
+      "interpretation": "The model often loses track of the remainder adjustment before applying the gcd."
+    },
+    {
+      "id": "train-003214",
+      "pattern": "geometry_coordinate_setup",
+      "stored_label": "650",
+      "t8_6_prediction": "2150",
+      "correct_samples_of_32": 3,
+      "winner_votes_of_32": 28,
+      "evidence": "A coordinate derivation using the 40 and 50 degree legs gives the vector between the base midpoints magnitude 650.",
+      "interpretation": "The model confuses a midpoint-to-midpoint length with a simple base average or offset."
+    },
+    {
+      "id": "train-003959",
+      "pattern": "constrained_linear_optimization",
+      "stored_label": "10",
+      "t8_6_prediction": "5",
+      "correct_samples_of_32": 0,
+      "winner_votes_of_32": 32,
+      "evidence": "The feasible set is a circle centered at (1,-2) with radius sqrt(5); maximizing x-2y gives 5+5=10.",
+      "interpretation": "The model keeps only the center contribution and misses the directional radius term. The prompt also contains a translation-instruction tail."
+    },
+    {
+      "id": "train-007230",
+      "pattern": "word_problem_irrelevant_detail",
+      "stored_label": "82",
+      "t8_6_prediction": "74",
+      "correct_samples_of_32": 4,
+      "winner_votes_of_32": 26,
+      "evidence": "Dan has 97 cards and sells 15, leaving 82; the eight torn cards are a distractor, not an additional removal.",
+      "interpretation": "The model subtracts every mentioned quantity instead of tracking the requested inventory change."
+    },
+    {
+      "id": "train-008043",
+      "pattern": "combinatorics_constraint_omission",
+      "stored_label": "12",
+      "t8_6_prediction": "252",
+      "correct_samples_of_32": 0,
+      "winner_votes_of_32": 31,
+      "evidence": "The ten intersections are the edges of K5; choosing five with no three collinear means every line has degree at most two, hence a 5-cycle. There are (5-1)!/2=12.",
+      "interpretation": "The model returns C(10,5)=252 and ignores the no-three-collinear restriction."
+    },
+    {
+      "id": "train-008317",
+      "pattern": "combinatorics_identical_objects",
+      "stored_label": "120",
+      "t8_6_prediction": "20",
+      "correct_samples_of_32": 7,
+      "winner_votes_of_32": 23,
+      "evidence": "Six books with three identical copies have 6!/3!=120 distinct arrangements.",
+      "interpretation": "The model uses a subset count instead of a multiset-permutation count."
+    },
+    {
+      "id": "train-013974",
+      "pattern": "algebra_strict_boundary",
+      "stored_label": "-220",
+      "t8_6_prediction": "-221",
+      "correct_samples_of_32": 2,
+      "winner_votes_of_32": 28,
+      "evidence": "Completing squares gives (x-5)^2+4(y+7)^2=k+221. Non-degeneracy requires k+221>0, so the least integer is -220.",
+      "interpretation": "The model chooses the degenerate equality boundary instead of enforcing the strict condition."
+    },
+    {
+      "id": "train-001960",
+      "pattern": "algebra_sign_branch",
+      "stored_label": "25",
+      "t8_6_prediction": "225",
+      "correct_samples_of_32": 2,
+      "winner_votes_of_32": 27,
+      "evidence": "The two square roots must be opposites: 2x+1=-(x-7), giving x=2 and the number 25.",
+      "interpretation": "The model mishandles the positive/negative square-root branch."
+    }
+  ]
+}

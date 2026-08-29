@@ -1,0 +1,98 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments and local package metadata
+.venv/
+venv/
+env/
+ENV/
+node_modules
+*.egg-info/
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary files and build output
+.tmp/
+tmp/
+build/
+dist/
+*.tmp
+*.temp
+*.swp
+*~
+
+# Experiment tracking and ML caches
+.cache/
+checkpoints/
+runs/
+wandb/
+mlruns/
+tensorboard/
+
+# Competition-provided datasets must never be published
+data/
+
+# Row-level outputs that may contain competition data
+*.jsonl
+*.ndjson
+*questions.csv
+gold.csv
+question_diagnostics.csv
+error_cases.csv
+evaluation.csv
+shuffle.csv
+example_cases.csv
+example_cases.json
+report/**/artifact.json
+artifacts/**/train_error_analysis/summary.json
+
+# Model weights, optimizer state, and tokenized datasets
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.arrow
+artifacts/**/tokenized-dataset/
+
+# Generated model-package files
+artifacts/**/tokenizer.json
+artifacts/**/tokenizer_config.json
+artifacts/**/adapter_config.json
+artifacts/**/special_tokens_map.json
+artifacts/**/generation_config.json
+artifacts/**/chat_template.jinja
+artifacts/**/adapter/README.md
+artifacts/**/adapters/*/README.md
+
+# Archives and runtime markers
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.xz
+*.zst
+*.7z
+*.ready

@@ -1,0 +1,122 @@
+{
+  "completed_at_utc": "2026-08-28T22:12:18.229908+00:00",
+  "effective_config": {
+    "engine": "hf",
+    "generation": {
+      "do_sample": false,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 2048,
+      "n": 1,
+      "seed": 12042,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": false,
+      "max_batch_size": 128,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "{question}",
+    "schema_version": 1,
+    "task": "T9",
+    "vllm": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 256,
+      "request_chunk_size": 1024
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python_version": "3.12.14",
+    "torch_cuda_runtime": "13.0",
+    "torch_version": "2.13.0+cu130",
+    "vllm_batch_invariant": null
+  },
+  "invocation_wall_seconds": 5.439513223012909,
+  "output": {
+    "path": "artifacts/t12b_4970_override/leaderboard-label-blind/fallback-stage2-generations.jsonl",
+    "rows": 3,
+    "sha256": "0d7021795a24613d5d4f66fe0d967971664dc83b0b5916df02ee5f89ddf68859"
+  },
+  "prompt_tokenization": {
+    "chat_template_applied": true,
+    "max_input_tokens": 2048,
+    "padding_side": "left",
+    "truncated_prompts": 0,
+    "truncation_side": "right"
+  },
+  "results": {
+    "generated_this_invocation": 3,
+    "generation_wall_seconds": 0.7721770340576768,
+    "generations_per_second": 3.8851194320497218,
+    "gpu_monitor": {
+      "active_utilization_gpu_pct": {
+        "max": null,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "p10": null,
+        "p90": null
+      },
+      "error": "ModuleNotFoundError: No module named 'pynvml'",
+      "fraction_active_samples_at_least_90_pct": null,
+      "fraction_all_samples_at_least_90_pct": null,
+      "peak_memory_used_mib": null,
+      "raw_samples": [],
+      "samples": 0,
+      "sampling_interval_seconds": 0.5,
+      "utilization_gpu_pct": {
+        "max": null,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "p10": null,
+        "p90": null
+      }
+    },
+    "oom_events": [],
+    "planned_batches": 1,
+    "torch_peak_allocated_mib": 6004.54833984375
+  },
+  "resume": {
+    "cached_generations_at_start": 0,
+    "pending_generations_at_start": 3
+  },
+  "run_fingerprint": "d9d0662dee4905d55509970c293f3509eba5c264dd709ac35dfe4aac35588bef",
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "path": "configs/t12b_fallback_repair.json",
+      "sha256": "d273a7a33b1f9eab9dab93ead13b95f947acc1093ad1f2e7a71c5624a6f752df"
+    },
+    "ids_file": null,
+    "input": {
+      "path": "artifacts/t12b_4970_override/leaderboard-label-blind/fallback-repair-questions.csv",
+      "rows_before_selection": 3,
+      "sha256": "a570417513bbd4f557c7207e12a2e496efe0e308debdaabaa00788ccf4dc3227"
+    },
+    "max_prompts": null,
+    "selected_ids_sha256": "1895c7f38b44dfed118f4eb862a7be76e03ce61cb896e39f466e86c2173110dd",
+    "selected_rows": 3,
+    "selection_seed": 42
+  },
+  "started_at_utc": "2026-08-28T22:12:12.790399+00:00",
+  "status": "complete",
+  "task": "T9"
+}

@@ -1,0 +1,136 @@
+{
+  "artifacts": {
+    "adapter_config": {
+      "bytes": 1200,
+      "path": "artifacts/t12_cmu_orm/adapter/adapter_config.json",
+      "sha256": "77659a00b527917dcbe8dfa22c7e8eef1f851de9c28fb98e5afd424a9e96f265"
+    },
+    "distributed_run": {
+      "bytes": 1237,
+      "path": "artifacts/t12_cmu_orm/distributed-run-manifest.json",
+      "sha256": "54c76ad4377a1e71e0cfd7437f0531f302acf206e60c0601644ea533dedd229a"
+    },
+    "fresh_evaluation": {
+      "bytes": 440044,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/evaluation.json",
+      "sha256": "6ad5ca4ab285a12f51435dbdc425bacf56a380744ab6afb1d7c38e37185b0111"
+    },
+    "fresh_generation_manifest": {
+      "bytes": 24919,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/generation-shard-manifest.json",
+      "sha256": "28bc9efb5f7745709208fffbc55b77868e88a4eec7173fc1cc1b4f89dc1e483e"
+    },
+    "fresh_generation_merge": {
+      "bytes": 841941,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/generation-merge-audit.json",
+      "sha256": "60e00ef1d3a9394431b0a9092e90f9e49a32db7bf07e4eb234dea7dfc46e37e0"
+    },
+    "fresh_generations": {
+      "bytes": 57447393,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/generations.jsonl",
+      "sha256": "ddd4cddbed32fb272d6c1a46560a9a0db93c3546044cc9e7c9caf3547c676b9f"
+    },
+    "fresh_group_weights": {
+      "bytes": 1247246,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/group-weights.jsonl",
+      "sha256": "8a48546559925b1c7b4c5aba233a9654f126b3625da2f7f2920e611ef8e41181"
+    },
+    "fresh_label_blind_freeze": {
+      "bytes": 2377,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/label-blind-freeze.json",
+      "sha256": "68c749fab65167dd5f6daa035ecddcecb36f0cf68e4fcb7d7210c57085a06d48"
+    },
+    "fresh_predictions": {
+      "bytes": 223459,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/predictions.jsonl",
+      "sha256": "71faff00026c0c748dd101354984560f364313a275d4a7ed5cacd65f4969ef98"
+    },
+    "fresh_report": {
+      "bytes": 2956,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/evaluation.md",
+      "sha256": "a8e208c984c8e2778b8774f61d5824d44b17c14b433ac8b0604d5137e02849a4"
+    },
+    "fresh_score_manifest": {
+      "bytes": 855060,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/score-shard-manifest.json",
+      "sha256": "691a70d10efa92c2b920f083083e66bc683a439176e56c104038a6351def919f"
+    },
+    "fresh_score_merge": {
+      "bytes": 7136,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/score-merge-audit.json",
+      "sha256": "e594b73d860c1f704d0e7cd485ed9c48cd7bd70764dde5013ebaa6c4a4ac7205"
+    },
+    "fresh_scores": {
+      "bytes": 12250467,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/candidate-scores.jsonl",
+      "sha256": "18f6fb37dc6818ff39c13e486a185fdbfa0ee7a226e549967c3b5470101d2b20"
+    },
+    "hardware_preflight": {
+      "bytes": 3033,
+      "path": "artifacts/t12_cmu_orm/hardware-preflight.json",
+      "sha256": "b53be021c93b9674fd066a01ab60ab137021042b4b0a0c1996738a1ec0fcdedb"
+    },
+    "input_verification": {
+      "bytes": 5013,
+      "path": "artifacts/t12_cmu_orm/input-verification.json",
+      "sha256": "220606cc6379bfadde9aa74e23a22c63294739ff521f001fba114da29fc22cfb"
+    },
+    "integration_smoke": {
+      "bytes": 1439,
+      "path": "artifacts/t12_cmu_orm/integration-smoke.json",
+      "sha256": "c03293598cfb548bc7d1702695743e639d44f55d112cc86b9484da416a07fe53"
+    },
+    "reused_t8_diagnostic": {
+      "bytes": 427,
+      "path": "artifacts/t12_cmu_orm/reused-t8-diagnostic.json",
+      "sha256": "750450a15fcbb81fd2bdbb701994f0ca7519c519988fc574fc69bf5d231bffc9"
+    },
+    "runtime": {
+      "bytes": 407970,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/runtime.json",
+      "sha256": "6800648137ddd8d003995b43101d500b5cf9e349db83396aaf21d7dbecafc65a"
+    },
+    "tests": {
+      "bytes": 6397,
+      "path": "artifacts/t12_cmu_orm/tests.xml",
+      "sha256": "ebad16f6c8887727735de62f1a133e73294a8e370a6195b66afd516c35a6b815"
+    },
+    "train": {
+      "bytes": 70602645,
+      "path": "data/cmu_orm/train.jsonl",
+      "sha256": "baa32811779901a888b59387ee611fffa182b16ecdc4a338adb8af950ad2fa8b"
+    },
+    "train_manifest": {
+      "bytes": 5942,
+      "path": "data/cmu_orm/train-manifest.json",
+      "sha256": "44167ab01ad78636083c28efa49d6e8dc54220957b6d418cdc0956a3a75eb5ee"
+    },
+    "train_metrics": {
+      "bytes": 12418,
+      "path": "artifacts/t12_cmu_orm/train-metrics.json",
+      "sha256": "42375aaae03fb23307e9c2232fc4f95f769cedd08a9aa23630e90eb3f9575312"
+    },
+    "validation": {
+      "bytes": 326541,
+      "path": "data/cmu_orm/validation.csv",
+      "sha256": "83769d276ba1205b5e8e8ee443ce285e53a8082a217928a0f0dbcb3d49e7ea05"
+    },
+    "validation_manifest": {
+      "bytes": 4932,
+      "path": "data/cmu_orm/validation-manifest.json",
+      "sha256": "d87791b139d2d1c5296a70f2ad73d65926ca2af27d058dcce759c3984c0dacdb"
+    }
+  },
+  "completed_at_utc": "2026-08-28T03:29:34.699914+00:00",
+  "decision": "HOLD",
+  "reused_t8_can_change_decision": false,
+  "schema_version": 1,
+  "status": "complete",
+  "submission_sha256": "def6780ce96d8baea920aee9aee5ecbd7a9af6e109e30036edaf1030ace186d3",
+  "submission_unchanged": true,
+  "t13": {
+    "load_orm_adapter": false,
+    "retain_existing_path": true
+  },
+  "task": "T12"
+}

@@ -1,0 +1,202 @@
+{
+  "best_t10c_candidate": {
+    "policy": "policy2",
+    "status": "hold",
+    "vs_original_t8": {
+      "both_correct": 2578,
+      "both_wrong": 1091,
+      "candidate_accuracy": 0.7048434573187048,
+      "candidate_correct_reference_wrong": 56,
+      "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+      "delta_95_ci_pp": [
+        0.7465723134228103,
+        1.6082577641795444
+      ],
+      "delta_pp": 1.1774150388011775,
+      "discordant": 68,
+      "questions": 3737,
+      "reference_accuracy": 0.693069306930693,
+      "reference_correct_candidate_wrong": 12,
+      "two_sided_exact_p": 6.209495737562187e-08
+    }
+  },
+  "combination": {
+    "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+    "generation_pool_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+    "k": 32,
+    "max_new_tokens": 2048,
+    "prompt": "T8 base prompt retained by T10a",
+    "prompt_strategy": "single T8 prompt retained by T10b",
+    "weighted_policy": "unfiltered_majority_k32"
+  },
+  "created_at_utc": "2026-08-26T12:05:41.093798+00:00",
+  "decision": {
+    "adopted": false,
+    "final_policy": "unfiltered_majority_k32",
+    "policy_decisions": {
+      "policy1": {
+        "adoption_eligible": false,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 6.802593482929839e-10,
+          "format_delta_pp": 2.734375,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.4717687985014718,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy1",
+        "reason": "T8-3 byte-reproduction control; preregistration excludes policy 1 from independent adoption",
+        "status": "control"
+      },
+      "policy2": {
+        "adoption_eligible": true,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 6.209495737562187e-08,
+          "format_delta_pp": 1.5625,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.1774150388011775,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy2",
+        "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+        "status": "hold"
+      },
+      "policy3": {
+        "adoption_eligible": true,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 6.209495737562187e-08,
+          "format_delta_pp": 1.5625,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.1774150388011775,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy3",
+        "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+        "status": "hold"
+      },
+      "policy4": {
+        "adoption_eligible": true,
+        "checks": {
+          "exact_mcnemar_p_below_0_05": true,
+          "format_drop_not_over_2pp": true,
+          "hard_drop_not_over_2pp": true,
+          "invalid_increase_not_over_1pp": true,
+          "no_cross_validation_overfit_signal": true,
+          "union_delta_at_least_1_5pp": false
+        },
+        "observed": {
+          "cross_validation_overfit_signal": false,
+          "exact_mcnemar_p": 8.909847968334874e-07,
+          "format_delta_pp": 1.953125,
+          "hard_delta_pp": 1.090909090909091,
+          "union_delta_pp": 1.1506556061011506,
+          "union_invalid_increase_pp": 0.0
+        },
+        "policy": "policy4",
+        "reason": "positive union delta, but adoption gates failed: union_delta_at_least_1_5pp",
+        "status": "hold"
+      }
+    },
+    "reason": "policy2 had the largest positive eligible delta but did not pass every adoption gate; retain unfiltered T8 majority@32",
+    "selected_candidate_policy": "policy2",
+    "status": "hold"
+  },
+  "final_t10_vs_original_t8": {
+    "both_correct": 2590,
+    "both_wrong": 1147,
+    "candidate_accuracy": 0.693069306930693,
+    "candidate_correct_reference_wrong": 0,
+    "delta_95_ci_method": "paired normal interval over {-1,0,+1} correctness differences",
+    "delta_95_ci_pp": [
+      0.0,
+      0.0
+    ],
+    "delta_pp": 0.0,
+    "discordant": 0,
+    "questions": 3737,
+    "reference_accuracy": 0.693069306930693,
+    "reference_correct_candidate_wrong": 0,
+    "two_sided_exact_p": 1.0
+  },
+  "final_union_accuracy": 0.693069306930693,
+  "original_t8_union_accuracy": 0.693069306930693,
+  "schema_version": 1,
+  "task": "T10",
+  "upstream_selection": {
+    "adopted_pool_is_original_t8": true,
+    "crlf_lines_normalized_for_identity_check": 119584,
+    "pool_raw_sha256": "96bb9accfc28f25b124ede75f5a283eb5670bf723efbe350b8daa39ef2a91a21",
+    "pool_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+    "t10a": {
+      "adopted": false,
+      "final_strategy": {
+        "arm": "A",
+        "k": 32,
+        "max_new_tokens": 2048,
+        "prompt_name": "base",
+        "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+        "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+        "vote": "unfiltered equal-weight majority"
+      },
+      "source": {
+        "bytes": 3298,
+        "path": "artifacts/t10a_prompt_improvement/final_config.json",
+        "sha256": "419eab90de70c435d9dbaa873411860a723105700f5340fff429ebe7e0a51081"
+      },
+      "status": "hold"
+    },
+    "t10b": {
+      "adopted": false,
+      "final_strategy": {
+        "arm": "A",
+        "k": 32,
+        "max_new_tokens": 2048,
+        "prompt_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+        "prompt_strategy": "single T8 base prompt",
+        "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+        "vote": "unfiltered equal-weight majority"
+      },
+      "source": {
+        "bytes": 1760,
+        "path": "artifacts/t10b_prompt_diversity/final_config.json",
+        "sha256": "de990c367555841a5ee011e075572f21a8fc79b034baefd3bf6669405dce96fa"
+      },
+      "status": "reject",
+      "t10c_input": {
+        "arm": "A",
+        "generation_pool": "artifacts/t8_self_consistency/generations.jsonl",
+        "generation_sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54",
+        "k": 32,
+        "reason": "Arm C failed to improve or violated a preregistered guardrail/runtime gate.",
+        "source_task": "T10b",
+        "vote_baseline": "unfiltered equal-weight majority"
+      }
+    }
+  }
+}

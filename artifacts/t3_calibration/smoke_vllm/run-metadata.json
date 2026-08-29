@@ -1,0 +1,127 @@
+{
+  "completed_at_utc": "2026-08-19T16:36:51.202588+00:00",
+  "effective_config": {
+    "engine": "vllm",
+    "generation": {
+      "do_sample": false,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 64,
+      "n": 1,
+      "seed": 42,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "max_batch_size": 256,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "schema_version": 1,
+    "task": "T3",
+    "vllm": {
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.85,
+      "max_model_len": 4096,
+      "max_num_seqs": 256,
+      "request_chunk_size": 1024
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python_version": "3.12.13",
+    "torch_cuda_runtime": "13.0",
+    "torch_version": "2.13.0+cu130"
+  },
+  "invocation_wall_seconds": 155.550111990422,
+  "output": {
+    "path": "artifacts/t3_calibration/smoke_vllm/generations.jsonl",
+    "rows": 2,
+    "sha256": "9350b242c18aa5190afb8a7d0dcbf0eddb4566d070b896bb8027b665862b840d"
+  },
+  "prompt_tokenization": {
+    "chat_template_applied": true,
+    "max_input_tokens": 2048,
+    "padding_side": "left",
+    "truncated_prompts": 0,
+    "truncation_side": "right"
+  },
+  "results": {
+    "generated_this_invocation": 2,
+    "generation_wall_seconds": 0.589458528906107,
+    "generations_per_second": 3.3929443750886397,
+    "gpu_monitor": {
+      "active_utilization_gpu_pct": {
+        "max": 97.0,
+        "mean": 97.0,
+        "median": 97.0,
+        "min": 97.0,
+        "p10": 97.0,
+        "p90": 97.0
+      },
+      "error": null,
+      "fraction_active_samples_at_least_90_pct": 1.0,
+      "fraction_all_samples_at_least_90_pct": 0.5,
+      "peak_memory_used_mib": 21848.3125,
+      "raw_samples": [
+        {
+          "memory_used_mib": 21848.3125,
+          "monotonic_seconds": 15135814.897762308,
+          "utilization_gpu_pct": 0.0
+        },
+        {
+          "memory_used_mib": 21848.3125,
+          "monotonic_seconds": 15135815.398214132,
+          "utilization_gpu_pct": 97.0
+        }
+      ],
+      "samples": 2,
+      "sampling_interval_seconds": 0.5,
+      "utilization_gpu_pct": {
+        "max": 97.0,
+        "mean": 48.5,
+        "median": 48.5,
+        "min": 0.0,
+        "p10": 9.700000000000001,
+        "p90": 87.3
+      }
+    },
+    "oom_events": [],
+    "request_chunks": 1,
+    "torch_peak_allocated_mib": 0.0
+  },
+  "resume": {
+    "cached_generations_at_start": 0,
+    "pending_generations_at_start": 2
+  },
+  "run_fingerprint": "50c580b9fa7e3a62605dc6e098a56bb3b7480c291c97580e1ecb12b0a073fe8b",
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "path": "configs/t3_baseline.json",
+      "sha256": "0666963cd4802225bb1c073c220c22e7ae0ede52c7893c0a1eaeba8e03f77e1e"
+    },
+    "ids_file": null,
+    "input": {
+      "path": "data/splits/random_holdout.csv",
+      "rows_before_selection": 1637,
+      "sha256": "b3f69bb26cbf715bf4e3cda09164222f6ebaff3847d6d899173f0ae0ec88cf29"
+    },
+    "max_prompts": 2,
+    "selected_ids_sha256": "a4f163d5892c3e4573fae941b0dc437f1ccfc90cb646a11c189fdd47e7c22632",
+    "selected_rows": 2,
+    "selection_seed": 42
+  },
+  "started_at_utc": "2026-08-19T16:34:15.652488+00:00",
+  "status": "complete",
+  "task": "T3"
+}

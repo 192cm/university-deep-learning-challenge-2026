@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "task": "T11b",
+  "seed": 62000,
+  "source_t11": {
+    "config": {
+      "path": "configs/t11_aimo_generation_quality.json",
+      "sha256": "2584181f0a24c4cc4a57c4f0760fca0ba5ee55405250500c4526214b9ab765ba"
+    },
+    "teacher_preflight_ids": {
+      "path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+      "rows": 64,
+      "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9"
+    },
+    "hard_ids": {
+      "path": "data/t11_aimo_generation_quality/hard_ids.txt",
+      "rows": 1883,
+      "sha256": "77a10c579e870e3cd912c03fbb19d4635d6b1e826c7bdbae7b1c30b631441abb"
+    },
+    "student_probe": {
+      "path": "data/t11_aimo_generation_quality/student_probe.jsonl",
+      "rows": 86888,
+      "sha256": "31b2af19392bbe86089ddfc27450d75af2aac27fba565dd633c9254ef3c63a4c"
+    },
+    "teacher_generations": {
+      "path": "data/t11_aimo_generation_quality/teacher_generations.jsonl",
+      "rows": 256,
+      "sha256": "764f5e8fcc31bc61303ee8ed76e23b653a6b220effeb525f375aa78df9099e3c"
+    },
+    "teacher_preflight": {
+      "path": "artifacts/t11_aimo_generation_quality/teacher-preflight.json",
+      "sha256": "59484f387c30336242592f310b146404c2268171bb539f98d9a3eb4135616606"
+    },
+    "canonical_train": {
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "leaderboard_full": {
+      "path": "data/deep_chal_math_leaderboard.csv",
+      "rows": 1000,
+      "sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32"
+    },
+    "holdout_union_ids": {
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737
+    },
+    "validation_ids": {
+      "path": "data/splits/rft_validation_500_ids.txt",
+      "rows": 500,
+      "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+    },
+    "suspect_ids": {
+      "path": "data/suspect_set/ids.txt",
+      "rows": 1311,
+      "sha256": "ad3ac6669f3058071580531eb43eb5b7a5d5d82b99bd21fae3b982c27910dd75"
+    },
+    "run_script": {
+      "path": "scripts/run_t11.sh",
+      "sha256": "9e1a376e95c39f12124c4e3f2a3394cd22e8dc708fd50320686c7b13bfe697b5"
+    },
+    "root_submission": {
+      "path": "submission.csv"
+    }
+  },
+  "teacher": {
+    "provider": "local_vllm",
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "revision": "1df8507178afcc1bef68cd8c393f61a886323761",
+    "tokenizer_revision": "1df8507178afcc1bef68cd8c393f61a886323761",
+    "license": "MIT",
+    "cache_dir": "/workspace/.hf_home/hub",
+    "trust_remote_code": false,
+    "tool_use": false,
+    "required_packages": {
+      "vllm": "0.27.1",
+      "vllm_wheel_build": "0.27.1+cu129",
+      "vllm_release_commit": "6e448d0ea9bf3d88d898b65449ca6dc2aec170ac",
+      "vllm_wheel_sha256": "bf0d52faa2a51e7a01c6856a7a8a2d1307fd0ff711415d34168a67ffac0fa47b",
+      "torch": "2.13.0+cu129",
+      "torchvision": "0.28.0+cu129",
+      "torchaudio": "2.11.0+cu129",
+      "torchcodec": "0.16.0+cu129",
+      "transformers": "5.16.1",
+      "bitsandbytes": "0.50.1"
+    },
+    "system_prompt": "You are a careful mathematical reasoning teacher. Produce a self-contained text-only derivation. Never use or propose code, Python, SymPy, calculators, tools, external computation, or tool calls.",
+    "user_prompt_template": "Think through this problem step by step, showing a complete and rigorous derivation.\nUse only text and mathematical notation; do not use code or tools.\nAfter you reach the answer, write it inside \\boxed{} and also on the last line exactly as\nFINAL_ANSWER: <answer>. Do not write anything after the FINAL_ANSWER line.\n\nProblem:\n{question}",
+    "system_prompt_sha256": "c81d7fce66ab95f3a8ce549668332e0d226db93e85265e8a99027042eba83593",
+    "user_prompt_sha256": "1cc2e308e223d03d222c45448e9a2f53c3aa43a67b0832a44ab89a3c866028f1",
+    "combined_prompt_sha256": "1b1f80807f63b2d0e6f748a3c54e7423237da07ee354ebccd2773fb4f1a16521",
+    "engine": {
+      "dtype": "bfloat16",
+      "quantization": "bitsandbytes",
+      "load_format": "bitsandbytes",
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": 4096,
+      "max_num_seqs": 16,
+      "request_chunk_size": 8,
+      "enable_prefix_caching": true,
+      "tensor_parallel_size": 1
+    },
+    "generation": {
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 2048,
+      "seed": 62000,
+      "samples_per_question": 4,
+      "sample_indices": [0, 1, 2, 3]
+    },
+    "smoke": {
+      "questions": 4,
+      "samples_per_question": 1,
+      "sample_index": 0,
+      "included_in_gate": false
+    }
+  },
+  "normalizer": {
+    "version": "label-blind-final-line-v1",
+    "allowed_candidate_sources": [
+      "final_answer_marker",
+      "boxed",
+      "standalone_last_line"
+    ],
+    "generic_last_integer_allowed": false,
+    "arithmetic_allowed": false,
+    "labels_allowed": false
+  },
+  "trace_filter": {
+    "minimum_assistant_tokens": 128,
+    "maximum_assistant_tokens_exclusive": 2048,
+    "require_exact_final_line": true,
+    "require_one_distinct_explicit_answer": true,
+    "forbid_code_and_tools": true
+  },
+  "gate": {
+    "questions": 64,
+    "outputs": 256,
+    "minimum_questions_with_accepted_correct": 32,
+    "minimum_accepted_correct_traces": 64,
+    "maximum_code_or_tool_dependency_traces": 0,
+    "maximum_protected_or_leaderboard_or_test_rows_sent": 0,
+    "maximum_api_cost_usd": 0.0,
+    "maximum_preflight_wall_hours": 2.0,
+    "hard_questions_for_projection": 1883,
+    "worst_case_samples_per_question": 8,
+    "maximum_projected_full_wall_hours": 12.0
+  },
+  "historical_replay": {
+    "expected_accepted_correct_traces": 71,
+    "expected_questions_with_accepted_correct": 30
+  },
+  "outputs": {
+    "data_dir": "data/t11b_deepseek14b_teacher_preflight",
+    "artifact_dir": "artifacts/t11b_deepseek14b_teacher_preflight"
+  },
+  "scope_stop": {
+    "full_teacher_generation": false,
+    "sft": false,
+    "dpo": false,
+    "validation": false,
+    "holdout": false,
+    "leaderboard": false,
+    "submission_update": false
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "created_at_utc": "2026-08-27T10:03:32.918269+00:00",
+  "first_round": {
+    "accepted_code_or_tool_traces": 0,
+    "accepted_correct_traces": 54,
+    "accepted_quality_traces": 193,
+    "broken_tail_traces": 31,
+    "explicit_conflict_traces": 4,
+    "extracted_correct_traces": 60,
+    "extraction_path_counts": {
+      "final_answer_marker": 194,
+      "last_integer": 58,
+      "none": 4
+    },
+    "finish_reason_counts": {
+      "length": 35,
+      "stop": 221
+    },
+    "hit_max_new_tokens": 35,
+    "input_truncations": 0,
+    "no_safe_candidate_traces": 58,
+    "normalization_status_counts": {
+      "appended_final_answer": 194,
+      "conflicting_explicit_answers": 4,
+      "no_safe_integer_candidate": 58
+    },
+    "normalized_assistant_token_distribution": {
+      "count": 256,
+      "max": 3219,
+      "mean": 1078.84375,
+      "median": 739.5,
+      "min": 160,
+      "p95": 3192.25
+    },
+    "normalized_token_overflow_traces": 35,
+    "outputs": 256,
+    "questions": 64,
+    "questions_with_accepted_correct": 27,
+    "raw_code_or_tool_traces": 2,
+    "raw_output_token_distribution": {
+      "count": 256,
+      "max": 3072,
+      "mean": 1058.34375,
+      "median": 735.5,
+      "min": 152,
+      "p95": 3072.0
+    },
+    "repeated_tail_traces": 1,
+    "student_sequence_token_distribution": {
+      "count": 256,
+      "max": 3481,
+      "mean": 1236.390625,
+      "median": 885.0,
+      "min": 267,
+      "p95": 3366.5
+    },
+    "trace_rejection_reason_counts": {
+      "code_or_tool_dependency": 2,
+      "explicit_candidate_contract": 62,
+      "extraction_conflicting_explicit_answers": 4,
+      "final_line_contract": 62,
+      "finish_not_stop_or_eos": 35,
+      "normalized_assistant_tokens_not_below_3072": 35,
+      "raw_output_tokens_not_below_3072": 35
+    }
+  },
+  "first_round_label_blind_audit_sha256_before_gold_load": "66bb0a6283bf889b0586643cae714607e509e86968ac741c9d7ff97bab893f2e",
+  "gold_loaded_only_after_label_blind_freeze": true,
+  "planned_manifest_order_preserved": true,
+  "requests_per_selected_question": 4,
+  "sample_indices": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "schema_version": 1,
+  "second_round_ids": {
+    "bytes": 481,
+    "path": "data/t11c_qwen7b_repaired_teacher_preflight/second_round_ids.txt",
+    "rows": 37,
+    "sha256": "b1b0af506359f7b35cbc88ed56903721813d5e5047b4512b3d672657e10ae708"
+  },
+  "second_round_questions": 37,
+  "second_round_request_manifest": {
+    "bytes": 127723,
+    "path": "data/t11c_qwen7b_repaired_teacher_preflight/second-round-request-manifest.jsonl",
+    "rows": 148,
+    "sha256": "e774bc2040a97f8130f5cb143b60eeee51b73e5f3ae280b871a379f10666db32"
+  },
+  "selection_rule": "first-round accepted_correct count equals zero",
+  "status": "second_round_selection_frozen",
+  "task": "T11c"
+}

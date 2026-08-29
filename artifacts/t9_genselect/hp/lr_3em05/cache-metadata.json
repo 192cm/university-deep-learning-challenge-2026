@@ -1,0 +1,87 @@
+{
+  "cache": {
+    "path": "artifacts/t9_genselect/hp/lr_3em05/cache",
+    "rows": 3000,
+    "sha256": "cce4de74a972ce08c18d2112dc60c6b4ec717abcd8a7836bba5c86890ee074c9"
+  },
+  "cache_fingerprint": "ac00b72392489f50fed5c31a8627f3c6384ed55342c5a16a857ea29fce828de5",
+  "cache_identity": {
+    "inputs": [
+      {
+        "path": "data/genselect/train.jsonl",
+        "sha256": "b886666c0bdb97ca44109ece93bc43b4bf4ddcc5a3ad7cd95d171d6656d64a0b"
+      }
+    ],
+    "max_length": 8192,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "packing": false,
+    "schema_version": 1,
+    "seed": 42,
+    "target_preservation_tokens": 128,
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "created_at_utc": "2026-08-22T18:51:06.184268+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "tokenizers_parallelism": null
+  },
+  "packing": {
+    "algorithm": null,
+    "assistant_loss_tokens": 391692,
+    "assistant_only_mask_preserved": true,
+    "capacity_tokens": 24576000,
+    "efficiency": 0.266189453125,
+    "enabled": false,
+    "packed_sequences": 3000,
+    "sample_boundaries_begin_masked": true,
+    "source_samples": 3000,
+    "total_tokens": 6541872
+  },
+  "runtime_seconds": 14.544205989688635,
+  "schema_version": 1,
+  "source_audit": {
+    "duplicate_exact_rows_detected": 0,
+    "duplicate_exact_rows_removed": 0,
+    "final_line_contract_100_percent": true,
+    "inputs": [
+      {
+        "path": "data/genselect/train.jsonl",
+        "rows": 3000,
+        "sha256": "b886666c0bdb97ca44109ece93bc43b4bf4ddcc5a3ad7cd95d171d6656d64a0b"
+      }
+    ],
+    "rows": 3000,
+    "source_counts": {
+      "genselect:r1_c1_3": 1000,
+      "genselect:r1_c4_7": 600,
+      "genselect:r1_c_ge8_anchor": 200,
+      "genselect:r2_hard_tail": 1200
+    }
+  },
+  "status": "complete",
+  "task": "T9",
+  "tokenization": {
+    "assistant_eos_labeled_100_percent": true,
+    "assistant_eos_labeled_samples": 3000,
+    "assistant_only_loss": true,
+    "assistant_tokens": {
+      "max": 1928,
+      "mean": 130.564,
+      "median": 129.0,
+      "p95": 162.04999999999973
+    },
+    "chat_template_applied": true,
+    "label_token_identity_100_percent": true,
+    "length": {
+      "max": 6723,
+      "mean": 2180.624,
+      "median": 2155.0,
+      "p95": 2595.0499999999997
+    },
+    "max_length": 8192,
+    "prompt_labels_all_minus_100": true,
+    "source_samples": 3000,
+    "truncated_samples": 0,
+    "truncation_preserves_prompt_and_completion_tail": true
+  }
+}

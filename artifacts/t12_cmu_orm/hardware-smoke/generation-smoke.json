@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "failed_merge_not_created": true,
+    "failed_worker_only_resumed": true,
+    "independent_repeat_byte_identical": true,
+    "successful_shard_preserved_and_resume_byte_identical": true,
+    "two_distinct_worker_uuids": true
+  },
+  "merged_output_sha256": [
+    "8c843f06928b742c6964d9d56da766f1166d531b03f8fd72a99c1885a3cdb05f",
+    "8c843f06928b742c6964d9d56da766f1166d531b03f8fd72a99c1885a3cdb05f",
+    "8c843f06928b742c6964d9d56da766f1166d531b03f8fd72a99c1885a3cdb05f"
+  ],
+  "passed": true,
+  "resumed_attempt_statuses": [
+    [
+      "failed",
+      "complete"
+    ],
+    [
+      "complete"
+    ]
+  ],
+  "schema_version": 1,
+  "status": "complete",
+  "worker_uuids": [
+    "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28",
+    "GPU-bf2a4adb-7388-d44a-dce5-52886db987af"
+  ]
+}

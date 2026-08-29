@@ -1,0 +1,317 @@
+{
+  "calibration_summary": {
+    "estimated_200k_hours": 2.4786281119304476,
+    "selected_engine": "vllm",
+    "selected_settings": {
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 384,
+      "request_chunk_size": 1024
+    },
+    "vllm_speedup_over_hf": 12.855340148738845
+  },
+  "completion_checks": {
+    "all_four_holdouts_exactly_covered": true,
+    "hf_vllm_same_200_prompts": true,
+    "random_accuracy_between_60_and_65_percent": true,
+    "random_invalid_rate_between_12_and_18_percent": true,
+    "raw_generations_preserved": true,
+    "same_seed_generation_jsonl_byte_identical": true,
+    "selected_gpu_utilization_at_least_90_pct": true,
+    "vllm_at_least_5x_hf": true
+  },
+  "created_at_utc": "2026-08-19T16:59:59.622066+00:00",
+  "environment_summary": {
+    "platform": "Linux-6.8.0-100-generic-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "remote_environment": {
+      "collected_at_utc": "2026-08-19T15:40:35.945989Z",
+      "cpu": {
+        "logical_cores": 64,
+        "model": "AMD EPYC 7502P 32-Core Processor",
+        "physical_cores_detected": 32
+      },
+      "deterministic_smoke": {
+        "byte_identical": true,
+        "problem_count": 8,
+        "run_1_path": "/workspace/artifacts/t0_bootstrap/smoke-run-1.json",
+        "run_1_sha256": "7a0bd5a1dc00ebbe90ae03b1f5862af92455ad686e86d41f957c871c536d5cc2",
+        "run_2_path": "/workspace/artifacts/t0_bootstrap/smoke-run-2.json",
+        "run_2_sha256": "7a0bd5a1dc00ebbe90ae03b1f5862af92455ad686e86d41f957c871c536d5cc2",
+        "seed": 42,
+        "verified_at_utc": "2026-08-19T15:40:05.086643Z"
+      },
+      "disk_workspace": {
+        "free_bytes": 312302878720,
+        "path": "/workspace",
+        "total_bytes": 322122547200,
+        "used_bytes": 9819668480
+      },
+      "gpu": {
+        "cuda": {
+          "driver_reported_max_cuda": "13.1",
+          "nvcc_output": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Wed_Aug_20_01:58:59_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.88\nBuild cuda_13.0.r13.0/compiler.36424714_0",
+          "toolkit_nvcc": "13.0"
+        },
+        "devices": [
+          {
+            "driver_version": "590.48.01",
+            "index": 0,
+            "memory_total_mib": 24564,
+            "name": "NVIDIA GeForce RTX 4090"
+          }
+        ],
+        "torch": {
+          "bf16_supported": true,
+          "compute_capability": "8.9",
+          "cuda_available": true,
+          "device_count": 1,
+          "torch_cuda_runtime": "13.0",
+          "torch_version": "2.13.0+cu130"
+        }
+      },
+      "instance": {
+        "container_id": "48123126",
+        "image": "PyTorch",
+        "workspace": "/workspace",
+        "workspace_is_volume": false
+      },
+      "model": {
+        "config_commit_hash": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "downloaded_at_utc": "2026-08-19T15:38:13.211658Z",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "model_type": "qwen2",
+        "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "resolved_snapshot_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "revision_verified": true,
+        "snapshot_path": "/workspace/.hf_home/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "tokenizer_commit_hash": null,
+        "tokenizer_config_path": "/workspace/.hf_home/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json",
+        "tokenizer_snapshot_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      },
+      "packages": {
+        "accelerate": "1.14.0",
+        "bitsandbytes": "0.50.1",
+        "datasets": "5.0.1",
+        "huggingface-hub": "1.27.0",
+        "peft": "0.20.0",
+        "safetensors": "0.8.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0+cu130",
+        "transformers": "5.15.1",
+        "trl": "1.10.0",
+        "vllm": "0.27.1"
+      },
+      "platform": {
+        "machine": "x86_64",
+        "python_executable": "/venv/main/bin/python",
+        "python_version": "3.12.13",
+        "release": "6.8.0-100-generic",
+        "system": "Linux"
+      },
+      "pytorch_cuda_alloc_conf": "expandable_segments:True",
+      "ram": {
+        "available_bytes": 237814366208,
+        "total_bytes": 269938753536
+      },
+      "required_packages_installed": true,
+      "schema_version": 1,
+      "vllm_install_status": "installed",
+      "vram_profiles": {
+        "bf16": {
+          "dtype": "torch.bfloat16",
+          "gpu_free_after_load_bytes": 18574147584,
+          "gpu_free_before_bytes": 24838340608,
+          "gpu_total_bytes": 25252724736,
+          "is_loaded_in_4bit": false,
+          "loaded_config_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "mode": "bf16",
+          "model_id": "Qwen/Qwen2.5-3B-Instruct",
+          "model_load_delta_bytes": 6264193024,
+          "profiled_at_utc": "2026-08-19T15:38:34.054699Z",
+          "remaining_vram_bytes": 18574147584,
+          "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "torch_allocated_bytes": 6171878400,
+          "torch_peak_allocated_bytes": 6171878400,
+          "torch_reserved_bytes": 6264193024
+        },
+        "nf4": {
+          "dtype": "torch.bfloat16",
+          "gpu_free_after_load_bytes": 22630039552,
+          "gpu_free_before_bytes": 24838340608,
+          "gpu_total_bytes": 25252724736,
+          "is_loaded_in_4bit": true,
+          "loaded_config_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "mode": "nf4",
+          "model_id": "Qwen/Qwen2.5-3B-Instruct",
+          "model_load_delta_bytes": 2208301056,
+          "profiled_at_utc": "2026-08-19T15:38:55.022040Z",
+          "remaining_vram_bytes": 22630039552,
+          "requested_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+          "torch_allocated_bytes": 2054668288,
+          "torch_peak_allocated_bytes": 2097683456,
+          "torch_reserved_bytes": 2143289344
+        }
+      }
+    }
+  },
+  "fallback_preview_summary": {
+    "format_diagnostic": {
+      "greedy_accuracy": 0.35546875,
+      "invalid_output_rate": 0.10546875
+    },
+    "hard_diagnostic": {
+      "greedy_accuracy": 0.2927272727272727,
+      "invalid_output_rate": 0.11090909090909092
+    },
+    "random_holdout": {
+      "greedy_accuracy": 0.6554673182651192,
+      "invalid_output_rate": 0.06047648136835675
+    },
+    "template_holdout": {
+      "greedy_accuracy": 0.6560781918142944,
+      "invalid_output_rate": 0.06719609040928527
+    }
+  },
+  "metrics_summary": {
+    "format_diagnostic": {
+      "greedy_accuracy": 0.32421875,
+      "invalid_output_rate": 0.38671875
+    },
+    "hard_diagnostic": {
+      "greedy_accuracy": 0.2818181818181818,
+      "invalid_output_rate": 0.29818181818181816
+    },
+    "random_holdout": {
+      "greedy_accuracy": 0.6371411117898595,
+      "invalid_output_rate": 0.14111178985949907
+    },
+    "template_holdout": {
+      "greedy_accuracy": 0.6469150885766646,
+      "invalid_output_rate": 0.14966401954795358
+    }
+  },
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "objective": "Select and calibrate the fastest compliant generation engine and remeasure the B0 greedy baseline on four fixed holdouts.",
+  "outputs": {
+    "calibration": {
+      "bytes": 9518,
+      "path": "artifacts/t3_baseline/calibration.json",
+      "sha256": "f2698de6ea5a7e33a9c782f9861fb71889a986196ad92406dff368eaa9816482"
+    },
+    "generations": {
+      "bytes": 6992098,
+      "path": "artifacts/t3_baseline/generations.jsonl",
+      "sha256": "93b5d3956e1264e7f7b59b4ab4ed6955f5a5a8d4fa115b47b6b9228bc27645bd"
+    },
+    "metrics": {
+      "bytes": 37470,
+      "path": "artifacts/t3_baseline/metrics.json",
+      "sha256": "c1cab39c9edbe4a70f587d1615136706b4e1d1da39e07a4ba137cb93df5bc1a4"
+    },
+    "primary_run_metadata": {
+      "bytes": 65000,
+      "path": "artifacts/t3_baseline/run-metadata.json",
+      "sha256": "f50eae53afd2b3ae1dfd0d848f4dee53d4b758472784d166adbd872fa8a9b5f5"
+    },
+    "reproduction_generations": {
+      "bytes": 6992098,
+      "path": "artifacts/t3_baseline/generations.jsonl",
+      "sha256": "93b5d3956e1264e7f7b59b4ab4ed6955f5a5a8d4fa115b47b6b9228bc27645bd"
+    },
+    "reproduction_run_metadata": {
+      "bytes": 65000,
+      "path": "artifacts/t3_baseline/run-metadata.json",
+      "sha256": "f50eae53afd2b3ae1dfd0d848f4dee53d4b758472784d166adbd872fa8a9b5f5"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t3_baseline/holdout_union_ids.txt",
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "raw_generations_deleted": false,
+  "schema_version": 1,
+  "seed": 42,
+  "sources": {
+    "baseline_extractor": {
+      "bytes": 5974,
+      "path": "src/baseline_extract.py",
+      "sha256": "be3d7dd45367f5ef6b3ea536dbee7e401d7ed31135ca832a4e52971d77f07e62"
+    },
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "config": {
+      "bytes": 1006,
+      "path": "configs/t3_baseline.json",
+      "sha256": "ea791b963521a060f28f150d1888c1e557ce7862625f873c8d02fae6e73a3cf3"
+    },
+    "environment": {
+      "bytes": 4667,
+      "path": "environment.json",
+      "sha256": "d1e97fae8b37261f53f522195cf8ae7e4d2eeaad683ebd82ef376426191273cd"
+    },
+    "evaluator": {
+      "bytes": 23168,
+      "path": "src/evaluate.py",
+      "sha256": "08aa783dbadc83a0f96e61e16ac495871e380b23b287819a4ef34db235423303"
+    },
+    "extractor": {
+      "bytes": 11472,
+      "path": "src/extract.py",
+      "sha256": "b2cd23be3cd0642f2a376cca6aac1bb25b6043f102b02eaa6f2b0effc776cd15"
+    },
+    "finalizer": {
+      "bytes": 20578,
+      "path": "/workspace/src/finalize_t3.py",
+      "sha256": "4848995ee57df88ef17971aaa9846a079d4ef257afd405e5bb5e600e6ce3ad44"
+    },
+    "generator": {
+      "bytes": 40097,
+      "path": "src/generate.py",
+      "sha256": "fa00455b71bdfdcaf13625c1b6fab5dd8468bfd9c8b5736c7465bdc90324e278"
+    },
+    "requirements_lock": {
+      "bytes": 4795,
+      "path": "requirements.lock",
+      "sha256": "e1e9f0544557928dc5f32d57a21fde4f5cab5379bcb767dd3bd50a246ab65bae"
+    },
+    "split_format_diagnostic": {
+      "bytes": 114768,
+      "path": "data/splits/format_diagnostic.csv",
+      "sha256": "4862ead40601421680946cb1b70988284876cf325705fe6d2320c61a0c2fc82a"
+    },
+    "split_hard_diagnostic": {
+      "bytes": 274033,
+      "path": "data/splits/hard_diagnostic.csv",
+      "sha256": "b4710d1fedc4d4093ffb9ac249d9f0961330cdafe0b4ec8d09b417314109b50f"
+    },
+    "split_random_holdout": {
+      "bytes": 535264,
+      "path": "data/splits/random_holdout.csv",
+      "sha256": "b3f69bb26cbf715bf4e3cda09164222f6ebaff3847d6d899173f0ae0ec88cf29"
+    },
+    "split_template_holdout": {
+      "bytes": 453525,
+      "path": "data/splits/template_holdout.csv",
+      "sha256": "587a768ed89610a488a233f0bbcd237d7c8fcaea63eb09debadefbfb55c9fb13"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t3_baseline/holdout_union_ids.txt",
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "passed",
+  "task": "T3"
+}

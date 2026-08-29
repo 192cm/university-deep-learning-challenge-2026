@@ -1,0 +1,76 @@
+Traceback (most recent call last):
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 2535, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 2769, in _get_module
+    raise e
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 2767, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 18, in <module>
+    from ...modeling_layers import (
+  File "/venv/main/lib/python3.12/site-packages/transformers/modeling_layers.py", line 37, in <module>
+    from .processing_utils import Unpack
+  File "/venv/main/lib/python3.12/site-packages/transformers/processing_utils.py", line 38, in <module>
+    from .audio_utils import AudioInput, load_audio, make_list_of_audio
+  File "/venv/main/lib/python3.12/site-packages/transformers/audio_utils.py", line 58, in <module>
+    import torchaudio
+  File "/venv/main/lib/python3.12/site-packages/torchaudio/__init__.py", line 7, in <module>
+    from . import _extension  # noqa  # usort: skip
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/torchaudio/_extension/__init__.py", line 36, in <module>
+    _check_cuda_version()
+  File "/venv/main/lib/python3.12/site-packages/torchaudio/_extension/utils.py", line 124, in _check_cuda_version
+    raise RuntimeError(
+RuntimeError: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 13.0 whereas TorchAudio has CUDA version 12.8. Please install the TorchAudio version that matches your PyTorch version.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 614, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 587, in main
+    result = model_smoke(
+             ^^^^^^^^^^^^
+  File "/workspace/university-deep-learning-challenge-2026/src/orm_score.py", line 431, in model_smoke
+    model = AutoModelForSequenceClassification.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 357, in from_pretrained
+    explicit_local_code = has_local_code and not _get_model_class(
+                                                 ^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 179, in _get_model_class
+    supported_models = model_mapping[type(config)]
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 602, in __getitem__
+    return self._load_attr_from_module(model_type, model_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 616, in _load_attr_from_module
+    return getattribute_from_module(self._modules[module_name], attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 528, in getattribute_from_module
+    if hasattr(module, attr):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/venv/main/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 2623, in __getattr__
+    raise ModuleNotFoundError(
+ModuleNotFoundError: Could not import module 'Qwen2ForSequenceClassification'. Are this object's requirements defined correctly?
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 6166.49it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B-Instruct
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+{"finite_logit": true, "gpu": {"name": "NVIDIA GeForce RTX 4090", "uuid": "GPU-26cb98b0-1216-9d67-8c44-99d1b5dc8c28"}, "model": "Qwen/Qwen2.5-3B-Instruct", "passed": true, "prompt_has_only_problem_and_trace": true, "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1", "schema_version": 1, "status": "complete", "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"}

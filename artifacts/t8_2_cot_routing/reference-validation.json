@@ -1,0 +1,61 @@
+{
+  "adapter": null,
+  "created_at_utc": "2026-08-23T23:16:08.364128+00:00",
+  "first_four": {
+    "disagreement": 1830,
+    "invalid": 54,
+    "valid_unanimous": 1853
+  },
+  "ground_truth_values_consumed": false,
+  "hard_first_four": {
+    "disagreement": 417,
+    "invalid": 15,
+    "valid_unanimous": 118
+  },
+  "hard_questions": 550,
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "questions": 3737,
+  "reference_task": "T8",
+  "samples_per_question": 32,
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "bytes": 2099,
+      "path": "configs/t8_self_consistency.json",
+      "sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630"
+    },
+    "final_config": {
+      "bytes": 1467,
+      "path": "artifacts/t8_self_consistency/final_config.json",
+      "sha256": "86506a714d8e66a9f63b828209381499018d6acdc6f284c02aa81565bc526832"
+    },
+    "generations": {
+      "bytes": 234212343,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54"
+    },
+    "manifest": {
+      "bytes": 7113,
+      "path": "artifacts/t8_self_consistency/manifest.json",
+      "sha256": "1f96a36ac4b873de5bb65f1665d64186abb1adb6f390912797e07cedbaab4f4d"
+    },
+    "metadata": {
+      "bytes": 3384272,
+      "path": "artifacts/t8_self_consistency/run-metadata.json",
+      "sha256": "419a84f14aff7cd7f8a42dedc1872600d1aa193704c5cd4f993abadca89a7abd"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "complete",
+  "task": "T8-2"
+}

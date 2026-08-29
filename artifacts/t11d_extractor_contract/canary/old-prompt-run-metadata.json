@@ -1,0 +1,73 @@
+{
+  "arm": "old",
+  "created_at_utc": "2026-08-27T14:21:15.817730+00:00",
+  "engine": {
+    "batch_invariant": true,
+    "dtype": "bfloat16",
+    "enable_prefix_caching": true,
+    "enforce_eager": false,
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 4096,
+    "max_num_seqs": 256,
+    "name": "vllm",
+    "request_chunk_size": 64
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "n": 4,
+    "seed": 42,
+    "seed_contract": "int.from_bytes(SHA256(namespace + NUL + ascii(id) + NUL + ascii(sample_index)).digest()[:4], big) & 0x7fffffff",
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "output": {
+    "bytes": 1030386,
+    "path": "artifacts/t11d_extractor_contract/canary/old-prompt-generations.jsonl",
+    "rows": 512,
+    "sha256": "4a1cf5474ae270deff98e5af11126c7f3cd9b4be055f67028bc6c0b44d5c91bc"
+  },
+  "prompt": {
+    "serialized_prompt_hashes_sha256": "3d67e4f69197f6c6489ef62548bd7c491917eef7d70bc10f6eb12d3a0b24f4d1",
+    "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "template_sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687"
+  },
+  "results": {
+    "external_api_calls": 0,
+    "generation_wall_seconds": 313.2946093409555,
+    "generations": 512,
+    "generations_per_second": 1.6342445249123176,
+    "input_truncations": 0,
+    "labels_loaded": false,
+    "questions": 128
+  },
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "bytes": 6083,
+      "path": "configs/t11d_extractor_contract.json",
+      "sha256": "b89db4529be824822440a5cb904145bb9049337008f76ecd6be2bb7ebd7565f5"
+    },
+    "preparation": {
+      "bytes": 414,
+      "path": "artifacts/t11d_extractor_contract/canary/execution-status.json",
+      "sha256": "28aeef52e9d6e797d0cd2b86323052e131487862d815c3d12e4e44eb649f0928"
+    },
+    "request_manifest": {
+      "bytes": 238824,
+      "path": "data/t11d_extractor_contract/old-prompt-request-manifest.jsonl",
+      "rows": 512,
+      "sha256": "1ac39cdc9e791db9a80405b015ce915758eb8177fcdfe928bdaa8a34d737af49"
+    }
+  },
+  "status": "complete",
+  "task": "T11d"
+}

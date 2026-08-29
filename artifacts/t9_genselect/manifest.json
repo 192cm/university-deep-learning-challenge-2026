@@ -1,0 +1,237 @@
+{
+  "completion_checks": {
+    "adapter_exceeds_fewshot_or_not_adopted": true,
+    "base_and_selector_hashes_side_by_side": true,
+    "c_ge8_at_most_20_percent": true,
+    "difficulty_composition_recorded": true,
+    "genselect_exceeds_majority_or_reverted": true,
+    "inference_within_24_hours": true,
+    "position_shuffle_consistency_recorded": true,
+    "same_total_generation_budget_compared": true,
+    "selection_input_truncation_zero": true,
+    "selector_output_mean_tokens_recorded": true,
+    "selector_output_not_collapsed": true,
+    "solution_pass_adapter_absent": true,
+    "solution_performance_matches_t8": true
+  },
+  "created_at_utc": "2026-08-22T23:19:50.760906+00:00",
+  "data_difficulty_composition": {
+    "c_ge8_at_most_20_percent": true,
+    "c_ge8_train_fraction": 0.06666666666666667,
+    "r2_hard_tail_used": true,
+    "r2_harvest_threshold_met": true,
+    "train": {
+      "r1_c1_3": 1000,
+      "r1_c4_7": 600,
+      "r1_c_ge8_anchor": 200,
+      "r2_hard_tail": 1200
+    },
+    "validation": {
+      "r1_c1_3": 120,
+      "r1_c4_7": 100,
+      "r1_c_ge8_anchor": 20,
+      "r2_hard_tail": 80
+    }
+  },
+  "decision": {
+    "final_strategy": "t8_fixed_majority32",
+    "genselect_adopted": false,
+    "selected_selector": "fewshot",
+    "selector_adapter_beats_fewshot": false,
+    "strict_equal_budget_genselect_beats_majority32": false
+  },
+  "hp_selection": {
+    "actual_epoch": 0.5013333333333333,
+    "adapter_path": "artifacts/t9_genselect/adapters/selector",
+    "adapter_sha256": "c6d4aa3fc53b93e5fadfa661cba8460cadf46d62689a5d8ee1e7463004add74d",
+    "checkpoint": "artifacts/t9_genselect/hp/lr_1em04/trainer/checkpoints/checkpoint-47",
+    "checkpoint_adapter_sha256": "2ae82fd62037c28445180fba333fa6001dd985640f85a22b5873b89f50d0a2df",
+    "checkpoint_step": 47,
+    "learning_rate": 0.0001,
+    "metrics": {
+      "answer_accuracy": 0.253125,
+      "candidate_final_answer_mismatch_rate": 0.003125,
+      "cases": 320,
+      "correct": 81,
+      "output_tokens": {
+        "max": 256,
+        "mean": 127.55,
+        "median": 125.5,
+        "p95": 163.0
+      },
+      "resolution_paths": {
+        "selected_candidate_answer": 319,
+        "selector_final_answer_fallback": 1
+      },
+      "selected_position_counts": {
+        "1": 102,
+        "10": 12,
+        "11": 7,
+        "12": 7,
+        "13": 26,
+        "14": 7,
+        "15": 28,
+        "16": 128,
+        "8": 1,
+        "9": 1
+      },
+      "valid_candidate_number_rate": 0.996875
+    },
+    "score": {
+      "bytes": 1509,
+      "path": "artifacts/t9_genselect/hp/lr_1em04/validation/checkpoint-47/score.json",
+      "sha256": "7a52164504ccc538eb9678badd479a3f7528978fd898f071f7e759abf7661568"
+    }
+  },
+  "model_identity": {
+    "adapter_merged": false,
+    "base_model": "Qwen/Qwen2.5-3B-Instruct",
+    "base_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "base_revision_sha256": "308b1843bbd6d61960eca79cc15b920bda497e64e57cb147ef3acb13c6b91a4f",
+    "same_base_one_weight_copy": true,
+    "selector_adapter_path": "artifacts/t9_genselect/adapters/selector",
+    "selector_adapter_sha256": "c6d4aa3fc53b93e5fadfa661cba8460cadf46d62689a5d8ee1e7463004add74d",
+    "solution_adapter": null
+  },
+  "objective": "recover majority-vote misses with a same-base GenSelect pass",
+  "outputs": {
+    "adapter": {
+      "path": "artifacts/t9_genselect/adapters/selector",
+      "sha256": "c6d4aa3fc53b93e5fadfa661cba8460cadf46d62689a5d8ee1e7463004add74d"
+    },
+    "comparison": {
+      "bytes": 837,
+      "path": "artifacts/t9_genselect/comparison.md",
+      "sha256": "2c21e39e093185ae2eb2a4526e307267ab44012aa32c06927bd0b922a1953630"
+    },
+    "metrics": {
+      "bytes": 11202,
+      "path": "artifacts/t9_genselect/metrics.json",
+      "sha256": "eb3651e277ada729cfd5ce7b568cc9c2bede327cb45f0161313ad212bfa3f32d"
+    }
+  },
+  "raw_generations_deleted": false,
+  "schema_version": 1,
+  "seed": 42,
+  "selection_pass": {
+    "adapter_applied_for_fewshot_arm": false,
+    "adapter_applied_for_trained_arm": true,
+    "selector_runs": 4,
+    "subset_size": 16
+  },
+  "solution_pass": {
+    "adapter_applied": false,
+    "t8_accuracy": 0.693069306930693,
+    "t8_generation_settings": {
+      "do_sample": true,
+      "k": 32,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 2048,
+      "seed": 42,
+      "temperature": 0.8,
+      "top_p": 0.95
+    }
+  },
+  "sources": {
+    "adapter_generations": {
+      "bytes": 27991194,
+      "path": "artifacts/t9_genselect/evaluation/adapter/generations.jsonl",
+      "rows": 29896,
+      "sha256": "511b5cb23b725d2756c238d99f3268e7f2cc80e812106084d2b68c8e964a1a0d"
+    },
+    "canonical": {
+      "bytes": 4208363,
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "cases": {
+      "bytes": 256429808,
+      "path": "artifacts/t9_genselect/evaluation/evaluation-cases.jsonl",
+      "rows": 29896,
+      "sha256": "19ad5d46d7b86ff6c25bd9fa54a396acd8345daf0d632841ccbd91bf06cf8aa0"
+    },
+    "config": {
+      "bytes": 3676,
+      "path": "configs/t9_genselect.json",
+      "sha256": "091e09f559c3a7630b03cb21df2ba5ff69ceec9fc7d028f36f2db6ea699b45e7"
+    },
+    "data_manifest": {
+      "bytes": 4654,
+      "path": "data/genselect/manifest.json",
+      "sha256": "a68f0b213dc15860777a0c87fbe3d2bcfb928a7bd776f0d4a1f8808f2d027573"
+    },
+    "fewshot_generations": {
+      "bytes": 29184577,
+      "path": "artifacts/t9_genselect/evaluation/fewshot/generations.jsonl",
+      "rows": 29896,
+      "sha256": "dfa3dcc3b08cce551cbea77885b8f436cb986732121ba6127da415dfcda19882"
+    },
+    "hp_sweep": {
+      "bytes": 16789,
+      "path": "artifacts/t9_genselect/hp-sweep.json",
+      "sha256": "217852b79939451279f7ae4aedeea3d88205e4c525c58789974ff25cf1277fd3"
+    },
+    "shuffle_cases": {
+      "bytes": 4392725,
+      "path": "artifacts/t9_genselect/evaluation/shuffle-cases.jsonl",
+      "rows": 512,
+      "sha256": "cb9db35849a9df3022298b4aeb7717c24d344f1e3dba3f52f4734921ff6b2302"
+    },
+    "shuffle_generations": {
+      "bytes": 478532,
+      "path": "artifacts/t9_genselect/evaluation/shuffle/generations.jsonl",
+      "rows": 512,
+      "sha256": "9bfb6657c848ff703299726af4f6c2dd7f161aca71d26d8512e50f6648519f57"
+    },
+    "splits": {
+      "format": {
+        "bytes": 114768,
+        "path": "data/splits/format_diagnostic.csv",
+        "rows": 256,
+        "sha256": "4862ead40601421680946cb1b70988284876cf325705fe6d2320c61a0c2fc82a"
+      },
+      "hard": {
+        "bytes": 274033,
+        "path": "data/splits/hard_diagnostic.csv",
+        "rows": 550,
+        "sha256": "b4710d1fedc4d4093ffb9ac249d9f0961330cdafe0b4ec8d09b417314109b50f"
+      },
+      "random": {
+        "bytes": 535264,
+        "path": "data/splits/random_holdout.csv",
+        "rows": 1637,
+        "sha256": "b3f69bb26cbf715bf4e3cda09164222f6ebaff3847d6d899173f0ae0ec88cf29"
+      },
+      "template": {
+        "bytes": 453525,
+        "path": "data/splits/template_holdout.csv",
+        "rows": 1637,
+        "sha256": "587a768ed89610a488a233f0bbcd237d7c8fcaea63eb09debadefbfb55c9fb13"
+      }
+    },
+    "t8_final_config": {
+      "bytes": 1467,
+      "path": "artifacts/t8_self_consistency/final_config.json",
+      "sha256": "86506a714d8e66a9f63b828209381499018d6acdc6f284c02aa81565bc526832"
+    },
+    "t8_generations": {
+      "bytes": 234212343,
+      "path": "artifacts/t8_self_consistency/generations.jsonl",
+      "sha256": "6ddf149fb2f001704d774aeb588527ccb0bb9d389f2530a254fab7541f74db54"
+    },
+    "t8_metadata": {
+      "bytes": 3384272,
+      "path": "artifacts/t8_self_consistency/run-metadata.json",
+      "sha256": "419a84f14aff7cd7f8a42dedc1872600d1aa193704c5cd4f993abadca89a7abd"
+    },
+    "union_ids": {
+      "bytes": 48581,
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "rows": 3737,
+      "sha256": "ee720c8f8be1cf2e1c3466c9ba92e408ed517f2d1d29eec9cb1c0bbfefe36c34"
+    }
+  },
+  "status": "complete",
+  "task": "T9"
+}

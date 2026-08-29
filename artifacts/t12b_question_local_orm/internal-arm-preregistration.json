@@ -1,0 +1,39 @@
+{
+  "arms": {
+    "A": "T12 pointwise BCE plus byte-identical n*geometric-mean replay",
+    "B1": "BCE plus pairwise ranking plus frozen nGM",
+    "B2": "BCE plus pairwise plus listwise auxiliary loss plus frozen nGM",
+    "C": "selected ranking ORM plus learned answer-group selector",
+    "D": "Arm C behind frozen group-aware selective override"
+  },
+  "config_sha256": "4e97e3f77ae0b12c010aab66b9260070e681926be9d56fee36fa770246603c40",
+  "diagnosis_only_inputs_may_select_arm": false,
+  "grid": {
+    "lambda_list": [
+      0.0,
+      0.25
+    ],
+    "lambda_pair": [
+      0.5,
+      1.0
+    ],
+    "tau": [
+      0.5,
+      1.0
+    ]
+  },
+  "inner_folds": 4,
+  "outer_folds": 5,
+  "outer_test_may_select_arm": false,
+  "schema_version": 1,
+  "selection_metrics": [
+    "within_question_macro_auc",
+    "group_top1",
+    "brier",
+    "ece",
+    "simpler_arm"
+  ],
+  "selection_scope": "inner_template_group_cv_only",
+  "status": "complete",
+  "task": "T12b"
+}

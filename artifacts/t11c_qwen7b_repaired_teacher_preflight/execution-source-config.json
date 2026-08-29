@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "task": "T11c",
+  "source": {
+    "hard_ids": {
+      "path": "data/t11_aimo_generation_quality/hard_ids.txt",
+      "rows": 1883,
+      "sha256": "77a10c579e870e3cd912c03fbb19d4635d6b1e826c7bdbae7b1c30b631441abb"
+    },
+    "t11_preflight_ids": {
+      "path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+      "rows": 64,
+      "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9"
+    },
+    "student_probe": {
+      "path": "data/t11_aimo_generation_quality/student_probe.jsonl",
+      "rows": 86888,
+      "sha256": "31b2af19392bbe86089ddfc27450d75af2aac27fba565dd633c9254ef3c63a4c"
+    },
+    "t11_teacher_generations": {
+      "path": "data/t11_aimo_generation_quality/teacher_generations.jsonl",
+      "rows": 256,
+      "sha256": "764f5e8fcc31bc61303ee8ed76e23b653a6b220effeb525f375aa78df9099e3c"
+    },
+    "t11_config": {
+      "path": "configs/t11_aimo_generation_quality.json",
+      "sha256": "2584181f0a24c4cc4a57c4f0760fca0ba5ee55405250500c4526214b9ab765ba"
+    },
+    "t11_preflight": {
+      "path": "artifacts/t11_aimo_generation_quality/teacher-preflight.json",
+      "sha256": "59484f387c30336242592f310b146404c2268171bb539f98d9a3eb4135616606"
+    },
+    "t11b_historical_normalizer_replay": {
+      "path": "data/t11b_deepseek14b_teacher_preflight/historical-normalizer-replay.json",
+      "sha256": "1fc1e332dde093fb73909b078eed2f845c2378d48c8aec97791b92c7bbfb9d3d"
+    },
+    "t11b_preflight": {
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/teacher-preflight.json",
+      "sha256": "23ae71215ff8517ebb7823e99357971e2064251817f4363ca404703a0d99e239"
+    },
+    "t11b_run_metadata": {
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight/teacher-run-metadata.json",
+      "sha256": "682354a6641996a8d8b1146caef3786c9744e6c5bc5c16eecf64266166763a2d"
+    },
+    "canonical_train": {
+      "path": "data/canonical/train.csv",
+      "rows": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "holdout_union_ids": {
+      "path": "artifacts/t8_self_consistency/holdout_union_ids.txt"
+    },
+    "validation_ids": {
+      "path": "data/splits/rft_validation_500_ids.txt",
+      "rows": 500,
+      "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+    },
+    "suspect_ids": {
+      "path": "data/suspect_set/ids.txt",
+      "rows": 1311,
+      "sha256": "ad3ac6669f3058071580531eb43eb5b7a5d5d82b99bd21fae3b982c27910dd75"
+    },
+    "root_submission": {
+      "path": "submission.csv"
+    }
+  },
+  "preflight_slice": {
+    "start_zero_based": 64,
+    "stop_zero_based_exclusive": 128,
+    "rows": 64,
+    "first_id": "train-000045",
+    "last_id": "train-001696",
+    "sha256": "a3f26bbe1fd1f692f1fb695ca73d161f938a112008fc4265014a4c1847114655"
+  },
+  "teacher": {
+    "provider": "local_vllm",
+    "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+    "revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "tokenizer_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+    "license": "Apache-2.0",
+    "cache_dir": "/workspace/.hf_home/hub",
+    "trust_remote_code": false,
+    "tool_use": false,
+    "system_prompt": "Please reason step by step, and put your final answer within \\boxed{}.",
+    "user_prompt_template": "{question}",
+    "system_prompt_bytes": 70,
+    "system_prompt_sha256": "1ac42a4db949361d680bccf674bfe78603b409d1c10f77fce293f14b9e14cc1e",
+    "user_prompt_sha256": "bf085a6e12c9d0e23a9dd157df084f933b2ef021caba82def1494bfb84a723c9",
+    "combined_prompt_sha256": "85da2d7bb47345cf3bfdf69cddf41f5ba2f93feecdcb8137ca4ac5ebfb650ea5",
+    "required_packages": {
+      "vllm": "0.27.1+cu129",
+      "torch": "2.13.0+cu129",
+      "transformers": "5.16.1",
+      "huggingface_hub": "1.28.0"
+    },
+    "engine": {
+      "engine": "vllm",
+      "dtype": "bfloat16",
+      "quantization": null,
+      "load_format": "auto",
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 5120,
+      "max_num_seqs": 64,
+      "request_chunk_size": 16,
+      "enable_prefix_caching": true,
+      "allow_long_max_model_len": true,
+      "tensor_parallel_size": 1
+    },
+    "generation": {
+      "do_sample": true,
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 3072,
+      "samples_first_round": 4,
+      "samples_second_round": 4,
+      "samples_max": 8,
+      "n_per_logical_request": 1
+    },
+    "smoke": {
+      "synthetic_only": true,
+      "max_new_tokens": 64,
+      "included_in_gate": false,
+      "require_standalone_batch_byte_identity": true
+    }
+  },
+  "student": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "cache_dir": "/workspace/.hf_home/hub",
+    "sft_user_prompt_sha256": "5d78ed32f7344f78cec9144e5944159832de9afb084f0aac7abe5085bb500a91",
+    "maximum_sequence_tokens": 4096
+  },
+  "seed_contract": {
+    "namespace": "t11c-qwen7b-repair-v1",
+    "namespace_sha256": "ccc82aa8a72fb259b6629dc5e0a4410bf3033c6a3cf346a82cfc9be676f74474",
+    "formula": "int.from_bytes(SHA256(namespace + NUL + ascii(id) + NUL + ascii(sample_index)).digest()[:4], big) & 0x7fffffff",
+    "planned_rows": 512,
+    "require_unique": true,
+    "batch_invariant_environment": "VLLM_BATCH_INVARIANT=1"
+  },
+  "normalizer": {
+    "version": "label-blind-final-line-v1",
+    "allowed_candidate_sources": [
+      "final_answer_marker",
+      "boxed",
+      "standalone_last_line"
+    ],
+    "append_bytes_template": "\\n\\nFINAL_ANSWER: <candidate>\\n",
+    "generic_last_integer_allowed": false,
+    "arithmetic_allowed": false,
+    "labels_allowed": false,
+    "deterministic_passes": 2
+  },
+  "trace_filter": {
+    "minimum_assistant_tokens": 128,
+    "maximum_assistant_tokens_exclusive": 3072,
+    "maximum_student_sequence_tokens": 4096,
+    "accepted_finish_reasons": ["stop", "eos"],
+    "require_exact_final_line": true,
+    "require_one_distinct_explicit_answer": true,
+    "require_nonempty_reasoning_before_final_line": true,
+    "forbid_code_and_tools": true
+  },
+  "gate": {
+    "questions": 64,
+    "first_round_outputs": 256,
+    "minimum_questions_with_accepted_correct": 32,
+    "minimum_accepted_correct_traces": 64,
+    "maximum_raw_code_or_tool_traces": 0,
+    "maximum_accepted_code_or_tool_traces": 0,
+    "maximum_input_truncations": 0,
+    "maximum_seed_collisions": 0,
+    "maximum_duplicate_or_missing_requests": 0,
+    "maximum_protected_or_validation_or_leaderboard_or_test_rows_sent": 0,
+    "maximum_api_cost_usd": 0.0,
+    "maximum_preflight_wall_hours": 2.0,
+    "hard_questions_for_projection": 1883,
+    "worst_case_samples_per_question": 8,
+    "maximum_projected_full_wall_hours": 12.0
+  },
+  "outputs": {
+    "data_dir": "data/t11c_qwen7b_repaired_teacher_preflight",
+    "artifact_dir": "artifacts/t11c_qwen7b_repaired_teacher_preflight",
+    "presentation_record": "docs/strategy/execution-prompts.md"
+  },
+  "scope_stop": {
+    "full_teacher_generation": false,
+    "sft": false,
+    "dpo": false,
+    "validation": false,
+    "holdout": false,
+    "leaderboard": false,
+    "test_generation": false,
+    "submission_update": false,
+    "teacher_fallback": false
+  }
+}

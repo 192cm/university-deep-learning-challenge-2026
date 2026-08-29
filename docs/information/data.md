@@ -56,9 +56,9 @@ Data 페이지 설명에는 총 3개 CSV가 제공된다고 안내되어 있습�
 
 ```json
 {
-  "id": "train-000000",
-  "question": "What is the molecular weight of some moles of Aluminum chloride if the molecular weight of 3 moles is 396?",
-  "answer": "132"
+  "id": "<sample-id>",
+  "question": "<competition problem text omitted>",
+  "answer": "<integer answer omitted>"
 }
 ```
 

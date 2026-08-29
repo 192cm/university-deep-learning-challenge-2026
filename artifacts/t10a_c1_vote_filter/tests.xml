@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="T10a C-1 focused tests" tests="7" failures="0" errors="0" skipped="0" time="2.761641">
+    <testcase classname="t10a_c1_test_0_test_vote_filter.VoteFilterTests" name="test_prediction_builder_cannot_accept_ground_truth" time="0.000065" />
+    <testcase classname="t10a_c1_test_0_test_vote_filter.VoteFilterTests" name="test_real_filter_off_regression_is_byte_identical" time="2.568328" />
+    <testcase classname="t10a_c1_test_0_test_vote_filter.VoteFilterTests" name="test_submission_csv_encoding_is_crlf_and_canonical" time="0.000036" />
+    <testcase classname="t10a_c1_test_0_test_vote_filter.VoteFilterTests" name="test_template_group_fold_assignment_is_deterministic" time="0.000037" />
+    <testcase classname="t10a_c1_test_1_test_t10a_c1_vote_filter.T10aC1VoteFilterTests" name="test_candidate_gate_holds_a_significant_but_subthreshold_gain" time="0.000043" />
+    <testcase classname="t10a_c1_test_1_test_t10a_c1_vote_filter.T10aC1VoteFilterTests" name="test_candidate_gate_rejects_a_split_guardrail_failure" time="0.000023" />
+    <testcase classname="t10a_c1_test_1_test_t10a_c1_vote_filter.T10aC1VoteFilterTests" name="test_config_reuses_frozen_t8_3_policy_and_t10a_c_pool" time="0.192858" />
+    <system-out>test_prediction_builder_cannot_accept_ground_truth (t10a_c1_test_0_test_vote_filter.VoteFilterTests.test_prediction_builder_cannot_accept_ground_truth) ... ok
+test_real_filter_off_regression_is_byte_identical (t10a_c1_test_0_test_vote_filter.VoteFilterTests.test_real_filter_off_regression_is_byte_identical) ... ok
+test_submission_csv_encoding_is_crlf_and_canonical (t10a_c1_test_0_test_vote_filter.VoteFilterTests.test_submission_csv_encoding_is_crlf_and_canonical) ... ok
+test_template_group_fold_assignment_is_deterministic (t10a_c1_test_0_test_vote_filter.VoteFilterTests.test_template_group_fold_assignment_is_deterministic) ... ok
+test_candidate_gate_holds_a_significant_but_subthreshold_gain (t10a_c1_test_1_test_t10a_c1_vote_filter.T10aC1VoteFilterTests.test_candidate_gate_holds_a_significant_but_subthreshold_gain) ... ok
+test_candidate_gate_rejects_a_split_guardrail_failure (t10a_c1_test_1_test_t10a_c1_vote_filter.T10aC1VoteFilterTests.test_candidate_gate_rejects_a_split_guardrail_failure) ... ok
+test_config_reuses_frozen_t8_3_policy_and_t10a_c_pool (t10a_c1_test_1_test_t10a_c1_vote_filter.T10aC1VoteFilterTests.test_config_reuses_frozen_t8_3_policy_and_t10a_c_pool) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.762s
+
+OK
+</system-out>
+  </testsuite>
+</testsuites>

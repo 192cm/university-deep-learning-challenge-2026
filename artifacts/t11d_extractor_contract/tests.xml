@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites>
+  <testsuite name="T11d focused tests" tests="71" failures="0" errors="0" skipped="0" time="0.086106">
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_boxed_negative_integer" time="0.000142" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_conflicting_explicit_answers_fail" time="0.000038" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_currency_symbol_is_treated_as_notation" time="0.000035" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_decimal_and_fraction_only_outputs_fail" time="0.000196" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_empty_and_incomplete_marker_fail" time="0.000015" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_equivalent_explicit_spellings_agree" time="0.000024" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_explicit_marker_blocks_body_fallback" time="0.000023" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_explicit_zero_decimal_is_integer_equivalent" time="0.000079" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_extractor_has_no_forbidden_calls_imports_or_arithmetic" time="0.004081" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_large_integer_and_thousands_separator" time="0.000087" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_malformed_boxed_answer_blocks_body_fallback" time="0.000070" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_marker_accepts_trailing_unit_and_period" time="0.000050" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_negative_zero_and_negative_zero_normalization" time="0.000048" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_normalization_does_not_convert_nonintegers" time="0.000024" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_repeated_identical_marker_uses_last_occurrence" time="0.000040" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_standalone_last_line_and_markerless_body_fallbacks" time="0.000086" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_unicode_minus_fullwidth_hyphen_digits_and_leading_plus" time="0.000150" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_units_with_a_slash_are_stripped_without_calculation" time="0.000054" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_unrequested_unicode_number_forms_are_not_converted" time="0.000055" />
+    <testcase classname="t11d_test_0_test_extract.ExtractAnswerTests" name="test_zero_decimal_explicit_conflict_fails" time="0.000035" />
+    <testcase classname="t11d_test_1_test_evaluate.EvaluateTests" name="test_dummy_jsonl_emits_every_required_metric" time="0.002759" />
+    <testcase classname="t11d_test_1_test_evaluate.EvaluateTests" name="test_majority_tie_uses_first_generated_answer_without_label" time="0.000038" />
+    <testcase classname="" name="test_adaptive_stops_only_on_four_valid_identical_extractions" time="0.002100" />
+    <testcase classname="" name="test_budget_matched_control_preserves_exact_count_without_answers" time="0.001895" />
+    <testcase classname="" name="test_exact_mcnemar_counts_paired_flips" time="0.000037" />
+    <testcase classname="" name="test_finalize_t8_1_writes_complete_paired_contract" time="0.039985" />
+    <testcase classname="" name="test_prepare_stage2_has_no_label_input_and_writes_disagreement_ids" time="0.001756" />
+    <testcase classname="" name="test_reference_snapshot_detects_any_t8_mutation" time="0.002552" />
+    <testcase classname="" name="test_t8_and_t8_1_generation_metadata_cannot_be_mixed" time="0.000656" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed" time="0.001385" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_filter_selection_is_ground_truth_blind" time="0.001176" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_generation_superset_requires_opt_in_and_validates_source_metadata" time="0.002061" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_incomplete_generation_coverage_fails" time="0.001032" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_low_quality_filter_is_opt_in_and_keeps_boxed_votes" time="0.002954" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back" time="0.001646" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_sample_submission_preserves_exact_headers_and_requires_id_order" time="0.001187" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_t10a_cot_boxed_config_and_metadata_are_supported" time="0.000941" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_t8_1_adapter_mismatch_fails" time="0.001966" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_t8_1_config_metadata_and_generation_adapter_are_validated" time="0.000923" />
+    <testcase classname="t11d_test_3_test_submit.SubmitTests" name="test_t8_config_and_completed_run_metadata_are_hash_validated" time="0.002396" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_final_answer_last_line_detection" time="0.000034" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_hit_max_and_conflicting_explicit_candidates_are_multipliers" time="0.000080" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_policy1_all_removed_uses_same_unfiltered_fallback" time="0.000084" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_policy1_matches_t8_3_filter_on_synthetic_candidates" time="0.000076" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_policy2_frozen_path_weights" time="0.000054" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_policy3_length_correction_caps_at_100_tokens" time="0.000061" />
+    <testcase classname="t11d_test_4_test_weighted_vote.CandidateWeightTests" name="test_policy4_completion_precedence" time="0.000028" />
+    <testcase classname="t11d_test_4_test_weighted_vote.ContractTests" name="test_policy1_is_reproduction_control_not_adoption_candidate" time="0.000054" />
+    <testcase classname="t11d_test_4_test_weighted_vote.ContractTests" name="test_prediction_builder_cannot_accept_ground_truth" time="0.000079" />
+    <testcase classname="t11d_test_4_test_weighted_vote.ContractTests" name="test_repository_config_matches_frozen_implementation" time="0.000542" />
+    <testcase classname="t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests" name="test_all_zero_weights_fall_back_to_unfiltered_majority" time="0.000031" />
+    <testcase classname="t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests" name="test_exact_weight_tie_uses_first_generated_answer" time="0.000026" />
+    <testcase classname="t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests" name="test_invalid_answers_never_receive_weight" time="0.000015" />
+    <testcase classname="t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests" name="test_rejects_length_mismatch_negative_and_nonfinite_weights" time="0.000023" />
+    <testcase classname="t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests" name="test_weight_sum_can_override_raw_count" time="0.000019" />
+    <testcase classname="t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests" name="test_zero_weight_occurrence_does_not_win_weighted_tie" time="0.000015" />
+    <testcase classname="" name="test_canary_id_selection_and_child_seeds_are_deterministic" time="0.000071" />
+    <testcase classname="" name="test_canary_request_arms_pair_on_identical_child_seeds" time="0.000048" />
+    <testcase classname="" name="test_config_clones_all_t8_generation_settings_and_freezes_prompt" time="0.000219" />
+    <testcase classname="" name="test_equivalent_and_conflicting_explicit_occurrences" time="0.000054" />
+    <testcase classname="" name="test_explicit_barrier_never_uses_body_last_integer" time="0.000021" />
+    <testcase classname="" name="test_explicit_integer_equivalent_success" time="0.000055" />
+    <testcase classname="" name="test_extractor_ast_has_no_calculation_or_forbidden_dependency" time="0.003638" />
+    <testcase classname="" name="test_format_observation_and_gate_metrics_are_label_blind" time="0.000266" />
+    <testcase classname="" name="test_frozen_canary_reentry_ignores_only_mutable_execution_status" time="0.000996" />
+    <testcase classname="" name="test_markerless_decimal_scope_is_not_widened" time="0.000054" />
+    <testcase classname="" name="test_old_extractor_source_is_the_frozen_prechange_copy" time="0.000606" />
+    <testcase classname="" name="test_plurality_tie_break_is_first_generated" time="0.000033" />
+    <testcase classname="" name="test_train_012155_regression_differs_only_under_new_contract" time="0.003227" />
+    <testcase classname="" name="test_unsafe_explicit_forms_remain_non_integer" time="0.000092" />
+    <testcase classname="" name="test_valid_and_invalid_numeric_explicit_occurrences_fail_together" time="0.000033" />
+    <system-out>test_boxed_negative_integer (t11d_test_0_test_extract.ExtractAnswerTests.test_boxed_negative_integer) ... ok
+test_conflicting_explicit_answers_fail (t11d_test_0_test_extract.ExtractAnswerTests.test_conflicting_explicit_answers_fail) ... ok
+test_currency_symbol_is_treated_as_notation (t11d_test_0_test_extract.ExtractAnswerTests.test_currency_symbol_is_treated_as_notation) ... ok
+test_decimal_and_fraction_only_outputs_fail (t11d_test_0_test_extract.ExtractAnswerTests.test_decimal_and_fraction_only_outputs_fail) ... ok
+test_empty_and_incomplete_marker_fail (t11d_test_0_test_extract.ExtractAnswerTests.test_empty_and_incomplete_marker_fail) ... ok
+test_equivalent_explicit_spellings_agree (t11d_test_0_test_extract.ExtractAnswerTests.test_equivalent_explicit_spellings_agree) ... ok
+test_explicit_marker_blocks_body_fallback (t11d_test_0_test_extract.ExtractAnswerTests.test_explicit_marker_blocks_body_fallback) ... ok
+test_explicit_zero_decimal_is_integer_equivalent (t11d_test_0_test_extract.ExtractAnswerTests.test_explicit_zero_decimal_is_integer_equivalent) ... ok
+test_extractor_has_no_forbidden_calls_imports_or_arithmetic (t11d_test_0_test_extract.ExtractAnswerTests.test_extractor_has_no_forbidden_calls_imports_or_arithmetic) ... ok
+test_large_integer_and_thousands_separator (t11d_test_0_test_extract.ExtractAnswerTests.test_large_integer_and_thousands_separator) ... ok
+test_malformed_boxed_answer_blocks_body_fallback (t11d_test_0_test_extract.ExtractAnswerTests.test_malformed_boxed_answer_blocks_body_fallback) ... ok
+test_marker_accepts_trailing_unit_and_period (t11d_test_0_test_extract.ExtractAnswerTests.test_marker_accepts_trailing_unit_and_period) ... ok
+test_negative_zero_and_negative_zero_normalization (t11d_test_0_test_extract.ExtractAnswerTests.test_negative_zero_and_negative_zero_normalization) ... ok
+test_normalization_does_not_convert_nonintegers (t11d_test_0_test_extract.ExtractAnswerTests.test_normalization_does_not_convert_nonintegers) ... ok
+test_repeated_identical_marker_uses_last_occurrence (t11d_test_0_test_extract.ExtractAnswerTests.test_repeated_identical_marker_uses_last_occurrence) ... ok
+test_standalone_last_line_and_markerless_body_fallbacks (t11d_test_0_test_extract.ExtractAnswerTests.test_standalone_last_line_and_markerless_body_fallbacks) ... ok
+test_unicode_minus_fullwidth_hyphen_digits_and_leading_plus (t11d_test_0_test_extract.ExtractAnswerTests.test_unicode_minus_fullwidth_hyphen_digits_and_leading_plus) ... ok
+test_units_with_a_slash_are_stripped_without_calculation (t11d_test_0_test_extract.ExtractAnswerTests.test_units_with_a_slash_are_stripped_without_calculation) ... ok
+test_unrequested_unicode_number_forms_are_not_converted (t11d_test_0_test_extract.ExtractAnswerTests.test_unrequested_unicode_number_forms_are_not_converted) ... ok
+test_zero_decimal_explicit_conflict_fails (t11d_test_0_test_extract.ExtractAnswerTests.test_zero_decimal_explicit_conflict_fails) ... ok
+test_dummy_jsonl_emits_every_required_metric (t11d_test_1_test_evaluate.EvaluateTests.test_dummy_jsonl_emits_every_required_metric) ... ok
+test_majority_tie_uses_first_generated_answer_without_label (t11d_test_1_test_evaluate.EvaluateTests.test_majority_tie_uses_first_generated_answer_without_label) ... ok
+unittest.case.FunctionTestCase (test_adaptive_stops_only_on_four_valid_identical_extractions)
+test_adaptive_stops_only_on_four_valid_identical_extractions ... ok
+unittest.case.FunctionTestCase (test_budget_matched_control_preserves_exact_count_without_answers)
+test_budget_matched_control_preserves_exact_count_without_answers ... ok
+unittest.case.FunctionTestCase (test_exact_mcnemar_counts_paired_flips)
+test_exact_mcnemar_counts_paired_flips ... ok
+unittest.case.FunctionTestCase (test_finalize_t8_1_writes_complete_paired_contract)
+test_finalize_t8_1_writes_complete_paired_contract ... ok
+unittest.case.FunctionTestCase (test_prepare_stage2_has_no_label_input_and_writes_disagreement_ids)
+test_prepare_stage2_has_no_label_input_and_writes_disagreement_ids ... ok
+unittest.case.FunctionTestCase (test_reference_snapshot_detects_any_t8_mutation)
+test_reference_snapshot_detects_any_t8_mutation ... ok
+unittest.case.FunctionTestCase (test_t8_and_t8_1_generation_metadata_cannot_be_mixed)
+test_t8_and_t8_1_generation_metadata_cannot_be_mixed ... ok
+test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed (t11d_test_3_test_submit.SubmitTests.test_filter_falls_back_to_unfiltered_majority_when_all_votes_are_removed) ... ok
+test_filter_selection_is_ground_truth_blind (t11d_test_3_test_submit.SubmitTests.test_filter_selection_is_ground_truth_blind) ... ok
+test_generation_superset_requires_opt_in_and_validates_source_metadata (t11d_test_3_test_submit.SubmitTests.test_generation_superset_requires_opt_in_and_validates_source_metadata) ... ok
+test_incomplete_generation_coverage_fails (t11d_test_3_test_submit.SubmitTests.test_incomplete_generation_coverage_fails) ... ok
+test_low_quality_filter_is_opt_in_and_keeps_boxed_votes (t11d_test_3_test_submit.SubmitTests.test_low_quality_filter_is_opt_in_and_keeps_boxed_votes) ... ok
+test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back (t11d_test_3_test_submit.SubmitTests.test_majority_tie_uses_lowest_sample_index_and_all_invalid_falls_back) ... ok
+test_sample_submission_preserves_exact_headers_and_requires_id_order (t11d_test_3_test_submit.SubmitTests.test_sample_submission_preserves_exact_headers_and_requires_id_order) ... ok
+test_t10a_cot_boxed_config_and_metadata_are_supported (t11d_test_3_test_submit.SubmitTests.test_t10a_cot_boxed_config_and_metadata_are_supported) ... ok
+test_t8_1_adapter_mismatch_fails (t11d_test_3_test_submit.SubmitTests.test_t8_1_adapter_mismatch_fails) ... ok
+test_t8_1_config_metadata_and_generation_adapter_are_validated (t11d_test_3_test_submit.SubmitTests.test_t8_1_config_metadata_and_generation_adapter_are_validated) ... ok
+test_t8_config_and_completed_run_metadata_are_hash_validated (t11d_test_3_test_submit.SubmitTests.test_t8_config_and_completed_run_metadata_are_hash_validated) ... ok
+test_final_answer_last_line_detection (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_final_answer_last_line_detection) ... ok
+test_hit_max_and_conflicting_explicit_candidates_are_multipliers (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_hit_max_and_conflicting_explicit_candidates_are_multipliers) ... ok
+test_policy1_all_removed_uses_same_unfiltered_fallback (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_policy1_all_removed_uses_same_unfiltered_fallback) ... ok
+test_policy1_matches_t8_3_filter_on_synthetic_candidates (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_policy1_matches_t8_3_filter_on_synthetic_candidates) ... ok
+test_policy2_frozen_path_weights (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_policy2_frozen_path_weights) ... ok
+test_policy3_length_correction_caps_at_100_tokens (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_policy3_length_correction_caps_at_100_tokens) ... ok
+test_policy4_completion_precedence (t11d_test_4_test_weighted_vote.CandidateWeightTests.test_policy4_completion_precedence) ... ok
+test_policy1_is_reproduction_control_not_adoption_candidate (t11d_test_4_test_weighted_vote.ContractTests.test_policy1_is_reproduction_control_not_adoption_candidate) ... ok
+test_prediction_builder_cannot_accept_ground_truth (t11d_test_4_test_weighted_vote.ContractTests.test_prediction_builder_cannot_accept_ground_truth) ... ok
+test_repository_config_matches_frozen_implementation (t11d_test_4_test_weighted_vote.ContractTests.test_repository_config_matches_frozen_implementation) ... ok
+test_all_zero_weights_fall_back_to_unfiltered_majority (t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests.test_all_zero_weights_fall_back_to_unfiltered_majority) ... ok
+test_exact_weight_tie_uses_first_generated_answer (t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests.test_exact_weight_tie_uses_first_generated_answer) ... ok
+test_invalid_answers_never_receive_weight (t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests.test_invalid_answers_never_receive_weight) ... ok
+test_rejects_length_mismatch_negative_and_nonfinite_weights (t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests.test_rejects_length_mismatch_negative_and_nonfinite_weights) ... ok
+test_weight_sum_can_override_raw_count (t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests.test_weight_sum_can_override_raw_count) ... ok
+test_zero_weight_occurrence_does_not_win_weighted_tie (t11d_test_4_test_weighted_vote.WeightedMajorityVoteTests.test_zero_weight_occurrence_does_not_win_weighted_tie) ... ok
+unittest.case.FunctionTestCase (test_canary_id_selection_and_child_seeds_are_deterministic)
+test_canary_id_selection_and_child_seeds_are_deterministic ... ok
+unittest.case.FunctionTestCase (test_canary_request_arms_pair_on_identical_child_seeds)
+test_canary_request_arms_pair_on_identical_child_seeds ... ok
+unittest.case.FunctionTestCase (test_config_clones_all_t8_generation_settings_and_freezes_prompt)
+test_config_clones_all_t8_generation_settings_and_freezes_prompt ... ok
+unittest.case.FunctionTestCase (test_equivalent_and_conflicting_explicit_occurrences)
+test_equivalent_and_conflicting_explicit_occurrences ... ok
+unittest.case.FunctionTestCase (test_explicit_barrier_never_uses_body_last_integer)
+test_explicit_barrier_never_uses_body_last_integer ... ok
+unittest.case.FunctionTestCase (test_explicit_integer_equivalent_success)
+test_explicit_integer_equivalent_success ... ok
+unittest.case.FunctionTestCase (test_extractor_ast_has_no_calculation_or_forbidden_dependency)
+test_extractor_ast_has_no_calculation_or_forbidden_dependency ... ok
+unittest.case.FunctionTestCase (test_format_observation_and_gate_metrics_are_label_blind)
+test_format_observation_and_gate_metrics_are_label_blind ... ok
+unittest.case.FunctionTestCase (test_frozen_canary_reentry_ignores_only_mutable_execution_status)
+test_frozen_canary_reentry_ignores_only_mutable_execution_status ... ok
+unittest.case.FunctionTestCase (test_markerless_decimal_scope_is_not_widened)
+test_markerless_decimal_scope_is_not_widened ... ok
+unittest.case.FunctionTestCase (test_old_extractor_source_is_the_frozen_prechange_copy)
+test_old_extractor_source_is_the_frozen_prechange_copy ... ok
+unittest.case.FunctionTestCase (test_plurality_tie_break_is_first_generated)
+test_plurality_tie_break_is_first_generated ... ok
+unittest.case.FunctionTestCase (test_train_012155_regression_differs_only_under_new_contract)
+test_train_012155_regression_differs_only_under_new_contract ... ok
+unittest.case.FunctionTestCase (test_unsafe_explicit_forms_remain_non_integer)
+test_unsafe_explicit_forms_remain_non_integer ... ok
+unittest.case.FunctionTestCase (test_valid_and_invalid_numeric_explicit_occurrences_fail_together)
+test_valid_and_invalid_numeric_explicit_occurrences_fail_together ... ok
+
+----------------------------------------------------------------------
+Ran 71 tests in 0.086s
+
+OK
+</system-out>
+  </testsuite>
+</testsuites>

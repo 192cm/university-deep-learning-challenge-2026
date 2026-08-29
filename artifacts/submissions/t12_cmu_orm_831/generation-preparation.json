@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-08-28T14:02:43.974973+00:00",
+  "ignored_superset_rows": 5408,
+  "inputs": {
+    "generations": {
+      "path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+      "sha256": "f01d4cc9028611b1a8e2963a1df959d8f10aa04a387ac6c21863200863ff84f0"
+    },
+    "questions": {
+      "path": "data/deep_chal_math_leaderboard_filtered.csv",
+      "sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1"
+    }
+  },
+  "label_files_opened": 0,
+  "output": {
+    "bytes": 46957120,
+    "path": "artifacts/submissions/t12_cmu_orm_831/generations.jsonl",
+    "rows": 26592,
+    "sha256": "1b14920a39eb1e91d88d8187ba935d23541c55f7dc5ce07197d17db37df5aaf8"
+  },
+  "questions": 831,
+  "samples_per_question": 32,
+  "schema_version": 1,
+  "selected_rows": 26592,
+  "source_rows": 32000,
+  "status": "complete",
+  "task": "T12-submission"
+}

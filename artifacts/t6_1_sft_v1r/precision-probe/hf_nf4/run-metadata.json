@@ -1,0 +1,105 @@
+{
+  "completed_at_utc": "2026-08-21T11:10:53.193087+00:00",
+  "effective_config": {
+    "adapter": {
+      "base_model_name_or_path": "Qwen/Qwen2.5-3B-Instruct",
+      "config_sha256": "537819b72447ced90971e276aa17b4ca2b68860e61652701cb67c577f3aa3a26",
+      "path": "/workspace/artifacts/t6_sft_v1/adapters/rft_r1",
+      "peft_type": "LORA",
+      "rank": 64,
+      "sha256": "c5351995b9874fa27778d564e0748b6e694a26936b1372711535bc28b7c38bd1"
+    },
+    "engine": "hf",
+    "generation": {
+      "do_sample": false,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 2048,
+      "n": 1,
+      "seed": 42,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": true,
+      "max_batch_size": 128,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "schema_version": 1,
+    "task": "T4",
+    "vllm": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 256,
+      "request_chunk_size": 1024
+    }
+  },
+  "environment": {
+    "note": "fully cached invocation; GPU runtime not imported",
+    "python_version": "3.12.13"
+  },
+  "invocation_wall_seconds": 0.024045079946517944,
+  "output": {
+    "path": "artifacts/t6_1_sft_v1r/precision-probe/hf_nf4/generations.jsonl",
+    "rows": 1637,
+    "sha256": "67ab069f73b478ee9d930a2081faca08bd4ae002d784031cec73b2dc5035a1e9"
+  },
+  "prompt_tokenization": {
+    "chat_template_applied": true,
+    "max_input_tokens": 2048,
+    "padding_side": "left",
+    "truncated_prompts": null,
+    "truncation_side": "right"
+  },
+  "results": {
+    "generated_this_invocation": 0,
+    "generation_wall_seconds": 0.0,
+    "generations_per_second": null,
+    "gpu_monitor": null,
+    "oom_events": [],
+    "torch_peak_allocated_mib": null
+  },
+  "resume": {
+    "cached_generations_at_start": 1637,
+    "pending_generations_at_start": 0
+  },
+  "run_fingerprint": "33864d54035994db6ec7aec7d7c60c74a5099228be605f5f677621edb5bf6df0",
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "path": "configs/t4_output_contract.json",
+      "sha256": "df1c08d9b55b5f5dbf9c2789cfdc84f3445681c2786d9bd40db0451b58a97b85"
+    },
+    "ids_file": {
+      "path": "data/splits/random_holdout_ids.txt",
+      "sha256": "cc76d7fd77e98d070b46d833f8d1737319ca0dc6baf292009803a1c34e8146e4"
+    },
+    "input": {
+      "path": "data/canonical/train.csv",
+      "rows_before_selection": 16373,
+      "sha256": "d1fc6303d75ddb9a3434755725f306c3799ba208ede7ce8636379cf3baeac160"
+    },
+    "max_prompts": null,
+    "selected_ids_sha256": "cc76d7fd77e98d070b46d833f8d1737319ca0dc6baf292009803a1c34e8146e4",
+    "selected_rows": 1637,
+    "selection_seed": 42
+  },
+  "started_at_utc": "2026-08-21T11:10:53.169045+00:00",
+  "status": "complete",
+  "task": "T4"
+}

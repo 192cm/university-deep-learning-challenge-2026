@@ -1,0 +1,66 @@
+{
+  "all_answers_canonical_integers": true,
+  "extraction_failure_counts": {
+    "conflicting_explicit_answers": 148,
+    "no_supported_answer_marker": 125,
+    "non_integer_only": 6
+  },
+  "extraction_path_counts": {
+    "boxed": 1859,
+    "final_answer_marker": 26515,
+    "last_integer": 3318,
+    "none": 279,
+    "standalone_last_line": 29
+  },
+  "fallback_answer": "0",
+  "fallback_count": 0,
+  "fallback_rows": [],
+  "first_id": "val-000000",
+  "generation_count": 32000,
+  "generation_identity": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "run_fingerprint": "2bf189cf7b814ff1189faabb20f339c9e49cfe330231a0359d007131c249fbb9"
+  },
+  "generations_path": "artifacts/submissions/t8_majority_k32/generations.jsonl",
+  "generations_sha256": "a194c581e8d28468a606e8051aa398e7a2721e219c605d5e2b029dbe4ad2240e",
+  "ground_truth_used_for_selection": false,
+  "hit_max_new_tokens_count": 413,
+  "hit_max_new_tokens_rate": 0.01290625,
+  "id_order_preserved": true,
+  "input_path": "data/deep_chal_math_leaderboard.csv",
+  "input_sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32",
+  "invalid_candidate_count": 279,
+  "invalid_candidate_rate": 0.00871875,
+  "k": 32,
+  "last_id": "val-000999",
+  "majority_tie_break": "first generated answer among tied top vote counts",
+  "mean_agreement": 0.7230625,
+  "median_agreement": 0.875,
+  "minimum_agreement": 0.0625,
+  "output_header": [
+    "id",
+    "answer"
+  ],
+  "row_count": 1000,
+  "run_contract": {
+    "config_path": "configs/t8_self_consistency.json",
+    "config_sha256": "5bb973dd927c9654cc809011a399451b5b881dab69a138d523aa90a1d7fad630",
+    "metadata_path": "artifacts/submissions/t8_majority_k32/run-metadata.json",
+    "metadata_sha256": "8637c4c5d77d67708198d00ce4c4cc345c6cbd575d02a6a4f3060a24e5fbe4c9",
+    "validated": true
+  },
+  "sample_submission_path": null,
+  "sample_submission_sha256": null,
+  "schema_version": 1,
+  "strategy": "T8 fixed self-consistency majority@k",
+  "unique_id_count": 1000,
+  "vote_tie_count": 36,
+  "vote_tie_rate": 0.036,
+  "output_path": "submission.csv",
+  "output_sha256": "44096a9759091f62897d88ff905e105b42fedb14acfee28bdd6d967d16eb0a5c",
+  "output_bytes": 15145,
+  "output_rows": 1000,
+  "csv_round_trip_verified": true,
+  "artifact_workbook_verified": true
+}

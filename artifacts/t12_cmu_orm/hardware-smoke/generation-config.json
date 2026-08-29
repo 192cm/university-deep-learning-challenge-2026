@@ -1,0 +1,59 @@
+{
+  "adaptive": {
+    "continuation_samples": 28,
+    "initial_k": 4,
+    "max_k": 32,
+    "stage1_seed": 42004,
+    "stage2_seed": 42032,
+    "stop_condition": "all four extracted answers are valid and identical"
+  },
+  "budget": {
+    "maximum_selected_runtime_hours": 18,
+    "minimum_reserve_hours": 6,
+    "total_hours": 24
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 64,
+    "n": 2,
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "hf": {
+    "attn_implementation": "sdpa",
+    "max_batch_size": 128,
+    "max_batch_tokens": 294912
+  },
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+  "provenance": {
+    "gold_columns_exposed": 0,
+    "selection_namespace": "t12-hardware-smoke-v1:",
+    "t12_usage": "pre-data hardware integration smoke only"
+  },
+  "schema_version": 1,
+  "selection": {
+    "budget_control_allocation": "ID-hash deterministic floor/ceiling allocation",
+    "budget_control_seed": 42,
+    "majority_tie_break": "first generated answer among tied top vote counts"
+  },
+  "task": "T8",
+  "vllm": {
+    "batch_invariant": true,
+    "dtype": "bfloat16",
+    "enable_prefix_caching": true,
+    "enforce_eager": false,
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 4096,
+    "max_num_seqs": 256,
+    "request_chunk_size": 64
+  }
+}

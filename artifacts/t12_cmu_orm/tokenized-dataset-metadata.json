@@ -1,0 +1,51 @@
+{
+  "created_at_utc": "2026-08-27T22:01:41.574928+00:00",
+  "fingerprint": "c2be2632bd5e7a8c99e56b40c33d9fe902dd3eeaac0d7533a82a376854b03059",
+  "identity": {
+    "config_sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189",
+    "max_length": 4096,
+    "prompt_template_sha256": "ae08f4855ba999f72daa45db7a97345e4ede466706ed79f69846f14379b8277e",
+    "reward_train_ids_sha256": "76c501d2c7fe50debe95a2e08ebc8fc6b1d6634083de31425835175966b5f9cb",
+    "reward_validation_ids_sha256": "706ac7f2c9f5db8af3bfae0339db67056c64ad3da3a93c523ee7df25f0986a8d",
+    "schema_version": 1,
+    "train_manifest_sha256": "44167ab01ad78636083c28efa49d6e8dc54220957b6d418cdc0956a3a75eb5ee",
+    "train_sha256": "baa32811779901a888b59387ee611fffa182b16ecdc4a338adb8af950ad2fa8b"
+  },
+  "output": {
+    "path": "artifacts/t12_cmu_orm/tokenized-dataset",
+    "sha256": "a419853108b9b522a34ba9a8ec93e7d054833f009581251baa4d9a77dbf24f61"
+  },
+  "prompt_contract": {
+    "correctness_label_present": false,
+    "gold_answer_present": false,
+    "question_and_full_candidate_trace_only": true,
+    "question_id_present": false,
+    "split_name_present": false,
+    "template_sha256": "ae08f4855ba999f72daa45db7a97345e4ede466706ed79f69846f14379b8277e"
+  },
+  "schema_version": 1,
+  "splits": {
+    "train": {
+      "questions": 5431,
+      "rows": 27870,
+      "tokens": {
+        "max": 2336,
+        "mean": 709.7037674919268,
+        "median": 605.0
+      },
+      "truncated": 0
+    },
+    "validation": {
+      "questions": 603,
+      "rows": 3042,
+      "tokens": {
+        "max": 2250,
+        "mean": 700.8750821827745,
+        "median": 604.0
+      },
+      "truncated": 0
+    }
+  },
+  "status": "complete",
+  "task": "T12"
+}

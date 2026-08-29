@@ -1,0 +1,69 @@
+{
+  "candidates_per_question": 32,
+  "counters": {
+    "clipped_scores": 0,
+    "fallback:None": 0,
+    "fallback:no_valid_candidates": 6,
+    "fallbacks": 6,
+    "invalid_candidates": 1734,
+    "nan_scores": 0,
+    "questions": 1000,
+    "ties": 0
+  },
+  "gold_or_label_files_opened": 0,
+  "inputs": {
+    "candidate_scores": {
+      "path": "artifacts/t12_cmu_orm/fresh-validation/candidate-scores.jsonl",
+      "rows": 32000,
+      "sha256": "18f6fb37dc6818ff39c13e486a185fdbfa0ee7a226e549967c3b5470101d2b20"
+    },
+    "config": {
+      "path": "configs/t12_cmu_orm.json",
+      "sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189"
+    },
+    "generations": {
+      "path": "artifacts/t12_cmu_orm/fresh-validation/generations.jsonl",
+      "sha256": "ddd4cddbed32fb272d6c1a46560a9a0db93c3546044cc9e7c9caf3547c676b9f"
+    },
+    "questions": {
+      "path": "data/cmu_orm/validation.csv",
+      "sha256": "83769d276ba1205b5e8e8ee443ce285e53a8082a217928a0f0dbcb3d49e7ea05"
+    }
+  },
+  "outputs": {
+    "changed-cases-label-blind.jsonl": {
+      "bytes": 5366,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/changed-cases-label-blind.jsonl",
+      "rows": 24,
+      "sha256": "e098dbba5d1a1b5288b625978adb8672a10aa27d79b9e62cc67b0b68d430ac25"
+    },
+    "group-weights.jsonl": {
+      "bytes": 1247246,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/group-weights.jsonl",
+      "rows": 1000,
+      "sha256": "8a48546559925b1c7b4c5aba233a9654f126b3625da2f7f2920e611ef8e41181"
+    },
+    "predictions.jsonl": {
+      "bytes": 223459,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/predictions.jsonl",
+      "rows": 1000,
+      "sha256": "71faff00026c0c748dd101354984560f364313a275d4a7ed5cacd65f4969ef98"
+    },
+    "raw-majority-predictions.jsonl": {
+      "bytes": 49089,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/raw-majority-predictions.jsonl",
+      "rows": 1000,
+      "sha256": "4e919ad9ae24621a6971ca57dbef5012b15206764520da15c1bda61230687f25"
+    },
+    "t8-3-filter-predictions.jsonl": {
+      "bytes": 80082,
+      "path": "artifacts/t12_cmu_orm/fresh-validation/t8-3-filter-predictions.jsonl",
+      "rows": 1000,
+      "sha256": "400545f9afdf8c005d84e4970c44a80136001b164209dfa9a793ce8bc026bf2c"
+    }
+  },
+  "question_count": 1000,
+  "schema_version": 1,
+  "status": "label_blind_frozen",
+  "task": "T12"
+}

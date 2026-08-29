@@ -1,0 +1,84 @@
+{
+  "cache": {
+    "path": "artifacts/t6_1_sft_v1r/rft_v2/cache",
+    "rows": 6588,
+    "sha256": "636074af8034f217cb1f70501c3ca000874313c6bd9a7b22b2389b5f2833e4f3"
+  },
+  "cache_fingerprint": "1d9a9c53848b22dc92a923e415b6ad5ba39c810cec2cc76bf1abb4c53174e3e0",
+  "cache_identity": {
+    "inputs": [
+      {
+        "path": "data/rft_r1_v2/sft.jsonl",
+        "sha256": "03e6a7bdf937144bc1bf8a8595320bdeba430ee2f0558906bf6a32594c1c890e"
+      }
+    ],
+    "max_length": 2048,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "packing": false,
+    "schema_version": 1,
+    "seed": 42,
+    "target_preservation_tokens": 128,
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "created_at_utc": "2026-08-21T11:13:10.431582+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "tokenizers_parallelism": "true"
+  },
+  "packing": {
+    "algorithm": null,
+    "assistant_loss_tokens": 4132683,
+    "assistant_only_mask_preserved": true,
+    "capacity_tokens": 13492224,
+    "efficiency": 0.3686106160111187,
+    "enabled": false,
+    "packed_sequences": 6588,
+    "sample_boundaries_begin_masked": true,
+    "source_samples": 6588,
+    "total_tokens": 4973377
+  },
+  "runtime_seconds": 13.185472695156932,
+  "schema_version": 1,
+  "source_audit": {
+    "duplicate_exact_rows_detected": 0,
+    "duplicate_exact_rows_removed": 0,
+    "final_line_contract_100_percent": true,
+    "inputs": [
+      {
+        "path": "data/rft_r1_v2/sft.jsonl",
+        "rows": 6588,
+        "sha256": "03e6a7bdf937144bc1bf8a8595320bdeba430ee2f0558906bf6a32594c1c890e"
+      }
+    ],
+    "rows": 6588,
+    "source_counts": {
+      "rft_r1_v2": 6588
+    }
+  },
+  "status": "complete",
+  "task": "T6-1",
+  "tokenization": {
+    "assistant_eos_labeled_100_percent": true,
+    "assistant_eos_labeled_samples": 6588,
+    "assistant_only_loss": true,
+    "assistant_tokens": {
+      "max": 1971,
+      "mean": 627.3046448087432,
+      "median": 493.0,
+      "p95": 1501.949999999999
+    },
+    "chat_template_applied": true,
+    "label_token_identity_100_percent": true,
+    "length": {
+      "max": 2048,
+      "mean": 754.9145415907711,
+      "median": 620.5,
+      "p95": 1643.6499999999996
+    },
+    "max_length": 2048,
+    "prompt_labels_all_minus_100": true,
+    "source_samples": 6588,
+    "truncated_samples": 97,
+    "truncation_preserves_prompt_and_completion_tail": true
+  }
+}

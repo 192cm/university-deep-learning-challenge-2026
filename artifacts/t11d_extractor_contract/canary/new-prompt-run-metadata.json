@@ -1,0 +1,73 @@
+{
+  "arm": "new",
+  "created_at_utc": "2026-08-27T14:29:35.141435+00:00",
+  "engine": {
+    "batch_invariant": true,
+    "dtype": "bfloat16",
+    "enable_prefix_caching": true,
+    "enforce_eager": false,
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 4096,
+    "max_num_seqs": 256,
+    "name": "vllm",
+    "request_chunk_size": 64
+  },
+  "generation": {
+    "do_sample": true,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048,
+    "n": 4,
+    "seed": 42,
+    "seed_contract": "int.from_bytes(SHA256(namespace + NUL + ascii(id) + NUL + ascii(sample_index)).digest()[:4], big) & 0x7fffffff",
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "model": {
+    "cache_dir": "/workspace/.hf_home/hub",
+    "hf_home": "/workspace/.hf_home",
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+  },
+  "output": {
+    "bytes": 1030766,
+    "path": "artifacts/t11d_extractor_contract/canary/new-prompt-generations.jsonl",
+    "rows": 512,
+    "sha256": "35f80ba550ababc47230b7befc0e792f9ae29005b66a23a4addaf9727f251429"
+  },
+  "prompt": {
+    "serialized_prompt_hashes_sha256": "38a2951ad26fa2ec6e6d90b68f8a23ecca907f06a5095bfd5361f8bfa1372f43",
+    "template": "Solve the following problem carefully.\n\nThe required answer is a single base-10 integer. You may use units, currency\nsymbols, decimals, and mathematical notation in your reasoning, but the final\nline must contain only the canonical integer answer.\n\nOutput contract:\n- Write exactly one FINAL_ANSWER marker.\n- The final non-empty line must match:\n  FINAL_ANSWER: -?(0|[1-9][0-9]*)\n- Do not use a currency symbol, comma, decimal point, unit, LaTeX, markdown,\n  or \\boxed{} on that line.\n- If the computed result is a whole monetary amount such as $400.00, write 400.\n- Do not write anything after the FINAL_ANSWER line.\n- Before finishing, silently verify that the final line satisfies this contract.\n\nProblem:\n{question}",
+    "template_sha256": "db3ca4c7d66966437a3453d219794bf38cd678cc0aabdcd3a7fca7daabdf1d35"
+  },
+  "results": {
+    "external_api_calls": 0,
+    "generation_wall_seconds": 346.15183235303266,
+    "generations": 512,
+    "generations_per_second": 1.4791197161071863,
+    "input_truncations": 0,
+    "labels_loaded": false,
+    "questions": 128
+  },
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "bytes": 6083,
+      "path": "configs/t11d_extractor_contract.json",
+      "sha256": "b89db4529be824822440a5cb904145bb9049337008f76ecd6be2bb7ebd7565f5"
+    },
+    "preparation": {
+      "bytes": 213,
+      "path": "artifacts/t11d_extractor_contract/canary/execution-status.json",
+      "sha256": "d7394cedc67fdef1783985c7b7aa1d1921c89b53e09526526f3e4e1c3e8f831c"
+    },
+    "request_manifest": {
+      "bytes": 238824,
+      "path": "data/t11d_extractor_contract/new-prompt-request-manifest.jsonl",
+      "rows": 512,
+      "sha256": "44d5dce1fa3d1b3256c8007d2c00ee7d070bf545760435691efefa64ff3b88d1"
+    }
+  },
+  "status": "complete",
+  "task": "T11d"
+}

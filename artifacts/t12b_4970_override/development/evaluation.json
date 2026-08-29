@@ -1,0 +1,26 @@
+{
+  "delta_group_vs_raw_pp": 0.31645569620253167,
+  "delta_override_vs_raw_pp": 0.0,
+  "fallback_exclusions": 1,
+  "group_selector_accuracy": 0.7689873417721519,
+  "is_original_nested_oof": false,
+  "override_fit_questions": 328,
+  "override_metrics": {
+    "breaks": 0,
+    "coverage": 0.0,
+    "net_gain": 0,
+    "overrides": 0,
+    "questions": 316,
+    "rescues": 0,
+    "wrong_to_wrong": 0,
+    "wrong_to_wrong_rate": 0.0
+  },
+  "partitions_are_template_group_disjoint": true,
+  "questions": 316,
+  "raw_majority_accuracy": 0.7658227848101266,
+  "schema_version": 1,
+  "scope": "operational_single_holdout_partitioned_evaluation",
+  "selective_override_accuracy": 0.7658227848101266,
+  "selector_fit_questions": 359,
+  "task": "T12b-4970-override"
+}

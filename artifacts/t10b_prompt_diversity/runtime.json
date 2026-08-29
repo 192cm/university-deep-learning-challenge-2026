@@ -1,0 +1,12 @@
+{
+  "adoption_upper_bound_hours": 18.0,
+  "estimated_1000_question_hours": 0.929405398365147,
+  "estimated_1000_question_seconds": 3345.8594341145294,
+  "generation_wall_seconds": 12503.476705285997,
+  "generations_per_second": 9.564059886594935,
+  "measured_generations": 119584,
+  "measured_questions": 3737,
+  "schema_version": 1,
+  "task": "T10b",
+  "within_adoption_upper_bound": true
+}

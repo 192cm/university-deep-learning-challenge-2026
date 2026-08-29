@@ -1,0 +1,213 @@
+{
+  "config": {
+    "bytes": 7824,
+    "kind": "file",
+    "path": "configs/t12b_question_local_orm.json",
+    "sha256": "4e97e3f77ae0b12c010aab66b9260070e681926be9d56fee36fa770246603c40"
+  },
+  "contracts": {
+    "existing_t12_artifacts_are_not_overwritten": true,
+    "leaderboard_labels_not_used_for_selection": true,
+    "leaderboard_records_are_label_blind_safety_only": true,
+    "root_submission_is_not_written": true,
+    "t12_fresh_and_reused_are_diagnosis_only": true
+  },
+  "created_at_utc": "2026-08-28T17:10:49.853461+00:00",
+  "diagnosis_only": {
+    "forbidden_for_selection": [
+      "data/cmu_orm/validation.csv",
+      "artifacts/t12_cmu_orm/fresh-validation",
+      "artifacts/t12_cmu_orm/reused-t8",
+      "artifacts/t12_cmu_orm/reused-t8-diagnostic.json"
+    ],
+    "reference_metrics": {
+      "breaks": 6,
+      "ece": 0.168615,
+      "fresh_candidate_correctness": 0.81091,
+      "global_auc": 0.812268,
+      "hard_delta_pp": 1.801802,
+      "mean_score": 0.642295,
+      "non_hard_delta_pp": -0.257069,
+      "oracle_pass_at_32": 0.969,
+      "orm_argmax_accuracy": 0.828,
+      "orm_weighted_accuracy": 0.876,
+      "raw_majority_accuracy": 0.874,
+      "rescues": 8,
+      "score_lost_questions": 45,
+      "selectable_recovery": "8/95",
+      "support_lost_questions": 42,
+      "within_question_macro_auc": 0.740453,
+      "wrong_to_wrong": 10
+    }
+  },
+  "identity_sha256": "cd053301bb8f00c4dd385d65888181a5101ec6421b2ceb98ce2d170958ca5705",
+  "inputs": [
+    {
+      "bytes": 440044,
+      "kind": "file",
+      "path": "artifacts/t12_cmu_orm/fresh-validation/evaluation.json",
+      "sha256": "6ad5ca4ab285a12f51435dbdc425bacf56a380744ab6afb1d7c38e37185b0111"
+    },
+    {
+      "bytes": 3395,
+      "kind": "file",
+      "path": "report/t12-orm-diagnostic-2026-08-28/diagnostic-summary.json",
+      "sha256": "f86ad307758c53bb1045fbb1875c24ad388b1257aa4dd79de3f1fb9ad8affdbf"
+    },
+    {
+      "bytes": 70602645,
+      "kind": "file",
+      "path": "data/cmu_orm/train.jsonl",
+      "sha256": "baa32811779901a888b59387ee611fffa182b16ecdc4a338adb8af950ad2fa8b"
+    },
+    {
+      "bytes": 5942,
+      "kind": "file",
+      "path": "data/cmu_orm/train-manifest.json",
+      "sha256": "44167ab01ad78636083c28efa49d6e8dc54220957b6d418cdc0956a3a75eb5ee"
+    },
+    {
+      "bytes": 6622,
+      "kind": "file",
+      "path": "configs/t12_cmu_orm.json",
+      "sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189"
+    },
+    {
+      "bytes": 63536,
+      "kind": "file",
+      "path": "src/build_orm_data.py",
+      "sha256": "ce05fae22785651c0bff6dd5d77ef0c643180a96b2650aa704f8b177a43705ff"
+    },
+    {
+      "bytes": 43643,
+      "kind": "file",
+      "path": "src/train_orm.py",
+      "sha256": "f0adcc73e06f3e37664949bd32a00a7ceb01e6c93ba2e99394d0915fb4968ced"
+    },
+    {
+      "bytes": 28334,
+      "kind": "file",
+      "path": "src/orm_score.py",
+      "sha256": "33e8b8e78f49594835e848b72c8ff3f8a6078db351af0be71ddb86af99f17dfa"
+    },
+    {
+      "bytes": 34599,
+      "kind": "file",
+      "path": "src/orm_vote.py",
+      "sha256": "f85f8b0985f1963e5640feaeae3f7e659f8d6f3d38bb2b9f4611727407c29d34"
+    },
+    {
+      "bytes": 68171,
+      "kind": "file",
+      "path": "src/generate.py",
+      "sha256": "60ad06e255a5da2b46666c8a09d634db372ec2461e0d3401514d6364774c02d3"
+    },
+    {
+      "bytes": 78649,
+      "kind": "file",
+      "path": "src/self_consistency.py",
+      "sha256": "02c20cacb46dc64faf97d587ac330bacb664e3779f02781b30b467e387039830"
+    },
+    {
+      "bytes": 55249,
+      "kind": "file",
+      "path": "src/t12_sharding.py",
+      "sha256": "2992a575628dafb10be1a318110172b31f6c1426480fe03766c44e992d2669b1"
+    },
+    {
+      "bytes": 21835,
+      "kind": "file",
+      "path": "scripts/run_t12_cmu_orm.sh",
+      "sha256": "0197548a70a81fe1c4b6e2bcdafa5980ad6ecfeb57166338ba6341f0fd4ac1f5"
+    },
+    {
+      "bytes": 490440728,
+      "files": 6,
+      "kind": "directory",
+      "path": "artifacts/t12_cmu_orm/adapter",
+      "sha256": "47e46330da1f07b07af1202278a1e5ddb02028e2e00257885dada0cd35e84866"
+    },
+    {
+      "bytes": 15159,
+      "kind": "file",
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission.csv",
+      "sha256": "e3491e0d414467fbfda11eb3ca9306cace1947e2f4ddfcbc9b3813775501a0d3"
+    },
+    {
+      "bytes": 5840,
+      "kind": "file",
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission-audit.json",
+      "sha256": "f046aca24c1ab152d47af5cc456628b0f4956d67aa004015601c826f3cdfe346"
+    },
+    {
+      "bytes": 12575,
+      "kind": "file",
+      "path": "artifacts/submissions/t8_3_filtered_k32/submission.csv",
+      "sha256": "1a99b8eb0797fd4699a65b392cae2286c29647354cdfa56cde39dc6a71ecdb63"
+    },
+    {
+      "bytes": 5694,
+      "kind": "file",
+      "path": "artifacts/submissions/t8_3_filtered_k32/submission-audit.json",
+      "sha256": "736d0a624f5308bad08ca4d039f132177d190762f5695fab6de312463c7ffe1c"
+    },
+    {
+      "bytes": 12597,
+      "kind": "file",
+      "path": "artifacts/submissions/t12_cmu_orm_831/submission.csv",
+      "sha256": "e0dffe211c2a8ea97d323530e2ed5e4626f2dd4726f71b21807cf85d55705e11"
+    },
+    {
+      "bytes": 3658,
+      "kind": "file",
+      "path": "artifacts/submissions/t12_cmu_orm_831/submission-audit.json",
+      "sha256": "221f23c8cd901eebd9f1ead8d21a0ad9befa00eb6f12738b413aae79deee6810"
+    }
+  ],
+  "leaderboard_inputs": [
+    {
+      "bytes": 15159,
+      "kind": "file",
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission.csv",
+      "sha256": "e3491e0d414467fbfda11eb3ca9306cace1947e2f4ddfcbc9b3813775501a0d3"
+    },
+    {
+      "bytes": 5840,
+      "kind": "file",
+      "path": "artifacts/submissions/t10a_c1_filtered_k32/submission-audit.json",
+      "sha256": "f046aca24c1ab152d47af5cc456628b0f4956d67aa004015601c826f3cdfe346"
+    },
+    {
+      "bytes": 12575,
+      "kind": "file",
+      "path": "artifacts/submissions/t8_3_filtered_k32/submission.csv",
+      "sha256": "1a99b8eb0797fd4699a65b392cae2286c29647354cdfa56cde39dc6a71ecdb63"
+    },
+    {
+      "bytes": 5694,
+      "kind": "file",
+      "path": "artifacts/submissions/t8_3_filtered_k32/submission-audit.json",
+      "sha256": "736d0a624f5308bad08ca4d039f132177d190762f5695fab6de312463c7ffe1c"
+    },
+    {
+      "bytes": 12597,
+      "kind": "file",
+      "path": "artifacts/submissions/t12_cmu_orm_831/submission.csv",
+      "sha256": "e0dffe211c2a8ea97d323530e2ed5e4626f2dd4726f71b21807cf85d55705e11"
+    },
+    {
+      "bytes": 3658,
+      "kind": "file",
+      "path": "artifacts/submissions/t12_cmu_orm_831/submission-audit.json",
+      "sha256": "221f23c8cd901eebd9f1ead8d21a0ad9befa00eb6f12738b413aae79deee6810"
+    }
+  ],
+  "schema_version": 1,
+  "status": "complete",
+  "superseded_input_verification": {
+    "reason": "pre-T12b-dev fresh-2 contract was superseded by the frozen nested-CV specification",
+    "sha256": "2ba73ad54135e9b48f1e2b6b84a89601a30547557180e516f3d1696d6cda2101",
+    "status": "complete"
+  },
+  "task": "T12b"
+}

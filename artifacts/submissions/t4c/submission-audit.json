@@ -1,0 +1,46 @@
+{
+  "input_path": "data/deep_chal_math_leaderboard_filtered.csv",
+  "input_sha256": "032333a1361c8083093674ad19817e024c38dc7c9f4bdf05c0c9b0c71940dcf1",
+  "generations_path": "artifacts/submissions/t4c/generations.jsonl",
+  "generations_sha256": "05e8aad10296e486b43aa4c5e85a642518806ea38cb8ac0983f3eac1ca740324",
+  "generation_rows_available": 1000,
+  "generation_extra_id_count": 169,
+  "row_count": 831,
+  "unique_id_count": 831,
+  "first_id": "val-000000",
+  "last_id": "val-000999",
+  "fallback_answer": "0",
+  "fallback_count": 1,
+  "fallback_rows": [
+    {
+      "id": "val-000945",
+      "fallback_answer": "0",
+      "failure_reason": "no_supported_answer_marker",
+      "explicit_candidates": [],
+      "output_tokens": 99,
+      "hit_max_new_tokens": false
+    }
+  ],
+  "extraction_path_counts": {
+    "boxed": 50,
+    "final_answer_marker": 709,
+    "last_integer": 70,
+    "none": 1,
+    "standalone_last_line": 1
+  },
+  "extraction_failure_counts": {
+    "no_supported_answer_marker": 1
+  },
+  "hit_max_new_tokens_count": 24,
+  "output_path": "artifacts/submissions/t4c/submission.csv",
+  "output_sha256": "3a85f33d8e4223f32d4630caaf54f6c37367a6b0bdb2813446e1e815f060c156",
+  "output_bytes": 14857,
+  "output_header": [
+    "id",
+    "answer"
+  ],
+  "output_rows": 831,
+  "csv_round_trip_verified": true,
+  "all_answers_canonical_integers": true,
+  "id_order_preserved": true
+}

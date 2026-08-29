@@ -1,0 +1,156 @@
+{
+  "api_cost_usd": 0.0,
+  "checks": {
+    "all_scope_counts_zero": true,
+    "api_cost_zero": true,
+    "fallback_attempted": false,
+    "old_inputs_immutable": true,
+    "presentation_record_updated": true,
+    "root_submission_unchanged": true,
+    "teacher_gate_recorded": true,
+    "tests_passed": true
+  },
+  "created_at_utc": "2026-08-27T10:21:23.586270+00:00",
+  "criteria": {
+    "accepted_code_or_tool_traces_zero": true,
+    "accepted_correct_traces_at_least_64": false,
+    "api_cost_zero": true,
+    "downstream_generation_zero": true,
+    "duplicate_or_missing_logical_requests_zero": true,
+    "first_round_exact_64x4": true,
+    "input_truncations_zero": true,
+    "label_blind_normalizer_two_pass_byte_identical": true,
+    "load_and_seed_smoke_passed": true,
+    "new_preflight_ids_disjoint_from_t11_and_protected": true,
+    "new_preflight_ids_exactly_64": true,
+    "planned_seed_collisions_zero": true,
+    "preflight_within_two_hours": true,
+    "projected_worst_case_full_within_twelve_hours": false,
+    "protected_validation_leaderboard_test_generation_zero": true,
+    "questions_with_accepted_correct_at_least_32": false,
+    "raw_code_or_tool_traces_zero": false,
+    "second_round_id_selection_exact": true,
+    "second_round_only_zero_accepted_questions_exact_4_each": true,
+    "t11_t11b_and_root_submission_immutable": true,
+    "teacher_requests_contain_no_label_fields": true
+  },
+  "decision": "teacher_gate_failed",
+  "fallback_attempted": false,
+  "immutable_after": {
+    "root_submission": {
+      "bytes": 12570,
+      "path": "submission.csv",
+      "sha256": "06f4eeb04668185d2a3691478e2b452008149ccd99a6509641128650abf653f5"
+    },
+    "t11_artifacts": {
+      "files": 7,
+      "path": "artifacts/t11_aimo_generation_quality",
+      "sha256": "b4f8f84cc9e1d32e625bc7e12fecac74769b949936c61dd40f93246e7f3d9818"
+    },
+    "t11_data": {
+      "files": 9,
+      "path": "data/t11_aimo_generation_quality",
+      "sha256": "c0ec3a4e92212aba2033b9159c772932ecf7fa101b7083c680f626305905176b"
+    },
+    "t11b_artifacts": {
+      "files": 13,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight",
+      "sha256": "503753dec596a1b79c6183cf501fbac1053591e724758d0dfc56720e533ac8f2"
+    },
+    "t11b_data": {
+      "files": 7,
+      "path": "data/t11b_deepseek14b_teacher_preflight",
+      "sha256": "4eff28ac1bc3e7ff6fdf5d21c551395ec334dae62d37b2fba3cddcb05e74b78b"
+    }
+  },
+  "immutable_before": {
+    "root_submission": {
+      "bytes": 12570,
+      "path": "submission.csv",
+      "sha256": "06f4eeb04668185d2a3691478e2b452008149ccd99a6509641128650abf653f5"
+    },
+    "t11_artifacts": {
+      "files": 7,
+      "path": "artifacts/t11_aimo_generation_quality",
+      "sha256": "b4f8f84cc9e1d32e625bc7e12fecac74769b949936c61dd40f93246e7f3d9818"
+    },
+    "t11_data": {
+      "files": 9,
+      "path": "data/t11_aimo_generation_quality",
+      "sha256": "c0ec3a4e92212aba2033b9159c772932ecf7fa101b7083c680f626305905176b"
+    },
+    "t11b_artifacts": {
+      "files": 13,
+      "path": "artifacts/t11b_deepseek14b_teacher_preflight",
+      "sha256": "503753dec596a1b79c6183cf501fbac1053591e724758d0dfc56720e533ac8f2"
+    },
+    "t11b_data": {
+      "files": 7,
+      "path": "data/t11b_deepseek14b_teacher_preflight",
+      "sha256": "4eff28ac1bc3e7ff6fdf5d21c551395ec334dae62d37b2fba3cddcb05e74b78b"
+    }
+  },
+  "next_action": "keep_t10a_c1_filtered_k32",
+  "presentation_record": {
+    "path": "docs/strategy/execution-prompts.md",
+    "row_prefix": "| Qwen7B repaired teacher preflight (T11c) |",
+    "sha256": "7223a805e7cff7bdcfa170f4a26a816dbd116ad8daade9647143f3a3be5113d1",
+    "updated": true
+  },
+  "schema_version": 1,
+  "scope_counts": {
+    "dpo": 0,
+    "full_teacher": 0,
+    "holdout": 0,
+    "leaderboard": 0,
+    "sft": 0,
+    "submission": 0,
+    "test_generation": 0,
+    "validation": 0
+  },
+  "sources": {
+    "comparison": {
+      "bytes": 9069,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/comparison-vs-t11-t11b.json",
+      "sha256": "af7244bed2f692f28ebdbe2296113ee5f16ce05ddf3de4eb9831f671a67fc81c"
+    },
+    "config": {
+      "bytes": 7292,
+      "path": "configs/t11c_qwen7b_repaired_teacher_preflight.json",
+      "sha256": "16a59cbe4b4c83b2d8c6fd616b780f13de6b601641ca177bf42e123b75b79d54"
+    },
+    "input_verification": {
+      "bytes": 6402,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/input-verification.json",
+      "sha256": "f7ae387c994e8340dc62f653349cc684d957b343ff10b0e58bbbdd432f6a5d74"
+    },
+    "load_and_seed_smoke": {
+      "bytes": 2352,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/load-and-seed-smoke.json",
+      "sha256": "7c4977a4b3ec7bfe7be51cb354a092499ba109995ebce0580b0dacd2b2427c07"
+    },
+    "teacher_preflight": {
+      "bytes": 12935,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/teacher-preflight.json",
+      "sha256": "c5edd418f7bffb669f66e07c1eb4d1fda62512a4a41b840da5561026da83f0a8"
+    },
+    "teacher_run_metadata": {
+      "bytes": 22445,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/teacher-run-metadata.json",
+      "sha256": "aaefb28853d262556b2700829e1f50f3b0cefbf99e69847a2c74bdadc6b426b7"
+    },
+    "tests": {
+      "bytes": 9488,
+      "path": "artifacts/t11c_qwen7b_repaired_teacher_preflight/tests.xml",
+      "sha256": "ad7e7a22bc0fb908ac151b5a063d12d682398bce8c0a535ad82e0f0ec3608747"
+    }
+  },
+  "status": "teacher_gate_failed",
+  "task": "T11c",
+  "test_summary": {
+    "errors": 0,
+    "failures": 0,
+    "passed": true,
+    "tests": 68
+  }
+}

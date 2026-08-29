@@ -1,0 +1,51 @@
+{
+  "base_route_questions": 128,
+  "continuation_samples": 28,
+  "created_at_utc": "2026-08-24T03:19:55.897281+00:00",
+  "first_k": 4,
+  "ground_truth_values_consumed": false,
+  "outputs": {
+    "base_ids": {
+      "bytes": 1664,
+      "path": "artifacts/t8_2_cot_routing/runtime_probe/base-ids.txt",
+      "rows": 128,
+      "sha256": "70e6f3c2395c0103dc7cf46b52782de971d0727ecf02b34ae80459f38398547b"
+    },
+    "strong_cot_ids": {
+      "bytes": 1664,
+      "path": "artifacts/t8_2_cot_routing/runtime_probe/strong-cot-ids.txt",
+      "rows": 128,
+      "sha256": "c7ac5f69a8d1f962b867d981797351034e2bfb25904aa07045ffbe8a32efee6c"
+    }
+  },
+  "questions": 256,
+  "schema_version": 1,
+  "sources": {
+    "ids": {
+      "bytes": 3328,
+      "path": "artifacts/t8_2_cot_routing/runtime_probe/ids.txt",
+      "rows": 256,
+      "sha256": "4d8480100b9115f289d610b9386aba83a121549bad40f6c9851cf1cfce18f4d1"
+    },
+    "stage1_generations": {
+      "bytes": 2070170,
+      "path": "artifacts/t8_2_cot_routing/runtime_probe/stage1/generations.jsonl",
+      "rows": 1024,
+      "sha256": "7671ba2aef059ca5f94b6fb6306865e221949fa34acf5171763cf0dd977a7062"
+    },
+    "stage1_metadata": {
+      "bytes": 59622,
+      "path": "artifacts/t8_2_cot_routing/runtime_probe/stage1/run-metadata.json",
+      "sha256": "305c0a872500094a0d483ba6a0601f820d801d4b91ccf72538628558ba8a7c59"
+    }
+  },
+  "stage1_run_fingerprint": "ba9c96b19e0a7ad26232863cd37ceac852d523569c493e80d15348f750c1ed9c",
+  "status": "complete",
+  "strong_cot_route_questions": 128,
+  "task": "T8-2",
+  "trigger_counts": {
+    "disagreement": 122,
+    "invalid": 6,
+    "valid_unanimous": 128
+  }
+}

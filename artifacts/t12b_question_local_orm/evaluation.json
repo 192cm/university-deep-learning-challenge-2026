@@ -1,0 +1,77 @@
+{
+  "data_gate": {
+    "exact_source_balance_row_upper_bound": 25602,
+    "passed": false,
+    "question_capacity_passed": false,
+    "question_shortfall_at_least": 30,
+    "required_rows": 25000,
+    "required_unique_questions": 5000,
+    "retained_question_upper_bound": 4970,
+    "row_capacity_passed": true,
+    "shortcut_probes_passed": false,
+    "smd_passed": false,
+    "source_balance_passed": false
+  },
+  "dev_candidate_pool": {
+    "bad_count_questions": 0,
+    "bad_sample_index_questions": 0,
+    "duplicate_candidate_keys": 0,
+    "expected_k": 16,
+    "expected_questions": 6034,
+    "expected_selected_rows": 96544,
+    "missing_questions": 0,
+    "observed_questions": 6034,
+    "selected_rows": 96544,
+    "source_total_rows": 202176
+  },
+  "development_decision": "NOT_RUN",
+  "evaluation_scope": "internal_development_data_gate",
+  "interpretation": {
+    "is_dev_candidate_hold_reject": false,
+    "is_pass_hold_reject": false,
+    "may_promote_to_t13": false
+  },
+  "nested_split": {
+    "inner_folds": 4,
+    "leakage": {
+      "inner_template_cross_fold_intersections": 0,
+      "outer_template_cross_fold_intersections": 0,
+      "outer_test_present_in_its_inner_fit": 0
+    },
+    "outer_folds": 5,
+    "questions": 6034
+  },
+  "not_run": [
+    "ranking ORM training",
+    "Arm A-D nested OOF",
+    "calibration",
+    "group selector fit",
+    "selective override fit",
+    "full adapter fit",
+    "T12b-LB"
+  ],
+  "proof": {
+    "constraints": [
+      {
+        "balanced_label_capacity": 231,
+        "label": 0,
+        "mandatory_questions": 1262,
+        "minimum_exclusions": 1031,
+        "source": "t12_base_cot_brief_high_temperature_k16"
+      },
+      {
+        "balanced_label_capacity": 172,
+        "label": 1,
+        "mandatory_questions": 207,
+        "minimum_exclusions": 35,
+        "source": "t7_base_hard_tail_k32"
+      }
+    ],
+    "intersection": 2,
+    "maximum_shared_exclusion_credit": 2
+  },
+  "reason": "exact_source_balance_cannot_retain_5000_questions",
+  "schema_version": 2,
+  "status": "data_gate_failed",
+  "task": "T12b"
+}

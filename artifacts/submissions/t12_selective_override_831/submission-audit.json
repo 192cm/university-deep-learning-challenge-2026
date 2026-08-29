@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "task": "T12-selective-override-submission",
+  "status": "complete",
+  "created_at_utc": "2026-08-29T07:28:52.414Z",
+  "label_files_opened": 0,
+  "method": "raw majority@32 by default; use T12 ORM weighted answer only when all frozen selective-override conditions pass",
+  "rows": 831,
+  "policy": {
+    "rawTop2NormalizedMarginMax": 0.0625,
+    "ormAlternativeNormalizedSupportMin": 0.09375,
+    "normalizedGroupWeightGapMin": 0.01,
+    "rawTopVoteShareMax": 0.375
+  },
+  "override_count": 19,
+  "override_ids": [
+    "val-000034",
+    "val-000116",
+    "val-000126",
+    "val-000147",
+    "val-000159",
+    "val-000399",
+    "val-000406",
+    "val-000427",
+    "val-000523",
+    "val-000526",
+    "val-000542",
+    "val-000555",
+    "val-000604",
+    "val-000662",
+    "val-000799",
+    "val-000869",
+    "val-000882",
+    "val-000918",
+    "val-000946"
+  ],
+  "fallback_count": 3,
+  "fallback_ids": [
+    "val-000228",
+    "val-000519",
+    "val-000801"
+  ],
+  "fallback_method": "existing T12b deterministic zero-free two-stage fallback",
+  "changed_vs_preexisting_root_count": 19,
+  "changed_vs_preexisting_root_ids": [
+    "val-000034",
+    "val-000116",
+    "val-000126",
+    "val-000147",
+    "val-000159",
+    "val-000399",
+    "val-000406",
+    "val-000427",
+    "val-000523",
+    "val-000526",
+    "val-000542",
+    "val-000555",
+    "val-000604",
+    "val-000662",
+    "val-000799",
+    "val-000869",
+    "val-000882",
+    "val-000918",
+    "val-000946"
+  ],
+  "validation_context": {
+    "t12_fresh_full_fit": {
+      "questions": 1000,
+      "overrides": 8,
+      "rescues": 6,
+      "breaks": 0,
+      "wrong_to_wrong": 2,
+      "raw_accuracy": 0.874,
+      "selective_accuracy": 0.88,
+      "note": "post-hoc diagnostic; not an unbiased estimate"
+    },
+    "reused_t8_diagnostic": {
+      "questions": 3737,
+      "overrides": 107,
+      "rescues": 15,
+      "breaks": 9,
+      "wrong_to_wrong": 83,
+      "delta_vs_raw_pp": 0.1605579
+    }
+  },
+  "inputs": {
+    "predictions": {
+      "path": "artifacts/submissions/t12_cmu_orm_831/predictions.jsonl",
+      "sha256": "83fadf63a980950f3a729d0c8ea3d2b0d3a8a574b48bac2800069690d69522d7"
+    },
+    "group_weights": {
+      "path": "artifacts/submissions/t12_cmu_orm_831/group-weights.jsonl",
+      "sha256": "bb692543abaa040e45f150e1f57ed965f957fa8a53b7b10a895e9b3c5d77054b"
+    },
+    "fallback_predictions": {
+      "path": "artifacts/t12b_4970_override/leaderboard-label-blind/predictions.jsonl",
+      "sha256": "5bd44d3022e032316deb87f81815c03d4736b5d99e877831f4227ceeef7c0338"
+    },
+    "preexisting_root_submission": {
+      "path": "artifacts/submissions/t12_selective_override_831/preexisting-submission.csv",
+      "sha256": "70fbae7005502d36f9e393d74859769eea56d01b4588f4e438335e1931c45e58"
+    }
+  },
+  "outputs": {
+    "artifact_submission": {
+      "path": "artifacts/submissions/t12_selective_override_831/submission.csv",
+      "bytes": 12593,
+      "sha256": "d43846a365a6d28643773f0d9db1c909b3b40e28f4809d6b2e83873d5019da7b"
+    },
+    "root_submission": {
+      "path": "submission.csv",
+      "bytes": 12593,
+      "sha256": "d43846a365a6d28643773f0d9db1c909b3b40e28f4809d6b2e83873d5019da7b"
+    },
+    "decisions": {
+      "path": "artifacts/submissions/t12_selective_override_831/override-decisions.jsonl",
+      "rows": 831,
+      "sha256": "bea3ca7dbe1ca2c93bc44504ec4bd05598f1caeaf8553039e836279ef18bc7d9"
+    }
+  },
+  "verification": {
+    "used_range": "A1:B832",
+    "unique_ids": 831,
+    "canonical_integer_answers": 831,
+    "artifact_matches_root": true,
+    "top_inspection": "{\"kind\":\"table\",\"sheet\":\"Submission\",\"address\":\"A1:B10\",\"rows\":10,\"cols\":2,\"values\":[[\"id\",\"answer\"],[\"val-000000\",\"-13\"],[\"val-000001\",\"2400\"],[\"val-000002\",\"3\"],[\"val-000003\",\"355\"],[\"val-000004\",\"8\"],[\"val-000005\",\"4\"],[\"val-000008\",\"1862\"],[\"val-000009\",\"15\"],[\"val-000011\",\"9\"]]}",
+    "bottom_inspection": "{\"kind\":\"table\",\"sheet\":\"Submission\",\"address\":\"A823:B832\",\"rows\":10,\"cols\":2,\"values\":[[\"val-000989\",\"3\"],[\"val-000990\",\"75\"],[\"val-000991\",\"32\"],[\"val-000992\",\"12\"],[\"val-000993\",\"12\"],[\"val-000994\",\"81\"],[\"val-000995\",\"30\"],[\"val-000996\",\"60\"],[\"val-000997\",\"25\"],[\"val-000999\",\"36800\"]]}",
+    "formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "created_at_utc": "2026-08-27T14:03:29.095765+00:00",
+  "exclusions": {
+    "counts": {
+      "full_leaderboard": 1000,
+      "t11_preflight": 64,
+      "t11_suspect": 1311,
+      "t11_validation": 500,
+      "t11c_preflight": 64,
+      "t8_union": 3737
+    },
+    "selected_intersection_zero": true,
+    "sources": {
+      "full_leaderboard": {
+        "bytes": 254899,
+        "path": "data/deep_chal_math_leaderboard.csv",
+        "sha256": "18cae340803dd649ce162a575dcda01bb75bbcf0759f80392d692603951ccd32"
+      },
+      "t11_preflight": {
+        "bytes": 832,
+        "path": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+        "sha256": "2856ece38200221d3abd29525ebb8dfa0516a1fc03cb7ae00d17375bf3c50dd9"
+      },
+      "t11_suspect": {
+        "bytes": 17043,
+        "path": "data/suspect_set/ids.txt",
+        "sha256": "ad3ac6669f3058071580531eb43eb5b7a5d5d82b99bd21fae3b982c27910dd75"
+      },
+      "t11_validation": {
+        "bytes": 6500,
+        "path": "data/splits/rft_validation_500_ids.txt",
+        "sha256": "7ea3d068e30132b0a5869866507235208f5baea36fa189adba950bb9b3108fd8"
+      },
+      "t11c_preflight": {
+        "bytes": 832,
+        "path": "data/t11c_qwen7b_repaired_teacher_preflight/preflight_ids.txt",
+        "sha256": "a3f26bbe1fd1f692f1fb695ca73d161f938a112008fc4265014a4c1847114655"
+      },
+      "t8_union": {
+        "bytes": 52318,
+        "path": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+        "sha256": "70fb620a31be2b20b9b637341ff95a20108e6854118cd2de0142470f0b34d219"
+      }
+    },
+    "unique_ids": 6603
+  },
+  "label_boundary": {
+    "answer_column_accessed": false,
+    "format_metrics_computed": false,
+    "labels_in_request_manifests": false
+  },
+  "outputs": {
+    "canary_ids": {
+      "bytes": 1664,
+      "path": "data/t11d_extractor_contract/canary_ids.txt",
+      "rows": 128,
+      "sha256": "ce6a8a62935121c2f7b9c4905b8bff66dd65ef1e5765da88ae2b79093fb7edb2"
+    },
+    "execution_status": {
+      "bytes": 414,
+      "path": "artifacts/t11d_extractor_contract/canary/execution-status.json",
+      "sha256": "28aeef52e9d6e797d0cd2b86323052e131487862d815c3d12e4e44eb649f0928"
+    },
+    "new_request_manifest": {
+      "bytes": 238824,
+      "path": "data/t11d_extractor_contract/new-prompt-request-manifest.jsonl",
+      "rows": 512,
+      "sha256": "44d5dce1fa3d1b3256c8007d2c00ee7d070bf545760435691efefa64ff3b88d1"
+    },
+    "old_request_manifest": {
+      "bytes": 238824,
+      "path": "data/t11d_extractor_contract/old-prompt-request-manifest.jsonl",
+      "rows": 512,
+      "sha256": "1ac39cdc9e791db9a80405b015ce915758eb8177fcdfe928bdaa8a34d737af49"
+    }
+  },
+  "pairing": {
+    "arm_difference_is_prompt_only": true,
+    "logical_child_seed_namespace": "t11d-format-canary-child-seed-v1",
+    "logical_child_seeds_identical_between_arms": true,
+    "requests_per_arm": 512,
+    "samples_per_question": 4
+  },
+  "prompts": {
+    "new": {
+      "sha256": "db3ca4c7d66966437a3453d219794bf38cd678cc0aabdcd3a7fca7daabdf1d35",
+      "template": "Solve the following problem carefully.\n\nThe required answer is a single base-10 integer. You may use units, currency\nsymbols, decimals, and mathematical notation in your reasoning, but the final\nline must contain only the canonical integer answer.\n\nOutput contract:\n- Write exactly one FINAL_ANSWER marker.\n- The final non-empty line must match:\n  FINAL_ANSWER: -?(0|[1-9][0-9]*)\n- Do not use a currency symbol, comma, decimal point, unit, LaTeX, markdown,\n  or \\boxed{} on that line.\n- If the computed result is a whole monetary amount such as $400.00, write 400.\n- Do not write anything after the FINAL_ANSWER line.\n- Before finishing, silently verify that the final line satisfies this contract.\n\nProblem:\n{question}"
+    },
+    "old": {
+      "sha256": "d5b3c274f9fa053737ccd6111fa518aa1e30130386cfe6af16e8972773b07687",
+      "template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}"
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "eligible_pool": 10770,
+    "method": "SHA-256 rank over namespace, seed, and ID",
+    "namespace": "t11d-format-canary-v1",
+    "order_frozen": true,
+    "questions": 128,
+    "seed": 42,
+    "selected_ids_sha256": "ce6a8a62935121c2f7b9c4905b8bff66dd65ef1e5765da88ae2b79093fb7edb2"
+  },
+  "status": "canary_requests_frozen",
+  "task": "T11d"
+}

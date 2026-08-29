@@ -1,0 +1,122 @@
+{
+  "completed_at_utc": "2026-08-28T19:52:15.442166+00:00",
+  "effective_config": {
+    "engine": "hf",
+    "generation": {
+      "do_sample": false,
+      "max_input_tokens": 2048,
+      "max_new_tokens": 2048,
+      "n": 1,
+      "seed": 42,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "hf": {
+      "attn_implementation": "sdpa",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "load_in_4bit": false,
+      "max_batch_size": 128,
+      "max_batch_tokens": 294912
+    },
+    "model": {
+      "cache_dir": "/workspace/.hf_home/hub",
+      "hf_home": "/workspace/.hf_home",
+      "id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "prompt_template": "Solve the following problem. Write the final answer on the last line exactly as FINAL_ANSWER: <answer>. Do not write anything after that line.\n\nProblem:\n{question}",
+    "schema_version": 1,
+    "task": "T4",
+    "vllm": {
+      "batch_invariant": true,
+      "dtype": "bfloat16",
+      "enable_prefix_caching": true,
+      "enforce_eager": false,
+      "gpu_memory_utilization": 0.92,
+      "max_model_len": 4096,
+      "max_num_seqs": 256,
+      "request_chunk_size": 1024
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "python_version": "3.12.14",
+    "torch_cuda_runtime": "13.0",
+    "torch_version": "2.13.0+cu130",
+    "vllm_batch_invariant": null
+  },
+  "invocation_wall_seconds": 45.17948502115905,
+  "output": {
+    "path": "artifacts/t12b_4970_override/development/fallback-stage1-generations.jsonl",
+    "rows": 6,
+    "sha256": "80a5943df15f66e76d6458131af83b501ed22424011dcfb666437fcf95c7e271"
+  },
+  "prompt_tokenization": {
+    "chat_template_applied": true,
+    "max_input_tokens": 2048,
+    "padding_side": "left",
+    "truncated_prompts": 0,
+    "truncation_side": "right"
+  },
+  "results": {
+    "generated_this_invocation": 6,
+    "generation_wall_seconds": 40.247150507057086,
+    "generations_per_second": 0.1490788769989552,
+    "gpu_monitor": {
+      "active_utilization_gpu_pct": {
+        "max": null,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "p10": null,
+        "p90": null
+      },
+      "error": "ModuleNotFoundError: No module named 'pynvml'",
+      "fraction_active_samples_at_least_90_pct": null,
+      "fraction_all_samples_at_least_90_pct": null,
+      "peak_memory_used_mib": null,
+      "raw_samples": [],
+      "samples": 0,
+      "sampling_interval_seconds": 0.5,
+      "utilization_gpu_pct": {
+        "max": null,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "p10": null,
+        "p90": null
+      }
+    },
+    "oom_events": [],
+    "planned_batches": 1,
+    "torch_peak_allocated_mib": 6372.12841796875
+  },
+  "resume": {
+    "cached_generations_at_start": 0,
+    "pending_generations_at_start": 6
+  },
+  "run_fingerprint": "ffb279f74c534be623ac4993c0e622c1163b3b598ca6368498a06b95064fb416",
+  "schema_version": 1,
+  "sources": {
+    "config": {
+      "path": "configs/t4_output_contract.json",
+      "sha256": "df1c08d9b55b5f5dbf9c2789cfdc84f3445681c2786d9bd40db0451b58a97b85"
+    },
+    "ids_file": null,
+    "input": {
+      "path": "artifacts/t12b_4970_override/development/fallback-questions.csv",
+      "rows_before_selection": 6,
+      "sha256": "e9fdd6553cdcc6363947978d74430b4fe2941460d1ce5561cb80a5342b4a7cdb"
+    },
+    "max_prompts": null,
+    "selected_ids_sha256": "1b68a454d568f5b62fcff720d2f4d68db0c3bb24ede34ef087f59eaf0830f5db",
+    "selected_rows": 6,
+    "selection_seed": 42
+  },
+  "started_at_utc": "2026-08-28T19:51:30.262686+00:00",
+  "status": "complete",
+  "task": "T4"
+}

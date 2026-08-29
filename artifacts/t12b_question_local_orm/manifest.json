@@ -1,0 +1,86 @@
+{
+  "created_at_utc": "2026-08-28T17:13:33.139199+00:00",
+  "decision": "NOT_RUN",
+  "details": {
+    "dev_candidate_pool_manifest": {
+      "bytes": 1207,
+      "kind": "file",
+      "path": "data/cmu_orm_v2/dev-candidate-pool-manifest.json",
+      "sha256": "029e5bdefb0e860227ba2d92dc2d5a45b4f940e99b329cb06b9ee3e4f3e35163"
+    },
+    "evaluation": {
+      "bytes": 2087,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/evaluation.json",
+      "sha256": "ef41fc77354b03ecc75ee7737f7b363b1b297fcbb74d8287d4831c88d81ce324"
+    },
+    "evaluation_markdown": {
+      "bytes": 924,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/evaluation.md",
+      "sha256": "c7558036effc4e416e0136881f94a9d8fb65e116fb49845749b0055b3a4d093b"
+    },
+    "gpu_training_started": false,
+    "input_verification": {
+      "bytes": 7035,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/input-verification.json",
+      "sha256": "79aa8a40e9a61d537c2019d4aea7957c08cb7da19b238e5f813ad7960095499e"
+    },
+    "internal_folds": {
+      "bytes": 1510515,
+      "kind": "file",
+      "path": "data/cmu_orm_v2/internal-folds.json",
+      "sha256": "16751cd5d99a433046724e8c0fd6a4d734ff51e07ff8181e9ca9045798ad7e2a"
+    },
+    "minimum_question_shortfall": 30,
+    "minimum_required_questions": 5000,
+    "retained_question_upper_bound": 4970,
+    "shortcut_probes": {
+      "bytes": 247,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/shortcut-probes.json",
+      "sha256": "89cd9457db46b50bdf08c1a9299947b563993e3fdaa48b302918b6fe25e88b2f"
+    },
+    "source_balance_audit": {
+      "bytes": 2129,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/source-balance-audit.json",
+      "sha256": "3c7b9ae5c421062d93d6c3c58371532ba1413453ee3de2b1606fdba0c80e14c1"
+    },
+    "superseded_fresh_2_attempt": {
+      "bytes": 8148,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/superseded-fresh-2-attempt.json",
+      "sha256": "937613eec3fda09936c56f0b6e75ef40fbe5b16607ad4afd1cb54e08c843a3ee"
+    },
+    "tests": {
+      "bytes": 6482,
+      "kind": "file",
+      "path": "artifacts/t12b_question_local_orm/tests.xml",
+      "sha256": "440a61c9a245eef0a5af3ab9d1c6adbed75693ca4d648231c13a5c57f3894715"
+    },
+    "train_manifest": {
+      "bytes": 2663,
+      "kind": "file",
+      "path": "data/cmu_orm_v2/train-manifest.json",
+      "sha256": "50cc6ce3a2fa6b928f726d16735cdc2c041bfde7ac394cb013d5b4c1183f63be"
+    }
+  },
+  "reason": "exact_source_balance_cannot_retain_5000_questions",
+  "safety": {
+    "gpu_training_started": false,
+    "leaderboard_execution_started": false,
+    "root_submission_sha256_at_gate": "e0dffe211c2a8ea97d323530e2ed5e4626f2dd4726f71b21807cf85d55705e11",
+    "root_submission_written": false,
+    "t12_artifacts_modified": false,
+    "t12_manifest_sha256_at_gate": "1bb0451765a6681d98f5d859e006472e09af1bf159e2295adc0ce18f1bec4a39"
+  },
+  "schema_version": 1,
+  "status": "data_gate_failed",
+  "t13": {
+    "load_t12b": false,
+    "retain_existing_path": true
+  },
+  "task": "T12b"
+}

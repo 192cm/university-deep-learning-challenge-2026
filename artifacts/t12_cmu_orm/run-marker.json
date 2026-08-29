@@ -1,0 +1,12 @@
+{
+  "config_sha256": "4b31a2327653dfb7bd136f8038d8a3db008c40ebec75488b7dd07922473df189",
+  "schema_version": 1,
+  "started_at_epoch_seconds": 1787863129.9519432,
+  "started_at_utc": "2026-08-27T20:38:49.951931+00:00",
+  "status": "started",
+  "submission": {
+    "bytes": 12579,
+    "path": "submission.csv",
+    "sha256": "def6780ce96d8baea920aee9aee5ecbd7a9af6e109e30036edaf1030ace186d3"
+  }
+}
