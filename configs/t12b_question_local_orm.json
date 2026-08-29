@@ -1,0 +1,224 @@
+{
+  "schema_version": 2,
+  "task": "T12b",
+  "seed": 42,
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "hf_home": "/workspace/.hf_home",
+    "cache_dir": "/workspace/.hf_home/hub"
+  },
+  "hardware": {
+    "required_gpu_count": 2,
+    "required_gpu_name": "NVIDIA GeForce RTX 4090",
+    "training_world_size": 2,
+    "generation_shards": 2,
+    "scoring_shards": 2,
+    "allow_single_gpu_fallback": false,
+    "allow_tensor_parallel": false,
+    "maximum_makespan_hours": 18.0,
+    "maximum_oom_events": 0
+  },
+  "paths": {
+    "data_dir": "data/cmu_orm_v2",
+    "artifact_dir": "artifacts/t12b_question_local_orm",
+    "canonical": "data/canonical/train.csv",
+    "template_audit": "data/splits/audit.csv",
+    "difficulty_audit": "data/rft_r1/audit.csv",
+    "leaderboard_full": "data/deep_chal_math_leaderboard.csv",
+    "t12_train": "data/cmu_orm/train.jsonl",
+    "t12_train_manifest": "data/cmu_orm/train-manifest.json",
+    "t12_fresh": "data/cmu_orm/validation.csv",
+    "t12_fresh_manifest": "data/cmu_orm/validation-manifest.json",
+    "internal_folds": "data/cmu_orm_v2/internal-folds.json",
+    "train": "data/cmu_orm_v2/train.jsonl",
+    "train_manifest": "data/cmu_orm_v2/train-manifest.json",
+    "dev_candidate_pool": "artifacts/t5_rft_r1/generations.jsonl",
+    "dev_candidate_pool_manifest": "data/cmu_orm_v2/dev-candidate-pool-manifest.json"
+  },
+  "phase_0_inputs": [
+    "artifacts/t12_cmu_orm/fresh-validation/evaluation.json",
+    "report/t12-orm-diagnostic-2026-08-28/diagnostic-summary.json",
+    "data/cmu_orm/train.jsonl",
+    "data/cmu_orm/train-manifest.json",
+    "configs/t12_cmu_orm.json",
+    "src/build_orm_data.py",
+    "src/train_orm.py",
+    "src/orm_score.py",
+    "src/orm_vote.py",
+    "src/generate.py",
+    "src/self_consistency.py",
+    "src/t12_sharding.py",
+    "scripts/run_t12_cmu_orm.sh",
+    "artifacts/t12_cmu_orm/adapter",
+    "artifacts/submissions/t10a_c1_filtered_k32/submission.csv",
+    "artifacts/submissions/t10a_c1_filtered_k32/submission-audit.json",
+    "artifacts/submissions/t8_3_filtered_k32/submission.csv",
+    "artifacts/submissions/t8_3_filtered_k32/submission-audit.json",
+    "artifacts/submissions/t12_cmu_orm_831/submission.csv",
+    "artifacts/submissions/t12_cmu_orm_831/submission-audit.json"
+  ],
+  "diagnosis_only": {
+    "forbidden_for_selection": [
+      "data/cmu_orm/validation.csv",
+      "artifacts/t12_cmu_orm/fresh-validation",
+      "artifacts/t12_cmu_orm/reused-t8",
+      "artifacts/t12_cmu_orm/reused-t8-diagnostic.json"
+    ],
+    "reference_metrics": {
+      "raw_majority_accuracy": 0.874,
+      "orm_weighted_accuracy": 0.876,
+      "oracle_pass_at_32": 0.969,
+      "orm_argmax_accuracy": 0.828,
+      "rescues": 8,
+      "breaks": 6,
+      "wrong_to_wrong": 10,
+      "selectable_recovery": "8/95",
+      "global_auc": 0.812268,
+      "within_question_macro_auc": 0.740453,
+      "mean_score": 0.642295,
+      "fresh_candidate_correctness": 0.81091,
+      "ece": 0.168615,
+      "score_lost_questions": 45,
+      "support_lost_questions": 42,
+      "hard_delta_pp": 1.801802,
+      "non_hard_delta_pp": -0.257069
+    }
+  },
+  "split": {
+    "expected_questions": 6034,
+    "expected_rows": 30912,
+    "outer_folds": 5,
+    "inner_folds": 4,
+    "outer_namespace": "t12b-outer-fold-v2:",
+    "inner_namespace": "t12b-inner-fold-v2:",
+    "group_key": "template_group_id",
+    "split_inputs": [
+      "data/cmu_orm/train.jsonl",
+      "data/splits/audit.csv"
+    ],
+    "forbid_row_split": true
+  },
+  "corpus": {
+    "candidate_source": "data/cmu_orm/train.jsonl",
+    "minimum_unique_questions": 5000,
+    "minimum_rows": 25000,
+    "minimum_per_label_per_question": 2,
+    "maximum_per_label_per_question": 4,
+    "source_positive_negative_ratio": "1:1_exact",
+    "maximum_absolute_smd": 0.10,
+    "maximum_source_only_auc": 0.60,
+    "maximum_length_only_auc": 0.60,
+    "trace_hash_namespace": "t12b-trace-v2:",
+    "pair_namespace": "t12b-pair-v2:",
+    "balance_feasibility_certificate": "mandatory-single-source-capacity-v1"
+  },
+  "orm_prompt_template": "Judge whether the candidate solution correctly solves the problem. Return a scalar correctness score; do not solve with tools.\n\nProblem:\n{question}\n\nCandidate solution:\n{candidate_trace}",
+  "training": {
+    "max_length": 4096,
+    "packing": false,
+    "num_train_epochs": 2,
+    "learning_rate": 0.00002,
+    "warmup_ratio": 0.03,
+    "lr_scheduler_type": "cosine",
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "world_size": 2,
+    "per_device_question_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "global_effective_question_batch_size": 32,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "max_pairs_per_question": 16,
+    "tau_grid": [0.5, 1.0],
+    "lambda_pair_grid": [0.5, 1.0],
+    "lambda_list_grid": [0.0, 0.25],
+    "primary_arm": "B1",
+    "arm_tie_break": ["within_question_macro_auc", "group_top1", "brier", "ece", "simpler_arm"]
+  },
+  "lora": {
+    "r": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "task_type": "SEQ_CLS",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "modules_to_save": ["score"]
+  },
+  "group_selector": {
+    "features": ["log_support", "mean_logit", "negative_variance_logit"],
+    "non_negative_coefficients": true,
+    "l2": 0.001,
+    "learning_rate": 0.05,
+    "iterations": 2000,
+    "tie_break": ["first_generation_index", "integer_value_ascending"]
+  },
+  "calibration": {
+    "methods": [
+      "temperature_scaling",
+      "class_prior_logit_correction",
+      "question_centered_temperature_scaling"
+    ],
+    "temperature_grid": [0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 3.0],
+    "selection": ["brier", "ece", "within_question_macro_auc_non_decrease", "group_top1_non_decrease"]
+  },
+  "selective_override": {
+    "m_max_grid": [0.0, 0.0625, 0.125, 0.25],
+    "n_min_grid": [0.125, 0.1875, 0.25],
+    "g_min_grid": [0.25, 0.5, 1.0],
+    "r_max_grid": [0.4, 0.5, 0.6],
+    "minimum_coverage": 0.01,
+    "maximum_coverage": 0.15,
+    "maximum_breaks": 5,
+    "maximum_wrong_to_wrong_rate": 0.25,
+    "tie_break": ["maximum_net_gain", "fewest_overrides", "lexicographic"]
+  },
+  "fallback": {
+    "stage_1": {
+      "name": "t4c_greedy",
+      "temperature": 0.0,
+      "max_new_tokens": 2048,
+      "seed": 42,
+      "config": "configs/t4_output_contract.json"
+    },
+    "stage_2": {
+      "name": "explicit_integer_repair",
+      "temperature": 0.0,
+      "max_new_tokens": 2048,
+      "seed": 12042,
+      "prompt": "Return exactly one integer matching ^-?(?:0|[1-9][0-9]*)$ and no other text."
+    },
+    "failure": "fallback_gate_failed_do_not_write_submission"
+  },
+  "arms": {
+    "A": "T12 pointwise BCE plus byte-identical n*geometric-mean replay",
+    "B1": "BCE plus pairwise ranking plus frozen nGM",
+    "B2": "BCE plus pairwise plus listwise auxiliary loss plus frozen nGM",
+    "C": "selected ranking ORM plus learned answer-group selector",
+    "D": "Arm C behind frozen group-aware selective override"
+  },
+  "decision_gate": {
+    "minimum_delta_vs_strongest_baseline_pp": 1.5,
+    "require_all_five_fold_deltas_positive": true,
+    "require_bootstrap_ci_lower_above_zero": true,
+    "maximum_exact_mcnemar_p": 0.05,
+    "minimum_within_question_macro_auc": 0.80,
+    "minimum_rescues": 20,
+    "maximum_breaks": 5,
+    "maximum_wrong_to_wrong_rate": 0.25,
+    "require_non_hard_non_decrease": true,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "require_zero_nan_null_forced_zero": true,
+    "require_zero_fallback_gate_failures": true,
+    "require_zero_prefreeze_gold_opens": true
+  }
+}

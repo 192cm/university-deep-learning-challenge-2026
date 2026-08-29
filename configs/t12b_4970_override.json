@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task": "T12b-4970-override",
+  "base_config": "configs/t12b_question_local_orm.json",
+  "seed": 42,
+  "user_override": {
+    "authorized_in_current_thread": true,
+    "authorization_text": "source별 1:1 균형 시 최대 유지 가능 문항 4,970, 요구 최소 5,000문항 대비 30문항 부족 — 이거 그냥 이상태로 진행해",
+    "original_minimum_unique_questions": 5000,
+    "approved_unique_questions": 4970,
+    "question_shortfall": 30,
+    "minimum_rows_unchanged": 25000,
+    "source_balance_unchanged": "1:1_exact",
+    "does_not_reclassify_original_t12b": true
+  },
+  "paths": {
+    "data_dir": "data/cmu_orm_v2_4970",
+    "artifact_dir": "artifacts/t12b_4970_override",
+    "train": "data/cmu_orm_v2_4970/train.jsonl",
+    "train_manifest": "data/cmu_orm_v2_4970/train-manifest.json",
+    "runtime_config": "data/cmu_orm_v2_4970/runtime-config.json",
+    "internal_folds": "data/cmu_orm_v2_4970/internal-folds.json"
+  },
+  "selection": {
+    "input_questions": 6034,
+    "input_rows_after_trace_dedup": 30910,
+    "selected_questions": 4970,
+    "selected_rows": 25000,
+    "minimum_rows_per_label_per_question": 1,
+    "maximum_rows_per_label_per_question": 4,
+    "ranking_minimum_rows_per_label_per_question": 2,
+    "source_positive_negative_ratio": "1:1_exact",
+    "optimizer": "scipy.optimize.milp_highs",
+    "objective": [
+      "minimize_positive_minus_negative_support_4_7",
+      "minimize_negative_minus_positive_support_1",
+      "stable_hash_tie_break"
+    ],
+    "non_support_smd_target": 0.10,
+    "known_unavoidable_audit_exceptions": [
+      "answer_support_bucket",
+      "terminal_integer_extraction_path"
+    ]
+  },
+  "development": {
+    "heldout_outer_fold": 0,
+    "loss": {
+      "arm": "B1",
+      "tau": 1.0,
+      "lambda_pair": 1.0,
+      "lambda_list": 0.0
+    },
+    "selector_fit_partition": 0,
+    "override_fit_partition": 1,
+    "evaluation_partition": 2,
+    "partition_namespace": "t12b-4970-dev-partition-v1:",
+    "no_guardrail_policy_fallback": "preserve_raw_zero_overrides",
+    "fallback_gate_failure_policy": "exclude_label_blind_from_development_only",
+    "scope": "operational_single_holdout_not_original_nested_oof"
+  },
+  "fallback": {
+    "stage_1_config": "configs/t4_output_contract.json",
+    "stage_2_config": "configs/t12b_fallback_repair.json",
+    "failure": "fallback_gate_failed_do_not_write_submission"
+  },
+  "leaderboard": {
+    "questions": "data/deep_chal_math_leaderboard_filtered.csv",
+    "expected_questions": 831,
+    "frozen_generations": "artifacts/submissions/t12_cmu_orm_831/generations.jsonl",
+    "expected_samples_per_question": 32,
+    "output_dir": "artifacts/t12b_4970_override/leaderboard-label-blind",
+    "root_submission": "submission.csv"
+  }
+}

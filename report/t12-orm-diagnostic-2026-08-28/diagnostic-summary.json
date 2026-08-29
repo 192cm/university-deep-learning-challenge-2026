@@ -1,0 +1,138 @@
+{
+  "accuracy": {
+    "delta_pp": 0.2,
+    "net_correct": 2,
+    "oracle_pass_at_32": 0.969,
+    "orm_argmax": 0.828,
+    "orm_weighted": 0.876,
+    "raw_majority": 0.874,
+    "t8_3_filter": 0.874
+  },
+  "baseline_error_decomposition": {
+    "gold_present_still_wrong": 87,
+    "oracle_absent": 31,
+    "raw_majority_errors": 126,
+    "rescued": 8,
+    "selectable_error_recovery_rate": 0.084211,
+    "selectable_errors": 95
+  },
+  "change_group_averages": {
+    "break": {
+      "count": 6,
+      "orm_geometric_mean": 0.489267,
+      "orm_support": 7.833333,
+      "raw_geometric_mean": 0.305384,
+      "raw_support": 11.0
+    },
+    "rescue": {
+      "count": 8,
+      "orm_geometric_mean": 0.583651,
+      "orm_support": 7.5,
+      "raw_geometric_mean": 0.314688,
+      "raw_support": 8.5
+    },
+    "wrong_to_wrong": {
+      "count": 10,
+      "orm_geometric_mean": 0.584933,
+      "orm_support": 2.6,
+      "raw_geometric_mean": 0.34458,
+      "raw_support": 3.0
+    }
+  },
+  "changed_outcomes": {
+    "break": 6,
+    "break_hard": 1,
+    "changed_questions": 24,
+    "rescue": 8,
+    "rescue_hard": 5,
+    "unchanged_correct": 868,
+    "unchanged_wrong": 108,
+    "vote_margin_at_most_two": 20,
+    "vote_margin_zero": 13,
+    "wrong_to_wrong": 10,
+    "wrong_to_wrong_hard": 9
+  },
+  "remaining_selectable_error_mechanism": {
+    "correct_group_score_higher_but_support_lost": 42,
+    "wrong_group_score_at_least_as_high": 45
+  },
+  "reused_t8_diagnostic": {
+    "can_change_fresh_decision": false,
+    "delta_vs_raw_pp": 0.053519,
+    "orm_weighted": 0.707787,
+    "questions": 3737,
+    "raw_majority": 0.707252,
+    "t8_3_filter": 0.708322
+  },
+  "scope": {
+    "comparison": "ORM geometric weighted majority@32 vs raw majority@32",
+    "fresh_validation_is_primary": true,
+    "questions": 1000
+  },
+  "score_quality": {
+    "ece": 0.168615,
+    "fresh_candidate_correct_rate": 0.81091,
+    "global_roc_auc": 0.812268,
+    "mean_predicted_score": 0.642295,
+    "negative_score_mean": 0.441505,
+    "positive_score_mean": 0.689115,
+    "questions_with_both_classes": 509,
+    "train_class_prior": 0.5,
+    "within_question_macro_auc": 0.740453,
+    "within_question_median_auc": 0.805714
+  },
+  "segments": {
+    "format": {
+      "baseline_correct": 143,
+      "delta_pp": 1.069519,
+      "net_correct": 2,
+      "orm_correct": 145,
+      "questions": 187
+    },
+    "hard": {
+      "baseline_correct": 119,
+      "delta_pp": 1.801802,
+      "net_correct": 4,
+      "orm_correct": 123,
+      "questions": 222
+    },
+    "non_format": {
+      "baseline_correct": 731,
+      "delta_pp": 0.0,
+      "net_correct": 0,
+      "orm_correct": 731,
+      "questions": 813
+    },
+    "non_hard": {
+      "baseline_correct": 755,
+      "delta_pp": -0.257069,
+      "net_correct": -2,
+      "orm_correct": 753,
+      "questions": 778
+    }
+  },
+  "statistics": {
+    "bootstrap_ci_pp": [
+      -0.5,
+      0.9
+    ],
+    "fold_delta_pp": [
+      0.5,
+      -0.5,
+      0.5,
+      -0.5,
+      1.0
+    ],
+    "mcnemar_p": 0.790527
+  },
+  "training_context": {
+    "cmu_model": "DeepSeekMath-7B-RL full reward-model fine-tuning",
+    "cmu_reported_pairs": 37880,
+    "cmu_reported_unique_questions": 7000,
+    "local_model": "Qwen2.5-3B-Instruct pointwise LoRA",
+    "local_negative_rows": 15456,
+    "local_pairs": 30912,
+    "local_positive_rows": 15456,
+    "local_unique_questions": 6034
+  }
+}

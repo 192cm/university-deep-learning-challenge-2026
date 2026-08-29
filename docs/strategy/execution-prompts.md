@@ -14,10 +14,11 @@ Kaggle "아주소중한딥러닝챌린지 2026" — Qwen2.5-3B-Instruct를 미�
 평가: Accuracy (Exact Match), 정답은 항상 정수. 제출은 submission.csv (모든 문항, 빈 값은 오답).
 
 [원격 환경]
-접속: ssh -p 13857 root@95.3.33.46 -L 8080:localhost:8080
+접속: ssh -p 41829 root@84.67.29.50 -L 8080:localhost:8080
 작업 디렉터리: /workspace
 로컬 저장소: C:\Users\kyle0\Develops\university-deep-learning-challenge-2026
-파일 전송은 tar로 묶어 scp -P 13857 로 보내고 원격에서 푼다. (포트 플래그가 scp는 -P, ssh는 -p 로 다르다.)
+파일 전송은 tar로 묶어 scp -P 41829 <archive.tar.gz> root@84.67.29.50:/workspace/ 로 보내고 원격에서
+푼다. (포트 플래그가 scp는 -P, ssh는 -p 로 다르다.)
 
 [베이스 모델 — 변경 불가]
 Qwen/Qwen2.5-3B-Instruct
@@ -40,6 +41,7 @@ revision: aa8e72537993ba99e69dfaafa59ed015b17504d1 (tokenizer도 동일 revision
   - 다중 샘플링, Majority Voting, Self-Consistency, Best-of-N
   - 답 일치도만 보는 adaptive sampling / early stopping
   - 같은 모델·같은 어댑터가 자기 후보를 읽고 고르는 GenSelect
+  - 동일 베이스에서 학습한 별도 verifier/ORM 어댑터로 후보를 채점·선별하는 Best-of-N
   - 모델이 이미 출력한 문자열을 읽고 표기만 정규화하는 답 추출기
 
 답 추출기 철칙: 추출기는 문자열을 읽기만 한다. 어떤 산술도 하지 않는다.
@@ -1207,7 +1209,7 @@ C. primary candidate — disagreement-routed CoT, 문제당 정확히 32회
 - 합집합 primary 통계, 4개 split guardrail, hard 5범주 진단, 길이·종료·runtime 지표가 모두 남았다.
 - 사전 등록 규칙에 따라 채택/보류/기각이 결정되고 최종 전략이 final_config와 manifest에 기록됐다.
 - 실행 뒤 이 문서의 발표 자료용 누적 기록표에 T8-2 행과 판정 근거를 추가했다.
-- 채택이면 T12 runbook과 제출 리허설을 T8-2 staged 경로로 갱신하고, 아니면 T8 경로를 유지한다.
+- 채택이면 T13 runbook과 제출 리허설을 T8-2 staged 경로로 갱신하고, 아니면 T8 경로를 유지한다.
 
 [산출물]
 configs/t8_2_cot_routing.json
@@ -1377,7 +1379,7 @@ p=6.8e-10과 회수:파손 4.9:1은 이 후보가 그 잡음 범주가 아님을
 - 필터 조건의 추가·삭제, 경로별 연속 가중치 탐색, 길이 기반 가중.
   (격자 확대가 CV에서 이득이 없음을 이미 확인했다. 재탐색은 과적합만 늘린다.)
 - 홀드아웃 또는 리더보드 결과를 보고 필터·임계값·투표 규칙을 바꾸는 일.
-- 제출 파일을 실제로 Kaggle에 올리는 일. T12에서 다룬다.
+- 제출 파일을 실제로 Kaggle에 올리는 일. T13에서 다룬다.
 
 [완료 조건]
 - 필터 off 회귀 테스트가 기존 submission.csv를 0건 불일치로 재현했음이 tests.xml에 있다.
@@ -1388,7 +1390,7 @@ p=6.8e-10과 회수:파손 4.9:1은 이 후보가 그 잡음 범주가 아님을
 - 폴백 발동 문항 수와 id, 조건별 제거 표 수가 audit에 남았다.
 - 사전 등록 규칙에 따라 채택/보류/기각이 결정되고 최종 전략이 final_config와 manifest에 기록됐다.
 - 실행 뒤 이 문서의 발표 자료용 누적 기록표에 T8-3 행과 판정 근거를 추가했다.
-- 채택이면 T12 runbook과 제출 리허설을 필터 경로로 갱신하고, 아니면 무필터 T8 경로를 유지한다.
+- 채택이면 T13 runbook과 제출 리허설을 필터 경로로 갱신하고, 아니면 무필터 T8 경로를 유지한다.
 
 [산출물]
 configs/t8_3_vote_filter.json
@@ -2599,7 +2601,7 @@ invalid·hit-max는 오답이다. 문항별 correct_count/8 차이를 단위로 
 data/deep_chal_math_leaderboard_filtered.csv의 논리 행 831개를 같은 순서로 추론해 별도 artifact에 쓴다.
 라벨은 없으므로 accuracy를 계산하지 않는다. 기존 t10a_c1_filtered_k32와 답이 바뀐 ID만 audit에 남긴다.
 root submission.csv 교체는 채택 판정과 manifest가 모두 기록된 뒤 한 번만 한다.
-원본 1,000행 전체 최종 테스트 리허설과 백업은 T12에서 수행한다.
+원본 1,000행 전체 최종 테스트 리허설과 백업은 T13에서 수행한다.
 
 [실행 순서]
 1. configs/t11_aimo_generation_quality.json의 teacher·예산·prompt/config hash를 채우고 freeze한다.
@@ -2627,7 +2629,7 @@ root submission.csv 교체는 채택 판정과 manifest가 모두 기록된 뒤 
 - DPO를 했다면 pair의 75% 이상이 correct-vs-wrong이고 length-only pair는 25% 이하다.
 - validation sample accuracy로 후보 하나를 동결한 뒤에만 holdout을 열었다.
 - raw pass@1 primary와 filtered majority@32 secondary, 4 split guardrail, 길이·종료·runtime 지표가 남았다.
-- 사전 등록 규칙으로 채택/생성 품질만 성공/기각을 결정했고 T12가 그 결과를 참조한다.
+- 사전 등록 규칙으로 채택/생성 품질만 성공/기각을 결정했고 T13이 그 결과를 참조한다.
 - 실행 뒤 발표 자료용 누적 기록표에 T11 행과 AIMO 대비 축소·금지 요소를 추가했다.
 
 [산출물]
@@ -3218,7 +3220,7 @@ T11/T11b/T11c는 teacher의 수학 정답뿐 아니라 마지막 FINAL_ANSWER �
 - 구현·단위 테스트·label-blind old/new prediction freeze가 끝나기 전에는 canonical answer를 로드하지 않는다.
 - reused T8 3,737 결과를 본 뒤 허용 문법, fallback, threshold, tie-break를 다시 바꾸지 않는다.
 - T8 replay는 이미 반복 사용한 holdout의 paired 진단이다. 이 결과만으로 최종 채택을 주장하지 않고,
-  T12에 반영하려면 사전 고정된 fresh validation이 추가로 필요하다고 명시한다.
+  T13에 반영하려면 사전 고정된 fresh validation이 추가로 필요하다고 명시한다.
 - 새 모델·adapter·학습·외부 API·인터넷·solver·Python/SymPy 계산 verifier는 사용하지 않는다.
 
 [1. explicit integer-equivalent 추출 계약]
@@ -3420,13 +3422,13 @@ prompt B는 strict final-line 비율이 A보다 높고, last_integer·invalid가
 +1pp보다 악화하지 않을 때만 `format_canary_passed`로 기록한다. 하나라도 실패하면 prompt B는 미채택하고
 원래 T8 prompt를 유지한다. 작은 canary의 gold accuracy를 prompt 선택에 사용하지 않는다.
 
-[판정과 T12 연결]
+[판정과 T13 연결]
 - extractor functional tests가 실패하면 `extractor_contract_failed`로 종료한다.
 - tests가 통과하면 frozen T8 paired 결과는 `reused_holdout_diagnostic`로 기록한다. 순증이어도 이 값만으로
   최종 extractor를 자동 채택하지 않는다.
 - prompt canary gate를 통과하면 `prompt_format_canary_passed`로만 기록하며 full generation을 시작하지 않는다.
-- extractor와 prompt를 T12 최종 경로에 넣으려면 이 문서 밖의 fresh validation 또는 최종 테스트 전에
-  별도로 동결된 확인 절차가 필요하다. 확인 전 T12 기본 경로는 기존 extractor와 prompt를 유지한다.
+- extractor와 prompt를 T13 최종 경로에 넣으려면 이 문서 밖의 fresh validation 또는 최종 테스트 전에
+  별도로 동결된 확인 절차가 필요하다. 확인 전 T13 기본 경로는 기존 extractor와 prompt를 유지한다.
 - 성공·실패와 무관하게 기존 artifact, leaderboard prediction, submission은 변경하지 않는다.
 - 실행했다면 발표 자료용 누적 기록에 T11d 행을 추가한다. 문서만 추가한 단계에는 표 행을 만들지 않는다.
 
@@ -3476,7 +3478,692 @@ artifacts/t11d_extractor_contract/
 
 ---
 
-## T12 — 동결 · 제출 리허설 · runbook
+## T12 — CMU-MATH ORM 재현: pointwise scoring + geometric weighted majority@32
+
+```text
+[왜 지금 하는가]
+T8의 base majority@32는 합집합 69.31%, pass@32는 84.40%다. 즉 15.09pp의 oracle gap이 남아 있고,
+564문항은 32개 후보 안에 정답이 있었지만 다수결이 오답을 골랐다. 반면 T9 GenSelect는 32개 후보를
+한 프롬프트에 넣고 후보 번호를 생성하게 했으며, full32 55.90%, 동일 예산 28풀이+4선택 65.80%로
+majority@32보다 낮았다. 후보를 한꺼번에 비교·생성하는 방식이 실패했다고 해서, 각 풀이를 독립적으로
+채점하는 outcome reward model(ORM)까지 실패한 것은 아니다.
+
+이번 과제는 AIMO Progress Prize 1에서 실제 2위를 기록한 CMU-MATH 파이프라인의 선택부를 재현한다.
+새로운 선택 규칙을 여러 개 탐색하는 과제가 아니라, 아래에 고정한 pointwise ORM과 geometric weighted
+majority@32 한 가지를 fresh validation에서 검증하는 과제다.
+
+[고정 실행 환경 — 단일 호스트 2× RTX 4090]
+T12의 학습, fresh generation, 추가 ORM-train candidate generation, fresh/reused candidate scoring은
+VRAM 24GB인 NVIDIA GeForce RTX 4090 정확히 2개가 장착된 단일 호스트에서 실행한다. 두 GPU의 VRAM
+48GB를 하나의 공유 메모리처럼 취급하지 않고, 각 GPU에 Qwen 3B base와 필요한 adapter의 완전한 복제본을
+각각 올린다. GPU 하나나 다른 기종으로 조용히 폴백하지 않는다.
+
+공통 분산 계약:
+- generation은 tensor parallel을 쓰지 않는다. `CUDA_VISIBLE_DEVICES=0`과 `1`인 독립 vLLM worker 두 개를
+  띄우고, 각 question의 k=32 전체를 한 worker가 생성한다. question을 두 worker 사이에서 쪼개 n=16씩
+  생성하지 않아 기존 k=32 request·logical seed·sample_index 의미론을 보존한다.
+- generation shard는 frozen question IDs를
+  `(sha256("t12-generation-shard-v1:" + question_id), question_id)`로 정렬한 뒤 위치 `mod 2`로 정한다.
+  fresh 1,000문항은 GPU별 정확히 500문항·16,000 generations가 된다. 새 ORM-train candidate를 만들 때도
+  같은 규칙을 쓰며 두 shard의 문항 수 차이는 최대 1이다.
+- ORM scoring도 tensor parallel이나 한 GPU 폴백을 쓰지 않는다. frozen candidate key
+  `(question_id, sample_index)`를 `(sha256("t12-score-shard-v1:" + key), key)`로 정렬한 뒤 위치 `mod 2`로
+  나누고, 동일 base+ORM adapter를 올린 독립 worker 두 개가 각각 점수를 낸다. fresh 32,000 candidates는
+  GPU별 정확히 16,000개다.
+- training만 `torchrun --nproc_per_node=2`의 NCCL DDP를 사용한다. 각 rank가 full model replica를 가지며
+  tensor parallel, FSDP, ZeRO, CPU/NVMe offload는 사용하지 않는다. checkpoint와 최종 adapter는 rank 0만
+  원자적으로 쓰고 두 rank가 모두 같은 global step을 마친 뒤에만 complete로 표시한다.
+- logical rank 0/1의 shard 대응을 full run 전에 동결하고, 물리 GPU UUID 대응과 worker별 시작·종료 시각은
+  실행 attempt마다 기록한다. worker는 서로의 JSONL에 쓰지 않고 전용 shard 파일에만 쓴다. 두 shard가
+  모두 complete이고 hash 검증, 누락 0, 중복 0을 통과한 뒤에만 canonical key 순서로 병합한다.
+- 한 GPU, worker 또는 NCCL rank가 실패하면 전체 phase를 실패로 기록한다. 성공한 shard는 보존하되 두
+  RTX 4090이 다시 준비된 뒤 동일 manifest로 실패 shard만 재개한다. 단일 GPU 직렬 재실행은 허용하지 않는다.
+
+[대회 검증 근거 — 보고서에 그대로 남길 것]
+- CMU-MATH는 AIMO Progress Prize 1에서 private score 22/50으로 2위를 기록했다.
+- policy model과 reward model은 모두 같은 DeepSeekMath-7B-RL 체크포인트에서 출발했다.
+- reward model은 문제와 후보 풀이 하나를 입력받아 그 풀이가 맞을 확률을 0~1 점수로 출력했다.
+- 같은 정수 답을 낸 후보를 묶고, 그 답의 표 수에 후보 점수의 기하평균을 곱해 최종 답을 정했다.
+- 공개 train 10문항의 소규모 ablation에서 policy majority@32는 2/10, ORM weighted vote는 4/10이었다.
+  표본이 10문항뿐이므로 이 수치를 일반화 근거로 과장하지 않는다. 다만 private 22/50은 이 파이프라인이
+  실제 대회 제출에 사용됐다는 근거다.
+- CMU는 약 7,000개 고유 문제, 37,880개 problem-solution pair를 사용했고, 문제별 correct/incorrect를
+  1:1로 맞췄다. 서로 다른 보간 모델과 중간 체크포인트 출력으로 오답 다양성을 확보했으며, 정수로
+  파싱되는 오답만 reward data에 포함했다. reward model 학습은 2 epochs, learning rate 2e-5였다.
+- 근거:
+  https://blog.ml.cmu.edu/2024/07/29/cmu-math-teams-innovative-approach-secures-2nd-place-at-the-aimo-prize/
+  https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/writeups/cmu-math-2nd-place-solution-all-code-and-datasets-
+  https://github.com/AIMO-CMU-MATH/CMU_MATH-AIMO
+- AIMO-2의 GenSelect 논문은 시간 제약 때문에 해당 Kaggle 우승 제출에는 넣지 못했다고 명시한다.
+  따라서 T9의 근거와 이번 ORM의 대회 검증 근거를 섞지 않는다.
+
+[T9 GenSelect와의 차이 — 구현 전에 테스트로 고정]
+- T9: 한 입력에 여러 후보를 넣고 선택 번호/답을 생성한다. 후보 순서와 컨텍스트 길이에 민감하다.
+- T12: 한 번에 문제+후보 풀이 하나만 넣고 scalar logit 하나를 낸다. 후보 번호를 생성하지 않는다.
+- T12는 요약문이 아니라 후보의 전체 풀이 trace를 채점한다.
+- 최종 선택은 argmax 한 개가 아니라 답별 지지 표 수와 점수를 함께 쓰는 고정 수식이다.
+- T9 adapter, T9 prompt, T9 candidate-summary 데이터는 재사용하지 않는다.
+
+[규정 계약]
+운영진은 동일 베이스에서 학습한 verifier adapter를 채점·선별 용도로 쓰는 것이 외부 모델 사용에
+해당하지 않으며 Best-of-N에 사용할 수 있다고 서면 확인했다. 따라서 solver와 ORM 모두
+Qwen/Qwen2.5-3B-Instruct의 고정 revision
+aa8e72537993ba99e69dfaafa59ed015b17504d1에서 출발한 별도 LoRA adapter만 허용한다.
+
+금지:
+- 다른 베이스 모델, 외부 API, 외부 verifier, teacher의 추론 시 사용
+- Python/SymPy/solver/코드 실행 결과를 ORM 입력으로 주거나 점수에 반영
+- gold answer, 정답 여부, split 이름, 문제 ID를 ORM 추론 입력에 포함
+- 리더보드 1,000문항 또는 보호 validation 문항을 ORM 학습에 포함
+- 수식의 지수, score threshold, answer=0 penalty, 후보 필터를 validation 결과를 보고 조정
+
+허용:
+- solver adapter와 ORM adapter를 같은 고정 베이스 위에서 순차적으로 로드
+- 모델이 이미 출력한 문제+풀이 문자열을 ORM이 읽어 scalar score를 출력
+- 고정 답 추출기로 후보의 정수 답 문자열을 읽고 같은 답끼리 그룹화
+- 아래에 사전 등록한 기하평균 가중 투표와 결정적 tie-break
+
+[목표]
+1. 오염 없는 pointwise ORM train/validation data를 만든다.
+2. 동일 Qwen 베이스의 별도 LoRA ORM을 CMU 설정에 가깝게 2 epochs 학습한다.
+3. label-blind로 동결한 base k=32 후보 풀에서 각 풀이를 독립 채점한다.
+4. geometric weighted majority@32가 raw majority@32와 동결 T8-3 filter@32를 fresh validation에서
+   유의하게 이기는지 판단한다.
+5. 통과할 때만 T13의 최종 제출 후보로 넘긴다. reused T8 holdout은 진단 전용이다.
+6. 모든 GPU-heavy phase가 동결된 2× RTX 4090 data-parallel/DDP 경로를 실제로 사용했음을 worker별
+   처리량, peak VRAM, utilization, OOM과 merged coverage로 증명한다.
+
+[Phase 0 — 입력·보호 집합 감사]
+학습이나 새 생성을 하기 전에 다음을 실행하고 artifacts/t12_cmu_orm/input-verification.json에 기록한다.
+- base/tokenizer revision, solver prompt/config, 기존 candidate artifact의 SHA-256
+- GPU 수·정확한 model name·UUID·VRAM, driver/CUDA/PyTorch/vLLM/NCCL 버전, power limit,
+  `nvidia-smi topo -m`, rank-to-UUID mapping, 각 GPU의 시작 전 free VRAM
+- 두 GPU에서 model-load smoke, NCCL all-reduce smoke, 독립 vLLM worker smoke가 모두 성공했는지
+- T11/T11b/T11c에서 확정한 보호 5,475 IDs
+- 리더보드 원본 1,000 IDs 전체
+- T3~T11d에서 한 번이라도 모델/규칙 선택에 사용한 validation·holdout IDs
+- exact normalized text, near-duplicate, template-group 기준의 train/validation 교집합 수
+
+교집합이 1건이라도 있으면 해당 question/template group 전체를 ORM train에서 제거한다. 보호 집합을
+외부 API나 다른 모델에 보내지 않는다. GPU가 정확히 2× RTX 4090이 아니거나 smoke가 하나라도 실패하면
+`hardware_gate_failed`로 종료한다. audit와 hardware gate가 끝나기 전에는 학습·fresh generation을
+시작하지 않는다.
+
+[Phase 1 — fresh validation을 먼저 동결]
+1. 기존 선택에 한 번도 쓰지 않은 canonical 문제 중 1,000문항을 고른다.
+2. ORM train과 question-disjoint이면서 normalized-text/near-duplicate/template-group까지 disjoint하게 만든다.
+3. 유형·난도 proxy·문제 길이·답 부호/자리수·format strata가 한쪽으로 쏠리지 않게 층화한다.
+4. IDs와 split 생성 seed를 data/cmu_orm/validation.csv 및 validation-manifest.json에 쓰고 해시한다.
+5. 이후 이 1,000문항은 ORM train data 생성, checkpoint 선택, prompt/filter 탐색에 절대 사용하지 않는다.
+
+validation IDs를 동결한 뒤 T8의 고정 base prompt와 생성 설정으로 각 문항 k=32를 정확히 한 번 생성한다.
+생성 단계는 gold column을 읽을 수 없는 독립 vLLM worker 두 개로 실행한다. 위의 generation shard를
+generation-shard-manifest.json에 먼저 쓰고 hash한 뒤, GPU 0/1이 각각 전용 JSONL과 run metadata를 쓴다.
+두 worker는 동일 model/prompt/sampling config를 쓰고 question별 k=32 request를 유지한다. worker별 raw
+outputs, logical seed, request hash를 freeze하고, 각 GPU 500문항·16,000 rows, 전체 question별 정확히
+32 rows, 누락·중복 0을 검증한 뒤 canonical `(question_id, sample_index)` 순서로
+artifacts/t12_cmu_orm/fresh-validation/generations.jsonl을 만든다. 병합본까지 hash한 뒤 후보 풀을 freeze한다.
+
+[Phase 2 — CMU식 ORM 학습 데이터]
+기존 비보호 RFT candidate pool과 base/RFT 중간 checkpoint의 저장된 출력만 사용한다. 새 candidate가
+필요하면 오직 ORM-train IDs에 대해서만 고정 manifest를 먼저 만들고, 위의 2-GPU generation shard와
+독립 vLLM worker 계약으로 생성한다. 모델 보간은 하지 않는다.
+
+각 row는 다음 필드만 갖는다.
+- question_id, normalized_question, full_candidate_trace, extracted_integer
+- label: frozen exact-match extractor로 extracted_integer == gold이면 1, 아니면 0
+- generator_source, generator_checkpoint_hash, prompt_hash, sampling_seed
+
+데이터 규칙:
+- 정수 답이 파싱되는 후보만 사용한다. malformed/empty 후보를 쉬운 negative로 채우지 않는다.
+- 각 문제는 correct와 incorrect가 모두 있어야 한다.
+- 문제별 positive:negative를 정확히 1:1로 맞춘다. 한쪽이 많으면 source/checkpoint/seed 다양성을 우선해
+  deterministic hash sampling하며, 문제 하나가 전체 loss를 지배하지 않게 각 class 최대 4개로 제한한다.
+- 같은 raw trace 중복, gold가 trace에 주입된 row, 보호/near-duplicate/template-overlap row는 제거한다.
+- split은 row가 아니라 question/template group 단위다.
+- 목표는 CMU 규모에 근접한 7,000 unique questions / 약 38,000 pairs다. 최소 5,000 questions와
+  25,000 balanced pairs를 확보하지 못하면 임의로 완화하지 말고 data_gate_failed로 종료한다.
+- train manifest에 class 수, question 수, source/checkpoint별 분포, 길이 분위수, 제거 사유별 수량과
+  모든 입력/출력 SHA-256을 기록한다.
+
+[Phase 3 — pointwise ORM 학습]
+동일 베이스의 AutoModelForSequenceClassification(num_labels=1) + LoRA를 사용한다. classifier score head는
+modules_to_save에 포함해 adapter와 함께 저장한다. 입력은 question과 full_candidate_trace 하나뿐이며
+gold answer나 extracted correctness는 넣지 않는다. score는 sigmoid(scalar logit)로 정의한다.
+
+고정 설정:
+- base revision: aa8e72537993ba99e69dfaafa59ed015b17504d1
+- bf16, gradient checkpointing, packing=false, max_length=4096
+- LoRA rank=64, alpha=128, dropout=0.05, 기존 프로젝트와 같은 target modules
+- BCEWithLogitsLoss, 별도 class weight 없음(문제별 1:1 balance)
+- epochs=2, learning_rate=2e-5, warmup_ratio=0.03, cosine schedule
+- DDP world_size=2, NCCL, GPU별 per-device batch size=1, gradient accumulation=16
+- global effective batch size = 2 GPUs × 1 sample × 16 accumulation = 32, seed=42
+- 두 rank의 deterministic distributed sampler는 같은 frozen row order에서 출발하고 epoch별 `set_epoch`를
+  호출한다. world_size나 accumulation을 자동 변경하지 않는다.
+- epoch 2를 사전 등록 final로 사용한다. validation을 보고 epoch 1과 2 중 고르지 않는다.
+- learning rate, epoch, rank, prompt에 대한 sweep을 하지 않는다.
+
+CMU의 full reward-model fine-tuning을 대회 규정에 맞는 same-base LoRA로 치환한 것이 유일한 의도적
+차이임을 보고서에 명시한다. 학습 중 candidate-level ROC-AUC, PR-AUC, Brier score, ECE, positive/negative
+score 분포와 loss를 기록하되, 이 값으로 집계 수식을 바꾸지 않는다. rank별 samples/tokens, step time,
+active GPU utilization, peak VRAM, OOM, NCCL 오류와 전체 DDP throughput도 함께 기록한다.
+
+[Phase 4 — geometric weighted majority@32]
+frozen candidate i의 추출 답을 y_i, ORM sigmoid score를 s_i라고 한다. 수치 안정성을 위해
+s_i = clip(s_i, 1e-6, 1-1e-6)로 고정한다. 답 a를 낸 후보 수를 n_a라 할 때 점수는 정확히 다음이다.
+
+  W(a) = n_a * (product_{i: y_i=a} s_i)^(1/n_a)
+       = n_a * exp(mean_{i: y_i=a}(log(s_i)))
+
+W(a)가 가장 큰 정수 답을 최종 답으로 낸다. 동률이면 해당 답의 최초 생성 index가 더 작은 쪽,
+그마저 같으면 정수값 오름차순으로 고정한다. invalid 후보는 그룹에서 제외한다. score가 NaN이거나
+유효 후보가 0개면 raw majority의 기존 fallback을 사용하고 발생 수를 기록한다.
+
+다음은 primary가 아니며 진단으로만 계산한다.
+- 단일 최고점 후보 argmax ORM
+- raw majority@32
+- 동결 T8-3 vote-quality filter@32
+- oracle pass@32
+
+arithmetic mean, max score, score 합, score exponent, threshold, answer=0 감점, 풀이 길이 감점,
+extraction-path weight는 이번 과제에서 탐색하지 않는다. ORM과 T8-3 filter를 결합한 새 규칙도 만들지 않는다.
+
+[Phase 5 — label-blind freeze 후 단 한 번 평가]
+ORM score는 gold를 읽지 않는 두 독립 GPU worker가 위의 score-shard-manifest.json에 따라 계산한다.
+두 worker는 같은 frozen scoring batch size와 tokenizer/model/adapter hash를 사용하고 각자 전용 score
+JSONL과 metadata를 쓴다. 각 16,000 candidates, 전체 coverage 32,000, key 누락·중복 0, finite raw logit을
+검증한 뒤에만 canonical candidate 순서로 candidate-scores.jsonl을 병합한다. reused T8 replay도 같은
+2-GPU scoring 계약을 사용한다.
+
+fresh validation의 다음 파일을 gold를 읽기 전에 생성·해시한다.
+- raw majority predictions
+- frozen T8-3 filter predictions
+- candidate별 ORM raw logit/sigmoid score
+- answer group별 n, geometric mean, W(a), tie/fallback reason
+- ORM weighted predictions
+- changed-case label-blind audit
+
+모든 prediction과 config hash를 manifest에 쓴 뒤에만 gold를 결합한다. 평가는 다음을 모두 낸다.
+- 전체 accuracy와 raw majority/T8-3 대비 delta
+- paired rescue/break/net, exact McNemar p-value, paired bootstrap 95% CI
+- 사전 동결한 5 folds 각각의 delta
+- hard/format/길이/답 부호·자리수 strata와 invalid/tie/fallback 비율
+- candidate-level ROC-AUC/PR-AUC/Brier/ECE 및 answer-cluster 크기별 정확도
+- 1,000문항 solve 시간, 32,000 candidate score 시간, GPU별/합산 처리량, GPU별 peak VRAM·utilization·OOM,
+  두 worker를 동시에 시작한 시점부터 merge 완료까지의 2-GPU makespan과 총 wall-clock
+
+기존 T8 합집합 3,737문항 replay는 fresh 판정이 끝난 뒤 재현성·오류 분석용으로 한 번만 실행한다.
+그 결과로 formula나 모델을 바꾸거나 채택 판정을 뒤집지 않는다.
+
+[사전 등록 판정]
+채택(PASS)은 다음을 모두 만족할 때만 한다.
+1. fresh 1,000문항에서 ORM weighted@32가 raw majority@32와 frozen T8-3 filter@32를 각각 이긴다.
+2. 두 baseline 중 정확도가 높은 쪽보다 절대 +1.5pp 이상이다.
+3. 그 강한 baseline과의 paired McNemar p<0.05이고 bootstrap 95% CI 하한이 0보다 크다.
+4. 사전 동결 5 folds의 delta가 모두 양수다.
+5. hard와 format strata 어느 쪽도 강한 baseline보다 2.0pp 초과 하락하지 않는다.
+6. candidate-level ROC-AUC >= 0.65이고 NaN score는 0건이다.
+7. 동결된 2× RTX 4090 경로의 solve+ORM score+집계 1,000문항 makespan이 18시간 이하이며 두 GPU 모두
+   OOM=0이다. 두 worker의 GPU 시간을 더한 값이 아니라 실제 동시 실행 wall-clock으로 판정한다.
+
++0.01~+1.49pp이거나 통계/guardrail 하나라도 실패하면 HOLD다. 0 이하이면 REJECT다. HOLD/REJECT이면
+ORM adapter를 최종 환경에 로드하지 않고 기존 T8/T10 경로를 유지한다. 결과를 본 뒤 재학습·재보정·
+formula 변경을 원하면 새 과제와 새 fresh validation을 먼저 사전 등록해야 한다.
+
+[비파괴 구현]
+기존 src/train.py, src/generate.py, src/vote.py, src/extract.py의 현재 동작을 바꾸지 않는다.
+새 파일로만 구현한다.
+- configs/t12_cmu_orm.json
+- src/t12_sharding.py
+- src/build_orm_data.py
+- src/train_orm.py
+- src/orm_score.py
+- src/orm_vote.py
+- scripts/run_t12_cmu_orm.sh
+- tests/test_t12_sharding.py
+- tests/test_orm_data.py
+- tests/test_orm_vote.py
+
+data/cmu_orm/와 artifacts/t12_cmu_orm/만 새로 쓴다. 기존 artifact, leaderboard prediction,
+submission.csv는 수정하지 않는다. 중단·재시작 시 raw generation이나 score 파일을 덮어쓰지 말고
+logical shard/config manifest hash가 같을 때만 이어서 실행한다. 물리 UUID가 바뀌면 정확히 같은
+2× RTX 4090·software stack으로 hardware preflight와 rank-to-UUID rebind audit를 새로 통과한 뒤 재개한다.
+
+[필수 단위 테스트]
+- 입력 ID/candidate 순서를 섞어도 2-way shard assignment와 manifest hash가 같고 두 shard 크기 차이가
+  최대 1이다.
+- generation에서는 한 question의 sample_index 0..31이 한 GPU에만 있고, score에서는 각 candidate key가
+  정확히 한 GPU에만 있다.
+- worker 완료 순서를 뒤집어도 canonical merge가 byte-identical이며 missing/duplicate/cross-shard write를
+  모두 거부한다.
+- world_size=2, per-device batch=1, accumulation=16일 때만 global effective batch가 32다.
+- 문제별 positive:negative가 정확히 1:1이고 question/template leakage가 0이다.
+- ORM scoring batch size나 candidate 순서를 바꿔도 각 raw logit이 허용 오차 안에서 같다.
+- [0.9, 0.9] 두 표와 [0.99] 한 표에서 전자의 W가 더 크다.
+- [0.9, 0.1]의 기하평균이 arithmetic mean으로 잘못 계산되지 않는다.
+- score clip, invalid 제외, NaN fallback, tie-break가 golden fixture와 byte 동일하다.
+- gold/split/question_id가 ORM inference prompt에 들어가지 않는다.
+- 동일 manifest 재실행 결과 prediction과 group audit SHA-256이 같다.
+
+[필수 2-GPU integration smoke]
+- 두 device name이 모두 정확히 `NVIDIA GeForce RTX 4090`이고 각 worker가 서로 다른 UUID만 점유한다.
+- DDP 한 optimizer step 뒤 두 rank의 trainable parameter checksum이 허용 오차 안에서 같다.
+- frozen generation fixture의 두 shard를 다시 실행했을 때 각각의 raw generation과 merged output이
+  byte-identical하다.
+- frozen 32-candidate fixture의 2-GPU merged logits가 단일 4090 reference와 허용 오차 안에서 같고,
+  group weight와 최종 prediction은 byte-identical이다.
+- 한 worker 강제 실패 시 merged complete 파일을 만들지 않고, 성공 shard를 보존한 재개가 원래 실행과
+  byte-identical하다.
+
+[완료 조건]
+- 공식 CMU 근거, 로컬 LoRA 치환점, 데이터 규모 차이가 report에 명시되어 있다.
+- protection audit와 fresh validation manifest가 학습 전에 freeze되어 있다.
+- hardware preflight에 2× RTX 4090 UUID/topology/software와 모든 smoke 성공이 남아 있다.
+- data gate를 통과한 balanced pointwise ORM corpus와 전 행 provenance가 있다.
+- world_size=2·global batch=32의 고정 설정으로 만든 2-epoch ORM adapter와 rank별 학습 로그가 있다.
+- fresh k=32 후보·ORM score·group weight·prediction이 label-blind로 먼저 freeze되어 있고, generation과
+  scoring 각각 두 shard의 coverage·hash·병합 감사가 있다.
+- 사전 등록한 PASS/HOLD/REJECT가 모든 지표와 함께 report에 적혀 있다.
+- PASS가 아니면 T13 최종 경로와 submission에 ORM 흔적이 없다.
+- 실행 전에는 발표 자료용 누적 표에 성능 행을 추가하지 않는다. 실행 후 확정값만
+  "+ CMU-MATH pointwise ORM geometric weighted majority@32 (T12)" 행에 기록한다.
+
+[산출물]
+configs/t12_cmu_orm.json
+src/t12_sharding.py
+src/build_orm_data.py
+src/train_orm.py
+src/orm_score.py
+src/orm_vote.py
+scripts/run_t12_cmu_orm.sh
+tests/test_t12_sharding.py
+tests/test_orm_data.py
+tests/test_orm_vote.py
+data/cmu_orm/
+  validation.csv
+  validation-manifest.json
+  train.jsonl
+  train-manifest.json
+artifacts/t12_cmu_orm/
+  input-verification.json
+  hardware-preflight.json
+  distributed-run-manifest.json
+  adapter/
+  train-metrics.json
+  train-rank-metrics/
+  fresh-validation/generation-shard-manifest.json
+  fresh-validation/generation-shards/
+  fresh-validation/generations.jsonl
+  fresh-validation/score-shard-manifest.json
+  fresh-validation/score-shards/
+  fresh-validation/candidate-scores.jsonl
+  fresh-validation/group-weights.jsonl
+  fresh-validation/predictions.jsonl
+  fresh-validation/changed-cases-label-blind.jsonl
+  fresh-validation/evaluation.json
+  fresh-validation/evaluation.md
+  reused-t8-diagnostic.json
+  manifest.json
+  tests.xml
+```
+
+---
+
+## T12b — T12b-dev: question-local ORM 내부 개발
+
+```text
+[왜 T12를 그대로 키우지 않는가]
+T12는 fresh 1,000문항에서 raw majority@32 87.40%, frozen T8-3 filter@32 87.40%, ORM weighted@32
+87.60%로 순증 2문항(+0.20pp)에 그쳐 HOLD다. McNemar p=0.790527, paired bootstrap 95% CI는
+[-0.50,+0.90]pp이고, 5 folds의 delta도 +0.5/-0.5/+0.5/-0.5/+1.0pp라 채택 근거가 없다.
+
+문제는 후보 생성량이 아니다. oracle pass@32가 96.90%이므로 raw majority가 틀린 126문항 중 95문항에는
+정답 후보가 있었다. 그러나 T12가 회수한 것은 8문항뿐이고 6문항을 파손했으며, 10문항은 오답에서 다른
+오답으로 바꿨다. 남은 선택 가능 오류 87문항을 분해하면 42문항은 정답 그룹의 ORM 평균 점수가 더 높아도
+현재 `n * geometric_mean(score)`의 표 수 항에 졌고, 45문항은 ORM 자체가 오답 그룹을 정답 그룹 이상으로
+채점했다. ORM argmax 정확도도 82.80%로 raw majority보다 4.60pp 낮다.
+
+후보 전체를 섞은 global ROC-AUC 0.8123만 보면 채점기가 좋아 보이지만, 실제 선택과 가까운 question-local
+macro AUC는 0.7405다. fresh valid candidate의 실제 정답률은 81.09%인데 train prior는 50%, 평균 예측
+score는 64.23%, ECE는 16.86%다. hard 222문항에서는 +1.80pp였지만 non-hard 778문항에서는 -0.26pp다.
+따라서 T12b의 우선순위는 k 증가나 단순 7B 확대가 아니라 다음 순서로 고정한다.
+
+  question-local ranking 학습
+  -> source-balanced hard-negative mining
+  -> answer-group aggregation 학습
+  -> selective override
+  -> 조건부 7B 검토
+
+[평가 지위 — 이전 실험 관행과 T12b-dev의 범위]
+T3~T10은 같은 고정 holdout 합집합 3,737문항을 반복 사용했다. T12에서 `fresh`라고 부른 1,000문항도
+T8~T10의 선택에는 쓰이지 않았지만, 실제로는 1,000문항 전부가 T5 RFT pool에 속하고 T5의 k=16 생성·정답
+일치 집계에 사용됐다. 따라서 프로젝트에서 지금까지 사용한 `fresh`는 "직전 모델·규칙 선택에 쓰이지 않은
+문항"이라는 상대적 의미였지, T3~T12의 어떤 처리에도 한 번도 등장하지 않은 절대적 untouched 집합이라는
+뜻은 아니었다.
+
+T12b에만 모든 과거 train/validation/holdout과 T5 pool까지 배제한 fresh-2 1,000문항을 요구하면 canonical
+16,373문항 중 eligible 문항이 0개라 실행 자체가 불가능하다. 이 과제에서는 그 조건을 제거하고, 기존 T12
+ORM corpus의 6,034문항을 template-group nested CV로 재사용하는 `T12b-dev`를 수행한다.
+
+다음 경계는 유지한다.
+- 기존 T12 fresh 1,000문항과 reused T8 3,737문항은 T12b 가설의 진단 근거일 뿐 loss, coefficient,
+  calibration, threshold 또는 arm 선택에 다시 사용하지 않는다.
+- T12b-dev의 모든 정확도·AUC·통계는 내부 개발 성능이다. `fresh PASS`, `PASS/HOLD/REJECT`, 독립 재현,
+  T13 승격 근거로 표현하지 않는다.
+- 내부 개발이 끝나면 후보 설정 하나를 결정적으로 동결할 수 있다. 그 뒤 원본 leaderboard 1,000문항에
+  대한 label-blind 예측 파일을 만들 수 있지만, 실제 제출과 점수 확인은 별도 명시적 `T12b-LB` 단계다.
+- leaderboard 점수를 확인한 뒤 loss, coefficient, calibration, threshold, fallback을 고치거나 같은 가설로
+  재제출하지 않는다. 그 점수는 `one-shot leaderboard evidence`이지 fresh-2 검증이 아니다.
+
+[목표]
+1. 독립 후보의 절대 정답 확률만 맞추는 pointwise BCE를 question-local 상대 순위 학습으로 바꾼다.
+2. generator source와 prompt/style만 보고 정오를 맞히는 shortcut을 억제한다.
+3. 고정 `n * geometric mean` 대신 answer group 단위 점수를 nested out-of-fold 예측으로 학습한다.
+4. ORM이 충분한 증거를 보일 때만 raw majority를 뒤집고, 쉬운 다수결 정답은 보존한다.
+5. 내부 nested CV에서 ranking, group selector, selective override의 후보 하나를 고정하되, 결과를 T13이나
+   최종 채택 판정에 자동 반영하지 않는다.
+
+[고정 실행 경계]
+- base/tokenizer revision, solver adapter, candidate generation prompt/sampling, 정답 추출기는 T12와 같다.
+- 내부 OOF 평가는 이미 존재하는 T5 base k=16 풀을 쓰고, 동결 후보의 leaderboard 추론만 기존 k=32 계약을 쓴다.
+- T12의 단일 호스트 2× RTX 4090 generation/scoring shard와 DDP 계약을 그대로 따른다.
+- 먼저 3B ORM에서 ranking과 aggregation 가설을 검증한다. 이번 과제에서 7B와 k>32를 함께 탐색하지 않는다.
+- Python/SymPy/solver/코드 실행 결과, gold, split 이름, question ID를 ORM 입력이나 group feature에 넣지 않는다.
+- 기존 T12 artifact, submission, adapter를 덮어쓰지 않고 전부 새 namespace에 쓴다.
+- 기존 T12 full adapter는 6,034문항 전체를 학습했으므로 같은 문항의 OOF 대조군으로 쓰지 않는다. 공정한
+  Arm A는 outer fold마다 pointwise BCE를 다시 학습하고 held-out question에만 nGM을 적용한다.
+
+[Phase 0 — T12 진단 동결과 provenance]
+다음 입력을 artifacts/t12b_question_local_orm/input-verification.json에 경로와 SHA-256으로 기록한다.
+- artifacts/t12_cmu_orm/fresh-validation/evaluation.json
+- report/t12-orm-diagnostic-2026-08-28/diagnostic-summary.json
+- data/cmu_orm/train.jsonl 및 train-manifest.json
+- T12 adapter와 candidate generator source 전체
+- T10a C-1, T8-3, T12 leaderboard submission.csv와 audit
+
+진단 기준값은 다음과 같이 manifest에 복사해 이후 보고서의 비교 기준으로만 쓴다.
+- raw/ORM/oracle/argmax = 87.40/87.60/96.90/82.80%
+- rescue/break/wrong-to-wrong = 8/6/10, selectable recovery = 8/95
+- global/within-question macro AUC = 0.8123/0.7405
+- mean score/fresh correctness/ECE = 64.23/81.09/16.86%
+- score-lost/support-lost mechanism = 45/42 questions
+- hard/non-hard delta = +1.80/-0.26pp
+
+T12 leaderboard 831행은 raw majority와 50건, T8-3과 49건이 달랐고, valid prediction이 없어 정수 0을
+강제로 쓴 행이 3건이었다. 이 CSV에는 label이 없으므로 성능 근거로 해석하지 않고, T12b의 fallback 계약에서
+`forced zero = 0건`을 요구하는 label-blind 안전 근거로만 사용한다.
+
+[Phase 1 — 기존 6,034문항과 nested split을 학습 전에 동결]
+1. ranking 학습 원본은 `data/cmu_orm/train.jsonl`의 30,912행·6,034문항으로 고정한다. T12 manifest와 각
+   candidate source의 경로·행 수·SHA-256을 기록하고, 행을 새로 만들거나 삭제하면 별도 corpus version으로
+   남긴다.
+2. group selector와 override의 공통 개발 추론 풀은 `artifacts/t5_rft_r1/generations.jsonl`에서 위 6,034문항에
+   해당하는 base 후보를 사용한다. 현재 coverage는 모든 문항에 정확히 k=16이다. 균형 학습용으로 sampling된
+   `train.jsonl`의 표 수를 raw majority로 사용하지 않는다.
+3. k=16 개발 풀은 leaderboard k=32의 대용 지표일 뿐이다. 보고서에 이 분포 차이를 명시하고, 절대 k=32
+   성능처럼 표기하지 않는다. vote margin과 support threshold는 유효 후보 수로 나눈 비율로 정의해 k 변화에
+   덜 민감하게 만든다.
+4. 6,034문항을 `template_group_id` 단위 outer 5-fold로 고정한다. 각 outer-train을 다시 template group 단위
+   inner 4-fold로 나눈다. 같은 question/template group의 모든 candidate source와 trace는 항상 같은 fold다.
+   row split은 금지한다.
+5. 각 outer fold에서는 inner fold만으로 loss/checkpoint, calibration, group coefficient, override threshold를
+   고른 뒤 outer-test를 정확히 한 번 예측한다. outer-test label은 그 fold의 어떤 fit이나 선택에도 들어가지
+   않는다. 최종 OOF는 6,034문항 각각이 정확히 한 번 outer-test가 된 prediction만 합친다.
+6. 최종 배포 설정은 outer 5회에서 inner CV가 고른 조합의 최빈값으로 정한다. 동률이면 override coverage가
+   낮은 조합, 그다음 사전 등록 lexicographic 순서를 쓴다. leaderboard 점수나 기존 T12/T8 진단값으로
+   동률을 깨지 않는다.
+7. 기존 T12 fresh 1,000, reused T8 3,737, leaderboard 1,000 ID가 6,034문항 개발 split이나 OOF fit 입력으로
+   추가 유입되지 않았음을 감사한다. T5 pool과의 중복은 이 개발 과제의 의도된 재사용이므로 실패 조건이 아니다.
+
+split hash가 달라지거나 outer-test label이 fit/selection에 들어가면 해당 CV 실행은 무효화한다. 다만 이
+무효화는 새 untouched 문항을 요구하지 않고, 같은 동결 split에서 오염된 fold를 처음부터 다시 실행한다.
+
+[Phase 2 — source-balanced question batches와 hard negatives]
+현재 T12 최종 train 30,912행은 문제별 전체 1:1이지만 generator source별 label prior가 크게 다르다.
+- t11 cot-boxed: 13,228행, positive 57.36%
+- t5 base: 11,515행, positive 46.07%
+- t5 targeted: 3,284행, positive 55.76%
+- t12 high-temperature: 2,211행, positive 10.45%
+- t7 hard-tail: 674행, positive 74.48%
+
+이 분포에서는 ORM이 풀이의 수학적 타당성 대신 prompt/source/길이/style을 shortcut으로 쓸 수 있다.
+T12b corpus는 다음 계약으로 다시 만든다.
+- batch의 기본 단위는 row가 아니라 question이다. 한 question의 positive와 negative를 같은 batch item에 둔다.
+- question마다 서로 다른 trace의 positive 2~4개와 hard negative 2~4개를 우선 확보한다. 한쪽이 2개 미만이면
+  pairwise/listwise 학습에서 제외하고 pointwise 보조 데이터에도 별도 표기한다.
+- source별 positive:negative를 정확히 1:1로 맞춘다. source 안에서도 prompt format, trace length quartile,
+  problem type, hard/normal, extraction path, answer support bucket의 양·음성 분포를 deterministic matching한다.
+- 모든 교차 cell을 억지로 정확히 맞춰 데이터가 소실되지 않게 source 1:1을 hard constraint로 두고,
+  나머지 속성은 standardized mean difference 절대값 <=0.10을 data gate로 둔다.
+- 동일 normalized trace와 사실상 같은 풀이의 반복 sample은 question 안에서 한 번만 사용한다. 같은 답을 낸
+  복제 trace 수로 loss가 커지지 않게 unique trace hash를 저장한다.
+- hard negative는 정수로 정상 추출되지만 오답인 후보 중 frozen cross-fitted T12 score가 높은 후보,
+  raw vote 상위 오답 그룹 후보, 정답과 근접한 그럴듯한 중간 계산 오류를 우선한다. gold answer 문자열을
+  입력 feature로 쓰지 않고 label 생성과 offline mining에만 사용한다.
+- source, prompt, 길이를 가리는 shortcut audit를 별도로 두고, source-only/length-only probe가 높은 AUC를
+  내면 학습을 시작하지 않는다. 목표는 두 probe 모두 ROC-AUC <=0.60이다.
+- 위 balance·dedup 뒤에도 최소 5,000 unique questions와 25,000 rows, question별 양·음성 동시 보유를
+  만족해야 한다. 부족하면 sampling 규칙을 사후 완화하지 않고 `data_gate_failed`로 종료한다.
+
+[Phase 3 — question-local ranking ORM]
+입력 형식과 sequence-classification head는 T12와 같고, candidate logit을 z_i라 한다. positive i와 같은
+question의 negative j에 대해 pairwise loss를 다음처럼 정의한다.
+
+  L_pair(i,j) = softplus(-(z_i - z_j))
+
+한 question에 여러 positive가 있으면 candidate 전체의 listwise 보조 loss를 다음처럼 정의한다.
+
+  L_list(q) = -log(
+      sum_{i in positive(q)} exp(z_i / tau)
+      / sum_{j in valid(q)} exp(z_j / tau)
+  )
+
+internal metric을 계산하기 전에 `tau in {0.5, 1.0}`, `lambda_pair in {0.5, 1.0}`,
+`lambda_list in {0, 0.25}`의 고정 grid를 manifest에 적는다. primary ranking arm은
+`L = L_BCE + lambda_pair * L_pair`이고, `+ lambda_list * L_list`는 internal nested CV에서만 비교하는
+사전 등록 보조 arm이다. grid를 본 뒤 확장하거나 outer OOF·leaderboard 결과로 값을 다시 고르지 않는다.
+
+학습 규칙:
+- question sampler가 같은 question의 positive/negative를 동일 rank에 보낸다. DDP rank 사이에 pair를
+  쪼개지 않는다.
+- 한 question의 모든 가능한 pair를 쓰지 않고 deterministic hard-negative 우선 최대 16 pairs로 제한한다.
+- source와 question마다 loss 총합을 정규화해 후보 수가 많은 source/question이 gradient를 지배하지 않는다.
+- 3B base revision, LoRA 구조, bf16, max_length=4096, 2×4090 DDP는 T12를 유지한다.
+- epoch/checkpoint와 loss arm은 within-question macro AUC를 primary, answer-group top-1 accuracy를 secondary,
+  Brier/ECE를 guardrail로 한 nested group CV에서만 고른다.
+- global candidate AUC만 높고 within-question macro AUC가 오르지 않는 checkpoint는 선택하지 않는다.
+
+[Phase 4 — answer-group aggregation]
+T12의 `W(a) = n_a * GM(p_i)`는 표 수와 후보 품질의 상대 크기를 고정해 42개의 support-lost error를 남겼다.
+T12b는 후보 확률 p_i의 logit z_i를 answer group a별로 모아 다음 점수를 학습한다.
+
+  G(a) = alpha * log(n_a)
+       + beta  * mean(z_i : y_i = a)
+       - gamma * variance(z_i : y_i = a)
+
+alpha, beta, gamma는 0 이상으로 제한하고 L2 regularization을 둔다. 각 internal fold의 train portion에서
+정답 answer group의 softmax cross-entropy를 최소화해 fit하고, 그 fold의 held-out questions에만 적용한다.
+최종 coefficient 설정은 각 outer fold의 inner CV 선택 결과를 Phase 1의 최빈값 규칙으로 결정한다. 그 뒤
+6,034문항 전체로 최종 ORM을 학습하고 같은 설정의 coefficient를 한 번 fit해 leaderboard 추론 전에 freeze한다.
+
+각 group에 support n, unique trace count, mean/median/min/std logit, raw vote margin, invalid/hit-max rate를
+모두 로그로 남기되 이번 primary G(a)는 위 3개 항만 사용한다. 확장 feature meta-selector는 진단용이며
+`DEV_CANDIDATE` 판정을 뒤집지 않는다. 확장하려면 별도 개발 과제로 등록한다.
+
+[Phase 5 — calibration은 보조, selective override가 최종 정책]
+train 50% prior와 fresh candidate 81.09% correctness 차이를 줄이기 위해 internal calibration folds에서만
+다음을 비교한다.
+- temperature scaling
+- class-prior logit correction
+- question-wise logit centering 뒤 temperature scaling
+
+held-out Brier/ECE가 가장 낮고 within-question macro AUC와 group top-1을 낮추지 않는 방법 하나만 freeze한다.
+calibration은 score 해석을 고치는 단계이지, 현재 45개의 scorer-misrank를 해결한 것으로 과장하지 않는다.
+
+최종 정책은 raw majority를 default로 둔다. ORM top group이 raw top group과 다를 때 아래 label-blind 조건을
+모두 만족하는 경우에만 ORM으로 override한다.
+- raw top-2 normalized vote margin <= frozen m_max
+- ORM alternative normalized support >= frozen n_min
+- ORM top과 raw top의 G score gap >= frozen g_min
+- raw top vote share <= frozen r_max
+
+m_max는 {0,0.0625,0.125,0.25}, n_min은 {0.125,0.1875,0.25},
+g_min은 {0.25,0.5,1.0} log-score gap, r_max는 {0.40,0.50,0.60}의 고정 grid만 쓴다.
+normalized margin/support의 분모는 해당 question의 valid candidate 수다. internal label/metric을 열기 전에 grid와 tie-break를
+manifest에 적고, nested group CV에서 override coverage 1~15% 범위 안에서 net gain을 최대화하되 break와
+wrong-to-wrong guardrail을 만족하는 조합 하나만 고른다.
+동률이면 override 수가 적은 보수적 조합, 그다음 사전 등록된 lexicographic 순서를 쓴다. outer OOF나
+leaderboard 결과를 보고 threshold를 움직이거나 hard/format 여부를 이용한 예외 규칙을 추가하지 않는다.
+
+[사전 등록 arms]
+- Arm A: outer-train에서 다시 학습한 T12 pointwise BCE + 기존 `n * geometric mean(score)`
+- Arm B1: BCE + pairwise ranking + 기존 nGM
+- Arm B2: BCE + pairwise + listwise 보조 loss + 기존 nGM
+- Arm C: internal CV에서 B1/B2 중 고른 ranking ORM + learned G(a), 모든 문항에 적용
+- Arm D: Arm C + 위의 selective override; raw majority가 default인 최종 후보
+
+기존 T12 full adapter+nGM replay는 `Arm A0` 구현 진단으로만 남기며 OOF 성능표나 arm 선택에 넣지 않는다.
+Arm A~D는 모두 같은 outer-test question과 같은 frozen T5 base k=16 후보 풀에서 비교한다. B1/B2와 C/D의
+선택은 각 outer fold의 inner CV에서 끝내고, outer-test에는 그 fold에서 이미 선택한 정책 하나만 적용한다.
+
+[Phase 6 — zero 없는 fallback 계약]
+T12 leaderboard CSV의 3개 forced-zero를 반복하지 않는다. 모든 후보가 invalid여서 raw/filtered/ORM group이
+모두 없으면 다음을 순서대로 실행한다.
+1. 기존 T4c greedy prompt, temperature=0, max_new_tokens=2048로 결정적 1회 생성 후 frozen extractor 적용
+2. 실패 시 동결 explicit-integer contract prompt로 temperature=0 결정적 1회 repair 생성
+3. 그래도 정수 답이 없으면 submission.csv를 만들지 않고 `fallback_gate_failed`로 종료
+
+fallback prompt와 두 request seed/config는 leaderboard prediction을 만들기 전에 freeze한다. question ID별
+기존 leaderboard answer lookup, gold lookup, 임의 0/최빈 답/이전 CSV 답 복사는 금지한다. 내부 OOF와
+leaderboard에서 forced-zero, null, NaN, 범위 밖 문자열은 모두 0건이어야 한다.
+
+[Phase 7 — nested OOF 평가와 최종 개발 후보 동결]
+각 outer-test fold에서 gold를 결합하기 전에 candidate logit, calibrated score, answer-group feature/G score,
+raw prediction, override 여부와 이유, fallback 결과, Arm A~D prediction을 저장·해시한다. 다섯 outer fold를
+합친 6,034문항 OOF에서 다음을 계산한다.
+- Arm A~D accuracy와 raw majority@16 대비 paired delta
+- rescue/break/wrong-to-wrong/net, exact McNemar p, paired bootstrap 95% CI
+- outer 5 folds 각각의 delta와 source/template/problem type/hard/format strata
+- global 및 within-question macro/median AUC, group top-1, Brier, ECE
+- override coverage, 네 조건별 통과 수, invalid/tie/fallback/forced-zero
+- fold별 학습/scoring 처리량, peak VRAM, OOM, 2-GPU makespan
+
+OOF 보고가 끝나면 Phase 1의 최빈값·동률 규칙으로 최종 loss/checkpoint/calibration/coefficient/threshold 하나를
+정한다. 6,034문항 전체로 최종 ORM을 한 번 학습하고 모든 구성요소와 config hash를
+`frozen-dev-candidate.json`에 기록한다. OOF 결과를 본 뒤 grid를 추가하거나 규칙을 손으로 고르는 것은 금지한다.
+
+[내부 개발 판정 — PASS 금지]
+다음은 독립 채택 gate가 아니라 leaderboard 실행 비용을 쓸 만한 후보인지 정하는 개발 gate다.
+1. nested OOF에서 Arm D가 Arm A와 raw majority@16을 모두 이기고, 더 강한 쪽보다 절대 +1.5pp 이상 높다.
+2. outer 5 folds의 paired delta가 모두 양수다.
+3. 강한 내부 baseline 대비 paired bootstrap 95% CI 하한 > 0이고 exact McNemar p < 0.05다.
+4. within-question macro AUC >= 0.80이다.
+5. rescue >= 20, break <= 5이며 changed questions 중 wrong-to-wrong 비율 <=25%다.
+6. non-hard accuracy가 강한 내부 baseline보다 낮지 않고 hard/format strata도 2.0pp 초과 하락하지 않는다.
+7. NaN/null/forced-zero=0이고 outer-test label leakage=0이다.
+
+모두 만족하면 `DEV_CANDIDATE`, 양의 개선이지만 하나라도 실패하면 `DEV_HOLD`, delta<=0이면 `DEV_REJECT`로
+기록한다. 어느 상태도 `PASS/HOLD/REJECT`로 바꿔 쓰거나 T13 승격 근거로 사용하지 않는다.
+
+[Phase 8 — 선택적 T12b-LB one-shot handoff]
+`DEV_CANDIDATE`일 때만 별도 명시적 실행 승인을 받아 원본 leaderboard 1,000문항 전체에 다음을 수행한다.
+1. 동결 T12 solver 계약으로 문제당 k=32를 생성한다. 831행 필터본은 사용하지 않는다.
+2. `frozen-dev-candidate.json`의 ORM, calibration, group coefficient, override, fallback을 그대로 적용한다.
+3. leaderboard label·기존 제출 답·점수를 읽지 않은 상태에서 prediction과 submission candidate를 먼저 해시한다.
+4. 실제 제출은 정확히 한 번 하고, 사전에 지정한 full-1,000 baseline 점수와 비교한다.
+5. 점수를 본 뒤 설정을 바꾸거나 같은 T12b 가설로 재제출하지 않는다.
+
+leaderboard는 aggregate score만 주므로 문항별 rescue/break, McNemar, bootstrap CI, fold/strata 지표를 계산할 수
+없다. 결과는 `LB_GAIN`, `LB_FLAT`, `LB_LOSS`와 delta만 기록하며 `fresh-2 PASS`라고 부르지 않는다. T13 반영은
+T12b-dev가 자동으로 수행하지 않고, leaderboard 결과를 본 사용자의 별도 결정 과제로 남긴다.
+
+[조건부 7B와 k 확장]
+3B T12b-dev가 nested OOF에서 within-question macro AUC와 group top-1을 개선한 뒤에도 capacity 부족이 명확할
+때만 별도 T12c-dev로 Qwen 7B math same-base-policy/verifier LoRA를 비교한다. 이번 leaderboard 점수를 7B나
+threshold 선택에 재사용하지 않는다. oracle pass@32가 이미 96.90%이므로 k>32 생성은 ranking/aggregation을
+먼저 해결한 뒤의 별도 개발 과제이며 T12b-dev와 동시에 바꾸지 않는다.
+
+[비파괴 구현]
+새 파일로만 구현한다.
+- configs/t12b_question_local_orm.json
+- src/build_question_local_orm_data.py
+- src/train_question_local_orm.py
+- src/orm_group_selector.py
+- src/orm_selective_override.py
+- scripts/run_t12b_question_local_orm.sh
+- tests/test_question_local_orm_data.py
+- tests/test_question_local_orm_loss.py
+- tests/test_orm_group_selector.py
+- tests/test_orm_selective_override.py
+
+data/cmu_orm_v2/와 artifacts/t12b_question_local_orm/만 새로 쓴다. 기존 T12 code/artifact/CSV와 root
+submission.csv는 수정하지 않는다. `DEV_CANDIDATE`여도 실제 제출은 별도 명시적 T12b-LB 단계에서만 한다.
+
+[필수 테스트]
+- question batch의 positive/negative가 같은 DDP rank에 있고 다른 question pair가 섞이지 않는다.
+- z_positive가 z_negative보다 커질수록 pairwise loss가 단조 감소한다.
+- listwise numerator에는 positive만, denominator에는 해당 question valid candidates만 들어간다.
+- source별 1:1, matched-feature SMD <=0.10, unique trace, question/template split leakage=0을 검증한다.
+- candidate/row 순서와 DDP worker 완료 순서를 바꿔도 pair sampling과 out-of-fold prediction이 동일하다.
+- G(a)의 alpha/beta/gamma non-negative constraint, variance penalty, tie-break가 golden fixture와 일치한다.
+- outer-test label이 loss/checkpoint/coefficient/calibration/threshold fit에 들어가면 즉시 실패한다.
+- override 네 조건 중 하나라도 거짓이면 raw majority를 보존한다.
+- no-valid fixture에서 두 단계 fallback을 순서대로 실행하고 임의 0을 절대 쓰지 않는다.
+- 기존 T12 fresh/reused IDs와 leaderboard label/score가 ORM prompt, feature, fold 선택에 들어가지 않는다.
+- 6,034문항이 outer-test에 정확히 한 번씩만 나오고 template group의 fold 교차가 0이다.
+- 최종 설정의 최빈값·coverage·lexicographic 동률 처리가 golden fixture와 일치한다.
+- Arm A의 nGM 구현이 기존 T12 golden fixture와 byte-identical하되, fold model은 outer-train만 학습한다.
+- k=16과 k=32에서 normalized margin/support 계산이 같은 비율 fixture에 대해 동일하다.
+
+[완료 조건]
+- 기존 T12 fresh/reused 결과가 diagnosis-only로 봉인되어 있다.
+- T12 6,034문항의 outer 5-fold·inner 4-fold template-group split이 학습 전에 hash·freeze되고 leakage가 0이다.
+- T5 base k=16 개발 추론 풀이 6,034×16의 coverage가 정확하고 균형 train row와 분리돼 있다.
+- source-balanced question-local corpus, hard-negative provenance, shortcut probe가 data gate를 통과한다.
+- Arm A~D의 nested OOF within-question 지표와 다섯 outer fold 결과가 함께 남아 있다.
+- 최종 loss/checkpoint, group coefficient, calibration, selective override threshold의 선택 과정과 hash가 남아 있다.
+- `DEV_CANDIDATE/DEV_HOLD/DEV_REJECT`가 개발 gate와 함께 report에 기록되어 있다.
+- 어떤 개발 판정도 PASS나 T13 승격으로 기록되지 않았고 root submission.csv가 바뀌지 않았다.
+- T12b-LB를 별도로 실행했다면 full 1,000 label-blind prediction hash, 사전 지정 baseline, 단 한 번의 점수와
+  `LB_GAIN/LB_FLAT/LB_LOSS`만 기록되어 있으며 그 점수로 재튜닝하지 않았다.
+
+[산출물]
+configs/t12b_question_local_orm.json
+data/cmu_orm_v2/
+  internal-folds.json
+  train.jsonl
+  train-manifest.json
+  dev-candidate-pool-manifest.json
+artifacts/t12b_question_local_orm/
+  input-verification.json
+  source-balance-audit.json
+  shortcut-probes.json
+  nested-cv/fold-*/
+  out-of-fold-candidate-scores.jsonl
+  out-of-fold-group-scores.jsonl
+  out-of-fold-predictions.jsonl
+  internal-arm-comparison.json
+  group-selector.json
+  calibration.json
+  selective-override-policy.json
+  adapter/
+  frozen-dev-candidate.json
+  leaderboard-label-blind/generations.jsonl          (T12b-LB 승인 시)
+  leaderboard-label-blind/candidate-scores.jsonl     (T12b-LB 승인 시)
+  leaderboard-label-blind/group-scores.jsonl         (T12b-LB 승인 시)
+  leaderboard-label-blind/predictions.jsonl          (T12b-LB 승인 시)
+  leaderboard-label-blind/submission-candidate.csv   (T12b-LB 승인 시)
+  leaderboard-one-shot-result.json                    (점수 확인 시)
+  evaluation.json
+  evaluation.md
+  manifest.json
+  tests.xml
+```
+
+---
+
+## T13 — 동결 · 제출 리허설 · runbook
 
 ```text
 [목표]
@@ -3491,6 +4178,11 @@ artifacts/t11d_extractor_contract/
    단일-model 제출 경로로 승격하고, 통과하지 못하면 기존 경로를 유지한다.
    T11d extractor/prompt는 reused T8 replay나 format canary만으로 넣지 않고, 별도로 동결한 fresh
    validation까지 통과했을 때만 source/config hash와 함께 최종 경로에 반영한다.
+   T12 pointwise ORM은 fresh validation에서 HOLD로 확정되었으므로 ORM adapter와 geometric weighted
+   majority@32를 최종 환경에 로드하지 않는다.
+   T12b-dev question-local ORM의 nested CV 결과는 내부 개발 성능이므로 T13에 자동 반영하지 않는다.
+   별도 T12b-LB one-shot 결과를 확인한 뒤 사용자가 별도 채택 과제로 명시적으로 결정하기 전까지 기존
+   T10a C-1/T10e 경로를 유지하며, ranking adapter·coefficient·threshold 일부만 따로 가져오지 않는다.
    T9 GenSelect와 선택 전용 LoRA는 미채택이므로 최종 추론 경로에 포함하지 않는다.
    이 시점 이후 코드를 바꾸지 않는다.
 
@@ -3500,17 +4192,24 @@ artifacts/t11d_extractor_contract/
       최종 테스트 파일은 컬럼명이 id일지 ID일지, CSV일지 parquet일지 확정되지 않았다.
       Overview/Rules는 test.parquet, Data 페이지는 CSV 3종으로 표기가 다르다.
       공개된 sample submission을 무조건 우선한다)
-   - 모든 행에 정수 하나를 채운다. 추출 실패 시에도 빈 값을 두지 않는다 (최후 fallback "0")
+   - 모든 행에 정수 하나를 채운다. 추출 실패 시에도 빈 값을 두지 않고 채택 경로의 동결 fallback을 쓴다.
+     별도 채택 결정으로 T12b 경로를 쓰는 경우에도 임의 0을 쓰지 않으며 두 단계 결정적 fallback까지
+     실패하면 파일을 만들지 않는다.
    - 제출 전 자동 검증: 행 수가 입력과 일치, ID 누락 0, ID 중복 0, 모든 값이 ^-?(?:0|[1-9][0-9]*)$ 만족
    - 검증 실패 시 파일을 쓰지 않고 중단한다
 
 3. 리더보드 1,000문항 전체로 전체 리허설
    831행 필터본이 아니라 원본 1,000행 전체를 쓴다. 필터본을 쓰면 169문항이 누락된다.
    실제 소요 시간을 재고 24시간 예산과 대조한다. T10e를 쓰려면 세 arm 전체를,
-   T11을 채택했다면 동결 adapter+C-1 k32 경로를 그대로 리허설한다.
+   T11을 채택했다면 동결 adapter+C-1 k32 경로를 그대로 리허설한다. 별도 채택 과제에서 T12b-LB 후보를
+   명시적으로 선택했다면 base k32 생성부터 ranking ORM score, calibration, group selector, selective override,
+   두 단계 fallback까지 `frozen-dev-candidate.json` 묶음 그대로 리허설한다. T12의 단일 호스트 2× RTX 4090
+   generation/score shard 계약을 유지하고 한 GPU 직렬 폴백이나 tensor parallel로 경로를 바꾸지 않는다.
 
 4. 백업
    - T11 adapter를 채택했다면 가중치와 base revision을 원격 밖으로 한 벌 더 복사한다.
+     별도 채택 과제에서 T12b-LB 후보를 선택했다면 ranking ORM adapter, classifier score head, calibration, group coefficient,
+     override policy, fallback prompt/config도 함께 복사한다.
      미채택이면 base revision, 최종 prompt/config, T10d/T10e 집계 규칙과 source pool hash를 백업한다.
    - 환경 스냅샷(requirements.lock, 모델 revision)을 함께 보관한다.
    - 예비 체크포인트를 2종 확보한다: 최종 채택안과, 더 단순하지만 동작이 검증된
@@ -3531,11 +4230,14 @@ artifacts/t11d_extractor_contract/
 - base revision·최종 prompt/config·채택 adapter 또는 집계 source pool이 원격 밖에 백업되어 있다.
 - T11 채택 여부와 최종 경로가 runbook·manifest·백업에서 일치한다.
 - T11d 채택 여부, extractor source hash와 prompt/config hash가 runbook·manifest·백업에서 일치한다.
+- T12 HOLD, T12b-dev 내부 판정, T12b-LB 실행 여부, 별도 T12b 채택 결정 여부가 각각 명시되어 있다.
+  별도 채택 결정이 있었다면 ORM adapter/config hash, calibration, group coefficient, override/fallback policy와
+  2× RTX 4090 shard/DDP 계약이 runbook·manifest·백업에서 일치한다.
 - T9 GenSelect adapter는 미채택으로 명시되어 있고 최종 환경에서 로드되지 않는다.
 - runbook.md만 보고 처음 보는 사람이 실행할 수 있다.
 
 [산출물]
-src/submit.py, runbook.md, submission.csv (리허설본), artifacts/t12_rehearsal/manifest.json
+src/submit.py, runbook.md, submission.csv (리허설본), artifacts/t13_rehearsal/manifest.json
 ```
 
 ---
@@ -3576,7 +4278,7 @@ random holdout(N=1637) 단독은 최소 검출 가능 효과가 약 2.4pp라서 
 | hard-CoT SFT → correct/wrong DPO (T11) | — | — | — | — | — | — | **teacher_gate_failed·학습 미실행**; 보호 5,475 ID를 제외하고 full leaderboard 1,000행 오염 대조에서 37문항(template 22/near 15)을 추가 제외해 10,861문항을 probe했다. frozen base+C k=8에서 c<=2 hard는 1,883문항, c>=6 strict anchor 후보는 7,382문항이었다. 고정 local `Qwen2.5-Math-7B-Instruct` teacher의 첫 64문항×4에서 품질 필터 전 extracted-correct는 76/256이었으나 `FINAL_ANSWER` 마지막 줄 위반 256/256, hit-max 42, code/tool 표현 7로 accepted correct가 0/256이었다. 사전등록대로 full teacher·SFT·DPO·validation·holdout은 모두 중단(새 holdout 0건), API 비용 $0, projected worst-case teacher 2.49h였으며 기존 T10a C-1/T10e를 보존했다. AIMO 대비 3B·단일 GPU·hard 최대 2,000·teacher k=4→조건부 8·text-only로 축소했고 TIR/Python/SymPy/solver, k>=64, 새 prompt/filter 탐색, 사후 checkpoint 선택은 금지했다. |
 | DeepSeek-14B teacher preflight (T11b) | — | — | — | — | — | — | **teacher_gate_failed·full teacher/SFT/DPO 미실행**; 동일 64문항×4·seed 62000·prompt/sampling에서 `DeepSeek-R1-Distill-Qwen-14B` revision `1df8507...23761`을 vLLM 0.27.1+cu129/bitsandbytes 4-bit로 실행했다. raw→label-blind normalized는 final-line 44→81, accepted-quality 44→72, accepted-correct 17→23, 정답 trace 보유 문항 10→12/64였고 extracted-correct는 36/256으로 동일했다. 원래 gate의 문항 12<32, trace 23<64, code/tool 2>0, projected full 28.51h>12h가 실패했다. hit-max 173, preflight 0.494h, peak VRAM 24,082 MiB, 보호 전송 0, API $0; 폴백·holdout·leaderboard·submission 변경 없이 기존 T10a C-1/T10e를 유지했다. |
 | Qwen7B repaired teacher preflight (T11c) | — | — | — | — | — | — | **teacher_gate_failed·full teacher/SFT/DPO 미실행**; 새 hard slice 64문항에 공식 Qwen CoT prompt, temperature 0.7/top_p 0.8, 3,072-token cap, 요청별 독립 seed를 고정했다. 1차 accepted-correct는 54 traces·27/64문항, 미해결 37문항에만 sample 4..7을 추가한 최종은 56 traces·29/64문항이었다. raw code/tool 2, hit-max 63, preflight 0.791h, expected/worst full 22.42/28.41h, API $0; label-blind normalizer 2회 byte 동일, 보호 전송·downstream·submission 변경 0건. |
-| + explicit integer contract + frozen replay (T11d) | 75.57% | 75.75% | 40.55% | 50.78% | 9.34% (union candidates) | **+8.03pp vs T4c**; **+1.42pp vs T8** (**p=2.88e-7**) | **reused_holdout_diagnostic·T12 미채택**; old T8 2,590/3,737 plurality와 3,154/3,737 pass를 먼저 재현한 뒤 80문항 회수/27문항 파손, 순증 53, 95% CI [+0.91,+1.95]pp를 기록했다. zero-decimal explicit 1,185표·86문항을 정규화했고 train-012155는 50/400 동률→400 만장일치가 됐다. 반면 strict explicit barrier로 invalid 0.77%→9.34%, pass@32 84.40%→82.98%가 되어 fresh validation 전 채택하지 않는다. 별도 train 128문항에서 원격 RTX 4090으로 A/B 각 512개를 동일 paired child seed로 label-blind 생성·freeze했다. prompt B는 strict final-line 64.06%→72.07%(+8.01pp, paired p=0.0035), invalid 4.88%→2.93%, hit-max 0.78%→0.98%였지만 last_integer가 1.17%→4.69%로 증가해 사전등록 gate에 실패했다. 따라서 prompt B는 미채택하고 기존 T8 prompt를 유지한다. 집중 테스트 71건 통과, 기존 artifact·leaderboard·submission 변경 0건. |
+| + explicit integer contract + frozen replay (T11d) | 75.57% | 75.75% | 40.55% | 50.78% | 9.34% (union candidates) | **+8.03pp vs T4c**; **+1.42pp vs T8** (**p=2.88e-7**) | **reused_holdout_diagnostic·T13 미채택**; old T8 2,590/3,737 plurality와 3,154/3,737 pass를 먼저 재현한 뒤 80문항 회수/27문항 파손, 순증 53, 95% CI [+0.91,+1.95]pp를 기록했다. zero-decimal explicit 1,185표·86문항을 정규화했고 train-012155는 50/400 동률→400 만장일치가 됐다. 반면 strict explicit barrier로 invalid 0.77%→9.34%, pass@32 84.40%→82.98%가 되어 fresh validation 전 채택하지 않는다. 별도 train 128문항에서 원격 RTX 4090으로 A/B 각 512개를 동일 paired child seed로 label-blind 생성·freeze했다. prompt B는 strict final-line 64.06%→72.07%(+8.01pp, paired p=0.0035), invalid 4.88%→2.93%, hit-max 0.78%→0.98%였지만 last_integer가 1.17%→4.69%로 증가해 사전등록 gate에 실패했다. 따라서 prompt B는 미채택하고 기존 T8 prompt를 유지한다. 집중 테스트 71건 통과, 기존 artifact·leaderboard·submission 변경 0건. |
 
 ### 데이터 품질 감사 기록 (별도 슬라이드)
 

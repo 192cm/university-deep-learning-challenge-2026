@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "task": "T12",
+  "seed": 42,
+  "model": {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "tokenizer_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "hf_home": "/workspace/.hf_home",
+    "cache_dir": "/workspace/.hf_home/hub"
+  },
+  "hardware": {
+    "required_gpu_count": 2,
+    "required_gpu_name": "NVIDIA GeForce RTX 4090",
+    "generation_tensor_parallel_size": 1,
+    "scoring_tensor_parallel_size": 1,
+    "training_world_size": 2,
+    "allow_single_gpu_fallback": false,
+    "allow_fsdp": false,
+    "allow_zero": false,
+    "allow_cpu_or_nvme_offload": false
+  },
+  "sharding": {
+    "generation_namespace": "t12-generation-shard-v1:",
+    "score_namespace": "t12-score-shard-v1:",
+    "ways": 2,
+    "generation_unit": "whole_question_request",
+    "score_unit": "question_id:sample_index"
+  },
+  "data": {
+    "canonical": "data/canonical/train.csv",
+    "template_audit": "data/splits/audit.csv",
+    "leaderboard_full": "data/deep_chal_math_leaderboard.csv",
+    "leaderboard_safe_eligible_ids": "data/t11_aimo_generation_quality/eligible_ids.txt",
+    "t5_difficulty_audit": "data/rft_r1/audit.csv",
+    "protected_id_sources": {
+      "t8_holdout_union": "artifacts/t8_self_consistency/holdout_union_ids.txt",
+      "t11_validation": "data/splits/rft_validation_500_ids.txt",
+      "t11_suspect": "data/suspect_set/ids.txt",
+      "t9_validation": "data/genselect/validation.jsonl",
+      "t11_teacher_preflight": "data/t11_aimo_generation_quality/teacher_preflight_ids.txt",
+      "t11c_teacher_preflight": "data/t11c_qwen7b_repaired_teacher_preflight/preflight_ids.txt",
+      "t11d_prompt_canary": "data/t11d_extractor_contract/canary_ids.txt"
+    },
+    "historical_candidate_sources": [
+      {
+        "name": "t5_base_k16",
+        "path": "artifacts/t5_rft_r1/generations.jsonl",
+        "metadata": "artifacts/t5_rft_r1/run-metadata.json",
+        "checkpoint_kind": "base"
+      },
+      {
+        "name": "t11_base_cot_boxed_k8",
+        "path": "data/t11_aimo_generation_quality/student_probe.jsonl",
+        "metadata": "artifacts/t11_aimo_generation_quality/student-probe-run-metadata.json",
+        "checkpoint_kind": "base"
+      },
+      {
+        "name": "t5_base_targeted_k48",
+        "path": "artifacts/t5_rft_targeted/generations.jsonl",
+        "metadata": "artifacts/t5_rft_targeted/run-metadata.json",
+        "checkpoint_kind": "base"
+      },
+      {
+        "name": "t7_base_hard_tail_k32",
+        "path": "data/rft_r2/generations.jsonl",
+        "metadata": "data/rft_r2/run-metadata.json",
+        "checkpoint_kind": "base"
+      }
+    ],
+    "near_duplicate_jaccard_threshold": 0.92,
+    "output_dir": "data/cmu_orm"
+  },
+  "fresh_validation": {
+    "questions": 1000,
+    "selection_namespace": "t12-fresh-validation-v1:",
+    "fold_namespace": "t12-fresh-fold-v1:",
+    "folds": 5,
+    "generation_config": "configs/t8_self_consistency.json",
+    "samples_per_question": 32,
+    "expected_questions_per_gpu": 500,
+    "expected_candidates_per_gpu": 16000
+  },
+  "orm_train_candidate_generation": {
+    "enabled": true,
+    "target_rule": "every currently one-sided or valid-empty ORM-train question",
+    "source_name": "t12_base_cot_brief_high_temperature_k16",
+    "template_config": "configs/t10a_prompt_improvement.json",
+    "prompt_mode": "cot_brief",
+    "samples_per_question": 16,
+    "seed": 12042,
+    "temperature": 1.2,
+    "top_p": 0.95,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 2048
+  },
+  "corpus": {
+    "target_unique_questions": 7000,
+    "target_problem_solution_rows": 37888,
+    "minimum_unique_questions": 5000,
+    "minimum_problem_solution_rows": 25000,
+    "maximum_per_class_per_question": 4,
+    "positive_negative_ratio": "1:1_per_question",
+    "question_selection_namespace": "t12-orm-question-v1:",
+    "candidate_selection_namespace": "t12-orm-candidate-v1:",
+    "internal_validation_fraction": 0.1,
+    "internal_validation_namespace": "t12-orm-internal-validation-v1:"
+  },
+  "orm_prompt_template": "Judge whether the candidate solution correctly solves the problem. Return a scalar correctness score; do not solve with tools.\n\nProblem:\n{question}\n\nCandidate solution:\n{candidate_trace}",
+  "training": {
+    "max_length": 4096,
+    "packing": false,
+    "num_train_epochs": 2,
+    "learning_rate": 0.00002,
+    "warmup_ratio": 0.03,
+    "lr_scheduler_type": "cosine",
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "loss": "BCEWithLogitsLoss",
+    "class_weight": null,
+    "world_size": 2,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "global_effective_batch_size": 32,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "final_epoch": 2
+  },
+  "lora": {
+    "r": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "task_type": "SEQ_CLS",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "modules_to_save": ["score"]
+  },
+  "scoring": {
+    "batch_size": 4,
+    "max_length": 4096,
+    "clip_min": 0.000001,
+    "clip_max": 0.999999,
+    "require_finite_raw_logit": true
+  },
+  "voting": {
+    "formula": "n_a * exp(mean(log(clip(sigmoid(logit), 1e-6, 1-1e-6))))",
+    "tie_break": ["first_generation_index", "integer_value_ascending"],
+    "invalid_candidates": "exclude",
+    "nan_or_no_valid_fallback": "raw_majority"
+  },
+  "statistics": {
+    "paired_bootstrap_replicates": 20000,
+    "paired_bootstrap_seed": 42,
+    "mcnemar": "two-sided exact binomial",
+    "ece_bins": 10
+  },
+  "decision_gate": {
+    "minimum_delta_vs_stronger_baseline_pp": 1.5,
+    "maximum_exact_mcnemar_p": 0.05,
+    "require_bootstrap_ci_lower_above_zero": true,
+    "require_all_five_fold_deltas_positive": true,
+    "maximum_hard_or_format_drop_pp": 2.0,
+    "minimum_candidate_roc_auc": 0.65,
+    "maximum_fresh_makespan_hours": 18.0,
+    "maximum_oom_events_per_gpu": 0
+  },
+  "official_basis": {
+    "cmu_private_score": "22/50",
+    "cmu_rank": 2,
+    "cmu_public_train_ablation": {
+      "questions": 10,
+      "policy_majority_at_32": "2/10",
+      "orm_weighted_vote": "4/10"
+    },
+    "cmu_reported_unique_questions": 7000,
+    "cmu_reported_problem_solution_pairs": 37880,
+    "intentional_local_substitution": "same-base rank-64 LoRA sequence-classification adapter instead of CMU full reward-model fine-tuning"
+  },
+  "outputs": {
+    "artifact_dir": "artifacts/t12_cmu_orm",
+    "adapter_dir": "artifacts/t12_cmu_orm/adapter"
+  }
+}
