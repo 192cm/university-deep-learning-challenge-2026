@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "package": "T12-CMU-ORM-final-inference",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "base_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "input_rows": 2000,
+  "files": {
+    "README.md": "58991ed2639517cd04eea13d4e9eba1ae1bb45732e1fc075880b65afb05ddc84",
+    "requirements.txt": "4f65c98de334a89e44a3a8f27e18073ffb54fa32fc89310f744f8c7df0331a96",
+    "t12_cmu_orm_inference.ipynb": "888d314caf45adfc66bb1beeef77732da73fa30ee9bea7638a017f0a893b67ac",
+    "t12_pipeline.py": "43bf8fa8179d28db0dc61a06d72e1345cd2a668be656ed78b44a39e3a2fb9721",
+    "test_data.csv": "106358e4d0365b72c387a9d31f233d52e9122b8547c3cd8d076cf25f39295f9b",
+    "model/t12_cmu_orm_adapter/README.md": "ed7dc65f40b244128e7847e09d1746f7f0429f3874eda746538a45d393cbbf5d",
+    "model/t12_cmu_orm_adapter/adapter_config.json": "77659a00b527917dcbe8dfa22c7e8eef1f851de9c28fb98e5afd424a9e96f265",
+    "model/t12_cmu_orm_adapter/adapter_model.safetensors": "8dcf2404a6889270af846b51dda1ea450c87c161b2fe5d0b6a165adab9684e9c",
+    "model/t12_cmu_orm_adapter/manifest.json": "b00f2638367208b91a9c1f58cbbb8dd9bbc6a9909c894a824ddac1309612c6fd"
+  }
+}

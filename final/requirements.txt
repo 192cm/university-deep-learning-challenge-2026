@@ -1,0 +1,10 @@
+# CUDA-compatible PyTorch must be installed for the target machine first.
+torch>=2.8
+transformers==5.15.1
+peft==0.20.0
+safetensors>=0.6
+vllm==0.27.1
+pandas>=2.2
+jupyterlab>=4.4
+nbformat>=5.10
+nbclient>=0.10

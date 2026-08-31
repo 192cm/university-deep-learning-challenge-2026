@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "model_role": "candidate-solution correctness scorer",
+  "model_type": "PEFT LoRA sequence classifier with saved scalar score head",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "base_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "training": {
+    "loss": "BCEWithLogitsLoss",
+    "epochs": 2,
+    "learning_rate": 0.00002,
+    "lora_rank": 64,
+    "lora_alpha": 128,
+    "lora_dropout": 0.05,
+    "training_rows": 30912,
+    "training_questions": 6034,
+    "positive_rows": 15456,
+    "negative_rows": 15456
+  },
+  "files": {
+    "adapter_config.json": "77659a00b527917dcbe8dfa22c7e8eef1f851de9c28fb98e5afd424a9e96f265",
+    "adapter_model.safetensors": "8dcf2404a6889270af846b51dda1ea450c87c161b2fe5d0b6a165adab9684e9c"
+  }
+}
